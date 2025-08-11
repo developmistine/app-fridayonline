@@ -1,0 +1,274 @@
+{
+  "code": "100",
+  "data": [
+    {
+      "order_id": 200,
+      "order_status": {
+        "order_status": 0,
+        "color_code": "B",
+        "description": "รอชำระ"
+      },
+      "shop_list": [
+        {
+          "ordshop_id": 208,
+          "shop_info": {
+            "icon": "https://s3.catalog-yupin.com/b2c/seller/900008/lego_icon.webp",
+            "shop_id": 8,
+            "shop_code": "900008",
+            "shop_name": "LEGO Official Store",
+            "shop_address": ""
+          },
+          "item_groups": [
+            {
+              "orddtl_id": 361,
+              "product_id": 3766,
+              "product_name": "LEGO Super Heroes DC 76271 Batman: The Animated Series Gotham City",
+              "item_id": 10446,
+              "item_name": "",
+              "image": "https://s3.catalog-yupin.com/b2c/seller/900008/products/gotham_city_01.webp",
+              "amount": 1,
+              "have_discount": true,
+              "price": 6,
+              "price_before_discount": 150,
+              "order_price": 6
+            }
+          ],
+          "summary": {
+            "product_count": 1,
+            "subtotal": 6,
+            "final_total": 6
+          }
+        }
+      ],
+      "payment_method": {
+        "payment_method": 3,
+        "payment_channel_name": "CARD",
+        "payment_charge_id": "",
+        "payment_order_id": ""
+      },
+      "summary": {
+        "product_count": 1,
+        "subtotal": 56,
+        "final_total": 56
+      }
+    },
+    {
+      "order_id": 195,
+      "order_status": {
+        "order_status": 0,
+        "color_code": "B",
+        "description": "รอชำระ"
+      },
+      "shop_list": [
+        {
+          "ordshop_id": 201,
+          "shop_info": {
+            "icon": "https://s3.catalog-yupin.com/b2c/seller/000001/test/logo20250421085823_0.webp",
+            "shop_id": 1,
+            "shop_code": "000001",
+            "shop_name": "Friday Shop",
+            "shop_address": ""
+          },
+          "item_groups": [
+            {
+              "orddtl_id": 354,
+              "product_id": 472,
+              "product_name": "กาแฟอาราบิก้าปรุงสำเร็จชนิดผง 3 อิน 1 (ตรา ฟรายเดย์ ช้อยส์) (แพ็ค25)",
+              "item_id": 479,
+              "item_name": "",
+              "image": "https://s3.catalog-yupin.com/b2c/product/000001/472/img/20250213144255_1.jpg",
+              "amount": 1,
+              "have_discount": false,
+              "price": 159,
+              "price_before_discount": 159,
+              "order_price": 159
+            }
+          ],
+          "summary": {
+            "product_count": 1,
+            "subtotal": 159,
+            "final_total": 159
+          }
+        }
+      ],
+      "payment_method": {
+        "payment_method": 3,
+        "payment_channel_name": "CARD",
+        "payment_charge_id": "",
+        "payment_order_id": ""
+      },
+      "summary": {
+        "product_count": 1,
+        "subtotal": 209,
+        "final_total": 209
+      }
+    },
+    {
+      "order_id": 193,
+      "order_status": {
+        "order_status": 0,
+        "color_code": "B",
+        "description": "รอชำระ"
+      },
+      "shop_list": [
+        {
+          "ordshop_id": 198,
+          "shop_info": {
+            "icon": "https://s3.catalog-yupin.com/b2c/seller/000001/test/logo20250421085823_0.webp",
+            "shop_id": 1,
+            "shop_code": "000001",
+            "shop_name": "Friday Shop",
+            "shop_address": ""
+          },
+          "item_groups": [
+            {
+              "orddtl_id": 351,
+              "product_id": 2156,
+              "product_name": "MISS WORLD BEAUTY HERB BODY LOTION 400 ML.",
+              "item_id": 2235,
+              "item_name": "",
+              "image": "https://s3.catalog-yupin.com/b2c/product/000001/2156/img/20250307152243_1.jpg",
+              "amount": 1,
+              "have_discount": false,
+              "price": 149,
+              "price_before_discount": 149,
+              "order_price": 149
+            }
+          ],
+          "summary": {
+            "product_count": 1,
+            "subtotal": 149,
+            "final_total": 149
+          }
+        }
+      ],
+      "payment_method": {
+        "payment_method": 1,
+        "payment_channel_name": "QRCODE",
+        "payment_charge_id": "",
+        "payment_order_id": ""
+      },
+      "summary": {
+        "product_count": 1,
+        "subtotal": 199,
+        "final_total": 199
+      }
+    },
+    {
+      "order_id": 192,
+      "order_status": {
+        "order_status": 0,
+        "color_code": "B",
+        "description": "รอชำระ"
+      },
+      "shop_list": [
+        {
+          "ordshop_id": 197,
+          "shop_info": {
+            "icon": "https://s3.catalog-yupin.com/b2c/seller/900008/lego_icon.webp",
+            "shop_id": 8,
+            "shop_code": "900008",
+            "shop_name": "LEGO Official Store",
+            "shop_address": ""
+          },
+          "item_groups": [
+            {
+              "orddtl_id": 350,
+              "product_id": 3766,
+              "product_name": "LEGO Super Heroes DC 76271 Batman: The Animated Series Gotham City",
+              "item_id": 10446,
+              "item_name": "",
+              "image": "https://s3.catalog-yupin.com/b2c/seller/900008/products/gotham_city_01.webp",
+              "amount": 1,
+              "have_discount": true,
+              "price": 6.5,
+              "price_before_discount": 150.5,
+              "order_price": 6.5
+            }
+          ],
+          "summary": {
+            "product_count": 1,
+            "subtotal": 6.5,
+            "final_total": 6.5
+          }
+        }
+      ],
+      "payment_method": {
+        "payment_method": 1,
+        "payment_channel_name": "QRCODE",
+        "payment_charge_id": "",
+        "payment_order_id": ""
+      },
+      "summary": {
+        "product_count": 1,
+        "subtotal": 56.5,
+        "final_total": 56.5
+      }
+    },
+    {
+      "order_id": 189,
+      "order_status": {
+        "order_status": 0,
+        "color_code": "B",
+        "description": "รอชำระ"
+      },
+      "shop_list": [
+        {
+          "ordshop_id": 194,
+          "shop_info": {
+            "icon": "https://s3.catalog-yupin.com/b2c/seller/000001/test/logo20250421085823_0.webp",
+            "shop_id": 1,
+            "shop_code": "000001",
+            "shop_name": "Friday Shop",
+            "shop_address": ""
+          },
+          "item_groups": [
+            {
+              "orddtl_id": 346,
+              "product_id": 515,
+              "product_name": "ผลิตภัณฑ์ซักผ้าชนิดน้ำ อีซี่เดย์ สูตร 3 in 1  500 มล.",
+              "item_id": 522,
+              "item_name": "",
+              "image": "https://s3.catalog-yupin.com/b2c/product/000001/515/img/20250213142741_1.jpg",
+              "amount": 2,
+              "have_discount": false,
+              "price": 89,
+              "price_before_discount": 89,
+              "order_price": 89
+            },
+            {
+              "orddtl_id": 347,
+              "product_id": 1167,
+              "product_name": "สมูทโตะ อโล-อี สเนล ไบรท์ เจล เจลว่านหางจระเข้เข้มข้น 99.5% ผสมวิตามินอีและสารสก",
+              "item_id": 1303,
+              "item_name": "",
+              "image": "https://s3.catalog-yupin.com/b2c/product/000001/1167/img/20250219175244_1.jpg",
+              "amount": 1,
+              "have_discount": true,
+              "price": 44.5,
+              "price_before_discount": 49.5,
+              "order_price": 44.5
+            }
+          ],
+          "summary": {
+            "product_count": 2,
+            "subtotal": 222.5,
+            "final_total": 222.5
+          }
+        }
+      ],
+      "payment_method": {
+        "payment_method": 3,
+        "payment_channel_name": "CARD",
+        "payment_charge_id": "",
+        "payment_order_id": ""
+      },
+      "summary": {
+        "product_count": 2.5,
+        "subtotal": 272.5,
+        "final_total": 272.5
+      }
+    }
+  ],
+  "message": "success"
+}

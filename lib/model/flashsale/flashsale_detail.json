@@ -1,0 +1,48 @@
+{
+  "Banner": "https://s3.catalog-yupin.com/Yupindata/campaign202214/1660875149jpg.webp",
+  "FlashSale": [
+      {
+          "SystemDate": "19/08/2022",
+          "SystemTime": "15:00:00",
+          "StartDate": "19/08/2022",
+          "StartTime": "12:00",
+          "EndDate": "19/08/2022",
+          "EndTime": "23:59",
+          "Status": "Active",
+          "ShowDate": "กำลังลดราคา",
+          "Color": "Pink",
+          "CountDown": "08:59:00",
+          "Product": [
+              {
+                  "Sku": "41576",
+                  "Campaign": "192022",
+                  "brand": "9",
+                  "BillCode": "31097",
+                  "Name": "ฟาริส เอน่า ฟาวเดชั่น พาวเดอร์ no.11  10 ก.",
+                  "Img": "https://s3.catalog-yupin.com/MistineImages/products/41576.webp",
+                  "LinkDetail": "https://yupin.ningnongmistine.com/gpid/Index/Index?sku=41576",
+                  "LinkReview": "https://yupin.ningnongmistine.com/gpir/Index/Index?sku=41576",
+                  "SpecialPrice": "499.00",
+                  "BillColor": "black",
+                  "CheckLimit": "N",
+                  "UserType": "9",
+                  "SaleLimit": "0",
+                  "UseLimit": "0",
+                  "IsInStock": true,
+                  "StockBalance": "200",
+                  "SaleBalance": "0",
+                  "Price": "790",
+                  "PercentSale": "ขายไปแล้ว  0",
+                  "PercentDiscount": "37 %",
+                  "PercentNum": 1,
+                  "MediaCode": "652",
+                  "LimitDescription": "",
+                  "ImgAppend": "https://s3.catalog-yupin.com/Images/outOfStock.webp",
+                  "imgNetPrice": "https://s3.catalog-yupin.com/Images/totalPrice.webp",
+                  "flagNetPrice": "N",
+                  "SoldOutTime": null
+              }
+          ]
+      }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "RepCode": "0999005499",
+  "RepType": "2",
+  "RepSeq": "5486041",
+  "UserId": null,
+  "ListProductDetail": [
+    {
+      "Campaign": "182022",
+      "MediaCode": "01",
+      "brand": "10",
+      "billCode": "86207",
+      "name": "เครื่องวัดความดันโลหิตระบบดิจิตอลที่ต้นแขนรุ่นHK-805 แถมฟรี adapter",
+      "sku": "71314",
+      "FS_NAME": null,
+      "FS_CODETEMP": null,
+      "special_price": "1590",
+      "price": "1590",
+      "img": "https://s3.catalog-yupin.com/MistineImages/products/71314.webp",
+      "is_in_stock": true,
+      "LimitDescription": "",
+      "ImgAppend": "https://s3.catalog-yupin.com/Images/outOfStock.webp",
+      "BillColor": "black",
+      "ProductCode": null,
+      "BillCodeB2C": null,
+      "imgNetPrice": "https://s3.catalog-yupin.com/Images/totalPrice.webp",
+      "flagNetPrice": "N",
+      "TotalReview": 1,
+      "RatingProduct": 2.5
+    }
+  ]
+}

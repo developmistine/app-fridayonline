@@ -1,0 +1,30 @@
+{
+  "code": "100",
+  "data": [
+      {
+          "sort_by": "ctime",
+          "text": "ล่าสุด",
+          "sub_levels": []
+      },
+      {
+          "sort_by": "sales",
+          "text": "สินค้าขายดี",
+          "sub_levels": []
+      },
+      {
+          "sort_by": "price",
+          "text": "ราคา",
+          "sub_levels": [
+              {
+                  "order": "asc",
+                  "text": "ราคา: จากน้อยไปมาก"
+              },
+              {
+                  "order": "desc",
+                  "text": "ราคา: จากมากไปน้อย"
+              }
+          ]
+      }
+  ],
+  "message": "success"
+}

@@ -1,0 +1,402 @@
+{
+    "language_th": "ไทย / Thai",
+    "language_km": "ភាសាខ្មែរ / Cambodian",
+    "language_my": "မြန်မာဘာသာ / Burmese",
+
+    "menu_bar_home": "ទំព័រដើម",
+    "menu_bar_catelog": "កាតាឡុក",
+    "menu_bar_category": "ប្រភេទ",
+    "menu_bar_notification": "ព្រមាន",
+    "menu_bar_profile": "ប្រវត្តិរូប",
+    "btn_seller_manual": "คู่มือการขาย",
+    "btn_agreement_member": "ข้อตกลงการเป็นสมาชิก",
+    "btn_id_member": "บัตรประจำตัวสมาชิก",
+
+    "home_page_see_more": "មើល​បន្ថែម​ទៀត",
+    "home_page_special_price_products": "ផលិតផលតម្លៃពិសេស",
+    "home_page_button_to_top": "ចុចដើម្បីរំកិលឡើងលើ",
+
+    "catelog_page_top_bar_catelog": "កាតាឡុក",
+    "catelog_page_top_bar_special_discount": "ការបញ្ចុះតម្លៃពិសេស",
+    "catelog_page_detail_head_index_page": "កាតព្វកិច្ច",
+    "catelog_page_detail_view_list_product": "មើលបញ្ជីផលិតផល",
+    "catelog_page_detail_next_page": "ផ្លាស់ទីទៅទំព័របន្ទាប់",
+    "home_page_list_products": "បញ្ជីផលិតផល",
+
+    "profile_page_check_information_order_text_appbar_title": "ข้อมูลการสั่งซื้อ",
+    "profile_page_check_information_order_text_tap_order": "คำสั่งซื้อ",
+    "profile_page_check_information_order_text_tap_delivery_status": "สถานะการจัดส่ง",
+    "profile_page_check_information_order_text_tap_order_history": "ประวัติการสั่งซื้อ",
+    "profile_page_check_information_order_text_radio_all": "ทั้งหมด",
+    "profile_page_check_information_order_text_radio_customer_wait_approve": "ลูกค้ารออนุมัติ",
+    "profile_page_check_information_order_text_radio_customer_approve": "ลูกค้าอนุมัติแล้ว",
+    "profile_page_check_information_order_text_radio_me": "ฉัน",
+    "profile_page_check_information_order_text_customer_order": "คำสั่งซื้อของลูกค้า",
+    "profile_page_check_information_order_text_viwe_detail": "ดูรายละเอียด",
+    "profile_page_check_information_order_text_time_sell": "รอบจำหน่ายที่ ",
+    "profile_page_check_information_order_text_total_price": "ยอดรวมการสั่งซื้อ",
+    "profile_page_check_information_order_button_approve_all": "อนุมัติทั้งหมด",
+    "profile_page_check_information_order_button_approve": "อนุมัติ",
+    "profile_page_check_information_order_button_no_approve": "ไม่อนุมัติ",
+    "profile_page_check_information_order_orderdetail_text_appbar_title": "รายละเอียดการสั่งซื้อ",
+    "profile_page_check_information_order_orderdetail_text_alert_title": "กรุณาระบุจำนวนที่ต้องการแก้ไข",
+    "profile_page_check_information_order_orderdetail_button_alert_confirm": "ยืนยัน",
+    "profile_page_check_information_order_orderdetail_button_alert_input_number": "กรอกจำนวนสินค้า",
+    "profile_page_check_information_order_orderdetail_button_alert_cancel": "ยกเลิก",
+    "profile_page_check_information_order_orderdetail_button_confirm_edit": "ยืนยันการแก้ไข",
+    "profile_page_check_information_order_orderdetail_text_alert_input": "กรอกจำนวน",
+    "profile_page_check_information_order_orderdetail_text_product": "สินค้า",
+    "profile_page_check_information_order_orderdetail_button_delete_all": "ลบทั้งหมด",
+    "profile_page_check_information_order_orderdetail_text_qty": "จำนวน",
+    "profile_page_check_information_order_orderdetail_button_delete": "ลบ",
+    "profile_page_check_information_order_orderdetail_text_price": "ราคาปกติ",
+    "profile_page_check_information_order_orderdetail_text_sum": "รวม",
+    "profile_page_check_information_order_orderdetail_alert_error_product_limit_1": "คุณมีรายการสินค้าที่สั่งซื้อเกิน",
+    "profile_page_check_information_order_orderdetail_alert_error_product_limit_2": "จำนวนที่กำหนด กรุณาแก้ไข",
+    "profile_page_check_information_order_orderdetail_alert_error_product_limit_3": "จำนวนด้วยค่ะ",
+    "profile_page_check_information_order_orderdetail_text_discount_coupon": "ส่วนลดคูปอง",
+    "profile_page_check_information_order_orderdetail_text_discount_star": "ส่วนลดดาว",
+    "order_price_txt": "តម្លៃ",
+
+    "tv_login_promotion_b": "សិទ្ធិពិសេសសម្រាប់សមាជិក,អតិថិជនសមាជិក",
+
+
+    "home_search": "ស្វែងរកផលិតផលនៅទីនេះ",
+    "search_rewards_tab1": "ค้นหาด้วยคะแนนรางวัล",
+    "search_rewards_tab2": "ค้นหาด้วยหมวดหมู่",
+    "product_search_rewards": "ស្វែងរកពិន្ទុនិងរង្វាន់",
+
+    "btn_close_guide": "បិតវគ្គបង្រៀន",
+    "btn_next_guide": "បន្ទាប់",
+    "btn_end_guide": "ចុងក្រោយ",
+    "txt_guide1": "ប៊ូតុងមីណុយទំព័រដំបូង បង្ហាញប្រូម៉ូសិន \n ទំនិញតម្លៃពិសេសផ្សេងៗ",
+    "txt_guide2": "ប្រូម៉ូសិនតម្លៃពិសេសប្រចាំ",
+    "txt_guide3": "ទៅមុខ/ចុះ ដើម្បីមើលទំនិញ និងប្រូម៉ូសិនបន្ថែម",
+    "txt_guide4": "អាចជ្រើសរើសមើលទំនិញតម្លៃពិសេសបានតាមរយៈបេនណ័រ",
+
+    "cat_guide1": "ប៉ូតុងមីណុយទិន្ន័យចាក់សោរ រួបរួមសៀវភៅកាត់តាឡុកសម្រាប់អានបែប E-book",
+    "cat_guide2": "ជ្រើសរើកាត់តាឡុកដែលត្រូវការមើល",
+    "cat_guide3": "អូសទៅឆ្វែង/ស្ដាំ ដើម្បីប្តូរទំព័រកាត់តាឡុក",
+    "cat_guide4": "ចុចលើរូបតំណាង ដើម្បីមើលទំព័រផ្សេងទៀត។",
+    "cat_guide5": "ជ្រើសរើសទំព័រកាតាឡុកដែលអ្នកចង់អាន។",
+    "cat_guide6": "ចុច មើលបញ្ចីទំនិញ ដើម្បីមើលមុខទំនិញដែលនៅក្នុងទំព័រកាត់តាឡុក",
+
+    "category_guides": "ប៉ូតុងមីនុយក្រុម អាចជ្រើសរើសរកតាមប្រភេទ ក្រុមនៃទំនិញ",
+    "category_guides2": "ជ្រើសរើសប្រភេទទំនិញ",
+
+    "search_guides": "អាចស្វែងរកបាននៅពាក្យអធិប្បាយ ឬក្រុម",
+
+    "text_member_bottom": "អតិថិជនសមាជិក",
+    "text_special_bottom": "សិទ្ធិពិសេសសម្រាប់សមាជិក",
+
+    "guide_product_category": "ចុចនៅអាយខន ដើម្បីបន្ថែមចូលកន្ត្រក់",
+    "guide_product_category2": "ឬចុចកន្លែងទំនិញ ដើម្បីមើលលម្អិតពីទំនិញ",
+
+    "guide_product_details": "មើលលម្ពិតទំនិញ អាចរើសដាក់កន្ត្រក់បាន",
+    "guide_product_details_add": "អូសឡើង/លើដើម្បីចុះចំនួនទំនិញ \n បន្ទប់មកចុចបញ្ចក់",
+    "guide_product_details_cart": "ទំនិញនឹងត្រូវនាំទៅដាក់កន្ត្រក់",
+
+    "guide_in_cart": "ទំនិញដែលជ្រើសរើស \n នឹងនៅខាងមុខ បញ្ចីមុខទំនិញដែលទិញ",
+    "guide_in_cart2": "អាចបន្ថែម/បន្ថយចំនួនទំនិញបាន",
+    "guide_in_cart3": "ឬលុបទំនិញចេញពីបញ្ចីទំនិញដែលទិញ",
+    "guide_in_cart4": "ចុចបញ្ចក់ ដើម្បីបញ្ចក់ទំនិញបញ្ជាទិញ",
+
+
+    "header_title": "បញ្ជីផលិតផល",
+    "search_title": "ការស្វែងរកផលិតផល",
+    "order_title": "បញ្ជីបញ្ជាទិញ",
+
+
+    "order_product_code": "កូដផលិតផល",
+    "order_quantity": "បរិមាណ",
+    "order_total_price": "សរុប",
+    "order_delete_item": "ចង់លុបផលិតផលនេះទេ?",
+    "order_specify": "សូមបញ្ចូលចំនួនទឹកប្រាក់ដែលអ្នកចង់ទិញ",
+    "order_baht": "បាត",
+    "order_stars": "ดวง",
+    "order_quantitys": "ចំនួន",
+    "order_list": "រាយការ",
+    "order_summary": "សរុប",
+    "order_delevery_cost": "ថ្លៃឈ្នួល​ដឹកជញ្ជូន",
+    "order_discount": "ការបញ្ចុះតម្លៃ",
+    "order_have_point": "អ្នកមានចំណុច",
+    "order_point": "ចំណុច",
+    "order_star_reward": "អ្នកមានរង្វាន់ផ្កាយ",
+    "order_point_used": "ប្រើ",
+    "order_not_used": "កុំប្រើ",
+    "order_choose_delivery": "ការដឹកជញ្ជូន",
+    "order_confirm": "តើអ្នកចង់បញ្ជាទេ?",
+    "order_yes": "បាទ",
+    "order_used_point_discount": "សូមបំពេញចំណុចដែលអ្នកត្រូវការ",
+    "order_used_5point": "៥ ពិន្ទុ ស្មើ ១ បាត",
+    "order_used_over_point": "អ្នកបានបំពេញពិន្ទុច្រើនជាងអាចប្រើបាន",
+    "​​order_choose_delivery": "ជម្រើសដឹកជញ្ជូន",
+
+
+    "home_special_price": "ផលិតផលតម្លៃពិសេស",
+    "home_seemore": "មើល​បន្ថែម​ទៀត",
+    "product_code": "កូដផលិតផល",
+    "product_price": "តម្លៃ",
+    "lb_baht": "បាត",
+    "btn_add_to_cart": "រើសដាក់កន្ត្រក់",
+
+    "login_member_title": "ចូលជាសមាជិក",
+    "login_repcode": "លេខកូដសមាជិក 10 ខ្ទង់",
+    "login_repcode_specify": "បញ្ចូលលេខកូដសមាជិក",
+    "login_tel_label": "លេខទូរស័ព្ទ",
+    "login_tel": "បញ្ចូលលេខទូរស័ព្ទ",
+    "login_to_friday": "ចូល",
+    "login_member_titles": "ជាវ",
+
+    "login_repcode1": "เข้าสู่ระบบ ด้วยรหัสสมาชิก 10 หลัก",
+    "login_phone": "เข้าสู่ระบบด้วย เบอร์โทรศัพท์",
+    "no_member": "ยังไม่ได้เป็นสมาชิก",
+
+    "login_register": "ចុះ​ឈ្មោះ",
+    "login_register2": "ជាវ",
+    "login_member_customer": "ទម្លាប់សមាជិក",
+    "login_view_products": "មើលផលិតផល",
+    "login_register_text": "របៀបចុះឈ្មោះ",
+    "login_register_text_press": "ចុច",
+    "login_register_back": "ត្រឡប់មកវិញ",
+    "popular_words": "ពាក្យពេញនិយម",
+
+    "bt_register": "ចុះឈ្មោះ",
+    "point_rewards": "ស្វែងរកពិន្ទុនិងរង្វាន់",
+    "rewards_member_menu": "ប្រោសលោះរង្វាន់",
+    "reward_info_tab2": "ពិន្ទុ + លុយ",
+
+    "menu_home": "ទំព័រដើម",
+    "menu_catalog": "កាតាឡុក",
+    "menu_category": "ក្រុម",
+    "menu_notify": "ការជូនដំណឹង",
+    "menu_me": "អ្នក",
+
+    "catalog_tab": "កាតាឡុក",
+    "catalog_special_price": "ការបញ្ចុះតម្លៃពិសេស",
+    "catalog_page_number": "ទំព័រ",
+    "catalog_product_list": "មើលបញ្ជីផលិតផល",
+    "catalog_next_page": "ទំ​ព​រ័​បន្ទាប់",
+
+    "search_popular": "ពេញនិយម",
+    "search_category": "ប្រភេទ",
+
+    "me_register": "ចុះឈ្មោះ",
+    "me_member_code": "លេខសមាជិក",
+    "me_phoneNumber": "លេខទូរស័ព្ទ",
+    "me_campaign": "យុទ្ធនាការបច្ចុប្បន្ន",
+    "me_dueDate": "កម៉្មង់ទិញរហូតដល់បច្ចុប្បន្ន",
+    "me_deliveryDate": "កាលបរិច្ឆេទចែកចាយ",
+    "me_currentCampaign": "យុទ្ធនាការបច្ចុប្បន្ន",
+    "me_bw_point": "ប្រមូលពិន្ទុ",
+    "me_about_point": "អំពីពិន្ទុ",
+    "me_time_to_orders": "អ្នកមានពេលបញ្ជាទិញក្នុងលើក",
+    "me_day": "ថ្ងៃ",
+    "me_countDay": "នៅសល់",
+    "me_payment": "សមតុល្យនៅសល់",
+    "me_order": "លំដាប់",
+    "me_delivery": "ស្ថានភាពដឹកជញ្ជូន",
+    "me_purchaseHistory": "លំដាប់​ប្រវត្តិសាស្ត្រ",
+    "me_projectx": "គម្រោងពិសេសរបស់អ្នក",
+    "me_about": "ជំនួយសមាជិក",
+    "me_setting": "អំពី Friday",
+    "me_catalog_customer": "ចែកកាតាឡុកដល់អតិថិជន",
+    "me_share_catalog": "ចុចដើម្បីចែកចាយកាតាឡុក",
+    "me_scan_qrcode": "ស្កេន ខិវអាខូត ដើម្បីទទួលបានកាតាឡុក",
+    "me_share_catalog_btn": "ចុចដើម្បីចែកចាយកាតាឡុក",
+    "me_customer_detail": "ព័ត៌មានបញ្ជីអតិថិជន",
+    "me_shipping_address": "កែសម្រួលអាសយដ្ឋានដឹកជញ្ជូន",
+    "me_change_address1": "កែប្រែអាស័យដ្ឋានដឹកជញ្ជូនចំពោះពេលនេះ",
+    "me_change_address2": "អាសយដ្ឋានដឹកជញ្ជូនថេរ",
+
+    "yupin_market": "ទីផ្សារយូភីន",
+    "direct_million": "ការលក់ដោយផ្ទាល់សម្រាប់រាប់លាន",
+    "bonus_accumulated": "ប្រាក់រង្វាន់បង្គរ",
+    "appointment_madame": "ណាត់ជួបជាមួយលោកជំទាវ",
+    "promotion_million": "ការផ្សព្វផ្សាយរាប់លាន",
+    "millionaire": "ផ្លូវទៅកាន់មហាសេដ្ឋី",
+
+    "me_language": "ភាសា",
+    "language_choose": "សូមជ្រើសរើស",
+
+    "me_instruction": "ការណែនាំសម្រាប់ការប្រើប្រាស់",
+
+    "customer_help": "ជំនួយសមាជិក",
+
+    "me_settings": "រៀបចំ",
+
+    "me_help": "ជួយ",
+    "me_policy_pdpa": "គោលការណ៍​ភាព​ឯកជន",
+    "me_policy_delete_pdpa": "សំណើលុបគណនីសមាជិក",
+
+    "me_version": "កំណែ",
+
+    "title_changeLang": "ភាសា",
+
+    "payment_title": "បង់",
+    "lb_outstanding_balance": "សមតុល្យនៅសល់",
+    "lb_payment_method": "វិធី​សា​ស្រ្ត​ទូទាត់",
+    "lb_specify_amount": "កំណត់ចំនួនទឹកប្រាក់ដែលត្រូវបង់",
+    "tv_balance": "សមតុល្យនៅសល់",
+    "lb_choose_payment_method": "ជ្រើសរើសវិធីបង់ប្រាក់",
+    "lb_qrcode_gen": "QR CODE",
+    "lb_scanPay": "ស្កេនដើម្បីបង់ប្រាក់",
+    "lb_save": "រក្សាទុក",
+
+
+    "title_order_info": "ព័ត៌មានបញ្ជា",
+    "segment_order": "កុម្ម៉ង់ទិញ",
+    "segment_delivery_status": "ស្ថានភាពដឹកជញ្ជូន",
+    "segment_history_buy": "លំដាប់​ប្រវត្តិសាស្ត្រ",
+    "order_show_all": "ទាំងអស់",
+    "order_waiting_approve": "អតិថិជនរង់ចាំយល់ព្រម",
+    "order_approved": "អតិថិជនបានយល់ព្រម",
+    "order_me": "អ្នក",
+    "order_me_customer": "អតិថិជន",
+
+    "order_no": "เลขที่ใบส่งของ ",
+    "history_product": "สินค้า ",
+    "history_list": " รายการ",
+
+    "txt_order_list": "បញ្ជីបញ្ជាទិញរបស់ខ្ញុំ",
+    "txt_see_more": "ព័ត៌មានលម្អិតបន្ថែម",
+    "txt_total_amount": "លំដាប់សរុប",
+    "txt_campaign_no": "យុទ្ធនាការបច្ចុប្បន្ន",
+
+
+    "btn_all_approved": "បានយល់ព្រមទាំងអស់។",
+    "txt_customer_orders": "ការបញ្ជាទិញរបស់អតិថិជន",
+    "txt_cutomer_order_list": "បញ្ជីបញ្ជាទិញរបស់អតិថិជន",
+    "btn_notApprove": "មិន​ត្រូវ​បាន​អនុម័ត",
+    "btn_approved": "អនុម័ត",
+    "btn_approved_successfully": "បានអនុម័តដោយជោគជ័យ",
+    "txt_noti_customer": "ប្រព័ន្ធនឹងជូនដំណឹងអំពីការយល់ព្រមដល់អតិថិជនរបស់អ្នក។",
+    "txt_order_date": "កាល​បរិច្ឆេទ​បញ្ជា​ទិញ",
+
+
+    "customer_code": "លេខ​សម្គាល់​អតិថិជន",
+    "customer_tel": "លេខ​ទូរ​សព្ទ​ចល័ត",
+    "members_customer": "ព័ត៌មានភ្នាក់ងា",
+    "msl_name": "ឈ្មោះ",
+    "customer_about_reward": "អំពីពិន្ទុ",
+    "customer_reward": "រង្វាន់",
+    "customer_order_all": "ទាំងអស់។",
+    "customer_waiting_approve": "រង់ចាំការអនុម័ត",
+    "customer_approved": "អនុម័ត",
+
+
+    "customer_total": "ប្រាក់សរុប",
+    "use_start_reward": "ប្រើរង្វាន់ផ្កាយ",
+    "total_price_after_discount": "ការទូទាត់បន្ទាប់ពីការបញ្ចុះតម្លៃ",
+    "start_received_campiagn": "តារាដែលត្រូវរកបានក្នុងជុំនេះ។",
+    "start_quantity": "បរិមាណ",
+    "campaign": "យុទ្ធនាការ",
+    "star_reward_specify": "សូមបញ្ជាក់ចំនួន Star Rewards ដែលអ្នកចង់ប្រើ។",
+    "star_reward_exceeded": "អ្នកបានលើសពីចំនួន Star Rewards ដែលមានសម្រាប់អ្នក។",
+    "alert_please_register": "សូមចុះឈ្មោះមុននឹងធ្វើការបញ្ជាទិញ។",
+
+
+    "title_order_detail_view": "ព័ត៌មានលម្អិតបញ្ជាទិញ",
+    "txt_product": "ទំនិញ",
+    "txt_delete_all": "លុប​ទាំងអស់",
+    "txt_delete_item": "លុប",
+    "txt_quantity": "បរិមាណ",
+    "txt_normal_price": "តម្លៃធម្មតា។",
+    "txt_confirm_edit": "បញ្ជាក់",
+    "txt_total_price": "សរុប",
+
+
+    "point_titleView": "ពិន្ទុបង្គរ",
+    "point_text": "ចំណុច",
+
+
+    "delivery_codition": "លក្ខខណ្ឌដឹកជញ្ជូន",
+
+
+    "alert_title": "តើ​អ្នក​ប្រាកដ​ឬ​អត់?",
+    "alert_details": "ចុច បញ្ជាក់ ដើម្បីលុបធាតុនេះ។",
+    "alert_cancel": "បោះបង់",
+    "alert_confirm": "បញ្ជាក់",
+    "alert_register_before": "សូមចុះឈ្មោះមុននឹងធ្វើការបញ្ជាទិញ។",
+    "alert_add_to_cart": "បន្ថែមទៅរទេះ",
+    "alert_no_data": "រក​មិន​ឃើញ",
+    "alert_no_product": "មិនមានផលិតផលនៅក្នុងរទេះរបស់អ្នកទេ។",
+    "alert_error_sendingdata": "មាន​បញ្ហា​ក្នុង​ការ​ផ្ញើ​ទិន្នន័យ។",
+    "alert_error_sendingdata_header": "សូមពិនិត្យមើលការតភ្ជាប់អ៊ីនធឺណិតរបស់អ្នក។ ហើយព្យាយាមម្តងទៀត",
+    "alert_order_confirm_buy": "តើអ្នកចង់កម៉្មង់ទិញឬទេ",
+    "alert_order_confirm_buy_ok": "កម៉្មង់ទិញ",
+    "alert_no_datas": "គ្មាន​ទិន្នន័យ",
+
+
+    "alert_edit_order": "សូមបញ្ជាក់ចំនួនដែលអ្នកចង់បាន។",
+    "alert_specify_number": "បំពេញលេខ",
+    "alert_close": "ជិត",
+    "alert_edit_completed": "កែសម្រួលជោគជ័យ",
+    "alert_okay": "យល់ព្រម",
+    "alert_confirm_delete": "តើអ្នកប្រាកដថាចង់លុបចោលការបញ្ជាទិញរបស់អតិថិជននេះទេ?",
+    "lb_dis_count": "ការបញ្ចុះតម្លៃគូប៉ុង",
+    "lb_start_reward": "ការបញ្ចុះតម្លៃពិន្ទុ",
+
+    "coupon_me": "គូប៉ង់របស់ខ្ញុំ",
+    "coupon_use": "ប្រើប័ណ្ណ",
+    "coupon_detail": "លម្អិតបន្ថែមទៀត",
+    "do_you_want_to_use": "តើអ្នកចង់ប្រើគូប៉ុងទេ?",
+    "coupon_used": "ប័ណ្ណដែលបានប្រើ",
+
+    "deliver_according_sales": "ការដឹកជញ្ជូនតាមវដ្តនៃការលក់",
+    "order_summary_title": "សេចក្តីសង្ខេបនៃការបញ្ជាទិញ",
+    "all_products_included": "ផលិតផលទាំងអស់រួមបញ្ចូល",
+    "total_orders": "សរុប",
+    "choice_delivery": "ជម្រើសចែកចាយ",
+    "order_qty": "ស្មើនឹង",
+    "tittle_input_point": "សូមបញ្ជាក់ចំនួនចំណុចដែលអ្នកចង់ប្រើ។",
+    "fill_in_score": "បំពេញពិន្ទុ",
+    "loading_cart": "កំពុង​ផ្ទុក",
+    "shipping_details": "ព័ត៌មានលម្អិតអំពីការដឹកជញ្ជូនÍ",
+    "shipping_cost": "ថ្លៃឈ្នួល​ដឹកជញ្ជូន",
+    "detail_header_bill": "ព័ត៌មានលម្អិត",
+    "have_point": "អ្នក​មាន",
+    "have_starts": "អ្នក​មាន Star Reward",
+    "payment": "ការទូទាត់",
+    "coupon_detail_click": "ព័ត៌មានលម្អិត / កិច្ចព្រមព្រៀង",
+    "total_prices": "តម្លៃ​សរុប",
+    "tab_text_friday_direct_sales": "ฟรายเดย์ขายตรง",
+    "tab_text_express_delivery": "สินค้าส่งด่วน",
+    "equal_to": "ស្មើនឹង",
+    "view_status_shop": "អ្នកអាចមើលស្ថានភាពនៅ ការបញ្ជាទិញឬស្ថានភាពដឹកជញ្ជូន",
+    "note": "ចំណាំ",
+    "product_cycle": "វដ្តផលិតផល",
+    "total_product": "ផលិតផលសរុប",
+    "cycle": "វដ្ត",
+    "recurring_payment": "ការទូទាត់ឡើងវិញ",
+    "delivery_members": "ក្រុមហ៊ុនដឹកជញ្ជូនតាមវដ្តនៃសមាជិក",
+    "my_review": "ការពិនិត្យរបស់ខ្ញុំ",
+    "limited_stock": "ស្តុកមានកំណត់",
+    "out_stock": "អស់ពីស្តុក",
+    "temporarily_out_stock": "សូមអភ័យទោស ផលិតផលនេះអស់ស្តុកជាបណ្ដោះអាសន្ន។",
+    "label_name": "ឈ្មោះ-នាមត្រកូលរបស់អ្នកទទួលផលិតផល",
+    "label_address": "លេខផ្ទះ/ឈ្មោះអគារ/ភូមិ",
+    "label_subdis": "ឃុំ/សង្កាត់",
+    "label_dis": "ស្រុក/ស្រុក",
+    "label_province": "ខេត្ត",
+    "label_postcode": "លេខ​កូដ​តំបន់",
+    "please_input": "សូម​បញ្ជាក់​អោយ​ច្បាស់"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

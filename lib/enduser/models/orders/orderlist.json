@@ -1,0 +1,39 @@
+{
+  "code": "100",
+  "data": [
+    {
+      "order_id": 230,
+      "order_status": {
+        "color_code": "B",
+        "description": "เตรียมจัดส่ง"
+      },
+      "shop_info": {
+        "icon": "",
+        "shop_id": 2,
+        "shop_code": "23001",
+        "shop_name": "BIG MOSS"
+      },
+      "item_groups": [
+        {
+          "product_id": 1,
+          "product_name": "",
+          "item_id": 6,
+          "item_name": "",
+          "image": "https://s3.catalog-yupin.com/b2c/product/no-image/no-image.jpg",
+          "amount": 1,
+          "have_discount": true,
+          "price": 32,
+          "price_before_discount": 35,
+          "order_price": 32
+        }
+      ],
+      "summary": {
+        "product_count": 1,
+        "subtotal": 32,
+        "final_total": 32
+      },
+      "review_status": 0
+    }
+  ],
+  "message": "success"
+}

@@ -1,0 +1,22 @@
+{
+  "code": "100",
+  "data": [
+    {
+      "content_id": 1086,
+      "content_name": "Test Program No member id",
+      "action_type": 1,
+      "action_value": "https://www.w3schools.com/excel/index.php?cust_id=16",
+      "image": "https://s3.catalog-yupin.com/b2c/contents/2025/10408/web_20250218153946_1.jpg",
+      "image_desktop": "https://s3.catalog-yupin.com/b2c/contents/2025/10408/mobile_20250218153946_1.jpg"
+    },
+    {
+      "content_id": 1084,
+      "content_name": "Test Program",
+      "action_type": 1,
+      "action_value": "https://www.w3schools.com/excel/index.php?cust_id=16",
+      "image": "https://s3.catalog-yupin.com/b2c/contents/2025/10408/web_20250218153946_1.jpg",
+      "image_desktop": "https://s3.catalog-yupin.com/b2c/contents/2025/10408/mobile_20250218153946_1.jpg"
+    }
+  ],
+  "message": "success"
+}

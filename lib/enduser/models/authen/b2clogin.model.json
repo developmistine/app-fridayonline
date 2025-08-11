@@ -1,0 +1,10 @@
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzg5Nzc1NjcsIm5hbWUiOiJxd2VydHl1bnNrYWJma0JKRlVLQUdEQkpXMjM0NSM1TVx1MDAzY0JDU0kiLCJ0eXBlIjoiRkIifQ.zeHnFIYuZEFEVaPOzGizD481y25IHAtanLAdgXpmQWg",
+  "code": "100",
+  "data": {
+      "cust_id": 1,
+      "display_name": "ธชยกร"
+  },
+  "message": "1",
+  "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzk0OTU5NjcsIm5hbWUiOiJxd2VydHl1bnNrYWJma0JKRlVLQUdEQkpXMjM0NSM1TVx1MDAzY0JDU0kiLCJzdWIiOiI0Mzc5ZjYyZS04NmJlLTRjYWItOTliYS1mOGZkNzdlNGEzNGEiLCJ0eXBlIjoiRkIifQ.04KV-DXkZ3HDH7oprDdKZFtC77fTjDlCpImuPDuJMDU"
+}

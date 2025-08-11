@@ -1,0 +1,83 @@
+{
+  "code": "100",
+  "data": {
+    "item_summary": {
+      "total_rating": 4.4,
+      "rating_count": [0, 0, 0, 1, 2],
+      "count_review": 3
+    },
+    "ratings": [
+      {
+        "cust_id": 2,
+        "cust_name": "big_moss",
+        "cust_image": "",
+        "rating_star": 4.5,
+        "like_counts": 0,
+        "comment": "ใช้ดีจริงซื้อมาใช้เองคุณภาพดีเหมาะกับเศรฐกิจยุคนี้",
+        "option": "ดำ",
+        "cre_date": "",
+        "qty": 1,
+        "detail_rating": {
+          "product_quality": 4.5,
+          "delivery_service": 4
+        },
+        "rating_reply": {
+          "shop_id": 0,
+          "comment": ""
+        },
+        "images": [
+          "https://slp-statics.astockcdn.net/static_assets/staging/22spring/free/browse-vector-categories-collections/Card4_399895799.jpg?width=580&format=webp",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3kCrw3N9kzVNr-DwA0j-TGy80yQZrdOTAbQ&s",
+          "https://media.istockphoto.com/id/843620212/vector/free-comic-book-style-word-on-a-blue-green-background-free-banner-in-pop-art-comic-style.jpg?s=612x612&w=0&k=20&c=BxRw-cn4zNuZn_R5FWU6ZoNAu2eCH9Nv3FsOWsufE7A="
+        ]
+      },
+      {
+        "cust_id": 3,
+        "cust_name": "big_moss",
+        "cust_image": "",
+        "rating_star": 5,
+        "like_counts": 0,
+        "comment": "ราคาย่อมเยาว์ใช้ดีจริงซื้อมาใช้เองคุณภาพดีเหมาะกับเศรฐกิจยุคนี้",
+        "option": "ดำ",
+        "cre_date": "",
+        "qty": 4,
+        "detail_rating": {
+          "product_quality": 5,
+          "delivery_service": 4
+        },
+        "rating_reply": {
+          "shop_id": 0,
+          "comment": ""
+        },
+        "images": [""],
+        "videos": ["https://www.w3schools.com/html/mov_bbb.mp4"]
+      },
+      {
+        "cust_id": 2,
+        "cust_name": "bm_ck",
+        "cust_image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/images-profile/1/20241129103155_3094775504.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241211%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241211T082845Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=29e0973df07137e389feeae7d0292a32eefccc884366a4a1f6f994d32d598b82",
+        "rating_star": 3.5,
+        "like_counts": 0,
+        "comment": "ราคาย่อมเยาว์ใช้ดีจริงซื้อมาใช้เองคุณภาพดีเหมาะกับเศรฐกิจยุคนี้",
+        "option": "ฟ้า",
+        "cre_date": "",
+        "qty": 3,
+        "detail_rating": {
+          "product_quality": 3.5,
+          "delivery_service": 4
+        },
+        "rating_reply": {
+          "shop_id": 0,
+          "comment": ""
+        },
+        "images": [
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzk92qOx7c5k5fybjVbUkwg6BGW_ptjgID9A&s"
+        ],
+        "videos": [
+          "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4"
+        ]
+      }
+    ]
+  },
+  "message": "success"
+}

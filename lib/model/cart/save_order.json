@@ -1,0 +1,11 @@
+{
+  "Value": {
+      "success": "1",
+      "ordernumber": "2023012541-8",
+      "description": {
+          "MsgAlert1": " บันทึกรายการสั่งซื้อสำเร็จ",
+          "MsgAlert2": "",
+          "MsgAlert3": ""
+      }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "code": "100",
+  "data": [
+    {
+      "content_id": 1,
+      "action_type": 1,
+      "action_value": "",
+      "content_name": "Banner1",
+      "start_date": "2024-12-09T13:58:50Z",
+      "end_date": "2025-01-09T13:58:50Z",
+      "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/contents/banner/2024/banner-slide1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241213%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241213T072054Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=e200919d361ffcd82b999b16bca7de29ec636aaefe27e9f4055a05165315d8ac"
+    },
+    {
+      "content_id": 2,
+      "action_type": 2,
+      "action_value": "972",
+      "content_name": "Banner2",
+      "start_date": "2024-12-09T13:58:50Z",
+      "end_date": "2025-01-09T13:58:50Z",
+      "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/contents/banner/2024/banner-slide2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241213%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241213T072054Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=2c81340b8af023b7a23bcb9cbc2685bfc4d8710f9c0e36ecfe554eec52e912f8"
+    },
+    {
+      "content_id": 3,
+      "action_type": 3,
+      "action_value": "27",
+      "content_name": "Banner3",
+      "start_date": "2024-12-09T13:58:50Z",
+      "end_date": "2025-01-09T13:58:50Z",
+      "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/contents/banner/2024/banner-slide3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241213%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241213T072054Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=e3c48d1b988566efa1c3e08b2f246d699f5a4d158499068643d27c6d67f3c12a"
+    },
+    {
+      "content_id": 4,
+      "action_type": 0,
+      "action_value": "",
+      "content_name": "Banner4",
+      "start_date": "2024-12-09T13:58:50Z",
+      "end_date": "2025-01-09T13:58:50Z",
+      "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/contents/banner/2024/banner-slide4.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241213%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241213T072054Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=8d4beca6d1a33790b668159553722adb9c0f95afc7713faa9f824125a293f341"
+    }
+  ],
+  "message": "success"
+}

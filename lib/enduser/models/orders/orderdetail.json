@@ -1,0 +1,84 @@
+{
+  "code": "100",
+  "data": {
+    "order_id": 1,
+    "order_no": "2501PYT001",
+    "order_status": {
+      "color_code": "B",
+      "description": "ที่ต้องจัดส่ง"
+    },
+    "shipping_info": {
+      "tracking_no": "TH0987654321",
+      "tracking_info": [
+        {
+          "driver_phone": "",
+          "driver_name": "",
+          "description": "พัสดุถูกจัดส่งสำเร็จแล้ว",
+          "receiver_name": "",
+          "date_time": "2025-01-15T05:55:00Z",
+          "milestone": {
+            "image": "https://cf.shopee.co.th/file/delivered_parcel_active_3x",
+            "text": "การจัดส่งสำเร็จ",
+            "color": "G"
+          }
+        }
+      ]
+    },
+    "address": {
+      "shipping_name": "moss",
+      "shipping_phone": "0879876532",
+      "shipping_address": "34 betterway  เขาใหญ่ เมืองกำแพงเพชร กระบี่ 12342"
+    },
+    "shop_info": {
+      "icon": "",
+      "shop_id": 23001,
+      "shop_code": "",
+      "shop_name": ""
+    },
+    "item_groups": [
+      {
+        "product_id": 1,
+        "product_name": "ผ้าไมโคร",
+        "item_id": 6,
+        "item_name": "ขาว,80 ไมครอน",
+        "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/200705_1911060610664_20211029105000_t.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20250205%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250205T083448Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=02fd40b4995edbe2e97c50ec471e0edaba28e5d326fff2716da60f8f622a1335",
+        "amount": 1,
+        "price": 32,
+        "price_before_discount": 35,
+        "order_price": 32
+      }
+    ],
+    "payment_info": {
+      "final_total": 159,
+      "amount_paid": 159,
+      "info": [
+        {
+          "text": "รวมค่าสินค้า",
+          "value": 225
+        },
+        {
+          "text": "ค่าจัดส่ง",
+          "value": 50
+        },
+        {
+          "text": "ใช้โค้ด Platform แล้ว",
+          "value": -58
+        },
+        {
+          "text": "ใช้โค้ดส่วนลดของร้านค้า",
+          "value": -58
+        },
+        {
+          "text": "รวมการสั่งซื้อ",
+          "value": 159
+        }
+      ],
+      "payment_method": {
+        "payment_method": 1,
+        "payment_channel_name": "COD"
+      }
+    },
+    "can_cancel": true
+  },
+  "message": "success"
+}

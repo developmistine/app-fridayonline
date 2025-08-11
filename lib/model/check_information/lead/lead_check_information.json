@@ -1,0 +1,39 @@
+{
+    "OrderEndUser": {
+        "OrderHeader": {
+            "HeaderList": {
+                "EnduserID": "5902490",
+                "EnduserTel": "5555555555",
+                "EnduserName": "เเเ ดดด",
+                "RepCode": "5902490",
+                "UserType": "GC",
+                "Header": [{
+                    "OrderNo": "1",
+                    "OrderDate": "20221006",
+                    "OrderTime": "01:08:19",
+                    "TotalItems": "2",
+                    "TotalDiscount": "0",
+                    "TotalAmount": "1079",
+                    "Listdetail": [{
+                        "Listno": "1",
+                        "BillCode": "24851",
+                        "BillDesc": "รี-สกิน เฟิร์ส สเต็ป เซรั่ม  55 มล.",
+                        "PathImg": "https://s3.catalog-yupin.com/MistineImages/products/35219.jpg.webp",
+                        "Qty": "1",
+                        "Price": "990",
+                        "Amount": "990",
+                        "Brand": "10"
+                    }],
+                    "footer": {
+                        "Items": "2",
+                        "Totalall": "1079",
+                        "CouponDiscount": "0",
+                        "Stradiscount": "0",
+                        "Totalbalance": "1079",
+                        "StraRecive": "21"
+                    }
+                }]
+            }
+        }
+    }
+}

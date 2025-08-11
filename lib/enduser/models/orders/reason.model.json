@@ -1,0 +1,36 @@
+{
+  "code": "100",
+  "data": [
+    {
+      "cancel_id": 10461,
+      "cancel_reason": "สินค้าหมดสต็อก",
+      "note_flag": false
+    },
+    {
+      "cancel_id": 10462,
+      "cancel_reason": "เปลี่ยนใจไม่ต้องการสินค้า",
+      "note_flag": false
+    },
+    {
+      "cancel_id": 10463,
+      "cancel_reason": "เวลาจัดส่งไม่เหมาะสม",
+      "note_flag": false
+    },
+    {
+      "cancel_id": 10464,
+      "cancel_reason": "สั่งซื้อผิดรายการหรือจำนวน",
+      "note_flag": false
+    },
+    {
+      "cancel_id": 10465,
+      "cancel_reason": "ระบบเว็บไซต์มีปัญหา",
+      "note_flag": false
+    },
+    {
+      "cancel_id": 10466,
+      "cancel_reason": "พบสินค้าราคาถูกกว่า",
+      "note_flag": false
+    }
+  ],
+  "message": "success"
+}

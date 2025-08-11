@@ -1,0 +1,12 @@
+{
+  "Value": {
+      "success": "1",
+      "Description": {
+          "Msg": {
+              "MsgAlert1": "ลบข้อมูลลูกค้าสำเร็จ",
+              "MsgAlert2": "",
+              "MsgAlert3": ""
+          }
+      }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "code": "100",
+  "data": [
+    {
+      "icon": "",
+      "shop_id": 23001,
+      "shop_name": "ไม่มีชื่อร้าน",
+      "detail": [
+        {
+          "cart_id": 3,
+          "product_id": 1,
+          "product_name": "ผ้าไมโคร",
+          "have_discount": true,
+          "discount": 10.1,
+          "price": 23.4,
+          "price_before_discount": 35.2,
+          "product_qty": 800.3,
+          "product_image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/%E0%B9%84%E0%B8%9F%E0%B8%A5%E0%B9%8C_001-1_t.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241220%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241220T072026Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=5f21de8df34dfe9909099200cc6db25e55eab2fa1da2a0dc5bbb29970d2b7a47",
+          "select_item": "ดำ, 80 ไมครอน",
+          "select_item_id": 1,
+          "tier_variations": ["ดำ", "80 ไมครอน"]
+        },
+        {
+          "cart_id": 4,
+          "product_id": 1,
+          "product_name": "ผ้าไมโคร",
+          "have_discount": false,
+          "discount": 0,
+          "price": 0,
+          "price_before_discount": 60.0,
+          "product_qty": 800.0,
+          "product_image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/fox-2_t.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241220%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241220T072026Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=5564d4bc1e8fc47245ac8a838849201bfd0e7c1b5aa7448a986fa13970d28740",
+          "select_item": "ดำ, 150 ไมครอน กว้าง 4M",
+          "select_item_id": 4,
+          "tier_variations": ["ดำ", "150 ไมครอน กว้าง 4M"]
+        },
+        {
+          "cart_id": 1,
+          "product_id": 1,
+          "product_name": "ผ้าไมโคร",
+          "have_discount": false,
+          "discount": 0,
+          "price": 0,
+          "price_before_discount": 45.0,
+          "product_qty": 1000.0,
+          "product_image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/fox-2_t.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241220%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241220T072026Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=5564d4bc1e8fc47245ac8a838849201bfd0e7c1b5aa7448a986fa13970d28740",
+          "select_item": "ดำ, 120 ไมครอน",
+          "select_item_id": 2,
+          "tier_variations": ["ดำ", "120 ไมครอน"]
+        },
+        {
+          "cart_id": 2,
+          "product_id": 1,
+          "product_name": "ผ้าไมโคร",
+          "have_discount": true,
+          "discount": 30,
+          "price": 32,
+          "price_before_discount": 55.0,
+          "product_qty": 1000.0,
+          "product_image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/fox-2_t.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241220%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241220T072026Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=5564d4bc1e8fc47245ac8a838849201bfd0e7c1b5aa7448a986fa13970d28740",
+          "select_item": "ดำ, 150 ไมครอน",
+          "select_item_id": 3,
+          "tier_variations": ["ดำ", "150 ไมครอน"]
+        },
+        {
+          "cart_id": 5,
+          "product_id": 1,
+          "product_name": "ผ้าไมโคร",
+          "have_discount": false,
+          "discount": 0,
+          "price": 0,
+          "price_before_discount": 45.0,
+          "product_qty": 200.0,
+          "product_image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/fox-2_t.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241220%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241220T072026Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=5564d4bc1e8fc47245ac8a838849201bfd0e7c1b5aa7448a986fa13970d28740",
+          "select_item": "ขาว, 120 ไมครอน",
+          "select_item_id": 7,
+          "tier_variations": ["ขาว", "120 ไมครอน"]
+        }
+      ],
+      "bundle_deal_info": {
+        "bundle_deal_id": 0,
+        "bundle_deal_label": "",
+        "start_time": "",
+        "end_time": ""
+      },
+      "max_voucher": ""
+    }
+  ],
+  "message": "success"
+}

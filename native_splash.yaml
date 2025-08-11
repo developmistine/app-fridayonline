@@ -1,0 +1,16 @@
+flutter_native_splash:
+  android: true
+  ios: true
+  web: false
+
+
+  color: "#00adef"
+  image: "assets/images/b2c/logo/f_fair2.png"
+
+  android_12:
+    image: "assets/splash.png"
+    color: "#00adef"
+    android_gravity: center
+    icon_background_color: "#ffffff"
+    fullscreen: true
+    

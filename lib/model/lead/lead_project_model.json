@@ -1,0 +1,14 @@
+{
+    "LeadProgram": [
+        {
+            "ID": "500",
+            "Text": "สมัครสมาชิกที่ฟรายเดย์",
+            "isSaveImage": false
+        },
+        {
+            "ID": "518",
+            "Text": "โครงการนักศึกษา",
+            "isSaveImage": true
+        }
+    ]
+}

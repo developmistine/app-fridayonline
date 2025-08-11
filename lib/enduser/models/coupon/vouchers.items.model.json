@@ -1,0 +1,176 @@
+{
+  "code": "100",
+  "data": {
+    "group_name": "โค้ดส่งฟรี",
+    "image": "",
+    "voucher_type": [
+      {
+        "group_type": 2,
+        "group_type_text": "ค่าส่วนลดจัดส่ง",
+        "vouchers": [
+          {
+            "coupon_id": 93,
+            "coupon_code": "",
+            "shop_id": 0,
+            "is_shop_official": false,
+            "title": "ERP coupon",
+            "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/coupon/2024/09937_20241204175536_1.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241227%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241227T091402Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=ac60ebb0d07048c3a11fcec5f092d87e2895efbdedf9f42af5249708c0cd7a34",
+            "reward_info": {
+              "min_spend": 150,
+              "discount_value": 0,
+              "discount_percentage": 0,
+              "discount_cap": 500,
+              "current_spend": 0
+            },
+            "time_info": {
+              "start_time": "25/12/2024 00:00:00",
+              "start_time_format": "",
+              "end_time": "31/12/2024 00:00:00",
+              "end_time_format": "ใช้ได้ถึง 31 ธ.ค.",
+              "claim_start_time": "25/12/2024 00:00:00",
+              "claim_end_time": "31/12/2024 00:00:00",
+              "valid_days": 6,
+              "has_expired": false
+            },
+            "quota_info": {
+              "percentage_claimed": 0,
+              "percentage_used": 0,
+              "quota_type": 0,
+              "fully_claimed": false,
+              "fully_used": false
+            },
+            "labels": [],
+            "scope_tags": [],
+            "user_status": {
+              "is_claimed_before": false,
+              "is_used_before": false
+            }
+          }
+        ],
+        "total_count": 1
+      },
+      {
+        "group_type": 3,
+        "group_type_text": "ค่าส่วนลดร้านค้า",
+        "vouchers": [
+          {
+            "coupon_id": 94,
+            "coupon_code": "",
+            "shop_id": 23001,
+            "is_shop_official": false,
+            "title": "ERP coupon",
+            "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/coupon/2024/02723_20241206102457_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241227%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241227T091402Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=6e4be8aa41636ad065d3ec6af98b9f00880601713e8c6720debcfd8585201ec2",
+            "reward_info": {
+              "min_spend": 100,
+              "discount_value": 0,
+              "discount_percentage": 0,
+              "discount_cap": 500,
+              "current_spend": 0
+            },
+            "time_info": {
+              "start_time": "27/12/2024 18:00:00",
+              "start_time_format": "",
+              "end_time": "31/12/2024 00:00:00",
+              "end_time_format": "ใช้ได้ถึง 31 ธ.ค.",
+              "claim_start_time": "27/12/2024 18:00:00",
+              "claim_end_time": "31/12/2024 00:00:00",
+              "valid_days": 3,
+              "has_expired": false
+            },
+            "quota_info": {
+              "percentage_claimed": 0,
+              "percentage_used": 0,
+              "quota_type": 0,
+              "fully_claimed": false,
+              "fully_used": false
+            },
+            "labels": [],
+            "scope_tags": [],
+            "user_status": {
+              "is_claimed_before": false,
+              "is_used_before": false
+            }
+          },
+          {
+            "coupon_id": 96,
+            "coupon_code": "",
+            "shop_id": 23001,
+            "is_shop_official": false,
+            "title": "[test] ส่วนลดค่าจัดส่ง 2",
+            "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/coupon/2024/02723_20241206102457_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241227%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241227T091402Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=6e4be8aa41636ad065d3ec6af98b9f00880601713e8c6720debcfd8585201ec2",
+            "reward_info": {
+              "min_spend": 350,
+              "discount_value": 20,
+              "discount_percentage": 0,
+              "discount_cap": 300,
+              "current_spend": 0
+            },
+            "time_info": {
+              "start_time": "25/12/2024 00:00:00",
+              "start_time_format": "",
+              "end_time": "28/12/2024 00:00:00",
+              "end_time_format": "ใช้ได้ถึง 28 ธ.ค.",
+              "claim_start_time": "25/12/2024 00:00:00",
+              "claim_end_time": "28/12/2024 00:00:00",
+              "valid_days": 3,
+              "has_expired": false
+            },
+            "quota_info": {
+              "percentage_claimed": 0,
+              "percentage_used": 0,
+              "quota_type": 0,
+              "fully_claimed": false,
+              "fully_used": false
+            },
+            "labels": [],
+            "scope_tags": [],
+            "user_status": {
+              "is_claimed_before": false,
+              "is_used_before": false
+            }
+          },
+          {
+            "coupon_id": 97,
+            "coupon_code": "",
+            "shop_id": 23001,
+            "is_shop_official": false,
+            "title": "[test] ส่วนลดค่าจัดส่ง 3",
+            "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/coupon/2024/02723_20241206102457_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241227%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241227T091402Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=6e4be8aa41636ad065d3ec6af98b9f00880601713e8c6720debcfd8585201ec2",
+            "reward_info": {
+              "min_spend": 200,
+              "discount_value": 0,
+              "discount_percentage": 20,
+              "discount_cap": 400,
+              "current_spend": 0
+            },
+            "time_info": {
+              "start_time": "01/01/2025 00:00:00",
+              "start_time_format": "",
+              "end_time": "30/01/2025 00:00:00",
+              "end_time_format": "ใช้ได้ถึง 30 ม.ค.",
+              "claim_start_time": "01/01/2025 00:00:00",
+              "claim_end_time": "30/01/2025 00:00:00",
+              "valid_days": 29,
+              "has_expired": false
+            },
+            "quota_info": {
+              "percentage_claimed": 0,
+              "percentage_used": 0,
+              "quota_type": 0,
+              "fully_claimed": false,
+              "fully_used": false
+            },
+            "labels": [],
+            "scope_tags": [],
+            "user_status": {
+              "is_claimed_before": false,
+              "is_used_before": false
+            }
+          }
+        ],
+        "total_count": 3
+      }
+    ]
+  },
+  "message": "success"
+}

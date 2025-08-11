@@ -1,0 +1,23 @@
+{
+  "skucode": [
+    {
+      "Campaign": "142022",
+      "billCode": "91995",
+      "brand": "1",
+      "MediaCode": "50",
+      "sku": "43072",
+      "name": "พู่กันทาปาก บิวตี้",
+      "category_id": "03",
+      "img": "https://s3.catalog-yupin.com/MistineImages/products/161482832848646340343072.jpg.webp",
+      "price": "69",
+      "special_price": "69",
+      "BillColor": "black",
+      "UserType": "9",
+      "is_in_stock": true,
+      "LimitDescription": "",
+      "ImgAppend": "https://s3.catalog-yupin.com/Images/outOfStock.webp",
+      "flagNetPrice": "N",
+      "imgNetPrice": "https://s3.catalog-yupin.com/Images/totalPrice.webp"
+    }
+  ]
+}

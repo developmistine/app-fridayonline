@@ -1,0 +1,37 @@
+{
+    "RepCode": "0198153813",
+    "RepSeq": "12176623",
+    "RepType": "2",
+    "ImageProductDetail": [
+        {
+            "ListShowImg": "1",
+            "PathImg": "https://s3.catalog-yupin.com/MistineImages/products/1625452058119889021848007.jpg.webp"
+        }
+    ],
+    "DescriptionProduct": [
+        {
+            "MediaCode": "01",
+            "billcode": "76325",
+            "BillColor": "black",
+            "FsCode": "48007",
+            "FS_CODETEMP": "48007",
+            "FsName": "แปรงผมใหญ่ด้ามขาว",
+            "skuName": "แปรงผมใหญ่ด้ามขาว",
+            "special_price": "79",
+            "Description": "",
+            "shortDescription": "",
+            "pathUrl": "https://b2c.mistine.com/sku-product-yup?FSCODE=48007&CATE_CAMP=162022&MEDIA=01&BRAND=10&Bill_YUP=76325&RepCode=0198153813&RepSeq=12176623&RepType=2&language=TH&type_flash=1&type_flash_stock=1",
+            "img": "https://s3.catalog-yupin.com/MistineImages/products/1625452058119889021848007.jpg.webp",
+            "Campaign": "162022",
+            "brand": "10",
+            "is_in_stock": true,
+            "LimitDescription": "",
+            "skukhmerlanguage": null,
+            "skuburmeselanguage": null,
+            "descriptionkhmerlanguage": null,
+            "shortdescriptionkhmerlanguage": null,
+            "descriptionburmeselanguage": null,
+            "shortdescriptionburmeselanguage": null
+        }
+    ]
+}

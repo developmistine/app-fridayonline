@@ -1,0 +1,18 @@
+{
+  "EcatalogDetail": [
+    {
+      "id": "786",
+      "Campaign": "202216",
+      "Brand": "10",
+      "Media": "01",
+      "PageDetail": "001",
+      "PathImg": "https://s3.catalog-yupin.com/MistineImages/IMGCat/img/Page/202216/10/01/media01mistine202216_001.jpg.webp",
+      "Locationpage": "R",
+      "FlagStatus": "1",
+      "IsShowPageNumber": true,
+      "FlagViewProduct": "Y",
+      "CountBill": "1",
+      "FsCodeStatus": ""
+    }
+  ]
+}

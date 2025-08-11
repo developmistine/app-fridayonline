@@ -1,0 +1,48 @@
+{
+    "code": "100",
+    "data": [
+        {
+            "id": 6,
+            "name": "moss cc",
+            "phone": "0999009533",
+            "country": "TH",
+            "state": "กระบี่",
+            "city": "สรรพยา",
+            "address": "19 gg  เกาะลันตาใหญ่ สรรพยา กระบี่ 10240",
+            "status": 1,
+            "zipcode": "10240",
+            "district": "เกาะลันตาใหญ่",
+            "label": "บ้าน",
+            "is_delivery_address": true
+        },
+        {
+            "id": 7,
+            "name": "papimpat nimprasert",
+            "phone": "0943327770",
+            "country": "TH",
+            "state": "กระบี่",
+            "city": "สรรพยา",
+            "address": "this is dummy address  เกาะลันตาใหญ่ สรรพยา กระบี่ 10240",
+            "status": 1,
+            "zipcode": "10240",
+            "district": "เกาะลันตาใหญ่",
+            "label": "บ้าน",
+            "is_delivery_address": false
+        },
+        {
+            "id": 8,
+            "name": "run dev",
+            "phone": "0826742302",
+            "country": "TH",
+            "state": "กระบี่",
+            "city": "สรรพยา",
+            "address": "19/1  เกาะลันตาใหญ่ สรรพยา กระบี่ 10240",
+            "status": 1,
+            "zipcode": "10240",
+            "district": "เกาะลันตาใหญ่",
+            "label": "ที่ทำงาน",
+            "is_delivery_address": false
+        }
+    ],
+    "message": "success"
+}

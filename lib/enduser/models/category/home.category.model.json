@@ -1,0 +1,153 @@
+{
+  "code": "100",
+  "data": [
+    {
+      "catid": 847,
+      "name": "สกินแคร์",
+      "display_name": "สกินแคร์",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/847.jpg",
+      "level": 2
+    },
+    {
+      "catid": 848,
+      "name": "เครื่องสำอาง",
+      "display_name": "เครื่องสำอาง",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/848.jpg",
+      "level": 2
+    },
+    {
+      "catid": 850,
+      "name": "อุปกรณ์เสริมสวย",
+      "display_name": "อุปกรณ์เสริมสวย",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/850.jpg",
+      "level": 2
+    },
+    {
+      "catid": 852,
+      "name": "น้ำหอม",
+      "display_name": "น้ำหอม",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/852.jpg",
+      "level": 2
+    },
+    {
+      "catid": 871,
+      "name": "ชุดชั้นในและชุดนอนผู้หญิง",
+      "display_name": "ชุดชั้นในและชุดนอนผู้หญิง",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/871.jpg",
+      "level": 2
+    },
+    {
+      "catid": 872,
+      "name": "แฟชั่นและเครื่องประดับ",
+      "display_name": "แฟชั่นและเครื่องประดับ",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/872.jpg",
+      "level": 2
+    },
+    {
+      "catid": 873,
+      "name": "ผู้ชาย",
+      "display_name": "ผู้ชาย",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/873.jpg",
+      "level": 2
+    },
+    {
+      "catid": 858,
+      "name": "อาหารแห้งและเครื่องปรุง",
+      "display_name": "อาหารแห้งและเครื่องปรุง",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/858.jpg",
+      "level": 2
+    },
+    {
+      "catid": 859,
+      "name": "เครื่องดื่มและขนม",
+      "display_name": "เครื่องดื่มและขนม",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/859.jpg",
+      "level": 2
+    },
+    {
+      "catid": 860,
+      "name": "ของใช้ในครัวเรือน",
+      "display_name": "ของใช้ในครัวเรือน",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/860.jpg",
+      "level": 2
+    },
+    {
+      "catid": 869,
+      "name": "เครื่องใช้ไฟฟ้าและอุปกรณ์อิเล็กทรอนิกส์",
+      "display_name": "เครื่องใช้ไฟฟ้าและอุปกรณ์อิเล็กทรอนิกส์",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/869.jpg",
+      "level": 2
+    },
+    {
+      "catid": 870,
+      "name": "บ้านและไลฟ์สไตล์",
+      "display_name": "บ้านและไลฟ์สไตล์",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/870.jpg",
+      "level": 2
+    },
+    {
+      "catid": 854,
+      "name": "ผิวกายและของใช้ส่วนตัว",
+      "display_name": "ผิวกายและของใช้ส่วนตัว",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/854.jpg",
+      "level": 2
+    },
+    {
+      "catid": 856,
+      "name": "ยา เวชภัณฑ์ อาหารเสริมและวิตามิน",
+      "display_name": "ยา เวชภัณฑ์ อาหารเสริมและวิตามิน",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/856.jpg",
+      "level": 2
+    },
+    {
+      "catid": 861,
+      "name": "แม่และเด็ก",
+      "display_name": "แม่และเด็ก",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/861.jpg",
+      "level": 2
+    },
+    {
+      "catid": 862,
+      "name": "ผู้สูงอายุ",
+      "display_name": "ผู้สูงอายุ",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/862.jpg",
+      "level": 2
+    },
+    {
+      "catid": 863,
+      "name": "สัตว์เลี้ยง",
+      "display_name": "สัตว์เลี้ยง",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/863.jpg",
+      "level": 2
+    },
+    {
+      "catid": 864,
+      "name": "เครื่องเขียนและอุปกรณ์สำนักงาน",
+      "display_name": "เครื่องเขียนและอุปกรณ์สำนักงาน",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/864.jpg",
+      "level": 2
+    },
+    {
+      "catid": 866,
+      "name": "สินค้าเทศกาลและฤดูกาล",
+      "display_name": "สินค้าเทศกาลและฤดูกาล",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/866.jpg",
+      "level": 2
+    },
+    {
+      "catid": 867,
+      "name": "ของใช้สำหรับรถ",
+      "display_name": "ของใช้สำหรับรถ",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/867.jpg",
+      "level": 2
+    },
+    {
+      "catid": 868,
+      "name": "กีฬาและการออกกำลังกาย",
+      "display_name": "กีฬาและการออกกำลังกาย",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/868.jpg",
+      "level": 2
+    }
+  ],
+  "message": "success"
+}

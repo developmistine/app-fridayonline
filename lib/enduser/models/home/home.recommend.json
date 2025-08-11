@@ -1,0 +1,62 @@
+{
+  "code": "100",
+  "data": [
+    {
+      "icon": "",
+      "product_id": 4,
+      "title": "เวรี่ พิ้งค์ ลิควิด ชายน์ อายแชโดว์ 1.9 G",
+      "discount": 0,
+      "price": 0,
+      "price_before_discount": 149,
+      "labels": [],
+      "rating_star": 0,
+      "have_video": false,
+      "unit_sales": "",
+      "image": "",
+      "currency": ""
+    },
+    {
+      "icon": "",
+      "product_id": 6,
+      "title": "รองเท้าออกกำลังกายผู้ชาย Nike Air Monarch IV",
+      "discount": 0,
+      "price": 0,
+      "price_before_discount": 0,
+      "labels": [],
+      "rating_star": 0,
+      "have_video": false,
+      "unit_sales": "",
+      "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/6/img/6_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241217%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241217T051806Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=1a732f5addf21031d5d21571bcfff30f762e068c82f50b077b8de236aaab9728",
+      "currency": ""
+    },
+    {
+      "icon": "",
+      "product_id": 7,
+      "title": "พลาสติกปูบ่อ ผ้ายางปูบ่อ หนา80-300 ไมครอน ปูบ่อปลา คลุมวัชพืช กว้าง3.60เมตร (ราคาต่อความยาว 1 เมตร )",
+      "discount": 0,
+      "price": 0,
+      "price_before_discount": -1,
+      "labels": [],
+      "rating_star": 0,
+      "have_video": true,
+      "unit_sales": "",
+      "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/7/img/7_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241217%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241217T051806Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=53f1b4536c870cdcd29aeedee5e7805f961c7dee0469bdae0d9719235704d39e",
+      "currency": ""
+    },
+    {
+      "icon": "",
+      "product_id": 11,
+      "title": "พลาสติกปูบ่อ ผ้ายางปูบ่อ หนา80-300 ไมครอน ปูบ่อปลา คลุมวัชพืช กว้าง3.60เมตร (ราคาต่อความยาว 1 เมตร )",
+      "discount": 0,
+      "price": 0,
+      "price_before_discount": -1,
+      "labels": [],
+      "rating_star": 0,
+      "have_video": true,
+      "unit_sales": "",
+      "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/11/img/11_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241217%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241217T051806Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=0d008042f13ed1452af3151381333aa17e3c94ff8a41843fc140fd505135a64e",
+      "currency": ""
+    }
+  ],
+  "message": "success"
+}

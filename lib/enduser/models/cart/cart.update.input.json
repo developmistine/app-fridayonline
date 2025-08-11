@@ -1,0 +1,15 @@
+{
+  "cust_id": 2,
+  "action_type": 1,
+  "updated_shop_orders": [
+    {
+      "shop_id": 23001,
+      "product_briefs": [
+        {
+          "product_id": 1,
+          "item_id": 7
+        }
+      ]
+    }
+  ]
+}

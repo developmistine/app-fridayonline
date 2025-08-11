@@ -1,0 +1,31 @@
+{
+    "WriteReview": {
+      "WriteReviewDetail": [
+        {
+          "Comment": "",
+          "ProductRating": "",
+          "DeliveryRating": "",
+          "ImageReview": [
+            {
+              "ImagePath": ""
+            },
+            {
+              "ImagePath": ""
+            }
+          ]
+        }
+      ],
+      "WriteReviewHeader": [
+        {
+          "RepSeq": "5486041",
+          "RepCode": "0999005499",
+          "UserType": 2,
+          "WriteDate": "20220919",
+          "WriteTime": "160115",
+          "CustomerName": "คุณสมศรี มีความสามารถ",
+          "language": "th"
+        }
+      ]
+    }
+  }
+  

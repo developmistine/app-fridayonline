@@ -1,0 +1,46 @@
+{
+  "code": "100",
+  "data": [
+    {
+      "brand_id": 5,
+      "brand_name": "friday",
+      "seller_id": 1,
+      "icon": "https://s3.catalog-yupin.com/b2c/icons/2024/2/friday_logo.png",
+      "product_image": "https://s3.catalog-yupin.com/b2c-dev/product/no-image/no-image.jpg",
+      "text_display": ""
+    },
+    {
+      "brand_id": 6,
+      "brand_name": "mistine",
+      "seller_id": 2,
+      "icon": "https://s3.catalog-yupin.com/b2c/icons/2024/2/mistine.jpg",
+      "product_image": "https://s3.catalog-yupin.com/b2c-dev/product/no-image/no-image.jpg",
+      "text_display": ""
+    },
+    {
+      "brand_id": 8,
+      "brand_name": "faris",
+      "seller_id": 4,
+      "icon": "https://s3.catalog-yupin.com/b2c/icons/2024/2/faris.png",
+      "product_image": "https://s3.catalog-yupin.com/b2c-dev/product/no-image/no-image.jpg",
+      "text_display": ""
+    },
+    {
+      "brand_id": 9,
+      "brand_name": "face so",
+      "seller_id": 5,
+      "icon": "https://s3.catalog-yupin.com/b2c/icons/2024/2/faceso.jpeg",
+      "product_image": "https://s3.catalog-yupin.com/b2c-dev/product/no-image/no-image.jpg",
+      "text_display": ""
+    },
+    {
+      "brand_id": 12,
+      "brand_name": "myss",
+      "seller_id": 6,
+      "icon": "https://s3.catalog-yupin.com/b2c/icons/2024/2/myss.png",
+      "product_image": "https://s3.catalog-yupin.com/b2c-dev/product/no-image/no-image.jpg",
+      "text_display": ""
+    }
+  ],
+  "message": "success"
+}

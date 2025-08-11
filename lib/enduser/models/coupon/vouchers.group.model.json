@@ -1,0 +1,24 @@
+{
+  "code": "100",
+  "data": [
+    {
+      "group_id": 1,
+      "group_type": 0,
+      "group_name": "โค้ดแนะนำ",
+      "image": ""
+    },
+    {
+      "group_id": 2,
+      "group_type": 0,
+      "group_name": "โค้ดส่งฟรี",
+      "image": ""
+    },
+    {
+      "group_id": 3,
+      "group_type": 0,
+      "group_name": "ค่าส่วนลดร้านโค้ดคุ้ม",
+      "image": ""
+    }
+  ],
+  "message": "success"
+}

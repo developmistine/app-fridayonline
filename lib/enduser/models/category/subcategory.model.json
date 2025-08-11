@@ -1,0 +1,70 @@
+{
+  "code": "100",
+  "data": {
+    "catid": 867,
+    "catname": "ของใช้สำหรับรถ",
+    "sub_categories": [
+      {
+        "subcat_id": 894,
+        "name": "ผลิตภัณฑ์สำหรับรถยนต์",
+        "display_name": "ผลิตภัณฑ์สำหรับรถยนต์",
+        "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/894.jpg",
+        "type_subcat": [
+          {
+            "prodline_id": 1152,
+            "prodline_code": "001",
+            "name": "ผลิตภัณฑ์ทำความสะอาดและดูแลรถ",
+            "display_name": "ผลิตภัณฑ์ทำความสะอาดและดูแลรถ"
+          },
+          {
+            "prodline_id": 1542,
+            "prodline_code": "003",
+            "name": "อุปกรณ์เสริม/ตกแต่งรถยนต์",
+            "display_name": "อุปกรณ์เสริม/ตกแต่งรถยนต์"
+          }
+        ]
+      },
+      {
+        "subcat_id": 923,
+        "name": "รถมอเตอร์ไซค์ และอุปกรณ์",
+        "display_name": "รถมอเตอร์ไซค์ และอุปกรณ์",
+        "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/923.jpg",
+        "type_subcat": [
+          {
+            "prodline_id": 1313,
+            "prodline_code": "002",
+            "name": "หมวกกันน็อค",
+            "display_name": "หมวกกันน็อค"
+          },
+          {
+            "prodline_id": 1612,
+            "prodline_code": "004",
+            "name": "อุปกรณ์เสริม/ตกแต่งรถมอเตอร์ไซด์",
+            "display_name": "อุปกรณ์เสริม/ตกแต่งรถมอเตอร์ไซด์"
+          },
+          {
+            "prodline_id": 1543,
+            "prodline_code": "003",
+            "name": "อุปกรณ์อื่นๆสำหรับการขับขี่รถมอเตอร์ไซด์",
+            "display_name": "อุปกรณ์อื่นๆสำหรับการขับขี่รถมอเตอร์ไซด์"
+          }
+        ]
+      },
+      {
+        "subcat_id": 968,
+        "name": "อุปกรณ์และผลิตภัณฑ์สำหรับซ่อมแซมและดูแลรถ",
+        "display_name": "อุปกรณ์และผลิตภัณฑ์สำหรับซ่อมแซมและดูแลรถ",
+        "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/968.jpg",
+        "type_subcat": [
+          {
+            "prodline_id": 1315,
+            "prodline_code": "002",
+            "name": "อุปกรณ์ซ่อมแซมและดูแลรถ",
+            "display_name": "อุปกรณ์ซ่อมแซมและดูแลรถ"
+          }
+        ]
+      }
+    ]
+  },
+  "message": "success"
+}

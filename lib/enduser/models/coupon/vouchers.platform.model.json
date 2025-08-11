@@ -1,0 +1,90 @@
+{
+  "code": "100",
+  "data": [
+      {
+          "voucher_type": 2,
+          "voucher_type_text": "โค้ดส่วนลด",
+          "vouchers": [
+              {
+                  "coupon_id": 92,
+                  "coupon_code": "02723",
+                  "shop_id": 0,
+                  "is_shop_official": false,
+                  "title": "ส่วนลด 15% ลดสูงสุด ฿300",
+                  "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/coupon/2024/02723_20241204173648_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20250127%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250127T092558Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=eda055e7689e40fb68db71e8b4cf594a92cc2c1a680bc1dbbf199b8fa706654e",
+                  "reward_info": {
+                      "min_spend": 200,
+                      "discount_value": 300,
+                      "discount_percentage": 15,
+                      "discount_cap": 500,
+                      "current_spend": 0
+                  },
+                  "time_info": {
+                      "start_time": "02/01/2025 00:00:00",
+                      "end_time": "30/01/2025 00:00:00",
+                      "claim_start_time": "02/01/2025 00:00:00",
+                      "claim_end_time": "30/01/2025 00:00:00",
+                      "valid_days": 2,
+                      "time_format": "ใช้ได้ถึง 30 ม.ค.",
+                      "has_expired": false
+                  },
+                  "quota_info": {
+                      "percentage_claimed": 0,
+                      "percentage_used": 0,
+                      "quota_type": 0,
+                      "fully_claimed": false,
+                      "fully_used": false
+                  },
+                  "labels": [],
+                  "scope_tags": [],
+                  "user_status": {
+                      "is_claimed": true,
+                      "is_used": false,
+                      "is_select": false
+                  },
+                  "can_use": false
+              },
+              {
+                  "coupon_id": 90,
+                  "coupon_code": "02723",
+                  "shop_id": 0,
+                  "is_shop_official": false,
+                  "title": "ส่วนลด ฿100",
+                  "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/coupon/2024/02723_20241204170448_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20250127%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250127T092558Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=de8223b04837d9213dd167212742f35e8b3c14866a33b44a95f889a39a5feed5",
+                  "reward_info": {
+                      "min_spend": 500,
+                      "discount_value": 100,
+                      "discount_percentage": 0,
+                      "discount_cap": 500,
+                      "current_spend": 0
+                  },
+                  "time_info": {
+                      "start_time": "02/01/2025 00:00:00",
+                      "end_time": "30/01/2025 00:00:00",
+                      "claim_start_time": "02/01/2025 00:00:00",
+                      "claim_end_time": "30/01/2025 00:00:00",
+                      "valid_days": 2,
+                      "time_format": "ใช้ได้ถึง 30 ม.ค.",
+                      "has_expired": false
+                  },
+                  "quota_info": {
+                      "percentage_claimed": 0,
+                      "percentage_used": 0,
+                      "quota_type": 0,
+                      "fully_claimed": false,
+                      "fully_used": false
+                  },
+                  "labels": [],
+                  "scope_tags": [],
+                  "user_status": {
+                      "is_claimed": true,
+                      "is_used": false,
+                      "is_select": false
+                  },
+                  "can_use": false
+              }
+          ]
+      }
+  ],
+  "message": "success"
+}

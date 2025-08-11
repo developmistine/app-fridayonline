@@ -1,0 +1,126 @@
+{
+  "code": "100",
+  "data": {
+    "title": "",
+    "voucher_list": [
+      {
+        "coupon_id": 159,
+        "coupon_code": "",
+        "shop_id": 1,
+        "is_shop_official": false,
+        "title": "คูปองส่วนลด 50 บาท",
+        "image": "https://s3.catalog-yupin.com/b2c/coupon/2025/_20250220164046_1.jpg",
+        "reward_info": {
+          "min_spend": 2000,
+          "discount_value": 50,
+          "discount_percentage": 0,
+          "discount_cap": 60,
+          "current_spend": 0
+        },
+        "time_info": {
+          "start_time": "20/02/2025 00:00:00",
+          "end_time": "30/04/2025 00:00:00",
+          "claim_start_time": "20/02/2025 00:00:00",
+          "claim_end_time": "30/04/2025 00:00:00",
+          "valid_days": 18,
+          "time_format": "ใช้ได้ถึง 30 เม.ย.",
+          "has_expired": false
+        },
+        "quota_info": {
+          "percentage_claimed": 0,
+          "percentage_used": 0,
+          "quota_type": 0,
+          "fully_claimed": false,
+          "fully_used": false
+        },
+        "labels": [],
+        "scope_tags": [],
+        "user_status": {
+          "is_claimed": false,
+          "is_used": false,
+          "is_selected": false
+        },
+        "can_use": false
+      },
+      {
+        "coupon_id": 160,
+        "coupon_code": "",
+        "shop_id": 1,
+        "is_shop_official": false,
+        "title": "คูปองส่วนลด 100 บาท",
+        "image": "https://s3.catalog-yupin.com/b2c/coupon/2025/_20250220165043_1.jpg",
+        "reward_info": {
+          "min_spend": 3000,
+          "discount_value": 100,
+          "discount_percentage": 0,
+          "discount_cap": 60,
+          "current_spend": 0
+        },
+        "time_info": {
+          "start_time": "20/02/2025 00:00:00",
+          "end_time": "30/04/2025 00:00:00",
+          "claim_start_time": "20/02/2025 00:00:00",
+          "claim_end_time": "30/04/2025 00:00:00",
+          "valid_days": 18,
+          "time_format": "ใช้ได้ถึง 30 เม.ย.",
+          "has_expired": false
+        },
+        "quota_info": {
+          "percentage_claimed": 0,
+          "percentage_used": 0,
+          "quota_type": 0,
+          "fully_claimed": false,
+          "fully_used": false
+        },
+        "labels": [],
+        "scope_tags": [],
+        "user_status": {
+          "is_claimed": false,
+          "is_used": false,
+          "is_selected": false
+        },
+        "can_use": false
+      },
+      {
+        "coupon_id": 161,
+        "coupon_code": "",
+        "shop_id": 1,
+        "is_shop_official": false,
+        "title": "คูปองส่วนลด 30 บาท",
+        "image": "https://s3.catalog-yupin.com/b2c/coupon/2025/_20250221151318_2.jpg",
+        "reward_info": {
+          "min_spend": 300,
+          "discount_value": 30,
+          "discount_percentage": 0,
+          "discount_cap": 10,
+          "current_spend": 0
+        },
+        "time_info": {
+          "start_time": "21/02/2025 00:00:00",
+          "end_time": "30/04/2025 00:00:00",
+          "claim_start_time": "21/02/2025 00:00:00",
+          "claim_end_time": "30/04/2025 00:00:00",
+          "valid_days": 18,
+          "time_format": "ใช้ได้ถึง 30 เม.ย.",
+          "has_expired": false
+        },
+        "quota_info": {
+          "percentage_claimed": 0,
+          "percentage_used": 0,
+          "quota_type": 0,
+          "fully_claimed": false,
+          "fully_used": false
+        },
+        "labels": [],
+        "scope_tags": [],
+        "user_status": {
+          "is_claimed": false,
+          "is_used": false,
+          "is_selected": false
+        },
+        "can_use": false
+      }
+    ]
+  },
+  "message": "success"
+}

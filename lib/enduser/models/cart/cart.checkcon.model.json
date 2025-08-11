@@ -1,0 +1,31 @@
+{
+  "code": "-9",
+  "data": {
+    "problematic_items": [
+      {
+        "shop_id": 1,
+        "product_id": 484,
+        "item_id": 10449,
+        "error_message": "คุณสามารถซื้อสินค้าชิ้นนี้ได้เพียง 5 ชิ้นต่อหนึ่งคำสั่งซื้อ"
+      }
+    ],
+    "problematic_groups": [
+      {
+        "error_message": "คุณสามารถซื้อสินค้าชิ้นนี้ได้เพียง 10 ชิ้นต่อหนึ่งคำสั่งซื้อ",
+        "item_briefs": [
+          {
+            "shop_id": 1,
+            "product_id": 484,
+            "item_id": 10449
+          },
+          {
+            "shop_id": 1,
+            "product_id": 484,
+            "item_id": 792
+          }
+        ]
+      }
+    ]
+  },
+  "message": "error"
+}

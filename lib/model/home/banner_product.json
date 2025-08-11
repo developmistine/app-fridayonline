@@ -1,0 +1,54 @@
+{
+  "skucode": [
+    {
+      "Campaign": "012024",
+      "billCode": "93827",
+      "brand": "1",
+      "MediaCode": "202",
+      "sku": "58324",
+      "name": "ตะเกียงคลาสสิก LED",
+      "position": 0,
+      "category_id": "",
+      "link_detail": "https://yupin.ningnongmistine.com/gpid/Index/Index?sku=58324",
+      "link_review": "https://yupin.ningnongmistine.com/gpir/Index/Index?sku=58324",
+      "link_information": "https://yupin.ningnongmistine.com/index.php/.html",
+      "img": "https://s3.catalog-yupin.com/MistineImages/products/16333227645217888558324.jpg.webp",
+      "price": "",
+      "special_price": "79.00",
+      "BillColor": "black",
+      "CheckLimit": "N",
+      "UserType": "9",
+      "SaleLimit": "0",
+      "UseLimit": "0",
+      "is_in_stock": true,
+      "ReturnStatus": "",
+      "ReturnMessage": "",
+      "NameText": "",
+      "PageNo": "",
+      "fs_name": "",
+      "LimitDescription": "",
+      "ImgAppend": "https://s3.catalog-yupin.com/Images/outOfStock.webp",
+      "FsCode_temp": "",
+      "ProductCode": "",
+      "BillCodeB2C": "",
+      "flagNetPrice": "Y",
+      "flagHouseBrand": "N",
+      "imgNetPrice": "https://s3.catalog-yupin.com/Images/totalPrice.webp",
+      "TotalReview": 0,
+      "RatingProduct": 0.0
+    }
+  ],
+  "FlagShare": false,
+  "contentimg": {
+    "ImgAppend": "https://s3.catalog-yupin.com/Yupindata/campaign202325/1703748940jpg_mobile.webp"
+  },
+  "bannerimg": {
+    "ImgAppend": ""
+  },
+  "PushImage": {
+    "ImgAppend": ""
+  },
+  "PopupImage": {
+    "ImgAppend": ""
+  }
+}

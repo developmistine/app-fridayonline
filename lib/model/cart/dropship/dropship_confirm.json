@@ -1,0 +1,32 @@
+{
+  "RepCode": "0999005499",
+  "RepSeq": "5486041",
+  "RepType": "2",
+  "TotItem": "1",
+  "TotAmount": "138.00",
+  "OrderCartList": [
+    {
+      "BillB2C": "2200101610",
+      "BillName": "ไดวา ทำความสะอาดพื้นสูตรฆ่าเชื้อ ขนาด900 มล. กลิ่นมะนาว",
+      "SupplierCode": "000002",
+      "Brand": "1",
+      "BrandCode": "มิสทิน",
+      "Qty": "1",
+      "Price": "138.00",
+      "Amount": "138.00"
+    }
+  ],
+  "ShipAddress": {
+    "NameReceive": "somsri meenamarg",
+    "MobileNo": "04404440",
+    "AddressLine1": "44/223 thepthai",
+    "AddressLine2": "",
+    "NameTumbon": "ดินแดง",
+    "NameAmphur": "ลำทับ",
+    "NameProvince": "กระบี่",
+    "TumbonCode": "810704",
+    "AmphurCode": "8107",
+    "ProvinceCode": "81",
+    "PostCode": "81120"
+  }
+}

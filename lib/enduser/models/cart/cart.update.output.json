@@ -1,0 +1,146 @@
+{
+  "code": "100",
+  "data": {
+    "cart_detail": [
+      {
+        "icon": "",
+        "shop_id": 23001,
+        "shop_name": "ไม่มีชื่อร้าน",
+        "show_official_shop": true,
+        "items": [
+          {
+            "cart_id": 438,
+            "product_id": 1,
+            "product_name": "ผ้าไมโคร",
+            "product_image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/200705_1911060610664_20211029105000.png.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20250109%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250109T042807Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=4da47dbec60277f7a23254c3b2a0e40ccf7515f768cb0bc73950975ffa166472",
+            "have_discount": false,
+            "discount": 0,
+            "price": 0,
+            "price_before_discount": 45,
+            "product_qty": 10,
+            "stock": 0,
+            "normal_stock": 0,
+            "promotion_stock": 0,
+            "condition_promotion_stock": "",
+            "status": 1,
+            "is_in_preview": false,
+            "is_pre_order": false,
+            "is_free_gift": false,
+            "total_can_buy_quantity": 0,
+            "select_item": "ขาว,120 ไมครอน",
+            "select_item_id": 7,
+            "tier_variations_index": [1, 1],
+            "tier_variations": [
+              {
+                "name": "สี",
+                "options": [
+                  {
+                    "option_value": "ดำ",
+                    "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/%E0%B9%84%E0%B8%9F%E0%B8%A5%E0%B9%8C_001-1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20250109%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250109T042807Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=78811ccf3b0d7b67d32497442c471d1ae3c5b20cde080a11c5ace13d065dbc9f",
+                    "display_indicators": 2
+                  },
+                  {
+                    "option_value": "ขาว",
+                    "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/200705_1911060610664_20211029105000.png.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20250109%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250109T042807Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=4da47dbec60277f7a23254c3b2a0e40ccf7515f768cb0bc73950975ffa166472",
+                    "display_indicators": 0
+                  },
+                  {
+                    "option_value": "ฟ้า",
+                    "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B9%84%E0%B8%A1%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B9%84%E0%B8%9F%E0%B9%80%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C-%E0%B8%9F%E0%B9%89%E0%B8%B2-800x800-1.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20250109%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250109T042807Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=12d02fd3142037f8545f6b3515207a080c5786ccb5d6baa5b260615591d74477",
+                    "display_indicators": 0
+                  }
+                ]
+              },
+              {
+                "name": "ขนาด",
+                "options": [
+                  {
+                    "option_value": "80 ไมครอน",
+                    "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/%E0%B9%84%E0%B8%9F%E0%B8%A5%E0%B9%8C_001-1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20250109%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250109T042807Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=78811ccf3b0d7b67d32497442c471d1ae3c5b20cde080a11c5ace13d065dbc9f",
+                    "display_indicators": 0
+                  },
+                  {
+                    "option_value": "120 ไมครอน",
+                    "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/200705_1911060610664_20211029105000.png.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20250109%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250109T042807Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=4da47dbec60277f7a23254c3b2a0e40ccf7515f768cb0bc73950975ffa166472",
+                    "display_indicators": 0
+                  },
+                  {
+                    "option_value": "150 ไมครอน",
+                    "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/%E0%B9%84%E0%B8%9F%E0%B8%A5%E0%B9%8C_001-1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20250109%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250109T042807Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=78811ccf3b0d7b67d32497442c471d1ae3c5b20cde080a11c5ace13d065dbc9f",
+                    "display_indicators": 0
+                  },
+                  {
+                    "option_value": "150 ไมครอน กว้าง 4M",
+                    "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/200705_1911060610664_20211029105000.png.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20250109%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250109T042807Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=4da47dbec60277f7a23254c3b2a0e40ccf7515f768cb0bc73950975ffa166472",
+                    "display_indicators": 0
+                  },
+                  {
+                    "option_value": "150 ไมครอน กว้าง 4M กัน UV7%",
+                    "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B9%84%E0%B8%A1%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B9%84%E0%B8%9F%E0%B9%80%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C-%E0%B8%9F%E0%B9%89%E0%B8%B2-800x800-1.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20250109%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250109T042807Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=12d02fd3142037f8545f6b3515207a080c5786ccb5d6baa5b260615591d74477",
+                    "display_indicators": 2
+                  }
+                ]
+              }
+            ],
+            "cart_content": []
+          }
+        ],
+        "discount_voucher": "ส่วนลด ฿50",
+        "shipping_voucher": [
+          {
+            "description": "ส่วนลดค่าจัดส่ง ฿49 ขั้นต่ำ ฿350"
+          }
+        ],
+        "drawer_entries": [
+          {
+            "min_spend": 350,
+            "discount_formatted": "ส่งฟรี",
+            "shipping_discount": 49,
+            "shipping_options": [
+              "Standard Delivery - ส่งธรรมดาในประเทศ",
+              "Standard Delivery Bulky - ส่งสินค้าขนาดใหญ่"
+            ]
+          }
+        ]
+      }
+    ],
+    "discount_breakdown": {
+      "subtotal": {
+        "label": "รวมค่าสินค้า",
+        "value": 450,
+        "coin_value": 0,
+        "format": "บาท"
+      },
+      "total_saved": {
+        "label": "ส่วนลด",
+        "value": 1,
+        "coin_value": 0,
+        "format": "บาท"
+      },
+      "total": {
+        "label": "ค่าสินค้าหลังหักส่วนลด",
+        "value": 449,
+        "coin_value": 0,
+        "format": "บาท"
+      },
+      "breakdown": [
+        {
+          "label": "ส่วนลดจากโค้ด",
+          "value": 1,
+          "coin_value": 0,
+          "format": "บาท"
+        },
+        {
+          "label": "ส่วนลดสินค้า",
+          "value": 0,
+          "coin_value": 0,
+          "format": "บาท"
+        }
+      ]
+    },
+    "shop_vouchers": [],
+    "shop_voucher_entrance": [],
+    "total_payment": 0
+  },
+  "message": "success"
+}

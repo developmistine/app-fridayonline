@@ -1,0 +1,86 @@
+{
+  "code": "100",
+  "data": [
+    {
+      "subcat_id": 1040,
+      "prodline_id": 1893,
+      "name": "ลิปสติกแท่ง",
+      "display_name": "ลิปสติกแท่ง",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/1893.jpg",
+      "selling": "ยอดขาย 1 ชิ้น"
+    },
+    {
+      "subcat_id": 995,
+      "prodline_id": 1653,
+      "name": "น้ำยาทำความสะอาดห้องน้ำ/ขจัดท่ออุดตัน",
+      "display_name": "น้ำยาทำความสะอาดห้องน้ำ/ขจัดท่ออุดตัน",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/1653.jpg",
+      "selling": "ยอดขาย 10 ชิ้น"
+    },
+    {
+      "subcat_id": 884,
+      "prodline_id": 1903,
+      "name": "ระงับกลิ่นกาย",
+      "display_name": "ระงับกลิ่นกาย",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/1903.jpg",
+      "selling": "ยอดขาย 2 ชิ้น"
+    },
+    {
+      "subcat_id": 1013,
+      "prodline_id": 1846,
+      "name": "แชมพู",
+      "display_name": "แชมพู",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/1846.jpg",
+      "selling": "ยอดขาย 1 ชิ้น"
+    },
+    {
+      "subcat_id": 985,
+      "prodline_id": 1442,
+      "name": "ครีม/เจลอาบน้ำ",
+      "display_name": "ครีม/เจลอาบน้ำ",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/1442.jpg",
+      "selling": "ยอดขาย 5 ชิ้น"
+    },
+    {
+      "subcat_id": 884,
+      "prodline_id": 1899,
+      "name": "แป้งทาผิวกาย",
+      "display_name": "แป้งทาผิวกาย",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/1899.jpg",
+      "selling": "ยอดขาย 4 ชิ้น"
+    },
+    {
+      "subcat_id": 945,
+      "prodline_id": 1532,
+      "name": "บัตตาเลี่ยน",
+      "display_name": "บัตตาเลี่ยน",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/1532.jpg",
+      "selling": "ยอดขาย 3 ชิ้น"
+    },
+    {
+      "subcat_id": 967,
+      "prodline_id": 1589,
+      "name": "นาฬิกาสำหรับผู้ชาย",
+      "display_name": "นาฬิกาสำหรับผู้ชาย",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/1589.jpg",
+      "selling": "ยอดขาย 1 ชิ้น"
+    },
+    {
+      "subcat_id": 904,
+      "prodline_id": 1915,
+      "name": "ซอสปรุงรสอื่นๆ",
+      "display_name": "ซอสปรุงรสอื่นๆ",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/1915.jpg",
+      "selling": "ยอดขาย 1 ชิ้น"
+    },
+    {
+      "subcat_id": 1000,
+      "prodline_id": 1231,
+      "name": "กันแดดผิวหน้าชนิดครีม",
+      "display_name": "กันแดดผิวหน้าชนิดครีม",
+      "image": "https://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/b2c/category/1231.jpg",
+      "selling": "ยอดขาย 1 ชิ้น"
+    }
+  ],
+  "message": "success"
+}

@@ -1,0 +1,31 @@
+{
+    "Name": "คุณสมศรี มีความสามารถ",
+    "OrderStatus": "จัดส่งสำเร็จ",
+    "OrderDate": "08/12/2022 13:47:44",
+    "OrderID": "672200247913",
+    "SubCode": "BL",
+    "SubName": "",
+    "SubImg": "https://s3.catalog-yupin.com/",
+    "TotalItem": "2",
+    "Amount": "299.00",
+    "ShipCost": "39",
+    "TotalAmount": "338.00",
+    "OrderDetailList": [
+        {
+            "ProductCode": "2200053360",
+            "ProuctName": "WHITE SPA WHITENING SOAP",
+            "ProductImg": "https://s3.catalog-yupin.com/online-mistine/Supcenter/product/master/1656579359white.JPG",
+            "Qty": "1",
+            "Price":"100",
+            "Amount": "0.00"
+        },
+        {
+            "ProductCode": "2200057716",
+            "ProuctName": "ชุดซักผ้าหอมละมุน new",
+            "ProductImg": "https://s3.catalog-yupin.com/online-mistine/Supcenter/product/master/1658895702ชุดซักผ้าหอม.jpg",
+            "Qty": "1",
+            "Price":"100",
+            "Amount": "299.00"
+        }
+    ]
+}

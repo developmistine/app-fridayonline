@@ -1,0 +1,14 @@
+{
+  "FlagDelivery": "N",
+  "DetailDelivery": [
+    {
+      "List": "1",
+      "TitleDelivery": "เก็บเงินปลายทาง(COD)",
+      "DesDelivery": "จะได้รับสินค้าในวันที่ 20 มกราคม",
+      "OrderType": "0",
+      "DeliveryType": "0",
+      "Price": "50",
+      "Message": ""
+    }
+  ]
+}

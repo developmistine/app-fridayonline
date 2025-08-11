@@ -1,0 +1,38 @@
+{
+    "Request": {
+      "Master": {
+        "Assembly": "YUPINPROCESS",
+        "Class": "Obj_Business",
+        "Function": "LeadSendOrder",
+        "RepSeq": "N",
+        "DeviceId": "iPhone 6s Plus",
+        "TokenId": "2be9cb0e46921f179f01dd147ce4fd4b71de1db063d9b4ae5c766cd50239cf21",
+        "DateTime": "25650711095727",
+        "Method": "SET"
+      },
+      "Description": {
+        "MSL": {
+          "Body1": {
+            "Name": "testlead",
+            "SurName": "test",
+            "NickName": "",
+            "Phone1": "0111121212",
+            "Phone2": "",
+            "Address": "24",
+            "Road": "",
+            "ProvinceId": "กระบี่",
+            "AmphurId": "เกาะลันตา",
+            "TumbolId": "เกาะลันตาน้อย",
+            "PostalCode": "81150",
+            "DistrictKey": "0999",
+            "DistrictCode": "0999",
+            "MasterArea": "0999",
+            "TypeRegister": "0",
+            "LeadOnlineFlag" : "Y",
+              "app_mkt": "0",
+             "app_customer": "0"
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="facebook_app_id">5801036159960829</string>
+    <string name="fb_login_protocol_scheme">fb5801036159960829</string>
+    <string name="facebook_client_token">1889d3ab772bcfd3078b413a34556cdd</string>
+    <string name="app_name">ฟรายเดย์</string>
+    <string name="asset_statements" translatable="false">[{\"include\": \"https://push.fridayth.com/.well-known/assetlinks.json\"}]</string>
+</resources>

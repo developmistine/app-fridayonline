@@ -1,0 +1,88 @@
+{
+  "code": "100",
+  "data": [
+    {
+      "province_id": 1,
+      "province_code": "1",
+      "province_name": "กระบี่",
+      "amphur": [
+        {
+          "amphur_id": 38,
+          "amphur_code": "0101",
+          "amphur_name": "เกาะลันตา",
+          "tambon": [
+            {
+              "tambon_id": 1,
+              "tambon_code": "01001",
+              "tambon_name": "เกาะกลาง",
+              "post_code": "81120"
+            },
+            {
+              "tambon_id": 2,
+              "tambon_code": "01002",
+              "tambon_name": "เกาะลันตาน้อย",
+              "post_code": "81150"
+            }
+          ]
+        },
+        {
+          "amphur_id": 39,
+          "amphur_code": "0102",
+          "amphur_name": "เขาพนม",
+          "tambon": [
+            {
+              "tambon_id": 6,
+              "tambon_code": "01006",
+              "tambon_name": "เขาดิน",
+              "post_code": "81140"
+            },
+            {
+              "tambon_id": 7,
+              "tambon_code": "01007",
+              "tambon_name": "เขาพนม",
+              "post_code": "81140"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "province_id": 3,
+      "province_code": "3",
+      "province_name": "กาญจนบุรี",
+      "amphur": [
+        {
+          "amphur_id": 3,
+          "amphur_code": "0301",
+          "amphur_name": "ด่านมะขามเตี้ย",
+          "tambon": [
+            {
+              "tambon_id": 246,
+              "tambon_code": "03001",
+              "tambon_name": "กลอนโด",
+              "post_code": "71260"
+            },
+            {
+              "tambon_id": 247,
+              "tambon_code": "03002",
+              "tambon_name": "จรเข้เผือก",
+              "post_code": "71260"
+            },
+            {
+              "tambon_id": 248,
+              "tambon_code": "03003",
+              "tambon_name": "ด่านมะขามเตี้ย",
+              "post_code": "71260"
+            },
+            {
+              "tambon_id": 249,
+              "tambon_code": "03004",
+              "tambon_name": "หนองไผ่",
+              "post_code": "71260"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

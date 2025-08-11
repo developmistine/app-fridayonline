@@ -1,0 +1,20 @@
+[
+    {
+        "Category1": "11",
+        "Cate1Desc": "ของใช้จำเป็น",
+        "BillCode": "2200101610",
+        "NameTH": "ไดวา ทำความสะอาดพื้นสูตรฆ่าเชื้อ ขนาด900 มล. กลิ่นมะนาว",
+        "ProductCode": "2200101610",
+        "Price": "69.00",
+        "PriceSpecial": "0.00",
+        "Color": "",
+        "StockQty": "400",
+        "ImageUrl": "https://s3.catalog-yupin.com/MistineImages/products/1665978325106814492082669.jpg.webp",
+        "Campaign": "262022",
+        "TypeProject": "DROPSHIP",
+        "Bill_YUP": "12713",
+        "SupplierCode": "800001",
+        "DeliveryType": "สินค้าส่งด่วน",
+        "PaymentType": "เก็บเงินปลายทาง"
+    }
+]

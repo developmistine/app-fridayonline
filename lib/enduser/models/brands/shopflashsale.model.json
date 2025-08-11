@@ -1,0 +1,104 @@
+{
+  "code": "100",
+  "data": {
+    "content_id": 1033,
+    "content_header": "Flash Sales Section",
+    "content_img": "https://s3.catalog-yupin.com/b2c/contents/2025/10414/web_20250405164535_1.png",
+    "start_date": "01/02/2025 00:00:00",
+    "end_date": "01/05/2025 23:55:00",
+    "product_content": [
+      {
+        "product_id": 1167,
+        "title": "สมูทโตะ อโล-อี สเนล ไบรท์ เจล เจลว่านหางจระเข้เข้มข้น 99.5% ผสมวิตามินอีและสารสก",
+        "price": 44,
+        "discount": 10,
+        "price_before_discount": 49,
+        "labels": [],
+        "flash_sale_stock": 6,
+        "stock": 5,
+        "is_shop_official": true,
+        "image": "https://s3.catalog-yupin.com/b2c/product/000001/1167/img/20250219175244_1.jpg",
+        "currency": "THB"
+      },
+      {
+        "product_id": 586,
+        "title": "ไวท์สปา ไวท์มัคส์ โลชั่น  1000ml. 10-1-6100011160",
+        "price": 199,
+        "discount": 20,
+        "price_before_discount": 249,
+        "labels": [],
+        "flash_sale_stock": 16,
+        "stock": 1,
+        "is_shop_official": true,
+        "image": "https://s3.catalog-yupin.com/b2c/product/000001/586/img/20250214102440_1.jpg",
+        "currency": "THB"
+      },
+      {
+        "product_id": 1174,
+        "title": "ซิสต้าร์ แรดิช เพอร์เฟค ไวท์ แอนด์ สมูท โซป สบู่หัวไชเท้า สำหรับทำความสะอาดผิวหน",
+        "price": 51,
+        "discount": 10,
+        "price_before_discount": 57,
+        "labels": [],
+        "flash_sale_stock": 10,
+        "stock": 0,
+        "is_shop_official": true,
+        "image": "https://s3.catalog-yupin.com/b2c/product/000001/1174/img/20250219172043_1.jpg",
+        "currency": "THB"
+      },
+      {
+        "product_id": 517,
+        "title": "HAPPITEX สปอร์ตบราสายเดี่ยวไม่มีโครง",
+        "price": 152,
+        "discount": 10,
+        "price_before_discount": 169,
+        "labels": [],
+        "flash_sale_stock": 120,
+        "stock": 0,
+        "is_shop_official": true,
+        "image": "https://s3.catalog-yupin.com/b2c/product/000001/517/img/20250211152814_1.jpg",
+        "currency": "THB"
+      },
+      {
+        "product_id": 521,
+        "title": "มิสส์ มาสคาร่าทีค  9 กรัม",
+        "price": 160,
+        "discount": 30,
+        "price_before_discount": 229,
+        "labels": [],
+        "flash_sale_stock": 10,
+        "stock": 0,
+        "is_shop_official": true,
+        "image": "https://s3.catalog-yupin.com/b2c/product/000001/521/img/20250214090421_1.jpg",
+        "currency": "THB"
+      },
+      {
+        "product_id": 1173,
+        "title": "สมูทโตะ อาร์บูติน เมลาสม่า  ไวท์เทนนิ่ง เจล 30กรัม เนื้อเจลซึมไว  ช่วยลดเลือนปัญ",
+        "price": 44,
+        "discount": 10,
+        "price_before_discount": 49,
+        "labels": [],
+        "flash_sale_stock": 10,
+        "stock": 0,
+        "is_shop_official": true,
+        "image": "https://s3.catalog-yupin.com/b2c/product/000001/1173/img/20250220084245_1.jpg",
+        "currency": "THB"
+      },
+      {
+        "product_id": 1264,
+        "title": "ซิสต้าร์ วอเตอร์เมลอน บอดี้ ไวท์ โลชั่น Body Whitening Lotion, กันแดด SPF30 (เนื",
+        "price": 31,
+        "discount": 10,
+        "price_before_discount": 35,
+        "labels": [],
+        "flash_sale_stock": 10,
+        "stock": 0,
+        "is_shop_official": true,
+        "image": "https://s3.catalog-yupin.com/b2c/product/000001/1264/img/20250219172528_1.jpg",
+        "currency": "THB"
+      }
+    ]
+  },
+  "message": "success"
+}

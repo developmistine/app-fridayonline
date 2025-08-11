@@ -1,0 +1,26 @@
+{
+  "code": "100",
+  "data": [
+    {
+      "order_type": 0,
+      "description": "รอชำระ"
+    },
+    {
+      "order_type": 1,
+      "description": "ที่ต้องจัดส่ง"
+    },
+    {
+      "order_type": 2,
+      "description": "ที่ต้องได้รับ"
+    },
+    {
+      "order_type": 3,
+      "description": "สำเร็จ"
+    },
+    {
+      "order_type": 4,
+      "description": "ยกเลิก"
+    }
+  ],
+  "message": "success"
+}

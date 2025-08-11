@@ -1,0 +1,28 @@
+{
+  "code": 1000,
+  "message": "success",
+  "data": [
+    {
+      "msladdr_id": 4814817,
+      "addrtype": 1,
+      "seqno": 1,
+      "addrline1": "210 บ.เบทเตอร์เวย์ (ปทท.)จก.",
+      "addrline2": "ถ.รามคำแหง",
+      "addrline3": "",
+      "tumbon_id": 221,
+      "tumbon_code": "76225",
+      "tumbon_name": "แขวงราษฎร์พัฒนา",
+      "amphur_id": 113,
+      "amphur_code": "0243",
+      "amphur_name": "เขตสะพานสูง",
+      "province_id": 2,
+      "province_code": "02",
+      "province_name": "กรุงเทพมหานคร",
+      "postal_code": "10240",
+      "mobile_no": "0644011893",
+      "delivery_note": "",
+      "branch": "",
+      "default_flag": 1
+    }
+  ]
+}

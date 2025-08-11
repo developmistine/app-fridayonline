@@ -1,0 +1,268 @@
+{
+  "code": "100",
+  "data": [
+      {
+          "content_type": 6,
+          "content_detail": [
+              {
+                  "content_id": 71,
+                  "action_type": 0,
+                  "action_value": "",
+                  "show_content_name": true,
+                  "content_name": "ยินดีต้อนรับสู่ร้าน Lego! เรามีความยินดีเป็นอย่างยิ่งที่ท่านให้ความสนใจในสินค้าและบริการของเรา",
+                  "start_date": "",
+                  "end_date": "",
+                  "show_image": false,
+                  "image": "https://s3.catalog-yupin.com/b2c/product/no-image/no-image.jpg",
+                  "image_desktop": "https://s3.catalog-yupin.com/b2c/product/no-image/no-image.jpg",
+                  "product_content": []
+              }
+          ]
+      },
+      {
+          "content_type": 1,
+          "content_detail": [
+              {
+                  "content_id": 46,
+                  "action_type": 1,
+                  "action_value": "",
+                  "show_content_name": false,
+                  "content_name": "buynow pay later image",
+                  "start_date": "",
+                  "end_date": "",
+                  "show_image": true,
+                  "image": "https://s3.catalog-yupin.com/b2c/seller/900008/content/image_lego_01.jpeg",
+                  "image_desktop": "https://s3.catalog-yupin.com/b2c/seller/900008/content/image_lego_01.jpeg",
+                  "product_content": []
+              }
+          ]
+      },
+      {
+          "content_type": 1,
+          "content_detail": [
+              {
+                  "content_id": 47,
+                  "action_type": 3,
+                  "action_value": "3767",
+                  "show_content_name": false,
+                  "content_name": "every15th (product page)",
+                  "start_date": "",
+                  "end_date": "",
+                  "show_image": true,
+                  "image": "https://s3.catalog-yupin.com/b2c/seller/900008/content/every15th.jpeg",
+                  "image_desktop": "https://s3.catalog-yupin.com/b2c/seller/900008/content/every15th.jpeg",
+                  "product_content": []
+              }
+          ]
+      },
+      {
+          "content_type": 2,
+          "content_detail": [
+              {
+                  "content_id": 48,
+                  "action_type": 2,
+                  "action_value": "https://shopee.co.th/lego_officialshop?entryPoint=ShopBySearch&searchKeyword=lego",
+                  "show_content_name": false,
+                  "content_name": "songkarn",
+                  "start_date": "",
+                  "end_date": "",
+                  "show_image": true,
+                  "image": "https://s3.catalog-yupin.com/b2c/seller/900008/content/songkarn.jpeg",
+                  "image_desktop": "https://s3.catalog-yupin.com/b2c/seller/900008/content/songkarn.jpeg",
+                  "product_content": []
+              },
+              {
+                  "content_id": 64,
+                  "action_type": 4,
+                  "action_value": "68",
+                  "show_content_name": false,
+                  "content_name": "fomula1",
+                  "start_date": "",
+                  "end_date": "",
+                  "show_image": true,
+                  "image": "https://s3.catalog-yupin.com/b2c/seller/900008/content/fomula1.jpeg",
+                  "image_desktop": "https://s3.catalog-yupin.com/b2c/seller/900008/content/fomula1.jpeg",
+                  "product_content": []
+              }
+          ]
+      },
+      {
+          "content_type": 1,
+          "content_detail": [
+              {
+                  "content_id": 73,
+                  "action_type": 4,
+                  "action_value": "66",
+                  "show_content_name": false,
+                  "content_name": "duplo header",
+                  "start_date": "",
+                  "end_date": "",
+                  "show_image": true,
+                  "image": "https://s3.catalog-yupin.com/b2c/seller/900008/content/duplo.jpeg",
+                  "image_desktop": "https://s3.catalog-yupin.com/b2c/seller/900008/content/duplo.jpeg",
+                  "product_content": []
+              }
+          ]
+      },
+      {
+          "content_type": 3,
+          "content_detail": [
+              {
+                  "content_id": 66,
+                  "action_type": 4,
+                  "action_value": "66",
+                  "show_content_name": false,
+                  "content_name": "duplo Product ",
+                  "start_date": "",
+                  "end_date": "",
+                  "show_image": false,
+                  "image": "https://s3.catalog-yupin.com/b2c/seller/900008/content/duplo.jpeg",
+                  "image_desktop": "https://s3.catalog-yupin.com/b2c/seller/900008/content/duplo.jpeg",
+                  "product_content": [
+                      {
+                          "icon": "https://s3.catalog-yupin.com/b2c/seller/900008/lego_icon.webp",
+                          "product_id": 3763,
+                          "title": "LEGO Minecraft 21273 The Ghast Balloon Village Attack",
+                          "discount": 20,
+                          "price": 8,
+                          "price_before_discount": 15000,
+                          "labels": [],
+                          "rating_star": 0,
+                          "have_video": false,
+                          "unit_sales": "ขายได้ 3 ชิ้น",
+                          "image": "https://s3.catalog-yupin.com/b2c/seller/900008/products/minecraft_ghast_01.webp",
+                          "currency": ""
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "content_type": 1,
+          "content_detail": [
+              {
+                  "content_id": 74,
+                  "action_type": 4,
+                  "action_value": "67",
+                  "show_content_name": false,
+                  "content_name": "classic header",
+                  "start_date": "",
+                  "end_date": "",
+                  "show_image": true,
+                  "image": "https://s3.catalog-yupin.com/b2c/seller/900008/content/classic.webp",
+                  "image_desktop": "https://s3.catalog-yupin.com/b2c/seller/900008/content/classic.webp",
+                  "product_content": []
+              }
+          ]
+      },
+      {
+          "content_type": 3,
+          "content_detail": [
+              {
+                  "content_id": 67,
+                  "action_type": 4,
+                  "action_value": "67",
+                  "show_content_name": false,
+                  "content_name": "classic Product",
+                  "start_date": "",
+                  "end_date": "",
+                  "show_image": false,
+                  "image": "https://s3.catalog-yupin.com/b2c/seller/900008/content/classic.webp",
+                  "image_desktop": "https://s3.catalog-yupin.com/b2c/seller/900008/content/classic.webp",
+                  "product_content": [
+                      {
+                          "icon": "https://s3.catalog-yupin.com/b2c/seller/900008/lego_icon.webp",
+                          "product_id": 3764,
+                          "title": "LEGO Technic 42184 Koenigsegg Jesko Absolut White Hypercar",
+                          "discount": 30,
+                          "price": 7.4,
+                          "price_before_discount": 13000.54,
+                          "labels": [],
+                          "rating_star": 2.0,
+                          "have_video": false,
+                          "unit_sales": "ขายได้ 3 ชิ้น",
+                          "image": "https://s3.catalog-yupin.com/b2c/seller/900008/products/Koenigsegg_01.webp",
+                          "currency": ""
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "content_type": 4,
+          "content_detail": [
+              {
+                  "content_id": 68,
+                  "action_type": 4,
+                  "action_value": "68",
+                  "show_content_name": false,
+                  "content_name": "red",
+                  "start_date": "",
+                  "end_date": "",
+                  "show_image": true,
+                  "image": "https://s3.catalog-yupin.com/b2c/seller/900008/content/red.jpg",
+                  "image_desktop": "https://s3.catalog-yupin.com/b2c/seller/900008/content/red.jpg",
+                  "product_content": []
+              },
+              {
+                  "content_id": 69,
+                  "action_type": 4,
+                  "action_value": "69",
+                  "show_content_name": false,
+                  "content_name": "pink",
+                  "start_date": "",
+                  "end_date": "",
+                  "show_image": true,
+                  "image": "https://s3.catalog-yupin.com/b2c/seller/900008/content/pink.jpg",
+                  "image_desktop": "https://s3.catalog-yupin.com/b2c/seller/900008/content/pink.jpg",
+                  "product_content": []
+              },
+              {
+                  "content_id": 75,
+                  "action_type": 4,
+                  "action_value": "75",
+                  "show_content_name": false,
+                  "content_name": "blue",
+                  "start_date": "",
+                  "end_date": "",
+                  "show_image": true,
+                  "image": "https://s3.catalog-yupin.com/b2c/seller/900008/content/blue.jpg",
+                  "image_desktop": "https://s3.catalog-yupin.com/b2c/seller/900008/content/blue.jpg",
+                  "product_content": []
+              },
+              {
+                  "content_id": 76,
+                  "action_type": 4,
+                  "action_value": "76",
+                  "show_content_name": false,
+                  "content_name": "yellow",
+                  "start_date": "",
+                  "end_date": "",
+                  "show_image": true,
+                  "image": "https://s3.catalog-yupin.com/b2c/seller/900008/content/yellow.jpg",
+                  "image_desktop": "https://s3.catalog-yupin.com/b2c/seller/900008/content/yellow.jpg",
+                  "product_content": []
+              }
+          ]
+      },
+      {
+          "content_type": 5,
+          "content_detail": [
+              {
+                  "content_id": 70,
+                  "action_type": 0,
+                  "action_value": "",
+                  "show_content_name": false,
+                  "content_name": "Video Gotham City",
+                  "start_date": "",
+                  "end_date": "",
+                  "show_image": true,
+                  "image": "https://s3.catalog-yupin.com/b2c/seller/900008/products/gotham_city.mp4",
+                  "image_desktop": "https://s3.catalog-yupin.com/b2c/seller/900008/products/gotham_city.mp4",
+                  "product_content": []
+              }
+          ]
+      }
+  ],
+  "message": "success"
+}

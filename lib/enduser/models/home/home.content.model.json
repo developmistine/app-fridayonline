@@ -1,0 +1,60 @@
+{
+  "code": "100",
+  "data": {
+    "content_header": "",
+    "content_img": "",
+    "content_type_detail": [
+      {
+        "content_type": 1,
+        "content_detail": [
+          {
+            "content_id": 16,
+            "action_type": 0,
+            "action_value": "",
+            "content_name": "announce",
+            "start_date": "2024-12-09T23:18:16Z",
+            "end_date": "2024-12-31T23:59:59Z",
+            "image": "",
+            "product_content": []
+          },
+          {
+            "content_id": 18,
+            "action_type": 0,
+            "action_value": "",
+            "content_name": "announce",
+            "start_date": "2024-12-09T23:18:16Z",
+            "end_date": "2025-01-31T23:59:59Z",
+            "image": "",
+            "product_content": []
+          }
+        ]
+      },
+      {
+        "content_type": 3,
+        "content_detail": [
+          {
+            "content_id": 17,
+            "action_type": 0,
+            "action_value": "",
+            "content_name": "announce",
+            "start_date": "2024-12-09T23:18:16Z",
+            "end_date": "2024-12-31T23:59:59Z",
+            "image": "",
+            "product_content": []
+          },
+          {
+            "content_id": 19,
+            "action_type": 0,
+            "action_value": "",
+            "content_name": "announce",
+            "start_date": "2024-12-09T23:18:16Z",
+            "end_date": "2025-01-31T23:59:59Z",
+            "image": "",
+            "product_content": []
+          }
+        ]
+      }
+    ]
+  },
+  "message": "success"
+}

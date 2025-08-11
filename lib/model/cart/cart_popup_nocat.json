@@ -1,0 +1,29 @@
+{
+  "IsShowPopup": true,
+  "PopupList": [
+    {
+      "PopupSeq": "689",
+      "PopupType": "url",
+      "PopupParam": "https://sp.fridayth.com/webnew/Coupon650-12?ProjectCode=CCP12&Repcode=0999005499&RepSeq=5486041&RepType=2",
+      "PopupImg": "https://s3.catalog-yupin.com/Yupindata/IMGPopup2024/1718348374.gif"
+    },
+    {
+      "PopupSeq": "706",
+      "PopupType": "image",
+      "PopupParam": "",
+      "PopupImg": "https://s3.catalog-yupin.com/Yupindata/IMGPopup2024/1718788037.gif"
+    },
+    {
+      "PopupSeq": "698",
+      "PopupType": "sku",
+      "PopupParam": "38791",
+      "PopupImg": "https://s3.catalog-yupin.com/Yupindata/IMGPopup2024/1718359120.gif"
+    },
+    {
+      "PopupSeq": "700",
+      "PopupType": "category",
+      "PopupParam": "519",
+      "PopupImg": "https://s3.catalog-yupin.com/Yupindata/IMGPopup2024/1718359439.gif"
+    }
+  ]
+}

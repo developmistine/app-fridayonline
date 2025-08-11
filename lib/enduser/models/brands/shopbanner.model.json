@@ -1,0 +1,26 @@
+{
+  "code": "100",
+  "data": [
+    {
+      "content_id": 1113,
+      "action_type": 3,
+      "action_value": "3",
+      "content_name": "Friday Mall ลดค่าขนส่ง",
+      "start_date": "01/04/2025 00:00:00",
+      "end_date": "31/05/2025 00:00:00",
+      "image": "https://s3.catalog-yupin.com/b2c/contents/2025/10413/mobile_20250406135039_1.jpg",
+      "image_desktop": "https://s3.catalog-yupin.com/b2c/contents/2025/10413/web_20250406135040_1.jpg"
+    },
+    {
+      "content_id": 1112,
+      "action_type": 3,
+      "action_value": "4",
+      "content_name": "Friday Mall ลดเพิ่ม 100 บาท",
+      "start_date": "01/04/2025 00:00:00",
+      "end_date": "31/05/2025 00:00:00",
+      "image": "https://s3.catalog-yupin.com/b2c/contents/2025/10413/mobile_20250406135039_1.jpg",
+      "image_desktop": "https://s3.catalog-yupin.com/b2c/contents/2025/10413/web_20250406135040_1.jpg"
+    }
+  ],
+  "message": "success"
+}

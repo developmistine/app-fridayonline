@@ -1,0 +1,35 @@
+{
+  "cust_id": 1,
+  "checkout_shop_orders": [
+    {
+      "shop_id": 2,
+      "product_briefs": [
+        {
+          "product_id": 1,
+          "item_id": 11
+        }
+      ]
+    },
+    {
+      "shop_id": 7,
+      "product_briefs": [
+        {
+          "product_id": 7,
+          "item_id": 16
+        }
+      ]
+    }
+  ],
+  "promotion_data": {
+    "unused_platform_voucher": true,
+    "platform_vouchers": [92],
+    "shop_vouchers": [
+      {
+        "shop_id": 2,
+        "unused_shop_voucher": true,
+        "vouchers": []
+      }
+    ],
+    "free_shipping": []
+  }
+}

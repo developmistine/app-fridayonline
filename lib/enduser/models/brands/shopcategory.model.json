@@ -1,0 +1,2580 @@
+{
+  "code": "100",
+  "data": [
+    {
+      "catid": 847,
+      "catname": "สกินแคร์",
+      "sub_categories": [
+        {
+          "subcat_id": 877,
+          "name": "รักษาสิว",
+          "display_name": "รักษาสิว",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/877.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1687,
+              "prodline_code": "005",
+              "name": "คลีนซิ่งรักษาสิว",
+              "display_name": "คลีนซิ่งรักษาสิว"
+            },
+            {
+              "prodline_id": 1738,
+              "prodline_code": "006",
+              "name": "เจลแต้มสิว",
+              "display_name": "เจลแต้มสิว"
+            }
+          ]
+        },
+        {
+          "subcat_id": 913,
+          "name": "ทำความสะอาดผิวหน้า",
+          "display_name": "ทำความสะอาดผิวหน้า",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/913.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1070,
+              "prodline_code": "000",
+              "name": "ผลิตภัณฑ์ทำความสะอาดผิวหน้าอื่นๆ",
+              "display_name": "ผลิตภัณฑ์ทำความสะอาดผิวหน้าอื่นๆ"
+            },
+            {
+              "prodline_id": 1418,
+              "prodline_code": "002",
+              "name": "ทำความสะอาดผิวหน้าชนิดเจล",
+              "display_name": "ทำความสะอาดผิวหน้าชนิดเจล"
+            },
+            {
+              "prodline_id": 1556,
+              "prodline_code": "004",
+              "name": "ทำความสะอาดผิวหน้าชนิดน้ำนม",
+              "display_name": "ทำความสะอาดผิวหน้าชนิดน้ำนม"
+            },
+            {
+              "prodline_id": 1704,
+              "prodline_code": "005",
+              "name": "ทำความสะอาดผิวหน้าชนิดออยล์",
+              "display_name": "ทำความสะอาดผิวหน้าชนิดออยล์"
+            },
+            {
+              "prodline_id": 1782,
+              "prodline_code": "006",
+              "name": "ทำความสะอาดผิวหน้าสูตรน้ำ",
+              "display_name": "ทำความสะอาดผิวหน้าสูตรน้ำ"
+            },
+            {
+              "prodline_id": 1850,
+              "prodline_code": "008",
+              "name": "สครับผิวหน้า",
+              "display_name": "สครับผิวหน้า"
+            },
+            {
+              "prodline_id": 1863,
+              "prodline_code": "009",
+              "name": "โฟมล้างหน้า",
+              "display_name": "โฟมล้างหน้า"
+            },
+            {
+              "prodline_id": 1890,
+              "prodline_code": "010",
+              "name": "สบู่ล้างหน้า",
+              "display_name": "สบู่ล้างหน้า"
+            }
+          ]
+        },
+        {
+          "subcat_id": 944,
+          "name": "บำรุงผิวหน้าเพื่อผิวกระจ่างใส",
+          "display_name": "บำรุงผิวหน้าเพื่อผิวกระจ่างใส",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/944.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1236,
+              "prodline_code": "001",
+              "name": "เพื่อผิวกระจ่างใสชนิดครีม",
+              "display_name": "เพื่อผิวกระจ่างใสชนิดครีม"
+            },
+            {
+              "prodline_id": 1535,
+              "prodline_code": "003",
+              "name": "เพื่อผิวกระจ่างใสชนิดเจล",
+              "display_name": "เพื่อผิวกระจ่างใสชนิดเจล"
+            },
+            {
+              "prodline_id": 1591,
+              "prodline_code": "004",
+              "name": "เพื่อผิวกระจ่างใสชนิดบูสเตอร์",
+              "display_name": "เพื่อผิวกระจ่างใสชนิดบูสเตอร์"
+            },
+            {
+              "prodline_id": 1658,
+              "prodline_code": "005",
+              "name": "เพื่อผิวกระจ่างใสชนิดเอสเซนส์",
+              "display_name": "เพื่อผิวกระจ่างใสชนิดเอสเซนส์"
+            },
+            {
+              "prodline_id": 1745,
+              "prodline_code": "006",
+              "name": "เพื่อผิวกระจ่างใสชนิดเซรั่ม",
+              "display_name": "เพื่อผิวกระจ่างใสชนิดเซรั่ม"
+            }
+          ]
+        },
+        {
+          "subcat_id": 966,
+          "name": "บำรุงผิวหน้าเพื่อผิวอ่อนเยาว์",
+          "display_name": "บำรุงผิวหน้าเพื่อผิวอ่อนเยาว์",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/966.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1067,
+              "prodline_code": "000",
+              "name": "เพื่อเพื่อผิวอ่อนเยาว์อื่นๆ",
+              "display_name": "เพื่อเพื่อผิวอ่อนเยาว์อื่นๆ"
+            },
+            {
+              "prodline_id": 1251,
+              "prodline_code": "001",
+              "name": "เพื่อผิวอ่อนเยาว์ชนิดครีม",
+              "display_name": "เพื่อผิวอ่อนเยาว์ชนิดครีม"
+            },
+            {
+              "prodline_id": 1413,
+              "prodline_code": "002",
+              "name": "เพื่อผิวอ่อนเยาว์ชนิดออยล์",
+              "display_name": "เพื่อผิวอ่อนเยาว์ชนิดออยล์"
+            },
+            {
+              "prodline_id": 1506,
+              "prodline_code": "003",
+              "name": "เพื่อผิวอ่อนเยาว์ชนิดเจล",
+              "display_name": "เพื่อผิวอ่อนเยาว์ชนิดเจล"
+            },
+            {
+              "prodline_id": 1582,
+              "prodline_code": "004",
+              "name": "เพื่อผิวอ่อนเยาว์ชนิดบูสเตอร์",
+              "display_name": "เพื่อผิวอ่อนเยาว์ชนิดบูสเตอร์"
+            },
+            {
+              "prodline_id": 1690,
+              "prodline_code": "005",
+              "name": "เพื่อผิวอ่อนเยาว์ชนิดเอสเซนส์",
+              "display_name": "เพื่อผิวอ่อนเยาว์ชนิดเอสเซนส์"
+            },
+            {
+              "prodline_id": 1740,
+              "prodline_code": "006",
+              "name": "เพื่อผิวอ่อนเยาว์ชนิดเซรั่ม",
+              "display_name": "เพื่อผิวอ่อนเยาว์ชนิดเซรั่ม"
+            },
+            {
+              "prodline_id": 1788,
+              "prodline_code": "007",
+              "name": "เพื่อผิวอ่อนเยาว์ชนิดสเปรย์",
+              "display_name": "เพื่อผิวอ่อนเยาว์ชนิดสเปรย์"
+            },
+            {
+              "prodline_id": 1841,
+              "prodline_code": "008",
+              "name": "เพื่อผิวอ่อนเยาว์ชนิดโลชั่น",
+              "display_name": "เพื่อผิวอ่อนเยาว์ชนิดโลชั่น"
+            }
+          ]
+        },
+        {
+          "subcat_id": 975,
+          "name": "บำรุงผิวหน้าเพื่อผิวชุ่มชื่น",
+          "display_name": "บำรุงผิวหน้าเพื่อผิวชุ่มชื่น",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/975.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1252,
+              "prodline_code": "001",
+              "name": "เพื่อผิวชุ่มชื่นชนิดครีม",
+              "display_name": "เพื่อผิวชุ่มชื่นชนิดครีม"
+            },
+            {
+              "prodline_id": 1521,
+              "prodline_code": "003",
+              "name": "เพื่อผิวชุ่มชื่นชนิดเจล",
+              "display_name": "เพื่อผิวชุ่มชื่นชนิดเจล"
+            },
+            {
+              "prodline_id": 1842,
+              "prodline_code": "008",
+              "name": "เพื่อผิวชุ่มชื่นชนิดโลชั่น",
+              "display_name": "เพื่อผิวชุ่มชื่นชนิดโลชั่น"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1000,
+          "name": "กันแดดสำหรับผิวหน้า",
+          "display_name": "กันแดดสำหรับผิวหน้า",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1000.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1072,
+              "prodline_code": "000",
+              "name": "กันแดดผิวหน้าอื่นๆ",
+              "display_name": "กันแดดผิวหน้าอื่นๆ"
+            },
+            {
+              "prodline_id": 1231,
+              "prodline_code": "001",
+              "name": "กันแดดผิวหน้าชนิดครีม",
+              "display_name": "กันแดดผิวหน้าชนิดครีม"
+            },
+            {
+              "prodline_id": 1415,
+              "prodline_code": "002",
+              "name": "กันแดดผิวหน้าชนิดเจล",
+              "display_name": "กันแดดผิวหน้าชนิดเจล"
+            },
+            {
+              "prodline_id": 1456,
+              "prodline_code": "003",
+              "name": "กันแดดผิวหน้าชนิดโลชั่น",
+              "display_name": "กันแดดผิวหน้าชนิดโลชั่น"
+            },
+            {
+              "prodline_id": 1580,
+              "prodline_code": "004",
+              "name": "กันแดดผิวหน้าชนิดสเปรย์",
+              "display_name": "กันแดดผิวหน้าชนิดสเปรย์"
+            },
+            {
+              "prodline_id": 1688,
+              "prodline_code": "005",
+              "name": "กันแดดผิวหน้าชนิดเอสเซนส์",
+              "display_name": "กันแดดผิวหน้าชนิดเอสเซนส์"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1014,
+          "name": "มาส์กหน้า",
+          "display_name": "มาส์กหน้า",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1014.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1246,
+              "prodline_code": "001",
+              "name": "มาส์กครีม",
+              "display_name": "มาส์กครีม"
+            },
+            {
+              "prodline_id": 1410,
+              "prodline_code": "002",
+              "name": "มาส์กเจล",
+              "display_name": "มาส์กเจล"
+            },
+            {
+              "prodline_id": 1672,
+              "prodline_code": "005",
+              "name": "มาส์กโคลน",
+              "display_name": "มาส์กโคลน"
+            },
+            {
+              "prodline_id": 1781,
+              "prodline_code": "006",
+              "name": "มาส์กลอกหน้า",
+              "display_name": "มาส์กลอกหน้า"
+            },
+            {
+              "prodline_id": 1820,
+              "prodline_code": "007",
+              "name": "สลีปปิ้งมาส์ก",
+              "display_name": "สลีปปิ้งมาส์ก"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1025,
+          "name": "ดูแลผิวรอบดวงตา",
+          "display_name": "ดูแลผิวรอบดวงตา",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1025.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1073,
+              "prodline_code": "000",
+              "name": "ดูแลรอบดวงตาอื่นๆ",
+              "display_name": "ดูแลรอบดวงตาอื่นๆ"
+            },
+            {
+              "prodline_id": 1247,
+              "prodline_code": "001",
+              "name": "ครีมบำรุงรอบดวงตา",
+              "display_name": "ครีมบำรุงรอบดวงตา"
+            },
+            {
+              "prodline_id": 1390,
+              "prodline_code": "002",
+              "name": "เจลบำรุงรอบดวงตา",
+              "display_name": "เจลบำรุงรอบดวงตา"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1031,
+          "name": "โทนเนอร์และโลชั่นเช็ดผิวหน้า",
+          "display_name": "โทนเนอร์และโลชั่นเช็ดผิวหน้า",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1031.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1248,
+              "prodline_code": "001",
+              "name": "โทนเนอร์",
+              "display_name": "โทนเนอร์"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1038,
+          "name": "บำรุงริมฝีปาก",
+          "display_name": "บำรุงริมฝีปาก",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1038.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1249,
+              "prodline_code": "001",
+              "name": "ลิปบาล์มบำรุง",
+              "display_name": "ลิปบาล์มบำรุง"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1041,
+          "name": "รักษาฝ้า",
+          "display_name": "รักษาฝ้า",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1041.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1220,
+              "prodline_code": "001",
+              "name": "รักษาฝ้าชนิดครีม",
+              "display_name": "รักษาฝ้าชนิดครีม"
+            },
+            {
+              "prodline_id": 1393,
+              "prodline_code": "002",
+              "name": "รักษาฝ้าชนิดเซรั่ม",
+              "display_name": "รักษาฝ้าชนิดเซรั่ม"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1044,
+          "name": "บำรุงผิวหน้าอื่นๆ",
+          "display_name": "บำรุงผิวหน้าอื่นๆ",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1044.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1198,
+              "prodline_code": "001",
+              "name": "บำรุงผิวหน้าอื่นๆชนิดครีม",
+              "display_name": "บำรุงผิวหน้าอื่นๆชนิดครีม"
+            },
+            {
+              "prodline_id": 1697,
+              "prodline_code": "005",
+              "name": "บำรุงผิวหน้าอื่นๆชนิดเอสเซนส์",
+              "display_name": "บำรุงผิวหน้าอื่นๆชนิดเอสเซนส์"
+            },
+            {
+              "prodline_id": 1760,
+              "prodline_code": "006",
+              "name": "บำรุงผิวหน้าอื่นๆชนิดเซรั่ม",
+              "display_name": "บำรุงผิวหน้าอื่นๆชนิดเซรั่ม"
+            },
+            {
+              "prodline_id": 1840,
+              "prodline_code": "008",
+              "name": "บำรุงผิวหน้าอื่นๆชนิดโลชั่น",
+              "display_name": "บำรุงผิวหน้าอื่นๆชนิดโลชั่น"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "catid": 848,
+      "catname": "เครื่องสำอาง",
+      "sub_categories": [
+        {
+          "subcat_id": 874,
+          "name": "เบส & ไพรเมอร์",
+          "display_name": "เบส & ไพรเมอร์",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/874.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1250,
+              "prodline_code": "001",
+              "name": "เบส",
+              "display_name": "เบส"
+            },
+            {
+              "prodline_id": 1394,
+              "prodline_code": "002",
+              "name": "ไพรเมอร์",
+              "display_name": "ไพรเมอร์"
+            }
+          ]
+        },
+        {
+          "subcat_id": 918,
+          "name": "บีบี & ซีซีครีม",
+          "display_name": "บีบี & ซีซีครีม",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/918.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1268,
+              "prodline_code": "001",
+              "name": "บีบีครีม",
+              "display_name": "บีบีครีม"
+            },
+            {
+              "prodline_id": 1405,
+              "prodline_code": "002",
+              "name": "บีบีคุชชั่น",
+              "display_name": "บีบีคุชชั่น"
+            },
+            {
+              "prodline_id": 1692,
+              "prodline_code": "005",
+              "name": "ดีดีครีม",
+              "display_name": "ดีดีครีม"
+            }
+          ]
+        },
+        {
+          "subcat_id": 951,
+          "name": "บลัชออน",
+          "display_name": "บลัชออน",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/951.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1691,
+              "prodline_code": "005",
+              "name": "บลัชเนื้อฝุ่น",
+              "display_name": "บลัชเนื้อฝุ่น"
+            }
+          ]
+        },
+        {
+          "subcat_id": 971,
+          "name": "คอนซีลเลอร์",
+          "display_name": "คอนซีลเลอร์",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/971.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1266,
+              "prodline_code": "001",
+              "name": "คอนซีลเลอร์ครีม",
+              "display_name": "คอนซีลเลอร์ครีม"
+            }
+          ]
+        },
+        {
+          "subcat_id": 981,
+          "name": "รองพื้น",
+          "display_name": "รองพื้น",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/981.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1265,
+              "prodline_code": "001",
+              "name": "รองพื้นเนื้อครีม",
+              "display_name": "รองพื้นเนื้อครีม"
+            },
+            {
+              "prodline_id": 1412,
+              "prodline_code": "002",
+              "name": "รองพื้นคุชชั่น",
+              "display_name": "รองพื้นคุชชั่น"
+            },
+            {
+              "prodline_id": 1583,
+              "prodline_code": "004",
+              "name": "รองพื้นสูตรน้ำ",
+              "display_name": "รองพื้นสูตรน้ำ"
+            }
+          ]
+        },
+        {
+          "subcat_id": 994,
+          "name": "ผลิตภัณฑ์ตกแต่งดวงตา",
+          "display_name": "ผลิตภัณฑ์ตกแต่งดวงตา",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/994.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1432,
+              "prodline_code": "003",
+              "name": "อายไลเนอร์",
+              "display_name": "อายไลเนอร์"
+            },
+            {
+              "prodline_id": 1663,
+              "prodline_code": "005",
+              "name": "อายแชโดว์เนื้อลิควิด",
+              "display_name": "อายแชโดว์เนื้อลิควิด"
+            },
+            {
+              "prodline_id": 1777,
+              "prodline_code": "006",
+              "name": "มาสคาร่า",
+              "display_name": "มาสคาร่า"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1008,
+          "name": "ผลิตภัณฑ์สำหรับคิ้ว",
+          "display_name": "ผลิตภัณฑ์สำหรับคิ้ว",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1008.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1140,
+              "prodline_code": "001",
+              "name": "เซ็ตตกแต่งคิ้ว",
+              "display_name": "เซ็ตตกแต่งคิ้ว"
+            },
+            {
+              "prodline_id": 1433,
+              "prodline_code": "003",
+              "name": "มาสคาร่าคิ้ว",
+              "display_name": "มาสคาร่าคิ้ว"
+            },
+            {
+              "prodline_id": 1597,
+              "prodline_code": "004",
+              "name": "ดินสอเขียนคิ้ว",
+              "display_name": "ดินสอเขียนคิ้ว"
+            },
+            {
+              "prodline_id": 1776,
+              "prodline_code": "006",
+              "name": "เขียนคิ้วแบบฝุ่น",
+              "display_name": "เขียนคิ้วแบบฝุ่น"
+            },
+            {
+              "prodline_id": 1823,
+              "prodline_code": "007",
+              "name": "เจลเขียนคิ้ว",
+              "display_name": "เจลเขียนคิ้ว"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1019,
+          "name": "เมคอัพพาเล็ต/เมคอัพเซ็ต",
+          "display_name": "เมคอัพพาเล็ต/เมคอัพเซ็ต",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1019.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1237,
+              "prodline_code": "001",
+              "name": "เมคอัพพาเล็ต",
+              "display_name": "เมคอัพพาเล็ต"
+            },
+            {
+              "prodline_id": 1419,
+              "prodline_code": "002",
+              "name": "เมคอัพเซ็ต",
+              "display_name": "เมคอัพเซ็ต"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1027,
+          "name": "แป้ง",
+          "display_name": "แป้ง",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1027.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1238,
+              "prodline_code": "001",
+              "name": "แป้งผสมรองพื้น",
+              "display_name": "แป้งผสมรองพื้น"
+            },
+            {
+              "prodline_id": 1420,
+              "prodline_code": "002",
+              "name": "แป้งฝุ่น",
+              "display_name": "แป้งฝุ่น"
+            },
+            {
+              "prodline_id": 1453,
+              "prodline_code": "003",
+              "name": "แป้งอัดแข็งไม่ผสมรองพื้น",
+              "display_name": "แป้งอัดแข็งไม่ผสมรองพื้น"
+            },
+            {
+              "prodline_id": 1557,
+              "prodline_code": "004",
+              "name": "แป้งเนื้อครีม",
+              "display_name": "แป้งเนื้อครีม"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1040,
+          "name": "ตกแต่งริมฝีปาก",
+          "display_name": "ตกแต่งริมฝีปาก",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1040.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1518,
+              "prodline_code": "003",
+              "name": "ลิปกลอส",
+              "display_name": "ลิปกลอส"
+            },
+            {
+              "prodline_id": 1819,
+              "prodline_code": "007",
+              "name": "ลิปมันเปลี่ยนสี",
+              "display_name": "ลิปมันเปลี่ยนสี"
+            },
+            {
+              "prodline_id": 1851,
+              "prodline_code": "008",
+              "name": "ลิปครีม",
+              "display_name": "ลิปครีม"
+            },
+            {
+              "prodline_id": 1893,
+              "prodline_code": "011",
+              "name": "ลิปสติกแท่ง",
+              "display_name": "ลิปสติกแท่ง"
+            },
+            {
+              "prodline_id": 1900,
+              "prodline_code": "012",
+              "name": "ลิควิดลิปสติก",
+              "display_name": "ลิควิดลิปสติก"
+            },
+            {
+              "prodline_id": 1905,
+              "prodline_code": "013",
+              "name": "ทินท์",
+              "display_name": "ทินท์"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "catid": 850,
+      "catname": "อุปกรณ์เสริมสวย",
+      "sub_categories": [
+        {
+          "subcat_id": 899,
+          "name": "อุปกรณ์แต่งหน้า",
+          "display_name": "อุปกรณ์แต่งหน้า",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/899.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1108,
+              "prodline_code": "001",
+              "name": "ฟองน้ำ/พัฟฟ์แต่งหน้า",
+              "display_name": "ฟองน้ำ/พัฟฟ์แต่งหน้า"
+            },
+            {
+              "prodline_id": 1423,
+              "prodline_code": "002",
+              "name": "เซ็ตแปรงแต่งหน้า",
+              "display_name": "เซ็ตแปรงแต่งหน้า"
+            },
+            {
+              "prodline_id": 1664,
+              "prodline_code": "005",
+              "name": "พู่กันทาปาก",
+              "display_name": "พู่กันทาปาก"
+            },
+            {
+              "prodline_id": 1758,
+              "prodline_code": "006",
+              "name": "อุปกรณ์สำหรับดวงตา(ที่ดัดขนตา/ขนตาปลอม/กาวติดขนตา)",
+              "display_name": "อุปกรณ์สำหรับดวงตา(ที่ดัดขนตา/ขนตาปลอม/กาวติดขนตา)"
+            }
+          ]
+        },
+        {
+          "subcat_id": 959,
+          "name": "อุปกรณ์สำหรับมือและเท้า",
+          "display_name": "อุปกรณ์สำหรับมือและเท้า",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/959.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1449,
+              "prodline_code": "003",
+              "name": "อุปกรณ์ขัดเท้า",
+              "display_name": "อุปกรณ์ขัดเท้า"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "catid": 852,
+      "catname": "น้ำหอม",
+      "sub_categories": [
+        {
+          "subcat_id": 885,
+          "name": "ผลิตภัณฑ์ความหอมสำหรับผู้หญิง",
+          "display_name": "ผลิตภัณฑ์ความหอมสำหรับผู้หญิง",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/885.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1127,
+              "prodline_code": "001",
+              "name": "โคโลญจน์สำหรับผู้หญิง",
+              "display_name": "โคโลญจน์สำหรับผู้หญิง"
+            },
+            {
+              "prodline_id": 1309,
+              "prodline_code": "002",
+              "name": "โอเดอเพอร์ฟูมสำหรับผู้หญิง",
+              "display_name": "โอเดอเพอร์ฟูมสำหรับผู้หญิง"
+            },
+            {
+              "prodline_id": 1443,
+              "prodline_code": "003",
+              "name": "โอเดอทอยเล็ตต์สำหรับผู้หญิง",
+              "display_name": "โอเดอทอยเล็ตต์สำหรับผู้หญิง"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "catid": 871,
+      "catname": "ชุดชั้นในและชุดนอนผู้หญิง",
+      "sub_categories": [
+        {
+          "subcat_id": 876,
+          "name": "ชุดชั้นในผู้หญิง",
+          "display_name": "ชุดชั้นในผู้หญิง",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/876.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1263,
+              "prodline_code": "001",
+              "name": "ยกทรง",
+              "display_name": "ยกทรง"
+            },
+            {
+              "prodline_id": 1367,
+              "prodline_code": "002",
+              "name": "กางเกงในผู้หญิง",
+              "display_name": "กางเกงในผู้หญิง"
+            },
+            {
+              "prodline_id": 1654,
+              "prodline_code": "005",
+              "name": "เสื้อ/กางเกงกระชับสัดส่วน/สเตย์",
+              "display_name": "เสื้อ/กางเกงกระชับสัดส่วน/สเตย์"
+            },
+            {
+              "prodline_id": 1741,
+              "prodline_code": "006",
+              "name": "เสื้อ/กระโปรง/กางเกง/ชุดบังทรง",
+              "display_name": "เสื้อ/กระโปรง/กางเกง/ชุดบังทรง"
+            }
+          ]
+        },
+        {
+          "subcat_id": 919,
+          "name": "ชุดนอนผู้หญิง",
+          "display_name": "ชุดนอนผู้หญิง",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/919.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1262,
+              "prodline_code": "001",
+              "name": "ชุดนอนผู้หญิงแบบกระโปรง",
+              "display_name": "ชุดนอนผู้หญิงแบบกระโปรง"
+            },
+            {
+              "prodline_id": 1368,
+              "prodline_code": "002",
+              "name": "ชุดนอนผู้หญิงแบบกางเกง",
+              "display_name": "ชุดนอนผู้หญิงแบบกางเกง"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "catid": 872,
+      "catname": "แฟชั่นและเครื่องประดับ",
+      "sub_categories": [
+        {
+          "subcat_id": 891,
+          "name": "เสื้อผ้าผู้หญิง",
+          "display_name": "เสื้อผ้าผู้หญิง",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/891.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1270,
+              "prodline_code": "001",
+              "name": "เสื้อผู้หญิง",
+              "display_name": "เสื้อผู้หญิง"
+            },
+            {
+              "prodline_id": 1369,
+              "prodline_code": "002",
+              "name": "เดรส/กระโปรงและกางเกงผู้หญิง",
+              "display_name": "เดรส/กระโปรงและกางเกงผู้หญิง"
+            },
+            {
+              "prodline_id": 1586,
+              "prodline_code": "004",
+              "name": "ชุดเสื้อผ้าเป็นเซ็ตสำหรับผู้หญิง",
+              "display_name": "ชุดเสื้อผ้าเป็นเซ็ตสำหรับผู้หญิง"
+            }
+          ]
+        },
+        {
+          "subcat_id": 920,
+          "name": "รองเท้า/ถุงเท้าผู้หญิง",
+          "display_name": "รองเท้า/ถุงเท้าผู้หญิง",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/920.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1269,
+              "prodline_code": "001",
+              "name": "รองเท้าผู้หญิง",
+              "display_name": "รองเท้าผู้หญิง"
+            }
+          ]
+        },
+        {
+          "subcat_id": 941,
+          "name": "เครื่องประดับผู้หญิง",
+          "display_name": "เครื่องประดับผู้หญิง",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/941.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1310,
+              "prodline_code": "002",
+              "name": "หมวก/ผ้าพันคอ/ถุงมือ/ที่ครอบหูสำหรับผู้หญิง",
+              "display_name": "หมวก/ผ้าพันคอ/ถุงมือ/ที่ครอบหูสำหรับผู้หญิง"
+            },
+            {
+              "prodline_id": 1609,
+              "prodline_code": "004",
+              "name": "นาฬิกาข้อมือผู้หญิง",
+              "display_name": "นาฬิกาข้อมือผู้หญิง"
+            },
+            {
+              "prodline_id": 1657,
+              "prodline_code": "005",
+              "name": "เครื่องประดับทอง",
+              "display_name": "เครื่องประดับทอง"
+            }
+          ]
+        },
+        {
+          "subcat_id": 953,
+          "name": "กระเป๋าผู้หญิง",
+          "display_name": "กระเป๋าผู้หญิง",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/953.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1241,
+              "prodline_code": "001",
+              "name": "กระเป๋าสะพาย/เป้",
+              "display_name": "กระเป๋าสะพาย/เป้"
+            }
+          ]
+        },
+        {
+          "subcat_id": 986,
+          "name": "แฟชั่นอื่นๆ",
+          "display_name": "แฟชั่นอื่นๆ",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/986.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1253,
+              "prodline_code": "001",
+              "name": "แฟชั่นอื่นๆ",
+              "display_name": "แฟชั่นอื่นๆ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "catid": 873,
+      "catname": "ผู้ชาย",
+      "sub_categories": [
+        {
+          "subcat_id": 892,
+          "name": "ระงับกลิ่นกายผู้ชาย",
+          "display_name": "ระงับกลิ่นกายผู้ชาย",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/892.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1328,
+              "prodline_code": "002",
+              "name": "ผลิตภัณฑ์ทำความสะอาดผิวกายผู้ชาย",
+              "display_name": "ผลิตภัณฑ์ทำความสะอาดผิวกายผู้ชาย"
+            }
+          ]
+        },
+        {
+          "subcat_id": 945,
+          "name": "อุปกรณ์สำหรับผู้ชาย",
+          "display_name": "อุปกรณ์สำหรับผู้ชาย",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/945.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1064,
+              "prodline_code": "000",
+              "name": "อุปกรณ์อื่นๆสำหรับผู้ชาย",
+              "display_name": "อุปกรณ์อื่นๆสำหรับผู้ชาย"
+            },
+            {
+              "prodline_id": 1532,
+              "prodline_code": "003",
+              "name": "บัตตาเลี่ยน",
+              "display_name": "บัตตาเลี่ยน"
+            }
+          ]
+        },
+        {
+          "subcat_id": 967,
+          "name": "แฟชั่นสำหรับผู้ชาย",
+          "display_name": "แฟชั่นสำหรับผู้ชาย",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/967.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1362,
+              "prodline_code": "002",
+              "name": "กางเกงสำหรับผู้ชาย",
+              "display_name": "กางเกงสำหรับผู้ชาย"
+            },
+            {
+              "prodline_id": 1589,
+              "prodline_code": "004",
+              "name": "นาฬิกาสำหรับผู้ชาย",
+              "display_name": "นาฬิกาสำหรับผู้ชาย"
+            }
+          ]
+        },
+        {
+          "subcat_id": 984,
+          "name": "ชุดชั้นใน+ชุดนอนสำหรับผู้ชาย",
+          "display_name": "ชุดชั้นใน+ชุดนอนสำหรับผู้ชาย",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/984.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1258,
+              "prodline_code": "001",
+              "name": "ชุดชั้นในสำหรับผู้ชาย",
+              "display_name": "ชุดชั้นในสำหรับผู้ชาย"
+            }
+          ]
+        },
+        {
+          "subcat_id": 990,
+          "name": "ผลิตภัณฑ์ความหอมสำหรับผู้ชาย",
+          "display_name": "ผลิตภัณฑ์ความหอมสำหรับผู้ชาย",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/990.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1069,
+              "prodline_code": "000",
+              "name": "ผลิตภัณฑ์เพื่อความหอมอื่นๆสำหรับผู้ชาย",
+              "display_name": "ผลิตภัณฑ์เพื่อความหอมอื่นๆสำหรับผู้ชาย"
+            },
+            {
+              "prodline_id": 1457,
+              "prodline_code": "003",
+              "name": "โอเดอทอยเล็ตต์สำหรับผู้ชาย",
+              "display_name": "โอเดอทอยเล็ตต์สำหรับผู้ชาย"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "catid": 858,
+      "catname": "อาหารแห้งและเครื่องปรุง",
+      "sub_categories": [
+        {
+          "subcat_id": 886,
+          "name": "ข้าวสาร/ข้าวโอ้ต/ซีเรียล/มูสลี่",
+          "display_name": "ข้าวสาร/ข้าวโอ้ต/ซีเรียล/มูสลี่",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/886.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1639,
+              "prodline_code": "004",
+              "name": "ข้าวไม่ขัดสี",
+              "display_name": "ข้าวไม่ขัดสี"
+            }
+          ]
+        },
+        {
+          "subcat_id": 904,
+          "name": "เครื่องปรุง และส่วนผสมปรุงอาหาร",
+          "display_name": "เครื่องปรุง และส่วนผสมปรุงอาหาร",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/904.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1370,
+              "prodline_code": "002",
+              "name": "ซุปก้อน/ผงชูรส/ผงปรุงรส",
+              "display_name": "ซุปก้อน/ผงชูรส/ผงปรุงรส"
+            },
+            {
+              "prodline_id": 1638,
+              "prodline_code": "004",
+              "name": "ซอสถั่วเหลือง/ซีอิ๊ว/เต้าเจี้ยว/เห็ดหอม",
+              "display_name": "ซอสถั่วเหลือง/ซีอิ๊ว/เต้าเจี้ยว/เห็ดหอม"
+            },
+            {
+              "prodline_id": 1694,
+              "prodline_code": "005",
+              "name": "ซอสพริก/ซอสมะเขือเทศ",
+              "display_name": "ซอสพริก/ซอสมะเขือเทศ"
+            },
+            {
+              "prodline_id": 1771,
+              "prodline_code": "006",
+              "name": "ซอสหอยนางรม",
+              "display_name": "ซอสหอยนางรม"
+            },
+            {
+              "prodline_id": 1849,
+              "prodline_code": "008",
+              "name": "น้ำจิ้ม",
+              "display_name": "น้ำจิ้ม"
+            },
+            {
+              "prodline_id": 1886,
+              "prodline_code": "010",
+              "name": "น้ำปลา",
+              "display_name": "น้ำปลา"
+            },
+            {
+              "prodline_id": 1897,
+              "prodline_code": "011",
+              "name": "น้ำส้มสายชู",
+              "display_name": "น้ำส้มสายชู"
+            },
+            {
+              "prodline_id": 1915,
+              "prodline_code": "017",
+              "name": "ซอสปรุงรสอื่นๆ",
+              "display_name": "ซอสปรุงรสอื่นๆ"
+            }
+          ]
+        },
+        {
+          "subcat_id": 934,
+          "name": "ส่วนผสมทำขนม/สารให้ความหวาน",
+          "display_name": "ส่วนผสมทำขนม/สารให้ความหวาน",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/934.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1217,
+              "prodline_code": "001",
+              "name": "แป้งทำขนมและอาหาร",
+              "display_name": "แป้งทำขนมและอาหาร"
+            }
+          ]
+        },
+        {
+          "subcat_id": 977,
+          "name": "อาหารกระป๋อง",
+          "display_name": "อาหารกระป๋อง",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/977.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1815,
+              "prodline_code": "007",
+              "name": "ผลไม้กระป๋อง",
+              "display_name": "ผลไม้กระป๋อง"
+            }
+          ]
+        },
+        {
+          "subcat_id": 992,
+          "name": "บะหมี่/โจ๊ก/ ซุป กึ่งสำเร็จรูป",
+          "display_name": "บะหมี่/โจ๊ก/ ซุป กึ่งสำเร็จรูป",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/992.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1209,
+              "prodline_code": "001",
+              "name": "บะหมี่กึ่งสำเร็จรูป",
+              "display_name": "บะหมี่กึ่งสำเร็จรูป"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "catid": 859,
+      "catname": "เครื่องดื่มและขนม",
+      "sub_categories": [
+        {
+          "subcat_id": 982,
+          "name": "กาแฟ",
+          "display_name": "กาแฟ",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/982.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1356,
+              "prodline_code": "002",
+              "name": "กาแฟสำเร็จรูป/กาแฟพร้อมดื่ม",
+              "display_name": "กาแฟสำเร็จรูป/กาแฟพร้อมดื่ม"
+            }
+          ]
+        },
+        {
+          "subcat_id": 993,
+          "name": "ชา",
+          "display_name": "ชา",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/993.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1204,
+              "prodline_code": "001",
+              "name": "ผงชา/ใบชา",
+              "display_name": "ผงชา/ใบชา"
+            },
+            {
+              "prodline_id": 1277,
+              "prodline_code": "002",
+              "name": "ชาพร้อมดื่ม",
+              "display_name": "ชาพร้อมดื่ม"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1003,
+          "name": "ผงชงดื่ม",
+          "display_name": "ผงชงดื่ม",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1003.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1357,
+              "prodline_code": "002",
+              "name": "ผงชงสมุนไพร/ผักผลไม้",
+              "display_name": "ผงชงสมุนไพร/ผักผลไม้"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1016,
+          "name": "นม",
+          "display_name": "นม",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1016.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1358,
+              "prodline_code": "002",
+              "name": "นมถั่วเหลือง",
+              "display_name": "นมถั่วเหลือง"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1026,
+          "name": "ขนมขบเคี้ยว",
+          "display_name": "ขนมขบเคี้ยว",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1026.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1359,
+              "prodline_code": "002",
+              "name": "ขนมอบ/ทอดกรอบ",
+              "display_name": "ขนมอบ/ทอดกรอบ"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1042,
+          "name": "ลูกอม/หมากฝรั่ง/ช็อคโกแล็ต",
+          "display_name": "ลูกอม/หมากฝรั่ง/ช็อคโกแล็ต",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1042.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1377,
+              "prodline_code": "002",
+              "name": "ลูกอม",
+              "display_name": "ลูกอม"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1043,
+          "name": "คุ้กกี้/บิสกิต/ แครกเกอร์/ ขนมปังกรอบ",
+          "display_name": "คุ้กกี้/บิสกิต/ แครกเกอร์/ ขนมปังกรอบ",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1043.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1716,
+              "prodline_code": "005",
+              "name": "บิสกิต/ขนมปังกรอบ",
+              "display_name": "บิสกิต/ขนมปังกรอบ"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1049,
+          "name": "วุ้น/พุ้ดดิ้ง/ มาร์ชแมลโลว์",
+          "display_name": "วุ้น/พุ้ดดิ้ง/ มาร์ชแมลโลว์",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1049.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1229,
+              "prodline_code": "001",
+              "name": "เยลลี่คาราจีแนน/พุดดิ้ง",
+              "display_name": "เยลลี่คาราจีแนน/พุดดิ้ง"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "catid": 860,
+      "catname": "ของใช้ในครัวเรือน",
+      "sub_categories": [
+        {
+          "subcat_id": 898,
+          "name": "อุปกรณ์บนโต๊ะอาหาร",
+          "display_name": "อุปกรณ์บนโต๊ะอาหาร",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/898.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1271,
+              "prodline_code": "002",
+              "name": "ช้อน/ส้อม/มีดทานอาหาร",
+              "display_name": "ช้อน/ส้อม/มีดทานอาหาร"
+            },
+            {
+              "prodline_id": 1645,
+              "prodline_code": "004",
+              "name": "ฝาชี/ฝาครอบอาหาร",
+              "display_name": "ฝาชี/ฝาครอบอาหาร"
+            },
+            {
+              "prodline_id": 1706,
+              "prodline_code": "005",
+              "name": "ภาชนะ/อุปกรณ์ทานอาหารอื่นๆ",
+              "display_name": "ภาชนะ/อุปกรณ์ทานอาหารอื่นๆ"
+            },
+            {
+              "prodline_id": 1755,
+              "prodline_code": "006",
+              "name": "อุปกรณ์และของใช้อื่นๆบนโต๊ะอาหาร",
+              "display_name": "อุปกรณ์และของใช้อื่นๆบนโต๊ะอาหาร"
+            }
+          ]
+        },
+        {
+          "subcat_id": 926,
+          "name": "ภาชนะและอุปกรณ์ประกอบอาหาร",
+          "display_name": "ภาชนะและอุปกรณ์ประกอบอาหาร",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/926.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1112,
+              "prodline_code": "001",
+              "name": "หม้อ",
+              "display_name": "หม้อ"
+            },
+            {
+              "prodline_id": 1272,
+              "prodline_code": "002",
+              "name": "กระทะ",
+              "display_name": "กระทะ"
+            },
+            {
+              "prodline_id": 1514,
+              "prodline_code": "003",
+              "name": "หม้อข้าว/หม้อนึ่ง/ซึ้ง",
+              "display_name": "หม้อข้าว/หม้อนึ่ง/ซึ้ง"
+            },
+            {
+              "prodline_id": 1646,
+              "prodline_code": "004",
+              "name": "ภาชนะประกอบอาหารอื่นๆ",
+              "display_name": "ภาชนะประกอบอาหารอื่นๆ"
+            },
+            {
+              "prodline_id": 1803,
+              "prodline_code": "007",
+              "name": "ทัพพี/ตะหลิว",
+              "display_name": "ทัพพี/ตะหลิว"
+            }
+          ]
+        },
+        {
+          "subcat_id": 932,
+          "name": "ภาชนะและอุปกรณ์สำหรับใช้ในครัว",
+          "display_name": "ภาชนะและอุปกรณ์สำหรับใช้ในครัว",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/932.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1693,
+              "prodline_code": "005",
+              "name": "อุปกรณ์อื่นๆสำหรับใช้ในครัว",
+              "display_name": "อุปกรณ์อื่นๆสำหรับใช้ในครัว"
+            }
+          ]
+        },
+        {
+          "subcat_id": 972,
+          "name": "เครื่องครัวอื่นๆ",
+          "display_name": "เครื่องครัวอื่นๆ",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/972.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1085,
+              "prodline_code": "000",
+              "name": "เครื่องครัวอื่นๆ",
+              "display_name": "เครื่องครัวอื่นๆ"
+            }
+          ]
+        },
+        {
+          "subcat_id": 988,
+          "name": "อุปกรณ์ทำความสะอาด",
+          "display_name": "อุปกรณ์ทำความสะอาด",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/988.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1088,
+              "prodline_code": "000",
+              "name": "อุปกรณ์ทำความสะอาดอื่นๆ",
+              "display_name": "อุปกรณ์ทำความสะอาดอื่นๆ"
+            },
+            {
+              "prodline_id": 1115,
+              "prodline_code": "001",
+              "name": "ฝอย/แผ่นใยขัด/แปรง/ฟองน้ำ",
+              "display_name": "ฝอย/แผ่นใยขัด/แปรง/ฟองน้ำ"
+            },
+            {
+              "prodline_id": 1274,
+              "prodline_code": "002",
+              "name": "ถุงขยะ/ถังขยะ",
+              "display_name": "ถุงขยะ/ถังขยะ"
+            },
+            {
+              "prodline_id": 1648,
+              "prodline_code": "004",
+              "name": "ไม้ปัดฝุ่น/ไม้กวาด/ที่โกยผง",
+              "display_name": "ไม้ปัดฝุ่น/ไม้กวาด/ที่โกยผง"
+            },
+            {
+              "prodline_id": 1700,
+              "prodline_code": "005",
+              "name": "ไม้ถูพื้น/ชุดถังปั่นม็อบ",
+              "display_name": "ไม้ถูพื้น/ชุดถังปั่นม็อบ"
+            }
+          ]
+        },
+        {
+          "subcat_id": 995,
+          "name": "ผลิตภัณฑ์ทำความสะอาดภายในบ้าน",
+          "display_name": "ผลิตภัณฑ์ทำความสะอาดภายในบ้าน",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/995.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1089,
+              "prodline_code": "000",
+              "name": "ผลิตภัณฑ์ทำความสะอาดภายในบ้านอื่นๆ",
+              "display_name": "ผลิตภัณฑ์ทำความสะอาดภายในบ้านอื่นๆ"
+            },
+            {
+              "prodline_id": 1167,
+              "prodline_code": "001",
+              "name": "ผลิตภัณฑ์ทำความสะอาดและดูแลพื้น/พรม",
+              "display_name": "ผลิตภัณฑ์ทำความสะอาดและดูแลพื้น/พรม"
+            },
+            {
+              "prodline_id": 1286,
+              "prodline_code": "002",
+              "name": "น้ำยาเช็ดกระจก",
+              "display_name": "น้ำยาเช็ดกระจก"
+            },
+            {
+              "prodline_id": 1490,
+              "prodline_code": "003",
+              "name": "น้ำยาทำความสะอาดอเนกประสงค์/น้ำยาฆ่าเชื้อ",
+              "display_name": "น้ำยาทำความสะอาดอเนกประสงค์/น้ำยาฆ่าเชื้อ"
+            },
+            {
+              "prodline_id": 1653,
+              "prodline_code": "004",
+              "name": "น้ำยาทำความสะอาดห้องน้ำ/ขจัดท่ออุดตัน",
+              "display_name": "น้ำยาทำความสะอาดห้องน้ำ/ขจัดท่ออุดตัน"
+            },
+            {
+              "prodline_id": 1699,
+              "prodline_code": "005",
+              "name": "น้ำยา/ผลิตภัณฑ์ล้างจาน",
+              "display_name": "น้ำยา/ผลิตภัณฑ์ล้างจาน"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1007,
+          "name": "ผลิตภัณฑ์ทำความสะอาดผ้า และอุปกรณ์ซักรีด",
+          "display_name": "ผลิตภัณฑ์ทำความสะอาดผ้า และอุปกรณ์ซักรีด",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1007.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1090,
+              "prodline_code": "000",
+              "name": "ผลิตภัณฑ์ทำความสะอาดผ้าและอุปกรณ์ซักรีดอื่นๆ",
+              "display_name": "ผลิตภัณฑ์ทำความสะอาดผ้าและอุปกรณ์ซักรีดอื่นๆ"
+            },
+            {
+              "prodline_id": 1168,
+              "prodline_code": "001",
+              "name": "ผงซักฟอก",
+              "display_name": "ผงซักฟอก"
+            },
+            {
+              "prodline_id": 1287,
+              "prodline_code": "002",
+              "name": "น้ำยาซักผ้าแบบน้ำ/แคปซูล",
+              "display_name": "น้ำยาซักผ้าแบบน้ำ/แคปซูล"
+            },
+            {
+              "prodline_id": 1505,
+              "prodline_code": "003",
+              "name": "น้ำยาปรับผ้านุ่ม",
+              "display_name": "น้ำยาปรับผ้านุ่ม"
+            },
+            {
+              "prodline_id": 1698,
+              "prodline_code": "005",
+              "name": "น้ำยาขจัดคราบไคล",
+              "display_name": "น้ำยาขจัดคราบไคล"
+            },
+            {
+              "prodline_id": 1737,
+              "prodline_code": "006",
+              "name": "ราวตากผ้า/ไม้แขวนเสื้อ/ไม้หนีบผ้า",
+              "display_name": "ราวตากผ้า/ไม้แขวนเสื้อ/ไม้หนีบผ้า"
+            },
+            {
+              "prodline_id": 1791,
+              "prodline_code": "007",
+              "name": "ผลิตภัณฑ์กำจัดกลิ่นผ้า",
+              "display_name": "ผลิตภัณฑ์กำจัดกลิ่นผ้า"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1018,
+          "name": "ผลิตภัณฑ์กระดาษ",
+          "display_name": "ผลิตภัณฑ์กระดาษ",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1018.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1169,
+              "prodline_code": "001",
+              "name": "กระดาษชำระ",
+              "display_name": "กระดาษชำระ"
+            },
+            {
+              "prodline_id": 1288,
+              "prodline_code": "002",
+              "name": "กระดาษเช็ดหน้า/ปากและมือ",
+              "display_name": "กระดาษเช็ดหน้า/ปากและมือ"
+            },
+            {
+              "prodline_id": 1504,
+              "prodline_code": "003",
+              "name": "กระดาษอเนกประสงค์",
+              "display_name": "กระดาษอเนกประสงค์"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1030,
+          "name": "ของใช้เบ็ดเตล็ดสำหรับครัวเรือน",
+          "display_name": "ของใช้เบ็ดเตล็ดสำหรับครัวเรือน",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1030.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1170,
+              "prodline_code": "001",
+              "name": "ผลิตภัณฑ์ปรับอากาศภายในบ้าน",
+              "display_name": "ผลิตภัณฑ์ปรับอากาศภายในบ้าน"
+            },
+            {
+              "prodline_id": 1289,
+              "prodline_code": "002",
+              "name": "ผลิตภัณฑ์กำจัดหนูแมลงและสัตว์ต่างๆ",
+              "display_name": "ผลิตภัณฑ์กำจัดหนูแมลงและสัตว์ต่างๆ"
+            },
+            {
+              "prodline_id": 1627,
+              "prodline_code": "004",
+              "name": "ของใช้เบ็ดเตล็ดอื่นๆในครัวเรือน",
+              "display_name": "ของใช้เบ็ดเตล็ดอื่นๆในครัวเรือน"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "catid": 869,
+      "catname": "เครื่องใช้ไฟฟ้าและอุปกรณ์อิเล็กทรอนิกส์",
+      "sub_categories": [
+        {
+          "subcat_id": 896,
+          "name": "โทรศัพท์มือถือ/ แท็บเล็ต และอุปกรณ์",
+          "display_name": "โทรศัพท์มือถือ/ แท็บเล็ต และอุปกรณ์",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/896.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1625,
+              "prodline_code": "004",
+              "name": "แบตเตอรี่สำรอง/อุปกรณ์ชาร์จไฟ",
+              "display_name": "แบตเตอรี่สำรอง/อุปกรณ์ชาร์จไฟ"
+            }
+          ]
+        },
+        {
+          "subcat_id": 949,
+          "name": "ทีวี/ เครื่องเสียง/ เครื่องเกม",
+          "display_name": "ทีวี/ เครื่องเสียง/ เครื่องเกม",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/949.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1615,
+              "prodline_code": "004",
+              "name": "วิทยุ",
+              "display_name": "วิทยุ"
+            }
+          ]
+        },
+        {
+          "subcat_id": 969,
+          "name": "หูฟัง",
+          "display_name": "หูฟัง",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/969.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1146,
+              "prodline_code": "001",
+              "name": "หูฟังไร้สาย",
+              "display_name": "หูฟังไร้สาย"
+            }
+          ]
+        },
+        {
+          "subcat_id": 991,
+          "name": "อุปกรณ์สวมใส่อัจฉริยะ",
+          "display_name": "อุปกรณ์สวมใส่อัจฉริยะ",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/991.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1148,
+              "prodline_code": "001",
+              "name": "สมาร์ทวอทช์",
+              "display_name": "สมาร์ทวอทช์"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1010,
+          "name": "เครื่องใช้ไฟฟ้าในครัว",
+          "display_name": "เครื่องใช้ไฟฟ้าในครัว",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1010.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1149,
+              "prodline_code": "001",
+              "name": "กระทะไฟฟ้า",
+              "display_name": "กระทะไฟฟ้า"
+            },
+            {
+              "prodline_id": 1750,
+              "prodline_code": "006",
+              "name": "เครื่องปั่น/คั้น/ผสม/สกัด/บดสับ",
+              "display_name": "เครื่องปั่น/คั้น/ผสม/สกัด/บดสับ"
+            },
+            {
+              "prodline_id": 1894,
+              "prodline_code": "011",
+              "name": "เตาแม่เหล็ก/เตาแก๊ส/อินฟราเรด/เตาไฟฟ้า",
+              "display_name": "เตาแม่เหล็ก/เตาแก๊ส/อินฟราเรด/เตาไฟฟ้า"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1024,
+          "name": "เครื่องใช้ไฟฟ้าในบ้าน",
+          "display_name": "เครื่องใช้ไฟฟ้าในบ้าน",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1024.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1061,
+              "prodline_code": "000",
+              "name": "เครื่องใช้ไฟฟ้าในบ้านอื่นๆ",
+              "display_name": "เครื่องใช้ไฟฟ้าในบ้านอื่นๆ"
+            },
+            {
+              "prodline_id": 1207,
+              "prodline_code": "001",
+              "name": "เครื่องซักผ้า/อบผ้า",
+              "display_name": "เครื่องซักผ้า/อบผ้า"
+            },
+            {
+              "prodline_id": 1325,
+              "prodline_code": "002",
+              "name": "ตู้เย็น/ตู้แช่",
+              "display_name": "ตู้เย็น/ตู้แช่"
+            },
+            {
+              "prodline_id": 1537,
+              "prodline_code": "003",
+              "name": "เครื่องฟอกอากาศ/เครื่องกรองอากาศ",
+              "display_name": "เครื่องฟอกอากาศ/เครื่องกรองอากาศ"
+            },
+            {
+              "prodline_id": 1593,
+              "prodline_code": "004",
+              "name": "พัดลม/แอร์",
+              "display_name": "พัดลม/แอร์"
+            },
+            {
+              "prodline_id": 1660,
+              "prodline_code": "005",
+              "name": "เตารีด",
+              "display_name": "เตารีด"
+            },
+            {
+              "prodline_id": 1759,
+              "prodline_code": "006",
+              "name": "เครื่องทำน้ำร้อน/น้ำอุ่น",
+              "display_name": "เครื่องทำน้ำร้อน/น้ำอุ่น"
+            },
+            {
+              "prodline_id": 1806,
+              "prodline_code": "007",
+              "name": "เครื่องดูดฝุ่น",
+              "display_name": "เครื่องดูดฝุ่น"
+            },
+            {
+              "prodline_id": 1828,
+              "prodline_code": "008",
+              "name": "จักรเย็บผ้า",
+              "display_name": "จักรเย็บผ้า"
+            },
+            {
+              "prodline_id": 1856,
+              "prodline_code": "009",
+              "name": "ตู้กดน้ำร้อน/เย็น",
+              "display_name": "ตู้กดน้ำร้อน/เย็น"
+            },
+            {
+              "prodline_id": 1888,
+              "prodline_code": "010",
+              "name": "เครื่องดักยุง",
+              "display_name": "เครื่องดักยุง"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1032,
+          "name": "เครื่องใช้ไฟฟ้าเสริมสวย",
+          "display_name": "เครื่องใช้ไฟฟ้าเสริมสวย",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1032.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1208,
+              "prodline_code": "001",
+              "name": "ไดร์เป่าผม",
+              "display_name": "ไดร์เป่าผม"
+            },
+            {
+              "prodline_id": 1326,
+              "prodline_code": "002",
+              "name": "เครื่องหนีบผม/เครื่องม้วนผม/หวีไฟฟ้า",
+              "display_name": "เครื่องหนีบผม/เครื่องม้วนผม/หวีไฟฟ้า"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1036,
+          "name": "อุปกรณ์อิเล็กทรอนิกส์อื่นๆ",
+          "display_name": "อุปกรณ์อิเล็กทรอนิกส์อื่นๆ",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1036.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1345,
+              "prodline_code": "002",
+              "name": "ไฟฉาย",
+              "display_name": "ไฟฉาย"
+            },
+            {
+              "prodline_id": 1492,
+              "prodline_code": "003",
+              "name": "ปลั๊กไฟ",
+              "display_name": "ปลั๊กไฟ"
+            },
+            {
+              "prodline_id": 1796,
+              "prodline_code": "007",
+              "name": "ไฟสนาม/ไฟในสวน",
+              "display_name": "ไฟสนาม/ไฟในสวน"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "catid": 870,
+      "catname": "บ้านและไลฟ์สไตล์",
+      "sub_categories": [
+        {
+          "subcat_id": 875,
+          "name": "เครื่องนอนและของใช้อื่นๆ",
+          "display_name": "เครื่องนอนและของใช้อื่นๆ",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/875.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1156,
+              "prodline_code": "001",
+              "name": "ผ้าขนหนูเช็ดตัว",
+              "display_name": "ผ้าขนหนูเช็ดตัว"
+            },
+            {
+              "prodline_id": 1548,
+              "prodline_code": "003",
+              "name": "หมอน/หมอนรองคอ/หมอนข้าง/ปลอกหมอน",
+              "display_name": "หมอน/หมอนรองคอ/หมอนข้าง/ปลอกหมอน"
+            },
+            {
+              "prodline_id": 1751,
+              "prodline_code": "006",
+              "name": "ที่นอน/ชุดที่นอน/เตียง",
+              "display_name": "ที่นอน/ชุดที่นอน/เตียง"
+            }
+          ]
+        },
+        {
+          "subcat_id": 914,
+          "name": "เฟอร์นิเจอร์/ อุปกรณ์จัดเก็บ/ ของตกแต่งบ้าน",
+          "display_name": "เฟอร์นิเจอร์/ อุปกรณ์จัดเก็บ/ ของตกแต่งบ้าน",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/914.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1800,
+              "prodline_code": "007",
+              "name": "ชุดคลุมตกแต่งบ้าน",
+              "display_name": "ชุดคลุมตกแต่งบ้าน"
+            },
+            {
+              "prodline_id": 1834,
+              "prodline_code": "008",
+              "name": "ม่านหน้าต่าง/ประตู",
+              "display_name": "ม่านหน้าต่าง/ประตู"
+            },
+            {
+              "prodline_id": 1854,
+              "prodline_code": "009",
+              "name": "วอลล์เปเปอร์/สติ๊กเกอร์ตกแต่งบ้านและเฟอร์นิเจอร์",
+              "display_name": "วอลล์เปเปอร์/สติ๊กเกอร์ตกแต่งบ้านและเฟอร์นิเจอร์"
+            }
+          ]
+        },
+        {
+          "subcat_id": 965,
+          "name": "อุปกรณ์ดูแล ซ่อมแซมบ้าน",
+          "display_name": "อุปกรณ์ดูแล ซ่อมแซมบ้าน",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/965.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1163,
+              "prodline_code": "001",
+              "name": "เครื่องมือช่างและอุปกรณ์เสริม",
+              "display_name": "เครื่องมือช่างและอุปกรณ์เสริม"
+            },
+            {
+              "prodline_id": 1323,
+              "prodline_code": "002",
+              "name": "เครื่องฉีดน้ำ/สายยาง/ก๊อกน้ำ",
+              "display_name": "เครื่องฉีดน้ำ/สายยาง/ก๊อกน้ำ"
+            },
+            {
+              "prodline_id": 1538,
+              "prodline_code": "003",
+              "name": "เมล็ดพันธุ์/ผลิตภัณฑ์ทางการเกษตร",
+              "display_name": "เมล็ดพันธุ์/ผลิตภัณฑ์ทางการเกษตร"
+            },
+            {
+              "prodline_id": 1661,
+              "prodline_code": "005",
+              "name": "อุปกรณ์ตกแต่ง/จัดเก็บสนามหญ้าและสวน",
+              "display_name": "อุปกรณ์ตกแต่ง/จัดเก็บสนามหญ้าและสวน"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1023,
+          "name": "อุปกรณ์ดูแล ซ่อมแซมสวน",
+          "display_name": "อุปกรณ์ดูแล ซ่อมแซมสวน",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1023.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1261,
+              "prodline_code": "001",
+              "name": "หนังสือเรียน",
+              "display_name": "หนังสือเรียน"
+            },
+            {
+              "prodline_id": 1366,
+              "prodline_code": "002",
+              "name": "หนังสือทั่วไป",
+              "display_name": "หนังสือทั่วไป"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "catid": 854,
+      "catname": "ผิวกายและของใช้ส่วนตัว",
+      "sub_categories": [
+        {
+          "subcat_id": 884,
+          "name": "บำรุงผิวกาย",
+          "display_name": "บำรุงผิวกาย",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/884.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1128,
+              "prodline_code": "001",
+              "name": "ผลิตภัณฑ์ฆ่าเชื้อ",
+              "display_name": "ผลิตภัณฑ์ฆ่าเชื้อ"
+            },
+            {
+              "prodline_id": 1396,
+              "prodline_code": "002",
+              "name": "บาล์ม",
+              "display_name": "บาล์ม"
+            },
+            {
+              "prodline_id": 1517,
+              "prodline_code": "003",
+              "name": "บอดี้ครีม&โลชั่น",
+              "display_name": "บอดี้ครีม&โลชั่น"
+            },
+            {
+              "prodline_id": 1602,
+              "prodline_code": "004",
+              "name": "น้ำตบบำรุงผิวกาย",
+              "display_name": "น้ำตบบำรุงผิวกาย"
+            },
+            {
+              "prodline_id": 1668,
+              "prodline_code": "005",
+              "name": "เจลบำรุงผิวกาย",
+              "display_name": "เจลบำรุงผิวกาย"
+            },
+            {
+              "prodline_id": 1779,
+              "prodline_code": "006",
+              "name": "ออยล์ทาผิว",
+              "display_name": "ออยล์ทาผิว"
+            },
+            {
+              "prodline_id": 1821,
+              "prodline_code": "007",
+              "name": "สเปรย์บำรุงผิวกาย",
+              "display_name": "สเปรย์บำรุงผิวกาย"
+            },
+            {
+              "prodline_id": 1835,
+              "prodline_code": "008",
+              "name": "สเปรย์รองพื้นผิวกาย",
+              "display_name": "สเปรย์รองพื้นผิวกาย"
+            },
+            {
+              "prodline_id": 1853,
+              "prodline_code": "009",
+              "name": "สเปรย์กันยุง",
+              "display_name": "สเปรย์กันยุง"
+            },
+            {
+              "prodline_id": 1891,
+              "prodline_code": "010",
+              "name": "โลชั่นกันยุง",
+              "display_name": "โลชั่นกันยุง"
+            },
+            {
+              "prodline_id": 1899,
+              "prodline_code": "011",
+              "name": "แป้งทาผิวกาย",
+              "display_name": "แป้งทาผิวกาย"
+            },
+            {
+              "prodline_id": 1903,
+              "prodline_code": "012",
+              "name": "ระงับกลิ่นกาย",
+              "display_name": "ระงับกลิ่นกาย"
+            },
+            {
+              "prodline_id": 1907,
+              "prodline_code": "013",
+              "name": "บำรุงและดูแลใต้วงแขน",
+              "display_name": "บำรุงและดูแลใต้วงแขน"
+            },
+            {
+              "prodline_id": 7173,
+              "prodline_code": "017",
+              "name": "โลชั่น Only At",
+              "display_name": "โลชั่น Only At"
+            },
+            {
+              "prodline_id": 7174,
+              "prodline_code": "014",
+              "name": "โลชั่นไวท์สปา",
+              "display_name": "โลชั่นไวท์สปา"
+            },
+            {
+              "prodline_id": 7175,
+              "prodline_code": "015",
+              "name": "โลชั่นมิสทิน",
+              "display_name": "โลชั่นมิสทิน"
+            },
+            {
+              "prodline_id": 7176,
+              "prodline_code": "016",
+              "name": "โลชั่นเนเชอรัล/สมุนไพร",
+              "display_name": "โลชั่นเนเชอรัล/สมุนไพร"
+            }
+          ]
+        },
+        {
+          "subcat_id": 906,
+          "name": "กันแดดผิวกาย",
+          "display_name": "กันแดดผิวกาย",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/906.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1439,
+              "prodline_code": "003",
+              "name": "กันแดดผิวกายชนิดโลชั่น",
+              "display_name": "กันแดดผิวกายชนิดโลชั่น"
+            }
+          ]
+        },
+        {
+          "subcat_id": 936,
+          "name": "ดูแลเท้า",
+          "display_name": "ดูแลเท้า",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/936.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1213,
+              "prodline_code": "001",
+              "name": "บำรุงเท้า",
+              "display_name": "บำรุงเท้า"
+            },
+            {
+              "prodline_id": 1296,
+              "prodline_code": "002",
+              "name": "ระงับกลิ่นเท้า",
+              "display_name": "ระงับกลิ่นเท้า"
+            }
+          ]
+        },
+        {
+          "subcat_id": 958,
+          "name": "ดูแลมือและเล็บ",
+          "display_name": "ดูแลมือและเล็บ",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/958.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1109,
+              "prodline_code": "001",
+              "name": "น้ำยาเคลือบเล็บ",
+              "display_name": "น้ำยาเคลือบเล็บ"
+            },
+            {
+              "prodline_id": 1297,
+              "prodline_code": "002",
+              "name": "ยาทาเล็บ",
+              "display_name": "ยาทาเล็บ"
+            },
+            {
+              "prodline_id": 1574,
+              "prodline_code": "004",
+              "name": "บำรุงมือและเล็บ",
+              "display_name": "บำรุงมือและเล็บ"
+            }
+          ]
+        },
+        {
+          "subcat_id": 985,
+          "name": "ทำความสะอาดผิวกาย",
+          "display_name": "ทำความสะอาดผิวกาย",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/985.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1110,
+              "prodline_code": "001",
+              "name": "สครับผิวกาย",
+              "display_name": "สครับผิวกาย"
+            },
+            {
+              "prodline_id": 1298,
+              "prodline_code": "002",
+              "name": "สบู่อาบน้ำ",
+              "display_name": "สบู่อาบน้ำ"
+            },
+            {
+              "prodline_id": 1442,
+              "prodline_code": "003",
+              "name": "ครีม/เจลอาบน้ำ",
+              "display_name": "ครีม/เจลอาบน้ำ"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1002,
+          "name": "ดูแลเฉพาะจุด",
+          "display_name": "ดูแลเฉพาะจุด",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1002.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1214,
+              "prodline_code": "001",
+              "name": "ทรวงอก",
+              "display_name": "ทรวงอก"
+            },
+            {
+              "prodline_id": 1707,
+              "prodline_code": "005",
+              "name": "กระชับสัดส่วน",
+              "display_name": "กระชับสัดส่วน"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1013,
+          "name": "ดูแลเส้นผม",
+          "display_name": "ดูแลเส้นผม",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1013.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1215,
+              "prodline_code": "001",
+              "name": "ครีมนวด&มาสก์บำรุงผม",
+              "display_name": "ครีมนวด&มาสก์บำรุงผม"
+            },
+            {
+              "prodline_id": 1299,
+              "prodline_code": "002",
+              "name": "ทรีทเม้นท์บำรุงผม",
+              "display_name": "ทรีทเม้นท์บำรุงผม"
+            },
+            {
+              "prodline_id": 1725,
+              "prodline_code": "005",
+              "name": "ผลิตภัณฑ์เปลี่ยนสีผม",
+              "display_name": "ผลิตภัณฑ์เปลี่ยนสีผม"
+            },
+            {
+              "prodline_id": 1802,
+              "prodline_code": "007",
+              "name": "บำรุงเส้นผม",
+              "display_name": "บำรุงเส้นผม"
+            },
+            {
+              "prodline_id": 1846,
+              "prodline_code": "008",
+              "name": "แชมพู",
+              "display_name": "แชมพู"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1022,
+          "name": "ดูแลช่องปาก",
+          "display_name": "ดูแลช่องปาก",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1022.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1516,
+              "prodline_code": "003",
+              "name": "น้ำยาบ้วนปาก",
+              "display_name": "น้ำยาบ้วนปาก"
+            },
+            {
+              "prodline_id": 1606,
+              "prodline_code": "004",
+              "name": "ผลิตภัณฑ์ฟอกฟันขาว",
+              "display_name": "ผลิตภัณฑ์ฟอกฟันขาว"
+            },
+            {
+              "prodline_id": 1822,
+              "prodline_code": "007",
+              "name": "แปรงสีฟัน",
+              "display_name": "แปรงสีฟัน"
+            },
+            {
+              "prodline_id": 1826,
+              "prodline_code": "008",
+              "name": "ยาสีฟัน",
+              "display_name": "ยาสีฟัน"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1033,
+          "name": "ผลิตภัณฑ์ดูแลจุดซ่อนเร้น",
+          "display_name": "ผลิตภัณฑ์ดูแลจุดซ่อนเร้น",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1033.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1130,
+              "prodline_code": "001",
+              "name": "ผลิตภัณฑ์ทำความสะอาด",
+              "display_name": "ผลิตภัณฑ์ทำความสะอาด"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1053,
+          "name": "ผ้าอนามัย",
+          "display_name": "ผ้าอนามัย",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1053.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1403,
+              "prodline_code": "002",
+              "name": "ผ้าอนามัยชนิดแผ่น",
+              "display_name": "ผ้าอนามัยชนิดแผ่น"
+            }
+          ]
+        },
+        {
+          "subcat_id": 1054,
+          "name": "ทิชชู่เปียก",
+          "display_name": "ทิชชู่เปียก",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/1054.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1137,
+              "prodline_code": "001",
+              "name": "ทิชชู่เปียก/ผ้าเย็น",
+              "display_name": "ทิชชู่เปียก/ผ้าเย็น"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "catid": 856,
+      "catname": "ยา เวชภัณฑ์ อาหารเสริมและวิตามิน",
+      "sub_categories": [
+        {
+          "subcat_id": 912,
+          "name": "วิตามินและอาหารเสริม",
+          "display_name": "วิตามินและอาหารเสริม",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/912.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1126,
+              "prodline_code": "001",
+              "name": "อาหารเสริมเพื่อสุขภาพ",
+              "display_name": "อาหารเสริมเพื่อสุขภาพ"
+            },
+            {
+              "prodline_id": 1291,
+              "prodline_code": "002",
+              "name": "อาหารเสริมเพื่อความงาม",
+              "display_name": "อาหารเสริมเพื่อความงาม"
+            },
+            {
+              "prodline_id": 1436,
+              "prodline_code": "003",
+              "name": "อาหารเสริมควบคุมน้ำหนัก",
+              "display_name": "อาหารเสริมควบคุมน้ำหนัก"
+            }
+          ]
+        },
+        {
+          "subcat_id": 940,
+          "name": "เครื่องดื่มเพื่อสุขภาพ",
+          "display_name": "เครื่องดื่มเพื่อสุขภาพ",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/940.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1143,
+              "prodline_code": "001",
+              "name": "เครื่องดื่มเพื่อสุขภาพ",
+              "display_name": "เครื่องดื่มเพื่อสุขภาพ"
+            },
+            {
+              "prodline_id": 1437,
+              "prodline_code": "003",
+              "name": "เครื่องดื่มเพื่อควบคุมน้ำหนัก",
+              "display_name": "เครื่องดื่มเพื่อควบคุมน้ำหนัก"
+            },
+            {
+              "prodline_id": 1575,
+              "prodline_code": "004",
+              "name": "ซุปไก่สกัด/เห็ดสกัด",
+              "display_name": "ซุปไก่สกัด/เห็ดสกัด"
+            },
+            {
+              "prodline_id": 1726,
+              "prodline_code": "005",
+              "name": "รังนก/เครื่องดื่มโสม",
+              "display_name": "รังนก/เครื่องดื่มโสม"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "catid": 861,
+      "catname": "แม่และเด็ก",
+      "sub_categories": [
+        {
+          "subcat_id": 980,
+          "name": "อุปกรณ์/ของใช้สำหรับเด็ก และทารก",
+          "display_name": "อุปกรณ์/ของใช้สำหรับเด็ก และทารก",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/980.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1102,
+              "prodline_code": "000",
+              "name": "อุปกรณ์และของใช้อื่นๆสำหรับเด็ก",
+              "display_name": "อุปกรณ์และของใช้อื่นๆสำหรับเด็ก"
+            },
+            {
+              "prodline_id": 1308,
+              "prodline_code": "002",
+              "name": "ภาชนะ/แก้วหัดดื่ม",
+              "display_name": "ภาชนะ/แก้วหัดดื่ม"
+            }
+          ]
+        },
+        {
+          "subcat_id": 996,
+          "name": "ผลิตภัณฑ์ทำความสะอาดสำหรับทารก และเด็ก",
+          "display_name": "ผลิตภัณฑ์ทำความสะอาดสำหรับทารก และเด็ก",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/996.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1182,
+              "prodline_code": "001",
+              "name": "ผ้าเช็ดทำความสะอาดผิว/ก้นเด็ก",
+              "display_name": "ผ้าเช็ดทำความสะอาดผิว/ก้นเด็ก"
+            },
+            {
+              "prodline_id": 1341,
+              "prodline_code": "002",
+              "name": "สบู่/แป้งเด็ก",
+              "display_name": "สบู่/แป้งเด็ก"
+            },
+            {
+              "prodline_id": 1494,
+              "prodline_code": "003",
+              "name": "แชมพูเด็ก",
+              "display_name": "แชมพูเด็ก"
+            },
+            {
+              "prodline_id": 1618,
+              "prodline_code": "004",
+              "name": "โลชั่นและผลิตภัณฑ์บำรุงผิวเด็ก",
+              "display_name": "โลชั่นและผลิตภัณฑ์บำรุงผิวเด็ก"
+            },
+            {
+              "prodline_id": 1681,
+              "prodline_code": "005",
+              "name": "แปรงสีฟัน/ยาสีฟันเด็ก",
+              "display_name": "แปรงสีฟัน/ยาสีฟันเด็ก"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "catid": 862,
+      "catname": "ผู้สูงอายุ",
+      "sub_categories": [
+        {
+          "subcat_id": 901,
+          "name": "ผ้าอ้อมสำหรับผู้สูงอายุ",
+          "display_name": "ผ้าอ้อมสำหรับผู้สูงอายุ",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/901.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1117,
+              "prodline_code": "001",
+              "name": "ผ้าอ้อมสำหรับผู้ใหญ่",
+              "display_name": "ผ้าอ้อมสำหรับผู้ใหญ่"
+            },
+            {
+              "prodline_id": 1279,
+              "prodline_code": "002",
+              "name": "แผ่นรองซับสำหรับสูงอายุ",
+              "display_name": "แผ่นรองซับสำหรับสูงอายุ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "catid": 863,
+      "catname": "สัตว์เลี้ยง",
+      "sub_categories": [
+        {
+          "subcat_id": 889,
+          "name": "อาหารสัตว์เลี้ยง",
+          "display_name": "อาหารสัตว์เลี้ยง",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/889.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1087,
+              "prodline_code": "000",
+              "name": "อาหารสัตว์เลี้ยงอื่นๆ",
+              "display_name": "อาหารสัตว์เลี้ยงอื่นๆ"
+            },
+            {
+              "prodline_id": 1282,
+              "prodline_code": "002",
+              "name": "อาหารแมว",
+              "display_name": "อาหารแมว"
+            }
+          ]
+        },
+        {
+          "subcat_id": 917,
+          "name": "ของเล่น และอุปกรณ์ต่างๆสำหรับสัตว์เลี้ยง",
+          "display_name": "ของเล่น และอุปกรณ์ต่างๆสำหรับสัตว์เลี้ยง",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/917.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1509,
+              "prodline_code": "003",
+              "name": "ผลิตภัณฑ์และอุปกรณ์ทำความสะอาดสัตว์เลี้ยง",
+              "display_name": "ผลิตภัณฑ์และอุปกรณ์ทำความสะอาดสัตว์เลี้ยง"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "catid": 864,
+      "catname": "เครื่องเขียนและอุปกรณ์สำนักงาน",
+      "sub_categories": [
+        {
+          "subcat_id": 890,
+          "name": "อุปกรณ์การเขียน และลบคำผิด",
+          "display_name": "อุปกรณ์การเขียน และลบคำผิด",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/890.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1123,
+              "prodline_code": "001",
+              "name": "ปากกา/ไส้ปากกา/หมึกเติมปากกา",
+              "display_name": "ปากกา/ไส้ปากกา/หมึกเติมปากกา"
+            },
+            {
+              "prodline_id": 1284,
+              "prodline_code": "002",
+              "name": "ผลิตภัณฑ์ลบคำผิด",
+              "display_name": "ผลิตภัณฑ์ลบคำผิด"
+            },
+            {
+              "prodline_id": 1701,
+              "prodline_code": "005",
+              "name": "ดินสอ/ไส้ดินสอ",
+              "display_name": "ดินสอ/ไส้ดินสอ"
+            },
+            {
+              "prodline_id": 1837,
+              "prodline_code": "008",
+              "name": "กล่อง/กระเป๋าใส่เครื่องเขียน",
+              "display_name": "กล่อง/กระเป๋าใส่เครื่องเขียน"
+            }
+          ]
+        },
+        {
+          "subcat_id": 902,
+          "name": "สี และอุปกรณ์ศิลปะ",
+          "display_name": "สี และอุปกรณ์ศิลปะ",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/902.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1177,
+              "prodline_code": "001",
+              "name": "สีไม้",
+              "display_name": "สีไม้"
+            }
+          ]
+        },
+        {
+          "subcat_id": 964,
+          "name": "อุปกรณ์สำนักงาน",
+          "display_name": "อุปกรณ์สำนักงาน",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/964.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1497,
+              "prodline_code": "003",
+              "name": "อุปกรณ์เย็บ/เจาะ/หนีบ",
+              "display_name": "อุปกรณ์เย็บ/เจาะ/หนีบ"
+            },
+            {
+              "prodline_id": 1621,
+              "prodline_code": "004",
+              "name": "อุปกรณ์สำนักงานอื่นๆ",
+              "display_name": "อุปกรณ์สำนักงานอื่นๆ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "catid": 866,
+      "catname": "สินค้าเทศกาลและฤดูกาล",
+      "sub_categories": [
+        {
+          "subcat_id": 893,
+          "name": "กระเช้าของขวัญ/ กิ๊ฟเซ็ต",
+          "display_name": "กระเช้าของขวัญ/ กิ๊ฟเซ็ต",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/893.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1344,
+              "prodline_code": "002",
+              "name": "กระเช้าของขวัญเพื่อสุขภาพ",
+              "display_name": "กระเช้าของขวัญเพื่อสุขภาพ"
+            }
+          ]
+        },
+        {
+          "subcat_id": 922,
+          "name": "สินค้าตามเทศกาล",
+          "display_name": "สินค้าตามเทศกาล",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/922.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1150,
+              "prodline_code": "001",
+              "name": "สินค้าตามเทศกาล",
+              "display_name": "สินค้าตามเทศกาล"
+            }
+          ]
+        },
+        {
+          "subcat_id": 946,
+          "name": "สินค้าตามฤดูกาล",
+          "display_name": "สินค้าตามฤดูกาล",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/946.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1311,
+              "prodline_code": "002",
+              "name": "ร่ม",
+              "display_name": "ร่ม"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "catid": 867,
+      "catname": "ของใช้สำหรับรถ",
+      "sub_categories": [
+        {
+          "subcat_id": 894,
+          "name": "ผลิตภัณฑ์สำหรับรถยนต์",
+          "display_name": "ผลิตภัณฑ์สำหรับรถยนต์",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/894.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1152,
+              "prodline_code": "001",
+              "name": "ผลิตภัณฑ์ทำความสะอาดและดูแลรถ",
+              "display_name": "ผลิตภัณฑ์ทำความสะอาดและดูแลรถ"
+            },
+            {
+              "prodline_id": 1542,
+              "prodline_code": "003",
+              "name": "อุปกรณ์เสริม/ตกแต่งรถยนต์",
+              "display_name": "อุปกรณ์เสริม/ตกแต่งรถยนต์"
+            }
+          ]
+        },
+        {
+          "subcat_id": 923,
+          "name": "รถมอเตอร์ไซค์ และอุปกรณ์",
+          "display_name": "รถมอเตอร์ไซค์ และอุปกรณ์",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/923.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1543,
+              "prodline_code": "003",
+              "name": "อุปกรณ์อื่นๆสำหรับการขับขี่รถมอเตอร์ไซด์",
+              "display_name": "อุปกรณ์อื่นๆสำหรับการขับขี่รถมอเตอร์ไซด์"
+            },
+            {
+              "prodline_id": 1612,
+              "prodline_code": "004",
+              "name": "อุปกรณ์เสริม/ตกแต่งรถมอเตอร์ไซด์",
+              "display_name": "อุปกรณ์เสริม/ตกแต่งรถมอเตอร์ไซด์"
+            }
+          ]
+        },
+        {
+          "subcat_id": 968,
+          "name": "อุปกรณ์และผลิตภัณฑ์สำหรับซ่อมแซมและดูแลรถ",
+          "display_name": "อุปกรณ์และผลิตภัณฑ์สำหรับซ่อมแซมและดูแลรถ",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/968.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1315,
+              "prodline_code": "002",
+              "name": "อุปกรณ์ซ่อมแซมและดูแลรถ",
+              "display_name": "อุปกรณ์ซ่อมแซมและดูแลรถ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "catid": 868,
+      "catname": "กีฬาและการออกกำลังกาย",
+      "sub_categories": [
+        {
+          "subcat_id": 948,
+          "name": "อุปกรณ์เสริมอื่นๆเกี่ยวกับการออกกำลังกาย",
+          "display_name": "อุปกรณ์เสริมอื่นๆเกี่ยวกับการออกกำลังกาย",
+          "image": "https://s3.ap-southeast-7.amazonaws.com/ct.fridayth.com/b2c/category/948.jpg",
+          "type_subcat": [
+            {
+              "prodline_id": 1409,
+              "prodline_code": "002",
+              "name": "อุปกรณ์เสริมอื่นๆเกี่ยวกับการออกกำลังกาย",
+              "display_name": "อุปกรณ์เสริมอื่นๆเกี่ยวกับการออกกำลังกาย"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "message": "success"
+}

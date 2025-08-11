@@ -1,0 +1,37 @@
+{
+  "code": "100",
+  "data": {
+    "total": 2,
+    "products": [
+      {
+        "icon": "https://s3.catalog-yupin.com/b2c/seller/000001/icon.png",
+        "product_id": 490,
+        "title": "แชมพูล้างรถ โมโต แคร์ คาร์ วอช แชมพู 800 มล.",
+        "discount": 0,
+        "price": 59.0,
+        "price_before_discount": 169.5,
+        "labels": [],
+        "rating_star": 4.0,
+        "have_video": false,
+        "unit_sales": "ขายได้ 1 ชิ้น",
+        "image": "https://s3.catalog-yupin.com/b2c/product/000001/490/img/20250213142141_1.jpg",
+        "currency": ""
+      },
+      {
+        "icon": "https://s3.catalog-yupin.com/b2c/seller/000001/icon.png",
+        "product_id": 2603,
+        "title": "ชาร์โคลเจลผงถ่านดับกลิ่น 200 กรัม",
+        "discount": 0,
+        "price": 0,
+        "price_before_discount": 59,
+        "labels": [],
+        "rating_star": 0,
+        "have_video": false,
+        "unit_sales": "",
+        "image": "https://s3.catalog-yupin.com/b2c/product/000001/2603/img/20250311111542_1.jpg",
+        "currency": ""
+      }
+    ]
+  },
+  "message": "success"
+}

@@ -1,0 +1,51 @@
+{
+  "CustomerOrderHistory": {
+    "CustomerMSLOrderDetail": [
+      {
+        "HeaderStatus": "รายการสั่งซื้อของฉัน",
+        "OrderList": "1",
+        "Ordercamp": "18/2022",
+        "UserID": "5486041",
+        "UserTel": "0649326096",
+        "Name": "คุณสมศรี มีความสามารถ  ",
+        "RepCode": "0999005499",
+        "OrderNo": "202208155486041-24",
+        "OrderDate": "15/08/2022",
+        "OrderDateTemp": "20220815",
+        "OrderTime": "124810",
+        "OrderType": "2",
+        "Item": "2",
+        "Qty": "2",
+        "Qtyconfirm": "2",
+        "TotalAmount": "218",
+        "StatusOrder": "Y",
+        "StatusDiscription": "ยืนยันคำสั่งซื้อ (รอโหลดบิล)",
+        "DownloadFlag": "N"
+      }
+    ],
+    "CustomerEndUserOrderDetail": [
+      {
+        "HeaderStatus": "รายการสั่งซื้อของลูกค้า",
+        "OrderList": "2",
+        "Ordercamp": "18/2022",
+        "UserID": "276848",
+        "UserTel": "0917541414",
+        "Name": "mos  test",
+        "RepCode": "0999005499",
+        "OrderNo": "20220815276848-8",
+        "OrderDate": "15/08/2022",
+        "OrderDateTemp": "20220815",
+        "OrderTime": "163605",
+        "OrderType": "1",
+        "Item": "1",
+        "Qty": "1",
+        "Qtyconfirm": "0",
+        "TotalAmount": "159",
+        "StatusOrder": "N",
+        "StatusDiscription": "คำสั่งซื้อ รออนุมัติ",
+        "DownloadFlag": "",
+        "ReciveTypeText": "รับสินค้าเอง"
+      }
+    ]
+  }
+}

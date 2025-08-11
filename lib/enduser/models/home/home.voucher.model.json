@@ -1,0 +1,166 @@
+{
+  "code": "100",
+  "data": {
+    "content_header": "",
+    "content_img": "",
+    "vouchers": [
+      {
+        "coupon_id": 90,
+        "coupon_code": "",
+        "shop_id": 23001,
+        "is_shop_official": false,
+        "title": "ส่วนลด ฿100",
+        "image": "https://s3.catalog-yupin.com/b2c/coupon/2024/02723_20241204170448_1.png",
+        "reward_info": {
+          "min_spend": 500,
+          "discount_value": 100,
+          "discount_percentage": 0,
+          "discount_cap": 500,
+          "current_spend": 0
+        },
+        "time_info": {
+          "start_time": "02/01/2025 00:00:00",
+          "end_time": "28/02/2025 23:59:00",
+          "claim_start_time": "02/01/2025 00:00:00",
+          "claim_end_time": "28/02/2025 23:59:00",
+          "valid_days": 18,
+          "time_format": "ใช้ได้ถึง 28 ก.พ.",
+          "has_expired": false
+        },
+        "quota_info": {
+          "percentage_claimed": 0,
+          "percentage_used": 0,
+          "quota_type": 0,
+          "fully_claimed": false,
+          "fully_used": false
+        },
+        "labels": [],
+        "scope_tags": [],
+        "user_status": {
+          "is_claimed": true,
+          "is_used": false,
+          "is_selected": false
+        },
+        "can_use": false
+      },
+      {
+        "coupon_id": 93,
+        "coupon_code": "",
+        "shop_id": 0,
+        "is_shop_official": false,
+        "title": "ERP coupon",
+        "image": "https://s3.catalog-yupin.com/b2c/coupon/2024/09937_20241204175536_1.webp",
+        "reward_info": {
+          "min_spend": 150,
+          "discount_value": 100,
+          "discount_percentage": 0,
+          "discount_cap": 500,
+          "current_spend": 0
+        },
+        "time_info": {
+          "start_time": "25/12/2024 00:00:00",
+          "end_time": "28/02/2025 23:59:00",
+          "claim_start_time": "25/12/2024 00:00:00",
+          "claim_end_time": "28/02/2025 23:59:00",
+          "valid_days": 18,
+          "time_format": "ใช้ได้ถึง 28 ก.พ.",
+          "has_expired": false
+        },
+        "quota_info": {
+          "percentage_claimed": 0,
+          "percentage_used": 0,
+          "quota_type": 0,
+          "fully_claimed": false,
+          "fully_used": false
+        },
+        "labels": [],
+        "scope_tags": [],
+        "user_status": {
+          "is_claimed": true,
+          "is_used": false,
+          "is_selected": false
+        },
+        "can_use": false
+      },
+      {
+        "coupon_id": 97,
+        "coupon_code": "",
+        "shop_id": 23001,
+        "is_shop_official": false,
+        "title": "ส่วนลด ฿50",
+        "image": "https://s3.catalog-yupin.com/b2c/coupon/2024/02723_20241206102457_1.png",
+        "reward_info": {
+          "min_spend": 200,
+          "discount_value": 50,
+          "discount_percentage": 0,
+          "discount_cap": 400,
+          "current_spend": 0
+        },
+        "time_info": {
+          "start_time": "01/01/2025 00:00:00",
+          "end_time": "28/02/2025 23:59:00",
+          "claim_start_time": "01/01/2025 00:00:00",
+          "claim_end_time": "28/02/2025 23:59:00",
+          "valid_days": 18,
+          "time_format": "ใช้ได้ถึง 28 ก.พ.",
+          "has_expired": false
+        },
+        "quota_info": {
+          "percentage_claimed": 0,
+          "percentage_used": 0,
+          "quota_type": 0,
+          "fully_claimed": false,
+          "fully_used": false
+        },
+        "labels": [],
+        "scope_tags": [],
+        "user_status": {
+          "is_claimed": true,
+          "is_used": false,
+          "is_selected": false
+        },
+        "can_use": false
+      },
+      {
+        "coupon_id": 102,
+        "coupon_code": "",
+        "shop_id": 23003,
+        "is_shop_official": false,
+        "title": "ส่วนลด ฿50",
+        "image": "https://s3.catalog-yupin.com/b2c/coupon/2024/02723_20241206102457_1.png",
+        "reward_info": {
+          "min_spend": 200,
+          "discount_value": 50,
+          "discount_percentage": 0,
+          "discount_cap": 400,
+          "current_spend": 0
+        },
+        "time_info": {
+          "start_time": "10/01/2025 00:00:00",
+          "end_time": "28/02/2025 23:59:00",
+          "claim_start_time": "10/01/2025 00:00:00",
+          "claim_end_time": "28/02/2025 23:59:00",
+          "valid_days": 18,
+          "time_format": "ใช้ได้ถึง 28 ก.พ.",
+          "has_expired": false
+        },
+        "quota_info": {
+          "percentage_claimed": 0,
+          "percentage_used": 0,
+          "quota_type": 0,
+          "fully_claimed": false,
+          "fully_used": false
+        },
+        "labels": [],
+        "scope_tags": [],
+        "user_status": {
+          "is_claimed": true,
+          "is_used": false,
+          "is_selected": false
+        },
+        "can_use": false
+      }
+    ]
+  },
+  "message": "success"
+}

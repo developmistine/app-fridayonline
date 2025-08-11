@@ -1,0 +1,73 @@
+{
+  "code": "100",
+  "data": {
+    "product_price": {
+      "have_discount": false,
+      "discount": 0,
+      "price": {
+        "single_value": -1,
+        "range_min": 0,
+        "range_max": 100
+      },
+      "price_before_discount": {
+        "single_value": -1,
+        "range_min": 0,
+        "range_max": 100
+      }
+    },
+    "tier_variations": [
+      {
+        "name": "สี",
+        "options": [
+          {
+            "option_value": "ดำ",
+            "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/fox-2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241204%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241204T072755Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=548d5abe351adede6abb196b7fe35ad1df58b9977fbc7a907abf8f0b020312ba",
+            "display_indicators": 0
+          },
+          {
+            "option_value": "ขาว",
+            "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/github.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241204%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241204T072755Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=bf3cd9e0c3ca5232b56152eb9c0047794d43d4530c7b968b2bd361b4396a900a",
+            "display_indicators": 0
+          },
+          {
+            "option_value": "ฟ้า",
+            "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/git-1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241204%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241204T072755Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=a1fa0ce7893a298fa270be3edafe8b2f86db9f1229e57f1e4e00cd8d0238b19e",
+            "display_indicators": 0
+          }
+        ]
+      },
+      {
+        "name": "ขนาด",
+        "options": [
+          {
+            "option_value": "80 ไมครอน",
+            "image": "",
+            "display_indicators": 0
+          },
+          {
+            "option_value": "120 ไมครอน",
+            "image": "",
+            "display_indicators": 0
+          },
+          {
+            "option_value": "150 ไมครอน",
+            "image": "",
+            "display_indicators": 0
+          },
+          {
+            "option_value": "150 ไมครอน กว้าง 4M",
+            "image": "",
+            "display_indicators": 2
+          },
+          {
+            "option_value": "150 ไมครอน กว้าง 4M กัน UV7%",
+            "image": "",
+            "display_indicators": 0
+          }
+        ]
+      }
+    ],
+    "max_quantity": 1000
+  },
+  "message": "success"
+}

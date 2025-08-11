@@ -1,0 +1,33 @@
+{
+  "code": "100",
+  "data": [
+    {
+      "cust_id": 1,
+      "cust_name": "ธ*****ร",
+      "cust_image": "https://s3.catalog-yupin.com/b2c/images-profile/1/20241129103155_3094775504.png",
+      "rating_star": 4,
+      "comment": "ราคาย่อมเยาว์ใช้ดีจริงซื้อมาใช้เองคุณภาพดีเหมาะกับเศรฐกิจยุคนี้",
+      "cre_date": "24-11-2024 15:00",
+      "product_id": 484,
+      "product_name": "HAPPITEX เสื้อชั้นในไม่เสริมโครง",
+      "items": [
+        {
+          "item_id": 781,
+          "item_img": "https://s3.catalog-yupin.com/b2c/product/000001/484/img/20250211153245_1.jpg",
+          "option": "เทาเข้ม,36B"
+        }
+      ],
+      "detail_rating": {
+        "product_quality": 4,
+        "delivery_service": 4
+      },
+      "rating_reply": {
+        "shop_id": 0,
+        "comment": ""
+      },
+      "video": [],
+      "images": []
+    }
+  ],
+  "message": "success"
+}

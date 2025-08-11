@@ -1,0 +1,84 @@
+{
+  "InformationPushNotify": [
+    {
+      "Status": "1",
+      "Message": "success",
+      "CountBadger": "0",
+      "Notify": [
+        {
+          "Id": "1",
+          "Idgroup": "101",
+          "Idindex": "103001912",
+          "Title": "โปรโมชั่นพิเศษ",
+          "Desc": "เทสภาพ HTML",
+          "ImgContent": "https://s3.catalog-yupin.com/imgpush/imgTitle/1658890860.jpg",
+          "Type": "Promotion",
+          "NumShow": "0",
+          "ParameterContent": "url",
+          "ParameterKey": "https://push.webservice-yupin.com/Yupin/yupin_dl.php?channel=line&typeparam=coupon&valueparam=01052",
+          "Link": "",
+          "Badger": "0",
+          "Date": "2022-06-30 00:00:00",
+          "Linkimg": "https://s3.catalog-yupin.com/imgpush/imgTitle/1658890993.jpg",
+          "Linkindex": "1",
+          "ReadStatus": ""
+        },
+        {
+          "Id": "2",
+          "Idgroup": "102",
+          "Idindex": "",
+          "Title": "กิจกรรมจาก Friday",
+          "Desc": "",
+          "ImgContent": "",
+          "Type": "Activity",
+          "NumShow": "0",
+          "ParameterContent": "",
+          "ParameterKey": "",
+          "Link": "",
+          "Badger": "0",
+          "Date": "",
+          "Linkimg": "",
+          "Linkindex": "2",
+          "ReadStatus": ""
+        },
+        {
+          "Id": "3",
+          "Idgroup": "103",
+          "Idindex": "",
+          "Title": "วาไรตี้",
+          "Desc": "",
+          "ImgContent": "",
+          "Type": "News",
+          "NumShow": "0",
+          "ParameterContent": "",
+          "ParameterKey": "",
+          "Link": "",
+          "Badger": "0",
+          "Date": "",
+          "Linkimg": "",
+          "Linkindex": "3",
+          "ReadStatus": ""
+        },
+        {
+          "Id": "4",
+          "Idgroup": "104",
+          "Idindex": "",
+          "Title": "คูปองพิเศษ",
+          "Desc": "",
+          "ImgContent": "",
+          "Type": "Chat",
+          "NumShow": "0",
+          "ParameterContent": "",
+          "ParameterKey": "",
+          "Link": "",
+          "Badger": "0",
+          "Date": "",
+          "Linkimg": "",
+          "Linkindex": "4",
+          "ReadStatus": ""
+        }
+      ],
+      "OrderList": null
+    }
+  ]
+}

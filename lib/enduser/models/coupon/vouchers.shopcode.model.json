@@ -1,0 +1,46 @@
+{
+  "code": "100",
+  "data": {
+    "message_text": "คูปองนี้ถูกเพิ่มแล้ว",
+    "shop_voucher": {
+      "coupon_id": 0,
+      "coupon_code": "",
+      "shop_id": 0,
+      "is_shop_official": false,
+      "title": "",
+      "image": "",
+      "reward_info": {
+        "min_spend": 0,
+        "discount_value": 0,
+        "discount_percentage": 0,
+        "discount_cap": 0,
+        "current_spend": 0
+      },
+      "time_info": {
+        "start_time": "",
+        "end_time": "",
+        "claim_start_time": "",
+        "claim_end_time": "",
+        "valid_days": 0,
+        "time_format": "",
+        "has_expired": false
+      },
+      "quota_info": {
+        "percentage_claimed": 0,
+        "percentage_used": 0,
+        "quota_type": 0,
+        "fully_claimed": false,
+        "fully_used": false
+      },
+      "labels": [],
+      "scope_tags": [],
+      "user_status": {
+        "is_claimed": false,
+        "is_used": false,
+        "is_selected": false
+      },
+      "can_use": false
+    }
+  },
+  "message": "success"
+}

@@ -1,0 +1,60 @@
+{
+    "RepCode": "0768127262",
+    "RepType": "2",
+    "RepSeq": "14722645",
+    "TextHeader": null,
+    "Menu": null,
+    "Announce": null,
+    "KeyIcon": [
+        {
+            "Id": "49",
+            "KeyIconName": "โครงการพิเศษ",
+            "KeyIconKeyIndex": "special_project",
+            "KeyIconImgApp": "https://s3.catalog-yupin.com/MistineImages/favorites_icon/web/1666853074png.webp"
+        },
+        {
+            "Id": "50",
+            "KeyIconName": "โปรช่วยขาย",
+            "KeyIconKeyIndex": "content_list",
+            "KeyIconImgApp": "https://s3.catalog-yupin.com/MistineImages/favorites_icon/web/1666853161png.webp"
+        },
+        {
+            "Id": "51",
+            "KeyIconName": "ข้อมูลคำสั่งซื้อ",
+            "KeyIconKeyIndex": "order_information",
+            "KeyIconImgApp": "https://s3.catalog-yupin.com/MistineImages/favorites_icon/web/1666853378png.webp"
+        },
+        {
+            "Id": "52",
+            "KeyIconName": "กิจกรรมวาไรตี้",
+            "KeyIconKeyIndex": "activity",
+            "KeyIconImgApp": "https://s3.catalog-yupin.com/MistineImages/favorites_icon/web/1666853449png.webp"
+        },
+        {
+            "Id": "53",
+            "KeyIconName": "สินค้าส่งด่วน",
+            "KeyIconKeyIndex": "express_delivery",
+            "KeyIconImgApp": "https://s3.catalog-yupin.com/MistineImages/favorites_icon/web/1666853540png.webp"
+        },
+        {
+            "Id": "54",
+            "KeyIconName": "ตลาดนัด Friday",
+            "KeyIconKeyIndex": "market",
+            "KeyIconImgApp": "https://s3.catalog-yupin.com/MistineImages/favorites_icon/web/1666853653png.webp"
+        },
+        {
+            "Id": "55",
+            "KeyIconName": "Live สด",
+            "KeyIconKeyIndex": "live_friday",
+            "KeyIconImgApp": "https://s3.catalog-yupin.com/MistineImages/favorites_icon/web/1666854608png.webp"
+        }
+    ],
+    "Banner": null,
+    "Favorite": null,
+    "FlashSale": null,
+    "SpecialPromotion": null,
+    "NewProduct": null,
+    "Content": null,
+    "BestSeller": null,
+    "HotItem": null
+}

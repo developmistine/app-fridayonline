@@ -1,0 +1,151 @@
+{
+  "code": "100",
+  "data": [
+    {
+      "courier_id": 10454,
+      "courier_code": "J&T Bulky TH",
+      "courier_name": "J&T Bulky TH"
+    },
+    {
+      "courier_id": 10453,
+      "courier_code": "Hive box",
+      "courier_name": "Hive box"
+    },
+    {
+      "courier_id": 10452,
+      "courier_code": "Remobie TH",
+      "courier_name": "Remobie TH"
+    },
+    {
+      "courier_id": 10451,
+      "courier_code": "Lockbox",
+      "courier_name": "Lockbox"
+    },
+    {
+      "courier_id": 10450,
+      "courier_code": "KERRY",
+      "courier_name": "KERRY - LAVCB"
+    },
+    {
+      "courier_id": 10449,
+      "courier_code": "LEX MY",
+      "courier_name": "LEX MY"
+    },
+    {
+      "courier_id": 10448,
+      "courier_code": "Flash Fresh Fruit",
+      "courier_name": "Flash Fresh Fruit"
+    },
+    {
+      "courier_id": 10447,
+      "courier_code": "qh-test",
+      "courier_name": "qh-test"
+    },
+    {
+      "courier_id": 10446,
+      "courier_code": "DHL",
+      "courier_name": "DHL eCommerce Solutions (Thailand)"
+    },
+    {
+      "courier_id": 10445,
+      "courier_code": "PTTOR",
+      "courier_name": "PTTOR (PTT Oil and Retail PLC)"
+    },
+    {
+      "courier_id": 10444,
+      "courier_code": "LGS",
+      "courier_name": "LGS"
+    },
+    {
+      "courier_id": 10443,
+      "courier_code": "Cainiao",
+      "courier_name": "Cainiao"
+    },
+    {
+      "courier_id": 10442,
+      "courier_code": "Box24",
+      "courier_name": "Box24"
+    },
+    {
+      "courier_id": 10441,
+      "courier_code": "BeeBox",
+      "courier_name": "BeeBox"
+    },
+    {
+      "courier_id": 10440,
+      "courier_code": "PickmeeTH",
+      "courier_name": "PickmeeTH"
+    },
+    {
+      "courier_id": 10439,
+      "courier_code": "Test-partner",
+      "courier_name": "Test-partner"
+    },
+    {
+      "courier_id": 10438,
+      "courier_code": "NinjaVanTH",
+      "courier_name": "NinjaVanTH"
+    },
+    {
+      "courier_id": 10437,
+      "courier_code": "LEX TH",
+      "courier_name": "LEX TH"
+    },
+    {
+      "courier_id": 10436,
+      "courier_code": "Thai Parcel",
+      "courier_name": "Thai Parcel"
+    },
+    {
+      "courier_id": 10435,
+      "courier_code": "ZTO Express TH",
+      "courier_name": "ZTO Express TH"
+    },
+    {
+      "courier_id": 10434,
+      "courier_code": "B2B Pickup",
+      "courier_name": "B2B Pickup"
+    },
+    {
+      "courier_id": 10433,
+      "courier_code": "Flash Express",
+      "courier_name": "Flash Express"
+    },
+    {
+      "courier_id": 10432,
+      "courier_code": "J&T TH",
+      "courier_name": "J&T TH"
+    },
+    {
+      "courier_id": 10431,
+      "courier_code": "Giztix",
+      "courier_name": "Giztix"
+    },
+    {
+      "courier_id": 10430,
+      "courier_code": "Nim Express",
+      "courier_name": "Nim Express"
+    },
+    {
+      "courier_id": 10429,
+      "courier_code": "BEST",
+      "courier_name": "BEST"
+    },
+    {
+      "courier_id": 10428,
+      "courier_code": "7-Eleven",
+      "courier_name": "7-Eleven"
+    },
+    {
+      "courier_id": 10427,
+      "courier_code": "ThaiPost",
+      "courier_name": "ThaiPost"
+    },
+    {
+      "courier_id": 10426,
+      "courier_code": "Kerry",
+      "courier_name": "Kerry"
+    }
+  ],
+  "message": "success"
+}

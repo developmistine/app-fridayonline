@@ -1,0 +1,34 @@
+{
+  "HotItem": [
+    {
+      "data_sql_hotitems_detail": [
+        {
+          "tag": "",
+          "name": "เมย์ฟลาวเวอร์เพาเดอร์เอส3 10 ก.",
+          "price": "199",
+          "image": "https://s3.catalog-yupin.com/MistineImages/products/1614826235210753122413623.jpg.webp",
+          "caption": "",
+          "sku": "13623",
+          "is_in_stock": true,
+          "stock": "",
+          "sale": "",
+          "salepercent": "",
+          "discountpercent": "",
+          "billcode": "87955",
+          "color": "black",
+          "campaign": "182022",
+          "brand": "10",
+          "media": "01",
+          "limit_desc": "",
+          "ImgAppend": "https://s3.catalog-yupin.com/Images/outOfStock.webp",
+          "imgNetPrice": "https://s3.catalog-yupin.com/Images/totalPrice.webp",
+          "flagNetPrice": "N",
+          "ProductCode": null,
+          "BillCodeB2C": null,
+          "TotalReview": 1,
+          "RatingProduct": 2.5
+        }
+      ]
+    }
+  ]
+}

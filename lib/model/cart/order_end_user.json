@@ -1,0 +1,86 @@
+{
+  "OrderEndUser": {
+    "OrderHeader": [
+      {
+        "OrderNo": "",
+        "RepSeq": 5486041,
+        "RepCode": "0999005499",
+        "UserType": 2,
+        "EnduserID": 5486041,
+        "EnduserTel": "",
+        "OrderDate": "20250113",
+        "OrderTime": "111342",
+        "CustomerName": "คุณสมศรี มีความสามารถ",
+        "CustomerSurName": "",
+        "TotalItems": "2",
+        "TotalDiscount": "0",
+        "TotalAmount": "148",
+        "Device": "web",
+        "IMEI": "",
+        "UseStar": "N",
+        "language": "th",
+        "StarDiscount": "0",
+        "OrderType": "0",
+        "DeliveryType": "0",
+        "ShipFee": "0",
+        "UsePoint": "N",
+        "PointDiscount": "0",
+        "CouponDiscount": [],
+        "AutoRun": "20250113_1113425486041"
+      }
+    ],
+    "Orderdetail": [
+      {
+        "OrderNo": "20250113093710",
+        "Listno": "1",
+        "BillCode": "73527",
+        "BillDesc": "ไวท์ มัคส์ แฮนด์ ครีม30ก.",
+        "Media": "01",
+        "Billcamp": "242024",
+        "Qty": "1",
+        "Price": "79",
+        "Discount": 0,
+        "Amount": "79",
+        "Brand": "10"
+      }
+    ],
+    "OrderdetailB2C": [
+      {
+        "SupplierCode": "002071",
+        "SupplierName": "S&J International Enterprises Ltd.(B)",
+        "Orderdetail": [
+          {
+            "OrderNo": "20250113093710",
+            "Listno": "1",
+            "BillCode": "89317",
+            "BillDesc": "พิ้งค์ แมจิก ลิป พลัส วิตามิน ซี แอนด์ อี เชอร์รี่ No.01",
+            "Media": "922",
+            "Billcamp": "012025",
+            "Qty": "1",
+            "Price": "75",
+            "Discount": 0,
+            "Amount": "75",
+            "Brand": "10"
+          }
+        ]
+      }
+    ],
+    "dataAddress": [
+      {
+        "CustomerName": "คุณสมศรี มีความสามารถ",
+        "Telnumber": "09992",
+        "Address1": "97",
+        "Address2": "",
+        "AddressType": "1",
+        "ProvinceId": "02",
+        "AmphurId": "0201",
+        "TumbonId": "02001",
+        "ProvinceName": "กรุงเทพมหานคร",
+        "AmphurName": "เขตคลองเตย",
+        "TumbonName": "แขวงคลองตัน",
+        "PostalCode": "10110",
+        "Note": ""
+      }
+    ]
+  }
+}

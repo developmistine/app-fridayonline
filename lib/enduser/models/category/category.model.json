@@ -1,0 +1,214 @@
+{
+  "code": "100",
+  "data": [
+    {
+      "category_id": 839,
+      "category": "Beauty",
+      "category_detail": [
+        {
+          "subcategory_id": 847,
+          "subcategory": "สกินแคร์",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 848,
+          "subcategory": "เครื่องสำอาง",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 850,
+          "subcategory": "อุปกรณ์เสริมสวย",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 852,
+          "subcategory": "น้ำหอม",
+          "subcategory_img": ""
+        }
+      ]
+    },
+    {
+      "category_id": 840,
+      "category": "Fashion",
+      "category_detail": [
+        {
+          "subcategory_id": 871,
+          "subcategory": "ชุดชั้นในและชุดนอนผู้หญิง",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 872,
+          "subcategory": "แฟชั่นและเครื่องประดับ",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 873,
+          "subcategory": "ผู้ชาย",
+          "subcategory_img": ""
+        }
+      ]
+    },
+    {
+      "category_id": 841,
+      "category": "Gourmet",
+      "category_detail": [
+        {
+          "subcategory_id": 857,
+          "subcategory": "อาหารสด, แช่แข็งและผักผลไม้",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 858,
+          "subcategory": "อาหารแห้งและเครื่องปรุง",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 859,
+          "subcategory": "เครื่องดื่มและขนม",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 860,
+          "subcategory": "ของใช้ในครัวเรือน",
+          "subcategory_img": ""
+        }
+      ]
+    },
+    {
+      "category_id": 842,
+      "category": "Home",
+      "category_detail": [
+        {
+          "subcategory_id": 869,
+          "subcategory": "เครื่องใช้ไฟฟ้าและอุปกรณ์อิเล็กทรอนิกส์",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 870,
+          "subcategory": "บ้านและไลฟ์สไตล์",
+          "subcategory_img": ""
+        }
+      ]
+    },
+    {
+      "category_id": 843,
+      "category": "Health",
+      "category_detail": [
+        {
+          "subcategory_id": 854,
+          "subcategory": "ผิวกายและของใช้ส่วนตัว",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 856,
+          "subcategory": "ยา เวชภัณฑ์ อาหารเสริมและวิตามิน",
+          "subcategory_img": ""
+        }
+      ]
+    },
+    {
+      "category_id": 1916,
+      "category": "Office supply & Others",
+      "category_detail": [
+        {
+          "subcategory_id": 2980,
+          "subcategory": "ถุง",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 2981,
+          "subcategory": "กล่อง/ลัง",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 7405,
+          "subcategory": "วัสดุสิ้นเปลือง",
+          "subcategory_img": ""
+        }
+      ]
+    },
+    {
+      "category_id": 844,
+      "category": "Specific",
+      "category_detail": [
+        {
+          "subcategory_id": 861,
+          "subcategory": "แม่และเด็ก",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 862,
+          "subcategory": "ผู้สูงอายุ",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 863,
+          "subcategory": "สัตว์เลี้ยง",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 864,
+          "subcategory": "เครื่องเขียนและอุปกรณ์สำนักงาน",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 865,
+          "subcategory": "สังฆภัณฑ์และวัตถุมงคล",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 866,
+          "subcategory": "สินค้าเทศกาลและฤดูกาล",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 867,
+          "subcategory": "ของใช้สำหรับรถ",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 868,
+          "subcategory": "กีฬาและการออกกำลังกาย",
+          "subcategory_img": ""
+        }
+      ]
+    },
+    {
+      "category_id": 845,
+      "category": "Sales Literature ",
+      "category_detail": [
+        {
+          "subcategory_id": 846,
+          "subcategory": "เอกสารประกอบการขาย",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 849,
+          "subcategory": "อุปกรณ์ช่วยขาย",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 851,
+          "subcategory": "ของขวัญพิเศษ",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 853,
+          "subcategory": "คูปองส่วนลดพิเศษ",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 855,
+          "subcategory": "ส่วนลดค่าสินค้า",
+          "subcategory_img": ""
+        },
+        {
+          "subcategory_id": 2972,
+          "subcategory": "จดหมาย",
+          "subcategory_img": ""
+        }
+      ]
+    }
+  ],
+  "message": "success"
+}

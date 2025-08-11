@@ -1,0 +1,62 @@
+{
+  "code": "100",
+  "data": [
+    {
+      "icon": "",
+      "product_id": 455,
+      "title": "ร่มกันฝน-กันแดด แบบพับ ตรา บีจีแอล",
+      "discount": 0,
+      "price": 0,
+      "price_before_discount": 0,
+      "labels": [],
+      "rating_star": 0,
+      "have_video": false,
+      "unit_sales": "",
+      "image": "https://s3.catalog-yupin.com/b2c/product/no-image/no-image.jpg",
+      "currency": ""
+    },
+    {
+      "icon": "",
+      "product_id": 465,
+      "title": "ยาจุดกันยุงอีซี่เดย์ กลิ่นลาเวนเดอร์ (10ขด)",
+      "discount": 0,
+      "price": 0,
+      "price_before_discount": 0,
+      "labels": [],
+      "rating_star": 0,
+      "have_video": false,
+      "unit_sales": "",
+      "image": "https://s3.catalog-yupin.com/b2c/product/no-image/no-image.jpg",
+      "currency": ""
+    },
+    {
+      "icon": "",
+      "product_id": 519,
+      "title": "ยาจุดกันยุงอีซี่เดย์ (10ขด)",
+      "discount": 0,
+      "price": 0,
+      "price_before_discount": 0,
+      "labels": [],
+      "rating_star": 0,
+      "have_video": false,
+      "unit_sales": "",
+      "image": "https://s3.catalog-yupin.com/b2c/product/no-image/no-image.jpg",
+      "currency": ""
+    },
+    {
+      "icon": "",
+      "product_id": 625,
+      "title": "โลชั่นกันแดดสูตรบางเบาฟาริส เพอร์เฟ็ค30มล.(N) จุดเด่นผลิตภัณฑ์\n1.\tกันแดดมากกว่า ",
+      "discount": 0,
+      "price": 0,
+      "price_before_discount": 490,
+      "labels": [],
+      "rating_star": 0,
+      "have_video": false,
+      "unit_sales": "",
+      "image": "https://s3.catalog-yupin.com/b2c/product/no-image/no-image.jpg",
+      "currency": ""
+    }
+  ],
+  "message": "success"
+}

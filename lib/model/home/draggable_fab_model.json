@@ -1,0 +1,15 @@
+{
+    "ModernPopup": {
+        "ShowType": "P",
+        "IndexName": "",
+        "Member": "All",
+        "PopupList": [{
+            "PopupSeq": "153",
+            "PopupType": "url",
+            "PopupParam": "https://yclub.ningnongmistine.com/yclub/backfriday/condition.php",
+            "PopupImg": "https://s3.catalog-yupin.com/Yupindata/IMGPopup2022/1666931337.png",
+            "PopupCode": "DTEST"
+        }],
+        "SurveyList": []
+    }
+}

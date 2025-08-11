@@ -1,0 +1,27 @@
+{
+  "code": "100",
+  "data": {
+    "is_shop_official": true,
+    "shop_id": 1,
+    "shop_code": "000001",
+    "shop_name": "Friday Shop",
+    "cover": "https://s3.catalog-yupin.com/b2c-dev/product/no-image/no-image.jpg",
+    "item_count": 784,
+    "item_count_display": "784",
+    "follwer_count": 0,
+    "account": {
+      "username": "",
+      "image": "https://s3.catalog-yupin.com/b2c-dev/product/no-image/no-image.jpg",
+      "following_count": 7,
+      "date_joined": "2 เดือน ที่ผ่านมา",
+      "phone_verified": true,
+      "email_verified": true,
+      "fbid": ""
+    },
+    "followed": false,
+    "rating_star": "4.9 (การให้คะแนนทั้งหมด 13.4k)",
+    "response_rate": 99,
+    "description": ""
+  },
+  "message": "success"
+}

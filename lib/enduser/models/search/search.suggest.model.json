@@ -1,0 +1,46 @@
+{
+  "code": "100",
+  "data": [
+    {
+      "keyword": "กาแฟ",
+      "image": "https://s3.catalog-yupin.com/b2c/product/000001/1294/img/20250220142147_1.jpg"
+    },
+    {
+      "keyword": "อาหารปลา",
+      "image": "https://s3.catalog-yupin.com/b2c/product/000001/1283/img/20250220093059_1.jpg"
+    },
+    {
+      "keyword": "ข้าว",
+      "image": "https://s3.catalog-yupin.com/b2c/product/000001/1231/img/20250220084741_1.jpg"
+    },
+    {
+      "keyword": "กันแดด",
+      "image": "https://s3.catalog-yupin.com/b2c/product/000001/625/img/20250219160510_1.jpg"
+    },
+    {
+      "keyword": "ชุดเซ็ท",
+      "image": "https://s3.catalog-yupin.com/b2c/product/000001/2712/img/20250311103805_1.jpg"
+    },
+    {
+      "keyword": "ชุดเซต",
+      "image": "https://s3.catalog-yupin.com/b2c/product/000001/2689/img/20250311162213_1.jpg"
+    },
+    {
+      "keyword": "อาหาร",
+      "image": "https://s3.catalog-yupin.com/b2c/product/000001/1278/img/20250220092542_1.jpg"
+    },
+    {
+      "keyword": "อาหารแมว",
+      "image": "https://s3.catalog-yupin.com/b2c/product/000001/2732/img/20250311103921_1.jpg"
+    },
+    {
+      "keyword": "แปรงสีฟัน",
+      "image": "https://s3.catalog-yupin.com/b2c/product/000001/1278/img/20250220092542_1.jpg"
+    },
+    {
+      "keyword": "โลชั่น",
+      "image": "https://s3.catalog-yupin.com/b2c/product/000001/586/img/20250214102440_1.jpg"
+    }
+  ],
+  "message": "success"
+}

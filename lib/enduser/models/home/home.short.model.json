@@ -1,0 +1,42 @@
+{
+  "code": "100",
+  "data": [
+    {
+      "seq_no": 1,
+      "display_name": "ข้อมูลคำสั่งซื้อ",
+      "redirect_url": "orders",
+      "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/icons/2024/1/cd.icns?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241213%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241213T075628Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=80f05383e1fc3c17af230cddecb905cae1e54206bcbf54e392eb710aaae36f3e"
+    },
+    {
+      "seq_no": 2,
+      "display_name": "รวมคูปอง",
+      "redirect_url": "coupon",
+      "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/icons/2024/1/snoopy.icns?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241213%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241213T075628Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=e981813248fc92226bb5f77295383503c67516a2f022473974ef3cbe30f85677"
+    },
+    {
+      "seq_no": 3,
+      "display_name": "โปรเด็ด",
+      "redirect_url": "promotion",
+      "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/icons/2024/1/sally.icns%20?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241213%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241213T075628Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=e1f4fcfb88a5aea835189375168525c0d3cc53f8463dd0176bdf184c645ea995"
+    },
+    {
+      "seq_no": 4,
+      "display_name": "กิจกรรม",
+      "redirect_url": "activities",
+      "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/icons/2024/1/lm.icns?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241213%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241213T075628Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=264a74d41d4bbc17e559dac2f49c0b944f3c0ed1ed2d755cb449a0ab63fd5dea"
+    },
+    {
+      "seq_no": 4,
+      "display_name": "กิจกรรม",
+      "redirect_url": "",
+      "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/icons/2024/1/lm.icns?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241213%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241213T075628Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=264a74d41d4bbc17e559dac2f49c0b944f3c0ed1ed2d755cb449a0ab63fd5dea"
+    },
+    {
+      "seq_no": 7,
+      "display_name": "test",
+      "redirect_url": "3",
+      "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/icons/2024/1/3_20241212165919_7.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241213%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241213T075628Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=41ec8de3015f27e42557037f526fad1e6478d9687634e589c3176faf78f1cdb5"
+    }
+  ],
+  "message": "success"
+}

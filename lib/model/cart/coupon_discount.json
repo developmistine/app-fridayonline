@@ -1,0 +1,43 @@
+{
+  "IsPopUp": true,
+  "TextPopUp": "ยินดีด้วยคุณได้รับคูปองฟรีมูลค่า 100 บาท",
+  "ImgPopUp": "https://s3.catalog-yupin.com/Coupon/coupon20240521_17163004041.webp",
+  "Couponlist": [
+    {
+      "CouponId": "13392",
+      "CouponName": "ส่วนลด 100 บาทสำหรับเพิ่มเพื่อนทางไลน์",
+      "CouponCode": "CPLINE100",
+      "CategoryCoupon": 1,
+      "Price": "100",
+      "ImgCoupon": "https://s3.catalog-yupin.com/Supcenter/product/master/1673585283P03163.jpg",
+      "StartDate": "31/01/2023",
+      "ExpDate": "14/02/2023",
+      "Expire": 6,
+      "Usecoupon": "Y",
+      "CouponType": "Line",
+      "Condition": "เพิ่มเพื่อนทางไลน์ 100 คน",
+      "Descriptions": ["", ""],
+      "Time": "19 สิงหาคม 2024 - 20 สิงหาคม 2024",
+      "ConnMedia": "",
+      "CouponDefault": true
+    },
+    {
+      "CouponId": "13393",
+      "CouponName": "ส่วนลด 150 แชร์ขายแล้วรวย",
+      "CouponCode": "CPLINE100",
+      "CategoryCoupon": 1,
+      "Price": "100",
+      "ImgCoupon": "https://s3.catalog-yupin.com/Supcenter/product/master/1673585283P03163.jpg",
+      "StartDate": "31/01/2023",
+      "ExpDate": "14/02/2023",
+      "Expire": 6,
+      "Usecoupon": "Y",
+      "CouponType": "Line",
+      "Condition": "เพิ่มเพื่อนทางไลน์ 100 คน",
+      "Descriptions": ["", ""],
+      "Time": "19 สิงหาคม 2024 - 20 สิงหาคม 2024",
+      "ConnMedia": "",
+      "CouponDefault": false
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+    "RepCode": "0999005499",
+    "RepSeq": "5486041",
+    "DetailOrder": [{
+        "BillCode": "11841",
+        "Billcamp": "202022",
+        "QtyConfirm": 7,
+        "QtyAll": 7,
+        "SaleLimt": 5,
+        "FlagSlaeLimit": "Y",
+        "Description": "จำกัดการซื้อ 5 ชุด/รอบ"
+    }]
+}

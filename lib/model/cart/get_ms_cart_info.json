@@ -1,0 +1,20 @@
+{
+    "RepCode": "0999001686",
+    "RepSeq": "69",
+    "ShowMessage": "Y",
+    "ProjectCode": "NEW21",
+    "TextMessage": [
+        {
+            "TextHeader": "รอบหน้าอย่าลืม",
+            "TextBody1": "สั่งสินค้าเพื่อรับบัตรเติมน้ำมัน PT มูลค่า 100 บาท ฟรี",
+            "TextBody2": "",
+            "TextFooter": ""
+        }
+    ],
+    "Action": [
+        {
+            "Action1": "ยกเลิก",
+            "Action2": "ยืนยันการสั่ง"
+        }
+    ]
+}

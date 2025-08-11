@@ -1,0 +1,77 @@
+{
+    "RepCode": "0999001406",
+    "RepType": "2",
+    "RepSeq": "41",
+    "TextHeader": "สินค้าราคาพิเศษ",
+    "Menu": null,
+    "Announce": null,
+    "KeyIcon": null,
+    "Banner": null,
+    "Favorite": null,
+    "FlashSale": null,
+    "SpecialPromotion": null,
+    "NewProduct": null,
+    "Content": null,
+    "BestSeller": null,
+    "HotItem": null,
+    "SpecialPromotionList": {
+        "contentList": [
+            {
+                "id": "6591",
+                "list": "6",
+                "contentName": "Content 6 (Member All) Friday ผ้าห่มนาโน C.23-2022",
+                "contentImg": "https://s3.catalog-yupin.com/Yupindata/campaign202223/1666779687jpg_mobile.webp",
+                "contentType": "sku",
+                "contentIndex": "38577",
+                "campaign": "082022",
+                "brand": "7",
+                "fscode": "P38577",
+                "fscodeTemp": "37309"
+            }
+        ],
+        "contentSKU": [
+            {
+                "id": "6605",
+                "list": "1",
+                "contentName": "Test_Content_SKU(1)",
+                "contentImg": "https://s3.catalog-yupin.com/Yupindata/campaign202224/1666948041jpg_mobile.webp",
+                "contentType": "category",
+                "contentIndex": "813",
+                "listSKU": [
+                    {
+                        "billcamp": "242022",
+                        "billcode": "54433",
+                        "billName": null,
+                        "brand": null,
+                        "mediaCode": null,
+                        "fscode": "70365",
+                        "img": "https://s3.catalog-yupin.com/MistineImages/products/163903758565721527370365.jpg.webp",
+                        "regularPrice": "590.00",
+                        "specialPrice": "590.00",
+                        "billcolor": null,
+                        "is_in_stock": true,
+                        "checkLimit": null,
+                        "imgAppend": null,
+                        "flagNetPrice": null,
+                        "imgNetPrice": null
+                    }
+                ]
+            }
+        ],
+        "contentSlide": [
+            {
+                "id": "6607",
+                "list": "1",
+                "contentName": "Test_Content_Slide(1)",
+                "contentImg": "https://s3.catalog-yupin.com/Yupindata/campaign202223/1666779755jpg_mobile.webp",
+                "contentType": "sku",
+                "contentIndex": "38577",
+                "campaign": "082022",
+                "brand": "7",
+                "fscode": "P38577",
+                "fscodeTemp": "37309"
+            }
+        ],
+        "contentDelivery": []
+    }
+}

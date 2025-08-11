@@ -1,0 +1,38 @@
+{
+  "primary_address": {
+    "id": "4",
+    "enduser_id": "283268",
+    "name": "Prompong  Srinoi",
+    "telnumber": "0644011893",
+    "type": "1",
+    "address1": "83 หมู่ 4",
+    "address2": "",
+    "province_id": "01",
+    "amphur_id": "0101",
+    "tumbon_id": "01002",
+    "province_name": "จ.กระบี่",
+    "amphur_name": "อ.เกาะลันตา",
+    "tumbon_name": "ต.เกาะลันตาน้อย",
+    "postalcode": "81150",
+    "note": "test delete"
+  },
+  "secondary_address": [
+    {
+      "id": "2",
+      "enduser_id": "283268",
+      "name": "Prompong  Srinoi",
+      "telnumber": "0644011893",
+      "type": "1",
+      "address1": "83 หมู่ 4",
+      "address2": "",
+      "province_id": "02",
+      "amphur_id": "0217",
+      "tumbon_id": "02063",
+      "province_name": "กรุงเทพมหานคร",
+      "amphur_name": "เขตบางขุนเทียน",
+      "tumbon_name": "แขวงแสมดำ",
+      "postalcode": "10150",
+      "note": "test2"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "fs_code": "53618",
+  "bill_code": "",
+  "total_rating": 3.5,
+  "all_rating": {
+    "count": 1,
+    "product_review": [
+      {
+        "rep_name": "ล***** *****ล",
+        "order_campaign": "01/2024",
+        "sales_campaign": "01/2024",
+        "unit": 1,
+        "product_rating": 3.5,
+        "delivery_rating": 4,
+        "comment": "เฉยๆ",
+        "review_date": "16/01/2024 10:00:32",
+        "medialist": [
+          "http://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/review/24/53618/1/postman-1.png",
+          "http://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/review/24/53618/1/postman-12.png",
+          "http://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/review/24/53618/1/postman-13.png",
+          "http://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/review/24/53618/1/postman.png"
+        ],
+        "reply_to_feedback": {
+          "name": "",
+          "comment": ""
+        }
+      }
+    ]
+  },
+  "five_rating": {
+    "count": 0,
+    "product_review": []
+  },
+  "four_rating": {
+    "count": 0,
+    "product_review": []
+  },
+  "three_rating": {
+    "count": 1,
+    "product_review": [
+      {
+        "rep_name": "ล***** *****ล",
+        "order_campaign": "01/2024",
+        "sales_campaign": "01/2024",
+        "unit": 1,
+        "product_rating": 3.5,
+        "delivery_rating": 4,
+        "comment": "เฉยๆ",
+        "review_date": "16/01/2024 10:00:32",
+        "medialist": [
+          "http://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/review/24/53618/1/postman-1.png",
+          "http://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/review/24/53618/1/postman-12.png",
+          "http://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/review/24/53618/1/postman-13.png",
+          "http://s3.ap-southeast-1.amazonaws.com/s3.catalog-yupin.com/review/24/53618/1/postman.png"
+        ],
+        "reply_to_feedback": {
+          "name": "",
+          "comment": ""
+        }
+      }
+    ]
+  },
+  "two_rating": {
+    "count": 0,
+    "product_review": []
+  },
+  "one_rating": {
+    "count": 0,
+    "product_review": []
+  }
+}

@@ -1,0 +1,20 @@
+{
+    "RepSeq": "5486041",
+    "UserID": "276848",
+    "OrderNo": "20211230276848-23",
+    "ApproveFlag": "11",
+    "Listdetail": [{
+        "OrderNo": "20211230276848-23",
+        "Listno": "1",
+        "BillCode": "74825",
+        "BillDesc": "โลชั่นกันยุงเอสเคป50มล.",
+        "BillCamp": "022022",
+        "OrderCamp": "022022",
+        "Qty": "1",
+        "QtyConfirm": "1",
+        "BillFlag": "11",
+        "Price": "79",
+        "Amount": "79",
+        "Brand": "1"
+    }]
+}

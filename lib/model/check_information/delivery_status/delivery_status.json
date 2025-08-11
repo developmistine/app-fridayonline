@@ -1,0 +1,41 @@
+{
+  "OrderMSL": {
+      "Header": [
+          {
+              "OrderSource": "1",
+              "OrdshopId": "",
+              "SupplierCode": "",
+              "SupplierName": "",
+              "BillCampaign": "022025",
+              "BillSeq": "1",
+              "RepSeq": "5486041",
+              "DocType": "BILL",
+              "SaleCampaign": "รอบการขาย  02/2025",
+              "OrderCampaign": "022025",
+              "InvNo": "ใบสั่งซื้อ",
+              "InvDate": "วันที่สั่งซื้อ 16/01/2025",
+              "RepCode": "0999005499",
+              "RepName": "คุณสมศรี มีความสามารถ",
+              "TotalItems": "1",
+              "TotalAmount": "149.00",
+              "TotalDiscount": "0.00",
+              "Status": "กำลังดำเนินการ",
+              "Address": "",
+              "MobileNo": "",
+              "StatusColor": "yellow",
+              "Listdetail": [
+                  {
+                      "Listno": "1",
+                      "BillCode": "75147",
+                      "BillDesc": "เวรี่ พิ้งค์ ลิควิด ชายน์ อายแชโดว์ No.01 1.9 G",
+                      "PathImg": "",
+                      "BillCamp": "022025",
+                      "Qty": "1",
+                      "Price": "149",
+                      "Amount": "149"
+                  }
+              ]
+          }
+      ]
+  }
+}

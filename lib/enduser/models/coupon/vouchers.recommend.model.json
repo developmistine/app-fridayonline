@@ -1,0 +1,121 @@
+{
+  "code": "100",
+  "data": {
+    "shop_id": 23001,
+    "shop_name": "",
+    "shop_vouchers": [
+      {
+        "coupon_id": 94,
+        "coupon_code": "02723",
+        "shop_id": 23001,
+        "is_shop_official": false,
+        "title": "ERP coupon",
+        "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/coupon/2024/02723_20241206102457_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20250103%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250103T033609Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=63a76037c075c28460c5f44eb563cbc5b26ea4b0fc86845a61a21c51a1e86984",
+        "reward_info": {
+          "min_spend": 100,
+          "discount_value": 0,
+          "discount_percentage": 0,
+          "discount_cap": 500,
+          "current_spend": 0
+        },
+        "time_info": {
+          "start_time": "02/01/2025 00:00:00",
+          "end_time": "03/01/2025 23:59:00",
+          "claim_start_time": "02/01/2025 00:00:00",
+          "claim_end_time": "03/01/2025 23:59:00",
+          "valid_days": 0,
+          "time_format": "หมดอายุใน: เหลือ 13 ชั่วโมง",
+          "has_expired": false
+        },
+        "quota_info": {
+          "percentage_claimed": 0,
+          "percentage_used": 0,
+          "quota_type": 0,
+          "fully_claimed": false,
+          "fully_used": false
+        },
+        "labels": [],
+        "scope_tags": [],
+        "user_status": {
+          "is_claimed": false,
+          "is_used": false
+        }
+      },
+      {
+        "coupon_id": 96,
+        "coupon_code": "99992",
+        "shop_id": 23001,
+        "is_shop_official": false,
+        "title": "[test] ส่วนลดค่าจัดส่ง 2",
+        "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/coupon/2024/02723_20241206102457_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20250103%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250103T033609Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=63a76037c075c28460c5f44eb563cbc5b26ea4b0fc86845a61a21c51a1e86984",
+        "reward_info": {
+          "min_spend": 350,
+          "discount_value": 20,
+          "discount_percentage": 0,
+          "discount_cap": 300,
+          "current_spend": 0
+        },
+        "time_info": {
+          "start_time": "02/01/2025 00:00:00",
+          "end_time": "04/01/2025 23:59:00",
+          "claim_start_time": "02/01/2025 00:00:00",
+          "claim_end_time": "04/01/2025 23:59:00",
+          "valid_days": 1,
+          "time_format": "ใช้ได้ถึง 04 ม.ค.",
+          "has_expired": false
+        },
+        "quota_info": {
+          "percentage_claimed": 0,
+          "percentage_used": 0,
+          "quota_type": 0,
+          "fully_claimed": false,
+          "fully_used": false
+        },
+        "labels": [],
+        "scope_tags": [],
+        "user_status": {
+          "is_claimed": false,
+          "is_used": false
+        }
+      },
+      {
+        "coupon_id": 97,
+        "coupon_code": "99993",
+        "shop_id": 23001,
+        "is_shop_official": false,
+        "title": "[test] ส่วนลดค่าจัดส่ง 3",
+        "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/coupon/2024/02723_20241206102457_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20250103%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250103T033609Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=63a76037c075c28460c5f44eb563cbc5b26ea4b0fc86845a61a21c51a1e86984",
+        "reward_info": {
+          "min_spend": 200,
+          "discount_value": 0,
+          "discount_percentage": 20,
+          "discount_cap": 400,
+          "current_spend": 0
+        },
+        "time_info": {
+          "start_time": "01/01/2025 00:00:00",
+          "end_time": "30/01/2025 00:00:00",
+          "claim_start_time": "01/01/2025 00:00:00",
+          "claim_end_time": "30/01/2025 00:00:00",
+          "valid_days": 26,
+          "time_format": "ใช้ได้ถึง 30 ม.ค.",
+          "has_expired": false
+        },
+        "quota_info": {
+          "percentage_claimed": 0,
+          "percentage_used": 0,
+          "quota_type": 0,
+          "fully_claimed": false,
+          "fully_used": false
+        },
+        "labels": [],
+        "scope_tags": [],
+        "user_status": {
+          "is_claimed": false,
+          "is_used": false
+        }
+      }
+    ]
+  },
+  "message": "success"
+}

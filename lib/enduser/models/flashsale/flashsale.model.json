@@ -1,0 +1,64 @@
+{
+  "code": "100",
+  "data": {
+    "content_header": "Flash Sales",
+    "content_img": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/contents/super_deal/2024/image%20%282%29.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241219%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241219T015041Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=87eb33076dbbee7cb6dd1cc3fb601c1c4fb4ae0b97e7cb557db82b036b2d060d",
+    "start_date": "19/12/2024 09:00:00",
+    "end_date": "19/12/2024 12:00:00",
+    "product_content": [
+      {
+        "product_id": 1,
+        "title": "ผ้าไมโคร",
+        "price": 23,
+        "discount": 30,
+        "price_before_discount": 35,
+        "labels": [],
+        "flash_sale_stock": 900,
+        "stock": 0,
+        "is_shop_official": true,
+        "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/ef5b099a39d506f782ed8334d0819d60_t.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241219%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241219T015042Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=ac172964569e45ab26d370fc166eafae33ba1903d697ad8b1c4296019be60487",
+        "currency": "THB"
+      },
+      {
+        "product_id": 5,
+        "title": "แบล็ค จินเส็ง เฟิร์มมิ่ง เอสเซนส์ 100 มล.",
+        "price": 162,
+        "discount": 10,
+        "price_before_discount": 179,
+        "labels": [],
+        "flash_sale_stock": 500,
+        "stock": 0,
+        "is_shop_official": true,
+        "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/5/img/163671324567347922835216_t.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241219%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241219T015042Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=4c88b752ccb1f2f81516d188f52aef034141a70fbd9089b0be2a09db9b8ed870",
+        "currency": "THB"
+      },
+      {
+        "product_id": 2,
+        "title": "9ทู5 โอเวอร์ คัลเลอร์ ลิปสติก 3.7 ก.",
+        "price": 81,
+        "discount": 40,
+        "price_before_discount": 89,
+        "labels": [],
+        "flash_sale_stock": 2100,
+        "stock": 0,
+        "is_shop_official": true,
+        "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/2/img/10511_10520Review_t.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241219%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241219T015042Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=dc07d0dfdae3852c7242535744cf01acfe5f91c27ee810110917a4c2e5ae6593",
+        "currency": "THB"
+      },
+      {
+        "product_id": 4,
+        "title": "เวรี่ พิ้งค์ ลิควิด ชายน์ อายแชโดว์ 1.9 G",
+        "price": 120,
+        "discount": 40,
+        "price_before_discount": 149,
+        "labels": [],
+        "flash_sale_stock": 1500,
+        "stock": 0,
+        "is_shop_official": true,
+        "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/4/img/1_t.jpg.tiff?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241219%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241219T015042Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=e58c65b99faf33b3531c530135ec5e2f935eeb76baff39c05a2862c717e1f320",
+        "currency": "THB"
+      }
+    ]
+  },
+  "message": "success"
+}

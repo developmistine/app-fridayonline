@@ -1,0 +1,65 @@
+{
+    "rep_seq": "5486041",
+    "rep_code": "0999005499",
+    "rep_name": "คุณสมศรี มีความสามารถ",
+    "rep_tel": "0999911198",
+    "order_id": 41,
+    "order_no": "202501135486041-15",
+    "order_date": "13/01/2025",
+    "order_time": "17:20",
+    "campaign": "",
+    "payment_info": {
+        "final_total": 75,
+        "amount_paid": 75,
+        "info": [
+            {
+                "text": "รวมค่าสินค้า",
+                "value": 75
+            },
+            {
+                "text": "ค่าจัดส่ง",
+                "value": 0
+            },
+            {
+                "text": "รวม",
+                "value": 75
+            }
+        ],
+        "payment_method": {
+            "payment_method": 1,
+            "payment_channel_name": "COD - เก็บเงินปลายทาง"
+        }
+    },
+    "cancel_flag": false,
+    "address": {
+        "shipping_name": "คุณสมศรี มีความสามารถ",
+        "shipping_phone": "คุณสมศรี มีความสามารถ",
+        "shipping_address": "97   แขวงคลองตัน เขตคลองเตย กรุงเทพมหานคร 10110"
+    },
+    "order_status": {
+        "color_code": "",
+        "description": ""
+    },
+    "shipping_info": {
+        "tracking_no": "",
+        "carrier": "",
+        "tracking_url": ""
+    },
+    "shop_info": {
+        "icon": "",
+        "shop_id": 0,
+        "shop_code": "002072",
+        "shop_name": ""
+    },
+    "item_groups": [
+        {
+            "bill_code": "89317",
+            "bill_name": "พิ้งค์ แมจิก ลิป พลัส วิตามิน ซี แอนด์ อี เชอร์รี่ No.01",
+            "image": "https://s3.catalog-yupin.com/MistineImages/products/17355388251769737018P89317.jpg.webp",
+            "amount": 1,
+            "price": 75,
+            "price_before_discount": 75,
+            "order_price": 75
+        }
+    ]
+}

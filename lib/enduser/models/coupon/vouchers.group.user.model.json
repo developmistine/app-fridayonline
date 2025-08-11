@@ -1,0 +1,26 @@
+{
+  "code": "100",
+  "data": [
+    {
+      "voucher_page": 0,
+      "voucher_group_id": 0,
+      "voucher_group": "ทั้งหมด"
+    },
+    {
+      "voucher_page": 1,
+      "voucher_group_id": 10422,
+      "voucher_group": "โค้ด Shopee"
+    },
+    {
+      "voucher_page": 2,
+      "voucher_group_id": 10423,
+      "voucher_group": "พาร์ทเนอร์"
+    },
+    {
+      "voucher_page": 3,
+      "voucher_group_id": 10424,
+      "voucher_group": "โค้ดร้านค้า"
+    }
+  ],
+  "message": "success"
+}

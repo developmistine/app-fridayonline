@@ -1,0 +1,66 @@
+{
+  "code": "100",
+  "data": {
+    "bundle_deal_id": 57,
+    "bundle_deal_detail": "ซื้อ 2 ชิ้น ลด 1 บาท | ซื้อ 5 ชิ้น ลด 3 บาท",
+    "bundle_deal_products": [
+      {
+        "icon": "https://s3.catalog-yupin.com/b2c/seller/000025/logo20250514105641_0.png",
+        "product_id": 10256,
+        "title": "KIDDY HEAD TO TOE BATH 200 ML. แชมพูคิดดี้ 200 มล.",
+        "discount": 0,
+        "price": 0,
+        "price_before_discount": 89,
+        "labels": [],
+        "rating_star": 0,
+        "have_video": false,
+        "unit_sales": "ขายได้ 3 ชิ้น",
+        "image": "https://s3.catalog-yupin.com/b2c/product/000025/10256/img/20250509154550_1.webp",
+        "currency": ""
+      },
+      {
+        "icon": "https://s3.catalog-yupin.com/b2c/seller/000025/logo20250514105641_0.png",
+        "product_id": 10256,
+        "title": "KIDDY HEAD TO TOE BATH 200 ML. แชมพูคิดดี้ 200 มล.",
+        "discount": 0,
+        "price": 0,
+        "price_before_discount": 89,
+        "labels": [],
+        "rating_star": 0,
+        "have_video": false,
+        "unit_sales": "ขายได้ 3 ชิ้น",
+        "image": "https://s3.catalog-yupin.com/b2c/product/000025/10256/img/20250509154550_1.webp",
+        "currency": ""
+      },
+      {
+        "icon": "https://s3.catalog-yupin.com/b2c/seller/000025/logo20250514105641_0.png",
+        "product_id": 10256,
+        "title": "KIDDY HEAD TO TOE BATH 200 ML. แชมพูคิดดี้ 200 มล.",
+        "discount": 0,
+        "price": 0,
+        "price_before_discount": 89,
+        "labels": [],
+        "rating_star": 0,
+        "have_video": false,
+        "unit_sales": "ขายได้ 3 ชิ้น",
+        "image": "https://s3.catalog-yupin.com/b2c/product/000025/10256/img/20250509154550_1.webp",
+        "currency": ""
+      },
+      {
+        "icon": "https://s3.catalog-yupin.com/b2c/seller/000025/logo20250514105641_0.png",
+        "product_id": 10256,
+        "title": "KIDDY HEAD TO TOE BATH 200 ML. แชมพูคิดดี้ 200 มล.",
+        "discount": 0,
+        "price": 0,
+        "price_before_discount": 89,
+        "labels": [],
+        "rating_star": 0,
+        "have_video": false,
+        "unit_sales": "ขายได้ 3 ชิ้น",
+        "image": "https://s3.catalog-yupin.com/b2c/product/000025/10256/img/20250509154550_1.webp",
+        "currency": ""
+      }
+    ]
+  },
+  "message": "success"
+}

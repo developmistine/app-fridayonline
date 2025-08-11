@@ -1,0 +1,188 @@
+{
+  "code": "100",
+  "data": {
+    "product_id": 1,
+    "title": "ผ้าไมโคร",
+    "shop_id": 0,
+    "shop_code": "23001",
+    "shop_name": "",
+    "cat_id": 972,
+    "cat_name": "เครื่องครัวอื่นๆ",
+    "brand_id": 448,
+    "brand_name": "Faris",
+    "rating_star": 4.4,
+    "description": "",
+    "shipping_estimated": "จะได้รับสินค้าภายในวันที่... 5",
+    "attributes": [],
+    "categories": [],
+    "tier_variations": [
+      {
+        "name": "สี",
+        "options": [
+          {
+            "option_value": "ดำ",
+            "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/fox-2_t.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241203%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241203T043348Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=216fd513b0b431c4e397e5ff45db4c86dae7bb3e7799d0eb243cdbd35ed1ab22",
+            "display_indicators": 0
+          },
+          {
+            "option_value": "ขาว",
+            "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/github_t.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241203%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241203T043348Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=f7ae526e54b22e64931d786147a46038c5204df420af812475e07d9c8923b31a",
+            "display_indicators": 0
+          },
+          {
+            "option_value": "ฟ้า",
+            "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/git-1_t.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241203%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241203T043348Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=f4224239089ee140a84e8f4a69cf897b2f00b0ff4bce375b1634c8bf28f77ada",
+            "display_indicators": 0
+          }
+        ]
+      },
+      {
+        "name": "ขนาด",
+        "options": [
+          {
+            "option_value": "80 ไมครอน",
+            "image": "",
+            "display_indicators": 0
+          },
+          {
+            "option_value": "120 ไมครอน",
+            "image": "",
+            "display_indicators": 0
+          },
+          {
+            "option_value": "150 ไมครอน",
+            "image": "",
+            "display_indicators": 0
+          },
+          {
+            "option_value": "150 ไมครอน กว้าง 4M",
+            "image": "",
+            "display_indicators": 0
+          },
+          {
+            "option_value": "150 ไมครอน กว้าง 4M กัน UV7%",
+            "image": "",
+            "display_indicators": 0
+          }
+        ]
+      }
+    ],
+    "product_price": {
+      "have_discount": true,
+      "discount": 40,
+      "price": {
+        "single_value": 15,
+        "range_min": -1,
+        "range_max": -1
+      },
+      "price_before_discount": {
+        "single_value": 25,
+        "range_min": -1,
+        "range_max": -1
+      }
+    },
+    "product_datail": [
+      {
+        "name": "ดำ",
+        "discount": 0,
+        "key_image": "product/23001/1/img/fox-2.png",
+        "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/fox-2_t.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241203%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241203T043348Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=216fd513b0b431c4e397e5ff45db4c86dae7bb3e7799d0eb243cdbd35ed1ab22",
+        "price": {
+          "single_value": 15,
+          "range_min": -1,
+          "range_max": -1
+        },
+        "price_before_discount": {
+          "single_value": 35,
+          "range_min": -1,
+          "range_max": -1
+        }
+      },
+      {
+        "name": "ขาว",
+        "discount": 0,
+        "key_image": "product/23001/1/img/github.png",
+        "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/github_t.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241203%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241203T043348Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=f7ae526e54b22e64931d786147a46038c5204df420af812475e07d9c8923b31a",
+        "price": {
+          "single_value": 15,
+          "range_min": -1,
+          "range_max": -1
+        },
+        "price_before_discount": {
+          "single_value": 35,
+          "range_min": -1,
+          "range_max": -1
+        }
+      },
+      {
+        "name": "ฟ้า",
+        "discount": 0,
+        "key_image": "product/23001/1/img/git-1.png",
+        "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/git-1_t.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241203%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241203T043348Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=f4224239089ee140a84e8f4a69cf897b2f00b0ff4bce375b1634c8bf28f77ada",
+        "price": {
+          "single_value": 15,
+          "range_min": -1,
+          "range_max": -1
+        },
+        "price_before_discount": {
+          "single_value": 35,
+          "range_min": -1,
+          "range_max": -1
+        }
+      }
+    ],
+    "have_video": true,
+    "product_images": {
+      "video": [
+        {
+          "key_image": "product/23001/1/img/mov_bbb.mp4",
+          "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/mov_bbb.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241203%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241203T043348Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=a3db7d1755557e1e4dbd85d469af2228c73293c568dc9816d17909fbcf2cd824"
+        }
+      ],
+      "image": [
+        {
+          "key_image": "product/23001/1/img/fox-1.png",
+          "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/fox-1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241203%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241203T043348Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=ee8bd865ff3797ff72583f9b60bfd107b92e05427afdf87f57d4edde44800976"
+        },
+        {
+          "key_image": "product/23001/1/img/postman.png",
+          "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/postman.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241203%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241203T043348Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=ca1cf1157f696fb5dc735c0dae450bc79ffff7e70a4f0b5e915dfcf0bea2c74d"
+        },
+        {
+          "key_image": "product/23001/1/img/postman-1.png",
+          "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/postman-1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241203%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241203T043348Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=b17cffd9dbe40a381205ef3e17708c692474fe5bd9119442110ca52f63e522b1"
+        },
+        {
+          "key_image": "product/23001/1/img/postman-2.png",
+          "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/postman-2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241203%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241203T043348Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=d231e1f23d893cffb8b84587d5485d31cdac84718c0dd7c3b3fcea5c971466f6"
+        },
+        {
+          "key_image": "product/23001/1/img/postman-3.png",
+          "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/postman-3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241203%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241203T043348Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=5baa132f4d837c932d2d132e42344c40450ef478e6d1dff5e3e1d1e8388d5220"
+        },
+        {
+          "key_image": "product/23001/1/img/postman-4.png",
+          "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/postman-4.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241203%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241203T043348Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=6d23fc44c50556d6a5db59717af02cb145647a4aaad1927b1740affce0fde685"
+        },
+        {
+          "key_image": "product/23001/1/img/fox-2.png",
+          "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/fox-2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241203%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241203T043348Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=19f1fc0d360c529751878c783010938c8381135715f7d077fc66e7f052baec33"
+        },
+        {
+          "key_image": "product/23001/1/img/github.png",
+          "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/github.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241203%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241203T043348Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=13f80fd0255b022d129aa9333c1f49daeaa6d83373202ee5014083349a447b49"
+        },
+        {
+          "key_image": "product/23001/1/img/git-1.png",
+          "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/1/img/git-1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241203%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241203T043348Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=9b409823294316e219c0785398eb3078a3c14c23c726eeb04da6d7f704574895"
+        }
+      ]
+    },
+    "product_review": {
+      "rating_star": 4.4,
+      "total_rating_count": 3,
+      "rating_count": [0, 0, 0, 1, 2]
+    }
+  },
+  "message": "success"
+}

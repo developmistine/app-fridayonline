@@ -1,0 +1,56 @@
+{
+  "code": "100",
+  "data": {
+    "coupon_id": 95,
+    "coupon_code": "99991",
+    "shop_id": 23001,
+    "is_shop_official": false,
+    "title": "[test] ส่วนลดค่าจัดส่ง",
+    "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/coupon/2024/02723_20241206102457_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20241230%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241230T021020Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=3a1d9edff93520c8830d70b93f2e13438fe478ab082a44e962401e8d60cba17b",
+    "new_user_only": false,
+    "reward_info": {
+      "min_spend": 350,
+      "discount_value": 0,
+      "discount_percentage": 10,
+      "discount_cap": 500,
+      "current_spend": 0
+    },
+    "time_info": {
+      "start_time": "26/12/2024 00:00:00",
+      "end_time": "27/12/2024 00:00:00",
+      "claim_start_time": "26/12/2024 00:00:00",
+      "claim_end_time": "27/12/2024 00:00:00",
+      "valid_days": -3,
+      "time_format": "ใช้ได้ถึง 27 ธ.ค.",
+      "has_expired": false
+    },
+    "quota_info": {
+      "percentage_claimed": 0,
+      "percentage_used": 0,
+      "quota_type": 0,
+      "fully_claimed": false,
+      "fully_used": false
+    },
+    "labels": [],
+    "scope_tags": [],
+    "user_status": {
+      "is_claimed_before": false,
+      "is_used_before": false
+    },
+    "usage_term": [
+      {
+        "key": "การชำระเงิน",
+        "value": ["QR พร้อมเพย์", "เก็บเงินปลายทาง", "บัตรเครดิต"]
+      },
+      {
+        "key": "การจัดส่ง",
+        "value": [
+          "Standard Delivery Bulky - ส่งสินค้าขนาดใหญ่",
+          "EMS - Thailand Post",
+          "International Express - ส่งจากต่างประเทศ"
+        ]
+      }
+    ]
+  },
+  "message": "success"
+}
