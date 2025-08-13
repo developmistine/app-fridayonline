@@ -1,4 +1,4 @@
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -8,7 +8,9 @@ Widget buttonSeeAll() {
       Text(
         'ดูทั้งหมด',
         style: GoogleFonts.notoSansThaiLooped(
-            fontSize: 13, color: theme_color_df, fontWeight: FontWeight.w500),
+            fontSize: 13,
+            color: themeColorDefault,
+            fontWeight: FontWeight.w500),
       ),
       const SizedBox(
         width: 4,
@@ -16,7 +18,7 @@ Widget buttonSeeAll() {
       SizedBox(
         width: 20,
         child: CircleAvatar(
-            backgroundColor: theme_color_df,
+            backgroundColor: themeColorDefault,
             child: const Icon(
               Icons.arrow_forward_ios_rounded,
               color: Colors.white,

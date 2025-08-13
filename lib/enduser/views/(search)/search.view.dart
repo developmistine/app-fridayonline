@@ -1,18 +1,17 @@
 import 'dart:async';
 
-import 'package:fridayonline/enduser/components/shimmer/shimmer.product.dart';
-import 'package:fridayonline/enduser/controller/search.ctr.dart';
-// import 'package:fridayonline/enduser/controller/showproduct.sku.ctr.dart';
-// import 'package:fridayonline/enduser/controller/showproduct.category.ctr.dart';
-import 'package:fridayonline/enduser/models/search/serach.hint.model.dart';
-import 'package:fridayonline/enduser/services/search/search.service.dart';
-import 'package:fridayonline/enduser/views/(search)/search.result.dart';
-import 'package:fridayonline/enduser/widgets/gap.dart';
-// import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-// import 'package:fridayonline/enduser/widgets/gap.dart';
-// import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/shimmer/shimmer.product.dart';
+import 'package:appfridayecommerce/enduser/controller/search.ctr.dart';
+// import 'package:appfridayecommerce/enduser/controller/showproduct.sku.ctr.dart';
+// import 'package:appfridayecommerce/enduser/controller/showproduct.category.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/search/serach.hint.model.dart';
+import 'package:appfridayecommerce/enduser/services/search/search.service.dart';
+import 'package:appfridayecommerce/enduser/views/(search)/search.result.dart';
+import 'package:appfridayecommerce/enduser/widgets/gap.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+// // import 'package:appfridayecommerce/enduser/widgets/gap.dart';
+// import 'package:appfridayecommerce/theme.dart';import 'package:cached_network_image/cached_network_image.dart';
 // import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -33,7 +32,7 @@ class _EndUserSearchState extends State<EndUserSearch> {
   final scrollController = ScrollController();
   final OutlineInputBorder border = OutlineInputBorder(
     borderSide: BorderSide(
-      color: theme_color_df,
+      color: themeColorDefault,
       width: 1,
     ),
     borderRadius: const BorderRadius.all(
@@ -117,7 +116,7 @@ class _EndUserSearchState extends State<EndUserSearch> {
                       },
                       child: Icon(
                         Icons.arrow_back_rounded,
-                        color: theme_color_df,
+                        color: themeColorDefault,
                       )),
                   const SizedBox(
                     width: 4,
@@ -173,7 +172,7 @@ class _EndUserSearchState extends State<EndUserSearch> {
                             hintText: 'ค้นหาสินค้า',
                             hintStyle: TextStyle(
                               fontSize: 13,
-                              color: theme_color_df,
+                              color: themeColorDefault,
                             ),
                             filled: true,
                             fillColor: Colors.white,
@@ -208,7 +207,7 @@ class _EndUserSearchState extends State<EndUserSearch> {
                             height: 36,
                             padding: const EdgeInsets.symmetric(horizontal: 8),
                             decoration: BoxDecoration(
-                                color: theme_color_df,
+                                color: themeColorDefault,
                                 borderRadius: const BorderRadius.only(
                                   topRight: Radius.circular(8),
                                   bottomRight: Radius.circular(8),
@@ -474,8 +473,9 @@ class _EndUserSearchState extends State<EndUserSearch> {
                                                                   Icon(
                                                                     Icons.image,
                                                                     size: 48,
-                                                                    color:
-                                                                        icon_color_loading,
+                                                                    color: themeColorDefault
+                                                                        .withOpacity(
+                                                                            0.2),
                                                                   ),
                                                                 ],
                                                               ),

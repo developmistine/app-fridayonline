@@ -1,18 +1,18 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:fridayonline/enduser/models/coupon/coupon.user.model.dart';
-import 'package:fridayonline/enduser/models/coupon/vouchers.detail.dart';
-import 'package:fridayonline/enduser/models/coupon/vouchers.group.model.dart';
-import 'package:fridayonline/enduser/models/coupon/vouchers.items.model.dart';
-import 'package:fridayonline/enduser/models/coupon/vouchers.platform.model.dart';
-import 'package:fridayonline/enduser/models/coupon/vouchers.recommend.model.dart';
-import 'package:fridayonline/enduser/models/coupon/vouchers.group.user.model.dart';
-import 'package:fridayonline/enduser/models/coupon/vouchers.shopcode.model.dart';
-import 'package:fridayonline/enduser/utils/auth_fetch.dart';
+import 'package:appfridayecommerce/enduser/models/coupon/coupon.user.model.dart';
+import 'package:appfridayecommerce/enduser/models/coupon/vouchers.detail.dart';
+import 'package:appfridayecommerce/enduser/models/coupon/vouchers.group.model.dart';
+import 'package:appfridayecommerce/enduser/models/coupon/vouchers.items.model.dart';
+import 'package:appfridayecommerce/enduser/models/coupon/vouchers.platform.model.dart';
+import 'package:appfridayecommerce/enduser/models/coupon/vouchers.recommend.model.dart';
+import 'package:appfridayecommerce/enduser/models/coupon/vouchers.group.user.model.dart';
+import 'package:appfridayecommerce/enduser/models/coupon/vouchers.shopcode.model.dart';
+import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
 
-import 'package:fridayonline/model/set_data/set_data.dart';
-import 'package:fridayonline/service/pathapi.dart';
+import 'package:appfridayecommerce/preferrence.dart';
+import 'package:appfridayecommerce/service/pathapi.dart';
 
 Future<VouchersGroup?> fetchVoucherGroupService() async {
   var url = Uri.parse("${b2c_api_url}b2c/api/v1/vouchers/group");

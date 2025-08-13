@@ -1,16 +1,16 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:fridayonline/enduser/models/showproduct/option.sku.dart';
-import 'package:fridayonline/enduser/models/showproduct/product.category.model.dart';
-import 'package:fridayonline/enduser/models/showproduct/product.sku.model.dart';
-import 'package:fridayonline/enduser/models/showproduct/review.model.dart';
-import 'package:fridayonline/enduser/models/showproduct/tier.variations.model.dart';
-import 'package:fridayonline/enduser/utils/auth_fetch.dart';
+import 'package:appfridayecommerce/enduser/models/showproduct/option.sku.dart';
+import 'package:appfridayecommerce/enduser/models/showproduct/product.category.model.dart';
+import 'package:appfridayecommerce/enduser/models/showproduct/product.sku.model.dart';
+import 'package:appfridayecommerce/enduser/models/showproduct/review.model.dart';
+import 'package:appfridayecommerce/enduser/models/showproduct/tier.variations.model.dart';
+import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
 
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
-import 'package:fridayonline/service/pathapi.dart';
+import 'package:appfridayecommerce/preferrence.dart';
+import 'package:appfridayecommerce/print.dart';
+import 'package:appfridayecommerce/service/pathapi.dart';
 
 Future<EndUserProductDetail?> fetchProductDetailService(productId) async {
   SetData data = SetData();

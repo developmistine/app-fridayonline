@@ -1,20 +1,22 @@
 import "dart:async";
-import "package:fridayonline/controller/update_app_controller.dart";
-import "package:fridayonline/enduser/components/appbar/appbar.enduser.dart";
-import "package:fridayonline/enduser/components/appbar/appbar.nosearch.dart";
-import "package:fridayonline/enduser/controller/enduser.home.ctr.dart";
-import "package:fridayonline/enduser/controller/notify.ctr.dart";
-import "package:fridayonline/enduser/services/track/track.service.dart";
-import "package:fridayonline/enduser/utils/branch_manager.dart";
-import "package:fridayonline/enduser/utils/image_preloader.dart";
-import "package:fridayonline/enduser/views/(anonymous)/signin.dart";
-import "package:fridayonline/enduser/views/(initials)/brand/brand.view.dart";
-import "package:fridayonline/enduser/views/(initials)/home/home.view.dart";
-import "package:fridayonline/enduser/views/(initials)/notify/notify.view.dart";
-import "package:fridayonline/enduser/views/(initials)/profile/enduser.profile.dart";
-import "package:fridayonline/enduser/views/(initials)/fair/fair.view.dart";
-import "package:fridayonline/homepage/home/home_popup.dart";
-import "package:fridayonline/push/firebase_message_service.dart";
+import "package:appfridayecommerce/controller/update_app_controller.dart";
+import "package:appfridayecommerce/enduser/components/appbar/appbar.enduser.dart";
+import "package:appfridayecommerce/enduser/components/appbar/appbar.nosearch.dart";
+import "package:appfridayecommerce/enduser/controller/enduser.home.ctr.dart";
+import "package:appfridayecommerce/enduser/controller/notify.ctr.dart";
+import "package:appfridayecommerce/enduser/popup.dart";
+import "package:appfridayecommerce/enduser/services/track/track.service.dart";
+import "package:appfridayecommerce/enduser/utils/branch_manager.dart";
+import "package:appfridayecommerce/enduser/utils/image_preloader.dart";
+import "package:appfridayecommerce/enduser/views/(anonymous)/signin.dart";
+import "package:appfridayecommerce/enduser/views/(initials)/brand/brand.view.dart";
+import "package:appfridayecommerce/enduser/views/(initials)/home/home.view.dart";
+import "package:appfridayecommerce/enduser/views/(initials)/notify/notify.view.dart";
+import "package:appfridayecommerce/enduser/views/(initials)/profile/enduser.profile.dart";
+import "package:appfridayecommerce/enduser/views/(initials)/fair/fair.view.dart";
+import "package:appfridayecommerce/preferrence.dart";
+import "package:appfridayecommerce/push/firebase_message_service.dart";
+import "package:appfridayecommerce/theme.dart";
 import "package:firebase_analytics/firebase_analytics.dart";
 import "package:firebase_messaging/firebase_messaging.dart";
 import "package:flutter/material.dart";
@@ -25,9 +27,6 @@ import "package:flutter/foundation.dart" as foundation;
 import "package:google_fonts/google_fonts.dart";
 import "package:huawei_push/huawei_push.dart" as huawei;
 import "package:uni_links/uni_links.dart";
-import "package:fridayonline/homepage/theme/theme_color.dart";
-import "package:fridayonline/model/set_data/set_data.dart";
-import "../controller/badger/badger_controller.dart";
 import "package:badges/badges.dart" as badges;
 import "package:shared_preferences/shared_preferences.dart";
 
@@ -48,8 +47,6 @@ class _EndUserHomeState extends State<EndUserHome>
   bool get wantKeepAlive => true;
   SetData data = SetData();
   UpdateAppController update = Get.put(UpdateAppController());
-  BadgerController badger = Get.put(BadgerController());
-  BadgerProfileController badgerProfile = Get.put(BadgerProfileController());
   final homeCtr = Get.find<EndUserHomeCtr>();
   final FirebaseAnalytics analytics = FirebaseAnalytics.instance;
 
@@ -590,7 +587,7 @@ class _EndUserHomeState extends State<EndUserHome>
                   return const SizedBox(width: 70);
                 }
                 Color textColor = index == _selectedIndex
-                    ? theme_color_df
+                    ? themeColorDefault
                     : Colors.grey.shade500;
 
                 if (index == 3) {
@@ -691,8 +688,9 @@ class _EndUserHomeState extends State<EndUserHome>
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: List.generate(_labels.length, (index) {
-            Color textColor =
-                index == _selectedIndex ? theme_color_df : Colors.grey.shade500;
+            Color textColor = index == _selectedIndex
+                ? themeColorDefault
+                : Colors.grey.shade500;
 
             if (index == 2) {
               return notifyBadges(InkWell(

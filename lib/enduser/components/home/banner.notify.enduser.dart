@@ -1,9 +1,8 @@
-// import 'package:fridayonline/enduser/components/shimmer/shimmer.card.dart';
-// import 'package:fridayonline/enduser/controller/enduser.home.ctr.dart';
-// // import 'package:fridayonline/enduser/views/(anonymous)/signin.dart';
-// import 'package:fridayonline/enduser/widgets/gap.dart';
-// import 'package:fridayonline/homepage/theme/theme_color.dart';
-// import 'package:cached_network_image/cached_network_image.dart';
+// import 'package:appfridayecommerce/enduser/components/shimmer/shimmer.card.dart';
+// import 'package:appfridayecommerce/enduser/controller/enduser.home.ctr.dart';
+// // import 'package:appfridayecommerce/enduser/views/(anonymous)/signin.dart';
+// import 'package:appfridayecommerce/enduser/widgets/gap.dart';
+// import 'package:appfridayecommerce/theme.dart';// import 'package:cached_network_image/cached_network_image.dart';
 // import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
 
@@ -56,7 +55,7 @@
 //                   Icon(
 //                     Icons.image,
 //                     size: 48,
-//                     color: icon_color_loading,
+//                     color: themeColorDefault.withOpacity(0.2),
 //                   )
 //                 ],
 //               );

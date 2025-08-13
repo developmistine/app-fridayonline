@@ -1,13 +1,12 @@
 import 'dart:async';
 
-import 'package:fridayonline/enduser/controller/enduser.home.ctr.dart';
-import 'package:fridayonline/enduser/controller/enduser.signin.ctr.dart';
-import 'package:fridayonline/enduser/models/authen/b2cregis.model.dart';
-import 'package:fridayonline/enduser/services/authen/b2cauthen.service.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_loading_theme.dart';
-import 'package:fridayonline/homepage/theme/formatter_text.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
+import 'package:appfridayecommerce/enduser/controller/enduser.home.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/enduser.signin.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/authen/b2cregis.model.dart';
+import 'package:appfridayecommerce/enduser/services/authen/b2cauthen.service.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/preferrence.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -61,7 +60,7 @@ class _OtpVerifyState extends State<OtpVerify> {
           backgroundColor: Colors.white,
           appBar: AppBar(
             backgroundColor: Colors.white,
-            foregroundColor: theme_color_df,
+            foregroundColor: themeColorDefault,
             leadingWidth: 200,
             leading: InkWell(
                 onTap: () {
@@ -134,7 +133,7 @@ class _OtpVerifyState extends State<OtpVerify> {
                                       ? false
                                       : true,
                               pastedTextStyle: TextStyle(
-                                color: theme_color_df,
+                                color: themeColorDefault,
                                 fontWeight: FontWeight.bold,
                               ),
                               length: 4,
@@ -150,10 +149,10 @@ class _OtpVerifyState extends State<OtpVerify> {
                                 borderRadius: BorderRadius.circular(14),
                                 fieldHeight: 72,
                                 fieldWidth: 72,
-                                activeColor: theme_color_df,
-                                selectedColor: theme_color_df,
+                                activeColor: themeColorDefault,
+                                selectedColor: themeColorDefault,
                                 inactiveColor: Colors.grey.shade400,
-                                inactiveFillColor: theme_color_df,
+                                inactiveFillColor: themeColorDefault,
                                 activeFillColor:
                                     hasError ? Colors.orange : Colors.white,
                               ),
@@ -255,7 +254,7 @@ class _OtpVerifyState extends State<OtpVerify> {
                                       Text(
                                         "จะส่งรหัสอีกครั้ง",
                                         style: GoogleFonts.notoSansThaiLooped(
-                                            color: theme_color_df,
+                                            color: themeColorDefault,
                                             fontSize: 16,
                                             fontWeight: FontWeight.w500),
                                       ),
@@ -266,7 +265,7 @@ class _OtpVerifyState extends State<OtpVerify> {
                                             '${endUserSignInCtr.remainingSeconds.value} วินาที',
                                             style: TextStyle(
                                                 fontSize: 16,
-                                                color: theme_color_df),
+                                                color: themeColorDefault),
                                           )),
                                     ],
                                   )
@@ -275,7 +274,7 @@ class _OtpVerifyState extends State<OtpVerify> {
                                     width: double.infinity,
                                     child: ElevatedButton(
                                         style: ElevatedButton.styleFrom(
-                                          backgroundColor: theme_color_df,
+                                          backgroundColor: themeColorDefault,
                                           elevation: 0,
                                           shape: RoundedRectangleBorder(
                                               borderRadius:

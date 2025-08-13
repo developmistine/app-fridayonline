@@ -1,4 +1,4 @@
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 
 Widget arrowToTop(
@@ -7,7 +7,8 @@ Widget arrowToTop(
     duration: const Duration(milliseconds: 300),
     tween: ColorTween(
       begin: Colors.transparent,
-      end: isShowArrow ? theme_color_df.withOpacity(0.6) : Colors.transparent,
+      end:
+          isShowArrow ? themeColorDefault.withOpacity(0.6) : Colors.transparent,
     ),
     builder: (context, Color? color, child) {
       return AnimatedContainer(

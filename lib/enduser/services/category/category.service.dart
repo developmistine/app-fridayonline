@@ -1,13 +1,13 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:fridayonline/enduser/models/category/filter.model.dart';
-import 'package:fridayonline/enduser/models/category/home.category.model.dart';
-import 'package:fridayonline/enduser/models/category/sort.model.dart';
-import 'package:fridayonline/enduser/models/category/subcategory.model.dart';
-import 'package:fridayonline/enduser/utils/auth_fetch.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
-import 'package:fridayonline/service/pathapi.dart';
+import 'package:appfridayecommerce/enduser/models/category/filter.model.dart';
+import 'package:appfridayecommerce/enduser/models/category/home.category.model.dart';
+import 'package:appfridayecommerce/enduser/models/category/sort.model.dart';
+import 'package:appfridayecommerce/enduser/models/category/subcategory.model.dart';
+import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
+import 'package:appfridayecommerce/preferrence.dart';
+import 'package:appfridayecommerce/service/pathapi.dart';
 
 Future<HomeCategory?> fetchHomeCategoryService() async {
   var url = Uri.parse("${b2c_api_url}b2c/api/v1/home/categories");

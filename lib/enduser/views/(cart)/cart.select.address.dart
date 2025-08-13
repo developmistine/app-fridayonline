@@ -1,10 +1,10 @@
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/controller/cart.ctr.dart';
-import 'package:fridayonline/enduser/services/address/adress.service.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.set.address.dart';
-import 'package:fridayonline/enduser/widgets/empty.address.dart';
-import 'package:fridayonline/homepage/theme/formatter_text.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
+import 'package:appfridayecommerce/enduser/services/address/adress.service.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.set.address.dart';
+import 'package:appfridayecommerce/enduser/widgets/empty.address.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -82,7 +82,7 @@ class EndUserSelectAddress extends StatelessWidget {
                                 Expanded(
                                     child: Icon(
                                   Icons.radio_button_checked,
-                                  color: theme_color_df,
+                                  color: themeColorDefault,
                                   size: 18,
                                 ))
                               else
@@ -131,13 +131,13 @@ class EndUserSelectAddress extends StatelessWidget {
                                                   BorderRadius.circular(2),
                                               border: Border.all(
                                                   width: 0.5,
-                                                  color: theme_color_df)),
+                                                  color: themeColorDefault)),
                                           child: Text(
                                             'ค่าตั้งต้น',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                                 fontSize: 11,
-                                                color: theme_color_df),
+                                                color: themeColorDefault),
                                           ))
                                   ],
                                 ),
@@ -155,7 +155,7 @@ class EndUserSelectAddress extends StatelessWidget {
                                 child: Text(
                                   'แก้ไข',
                                   style: TextStyle(
-                                      color: theme_color_df, fontSize: 12),
+                                      color: themeColorDefault, fontSize: 12),
                                 ),
                               )
                             ],
@@ -188,8 +188,8 @@ class EndUserSelectAddress extends StatelessWidget {
                                     height: 20,
                                     alignment: Alignment.center,
                                     decoration: BoxDecoration(
-                                        border:
-                                            Border.all(color: theme_color_df),
+                                        border: Border.all(
+                                            color: themeColorDefault),
                                         borderRadius:
                                             BorderRadius.circular(50)),
                                     child: Text(
@@ -198,7 +198,7 @@ class EndUserSelectAddress extends StatelessWidget {
                                       style: TextStyle(
                                           fontSize: 18,
                                           height: 1.1,
-                                          color: theme_color_df),
+                                          color: themeColorDefault),
                                     )),
                                 const SizedBox(
                                   width: 8,
@@ -206,7 +206,7 @@ class EndUserSelectAddress extends StatelessWidget {
                                 Text(
                                   'เพิ่มที่อยู่ใหม่',
                                   style: TextStyle(
-                                      fontSize: 13, color: theme_color_df),
+                                      fontSize: 13, color: themeColorDefault),
                                 ),
                               ],
                             ),

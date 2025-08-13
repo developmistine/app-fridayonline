@@ -1,8 +1,8 @@
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/components/showproduct/nodata.dart';
-import 'package:fridayonline/enduser/models/orders/orderlist.model.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/nodata.dart';
+import 'package:appfridayecommerce/enduser/models/orders/orderlist.model.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -223,8 +223,8 @@ class ChatOrders extends StatelessWidget {
                                   height: 30,
                                   child: OutlinedButton(
                                       style: OutlinedButton.styleFrom(
-                                          side:
-                                              BorderSide(color: theme_color_df),
+                                          side: BorderSide(
+                                              color: themeColorDefault),
                                           shape: RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(4))),
@@ -236,7 +236,7 @@ class ChatOrders extends StatelessWidget {
                                         style: GoogleFonts.notoSansThaiLooped(
                                             fontSize: 14,
                                             fontWeight: FontWeight.bold,
-                                            color: theme_color_df),
+                                            color: themeColorDefault),
                                       )),
                                 ),
                               )
@@ -252,7 +252,7 @@ class ChatOrders extends StatelessWidget {
 Color _getStatusColor(String status) {
   switch (status) {
     case 'b':
-      return theme_color_df;
+      return themeColorDefault;
     case 'y':
       return Colors.amber;
     case 'g':
@@ -260,6 +260,6 @@ Color _getStatusColor(String status) {
     case 'r':
       return const Color.fromARGB(255, 221, 60, 32);
     default:
-      return theme_color_df;
+      return themeColorDefault;
   }
 }

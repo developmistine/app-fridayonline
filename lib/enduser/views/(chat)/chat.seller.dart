@@ -3,30 +3,29 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:fridayonline/enduser/components/appbar/appbar.chat.dart';
-import 'package:fridayonline/enduser/components/viewer/fullscreen.image.dart';
-import 'package:fridayonline/enduser/components/viewer/video.chat.dart';
-import 'package:fridayonline/enduser/controller/chat.ctr.dart';
-import 'package:fridayonline/enduser/controller/order.ctr.dart';
-import 'package:fridayonline/enduser/controller/showproduct.sku.ctr.dart';
-import 'package:fridayonline/enduser/models/brands/shopfilter.model.dart';
-import 'package:fridayonline/enduser/models/chat/recieve.message.model.dart';
-import 'package:fridayonline/enduser/models/chat/seller.list.model.dart';
-import 'package:fridayonline/enduser/models/chat/sticker_model.dart';
-import 'package:fridayonline/enduser/services/brands/brands.service.dart';
-import 'package:fridayonline/enduser/services/chat/chat.service.dart';
-import 'package:fridayonline/enduser/services/orders/order.service.dart';
-import 'package:fridayonline/enduser/utils/function.dart';
-import 'package:fridayonline/enduser/views/(chat)/chat.camera.dart';
-import 'package:fridayonline/enduser/views/(chat)/chat.gallery.dart';
-import 'package:fridayonline/enduser/views/(chat)/chat.order.dart';
-import 'package:fridayonline/enduser/views/(chat)/chat.procuct.dart';
-import 'package:fridayonline/enduser/views/(chat)/chat_sticker.dart';
-import 'package:fridayonline/enduser/views/(order)/order.detail.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_loading_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.chat.dart';
+import 'package:appfridayecommerce/enduser/components/viewer/fullscreen.image.dart';
+import 'package:appfridayecommerce/enduser/components/viewer/video.chat.dart';
+import 'package:appfridayecommerce/enduser/controller/chat.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/order.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/showproduct.sku.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/brands/shopfilter.model.dart';
+import 'package:appfridayecommerce/enduser/models/chat/recieve.message.model.dart';
+import 'package:appfridayecommerce/enduser/models/chat/seller.list.model.dart';
+import 'package:appfridayecommerce/enduser/models/chat/sticker_model.dart';
+import 'package:appfridayecommerce/enduser/services/brands/brands.service.dart';
+import 'package:appfridayecommerce/enduser/services/chat/chat.service.dart';
+import 'package:appfridayecommerce/enduser/services/orders/order.service.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/utils/function.dart';
+import 'package:appfridayecommerce/enduser/views/(chat)/chat.camera.dart';
+import 'package:appfridayecommerce/enduser/views/(chat)/chat.gallery.dart';
+import 'package:appfridayecommerce/enduser/views/(chat)/chat.order.dart';
+import 'package:appfridayecommerce/enduser/views/(chat)/chat.procuct.dart';
+import 'package:appfridayecommerce/enduser/views/(chat)/chat_sticker.dart';
+import 'package:appfridayecommerce/enduser/views/(order)/order.detail.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/preferrence.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +35,7 @@ import 'package:image_picker/image_picker.dart' as img_picker;
 import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
-import 'package:fridayonline/enduser/models/orders/orderlist.model.dart';
+import 'package:appfridayecommerce/enduser/models/orders/orderlist.model.dart';
 
 class ChatRenderItem {
   final Widget widget;
@@ -211,7 +210,8 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
             padding: const EdgeInsets.symmetric(horizontal: 8),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
-              color: isMe ? theme_color_df.withOpacity(0.3) : Colors.grey[200],
+              color:
+                  isMe ? themeColorDefault.withOpacity(0.3) : Colors.grey[200],
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
@@ -303,7 +303,8 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
             padding: const EdgeInsets.symmetric(horizontal: 8),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
-              color: isMe ? theme_color_df.withOpacity(0.3) : Colors.grey[200],
+              color:
+                  isMe ? themeColorDefault.withOpacity(0.3) : Colors.grey[200],
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
@@ -473,7 +474,7 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
               color: msg.isMe
                   ? msg.messageData.senderRole == "system"
                       ? Colors.red.withOpacity(0.1)
-                      : theme_color_df
+                      : themeColorDefault
                   : Colors.white,
               borderRadius: BorderRadius.only(
                 topLeft: const Radius.circular(12),
@@ -649,7 +650,7 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
               margin: const EdgeInsets.all(8),
               // padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: theme_color_df,
+                color: themeColorDefault,
                 borderRadius: BorderRadius.circular(8),
                 boxShadow: const [
                   BoxShadow(
@@ -715,7 +716,7 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
                                         Color getStatusColor(String status) {
                                           switch (status) {
                                             case 'b':
-                                              return theme_color_df;
+                                              return themeColorDefault;
                                             case 'y':
                                               return Colors.amber;
                                             case 'g':
@@ -724,7 +725,7 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
                                               return const Color.fromARGB(
                                                   255, 221, 60, 32);
                                             default:
-                                              return theme_color_df;
+                                              return themeColorDefault;
                                           }
                                         }
 
@@ -813,7 +814,7 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
           : null,
       decoration: msg.messageData.messageType == 1
           ? BoxDecoration(
-              color: msg.isMe ? theme_color_df : Colors.white,
+              color: msg.isMe ? themeColorDefault : Colors.white,
               borderRadius: BorderRadius.only(
                 topLeft: const Radius.circular(12),
                 topRight: const Radius.circular(12),
@@ -1150,7 +1151,7 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
                               icon: const Icon(Icons.send),
                               color: _controller.text.isEmpty
                                   ? Colors.grey.shade600
-                                  : theme_color_df,
+                                  : themeColorDefault,
                               onPressed: () {
                                 sendMessage(1, '', '');
                               },

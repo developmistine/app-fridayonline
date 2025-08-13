@@ -1,19 +1,18 @@
 import 'dart:async';
 import 'dart:ui';
-import 'package:fridayonline/enduser/components/showproduct/sku.addtocart.dart';
-import 'package:fridayonline/enduser/models/cart/getcart.model.dart';
-import 'package:fridayonline/enduser/models/showproduct/option.sku.dart';
-import 'package:fridayonline/enduser/models/showproduct/tier.variations.model.dart'
+import 'package:appfridayecommerce/enduser/components/showproduct/sku.addtocart.dart';
+import 'package:appfridayecommerce/enduser/models/cart/getcart.model.dart';
+import 'package:appfridayecommerce/enduser/models/showproduct/option.sku.dart';
+import 'package:appfridayecommerce/enduser/models/showproduct/tier.variations.model.dart'
     as tier_variation;
-import 'package:fridayonline/enduser/services/cart/cart.service.dart';
-import 'package:fridayonline/enduser/services/showproduct/showproduct.sku.service.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.main.dart';
-import 'package:fridayonline/enduser/views/(showproduct)/medias.sku.dart';
-import 'package:fridayonline/enduser/widgets/dialog.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_loading_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
+import 'package:appfridayecommerce/enduser/services/cart/cart.service.dart';
+import 'package:appfridayecommerce/enduser/services/showproduct/showproduct.sku.service.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.main.dart';
+import 'package:appfridayecommerce/enduser/views/(showproduct)/medias.sku.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
+import 'package:appfridayecommerce/preferrence.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -52,12 +51,12 @@ class OptionItems extends StatelessWidget {
               });
             },
             style: OutlinedButton.styleFrom(
-                side: BorderSide(color: theme_color_df, width: 1),
+                side: BorderSide(color: themeColorDefault, width: 1),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(4))),
             child: Text(
               'เปลี่ยนตัวเลือก',
-              style: TextStyle(color: theme_color_df, fontSize: 12),
+              style: TextStyle(color: themeColorDefault, fontSize: 12),
             )),
       );
     }
@@ -829,7 +828,7 @@ class OptionItems extends StatelessWidget {
                                     height: 50,
                                     decoration: BoxDecoration(
                                         color: isAllSelected
-                                            ? theme_color_df
+                                            ? themeColorDefault
                                             : Colors.grey.shade200,
                                         borderRadius: BorderRadius.circular(4)),
                                     child: Center(

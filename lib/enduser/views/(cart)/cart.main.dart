@@ -1,40 +1,40 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:fridayonline/enduser/components/cart/appbar.cart.dart';
-import 'package:fridayonline/enduser/components/cart/option.items.dart';
-import 'package:fridayonline/enduser/components/cart/outstock.product.dart';
-import 'package:fridayonline/enduser/components/cart/storer.coupon.dart';
-import 'package:fridayonline/enduser/components/cart/storer.shipping.discount.dart';
-import 'package:fridayonline/enduser/controller/brand.ctr.dart';
-import 'package:fridayonline/enduser/controller/cart.ctr.dart';
-import 'package:fridayonline/enduser/controller/chat.ctr.dart';
-import 'package:fridayonline/enduser/controller/coupon.ctr.dart';
-import 'package:fridayonline/enduser/controller/showproduct.sku.ctr.dart';
-import 'package:fridayonline/enduser/models/cart/cart.checkout.input.dart'
+import 'package:appfridayecommerce/enduser/components/cache/image/cache.image.dart';
+import 'package:appfridayecommerce/enduser/components/cart/appbar.cart.dart';
+import 'package:appfridayecommerce/enduser/components/cart/option.items.dart';
+import 'package:appfridayecommerce/enduser/components/cart/outstock.product.dart';
+import 'package:appfridayecommerce/enduser/components/cart/storer.coupon.dart';
+import 'package:appfridayecommerce/enduser/components/cart/storer.shipping.discount.dart';
+import 'package:appfridayecommerce/enduser/controller/brand.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/chat.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/coupon.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/showproduct.sku.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/cart/cart.checkout.input.dart'
     as checkout_model;
-import 'package:fridayonline/enduser/models/cart/cart.update.input.dart';
-import 'package:fridayonline/enduser/models/cart/getcart.model.dart';
-import 'package:fridayonline/enduser/models/chat/seller.list.model.dart';
-import 'package:fridayonline/enduser/services/cart/cart.service.dart';
-import 'package:fridayonline/enduser/services/chat/chat.service.dart';
-import 'package:fridayonline/enduser/services/coupon/coupon.services.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.bundle.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.coupon.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.sumary.dart';
-import 'package:fridayonline/enduser/views/(chat)/chat.seller.dart';
-import 'package:fridayonline/enduser/widgets/dialog.dart';
-import 'package:fridayonline/homepage/home/cache_image.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_loading_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
+import 'package:appfridayecommerce/enduser/models/cart/cart.update.input.dart';
+import 'package:appfridayecommerce/enduser/models/cart/getcart.model.dart';
+import 'package:appfridayecommerce/enduser/models/chat/seller.list.model.dart';
+import 'package:appfridayecommerce/enduser/services/cart/cart.service.dart';
+import 'package:appfridayecommerce/enduser/services/chat/chat.service.dart';
+import 'package:appfridayecommerce/enduser/services/coupon/coupon.services.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.bundle.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.coupon.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.sumary.dart';
+import 'package:appfridayecommerce/enduser/views/(chat)/chat.seller.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
+import 'package:appfridayecommerce/print.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/preferrence.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:fridayonline/enduser/models/cart/cart.update.input.dart'
+import 'package:appfridayecommerce/enduser/models/cart/cart.update.input.dart'
     as update_input;
 
 final EndUserCartCtr cartCtr = Get.find();
@@ -733,7 +733,7 @@ class _EndUserCartState extends State<EndUserCart>
               cartCtr.fetchCartNoLoad();
               setState(() {});
             },
-            backgroundColor: theme_red,
+            backgroundColor: themeRed,
             foregroundColor: Colors.white,
             icon: Icons.delete,
           ),
@@ -1619,7 +1619,7 @@ class _EndUserCartState extends State<EndUserCart>
                                   return ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                           elevation: 0,
-                                          backgroundColor: theme_color_df,
+                                          backgroundColor: themeColorDefault,
                                           shape: RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(4))),
@@ -1964,7 +1964,7 @@ class _EndUserCartState extends State<EndUserCart>
                                   return ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                           elevation: 0,
-                                          backgroundColor: theme_color_df,
+                                          backgroundColor: themeColorDefault,
                                           shape: RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(4))),

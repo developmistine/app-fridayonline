@@ -1,7 +1,6 @@
-import 'package:fridayonline/enduser/components/profile/myreview/review.text.dart';
-import 'package:fridayonline/enduser/components/profile/myreview/review.upload.dart';
-import 'package:fridayonline/enduser/controller/review.ctr.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/profile/myreview/review.text.dart';
+import 'package:appfridayecommerce/enduser/components/profile/myreview/review.upload.dart';
+import 'package:appfridayecommerce/enduser/controller/review.ctr.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
@@ -53,7 +52,7 @@ Widget editReviewCard() {
                               data.option,
                               style: TextStyle(
                                   fontSize: 12,
-                                  color: grayTextShade700,
+                                  color: Colors.grey.shade700,
                                   overflow: TextOverflow.ellipsis),
                             ),
                           ],
@@ -74,7 +73,8 @@ Widget editReviewCard() {
                   children: [
                     Text(
                       'ให้คะแนนคุณภาพสินค้า',
-                      style: TextStyle(fontSize: 14, color: grayTextShade700),
+                      style:
+                          TextStyle(fontSize: 14, color: Colors.grey.shade700),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8),
@@ -107,7 +107,8 @@ Widget editReviewCard() {
                     ),
                     Text(
                       'เพิ่มรูปภาพ/วิดีโอ',
-                      style: TextStyle(fontSize: 14, color: grayTextShade700),
+                      style:
+                          TextStyle(fontSize: 14, color: Colors.grey.shade700),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8),
@@ -118,7 +119,8 @@ Widget editReviewCard() {
                     ),
                     Text(
                       'เขียนรีวิวสินค้า',
-                      style: TextStyle(fontSize: 14, color: grayTextShade700),
+                      style:
+                          TextStyle(fontSize: 14, color: Colors.grey.shade700),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8),

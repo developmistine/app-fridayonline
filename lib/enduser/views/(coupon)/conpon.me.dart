@@ -1,16 +1,16 @@
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/components/showproduct/nodata.dart';
-import 'package:fridayonline/enduser/controller/brand.ctr.dart';
-import 'package:fridayonline/enduser/controller/cart.ctr.dart';
-import 'package:fridayonline/enduser/models/coupon/coupon.user.model.dart';
-import 'package:fridayonline/enduser/models/coupon/vouchers.group.user.model.dart';
-import 'package:fridayonline/enduser/services/coupon/coupon.services.dart';
-import 'package:fridayonline/enduser/views/(anonymous)/signin.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.main.dart';
-import 'package:fridayonline/enduser/views/(coupon)/coupon.detail.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/nodata.dart';
+import 'package:appfridayecommerce/enduser/controller/brand.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/coupon/coupon.user.model.dart';
+import 'package:appfridayecommerce/enduser/models/coupon/vouchers.group.user.model.dart';
+import 'package:appfridayecommerce/enduser/services/coupon/coupon.services.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/views/(anonymous)/signin.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.main.dart';
+import 'package:appfridayecommerce/enduser/views/(coupon)/coupon.detail.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/preferrence.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -172,7 +172,7 @@ class _CouponMeState extends State<CouponMe> {
                                             ? Border(
                                                 bottom: BorderSide(
                                                     width: 2,
-                                                    color: theme_color_df))
+                                                    color: themeColorDefault))
                                             : null),
                                     child: Text(
                                       "${couponData.data[index].voucherGroup}  (${ctr.voucherSum.isNotEmpty ? ctr.voucherSum[index].count : "0"})",
@@ -180,7 +180,7 @@ class _CouponMeState extends State<CouponMe> {
                                       style: ctr.active.value == index
                                           ? TextStyle(
                                               fontWeight: FontWeight.bold,
-                                              color: theme_color_df,
+                                              color: themeColorDefault,
                                               fontSize: 13)
                                           : const TextStyle(fontSize: 13),
                                     ),
@@ -341,7 +341,7 @@ class _CouponMeState extends State<CouponMe> {
                                                           'เงื่อนไข',
                                                           style: TextStyle(
                                                             color:
-                                                                theme_color_df,
+                                                                themeColorDefault,
                                                             fontSize: 10,
                                                           ),
                                                         ),
@@ -370,14 +370,14 @@ class _CouponMeState extends State<CouponMe> {
                                                 child: OutlinedButton(
                                                   style: OutlinedButton.styleFrom(
                                                       foregroundColor:
-                                                          theme_color_df,
+                                                          themeColorDefault,
                                                       side: BorderSide(
                                                           color:
-                                                              theme_color_df),
+                                                              themeColorDefault),
                                                       shape: RoundedRectangleBorder(
                                                           side: BorderSide(
                                                               color:
-                                                                  theme_color_df),
+                                                                  themeColorDefault),
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(

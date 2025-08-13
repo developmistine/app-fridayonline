@@ -1,5 +1,5 @@
-import 'package:fridayonline/enduser/models/home/home.topproduct.model.dart';
-import 'package:fridayonline/enduser/services/topproduct/topproduc.service.dart';
+import 'package:appfridayecommerce/enduser/models/home/home.topproduct.model.dart';
+import 'package:appfridayecommerce/enduser/services/topproduct/topproduc.service.dart';
 import 'package:get/get.dart';
 
 class TopProductsCtr extends GetxController {

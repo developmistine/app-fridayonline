@@ -1,17 +1,17 @@
 import 'dart:convert';
 import 'dart:typed_data';
-import 'package:fridayonline/enduser/models/brands/brands.model.dart';
-import 'package:fridayonline/enduser/models/brands/shopbanner.model.dart';
-import 'package:fridayonline/enduser/models/brands/shopcategory.model.dart';
-import 'package:fridayonline/enduser/models/brands/shopcontent.model.dart';
-import 'package:fridayonline/enduser/models/brands/shopfilter.model.dart';
-import 'package:fridayonline/enduser/models/brands/shopflashsale.model.dart';
-import 'package:fridayonline/enduser/models/brands/shopinfo.model.dart';
-import 'package:fridayonline/enduser/models/brands/shopvouchers.model.dart';
-import 'package:fridayonline/enduser/utils/auth_fetch.dart';
+import 'package:appfridayecommerce/enduser/models/brands/brands.model.dart';
+import 'package:appfridayecommerce/enduser/models/brands/shopbanner.model.dart';
+import 'package:appfridayecommerce/enduser/models/brands/shopcategory.model.dart';
+import 'package:appfridayecommerce/enduser/models/brands/shopcontent.model.dart';
+import 'package:appfridayecommerce/enduser/models/brands/shopfilter.model.dart';
+import 'package:appfridayecommerce/enduser/models/brands/shopflashsale.model.dart';
+import 'package:appfridayecommerce/enduser/models/brands/shopinfo.model.dart';
+import 'package:appfridayecommerce/enduser/models/brands/shopvouchers.model.dart';
+import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
 
-import 'package:fridayonline/model/set_data/set_data.dart';
-import 'package:fridayonline/service/pathapi.dart';
+import 'package:appfridayecommerce/preferrence.dart';
+import 'package:appfridayecommerce/service/pathapi.dart';
 
 Future<BrandsList?> fetchBrandsServices(String pageType, int categoryId) async {
   SetData data = SetData();

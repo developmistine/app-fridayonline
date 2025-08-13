@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:fridayonline/enduser/models/profile/profile_data.dart';
-import 'package:fridayonline/enduser/models/profile/profile_special.dart';
-import 'package:fridayonline/enduser/services/profile/profile.service.dart';
+import 'package:appfridayecommerce/enduser/models/profile/profile_data.dart';
+import 'package:appfridayecommerce/enduser/models/profile/profile_special.dart';
+import 'package:appfridayecommerce/enduser/services/profile/profile.service.dart';
 import 'package:get/get.dart';
 
 class ProfileCtl extends GetxController {

@@ -1,10 +1,9 @@
-import 'package:fridayonline/enduser/controller/order.ctr.dart';
-import 'package:fridayonline/enduser/services/notify/order.notify.service.dart';
-import 'package:fridayonline/enduser/views/(order)/order.checkout.dart';
-import 'package:fridayonline/enduser/views/(order)/order.detail.dart';
-import 'package:fridayonline/enduser/widgets/dialog.confirm.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_loading_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/controller/order.ctr.dart';
+import 'package:appfridayecommerce/enduser/services/notify/order.notify.service.dart';
+import 'package:appfridayecommerce/enduser/views/(order)/order.checkout.dart';
+import 'package:appfridayecommerce/enduser/views/(order)/order.detail.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.confirm.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,7 +20,7 @@ Widget orderNotiList({required Function(dynamic number) setOffset}) {
             children: [
               Text(
                 'อัพเดตคำสั่งซื้อ',
-                style: TextStyle(fontSize: 12, color: grayTextShade700),
+                style: TextStyle(fontSize: 12, color: Colors.grey.shade700),
               ),
               GestureDetector(
                 onTap: () {
@@ -85,9 +84,9 @@ Widget orderNotiList({required Function(dynamic number) setOffset}) {
                     const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                 decoration: BoxDecoration(
                   color: data.isRead ? Colors.white : Colors.grey.shade200,
-                  border: Border(
+                  border: const Border(
                     bottom: BorderSide(
-                      color: grayText,
+                      color: Color.fromARGB(255, 191, 191, 191),
                       width: 0.5,
                     ),
                   ),
@@ -115,14 +114,14 @@ Widget orderNotiList({required Function(dynamic number) setOffset}) {
                               maxLines: 3,
                               style: TextStyle(
                                   fontSize: 12,
-                                  color: grayTextShade700,
+                                  color: Colors.grey.shade700,
                                   overflow: TextOverflow.ellipsis),
                             ),
                             Text(
                               data.dateTime,
                               style: TextStyle(
                                 fontSize: 10,
-                                color: grayTextShade700,
+                                color: Colors.grey.shade700,
                               ),
                             ),
                           ],

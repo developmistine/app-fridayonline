@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:fridayonline/enduser/widgets/dialog.dart';
-// import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
+// import 'package:appfridayecommerce/theme.dart';import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
@@ -121,7 +121,7 @@ class _StayPictureState extends State<StayPicture> {
                     margin: const EdgeInsets.only(bottom: 18),
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                        color: theme_color_df, shape: BoxShape.circle),
+                        color: themeColorDefault, shape: BoxShape.circle),
                     child: InkWell(
                       onTap: () async {
                         final isValidSize = await checkFileSize(widget.file);

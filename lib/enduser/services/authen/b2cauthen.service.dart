@@ -1,12 +1,12 @@
 import 'dart:convert';
 
-import 'package:fridayonline/enduser/models/authen/b2clogin.model.dart';
-import 'package:fridayonline/enduser/models/authen/b2cregis.model.dart';
-import 'package:fridayonline/enduser/models/authen/b2creis.output.dart';
-import 'package:fridayonline/enduser/utils/auth_fetch.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
-import 'package:fridayonline/service/pathapi.dart';
+import 'package:appfridayecommerce/enduser/models/authen/b2clogin.model.dart';
+import 'package:appfridayecommerce/enduser/models/authen/b2cregis.model.dart';
+import 'package:appfridayecommerce/enduser/models/authen/b2creis.output.dart';
+import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
+import 'package:appfridayecommerce/preferrence.dart';
+import 'package:appfridayecommerce/print.dart';
+import 'package:appfridayecommerce/service/pathapi.dart';
 import 'package:flutter/foundation.dart';
 
 import 'package:http/http.dart' as http;

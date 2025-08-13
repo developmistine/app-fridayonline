@@ -1,8 +1,8 @@
-import 'package:fridayonline/enduser/controller/cart.ctr.dart';
-import 'package:fridayonline/enduser/models/address/address.model.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.set.address.dart';
-import 'package:fridayonline/homepage/theme/formatter_text.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/address/address.model.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.set.address.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -92,7 +92,7 @@ Widget myAddressList({required List<Datum> listAddress}) {
                 ),
                 child: Text(
                   'ค่าตั้งต้น',
-                  style: TextStyle(fontSize: 12, color: theme_color_df),
+                  style: TextStyle(fontSize: 12, color: themeColorDefault),
                 ),
               )
           ],

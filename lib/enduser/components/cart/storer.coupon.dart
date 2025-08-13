@@ -1,13 +1,13 @@
-import 'package:fridayonline/enduser/components/coupon/coupon.check.dart';
-import 'package:fridayonline/enduser/controller/coupon.ctr.dart';
-import 'package:fridayonline/enduser/services/coupon/coupon.services.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.main.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/coupon/coupon.check.dart';
+import 'package:appfridayecommerce/enduser/controller/coupon.ctr.dart';
+import 'package:appfridayecommerce/enduser/services/coupon/coupon.services.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.main.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:fridayonline/enduser/models/cart/cart.update.input.dart'
+import 'package:appfridayecommerce/enduser/models/cart/cart.update.input.dart'
     as update_input;
 
 final CheckboxController controller = Get.put(CheckboxController());
@@ -450,7 +450,7 @@ storerCouponSelected(BuildContext context) {
                               width: Get.width,
                               child: ElevatedButton(
                                   style: ElevatedButton.styleFrom(
-                                      backgroundColor: theme_color_df,
+                                      backgroundColor: themeColorDefault,
                                       shape: RoundedRectangleBorder(
                                           borderRadius:
                                               BorderRadius.circular(4))),

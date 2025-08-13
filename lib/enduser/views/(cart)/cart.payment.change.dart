@@ -1,7 +1,7 @@
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/controller/cart.ctr.dart';
-import 'package:fridayonline/enduser/widgets/gap.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
+import 'package:appfridayecommerce/enduser/widgets/gap.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -98,7 +98,7 @@ class _EndUserChangePaymentState extends State<EndUserChangePayment> {
                                   if (ctr.paymentType
                                       .containsValue(mock[index]['type']))
                                     Icon(Icons.check_circle,
-                                        color: theme_color_df),
+                                        color: themeColorDefault),
                                 ],
                               );
                             }),
@@ -122,7 +122,7 @@ class _EndUserChangePaymentState extends State<EndUserChangePayment> {
                     Border(top: BorderSide(color: Colors.grey, width: 0.2))),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  backgroundColor: theme_color_df,
+                  backgroundColor: themeColorDefault,
                   shape: const RoundedRectangleBorder()),
               child: const Text(
                 'ยืนยัน',

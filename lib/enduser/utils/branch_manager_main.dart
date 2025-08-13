@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:fridayonline/push/push.dart';
-import 'package:fridayonline/service/logapp/logapp_service.dart';
+import 'package:appfridayecommerce/push/push.dart';
+import 'package:appfridayecommerce/service/logapp/logapp_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_branch_sdk/flutter_branch_sdk.dart';

@@ -1,10 +1,9 @@
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/services/authen/b2cauthen.service.dart';
-import 'package:fridayonline/enduser/views/(other)/otp.verify.dart';
-import 'package:fridayonline/enduser/widgets/dialog.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_loading_theme.dart';
-import 'package:fridayonline/homepage/theme/formatter_text.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/services/authen/b2cauthen.service.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/views/(other)/otp.verify.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -100,7 +99,7 @@ class _EditProfileState extends State<EditTelphoneNumber> {
                             style: GoogleFonts.notoSansThaiLooped(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
-                              color: theme_color_df,
+                              color: themeColorDefault,
                             ),
                             children: [
                               TextSpan(
@@ -161,11 +160,11 @@ class _EditProfileState extends State<EditTelphoneNumber> {
                         child: ElevatedButton(
                           style: ButtonStyle(
                             backgroundColor:
-                                WidgetStateProperty.all(theme_color_df),
-                            padding: WidgetStateProperty.all(
+                                MaterialStateProperty.all(themeColorDefault),
+                            padding: MaterialStateProperty.all(
                                 const EdgeInsets.symmetric(vertical: 12)),
-                            shape:
-                                WidgetStateProperty.all(RoundedRectangleBorder(
+                            shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8),
                             )),
                           ),

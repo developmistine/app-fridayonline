@@ -1,26 +1,25 @@
 import 'dart:ui';
 
-import 'package:fridayonline/enduser/components/showproduct/showproduct.category.dart';
-import 'package:fridayonline/enduser/components/showproduct/sku.addtocart.dart';
-import 'package:fridayonline/enduser/controller/brand.ctr.dart';
-import 'package:fridayonline/enduser/controller/cart.ctr.dart';
-import 'package:fridayonline/enduser/controller/coint.ctr.dart';
-import 'package:fridayonline/enduser/controller/fair.ctr.dart';
-import 'package:fridayonline/enduser/controller/profile.ctr.dart';
-import 'package:fridayonline/enduser/models/fair/fair.swipe.model.dart';
-import 'package:fridayonline/enduser/models/fair/fari.content.model.dart';
-import 'package:fridayonline/enduser/models/showproduct/option.sku.dart';
-import 'package:fridayonline/enduser/services/fair/fair.service.dart';
-import 'package:fridayonline/enduser/services/showproduct/showproduct.sku.service.dart';
-import 'package:fridayonline/enduser/utils/event.dart';
-import 'package:fridayonline/enduser/views/(anonymous)/signin.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.main.dart';
-import 'package:fridayonline/enduser/views/(initials)/fair/festival.dart';
-import 'package:fridayonline/enduser/views/(showproduct)/medias.sku.dart';
-import 'package:fridayonline/enduser/widgets/seeall.button.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_loading_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/showproduct.category.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/sku.addtocart.dart';
+import 'package:appfridayecommerce/enduser/controller/brand.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/coint.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/fair.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/profile.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/fair/fair.swipe.model.dart';
+import 'package:appfridayecommerce/enduser/models/fair/fari.content.model.dart';
+import 'package:appfridayecommerce/enduser/models/showproduct/option.sku.dart';
+import 'package:appfridayecommerce/enduser/services/fair/fair.service.dart';
+import 'package:appfridayecommerce/enduser/services/showproduct/showproduct.sku.service.dart';
+import 'package:appfridayecommerce/enduser/utils/event.dart';
+import 'package:appfridayecommerce/enduser/views/(anonymous)/signin.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.main.dart';
+import 'package:appfridayecommerce/enduser/views/(initials)/fair/festival.dart';
+import 'package:appfridayecommerce/enduser/views/(showproduct)/medias.sku.dart';
+import 'package:appfridayecommerce/enduser/widgets/seeall.button.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/preferrence.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -32,7 +31,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:fridayonline/enduser/models/showproduct/tier.variations.model.dart'
+import 'package:appfridayecommerce/enduser/models/showproduct/tier.variations.model.dart'
     as tier_variation;
 
 class ProductData {
@@ -1587,7 +1586,7 @@ class _SwipeRowState extends State<SwipeRow> with TickerProviderStateMixin {
                                                       style: ElevatedButton
                                                           .styleFrom(
                                                               backgroundColor:
-                                                                  theme_color_df),
+                                                                  themeColorDefault),
                                                       child: Text(
                                                           "เริ่มช้อปเลย!",
                                                           style: GoogleFonts
@@ -3087,7 +3086,7 @@ addToCart(fairId) async {
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(4)),
                                   backgroundColor: isAllSelected
-                                      ? theme_color_df
+                                      ? themeColorDefault
                                       : Colors.grey.shade200,
                                 ),
                                 onPressed: () async {

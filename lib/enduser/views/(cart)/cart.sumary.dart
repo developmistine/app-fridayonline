@@ -1,36 +1,34 @@
 import 'dart:convert';
 import 'dart:ui';
 
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/components/cart/storer.coupon.dart';
-import 'package:fridayonline/enduser/controller/cart.ctr.dart';
-import 'package:fridayonline/enduser/controller/coupon.ctr.dart';
-import 'package:fridayonline/enduser/controller/order.ctr.dart';
-import 'package:fridayonline/enduser/models/cart/cart.checkout.dart';
-import 'package:fridayonline/enduser/models/cart/cart.update.input.dart';
-import 'package:fridayonline/enduser/services/address/adress.service.dart';
-import 'package:fridayonline/enduser/services/cart/cart.service.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.coupon.dart';
-// import 'package:fridayonline/enduser/views/(cart)/cart.etax.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.main.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.payment.change.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.select.address.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.set.address.dart';
-import 'package:fridayonline/enduser/views/(profile)/myorder.dart';
-import 'package:fridayonline/enduser/widgets/dialog.confirm.dart';
-import 'package:fridayonline/enduser/widgets/dialog.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_loading_theme.dart';
-import 'package:fridayonline/homepage/theme/formatter_text.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/homepage/webview/webview_full_screen.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
-import 'package:fridayonline/service/pathapi.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/components/cart/storer.coupon.dart';
+import 'package:appfridayecommerce/enduser/components/webview/webview_full.dart';
+import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/coupon.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/order.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/cart/cart.checkout.dart';
+import 'package:appfridayecommerce/enduser/models/cart/cart.update.input.dart';
+import 'package:appfridayecommerce/enduser/services/address/adress.service.dart';
+import 'package:appfridayecommerce/enduser/services/cart/cart.service.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.coupon.dart';
+// import 'package:appfridayecommerce/enduser/views/(cart)/cart.etax.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.main.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.payment.change.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.select.address.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.set.address.dart';
+import 'package:appfridayecommerce/enduser/views/(profile)/myorder.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.confirm.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/preferrence.dart';
+import 'package:appfridayecommerce/service/pathapi.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:fridayonline/enduser/models/cart/cart.checkout.input.dart'
+import 'package:appfridayecommerce/enduser/models/cart/cart.checkout.input.dart'
     as checkout_model;
 
 // fetchAddressList
@@ -261,7 +259,7 @@ class _EndUserCartSummaryState extends State<EndUserCartSummary> {
                                                       .every(
                                                           (e) => e.code == "-9")
                                                   ? Colors.grey.shade300
-                                                  : theme_color_df,
+                                                  : themeColorDefault,
                                               shape: RoundedRectangleBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(
@@ -479,7 +477,7 @@ class _EndUserCartSummaryState extends State<EndUserCartSummary> {
                                                                             8)),
                                                             elevation: 0,
                                                             backgroundColor:
-                                                                theme_color_df),
+                                                                themeColorDefault),
                                                         onPressed: () {
                                                           Get.back();
                                                         },
@@ -697,7 +695,7 @@ class EndUserPaymentChannels extends StatelessWidget {
                   style: const TextStyle(fontSize: 13),
                 ),
                 if (controller.paymentType["type"] != null)
-                  Icon(Icons.check_circle, color: theme_color_df),
+                  Icon(Icons.check_circle, color: themeColorDefault),
               ],
             );
           }),
@@ -873,12 +871,12 @@ class _EndUserProductListState extends State<EndUserProductList> {
                                     borderRadius: BorderRadius.circular(4),
                                     color: items.code == "-9"
                                         ? Colors.grey[50]
-                                        : theme_color_df.withOpacity(0.05),
+                                        : themeColorDefault.withOpacity(0.05),
                                     border: Border.all(
                                         width: 0.4,
                                         color: items.code == "-9"
                                             ? Colors.grey.shade200
-                                            : theme_color_df)),
+                                            : themeColorDefault)),
                                 child: Column(
                                   children: [
                                     Row(
@@ -913,7 +911,7 @@ class _EndUserProductListState extends State<EndUserProductList> {
                                             child: Icon(
                                               Icons.local_shipping_rounded,
                                               size: 12,
-                                              color: theme_color_df,
+                                              color: themeColorDefault,
                                             ),
                                           ),
                                         if (items.code != "-9")
@@ -934,7 +932,7 @@ class _EndUserProductListState extends State<EndUserProductList> {
                                               fontSize: 12,
                                               color: items.code == '-9'
                                                   ? Colors.red.shade700
-                                                  : theme_color_df),
+                                                  : themeColorDefault),
                                         ),
                                       ],
                                     ),

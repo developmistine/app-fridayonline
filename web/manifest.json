@@ -1,6 +1,6 @@
 {
-    "name": "fridayonline",
-    "short_name": "fridayonline",
+    "name": "appfridayecommerce",
+    "short_name": "appfridayecommerce",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -1,9 +1,9 @@
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/components/profile/menu.section.dart';
-import 'package:fridayonline/enduser/controller/chat.ctr.dart';
-import 'package:fridayonline/enduser/services/authen/b2cauthen.service.dart';
-import 'package:fridayonline/enduser/widgets/dialog.confirm.dart';
-import 'package:fridayonline/homepage/splashscreen.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/components/profile/menu.section.dart';
+import 'package:appfridayecommerce/enduser/controller/chat.ctr.dart';
+import 'package:appfridayecommerce/enduser/services/authen/b2cauthen.service.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.confirm.dart';
+import 'package:appfridayecommerce/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';

@@ -1,9 +1,8 @@
-import 'package:fridayonline/enduser/components/notify/notify.order.list.dart';
-import 'package:fridayonline/enduser/controller/notify.ctr.dart';
-import 'package:fridayonline/enduser/controller/order.ctr.dart';
-import 'package:fridayonline/enduser/views/(initials)/notify/notify.list.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_loading_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/notify/notify.order.list.dart';
+import 'package:appfridayecommerce/enduser/controller/notify.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/order.ctr.dart';
+import 'package:appfridayecommerce/enduser/views/(initials)/notify/notify.list.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -219,7 +218,7 @@ class _EndUserNotifyState extends State<EndUserNotify> {
                         }
                         return Text(
                           'กำลังโหลด...',
-                          style: TextStyle(color: theme_color_df),
+                          style: TextStyle(color: themeColorDefault),
                         );
                       }),
                       const SizedBox(

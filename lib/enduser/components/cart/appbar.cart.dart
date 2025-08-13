@@ -1,8 +1,8 @@
-import 'package:fridayonline/enduser/controller/cart.ctr.dart';
-import 'package:fridayonline/enduser/controller/chat.ctr.dart';
-import 'package:fridayonline/enduser/controller/enduser.signin.ctr.dart';
-import 'package:fridayonline/enduser/views/(chat)/chat.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/chat.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/enduser.signin.ctr.dart';
+import 'package:appfridayecommerce/enduser/views/(chat)/chat.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -33,7 +33,7 @@ AppBar appbarCart() {
           },
           child: Icon(
             Icons.arrow_back,
-            color: theme_color_df,
+            color: themeColorDefault,
           ),
         ),
         Row(
@@ -98,7 +98,7 @@ AppBar appbarCart() {
                     );
                   }),
                   badgeStyle: badges.BadgeStyle(
-                      badgeColor: theme_color_df,
+                      badgeColor: themeColorDefault,
                       padding: const EdgeInsets.all(5)),
                   child: IconButton(
                     padding: const EdgeInsets.only(bottom: 12, top: 10),

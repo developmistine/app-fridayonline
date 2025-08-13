@@ -1,4 +1,4 @@
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
 import 'package:flutter/material.dart';
 
 class EditAddress extends StatefulWidget {

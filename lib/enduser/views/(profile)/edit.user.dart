@@ -1,5 +1,5 @@
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -131,10 +131,11 @@ class _EditProfileState extends State<EditUser> {
                       child: ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor:
-                              WidgetStateProperty.all(theme_color_df),
-                          padding: WidgetStateProperty.all(
+                              MaterialStateProperty.all(themeColorDefault),
+                          padding: MaterialStateProperty.all(
                               const EdgeInsets.symmetric(vertical: 12)),
-                          shape: WidgetStateProperty.all(RoundedRectangleBorder(
+                          shape:
+                              MaterialStateProperty.all(RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
                           )),
                         ),

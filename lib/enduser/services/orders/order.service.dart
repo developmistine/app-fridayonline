@@ -2,18 +2,18 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:fridayonline/enduser/models/orders/bank.model.dart';
-import 'package:fridayonline/enduser/models/orders/courier.model.dart';
-import 'package:fridayonline/enduser/models/orders/orderdetail.checkout.model.dart';
-import 'package:fridayonline/enduser/models/orders/orderdetail.model.dart';
-import 'package:fridayonline/enduser/models/orders/orderheader.model.dart';
-import 'package:fridayonline/enduser/models/orders/orderlist.checkout.model.dart';
-import 'package:fridayonline/enduser/models/orders/orderlist.model.dart';
-import 'package:fridayonline/enduser/models/orders/reason.model.dart';
-import 'package:fridayonline/enduser/models/orders/reason.return.model.dart';
-import 'package:fridayonline/enduser/utils/auth_fetch.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
-import 'package:fridayonline/service/pathapi.dart';
+import 'package:appfridayecommerce/enduser/models/orders/bank.model.dart';
+import 'package:appfridayecommerce/enduser/models/orders/courier.model.dart';
+import 'package:appfridayecommerce/enduser/models/orders/orderdetail.checkout.model.dart';
+import 'package:appfridayecommerce/enduser/models/orders/orderdetail.model.dart';
+import 'package:appfridayecommerce/enduser/models/orders/orderheader.model.dart';
+import 'package:appfridayecommerce/enduser/models/orders/orderlist.checkout.model.dart';
+import 'package:appfridayecommerce/enduser/models/orders/orderlist.model.dart';
+import 'package:appfridayecommerce/enduser/models/orders/reason.model.dart';
+import 'package:appfridayecommerce/enduser/models/orders/reason.return.model.dart';
+import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
+import 'package:appfridayecommerce/preferrence.dart';
+import 'package:appfridayecommerce/service/pathapi.dart';
 import 'package:http/http.dart' as http;
 
 Future<OrdersHeader?> fetchOrderHeadersService() async {

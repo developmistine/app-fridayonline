@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:fridayonline/enduser/models/profile/profile_special.dart';
-import 'package:fridayonline/enduser/utils/auth_fetch.dart';
+import 'package:appfridayecommerce/enduser/models/profile/profile_special.dart';
+import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
+import 'package:appfridayecommerce/preferrence.dart';
 import 'package:http/http.dart' as http;
 
-import '../../../model/set_data/set_data.dart';
 import '../../../service/pathapi.dart';
 import '../../models/profile/profile_data.dart';
 

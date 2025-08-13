@@ -1,6 +1,6 @@
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/components/showproduct/nodata.dart';
-import 'package:fridayonline/enduser/models/chat/sticker_model.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/nodata.dart';
+import 'package:appfridayecommerce/enduser/models/chat/sticker_model.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -34,11 +34,11 @@ class ChatSticker extends StatelessWidget {
                     )
                   : GridView.builder(
                       padding: EdgeInsets.zero,
-                      scrollDirection: Axis.vertical,
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 3, mainAxisExtent: 140),
-                      itemCount: sticker.length,
+                        scrollDirection: Axis.vertical,
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 3, mainAxisExtent: 140),
+                       itemCount: sticker.length,
                       itemBuilder: (context, index) {
                         var items = sticker[index];
 
@@ -49,12 +49,12 @@ class ChatSticker extends StatelessWidget {
                               Get.back(result: items);
                             },
                             child: CachedNetworkImage(
-                              width: 300,
-                              height: 300,
-                              imageUrl: items.stickerImage,
-                            ),
+                                        width: 300,
+                                        height: 300,
+                                        imageUrl: items.stickerImage,
+                                      ),
                           ),
-                        );
+                        ) ;
                       },
                     ),
             )));

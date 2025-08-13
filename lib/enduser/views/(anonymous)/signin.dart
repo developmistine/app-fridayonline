@@ -1,19 +1,18 @@
 import 'dart:async';
 import 'dart:io';
-import 'package:fridayonline/enduser/controller/enduser.signin.ctr.dart';
-import 'package:fridayonline/enduser/models/authen/b2cregis.model.dart';
-import 'package:fridayonline/enduser/services/authen/b2cauthen.service.dart';
-import 'package:fridayonline/enduser/utils/image_preloader.dart';
-import 'package:fridayonline/enduser/views/(anonymous)/otp.verify.dart';
-import 'package:fridayonline/enduser/views/(anonymous)/register.dart';
-import 'package:fridayonline/enduser/views/(other)/instructions.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_loading_theme.dart';
-import 'package:fridayonline/homepage/splashscreen.dart';
-import 'package:fridayonline/homepage/theme/formatter_text.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
-import 'package:fridayonline/safearea.dart';
-import 'package:fridayonline/service/validators.dart';
+import 'package:appfridayecommerce/enduser/controller/enduser.signin.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/authen/b2cregis.model.dart';
+import 'package:appfridayecommerce/enduser/services/authen/b2cauthen.service.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/utils/image_preloader.dart';
+import 'package:appfridayecommerce/enduser/views/(anonymous)/otp.verify.dart';
+import 'package:appfridayecommerce/enduser/views/(anonymous)/register.dart';
+import 'package:appfridayecommerce/enduser/views/(other)/instructions.dart';
+import 'package:appfridayecommerce/splashscreen.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/preferrence.dart';
+import 'package:appfridayecommerce/safearea.dart';
+import 'package:appfridayecommerce/service/validators.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart'
     as facebook_auth;
@@ -503,7 +502,7 @@ class _SignInScreen extends State<SignInScreen>
                                                 height: 6,
                                                 alignment: Alignment.center,
                                                 decoration: BoxDecoration(
-                                                    color: theme_color_df,
+                                                    color: themeColorDefault,
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             8)),
@@ -552,7 +551,7 @@ class _SignInScreen extends State<SignInScreen>
                                                         Colors.white,
                                                     elevation: 0,
                                                     backgroundColor:
-                                                        theme_color_df,
+                                                        themeColorDefault,
                                                     shape:
                                                         RoundedRectangleBorder(
                                                             borderRadius:
@@ -720,7 +719,8 @@ class _SignInScreen extends State<SignInScreen>
                                                   child: Text(
                                                     'ลงทะเบียน',
                                                     style: TextStyle(
-                                                        color: theme_color_df,
+                                                        color:
+                                                            themeColorDefault,
                                                         fontSize: 13),
                                                   ),
                                                 )

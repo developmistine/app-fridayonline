@@ -1,14 +1,12 @@
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/controller/order.ctr.dart';
-import 'package:fridayonline/enduser/models/orders/reason.return.model.dart';
-import 'package:fridayonline/enduser/services/orders/order.service.dart';
-import 'package:fridayonline/enduser/views/(profile)/myorder.dart';
-import 'package:fridayonline/enduser/widgets/dialog.dart';
-import 'package:fridayonline/homepage/dialogalert/customalertdialogs.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_loading_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/controller/order.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/orders/reason.return.model.dart';
+import 'package:appfridayecommerce/enduser/services/orders/order.service.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/views/(profile)/myorder.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/preferrence.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chewie/chewie.dart';
 import 'package:dotted_border/dotted_border.dart';
@@ -84,7 +82,7 @@ class _ReturnProdutState extends State<ReturnProdut> {
                                 Text(orderDetail.orderNo,
                                     style: TextStyle(
                                         fontSize: 13,
-                                        color: theme_color_df,
+                                        color: themeColorDefault,
                                         fontWeight: FontWeight.bold))
                               ],
                             ),
@@ -374,7 +372,7 @@ class _ReturnProdutState extends State<ReturnProdut> {
                                     returnDialog(reason: res.data);
                                   },
                             style: ElevatedButton.styleFrom(
-                                backgroundColor: theme_color_df),
+                                backgroundColor: themeColorDefault),
                             child: const Text(
                               'ถัดไป',
                               style: TextStyle(
@@ -436,14 +434,8 @@ class _ReturnProdutState extends State<ReturnProdut> {
               countImg -= result.length;
             });
             WidgetsBinding.instance.addPostFrameCallback((_) {
-              showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return const CustomAlertDialogs(
-                      title: 'ฟรายเดย์',
-                      description: 'อัปโหลดรูปภาพได้ไม่เกิน 5 รูป',
-                    );
-                  }).then((value) => {result.clear()});
+              Get.snackbar('ฟรายเดย์', 'อัปโหลดรูปภาพได้ไม่เกิน 5 รูป');
+              result.clear();
             });
           } else {
             final f = result
@@ -462,14 +454,9 @@ class _ReturnProdutState extends State<ReturnProdut> {
                 });
               } else {
                 WidgetsBinding.instance.addPostFrameCallback((_) {
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return const CustomAlertDialogs(
-                          title: 'ฟรายเดย์',
-                          description: 'ไฟล์ภาพที่มีขนาดเกิน 5 MB จะถูกคัดออก');
-                    },
-                  );
+                  Get.snackbar(
+                      'ฟรายเดย์', 'ไฟล์ภาพที่มีขนาดเกิน 5 MB จะถูกคัดออก');
+                  result.clear();
                 });
               }
             }
@@ -510,14 +497,7 @@ class _ReturnProdutState extends State<ReturnProdut> {
             setState(() {});
             if (testLengthController.value.duration.inMinutes > 1) {
               WidgetsBinding.instance.addPostFrameCallback((_) async {
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return const CustomAlertDialogs(
-                        title: 'ฟรายเดย์',
-                        description: 'วิดีโอที่อัปโหลดต้องไม่เกิน 1 นาที');
-                  },
-                );
+                Get.snackbar('ฟรายเดย์', 'วิดีโอที่อัปโหลดต้องไม่เกิน 1 นาที');
                 await disposeVideoController();
                 setState(() {});
               });
@@ -525,11 +505,10 @@ class _ReturnProdutState extends State<ReturnProdut> {
             }
           }
         } catch (e) {
-          Get.dialog(CustomAlertDialogs(
-            title: 'ฟรายเดย์',
-            description: '$e',
-          ));
-
+          Get.snackbar(
+            'ฟรายเดย์',
+            '$e',
+          );
           return;
         }
       }
@@ -546,7 +525,8 @@ class _ReturnProdutState extends State<ReturnProdut> {
                   height: 70,
                   decoration: BoxDecoration(
                       borderRadius: const BorderRadius.all(Radius.circular(8)),
-                      border: Border.all(color: grayText)),
+                      border: Border.all(
+                          color: const Color.fromARGB(255, 191, 191, 191))),
                   child: Center(
                     child: Visibility(
                         visible: controller != null,
@@ -644,7 +624,8 @@ class _ReturnProdutState extends State<ReturnProdut> {
                       decoration: BoxDecoration(
                           borderRadius:
                               const BorderRadius.all(Radius.circular(8)),
-                          border: Border.all(color: grayText)),
+                          border: Border.all(
+                              color: const Color.fromARGB(255, 191, 191, 191))),
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(4),
                           child: Image.file(
@@ -759,7 +740,7 @@ class _ReturnProdutState extends State<ReturnProdut> {
                                     else
                                       Icon(
                                         Icons.radio_button_checked,
-                                        color: theme_color_df,
+                                        color: themeColorDefault,
                                       ),
                                     const SizedBox(
                                       width: 4,
@@ -825,7 +806,7 @@ class _ReturnProdutState extends State<ReturnProdut> {
                                 radius: const Radius.circular(10),
                                 dashPattern: const [6, 2],
                                 strokeWidth: 0.5,
-                                color: grayTextShade700,
+                                color: Colors.grey.shade700,
                                 child: Container(
                                   width: 80,
                                   padding: const EdgeInsets.all(12.0),
@@ -834,18 +815,19 @@ class _ReturnProdutState extends State<ReturnProdut> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Icon(Icons.camera_alt_outlined,
-                                          size: 28, color: grayTextShade700),
+                                          size: 28,
+                                          color: Colors.grey.shade700),
                                       Text(
                                         'รูปภาพ',
                                         style: GoogleFonts.notoSansThaiLooped(
                                             fontSize: 12,
-                                            color: grayTextShade700),
+                                            color: Colors.grey.shade700),
                                       ),
                                       Text(
                                         '($countImg / 5)',
                                         style: GoogleFonts.notoSansThaiLooped(
                                             fontSize: 12,
-                                            color: grayTextShade700),
+                                            color: Colors.grey.shade700),
                                       ),
                                     ],
                                   ),
@@ -865,7 +847,7 @@ class _ReturnProdutState extends State<ReturnProdut> {
                                 radius: const Radius.circular(10),
                                 dashPattern: const [6, 2],
                                 strokeWidth: 0.5,
-                                color: grayTextShade700,
+                                color: Colors.grey.shade700,
                                 child: Container(
                                   width: 80,
                                   padding: const EdgeInsets.all(12.0),
@@ -874,18 +856,19 @@ class _ReturnProdutState extends State<ReturnProdut> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Icon(Icons.videocam_outlined,
-                                          size: 28, color: grayTextShade700),
+                                          size: 28,
+                                          color: Colors.grey.shade700),
                                       Text(
                                         'วิดีโอ',
                                         style: GoogleFonts.notoSansThaiLooped(
                                             fontSize: 12,
-                                            color: grayTextShade700),
+                                            color: Colors.grey.shade700),
                                       ),
                                       Text(
                                         '(${controller != null ? 1 : 0} / 1)',
                                         style: GoogleFonts.notoSansThaiLooped(
                                             fontSize: 12,
-                                            color: grayTextShade700),
+                                            color: Colors.grey.shade700),
                                       ),
                                     ],
                                   ),
@@ -996,7 +979,7 @@ class _ReturnProdutState extends State<ReturnProdut> {
                               style: ElevatedButton.styleFrom(
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(12)),
-                                  backgroundColor: theme_color_df),
+                                  backgroundColor: themeColorDefault),
                               child: Text(
                                 'ยืนยัน',
                                 style: GoogleFonts.notoSansThaiLooped(

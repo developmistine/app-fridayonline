@@ -1,5 +1,5 @@
-import 'package:fridayonline/enduser/components/shimmer/shimmer.card.dart';
-import 'package:fridayonline/enduser/components/shimmer/shimmer.product.dart';
+import 'package:appfridayecommerce/enduser/components/shimmer/shimmer.card.dart';
+import 'package:appfridayecommerce/enduser/components/shimmer/shimmer.product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';

@@ -1,8 +1,8 @@
-import 'package:fridayonline/analytics/analytics_engine.dart';
-import 'package:fridayonline/enduser/components/category/category.group.dart';
-import 'package:fridayonline/enduser/controller/enduser.home.ctr.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
+import 'package:appfridayecommerce/analytics/analytics_engine.dart';
+import 'package:appfridayecommerce/enduser/components/category/category.group.dart';
+import 'package:appfridayecommerce/enduser/controller/enduser.home.ctr.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/preferrence.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -65,7 +65,7 @@ class EndUserCategory extends StatelessWidget {
                                                 ? 60
                                                 : 0,
                                         width: 5,
-                                        color: theme_color_df),
+                                        color: themeColorDefault),
                                     Expanded(
                                         child: AnimatedContainer(
                                       alignment: Alignment.center,
@@ -88,7 +88,7 @@ class EndUserCategory extends StatelessWidget {
                                                 color: (categoryCtr.activeIndex
                                                             .value ==
                                                         index)
-                                                    ? theme_color_df
+                                                    ? themeColorDefault
                                                     : Colors.black,
                                               ),
                                               textAlign: TextAlign.center)),

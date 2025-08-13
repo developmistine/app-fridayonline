@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.fridayth.app">
+    package="th.co.friday.fridayonline"
     xmlns:tools="http://schemas.android.com/tools"
     >
 

@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:fridayonline/enduser/components/appbar/appbar.nosearch.dart';
-import 'package:fridayonline/enduser/components/shimmer/shimmer.product.dart';
-import 'package:fridayonline/enduser/components/showproduct/nodata.dart';
-import 'package:fridayonline/enduser/components/showproduct/showproduct.category.dart';
-import 'package:fridayonline/enduser/controller/showproduct.category.ctr.dart';
-import 'package:fridayonline/enduser/widgets/arrow_totop.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.nosearch.dart';
+import 'package:appfridayecommerce/enduser/components/shimmer/shimmer.product.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/nodata.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/showproduct.category.dart';
+import 'package:appfridayecommerce/enduser/controller/showproduct.category.ctr.dart';
+import 'package:appfridayecommerce/enduser/widgets/arrow_totop.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -145,7 +145,7 @@ class _ShowProductCategoryState extends State<ShowProductCategory>
                                       'กำลังโหลด...',
                                       textAlign: TextAlign.center,
                                       style: GoogleFonts.notoSansThaiLooped(
-                                          color: theme_color_df,
+                                          color: themeColorDefault,
                                           fontSize: 12,
                                           fontWeight: FontWeight.bold),
                                     ),

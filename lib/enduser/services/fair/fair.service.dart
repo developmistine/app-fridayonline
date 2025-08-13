@@ -1,19 +1,19 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:fridayonline/enduser/models/fair/coininfo.model.dart';
-import 'package:fridayonline/enduser/models/fair/cointransaction.model.dart';
-import 'package:fridayonline/enduser/models/fair/fair.banner.model.dart';
-import 'package:fridayonline/enduser/models/fair/fair.swipe.model.dart';
-import 'package:fridayonline/enduser/models/fair/fari.content.model.dart';
-import 'package:fridayonline/enduser/models/fair/fari.product.model.dart';
-import 'package:fridayonline/enduser/models/fair/festival.model.dart';
-import 'package:fridayonline/enduser/utils/auth_fetch.dart';
+import 'package:appfridayecommerce/enduser/models/fair/coininfo.model.dart';
+import 'package:appfridayecommerce/enduser/models/fair/cointransaction.model.dart';
+import 'package:appfridayecommerce/enduser/models/fair/fair.banner.model.dart';
+import 'package:appfridayecommerce/enduser/models/fair/fair.swipe.model.dart';
+import 'package:appfridayecommerce/enduser/models/fair/fari.content.model.dart';
+import 'package:appfridayecommerce/enduser/models/fair/fari.product.model.dart';
+import 'package:appfridayecommerce/enduser/models/fair/festival.model.dart';
+import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
 
-import 'package:fridayonline/enduser/views/(initials)/fair/fair.view.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
-import 'package:fridayonline/service/pathapi.dart';
+import 'package:appfridayecommerce/enduser/views/(initials)/fair/fair.view.dart';
+import 'package:appfridayecommerce/preferrence.dart';
+import 'package:appfridayecommerce/print.dart';
+import 'package:appfridayecommerce/service/pathapi.dart';
 
 Future<ProductSwipeContent?> fetchFairContentService() async {
   var url = Uri.parse("${b2c_api_url}b2c/api/v1/fairs/product_swipe/content");

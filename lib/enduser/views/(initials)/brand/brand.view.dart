@@ -1,18 +1,18 @@
-import 'package:fridayonline/enduser/components/home/loadmore.enduser.dart';
-import 'package:fridayonline/enduser/components/shimmer/shimmer.card.dart';
-import 'package:fridayonline/enduser/components/shimmer/shimmer.product.dart';
-import 'package:fridayonline/enduser/controller/brand.ctr.dart';
-import 'package:fridayonline/enduser/controller/enduser.home.ctr.dart';
-import 'package:fridayonline/enduser/controller/showproduct.category.ctr.dart';
-import 'package:fridayonline/enduser/controller/track.ctr.dart';
-import 'package:fridayonline/enduser/utils/cached_image.dart';
-import 'package:fridayonline/enduser/utils/event.dart';
-import 'package:fridayonline/enduser/views/(brand)/allbrand.dart';
-// import 'package:fridayonline/enduser/views/(brand)/brand.store.dart';
-import 'package:fridayonline/enduser/widgets/arrow_totop.dart';
-import 'package:fridayonline/enduser/widgets/gap.dart';
-import 'package:fridayonline/enduser/widgets/seeall.button.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/home/loadmore.enduser.dart';
+import 'package:appfridayecommerce/enduser/components/shimmer/shimmer.card.dart';
+import 'package:appfridayecommerce/enduser/components/shimmer/shimmer.product.dart';
+import 'package:appfridayecommerce/enduser/controller/brand.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/enduser.home.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/showproduct.category.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/track.ctr.dart';
+import 'package:appfridayecommerce/enduser/utils/cached_image.dart';
+import 'package:appfridayecommerce/enduser/utils/event.dart';
+import 'package:appfridayecommerce/enduser/views/(brand)/allbrand.dart';
+// import 'package:appfridayecommerce/enduser/views/(brand)/brand.store.dart';
+import 'package:appfridayecommerce/enduser/widgets/arrow_totop.dart';
+import 'package:appfridayecommerce/enduser/widgets/gap.dart';
+import 'package:appfridayecommerce/enduser/widgets/seeall.button.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -200,7 +200,7 @@ class _BrandCategoryState extends State<BrandB2C>
                                 Color(0xFF0588CD),
                                 Color(0xFF4FBBF3),
                                 // Colors.blue.shade600,
-                                // theme_color_df,
+                                // themeColorDefault,
                               ])),
                               child: Row(
                                 mainAxisAlignment:
@@ -428,7 +428,7 @@ class _BrandCategoryState extends State<BrandB2C>
                                 Icon(
                                   Icons.image,
                                   size: 40,
-                                  color: icon_color_loading,
+                                  color: themeColorDefault.withOpacity(0.2),
                                 ),
                               ],
                             ),
@@ -442,7 +442,7 @@ class _BrandCategoryState extends State<BrandB2C>
                                 Color(0xFF0588CD),
                                 Color(0xFF4FBBF3),
                                 // Colors.blue.shade600,
-                                // theme_color_df,
+                                // themeColorDefault,
                               ])),
                               child: Row(
                                 mainAxisAlignment:
@@ -510,7 +510,7 @@ class _BrandCategoryState extends State<BrandB2C>
                             ),
                             Container(
                               decoration: BoxDecoration(
-                                color: theme_color_df,
+                                color: themeColorDefault,
                                 gradient: const LinearGradient(
                                   begin: Alignment.topCenter,
                                   end: Alignment.bottomCenter,

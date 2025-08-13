@@ -1,21 +1,20 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/components/viewer/fullscreen.image.dart';
-import 'package:fridayonline/enduser/components/viewer/video.chat.dart';
-import 'package:fridayonline/enduser/controller/chat.ctr.dart';
-import 'package:fridayonline/enduser/controller/profile.ctr.dart';
-import 'package:fridayonline/enduser/models/chat/recieve.message.model.dart';
-import 'package:fridayonline/enduser/models/chat/seller.list.model.dart';
-import 'package:fridayonline/enduser/models/chat/sticker_model.dart';
-import 'package:fridayonline/enduser/services/chat/chat.service.dart';
-import 'package:fridayonline/enduser/utils/function.dart';
-import 'package:fridayonline/enduser/views/(chat)/chat.camera.dart';
-import 'package:fridayonline/enduser/views/(chat)/chat.gallery.dart';
-import 'package:fridayonline/enduser/views/(chat)/chat_sticker.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_loading_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/components/viewer/fullscreen.image.dart';
+import 'package:appfridayecommerce/enduser/components/viewer/video.chat.dart';
+import 'package:appfridayecommerce/enduser/controller/chat.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/profile.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/chat/recieve.message.model.dart';
+import 'package:appfridayecommerce/enduser/models/chat/seller.list.model.dart';
+import 'package:appfridayecommerce/enduser/models/chat/sticker_model.dart';
+import 'package:appfridayecommerce/enduser/services/chat/chat.service.dart';
+import 'package:appfridayecommerce/enduser/utils/function.dart';
+import 'package:appfridayecommerce/enduser/views/(chat)/chat.camera.dart';
+import 'package:appfridayecommerce/enduser/views/(chat)/chat.gallery.dart';
+import 'package:appfridayecommerce/enduser/views/(chat)/chat_sticker.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/preferrence.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/foundation.dart' as foundation;
@@ -335,7 +334,8 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
             padding: const EdgeInsets.symmetric(horizontal: 8),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
-              color: isMe ? theme_color_df.withOpacity(0.3) : Colors.grey[200],
+              color:
+                  isMe ? themeColorDefault.withOpacity(0.3) : Colors.grey[200],
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
@@ -427,7 +427,8 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
             padding: const EdgeInsets.symmetric(horizontal: 8),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
-              color: isMe ? theme_color_df.withOpacity(0.3) : Colors.grey[200],
+              color:
+                  isMe ? themeColorDefault.withOpacity(0.3) : Colors.grey[200],
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
@@ -597,7 +598,7 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
               color: msg.isMe
                   ? msg.messageData.senderRole == "system"
                       ? Colors.red.withOpacity(0.1)
-                      : theme_color_df
+                      : themeColorDefault
                   : Colors.white,
               borderRadius: BorderRadius.only(
                 topLeft: const Radius.circular(12),
@@ -651,7 +652,7 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
           : null,
       decoration: msg.messageData.messageType == 1
           ? BoxDecoration(
-              color: msg.isMe ? theme_color_df : Colors.white,
+              color: msg.isMe ? themeColorDefault : Colors.white,
               borderRadius: BorderRadius.only(
                 topLeft: const Radius.circular(12),
                 topRight: const Radius.circular(12),
@@ -1014,7 +1015,7 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
                           icon: const Icon(Icons.send),
                           color: _controller.text.isEmpty
                               ? Colors.grey.shade600
-                              : theme_color_df,
+                              : themeColorDefault,
                           onPressed: () {
                             sendMessage(1, '', '');
                           },
@@ -1044,9 +1045,9 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
                         skinToneConfig: const SkinToneConfig(),
                         categoryViewConfig: CategoryViewConfig(
                             backgroundColor: Colors.white,
-                            iconColorSelected: theme_color_df,
-                            dividerColor: theme_color_df,
-                            indicatorColor: theme_color_df),
+                            iconColorSelected: themeColorDefault,
+                            dividerColor: themeColorDefault,
+                            indicatorColor: themeColorDefault),
                         // bottomActionBarConfig: const BottomActionBarConfig(),
                         searchViewConfig: const SearchViewConfig(),
                         bottomActionBarConfig:

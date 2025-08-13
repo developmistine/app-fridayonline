@@ -1,5 +1,5 @@
-import 'package:fridayonline/enduser/controller/profile.ctr.dart';
-import 'package:fridayonline/enduser/widgets/webview.screen.dart';
+import 'package:appfridayecommerce/enduser/controller/profile.ctr.dart';
+import 'package:appfridayecommerce/enduser/widgets/webview.screen.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';

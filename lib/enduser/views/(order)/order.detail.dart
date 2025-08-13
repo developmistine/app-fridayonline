@@ -1,24 +1,22 @@
 import 'dart:io';
 
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/components/viewer/fullscreen.image.dart';
-import 'package:fridayonline/enduser/controller/brand.ctr.dart';
-import 'package:fridayonline/enduser/controller/order.ctr.dart';
-import 'package:fridayonline/enduser/controller/showproduct.sku.ctr.dart';
-import 'package:fridayonline/enduser/models/orders/bank.model.dart';
-import 'package:fridayonline/enduser/models/orders/courier.model.dart';
-import 'package:fridayonline/enduser/models/orders/reason.model.dart';
-import 'package:fridayonline/enduser/services/orders/order.service.dart';
-import 'package:fridayonline/enduser/views/(order)/return.product.dart';
-import 'package:fridayonline/enduser/views/(order)/shipping.detail.dart';
-import 'package:fridayonline/enduser/views/(profile)/myorder.dart';
-import 'package:fridayonline/enduser/widgets/dialog.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_loading_theme.dart';
-import 'package:fridayonline/homepage/theme/formatter_text.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
-import 'package:fridayonline/service/validators.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/components/viewer/fullscreen.image.dart';
+import 'package:appfridayecommerce/enduser/controller/brand.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/order.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/showproduct.sku.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/orders/bank.model.dart';
+import 'package:appfridayecommerce/enduser/models/orders/courier.model.dart';
+import 'package:appfridayecommerce/enduser/models/orders/reason.model.dart';
+import 'package:appfridayecommerce/enduser/services/orders/order.service.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/views/(order)/return.product.dart';
+import 'package:appfridayecommerce/enduser/views/(order)/shipping.detail.dart';
+import 'package:appfridayecommerce/enduser/views/(profile)/myorder.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/preferrence.dart';
+import 'package:appfridayecommerce/service/validators.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +38,7 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
   Color getStatusColor(String status) {
     switch (status) {
       case 'b':
-        return theme_color_df;
+        return themeColorDefault;
       case 'y':
         return Colors.amber;
       case 'g':
@@ -48,7 +46,7 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
       case 'r':
         return const Color.fromARGB(255, 221, 60, 32);
       default:
-        return theme_color_df;
+        return themeColorDefault;
     }
   }
 
@@ -204,7 +202,7 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                                           style: TextStyle(
                                                               fontSize: 14,
                                                               color:
-                                                                  theme_color_df),
+                                                                  themeColorDefault),
                                                         ),
                                                         Text(
                                                           shipping
@@ -427,7 +425,8 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                                   ? IndicatorStyle(
                                                       indicator: ClipOval(
                                                         child: Container(
-                                                          color: theme_color_df,
+                                                          color:
+                                                              themeColorDefault,
                                                           child:
                                                               CachedNetworkImage(
                                                             imageUrl:
@@ -437,20 +436,21 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                                       ),
                                                       width: 32,
                                                       height: 32,
-                                                      color: theme_color_df,
+                                                      color: themeColorDefault,
                                                     )
                                                   : IndicatorStyle(
                                                       height: 8,
                                                       width: 8,
                                                       indicator: ClipOval(
                                                         child: Container(
-                                                          color: theme_color_df,
+                                                          color:
+                                                              themeColorDefault,
                                                         ),
                                                       ),
                                                     ),
                                               beforeLineStyle: LineStyle(
                                                   thickness: 2,
-                                                  color: theme_color_df),
+                                                  color: themeColorDefault),
                                               endChild: Padding(
                                                 padding:
                                                     const EdgeInsets.all(4),
@@ -501,7 +501,7 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                               },
                                               style: ElevatedButton.styleFrom(
                                                   backgroundColor:
-                                                      theme_color_df),
+                                                      themeColorDefault),
                                               child: const Text(
                                                 'ระบุรายละเอียด',
                                                 style: TextStyle(fontSize: 12),
@@ -1232,12 +1232,12 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                             margin: const EdgeInsets.all(2),
                             width: Get.width,
                             padding: const EdgeInsets.all(8),
-                            color: theme_color_df.withOpacity(0.2),
+                            color: themeColorDefault.withOpacity(0.2),
                             child: Row(
                               children: [
                                 Container(
                                   decoration: BoxDecoration(
-                                      color: theme_color_df,
+                                      color: themeColorDefault,
                                       borderRadius: BorderRadius.circular(50)),
                                   padding: const EdgeInsets.all(2),
                                   child: const Icon(
@@ -1640,7 +1640,7 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                                     const Radius.circular(10),
                                                 dashPattern: const [6, 2],
                                                 strokeWidth: 0.5,
-                                                color: grayTextShade700,
+                                                color: Colors.grey.shade700,
                                                 child: Container(
                                                   padding: const EdgeInsets.all(
                                                       12.0),
@@ -1653,14 +1653,14 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                                           Icons
                                                               .camera_alt_outlined,
                                                           size: 28,
-                                                          color:
-                                                              grayTextShade700),
+                                                          color: Colors
+                                                              .grey.shade700),
                                                       Text(
                                                         'รูปภาพ ${selectedImages.length}/2',
                                                         style: TextStyle(
                                                             fontSize: 12,
-                                                            color:
-                                                                grayTextShade700),
+                                                            color: Colors
+                                                                .grey.shade700),
                                                       ),
                                                     ],
                                                   ),
@@ -1769,7 +1769,7 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                         }
                       },
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: theme_color_df,
+                          backgroundColor: themeColorDefault,
                           shape: const RoundedRectangleBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(4)))),
@@ -1789,8 +1789,8 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
 
   InputDecoration textStyle({required String label}) {
     return InputDecoration(
-        focusedBorder:
-            OutlineInputBorder(borderSide: BorderSide(color: theme_color_df)),
+        focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: themeColorDefault)),
         border: const OutlineInputBorder(),
         contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 8),
         label: Text(label));
@@ -1829,12 +1829,12 @@ bottomReasonCancel(CancelOrderReason value, int orderId, bool isCheckOut) {
                 Container(
                   width: Get.width,
                   padding: const EdgeInsets.all(8),
-                  color: theme_color_df.withOpacity(0.2),
+                  color: themeColorDefault.withOpacity(0.2),
                   child: Row(
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                            color: theme_color_df,
+                            color: themeColorDefault,
                             borderRadius: BorderRadius.circular(50)),
                         padding: const EdgeInsets.all(2),
                         child: const Icon(
@@ -1880,7 +1880,7 @@ bottomReasonCancel(CancelOrderReason value, int orderId, bool isCheckOut) {
                                   clickedReason[index] == true
                                       ? Icon(
                                           Icons.radio_button_checked,
-                                          color: theme_color_df,
+                                          color: themeColorDefault,
                                         )
                                       : const Icon(
                                           Icons.radio_button_off_outlined,
@@ -1910,7 +1910,7 @@ bottomReasonCancel(CancelOrderReason value, int orderId, bool isCheckOut) {
                   height: 50,
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: theme_color_df,
+                          backgroundColor: themeColorDefault,
                           elevation: 0,
                           shape: const BeveledRectangleBorder()),
                       onPressed: clickedReason.values.any((e) => e == true)

@@ -1,10 +1,10 @@
-import 'package:fridayonline/enduser/controller/enduser.home.ctr.dart';
-import 'package:fridayonline/enduser/controller/showproduct.sku.ctr.dart';
-import 'package:fridayonline/enduser/models/home/home.content.model.dart';
-import 'package:fridayonline/enduser/utils/cached_image.dart';
-import 'package:fridayonline/enduser/utils/event.dart';
-import 'package:fridayonline/enduser/widgets/gap.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
+import 'package:appfridayecommerce/enduser/controller/enduser.home.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/showproduct.sku.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/home/home.content.model.dart';
+import 'package:appfridayecommerce/enduser/utils/cached_image.dart';
+import 'package:appfridayecommerce/enduser/utils/event.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/widgets/gap.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

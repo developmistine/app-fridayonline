@@ -1,12 +1,11 @@
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/services/profile/profile.service.dart';
-import 'package:fridayonline/enduser/views/(other)/changeverify.dart';
-import 'package:fridayonline/enduser/views/(profile)/edit.telphoneNum.dart';
-import 'package:fridayonline/enduser/widgets/dialog.confirm.dart';
-import 'package:fridayonline/enduser/widgets/dialog.dart';
-import 'package:fridayonline/enduser/widgets/dialog.error.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_loading_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/services/profile/profile.service.dart';
+import 'package:appfridayecommerce/enduser/views/(other)/changeverify.dart';
+import 'package:appfridayecommerce/enduser/views/(profile)/edit.telphoneNum.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.confirm.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.error.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -57,7 +56,7 @@ class DeleteAccount extends StatelessWidget {
               child: ElevatedButton(
             style: ElevatedButton.styleFrom(
                 elevation: 0,
-                backgroundColor: theme_color_df,
+                backgroundColor: themeColorDefault,
                 shape: const RoundedRectangleBorder()),
             onPressed: () async {
               loadingProductStock(context);

@@ -2,35 +2,35 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:ui';
 
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/components/appbar/appbar.brand.dart';
-import 'package:fridayonline/enduser/components/home/flashdeal.dart';
-import 'package:fridayonline/enduser/components/profile/myreview/myrating.card.dart';
-import 'package:fridayonline/enduser/components/shimmer/shimmer.card.dart';
-import 'package:fridayonline/enduser/components/shimmer/shimmer.product.dart';
-import 'package:fridayonline/enduser/components/showproduct/showproduct.category.dart';
-import 'package:fridayonline/enduser/controller/brand.ctr.dart';
-import 'package:fridayonline/enduser/controller/cart.ctr.dart';
-import 'package:fridayonline/enduser/controller/category.ctr.dart';
-import 'package:fridayonline/enduser/controller/chat.ctr.dart';
-import 'package:fridayonline/enduser/controller/showproduct.sku.ctr.dart';
-import 'package:fridayonline/enduser/models/chat/seller.list.model.dart';
-import 'package:fridayonline/enduser/models/home/home.content.model.dart';
-import 'package:fridayonline/enduser/services/chat/chat.service.dart';
-import 'package:fridayonline/enduser/services/coupon/coupon.services.dart';
-import 'package:fridayonline/enduser/utils/cached_image.dart';
-import 'package:fridayonline/enduser/utils/event.dart';
-import 'package:fridayonline/enduser/views/(anonymous)/signin.dart';
-import 'package:fridayonline/enduser/views/(brand)/brand.category.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.main.dart';
-import 'package:fridayonline/enduser/views/(chat)/chat.seller.dart';
-import 'package:fridayonline/enduser/views/(coupon)/coupon.detail.dart';
-import 'package:fridayonline/enduser/views/(flashdeal)/shop.flashdeal.deail.dart';
-import 'package:fridayonline/enduser/widgets/dialog.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
-import 'package:fridayonline/safearea.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.brand.dart';
+import 'package:appfridayecommerce/enduser/components/home/flashdeal.dart';
+import 'package:appfridayecommerce/enduser/components/profile/myreview/myrating.card.dart';
+import 'package:appfridayecommerce/enduser/components/shimmer/shimmer.card.dart';
+import 'package:appfridayecommerce/enduser/components/shimmer/shimmer.product.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/showproduct.category.dart';
+import 'package:appfridayecommerce/enduser/controller/brand.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/category.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/chat.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/showproduct.sku.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/chat/seller.list.model.dart';
+import 'package:appfridayecommerce/enduser/models/home/home.content.model.dart';
+import 'package:appfridayecommerce/enduser/services/chat/chat.service.dart';
+import 'package:appfridayecommerce/enduser/services/coupon/coupon.services.dart';
+import 'package:appfridayecommerce/enduser/utils/cached_image.dart';
+import 'package:appfridayecommerce/enduser/utils/event.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/views/(anonymous)/signin.dart';
+import 'package:appfridayecommerce/enduser/views/(brand)/brand.category.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.main.dart';
+import 'package:appfridayecommerce/enduser/views/(chat)/chat.seller.dart';
+import 'package:appfridayecommerce/enduser/views/(coupon)/coupon.detail.dart';
+import 'package:appfridayecommerce/enduser/views/(flashdeal)/shop.flashdeal.deail.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/preferrence.dart';
+import 'package:appfridayecommerce/safearea.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -40,9 +40,10 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:video_player/video_player.dart';
-import 'package:fridayonline/enduser/models/brands/shopcontent.model.dart'
+import 'package:appfridayecommerce/enduser/models/brands/shopcontent.model.dart'
     as shop;
-import 'package:fridayonline/enduser/models/category/sort.model.dart' as sort;
+import 'package:appfridayecommerce/enduser/models/category/sort.model.dart'
+    as sort;
 
 // final ShowProductCategoryCtr showProductCtr = Get.find();
 final BrandCtr brandCtr = Get.find<BrandCtr>();
@@ -855,15 +856,15 @@ class _BrandStoreState extends State<BrandStore>
                                           borderRadius:
                                               BorderRadius.circular(50),
                                           border: Border.all(
-                                              color: theme_color_df)),
+                                              color: themeColorDefault)),
                                       child: Icon(
                                           Icons.arrow_forward_ios_rounded,
-                                          color: theme_color_df)),
+                                          color: themeColorDefault)),
                                   Text(
                                     'ดูเพิ่มเติม',
                                     style: TextStyle(
                                         fontSize: 12,
-                                        color: theme_color_df,
+                                        color: themeColorDefault,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ],
@@ -1410,7 +1411,7 @@ class _BrandStoreState extends State<BrandStore>
                                           child: Text(
                                             'เงื่อนไข',
                                             style: TextStyle(
-                                              color: theme_color_df,
+                                              color: themeColorDefault,
                                               fontSize: 10,
                                             ),
                                           ),
@@ -1483,7 +1484,7 @@ class _BrandStoreState extends State<BrandStore>
                                       margin: const EdgeInsets.symmetric(
                                           horizontal: 4),
                                       decoration: BoxDecoration(
-                                          color: theme_color_df,
+                                          color: themeColorDefault,
                                           borderRadius:
                                               BorderRadius.circular(4)),
                                       padding: const EdgeInsets.symmetric(
@@ -1537,8 +1538,8 @@ class _BrandStoreState extends State<BrandStore>
                                       margin: const EdgeInsets.symmetric(
                                           horizontal: 4),
                                       decoration: BoxDecoration(
-                                          border:
-                                              Border.all(color: theme_color_df),
+                                          border: Border.all(
+                                              color: themeColorDefault),
                                           borderRadius:
                                               BorderRadius.circular(4)),
                                       padding: const EdgeInsets.symmetric(
@@ -1546,7 +1547,7 @@ class _BrandStoreState extends State<BrandStore>
                                       child: Text(
                                         'ใช้โค้ด',
                                         style: TextStyle(
-                                            color: theme_color_df,
+                                            color: themeColorDefault,
                                             fontSize: 12,
                                             fontWeight: FontWeight.bold),
                                       ),
@@ -1725,11 +1726,11 @@ class _BrandStoreState extends State<BrandStore>
             children: [
               Text(
                 'ดูเพิ่มเติม',
-                style: TextStyle(color: theme_color_df),
+                style: TextStyle(color: themeColorDefault),
               ),
               Icon(
                 Icons.arrow_forward_ios_rounded,
-                color: theme_color_df,
+                color: themeColorDefault,
               )
             ],
           )),
@@ -1768,7 +1769,7 @@ class _BrandStoreState extends State<BrandStore>
                                       bottom: BorderSide(
                                           color:
                                               brandCtr.activeTab.value == index
-                                                  ? theme_color_df
+                                                  ? themeColorDefault
                                                   : Colors.grey.shade300))),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -1783,7 +1784,7 @@ class _BrandStoreState extends State<BrandStore>
                                                 ? FontWeight.bold
                                                 : FontWeight.normal,
                                         color: brandCtr.activeTab.value == index
-                                            ? theme_color_df
+                                            ? themeColorDefault
                                             : Colors.grey.shade700),
                                   ),
                                   Obx(() {
@@ -1794,12 +1795,12 @@ class _BrandStoreState extends State<BrandStore>
                                           return Icon(
                                               Icons.arrow_upward_outlined,
                                               size: 12,
-                                              color: theme_color_df);
+                                              color: themeColorDefault);
                                         }
                                         return Icon(
                                             Icons.arrow_downward_outlined,
                                             size: 12,
-                                            color: theme_color_df);
+                                            color: themeColorDefault);
                                       }
                                     }
                                     return const SizedBox();
@@ -1976,7 +1977,8 @@ Widget tabBar(setTapActive, tapActive) {
                       decoration: BoxDecoration(
                           border: Border(
                               bottom: tapActive == index
-                                  ? BorderSide(width: 2, color: theme_color_df)
+                                  ? BorderSide(
+                                      width: 2, color: themeColorDefault)
                                   : const BorderSide(
                                       width: 0, color: Colors.transparent))),
                       child: Padding(
@@ -1987,7 +1989,7 @@ Widget tabBar(setTapActive, tapActive) {
                           textAlign: TextAlign.center,
                           style: tapActive == index
                               ? TextStyle(
-                                  color: theme_color_df,
+                                  color: themeColorDefault,
                                   fontSize: 13,
                                   fontWeight: FontWeight.bold)
                               : GoogleFonts.notoSansThaiLooped(

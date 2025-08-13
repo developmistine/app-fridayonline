@@ -1,4 +1,4 @@
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 
 class BadgePainter extends CustomPainter {
@@ -35,7 +35,7 @@ class BadgePainter extends CustomPainter {
     switch (color) {
       case "blue":
         {
-          return [theme_color_df.withOpacity(0.4), theme_color_df];
+          return [themeColorDefault.withOpacity(0.4), themeColorDefault];
         }
       case "gold":
         {
@@ -61,7 +61,7 @@ class BadgePainter extends CustomPainter {
 
       default:
         {
-          return [theme_color_df.withOpacity(0.4), theme_color_df];
+          return [themeColorDefault.withOpacity(0.4), themeColorDefault];
         }
     }
   }

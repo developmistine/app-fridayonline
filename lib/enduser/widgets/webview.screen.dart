@@ -1,7 +1,7 @@
 import 'dart:io';
-import 'package:fridayonline/enduser/controller/order.ctr.dart';
-import 'package:fridayonline/enduser/views/(profile)/myorder.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/controller/order.ctr.dart';
+import 'package:appfridayecommerce/enduser/views/(profile)/myorder.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -145,7 +145,7 @@ class _WebViewPageState extends State<WebViewPage> {
                     Get.back();
                   },
                   child: const Icon(Icons.arrow_back)),
-              backgroundColor: theme_color_df,
+              backgroundColor: themeColorDefault,
               title: Text(
                 widget.title,
                 style: const TextStyle(fontSize: 16),

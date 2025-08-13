@@ -1,24 +1,23 @@
 import 'dart:async';
 import 'dart:ui';
-import 'package:fridayonline/enduser/controller/cart.ctr.dart';
-import 'package:fridayonline/enduser/controller/showproduct.sku.ctr.dart';
-import 'package:fridayonline/enduser/models/showproduct/option.sku.dart';
-import 'package:fridayonline/enduser/services/cart/cart.service.dart';
-import 'package:fridayonline/enduser/services/showproduct/showproduct.sku.service.dart';
-import 'package:fridayonline/enduser/views/(anonymous)/signin.dart';
-import 'package:fridayonline/enduser/views/(showproduct)/medias.sku.dart';
-import 'package:fridayonline/enduser/widgets/dialog.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_loading_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
+import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/showproduct.sku.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/showproduct/option.sku.dart';
+import 'package:appfridayecommerce/enduser/services/cart/cart.service.dart';
+import 'package:appfridayecommerce/enduser/services/showproduct/showproduct.sku.service.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/views/(anonymous)/signin.dart';
+import 'package:appfridayecommerce/enduser/views/(showproduct)/medias.sku.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/preferrence.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:fridayonline/enduser/models/showproduct/product.sku.model.dart'
+import 'package:appfridayecommerce/enduser/models/showproduct/product.sku.model.dart'
     as product_model;
-import 'package:fridayonline/enduser/models/showproduct/tier.variations.model.dart'
+import 'package:appfridayecommerce/enduser/models/showproduct/tier.variations.model.dart'
     as tier_variation;
 
 final ShowProductSkuCtr showProductCtr = Get.find();
@@ -869,7 +868,7 @@ class _BottomAddToCartState extends State<BottomAddToCart> {
                                 height: 50,
                                 decoration: BoxDecoration(
                                     color: isAllSelected
-                                        ? theme_color_df
+                                        ? themeColorDefault
                                         : Colors.grey.shade200,
                                     borderRadius: BorderRadius.circular(4)),
                                 child: Center(
@@ -1140,7 +1139,7 @@ class _BottomAddToCartState extends State<BottomAddToCart> {
               margin: const EdgeInsets.symmetric(horizontal: 4),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
-                  color: theme_color_df),
+                  color: themeColorDefault),
               child: Center(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 2.0),

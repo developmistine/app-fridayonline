@@ -1,22 +1,22 @@
-import 'package:fridayonline/enduser/controller/cart.ctr.dart';
-import 'package:fridayonline/enduser/controller/search.ctr.dart';
-import 'package:fridayonline/enduser/controller/showproduct.sku.ctr.dart';
-import 'package:fridayonline/enduser/controller/track.ctr.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.main.dart';
-import 'package:fridayonline/enduser/views/(search)/search.view.dart';
+import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/search.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/showproduct.sku.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/track.ctr.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.main.dart';
+import 'package:appfridayecommerce/enduser/views/(search)/search.view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/theme.dart';
 
 final ShowProductSkuCtr showProductCtr = Get.find();
 final TrackCtr trackCtr = Get.find();
 
 var border = OutlineInputBorder(
   borderSide: BorderSide(
-    color: theme_color_df,
+    color: themeColorDefault,
     width: 1,
   ),
   borderRadius: const BorderRadius.all(
@@ -73,7 +73,7 @@ PreferredSize appbarSku(
                               },
                               child: Icon(
                                 Icons.arrow_back_rounded,
-                                color: theme_color_df,
+                                color: themeColorDefault,
                               ),
                             )
                           : InkWell(
@@ -110,14 +110,14 @@ PreferredSize appbarSku(
                                 hintText: 'ค้นหาสินค้า',
                                 hintStyle: GoogleFonts.notoSansThaiLooped(
                                   fontSize: 13,
-                                  color: theme_color_df,
+                                  color: themeColorDefault,
                                 ),
                                 prefixIcon: Padding(
                                   padding:
                                       const EdgeInsets.only(left: 8, right: 8),
                                   child: Icon(
                                     Icons.search,
-                                    color: theme_color_df,
+                                    color: themeColorDefault,
                                   ),
                                 ),
                                 prefixIconConstraints: const BoxConstraints(
@@ -189,7 +189,7 @@ PreferredSize appbarSku(
                                         child: SizedBox(
                                           width: 18,
                                           child: CircleAvatar(
-                                            backgroundColor: theme_color_df,
+                                            backgroundColor: themeColorDefault,
                                             foregroundColor: Colors.white,
                                             child: Obx(() {
                                               return cartCtr.isLoadingCart.value
@@ -238,8 +238,9 @@ PreferredSize appbarSku(
                               ),
                               child: Icon(
                                 Icons.home_outlined,
-                                color:
-                                    isSetAppbar ? theme_color_df : Colors.white,
+                                color: isSetAppbar
+                                    ? themeColorDefault
+                                    : Colors.white,
                               ),
                             ),
                           ),

@@ -1,4 +1,4 @@
-import 'package:fridayonline/enduser/models/chat/recieve.message.model.dart';
+import 'package:appfridayecommerce/enduser/models/chat/recieve.message.model.dart';
 import 'package:intl/intl.dart';
 
 String getCurrentTime() {

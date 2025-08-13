@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
+import 'package:appfridayecommerce/print.dart';
 import 'package:http/http.dart' as http;
 
 class InteractionLogger {

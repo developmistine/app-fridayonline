@@ -1,21 +1,19 @@
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/controller/brand.ctr.dart';
-import 'package:fridayonline/enduser/controller/cart.ctr.dart';
-import 'package:fridayonline/enduser/controller/order.ctr.dart';
-import 'package:fridayonline/enduser/controller/showproduct.sku.ctr.dart';
-import 'package:fridayonline/enduser/services/orders/order.service.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.payment.change.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.select.address.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.sumary.dart';
-import 'package:fridayonline/enduser/views/(order)/order.detail.dart';
-import 'package:fridayonline/enduser/views/(profile)/myorder.dart';
-import 'package:fridayonline/enduser/widgets/dialog.confirm.dart';
-import 'package:fridayonline/enduser/widgets/dialog.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_loading_theme.dart';
-import 'package:fridayonline/homepage/theme/formatter_text.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/controller/brand.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/order.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/showproduct.sku.ctr.dart';
+import 'package:appfridayecommerce/enduser/services/orders/order.service.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.payment.change.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.select.address.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.sumary.dart';
+import 'package:appfridayecommerce/enduser/views/(order)/order.detail.dart';
+import 'package:appfridayecommerce/enduser/views/(profile)/myorder.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.confirm.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/preferrence.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -31,7 +29,7 @@ class OrderCheckout extends StatefulWidget {
 Color getStatusColor(String status) {
   switch (status) {
     case 'b':
-      return theme_color_df;
+      return themeColorDefault;
     case 'y':
       return Colors.amber;
     case 'g':
@@ -39,7 +37,7 @@ Color getStatusColor(String status) {
     case 'r':
       return const Color.fromARGB(255, 221, 60, 32);
     default:
-      return theme_color_df;
+      return themeColorDefault;
   }
 }
 
@@ -174,7 +172,7 @@ class _OrderCheckoutState extends State<OrderCheckout> {
                                       style: TextStyle(
                                           fontSize: 13,
                                           decoration: TextDecoration.underline,
-                                          color: theme_color_df),
+                                          color: themeColorDefault),
                                     ),
                                   )
                                 ],
@@ -672,7 +670,7 @@ class _OrderCheckoutState extends State<OrderCheckout> {
                                     Text(
                                       "฿${myFormat.format(orderCtr.orderDetailChekcOut!.data.summary.finalTotal)}",
                                       style: TextStyle(
-                                          color: theme_color_df,
+                                          color: themeColorDefault,
                                           fontSize: 14,
                                           fontWeight: FontWeight.bold),
                                     ),
@@ -686,7 +684,7 @@ class _OrderCheckoutState extends State<OrderCheckout> {
                                   height: 40,
                                   child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
-                                          backgroundColor: theme_color_df),
+                                          backgroundColor: themeColorDefault),
                                       onPressed: () async {
                                         SetData data = SetData();
                                         var custId = await data.b2cCustID;

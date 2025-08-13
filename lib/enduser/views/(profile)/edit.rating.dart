@@ -1,11 +1,11 @@
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/components/profile/myreview/edit.review.card.dart';
-import 'package:fridayonline/enduser/controller/order.ctr.dart';
-import 'package:fridayonline/enduser/controller/review.ctr.dart';
-import 'package:fridayonline/enduser/services/review%20/review.service.dart';
-import 'package:fridayonline/enduser/widgets/dialog.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/components/profile/myreview/edit.review.card.dart';
+import 'package:appfridayecommerce/enduser/controller/order.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/review.ctr.dart';
+import 'package:appfridayecommerce/enduser/services/review%20/review.service.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/preferrence.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_switch/flutter_switch.dart';
@@ -87,7 +87,7 @@ class _EditRatingState extends State<EditRating> {
                               Text(
                                 'ผู้ให้บริการขนส่ง',
                                 style: TextStyle(
-                                    fontSize: 14, color: grayTextShade700),
+                                    fontSize: 14, color: Colors.grey.shade700),
                               ),
                               RatingBar(
                                 itemSize: 32,
@@ -127,12 +127,12 @@ class _EditRatingState extends State<EditRating> {
                               Text(
                                 'แสดงชื่อผู้ใช้ในรีวิว',
                                 style: TextStyle(
-                                    fontSize: 14, color: grayTextShade700),
+                                    fontSize: 14, color: Colors.grey.shade700),
                               ),
                               FlutterSwitch(
                                 inactiveColor:
                                     const Color.fromRGBO(196, 196, 196, 1),
-                                activeColor: theme_color_df,
+                                activeColor: themeColorDefault,
                                 activeTextColor: Colors.white,
                                 activeTextFontWeight: FontWeight.normal,
                                 inactiveTextFontWeight: FontWeight.normal,
@@ -172,10 +172,11 @@ class _EditRatingState extends State<EditRating> {
                       child: ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor:
-                              WidgetStateProperty.all(theme_color_df),
-                          padding: WidgetStateProperty.all(
+                              MaterialStateProperty.all(themeColorDefault),
+                          padding: MaterialStateProperty.all(
                               const EdgeInsets.symmetric(vertical: 12)),
-                          shape: WidgetStateProperty.all(RoundedRectangleBorder(
+                          shape:
+                              MaterialStateProperty.all(RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
                           )),
                         ),

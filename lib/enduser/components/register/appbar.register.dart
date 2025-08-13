@@ -1,5 +1,5 @@
-import 'package:fridayonline/enduser/controller/enduser.signin.ctr.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/controller/enduser.signin.ctr.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,7 +21,7 @@ PreferredSize appbarEndUserRegister(pageCtr) {
           child: AppBar(
             elevation: 1,
             leading: BackButton(
-                color: theme_color_df,
+                color: themeColorDefault,
                 onPressed: () {
                   if (endUserSignInCtr.currentPage.value > 0) {
                     endUserSignInCtr.currentPage.value--;

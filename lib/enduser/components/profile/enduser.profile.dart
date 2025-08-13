@@ -1,10 +1,9 @@
-import 'package:fridayonline/enduser/components/shimmer/shimmer.card.dart';
-import 'package:fridayonline/enduser/controller/profile.ctr.dart';
-import 'package:fridayonline/enduser/views/(profile)/edit.profile.dart';
-import 'package:fridayonline/enduser/views/(profile)/friday.coin.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/theme/formatter_text.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/shimmer/shimmer.card.dart';
+import 'package:appfridayecommerce/enduser/controller/profile.ctr.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/views/(profile)/edit.profile.dart';
+import 'package:appfridayecommerce/enduser/views/(profile)/friday.coin.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -48,7 +47,7 @@ class _DataProfilesState extends State<DataProfiles> {
                   Icon(
                     Icons.image,
                     size: 20,
-                    color: icon_color_loading,
+                    color: themeColorDefault.withOpacity(0.2),
                   )
                 ],
               ),

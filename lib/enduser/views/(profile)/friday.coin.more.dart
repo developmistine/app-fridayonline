@@ -1,8 +1,8 @@
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/components/showproduct/nodata.dart';
-import 'package:fridayonline/enduser/controller/coint.ctr.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/nodata.dart';
+import 'package:appfridayecommerce/enduser/controller/coint.ctr.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -127,7 +127,7 @@ class _FridayCoinMoreState extends State<FridayCoinMore> {
                     ? Center(
                         child: Text(
                           "กำลังโหลด",
-                          style: TextStyle(color: theme_color_df),
+                          style: TextStyle(color: themeColorDefault),
                         ),
                       )
                     : const SizedBox();

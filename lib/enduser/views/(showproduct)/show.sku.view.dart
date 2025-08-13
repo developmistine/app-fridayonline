@@ -1,28 +1,29 @@
 import 'dart:async';
 
-import 'package:fridayonline/enduser/components/appbar/appbar.sku.dart';
-import 'package:fridayonline/enduser/components/flashdeal/flashdeal.timer.dart';
-import 'package:fridayonline/enduser/components/shimmer/shimmer.productdetail.dart';
-import 'package:fridayonline/enduser/components/showproduct/nodata.dart';
-import 'package:fridayonline/enduser/components/showproduct/showproduct.category.dart';
-import 'package:fridayonline/enduser/components/showproduct/sku.addtocart.dart';
-import 'package:fridayonline/enduser/components/showproduct/sku.related.dart';
-import 'package:fridayonline/enduser/components/showproduct/sku.review.dart';
-import 'package:fridayonline/enduser/controller/brand.ctr.dart';
-import 'package:fridayonline/enduser/controller/enduser.home.ctr.dart';
-import 'package:fridayonline/enduser/controller/showproduct.sku.ctr.dart';
-import 'package:fridayonline/enduser/controller/track.ctr.dart';
-import 'package:fridayonline/enduser/models/brands/shopfilter.model.dart';
-import 'package:fridayonline/enduser/models/showproduct/product.sku.model.dart'
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.sku.dart';
+import 'package:appfridayecommerce/enduser/components/flashdeal/flashdeal.timer.dart';
+import 'package:appfridayecommerce/enduser/components/shimmer/shimmer.productdetail.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/nodata.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/showproduct.category.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/sku.addtocart.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/sku.related.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/sku.review.dart';
+import 'package:appfridayecommerce/enduser/controller/brand.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/enduser.home.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/showproduct.sku.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/track.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/brands/shopfilter.model.dart';
+import 'package:appfridayecommerce/enduser/models/showproduct/product.sku.model.dart'
     as product_model;
-import 'package:fridayonline/enduser/services/brands/brands.service.dart';
-import 'package:fridayonline/enduser/views/(showproduct)/medias.sku.dart';
-import 'package:fridayonline/enduser/widgets/animated.product.dart';
-import 'package:fridayonline/enduser/widgets/arrow_totop.dart';
-import 'package:fridayonline/enduser/widgets/gap.dart';
-import 'package:fridayonline/enduser/widgets/seeall.button.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/services/brands/brands.service.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/views/(showproduct)/medias.sku.dart';
+import 'package:appfridayecommerce/enduser/widgets/animated.product.dart';
+import 'package:appfridayecommerce/enduser/widgets/arrow_totop.dart';
+import 'package:appfridayecommerce/enduser/widgets/gap.dart';
+import 'package:appfridayecommerce/enduser/widgets/seeall.button.dart';
+import 'package:appfridayecommerce/print.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -898,7 +899,7 @@ class _ShowProductCategoryState extends State<ShowProductSku>
                                           children: [
                                             Icon(
                                               Icons.local_shipping,
-                                              color: theme_color_df,
+                                              color: themeColorDefault,
                                               size: 16,
                                             ),
                                             const SizedBox(
@@ -994,16 +995,17 @@ class _ShowProductCategoryState extends State<ShowProductSku>
                                                               50),
                                                       border: Border.all(
                                                           color:
-                                                              theme_color_df)),
+                                                              themeColorDefault)),
                                                   child: Icon(
                                                       Icons
                                                           .arrow_forward_ios_rounded,
-                                                      color: theme_color_df)),
+                                                      color:
+                                                          themeColorDefault)),
                                               Text(
                                                 'ดูเพิ่มเติม',
                                                 style: TextStyle(
                                                     fontSize: 12,
-                                                    color: theme_color_df,
+                                                    color: themeColorDefault,
                                                     fontWeight:
                                                         FontWeight.bold),
                                               ),
@@ -1097,7 +1099,7 @@ class _ShowProductCategoryState extends State<ShowProductSku>
                                           textStyle:
                                               GoogleFonts.notoSansThaiLooped(
                                                   fontSize: 14),
-                                          '''
+                                          ''' 
                                           ${showProductCtr.productDetail.value!.data.description}
                                                 ''',
                                           onErrorBuilder:
@@ -1348,13 +1350,13 @@ class _ShowProductCategoryState extends State<ShowProductSku>
                       padding: const EdgeInsets.symmetric(horizontal: 12),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(4),
-                          border: Border.all(color: theme_color_df)),
+                          border: Border.all(color: themeColorDefault)),
                       child: Text(
                         'ดูร้านค้า',
                         style: GoogleFonts.notoSansThaiLooped(
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
-                            color: theme_color_df),
+                            color: themeColorDefault),
                       )),
                 )
               ],

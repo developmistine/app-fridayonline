@@ -1,5 +1,5 @@
-// import 'package:fridayonline/homepage/theme/constants.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+// import 'package:appfridayecommerce/homepage/theme/constants.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -18,10 +18,11 @@ class ShimmerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
-      highlightColor: color != null ? color! : theme_color_df.withOpacity(0.7),
+      highlightColor:
+          color != null ? color! : themeColorDefault.withOpacity(0.7),
       baseColor: color != null
           ? color!.withOpacity(0.4)
-          : theme_color_df.withOpacity(0.4),
+          : themeColorDefault.withOpacity(0.4),
       child: Container(
         width: width,
         height: height,

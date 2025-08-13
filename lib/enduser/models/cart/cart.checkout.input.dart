@@ -4,7 +4,7 @@
 
 import 'dart:convert';
 
-import 'package:fridayonline/enduser/models/cart/cart.update.input.dart';
+import 'package:appfridayecommerce/enduser/models/cart/cart.update.input.dart';
 
 CartCheckOutInput cartCheckOutInputFromJson(String str) =>
     CartCheckOutInput.fromJson(json.decode(str));

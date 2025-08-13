@@ -2,12 +2,12 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:fridayonline/enduser/models/reviews/pending.model.dart';
-import 'package:fridayonline/enduser/models/reviews/reviewed.mode.dart';
-import 'package:fridayonline/enduser/utils/auth_fetch.dart';
+import 'package:appfridayecommerce/enduser/models/reviews/pending.model.dart';
+import 'package:appfridayecommerce/enduser/models/reviews/reviewed.mode.dart';
+import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
 
-import 'package:fridayonline/model/set_data/set_data.dart';
-import 'package:fridayonline/service/pathapi.dart';
+import 'package:appfridayecommerce/preferrence.dart';
+import 'package:appfridayecommerce/service/pathapi.dart';
 import 'package:http/http.dart' as http;
 
 Future<PendingReviews> fetchPendingReviewService(int orderShopId) async {

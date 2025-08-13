@@ -1,11 +1,11 @@
 import 'dart:convert';
 
-import 'package:fridayonline/enduser/models/address/address.model.dart';
-import 'package:fridayonline/enduser/models/address/b2caddrss.model.dart';
-import 'package:fridayonline/enduser/utils/auth_fetch.dart';
+import 'package:appfridayecommerce/enduser/models/address/address.model.dart';
+import 'package:appfridayecommerce/enduser/models/address/b2caddrss.model.dart';
+import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
 
-import 'package:fridayonline/model/set_data/set_data.dart';
-import 'package:fridayonline/service/pathapi.dart';
+import 'package:appfridayecommerce/preferrence.dart';
+import 'package:appfridayecommerce/service/pathapi.dart';
 
 Future<AddressList?> fetchAddressListService() async {
   var url = Uri.parse("${b2c_api_url}b2c/api/v1/customer/address_list");

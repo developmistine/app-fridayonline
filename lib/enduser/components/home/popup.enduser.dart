@@ -1,9 +1,9 @@
-import 'package:fridayonline/enduser/controller/enduser.home.ctr.dart';
-import 'package:fridayonline/enduser/models/home/home.popup.model.dart';
-import 'package:fridayonline/enduser/services/home/home.service.dart';
-import 'package:fridayonline/enduser/utils/event.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
+import 'package:appfridayecommerce/enduser/controller/enduser.home.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/home/home.popup.model.dart';
+import 'package:appfridayecommerce/enduser/services/home/home.service.dart';
+import 'package:appfridayecommerce/enduser/utils/event.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/preferrence.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -128,7 +128,7 @@ showPopupEndUser(BuildContext context) async {
                                 ),
                                 Icon(
                                   Icons.check_box_outline_blank,
-                                  color: theme_color_df,
+                                  color: themeColorDefault,
                                 ),
                               ],
                             )
@@ -143,7 +143,7 @@ showPopupEndUser(BuildContext context) async {
                                 ),
                                 Icon(
                                   Icons.check_box,
-                                  color: theme_color_df,
+                                  color: themeColorDefault,
                                 ),
                               ],
                             ),

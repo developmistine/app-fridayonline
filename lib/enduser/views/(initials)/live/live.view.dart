@@ -1,4 +1,4 @@
-import 'package:fridayonline/enduser/views/(showproduct)/video.review.dart';
+import 'package:appfridayecommerce/enduser/views/(showproduct)/video.review.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
@@ -58,7 +58,7 @@ class _VideoPageViewScreenState extends State<LivePage> {
       backgroundColor: Colors.black87,
       body: VideoThumbnailList(
         videoUrls: videoUrls[0],
-        imgUrls: const [],
+        imgUrls: [],
       ),
       // body: PageView.builder(
       //   scrollDirection: Axis.vertical,

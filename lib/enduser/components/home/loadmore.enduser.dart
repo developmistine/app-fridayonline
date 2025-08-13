@@ -1,9 +1,9 @@
-import 'package:fridayonline/enduser/components/shimmer/shimmer.product.dart';
-import 'package:fridayonline/enduser/controller/enduser.home.ctr.dart';
-import 'package:fridayonline/enduser/controller/showproduct.sku.ctr.dart';
-import 'package:fridayonline/enduser/utils/cached_image.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/shimmer/shimmer.product.dart';
+import 'package:appfridayecommerce/enduser/controller/enduser.home.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/showproduct.sku.ctr.dart';
+import 'package:appfridayecommerce/enduser/utils/cached_image.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -80,7 +80,7 @@ Widget buildOptimizedGrid() {
               padding: const EdgeInsets.only(bottom: 18.0),
               child: Text(
                 'กำลังโหลด...',
-                style: TextStyle(color: theme_color_df),
+                style: TextStyle(color: themeColorDefault),
               ),
             );
           } else {

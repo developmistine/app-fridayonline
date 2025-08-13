@@ -1,10 +1,10 @@
 import 'dart:convert';
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/controller/chat.ctr.dart';
-import 'package:fridayonline/enduser/models/chat/recieve.message.model.dart';
-import 'package:fridayonline/enduser/utils/function.dart';
-import 'package:fridayonline/enduser/views/(chat)/chat.seller.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/controller/chat.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/chat/recieve.message.model.dart';
+import 'package:appfridayecommerce/enduser/utils/function.dart';
+import 'package:appfridayecommerce/enduser/views/(chat)/chat.seller.dart';
+import 'package:appfridayecommerce/preferrence.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

@@ -1,19 +1,19 @@
 import 'dart:async';
 
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/components/showproduct/nodata.dart';
-import 'package:fridayonline/enduser/controller/brand.ctr.dart';
-import 'package:fridayonline/enduser/controller/cart.ctr.dart';
-import 'package:fridayonline/enduser/models/coupon/vouchers.group.model.dart';
-import 'package:fridayonline/enduser/models/coupon/vouchers.items.model.dart';
-import 'package:fridayonline/enduser/services/coupon/coupon.services.dart';
-import 'package:fridayonline/enduser/views/(anonymous)/signin.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.main.dart';
-import 'package:fridayonline/enduser/views/(coupon)/coupon.detail.dart';
-import 'package:fridayonline/enduser/widgets/dialog.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/nodata.dart';
+import 'package:appfridayecommerce/enduser/controller/brand.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/coupon/vouchers.group.model.dart';
+import 'package:appfridayecommerce/enduser/models/coupon/vouchers.items.model.dart';
+import 'package:appfridayecommerce/enduser/services/coupon/coupon.services.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/views/(anonymous)/signin.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.main.dart';
+import 'package:appfridayecommerce/enduser/views/(coupon)/coupon.detail.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/preferrence.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -191,7 +191,7 @@ class _CouponAllState extends State<CouponAll>
                           child: TabBar(
                             controller: _tabController,
                             isScrollable: true,
-                            indicatorColor: theme_color_df,
+                            indicatorColor: themeColorDefault,
                             indicatorWeight: 2,
                             splashFactory: NoSplash.splashFactory,
                             unselectedLabelStyle:
@@ -200,7 +200,7 @@ class _CouponAllState extends State<CouponAll>
                               fontSize: 14,
                             ),
                             labelStyle: GoogleFonts.notoSansThaiLooped(
-                              color: theme_color_df,
+                              color: themeColorDefault,
                               fontSize: 14,
                             ),
                             onTap: (index) {
@@ -388,7 +388,7 @@ class _CouponAllState extends State<CouponAll>
                             child: Text(
                               'เงื่อนไข',
                               style: TextStyle(
-                                color: theme_color_df,
+                                color: themeColorDefault,
                                 fontSize: 10,
                               ),
                             ),
@@ -414,7 +414,7 @@ class _CouponAllState extends State<CouponAll>
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           foregroundColor: Colors.white,
-                          backgroundColor: theme_color_df,
+                          backgroundColor: themeColorDefault,
                         ),
                         onPressed: () async {
                           SetData data = SetData();
@@ -476,10 +476,10 @@ class _CouponAllState extends State<CouponAll>
                     padding: const EdgeInsets.symmetric(horizontal: 14),
                     child: OutlinedButton(
                       style: OutlinedButton.styleFrom(
-                          foregroundColor: theme_color_df,
-                          side: BorderSide(color: theme_color_df),
+                          foregroundColor: themeColorDefault,
+                          side: BorderSide(color: themeColorDefault),
                           shape: RoundedRectangleBorder(
-                              side: BorderSide(color: theme_color_df),
+                              side: BorderSide(color: themeColorDefault),
                               borderRadius: BorderRadius.circular(4))),
                       onPressed: () async {
                         SetData data = SetData();

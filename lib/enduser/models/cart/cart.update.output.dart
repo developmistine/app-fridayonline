@@ -4,8 +4,8 @@
 
 import 'dart:convert';
 
-import 'package:fridayonline/enduser/models/cart/getcart.model.dart';
-import 'package:fridayonline/enduser/models/coupon/vouchers.recommend.model.dart';
+import 'package:appfridayecommerce/enduser/models/cart/getcart.model.dart';
+import 'package:appfridayecommerce/enduser/models/coupon/vouchers.recommend.model.dart';
 
 UpdateCartOutput updateCartOutputFromJson(String str) =>
     UpdateCartOutput.fromJson(json.decode(str));

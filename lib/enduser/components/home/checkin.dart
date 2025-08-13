@@ -1,13 +1,13 @@
-import 'package:fridayonline/enduser/controller/coint.ctr.dart';
-import 'package:fridayonline/enduser/controller/enduser.signin.ctr.dart';
-import 'package:fridayonline/enduser/controller/profile.ctr.dart';
-import 'package:fridayonline/enduser/models/checkin/checkin.model.dart';
-import 'package:fridayonline/enduser/services/checkin/checkin.service.dart';
-import 'package:fridayonline/enduser/views/(anonymous)/signin.dart';
-import 'package:fridayonline/enduser/views/(initials)/fair/fair.view.dart';
-import 'package:fridayonline/enduser/views/(profile)/friday.coin.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/controller/coint.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/enduser.signin.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/profile.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/checkin/checkin.model.dart';
+import 'package:appfridayecommerce/enduser/services/checkin/checkin.service.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/views/(anonymous)/signin.dart';
+import 'package:appfridayecommerce/enduser/views/(initials)/fair/fair.view.dart';
+import 'package:appfridayecommerce/enduser/views/(profile)/friday.coin.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -48,7 +48,7 @@ class _CoinState extends State<Coin> {
                   gradient: LinearGradient(
                       begin: Alignment.centerRight,
                       end: Alignment.centerLeft,
-                      colors: [const Color(0xFF1C9AD6), theme_color_df])),
+                      colors: [const Color(0xFF1C9AD6), themeColorDefault])),
               child: Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 12.0, vertical: 14),
@@ -310,7 +310,7 @@ class _CoinState extends State<Coin> {
                                 'ดูข้อมูล',
                                 style: GoogleFonts.notoSansThaiLooped(
                                     fontSize: 13,
-                                    color: theme_color_df,
+                                    color: themeColorDefault,
                                     fontWeight: FontWeight.w600),
                               ),
                               const SizedBox(
@@ -319,7 +319,7 @@ class _CoinState extends State<Coin> {
                               SizedBox(
                                 width: 20,
                                 child: CircleAvatar(
-                                    backgroundColor: theme_color_df,
+                                    backgroundColor: themeColorDefault,
                                     child: const Icon(
                                       Icons.arrow_forward_ios_rounded,
                                       color: Colors.white,

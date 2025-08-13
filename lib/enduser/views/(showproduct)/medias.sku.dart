@@ -1,4 +1,4 @@
-import 'package:fridayonline/enduser/controller/showproduct.sku.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/showproduct.sku.ctr.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:photo_view/photo_view.dart';

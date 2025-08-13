@@ -1,11 +1,11 @@
-import 'package:fridayonline/enduser/components/shimmer/shimmer.product.dart';
-import 'package:fridayonline/enduser/components/showproduct/nodata.dart';
-import 'package:fridayonline/enduser/components/showproduct/showproduct.category.dart';
-import 'package:fridayonline/enduser/controller/search.ctr.dart';
-import 'package:fridayonline/enduser/views/(search)/search.view.dart';
-import 'package:fridayonline/enduser/widgets/arrow_totop.dart';
-import 'package:fridayonline/enduser/widgets/gap.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/shimmer/shimmer.product.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/nodata.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/showproduct.category.dart';
+import 'package:appfridayecommerce/enduser/controller/search.ctr.dart';
+import 'package:appfridayecommerce/enduser/views/(search)/search.view.dart';
+import 'package:appfridayecommerce/enduser/widgets/arrow_totop.dart';
+import 'package:appfridayecommerce/enduser/widgets/gap.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
@@ -15,7 +15,7 @@ final SearchProductCtr searchCtr = Get.find();
 
 final OutlineInputBorder border = OutlineInputBorder(
   borderSide: BorderSide(
-    color: theme_color_df,
+    color: themeColorDefault,
     width: 1,
   ),
   borderRadius: const BorderRadius.all(
@@ -128,7 +128,7 @@ class _EndUserSearchResultState extends State<EndUserSearchResult> {
                       },
                       child: Icon(
                         Icons.arrow_back_rounded,
-                        color: theme_color_df,
+                        color: themeColorDefault,
                       )),
                   const SizedBox(
                     width: 4,
@@ -148,7 +148,7 @@ class _EndUserSearchResultState extends State<EndUserSearchResult> {
                         hintText: 'ค้นหาสินค้า',
                         hintStyle: TextStyle(
                           fontSize: 13,
-                          color: theme_color_df,
+                          color: themeColorDefault,
                         ),
                         filled: true,
                         fillColor: Colors.white,
@@ -179,13 +179,13 @@ class _EndUserSearchResultState extends State<EndUserSearchResult> {
               //         children: [
               //           Icon(
               //             Icons.filter_alt_outlined,
-              //             color: theme_color_df,
+              //             color: themeColorDefault,
               //             size: 20,
               //           ),
               //           Text(
               //             'ตัวกรอง',
               //             style: GoogleFonts.notoSansThaiLooped(
-              //                 color: theme_color_df,
+              //                 color: themeColorDefault,
               //                 fontSize: 12,
               //                 fontWeight: FontWeight.normal),
               //           ),
@@ -281,7 +281,7 @@ class _EndUserSearchResultState extends State<EndUserSearchResult> {
                                                                     .activeTab
                                                                     .value ==
                                                                 index
-                                                            ? theme_color_df
+                                                            ? themeColorDefault
                                                             : Colors.grey
                                                                 .shade300))),
                                             child: Row(
@@ -305,7 +305,7 @@ class _EndUserSearchResultState extends State<EndUserSearchResult> {
                                                                       .activeTab
                                                                       .value ==
                                                                   index
-                                                              ? theme_color_df
+                                                              ? themeColorDefault
                                                               : Colors.grey
                                                                   .shade700),
                                                 ),
@@ -323,14 +323,14 @@ class _EndUserSearchResultState extends State<EndUserSearchResult> {
                                                                 .arrow_upward_outlined,
                                                             size: 12,
                                                             color:
-                                                                theme_color_df);
+                                                                themeColorDefault);
                                                       }
                                                       return Icon(
                                                           Icons
                                                               .arrow_downward_outlined,
                                                           size: 12,
                                                           color:
-                                                              theme_color_df);
+                                                              themeColorDefault);
                                                     }
                                                   }
                                                   return const SizedBox();
@@ -547,8 +547,8 @@ class _EndUserSearchResultState extends State<EndUserSearchResult> {
             //                   Expanded(
             //                     child: OutlinedButton(
             //                         style: OutlinedButton.styleFrom(
-            //                             foregroundColor: theme_color_df,
-            //                             side: BorderSide(color: theme_color_df),
+            //                             foregroundColor: themeColorDefault,
+            //                             side: BorderSide(color: themeColorDefault),
             //                             shape: RoundedRectangleBorder(
             //                                 borderRadius:
             //                                     BorderRadius.circular(2))),
@@ -561,9 +561,9 @@ class _EndUserSearchResultState extends State<EndUserSearchResult> {
             //                   Expanded(
             //                     child: ElevatedButton(
             //                         style: ElevatedButton.styleFrom(
-            //                             backgroundColor: theme_color_df,
+            //                             backgroundColor: themeColorDefault,
             //                             foregroundColor: Colors.white,
-            //                             side: BorderSide(color: theme_color_df),
+            //                             side: BorderSide(color: themeColorDefault),
             //                             shape: RoundedRectangleBorder(
             //                                 borderRadius:
             //                                     BorderRadius.circular(2))),

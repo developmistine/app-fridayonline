@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:fridayonline/controller/app_controller.dart';
-import 'package:fridayonline/homepage/splashscreen.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
+import 'package:appfridayecommerce/controller/app_controller.dart';
+import 'package:appfridayecommerce/preferrence.dart';
+import 'package:appfridayecommerce/splashscreen.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -90,7 +90,7 @@ class EndUserSignInCtr extends GetxController {
     await prefs.setString("B2cMobile", mobile);
     await prefs.setString("UserType", lsTypeUser);
     await prefs.setInt("B2cCustId", cusId);
-    Get.find<AppController>().setCurrentNavInget(0);
+    Get.find<AppController>().setCurrentNavIngetB2c(0);
     Get.offAll(() => const SplashScreen());
   }
 
@@ -106,6 +106,6 @@ class EndUserSignInCtr extends GetxController {
     await prefs.setString("B2cMobile", mobile);
     await prefs.setString("UserType", lsTypeUser);
     await prefs.setInt("B2cCustId", cusId);
-    Get.find<AppController>().setCurrentNavInget(0);
+    Get.find<AppController>().setCurrentNavIngetB2c(0);
   }
 }

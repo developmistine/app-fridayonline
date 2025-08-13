@@ -1,8 +1,8 @@
 import 'dart:convert';
-import 'package:fridayonline/enduser/controller/chat.ctr.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/splashscreen.dart';
-import 'package:fridayonline/service/pathapi.dart';
+import 'package:appfridayecommerce/enduser/controller/chat.ctr.dart';
+import 'package:appfridayecommerce/print.dart';
+import 'package:appfridayecommerce/service/pathapi.dart';
+import 'package:appfridayecommerce/splashscreen.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';

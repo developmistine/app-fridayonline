@@ -1,9 +1,9 @@
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:fridayonline/enduser/models/cart/getcart.model.dart';
+import 'package:appfridayecommerce/enduser/models/cart/getcart.model.dart';
 
 void storeShippingDiscount(
     BuildContext context, List<Datum> cartShop, int index) {
@@ -143,7 +143,7 @@ void storeShippingDiscount(
                                 height: 40,
                                 child: ElevatedButton(
                                     style: ElevatedButton.styleFrom(
-                                        backgroundColor: theme_color_df),
+                                        backgroundColor: themeColorDefault),
                                     onPressed: () {
                                       Get.back();
                                     },

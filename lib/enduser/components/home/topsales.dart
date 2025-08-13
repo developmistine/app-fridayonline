@@ -1,9 +1,9 @@
-import 'package:fridayonline/enduser/controller/enduser.home.ctr.dart';
-import 'package:fridayonline/enduser/controller/topproduct.ctr.dart';
-import 'package:fridayonline/enduser/controller/track.ctr.dart';
-import 'package:fridayonline/enduser/utils/cached_image.dart';
-import 'package:fridayonline/enduser/views/(top)/top.product.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/controller/enduser.home.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/topproduct.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/track.ctr.dart';
+import 'package:appfridayecommerce/enduser/utils/cached_image.dart';
+import 'package:appfridayecommerce/enduser/views/(top)/top.product.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -163,7 +163,7 @@ class _BestSellingProductsState extends State<BestSellingProducts> {
                                           children: [
                                             if (items.selling != "")
                                               Container(
-                                                color: theme_color_df,
+                                                color: themeColorDefault,
                                                 width: Get.width,
                                                 padding:
                                                     const EdgeInsets.symmetric(

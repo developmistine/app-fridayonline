@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/components/profile/myorder/order.history.dart';
-import 'package:fridayonline/enduser/controller/order.ctr.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/components/profile/myorder/order.history.dart';
+import 'package:appfridayecommerce/enduser/controller/order.ctr.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -96,7 +96,7 @@ class _MyOrderHistoryState extends State<MyOrderHistory>
                     child: TabBar(
                         controller: _tabController,
                         isScrollable: true,
-                        indicatorColor: theme_color_df,
+                        indicatorColor: themeColorDefault,
                         indicatorWeight: 2,
                         splashFactory: NoSplash.splashFactory,
                         unselectedLabelStyle: GoogleFonts.notoSansThaiLooped(
@@ -104,7 +104,7 @@ class _MyOrderHistoryState extends State<MyOrderHistory>
                           fontSize: 14,
                         ),
                         labelStyle: GoogleFonts.notoSansThaiLooped(
-                          color: theme_color_df,
+                          color: themeColorDefault,
                           fontSize: 14,
                         ),
                         onTap: (value) {

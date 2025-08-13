@@ -1,7 +1,7 @@
-import 'package:fridayonline/enduser/controller/brand.ctr.dart';
-import 'package:fridayonline/enduser/models/chat/seller.list.model.dart';
-import 'package:fridayonline/enduser/views/(other)/help.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/controller/brand.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/chat/seller.list.model.dart';
+import 'package:appfridayecommerce/enduser/views/(other)/help.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -24,7 +24,7 @@ appBarChat(SellerChat shop) {
           },
           child: Icon(
             Icons.arrow_back_rounded,
-            color: theme_color_df,
+            color: themeColorDefault,
           ),
         ),
         centerTitle: true,

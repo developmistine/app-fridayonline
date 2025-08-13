@@ -1,18 +1,18 @@
 import 'dart:ui';
 
-import 'package:fridayonline/enduser/controller/coupon.ctr.dart';
-import 'package:fridayonline/enduser/services/coupon/coupon.services.dart';
-import 'package:fridayonline/enduser/views/(coupon)/coupon.detail.dart';
-import 'package:fridayonline/enduser/widgets/dialog.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/controller/coupon.ctr.dart';
+import 'package:appfridayecommerce/enduser/services/coupon/coupon.services.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/views/(coupon)/coupon.detail.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:fridayonline/enduser/models/cart/cart.update.input.dart'
+import 'package:appfridayecommerce/enduser/models/cart/cart.update.input.dart'
     as update_input;
 
 final endUserCouponCtr = Get.find<EndUserCouponCartCtr>();
@@ -147,7 +147,7 @@ class CouponCardWithCheck extends StatelessWidget {
                           'เงื่อนไข',
                           style: TextStyle(
                             fontSize: 10,
-                            color: theme_color_df,
+                            color: themeColorDefault,
                           ),
                         ),
                       ),
@@ -296,7 +296,7 @@ class CouponCardWithCheck extends StatelessWidget {
                           'เงื่อนไข',
                           style: TextStyle(
                             fontSize: 10,
-                            color: theme_color_df,
+                            color: themeColorDefault,
                           ),
                         ),
                       ),
@@ -340,7 +340,7 @@ class CouponCardWithCheck extends StatelessWidget {
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                        color: theme_color_df,
+                        color: themeColorDefault,
                         borderRadius: BorderRadius.circular(4)),
                     padding:
                         const EdgeInsets.symmetric(vertical: 2, horizontal: 8),
@@ -559,7 +559,7 @@ class CouponCardWithCheck extends StatelessWidget {
                           'เงื่อนไข',
                           style: TextStyle(
                             fontSize: 10,
-                            color: theme_color_df,
+                            color: themeColorDefault,
                           ),
                         ),
                       ),
@@ -575,7 +575,7 @@ class CouponCardWithCheck extends StatelessWidget {
                           .containsKey(voucher.shopId)))) {
                 return Icon(
                   Icons.check_circle,
-                  color: theme_color_df,
+                  color: themeColorDefault,
                 );
               } else if (!endUserCouponCtr
                   .shopVouchers.value![index].userStatus.isClaimed) {
@@ -611,7 +611,7 @@ class CouponCardWithCheck extends StatelessWidget {
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                        color: theme_color_df,
+                        color: themeColorDefault,
                         borderRadius: BorderRadius.circular(4)),
                     padding:
                         const EdgeInsets.symmetric(vertical: 2, horizontal: 8),
@@ -791,7 +791,7 @@ class CouponCardPlatformWithCheck extends StatelessWidget {
                           'เงื่อนไข',
                           style: TextStyle(
                             fontSize: 10,
-                            color: theme_color_df,
+                            color: themeColorDefault,
                           ),
                         ),
                       ),
@@ -940,7 +940,7 @@ class CouponCardPlatformWithCheck extends StatelessWidget {
                           'เงื่อนไข',
                           style: TextStyle(
                             fontSize: 10,
-                            color: theme_color_df,
+                            color: themeColorDefault,
                           ),
                         ),
                       ),
@@ -986,7 +986,7 @@ class CouponCardPlatformWithCheck extends StatelessWidget {
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                        color: theme_color_df,
+                        color: themeColorDefault,
                         borderRadius: BorderRadius.circular(4)),
                     padding:
                         const EdgeInsets.symmetric(vertical: 2, horizontal: 8),
@@ -1147,7 +1147,7 @@ class CouponCardPlatformWithCheck extends StatelessWidget {
                           'เงื่อนไข',
                           style: TextStyle(
                             fontSize: 10,
-                            color: theme_color_df,
+                            color: themeColorDefault,
                           ),
                         ),
                       ),
@@ -1160,7 +1160,7 @@ class CouponCardPlatformWithCheck extends StatelessWidget {
               if (endUserCouponCtr.couponPlatformId.value == voucher.couponId) {
                 return Icon(
                   Icons.check_circle,
-                  color: theme_color_df,
+                  color: themeColorDefault,
                 );
               }
               return Container(

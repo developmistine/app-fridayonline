@@ -1,9 +1,9 @@
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/components/profile/myaddress/myaddress.list.dart';
-import 'package:fridayonline/enduser/controller/cart.ctr.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.set.address.dart';
-import 'package:fridayonline/enduser/widgets/empty.address.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/components/profile/myaddress/myaddress.list.dart';
+import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.set.address.dart';
+import 'package:appfridayecommerce/enduser/widgets/empty.address.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -80,7 +80,7 @@ class _MyAddressState extends State<MyAddress> {
                               children: [
                                 Icon(
                                   Icons.add_circle_outline,
-                                  color: theme_color_df,
+                                  color: themeColorDefault,
                                   size: 18,
                                 ),
                                 const SizedBox(
@@ -89,7 +89,7 @@ class _MyAddressState extends State<MyAddress> {
                                 Text(
                                   'เพิ่มที่อยู่',
                                   style: TextStyle(
-                                      fontSize: 13, color: theme_color_df),
+                                      fontSize: 13, color: themeColorDefault),
                                 ),
                               ],
                             ),

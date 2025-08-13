@@ -1,6 +1,6 @@
 // lib/services/firebase_message_service.dart
-import 'package:fridayonline/homepage/push_notification/local_notification_service.dart';
-import 'package:fridayonline/push/push.dart';
+import 'package:appfridayecommerce/push/local_notification_service.dart';
+import 'package:appfridayecommerce/push/push.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';

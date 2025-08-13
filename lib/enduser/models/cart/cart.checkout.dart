@@ -4,7 +4,7 @@
 
 import 'dart:convert';
 
-import 'package:fridayonline/enduser/models/coupon/vouchers.recommend.model.dart';
+import 'package:appfridayecommerce/enduser/models/coupon/vouchers.recommend.model.dart';
 
 CartCheckOut cartCheckOutFromJson(String str) =>
     CartCheckOut.fromJson(json.decode(str));

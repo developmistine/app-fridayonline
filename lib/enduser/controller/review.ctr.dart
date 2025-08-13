@@ -1,12 +1,12 @@
 import 'dart:io';
 
-import 'package:fridayonline/enduser/models/reviews/pending.model.dart';
-import 'package:fridayonline/enduser/models/reviews/reviewed.mode.dart';
-import 'package:fridayonline/enduser/models/showproduct/review.model.dart';
-import 'package:fridayonline/enduser/services/review%20/review.service.dart';
-import 'package:fridayonline/enduser/services/showproduct/showproduct.sku.service.dart';
-import 'package:fridayonline/enduser/widgets/dialog.error.dart';
-import 'package:fridayonline/homepage/splashscreen.dart';
+import 'package:appfridayecommerce/enduser/models/reviews/pending.model.dart';
+import 'package:appfridayecommerce/enduser/models/reviews/reviewed.mode.dart';
+import 'package:appfridayecommerce/enduser/models/showproduct/review.model.dart';
+import 'package:appfridayecommerce/enduser/services/review%20/review.service.dart';
+import 'package:appfridayecommerce/enduser/services/showproduct/showproduct.sku.service.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.error.dart';
+import 'package:appfridayecommerce/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

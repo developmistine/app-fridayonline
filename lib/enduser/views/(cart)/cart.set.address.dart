@@ -1,17 +1,16 @@
 import 'dart:convert';
 
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/models/address/address.model.dart';
-import 'package:fridayonline/enduser/services/address/adress.service.dart';
-import 'package:fridayonline/enduser/views/(address)/search.address.dart';
-import 'package:fridayonline/enduser/widgets/dialog.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_loading_theme.dart';
-import 'package:fridayonline/homepage/theme/formatter_text.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
-import 'package:fridayonline/service/address/addresssearch.dart';
-import 'package:fridayonline/service/validators.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/models/address/address.model.dart';
+import 'package:appfridayecommerce/enduser/services/address/adress.service.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/views/(address)/search.address.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/preferrence.dart';
+import 'package:appfridayecommerce/service/validators.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -355,7 +354,7 @@ class _EndUserNewAddressState extends State<EndUserSetAddress> {
                                                   side: BorderSide(
                                                       color: labelAddress ==
                                                               'ที่ทำงาน'
-                                                          ? theme_color_df
+                                                          ? themeColorDefault
                                                           : Colors.transparent),
                                                   borderRadius:
                                                       BorderRadius.circular(2)),
@@ -369,7 +368,7 @@ class _EndUserNewAddressState extends State<EndUserSetAddress> {
                                             style: TextStyle(
                                                 color:
                                                     labelAddress == 'ที่ทำงาน'
-                                                        ? theme_color_df
+                                                        ? themeColorDefault
                                                         : Colors.black,
                                                 fontSize: 13),
                                           )),
@@ -390,7 +389,7 @@ class _EndUserNewAddressState extends State<EndUserSetAddress> {
                                                   side: BorderSide(
                                                       color: labelAddress ==
                                                               'บ้าน'
-                                                          ? theme_color_df
+                                                          ? themeColorDefault
                                                           : Colors.transparent),
                                                   borderRadius:
                                                       BorderRadius.circular(2)),
@@ -403,7 +402,7 @@ class _EndUserNewAddressState extends State<EndUserSetAddress> {
                                             'บ้าน',
                                             style: TextStyle(
                                                 color: labelAddress == 'บ้าน'
-                                                    ? theme_color_df
+                                                    ? themeColorDefault
                                                     : Colors.black,
                                                 fontSize: 13),
                                           )),
@@ -430,7 +429,7 @@ class _EndUserNewAddressState extends State<EndUserSetAddress> {
                                 FlutterSwitch(
                                   inactiveColor:
                                       const Color.fromRGBO(196, 196, 196, 1),
-                                  activeColor: theme_color_df,
+                                  activeColor: themeColorDefault,
                                   activeTextColor: Colors.white,
                                   activeTextFontWeight: FontWeight.normal,
                                   inactiveTextFontWeight: FontWeight.normal,
@@ -489,7 +488,7 @@ class _EndUserNewAddressState extends State<EndUserSetAddress> {
                             height: 40,
                             child: OutlinedButton(
                                 style: OutlinedButton.styleFrom(
-                                    side: BorderSide(color: theme_color_df),
+                                    side: BorderSide(color: themeColorDefault),
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(4))),
@@ -498,7 +497,7 @@ class _EndUserNewAddressState extends State<EndUserSetAddress> {
                                 },
                                 child: Text(
                                   'ลบที่อยู่',
-                                  style: TextStyle(color: theme_color_df),
+                                  style: TextStyle(color: themeColorDefault),
                                 )),
                           )),
                           const SizedBox(
@@ -554,7 +553,7 @@ class _EndUserNewAddressState extends State<EndUserSetAddress> {
                     child: Text(
                       'ตกลง',
                       style: GoogleFonts.notoSansThaiLooped(
-                          color: theme_color_df, fontSize: 14),
+                          color: themeColorDefault, fontSize: 14),
                     ),
                   ),
                 )
@@ -700,7 +699,7 @@ class _EndUserNewAddressState extends State<EndUserSetAddress> {
                           child: Text(
                             'ลบ',
                             style: GoogleFonts.notoSansThaiLooped(
-                                color: theme_color_df, fontSize: 14),
+                                color: themeColorDefault, fontSize: 14),
                           ),
                         ),
                       ),
@@ -719,7 +718,7 @@ class _EndUserNewAddressState extends State<EndUserSetAddress> {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
             elevation: 0,
-            backgroundColor: theme_color_df,
+            backgroundColor: themeColorDefault,
             foregroundColor: Colors.white,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(4))),

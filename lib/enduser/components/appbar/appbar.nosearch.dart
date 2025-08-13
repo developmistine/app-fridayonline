@@ -1,9 +1,9 @@
-import 'package:fridayonline/enduser/controller/cart.ctr.dart';
-import 'package:fridayonline/enduser/controller/chat.ctr.dart';
-import 'package:fridayonline/enduser/controller/track.ctr.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.main.dart';
-import 'package:fridayonline/enduser/views/(chat)/chat.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/chat.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/track.ctr.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.main.dart';
+import 'package:appfridayecommerce/enduser/views/(chat)/chat.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -32,7 +32,7 @@ appBarNoSearchEndUser(String titles, {String? page}) {
                   },
                   child: Icon(
                     Icons.arrow_back_rounded,
-                    color: theme_color_df,
+                    color: themeColorDefault,
                   ),
                 ),
           centerTitle: true,
@@ -66,7 +66,7 @@ appBarNoSearchEndUser(String titles, {String? page}) {
                           );
                   }),
                   badgeStyle: badges.BadgeStyle(
-                      badgeColor: theme_color_df,
+                      badgeColor: themeColorDefault,
                       padding: const EdgeInsets.all(5)),
                   child: IconButton(
                     highlightColor: Colors.transparent,
@@ -96,7 +96,7 @@ appBarNoSearchEndUser(String titles, {String? page}) {
                     );
                   }),
                   badgeStyle: badges.BadgeStyle(
-                      badgeColor: theme_color_df,
+                      badgeColor: themeColorDefault,
                       padding: const EdgeInsets.all(5)),
                   child: IconButton(
                     padding: const EdgeInsets.only(bottom: 12, top: 5),

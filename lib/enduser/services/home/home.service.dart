@@ -1,20 +1,20 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:fridayonline/enduser/models/home/hom.mall.model.dart';
-import 'package:fridayonline/enduser/models/home/home.banner.model.dart';
-import 'package:fridayonline/enduser/models/home/home.brands.model.dart';
-import 'package:fridayonline/enduser/models/home/home.content.model.dart';
-import 'package:fridayonline/enduser/models/home/home.popup.model.dart';
-import 'package:fridayonline/enduser/models/home/home.recommend.dart';
-import 'package:fridayonline/enduser/models/home/home.short.model.dart';
-import 'package:fridayonline/enduser/models/home/home.topsales.model.dart';
-import 'package:fridayonline/enduser/models/home/home.vouchers.model.dart';
-import 'package:fridayonline/enduser/utils/auth_fetch.dart';
+import 'package:appfridayecommerce/enduser/models/home/hom.mall.model.dart';
+import 'package:appfridayecommerce/enduser/models/home/home.banner.model.dart';
+import 'package:appfridayecommerce/enduser/models/home/home.brands.model.dart';
+import 'package:appfridayecommerce/enduser/models/home/home.content.model.dart';
+import 'package:appfridayecommerce/enduser/models/home/home.popup.model.dart';
+import 'package:appfridayecommerce/enduser/models/home/home.recommend.dart';
+import 'package:appfridayecommerce/enduser/models/home/home.short.model.dart';
+import 'package:appfridayecommerce/enduser/models/home/home.topsales.model.dart';
+import 'package:appfridayecommerce/enduser/models/home/home.vouchers.model.dart';
+import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
 
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
-import 'package:fridayonline/service/pathapi.dart';
+import 'package:appfridayecommerce/preferrence.dart';
+import 'package:appfridayecommerce/print.dart';
+import 'package:appfridayecommerce/service/pathapi.dart';
 
 Future<HomeContent?> fetchHomeContentService(contentType) async {
   var url = Uri.parse("${b2c_api_url}b2c/api/v1/home/content");

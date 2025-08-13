@@ -1,14 +1,14 @@
 import 'dart:io';
 
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-// import 'package:fridayonline/enduser/views/(profile)/edit.birthday.dart';
-import 'package:fridayonline/enduser/views/(profile)/edit.email.dart';
-import 'package:fridayonline/enduser/views/(profile)/edit.gender.dart';
-import 'package:fridayonline/enduser/views/(profile)/edit.telphoneNum.dart';
-import 'package:fridayonline/enduser/views/(profile)/edit.user.dart';
-import 'package:fridayonline/enduser/widgets/dialog.dart';
-import 'package:fridayonline/homepage/theme/formatter_text.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+// import 'package:appfridayecommerce/enduser/views/(profile)/edit.birthday.dart';
+import 'package:appfridayecommerce/enduser/views/(profile)/edit.email.dart';
+import 'package:appfridayecommerce/enduser/views/(profile)/edit.gender.dart';
+import 'package:appfridayecommerce/enduser/views/(profile)/edit.telphoneNum.dart';
+import 'package:appfridayecommerce/enduser/views/(profile)/edit.user.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -87,7 +87,7 @@ class _EditProfileState extends State<EditProfile> {
                             icon: const Icon(Icons.close_sharp)),
                         ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                                backgroundColor: theme_color_df,
+                                backgroundColor: themeColorDefault,
                                 elevation: 0,
                                 shape: const BeveledRectangleBorder(
                                     borderRadius:
@@ -289,7 +289,8 @@ class _EditProfileState extends State<EditProfile> {
                       child: Container(
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          border: Border.all(color: theme_color_df, width: 1),
+                          border:
+                              Border.all(color: themeColorDefault, width: 1),
                         ),
                         child: ClipOval(
                           child: Stack(

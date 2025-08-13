@@ -1,17 +1,17 @@
 import 'dart:async';
 
-import 'package:fridayonline/enduser/components/appbar/appbar.nosearch.dart';
-import 'package:fridayonline/enduser/components/shimmer/shimmer.product.dart';
-import 'package:fridayonline/enduser/components/showproduct/nodata.dart';
-// import 'package:fridayonline/enduser/components/showproduct/nodata.dart';
-import 'package:fridayonline/enduser/components/showproduct/showproduct.category.dart';
-import 'package:fridayonline/enduser/controller/brand.ctr.dart';
-import 'package:fridayonline/enduser/controller/category.ctr.dart';
-import 'package:fridayonline/enduser/controller/showproduct.category.ctr.dart';
-import 'package:fridayonline/enduser/controller/track.ctr.dart';
-import 'package:fridayonline/enduser/widgets/arrow_totop.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/safearea.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.nosearch.dart';
+import 'package:appfridayecommerce/enduser/components/shimmer/shimmer.product.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/nodata.dart';
+// import 'package:appfridayecommerce/enduser/components/showproduct/nodata.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/showproduct.category.dart';
+import 'package:appfridayecommerce/enduser/controller/brand.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/category.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/showproduct.category.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/track.ctr.dart';
+import 'package:appfridayecommerce/enduser/widgets/arrow_totop.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/safearea.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -345,7 +345,7 @@ class _SubCategoryState extends State<SubCategory> {
                                                                     .activeCat
                                                                     .value ==
                                                                 index
-                                                            ? theme_color_df
+                                                            ? themeColorDefault
                                                             : Colors
                                                                 .grey.shade300,
                                                         width: 0.5)),
@@ -385,7 +385,7 @@ class _SubCategoryState extends State<SubCategory> {
                                                                         .activeCat
                                                                         .value ==
                                                                     index
-                                                                ? theme_color_df
+                                                                ? themeColorDefault
                                                                 : Colors.black,
                                                             fontSize: 11,
                                                             height: 1.2),
@@ -495,7 +495,7 @@ class _SubCategoryState extends State<SubCategory> {
                                                           style: GoogleFonts
                                                               .notoSansThaiLooped(
                                                                   color:
-                                                                      theme_color_df,
+                                                                      themeColorDefault,
                                                                   fontSize: 12,
                                                                   fontWeight:
                                                                       FontWeight
@@ -595,7 +595,7 @@ class _SubCategoryState extends State<SubCategory> {
                                       bottom: BorderSide(
                                           color: categoryCtr.activeTab.value ==
                                                   index
-                                              ? theme_color_df
+                                              ? themeColorDefault
                                               : Colors.grey.shade300))),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -611,7 +611,7 @@ class _SubCategoryState extends State<SubCategory> {
                                                 : FontWeight.normal,
                                         color:
                                             categoryCtr.activeTab.value == index
-                                                ? theme_color_df
+                                                ? themeColorDefault
                                                 : Colors.grey.shade700),
                                   ),
                                   Obx(() {
@@ -622,12 +622,12 @@ class _SubCategoryState extends State<SubCategory> {
                                           return Icon(
                                               Icons.arrow_upward_outlined,
                                               size: 12,
-                                              color: theme_color_df);
+                                              color: themeColorDefault);
                                         }
                                         return Icon(
                                             Icons.arrow_downward_outlined,
                                             size: 12,
-                                            color: theme_color_df);
+                                            color: themeColorDefault);
                                       }
                                     }
                                     return const SizedBox();

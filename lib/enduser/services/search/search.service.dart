@@ -1,13 +1,13 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:fridayonline/enduser/models/search/search.suggest.model.dart';
-import 'package:fridayonline/enduser/models/search/serach.hint.model.dart';
-import 'package:fridayonline/enduser/models/showproduct/product.category.model.dart';
-import 'package:fridayonline/enduser/utils/auth_fetch.dart';
+import 'package:appfridayecommerce/enduser/models/search/search.suggest.model.dart';
+import 'package:appfridayecommerce/enduser/models/search/serach.hint.model.dart';
+import 'package:appfridayecommerce/enduser/models/showproduct/product.category.model.dart';
+import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
 
-import 'package:fridayonline/model/set_data/set_data.dart';
-import 'package:fridayonline/service/pathapi.dart';
+import 'package:appfridayecommerce/preferrence.dart';
+import 'package:appfridayecommerce/service/pathapi.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<SearchHint?> searchHintService(String keyword) async {

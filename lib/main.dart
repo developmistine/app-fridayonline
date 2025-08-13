@@ -1,33 +1,31 @@
 import 'dart:async';
 import 'dart:io';
-import 'package:fridayonline/enduser/controller/chat.ctr.dart';
-import 'package:fridayonline/enduser/controller/track.ctr.dart';
-import 'package:fridayonline/enduser/services/track/track.service.dart';
-import 'package:fridayonline/enduser/utils/branch_manager_main.dart';
-import 'package:fridayonline/enduser/utils/logger.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/splashscreen.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
-import 'package:fridayonline/push/firebase_message_service.dart';
-import 'package:fridayonline/router.dart';
-import 'package:fridayonline/theme.dart';
+import 'package:appfridayecommerce/enduser/controller/chat.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/track.ctr.dart';
+import 'package:appfridayecommerce/enduser/services/track/track.service.dart';
+import 'package:appfridayecommerce/enduser/utils/branch_manager_main.dart';
+import 'package:appfridayecommerce/enduser/utils/logger.dart';
+import 'package:appfridayecommerce/preferrence.dart';
+import 'package:appfridayecommerce/print.dart';
+import 'package:appfridayecommerce/push/firebase_message_service.dart';
+import 'package:appfridayecommerce/push/huawei_notification.dart';
+import 'package:appfridayecommerce/push/local_notification_service.dart';
+import 'package:appfridayecommerce/router.dart';
+import 'package:appfridayecommerce/splashscreen.dart';
+import 'package:appfridayecommerce/theme.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 
 import 'package:flutter/material.dart';
-import 'package:fridayonline/binding/root_binging.dart';
-import 'package:fridayonline/service/languages/multi_languages.dart';
+import 'package:appfridayecommerce/binding/root_binging.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_branch_sdk/flutter_branch_sdk.dart';
 import 'package:get/get.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:huawei_push/huawei_push.dart' as huawei;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uuid/uuid.dart';
-import 'homepage/push_notification/huawei_notification.dart';
-import 'homepage/push_notification/local_notification_service.dart';
 
 // Firebase push notification
 @pragma('vm:entry-point')
@@ -183,21 +181,6 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   }
 
   @override
-  void didChangeDependencies() async {
-    super.didChangeDependencies();
-    final multiLanguages = MultiLanguages();
-    final localeKey = await multiLanguages.readLocaleKey();
-    if (localeKey == 'my') {
-      _locale = const Locale("my");
-    } else if (localeKey == 'km') {
-      _locale = const Locale("km");
-    } else {
-      _locale = const Locale.fromSubtags(languageCode: "th");
-    }
-    setState(() {});
-  }
-
-  @override
   void dispose() {
     BranchManagerMain.disposePending();
     WidgetsBinding.instance.removeObserver(this);
@@ -207,26 +190,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      navigatorKey: navigatorKey, // เพิ่ม navigator key
-      onDispose: () async {
-        // Cleanup when app is disposed
-      },
-      onInit: () async {
-        // App initialization logic
-      },
+      navigatorKey: navigatorKey,
       navigatorObservers: [GetRouteLogger()],
-      supportedLocales: const [
-        Locale("my"),
-        Locale("km"),
-        Locale.fromSubtags(languageCode: "th")
-      ],
-      localizationsDelegates: const [
-        MultiLanguages.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ],
-      locale: _locale,
       localeListResolutionCallback: (locale, supportedLocales) {
         for (var supportedLocaleLanguage in supportedLocales) {
           if (supportedLocaleLanguage.languageCode == _locale.languageCode &&

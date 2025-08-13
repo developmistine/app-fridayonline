@@ -4,7 +4,7 @@
 
 import 'dart:convert';
 
-import 'package:fridayonline/enduser/models/showproduct/product.sku.model.dart';
+import 'package:appfridayecommerce/enduser/models/showproduct/product.sku.model.dart';
 
 TierVariations tierVariationsFromJson(String str) =>
     TierVariations.fromJson(json.decode(str));

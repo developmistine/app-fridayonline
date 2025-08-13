@@ -1,17 +1,17 @@
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/components/home/checkin.dart';
-import 'package:fridayonline/enduser/components/showproduct/nodata.dart';
-import 'package:fridayonline/enduser/controller/coint.ctr.dart';
-import 'package:fridayonline/enduser/controller/profile.ctr.dart';
-import 'package:fridayonline/enduser/models/fair/coininfo.model.dart';
-import 'package:fridayonline/enduser/services/checkin/checkin.service.dart';
-import 'package:fridayonline/enduser/views/(profile)/friday.coin.more.dart';
-import 'package:fridayonline/enduser/widgets/seeall.button.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/homepage/webview/webview_full_screen.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
-import 'package:fridayonline/service/pathapi.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/components/home/checkin.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/nodata.dart';
+import 'package:appfridayecommerce/enduser/components/webview/webview_full.dart';
+import 'package:appfridayecommerce/enduser/controller/coint.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/profile.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/fair/coininfo.model.dart';
+import 'package:appfridayecommerce/enduser/services/checkin/checkin.service.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/views/(profile)/friday.coin.more.dart';
+import 'package:appfridayecommerce/enduser/widgets/seeall.button.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/preferrence.dart';
+import 'package:appfridayecommerce/service/pathapi.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -380,8 +380,8 @@ class FridayCoin extends StatelessWidget {
                           Get.back();
                         },
                         style: OutlinedButton.styleFrom(
-                            foregroundColor: theme_color_df,
-                            side: BorderSide(color: theme_color_df),
+                            foregroundColor: themeColorDefault,
+                            side: BorderSide(color: themeColorDefault),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8))),
                         child: Text('ปิดหน้าต่าง',

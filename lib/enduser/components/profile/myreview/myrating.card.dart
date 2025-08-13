@@ -1,8 +1,8 @@
-import 'package:fridayonline/enduser/components/viewer/fullscreen.image.dart';
-import 'package:fridayonline/enduser/controller/review.ctr.dart';
-import 'package:fridayonline/enduser/controller/showproduct.sku.ctr.dart';
-import 'package:fridayonline/homepage/page_showproduct/product_media.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/viewer/fullscreen.image.dart';
+import 'package:appfridayecommerce/enduser/components/viewer/product.media.dart';
+import 'package:appfridayecommerce/enduser/controller/review.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/showproduct.sku.ctr.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
@@ -184,7 +184,7 @@ Widget myRatingCard() {
                           margin: const EdgeInsets.only(top: 4),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(4),
-                            color: theme_color_df.withOpacity(0.1),
+                            color: themeColorDefault.withOpacity(0.1),
                           ),
                           padding: const EdgeInsets.all(4),
                           child: Column(

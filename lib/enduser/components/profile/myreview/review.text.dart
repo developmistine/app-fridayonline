@@ -1,4 +1,3 @@
-import 'package:fridayonline/homepage/theme/theme_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -41,7 +40,7 @@ class _TextReviewWidgetState extends State<TextReviewWidget> {
             height: 120,
             child: Text(
               '$textLength / ${widget.maxLength}',
-              style: TextStyle(fontSize: 12, color: grayTextShade700),
+              style: TextStyle(fontSize: 12, color: Colors.grey.shade700),
             ),
           ),
           border: OutlineInputBorder(

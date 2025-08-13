@@ -1,12 +1,12 @@
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/widgets/dialog.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:timeline_tile/timeline_tile.dart';
-import 'package:fridayonline/enduser/models/orders/orderdetail.model.dart'
+import 'package:appfridayecommerce/enduser/models/orders/orderdetail.model.dart'
     as shipping;
 
 class ShippingDetail extends StatelessWidget {
@@ -20,7 +20,7 @@ class ShippingDetail extends StatelessWidget {
     Color getStatusColor(String status) {
       switch (status) {
         case 'b':
-          return theme_color_df;
+          return themeColorDefault;
         case 'y':
           return Colors.amber;
         case 'g':
@@ -28,7 +28,7 @@ class ShippingDetail extends StatelessWidget {
         case 'r':
           return const Color.fromARGB(255, 221, 60, 32);
         default:
-          return theme_color_df;
+          return themeColorDefault;
       }
     }
 
@@ -98,7 +98,7 @@ class ShippingDetail extends StatelessWidget {
                                       ? IndicatorStyle(
                                           indicator: ClipOval(
                                             child: Container(
-                                              color: theme_color_df,
+                                              color: themeColorDefault,
                                               child: CachedNetworkImage(
                                                 imageUrl: step.image,
                                               ),
@@ -106,16 +106,16 @@ class ShippingDetail extends StatelessWidget {
                                           ),
                                           width: 32,
                                           height: 32,
-                                          color: theme_color_df,
+                                          color: themeColorDefault,
                                         )
                                       : IndicatorStyle(
                                           width: 8,
                                           height: 8,
-                                          color: theme_color_df,
+                                          color: themeColorDefault,
                                         ),
-                                  beforeLineStyle: LineStyle(
+                                  beforeLineStyle: const LineStyle(
                                     thickness: 2,
-                                    color: theme_color_pastel1,
+                                    color: Color.fromARGB(255, 228, 248, 255),
                                   ),
                                   endChild: Padding(
                                     padding: const EdgeInsets.all(4),
@@ -215,7 +215,7 @@ class ShippingDetail extends StatelessWidget {
                               indicatorStyle: IndicatorStyle(
                                   width: 8,
                                   color: index == 0
-                                      ? theme_color_df
+                                      ? themeColorDefault
                                       : Colors.grey[400]!),
                               beforeLineStyle: LineStyle(
                                   thickness: 2, color: Colors.grey[300]!),
@@ -232,7 +232,7 @@ class ShippingDetail extends StatelessWidget {
                                   style: TextStyle(
                                       fontSize: 14,
                                       color: index == 0
-                                          ? theme_color_df
+                                          ? themeColorDefault
                                           : Colors.grey[400]!),
                                 ),
                               ),

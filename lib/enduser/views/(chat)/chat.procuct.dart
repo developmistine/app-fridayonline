@@ -1,8 +1,8 @@
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/components/showproduct/nodata.dart';
-import 'package:fridayonline/enduser/models/brands/shopfilter.model.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/nodata.dart';
+import 'package:appfridayecommerce/enduser/models/brands/shopfilter.model.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -190,7 +190,8 @@ class _ChatProductsState extends State<ChatProducts> {
                                             OutlinedButton(
                                                 style: OutlinedButton.styleFrom(
                                                     side: BorderSide(
-                                                        color: theme_color_df),
+                                                        color:
+                                                            themeColorDefault),
                                                     shape:
                                                         RoundedRectangleBorder(
                                                             borderRadius:
@@ -207,7 +208,7 @@ class _ChatProductsState extends State<ChatProducts> {
                                                           fontWeight:
                                                               FontWeight.bold,
                                                           color:
-                                                              theme_color_df),
+                                                              themeColorDefault),
                                                 ))
                                           ],
                                         ),
@@ -224,7 +225,8 @@ class _ChatProductsState extends State<ChatProducts> {
                                   child: Center(
                                     child: Text(
                                       "กำลังโหลด...",
-                                      style: TextStyle(color: theme_color_df),
+                                      style:
+                                          TextStyle(color: themeColorDefault),
                                     ),
                                   ),
                                 )

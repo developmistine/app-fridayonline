@@ -1,18 +1,18 @@
-import 'package:fridayonline/enduser/components/home/loadmore.enduser.dart';
-import 'package:fridayonline/enduser/components/profile/banner.special.project.dart';
-import 'package:fridayonline/enduser/components/profile/enduser.profile.dart';
-import 'package:fridayonline/enduser/components/profile/menu.section.dart';
-import 'package:fridayonline/enduser/controller/cart.ctr.dart';
-import 'package:fridayonline/enduser/controller/chat.ctr.dart';
-import 'package:fridayonline/enduser/controller/enduser.home.ctr.dart';
-import 'package:fridayonline/enduser/controller/enduser.signin.ctr.dart';
-import 'package:fridayonline/enduser/controller/order.ctr.dart';
-import 'package:fridayonline/enduser/controller/profile.ctr.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.main.dart';
-import 'package:fridayonline/enduser/views/(chat)/chat.dart';
-import 'package:fridayonline/enduser/views/(profile)/settings.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
+import 'package:appfridayecommerce/enduser/components/home/loadmore.enduser.dart';
+import 'package:appfridayecommerce/enduser/components/profile/banner.special.project.dart';
+import 'package:appfridayecommerce/enduser/components/profile/enduser.profile.dart';
+import 'package:appfridayecommerce/enduser/components/profile/menu.section.dart';
+import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/chat.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/enduser.home.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/enduser.signin.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/order.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/profile.ctr.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.main.dart';
+import 'package:appfridayecommerce/enduser/views/(chat)/chat.dart';
+import 'package:appfridayecommerce/enduser/views/(profile)/settings.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/preferrence.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -178,9 +178,9 @@ class _EndUserProfileState extends State<EndUserProfile> {
                             decoration: BoxDecoration(
                                 gradient: LinearGradient(colors: [
                                   Colors.blue,
-                                  theme_color_df.withOpacity(1),
-                                  theme_color_df.withOpacity(1),
-                                  theme_color_df.withOpacity(0.8),
+                                  themeColorDefault.withOpacity(1),
+                                  themeColorDefault.withOpacity(1),
+                                  themeColorDefault.withOpacity(0.8),
                                 ]),
                                 borderRadius: const BorderRadius.only(
                                   topRight: Radius.circular(20),
@@ -237,9 +237,9 @@ class _EndUserProfileState extends State<EndUserProfile> {
                               decoration: BoxDecoration(
                                   gradient: LinearGradient(colors: [
                                     Colors.blue,
-                                    theme_color_df.withOpacity(1),
-                                    theme_color_df.withOpacity(1),
-                                    theme_color_df.withOpacity(0.8),
+                                    themeColorDefault.withOpacity(1),
+                                    themeColorDefault.withOpacity(1),
+                                    themeColorDefault.withOpacity(0.8),
                                   ]),
                                   borderRadius: const BorderRadius.only(
                                     topRight: Radius.circular(20),
@@ -316,7 +316,7 @@ class _EndUserProfileState extends State<EndUserProfile> {
                                         );
                                 }),
                                 badgeStyle: badges.BadgeStyle(
-                                    badgeColor: theme_color_df,
+                                    badgeColor: themeColorDefault,
                                     padding: const EdgeInsets.all(5)),
                                 child: IconButton(
                                   highlightColor: Colors.transparent,
@@ -356,7 +356,7 @@ class _EndUserProfileState extends State<EndUserProfile> {
                                     );
                                   }),
                                   badgeStyle: badges.BadgeStyle(
-                                      badgeColor: theme_color_df,
+                                      badgeColor: themeColorDefault,
                                       padding: const EdgeInsets.all(5)),
                                   child: IconButton(
                                     padding: const EdgeInsets.only(

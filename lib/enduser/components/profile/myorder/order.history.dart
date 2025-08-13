@@ -1,20 +1,20 @@
-import 'package:fridayonline/enduser/controller/brand.ctr.dart';
-import 'package:fridayonline/enduser/controller/myorder.ctr.dart';
-import 'package:fridayonline/enduser/controller/order.ctr.dart';
-import 'package:fridayonline/enduser/controller/review.ctr.dart';
-import 'package:fridayonline/enduser/models/orders/orderlist.model.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.sumary.dart';
-import 'package:fridayonline/enduser/views/(order)/order.checkout.dart';
-import 'package:fridayonline/enduser/views/(order)/order.detail.dart';
-import 'package:fridayonline/enduser/views/(profile)/edit.rating.dart';
-import 'package:fridayonline/enduser/views/(profile)/myreview.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
+import 'package:appfridayecommerce/enduser/controller/brand.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/myorder.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/order.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/review.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/orders/orderlist.model.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.sumary.dart';
+import 'package:appfridayecommerce/enduser/views/(order)/order.checkout.dart';
+import 'package:appfridayecommerce/enduser/views/(order)/order.detail.dart';
+import 'package:appfridayecommerce/enduser/views/(profile)/edit.rating.dart';
+import 'package:appfridayecommerce/enduser/views/(profile)/myreview.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/preferrence.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:fridayonline/enduser/models/orders/orderlist.checkout.model.dart'
+import 'package:appfridayecommerce/enduser/models/orders/orderlist.checkout.model.dart'
     as checkout;
 import 'package:google_fonts/google_fonts.dart';
 
@@ -47,7 +47,7 @@ class _OrderHistoryCardState extends State<OrderHistoryCard>
             if (widget.data[index].reviewStatus == 1)
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: theme_color_df,
+                  backgroundColor: themeColorDefault,
                   foregroundColor: Colors.white,
                   padding:
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
@@ -66,7 +66,7 @@ class _OrderHistoryCardState extends State<OrderHistoryCard>
             else if (widget.data[index].reviewStatus == 2)
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: theme_color_df,
+                  backgroundColor: themeColorDefault,
                   foregroundColor: Colors.white,
                   padding:
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
@@ -97,20 +97,20 @@ class _OrderHistoryCardState extends State<OrderHistoryCard>
   ElevatedButton buttonDetail(String page, int index) {
     return ElevatedButton(
       style: ButtonStyle(
-        backgroundColor: WidgetStateProperty.all(Colors.white),
-        padding: WidgetStateProperty.all(
+        backgroundColor: MaterialStateProperty.all(Colors.white),
+        padding: MaterialStateProperty.all(
           const EdgeInsets.symmetric(vertical: 4, horizontal: 16),
         ),
-        shape: WidgetStateProperty.all(
+        shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
             side: BorderSide(
-              color: grayTextShade700,
+              color: Colors.grey.shade700,
               width: 1,
             ),
           ),
         ),
-        shadowColor: WidgetStateProperty.all(Colors.transparent),
+        shadowColor: MaterialStateProperty.all(Colors.transparent),
       ),
       onPressed: () async {
         if (page == 'checkout') {
@@ -136,7 +136,7 @@ class _OrderHistoryCardState extends State<OrderHistoryCard>
   Color _getStatusColor(String status) {
     switch (status) {
       case 'b':
-        return theme_color_df;
+        return themeColorDefault;
       case 'y':
         return Colors.amber;
       case 'g':
@@ -144,7 +144,7 @@ class _OrderHistoryCardState extends State<OrderHistoryCard>
       case 'r':
         return const Color.fromARGB(255, 221, 60, 32);
       default:
-        return theme_color_df;
+        return themeColorDefault;
     }
   }
 
@@ -355,13 +355,15 @@ class _OrderHistoryCardState extends State<OrderHistoryCard>
                                                 Text(
                                                   group.itemName,
                                                   style: TextStyle(
-                                                      color: grayTextShade700,
+                                                      color:
+                                                          Colors.grey.shade700,
                                                       fontSize: 12),
                                                 ),
                                                 Text(
                                                   "x ${group.amount}",
                                                   style: TextStyle(
-                                                      color: grayTextShade700,
+                                                      color:
+                                                          Colors.grey.shade700,
                                                       fontSize: 12),
                                                 ),
                                               ],
@@ -445,7 +447,7 @@ class _OrderHistoryCardState extends State<OrderHistoryCard>
                 padding: const EdgeInsets.only(bottom: 18.0),
                 child: Text(
                   'กำลังโหลด...',
-                  style: TextStyle(color: theme_color_df),
+                  style: TextStyle(color: themeColorDefault),
                 ),
               );
             }
@@ -481,20 +483,20 @@ class _OrderHistoryCheckOutCardState extends State<OrderHistoryCheckOutCard>
   ElevatedButton buttonDetail(int index) {
     return ElevatedButton(
       style: ButtonStyle(
-        backgroundColor: WidgetStateProperty.all(Colors.white),
-        padding: WidgetStateProperty.all(
+        backgroundColor: MaterialStateProperty.all(Colors.white),
+        padding: MaterialStateProperty.all(
           const EdgeInsets.symmetric(vertical: 4, horizontal: 16),
         ),
-        shape: WidgetStateProperty.all(
+        shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
             side: BorderSide(
-              color: grayTextShade700,
+              color: Colors.grey.shade700,
               width: 1,
             ),
           ),
         ),
-        shadowColor: WidgetStateProperty.all(Colors.transparent),
+        shadowColor: MaterialStateProperty.all(Colors.transparent),
       ),
       onPressed: () async {
         orderCtr.fetchOrderDetailCheckOut(widget.data[index].orderId);
@@ -510,7 +512,7 @@ class _OrderHistoryCheckOutCardState extends State<OrderHistoryCheckOutCard>
   Color _getStatusColor(String status) {
     switch (status) {
       case 'b':
-        return theme_color_df;
+        return themeColorDefault;
       case 'y':
         return Colors.amber;
       case 'g':
@@ -518,7 +520,7 @@ class _OrderHistoryCheckOutCardState extends State<OrderHistoryCheckOutCard>
       case 'r':
         return const Color.fromARGB(255, 221, 60, 32);
       default:
-        return theme_color_df;
+        return themeColorDefault;
     }
   }
 
@@ -759,15 +761,17 @@ class _OrderHistoryCheckOutCardState extends State<OrderHistoryCheckOutCard>
                                                           Text(
                                                             group.itemName,
                                                             style: TextStyle(
-                                                                color:
-                                                                    grayTextShade700,
+                                                                color: Colors
+                                                                    .grey
+                                                                    .shade700,
                                                                 fontSize: 12),
                                                           ),
                                                           Text(
                                                             "x ${group.amount}",
                                                             style: TextStyle(
-                                                                color:
-                                                                    grayTextShade700,
+                                                                color: Colors
+                                                                    .grey
+                                                                    .shade700,
                                                                 fontSize: 12),
                                                           ),
                                                         ],
@@ -854,7 +858,7 @@ class _OrderHistoryCheckOutCardState extends State<OrderHistoryCheckOutCard>
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 14,
-                                      color: theme_color_df),
+                                      color: themeColorDefault),
                                 ),
                               ],
                             ),
@@ -893,7 +897,7 @@ class _OrderHistoryCheckOutCardState extends State<OrderHistoryCheckOutCard>
                                     },
                                     style: ElevatedButton.styleFrom(
                                         elevation: 0,
-                                        backgroundColor: theme_color_df),
+                                        backgroundColor: themeColorDefault),
                                     child: const Text('ชำระเงินทันที'))
                               ]),
                         ),
@@ -910,7 +914,7 @@ class _OrderHistoryCheckOutCardState extends State<OrderHistoryCheckOutCard>
                 padding: const EdgeInsets.only(bottom: 18.0),
                 child: Text(
                   'กำลังโหลด...',
-                  style: TextStyle(color: theme_color_df),
+                  style: TextStyle(color: themeColorDefault),
                 ),
               );
             }

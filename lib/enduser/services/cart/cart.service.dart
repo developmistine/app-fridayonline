@@ -1,18 +1,18 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:fridayonline/enduser/controller/track.ctr.dart';
-import 'package:fridayonline/enduser/models/cart/cart.bundle.model.dart';
-import 'package:fridayonline/enduser/models/cart/cart.checkcon.model.dart';
-import 'package:fridayonline/enduser/models/cart/cart.checkout.dart';
-import 'package:fridayonline/enduser/models/cart/cart.checkout.input.dart';
-import 'package:fridayonline/enduser/models/cart/cart.update.input.dart';
-import 'package:fridayonline/enduser/models/cart/cart.update.output.dart';
-import 'package:fridayonline/enduser/models/cart/getcart.model.dart';
-import 'package:fridayonline/enduser/utils/auth_fetch.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
-import 'package:fridayonline/service/pathapi.dart';
+import 'package:appfridayecommerce/enduser/controller/track.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/cart/cart.bundle.model.dart';
+import 'package:appfridayecommerce/enduser/models/cart/cart.checkcon.model.dart';
+import 'package:appfridayecommerce/enduser/models/cart/cart.checkout.dart';
+import 'package:appfridayecommerce/enduser/models/cart/cart.checkout.input.dart';
+import 'package:appfridayecommerce/enduser/models/cart/cart.update.input.dart';
+import 'package:appfridayecommerce/enduser/models/cart/cart.update.output.dart';
+import 'package:appfridayecommerce/enduser/models/cart/getcart.model.dart';
+import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
+import 'package:appfridayecommerce/preferrence.dart';
+import 'package:appfridayecommerce/print.dart';
+import 'package:appfridayecommerce/service/pathapi.dart';
 import 'package:get/get.dart';
 
 Future<ResponseCart?> addToCartService(

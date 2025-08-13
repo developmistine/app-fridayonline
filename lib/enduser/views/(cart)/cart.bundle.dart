@@ -1,6 +1,6 @@
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/components/showproduct/showproduct.category.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/showproduct.category.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
@@ -115,7 +115,7 @@ class _BundleProductsState extends State<BundleProducts> {
                           child: Row(
                             children: [
                               CircleAvatar(
-                                backgroundColor: theme_color_df,
+                                backgroundColor: themeColorDefault,
                                 maxRadius: 12,
                                 child: const Icon(
                                   Icons.local_mall,

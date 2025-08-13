@@ -1,4 +1,4 @@
-# fridayonline
+# appfridayecommerce
 
 A new Flutter project.
 

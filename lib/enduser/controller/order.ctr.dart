@@ -1,12 +1,12 @@
-import 'package:fridayonline/enduser/controller/notify.ctr.dart';
-import 'package:fridayonline/enduser/models/notify/notify.model.dart';
-import 'package:fridayonline/enduser/models/orders/orderdetail.checkout.model.dart';
-import 'package:fridayonline/enduser/models/orders/orderdetail.model.dart';
-import 'package:fridayonline/enduser/models/orders/orderheader.model.dart';
-import 'package:fridayonline/enduser/models/orders/orderlist.checkout.model.dart';
-import 'package:fridayonline/enduser/models/orders/orderlist.model.dart';
-import 'package:fridayonline/enduser/services/notify/order.notify.service.dart';
-import 'package:fridayonline/enduser/services/orders/order.service.dart';
+import 'package:appfridayecommerce/enduser/controller/notify.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/notify/notify.model.dart';
+import 'package:appfridayecommerce/enduser/models/orders/orderdetail.checkout.model.dart';
+import 'package:appfridayecommerce/enduser/models/orders/orderdetail.model.dart';
+import 'package:appfridayecommerce/enduser/models/orders/orderheader.model.dart';
+import 'package:appfridayecommerce/enduser/models/orders/orderlist.checkout.model.dart';
+import 'package:appfridayecommerce/enduser/models/orders/orderlist.model.dart';
+import 'package:appfridayecommerce/enduser/services/notify/order.notify.service.dart';
+import 'package:appfridayecommerce/enduser/services/orders/order.service.dart';
 import 'package:get/get.dart';
 
 class OrderController extends GetxController {

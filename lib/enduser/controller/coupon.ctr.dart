@@ -1,7 +1,7 @@
-import 'package:fridayonline/enduser/models/cart/cart.update.output.dart';
-import 'package:fridayonline/enduser/models/cart/cart.update.input.dart'
+import 'package:appfridayecommerce/enduser/models/cart/cart.update.output.dart';
+import 'package:appfridayecommerce/enduser/models/cart/cart.update.input.dart'
     as update_input;
-import 'package:fridayonline/enduser/models/coupon/vouchers.recommend.model.dart';
+import 'package:appfridayecommerce/enduser/models/coupon/vouchers.recommend.model.dart';
 import 'package:get/get.dart';
 
 class EndUserCouponCartCtr extends GetxController {

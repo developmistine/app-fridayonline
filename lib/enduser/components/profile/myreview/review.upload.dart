@@ -1,9 +1,7 @@
 import 'dart:async';
 import 'dart:io' as io;
 
-import 'package:fridayonline/enduser/controller/review.ctr.dart';
-import 'package:fridayonline/homepage/dialogalert/customalertdialogs.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/controller/review.ctr.dart';
 import 'package:chewie/chewie.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/foundation.dart';
@@ -52,15 +50,9 @@ class _UploadReviewImageandVideoState extends State<UploadReviewImageandVideo> {
         setState(() {
           isLoadImg = false;
         });
-        WidgetsBinding.instance.addPostFrameCallback((_) {
-          showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return const CustomAlertDialogs(
-                  title: 'ฟรายเดย์',
-                  description: 'อัปโหลดรูปภาพได้ไม่เกิน 5 รูป',
-                );
-              }).then((value) => {result.clear()});
+        WidgetsBinding.instance.addPostFrameCallback((_) async {
+          Get.snackbar('ฟรายเดย์', 'อัปโหลดรูปภาพได้ไม่เกิน 5 รูป');
+          result.clear();
         });
       } else {
         final f = result
@@ -85,14 +77,7 @@ class _UploadReviewImageandVideoState extends State<UploadReviewImageandVideo> {
             });
           } else {
             WidgetsBinding.instance.addPostFrameCallback((_) {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return const CustomAlertDialogs(
-                      title: 'ฟรายเดย์',
-                      description: 'ไฟล์ภาพที่มีขนาดเกิน 5 MB จะถูกคัดออก');
-                },
-              );
+              Get.snackbar('ฟรายเดย์', 'ไฟล์ภาพที่มีขนาดเกิน 5 MB จะถูกคัดออก');
             });
           }
         }
@@ -156,14 +141,8 @@ class _UploadReviewImageandVideoState extends State<UploadReviewImageandVideo> {
         setState(() {});
         if (testLengthController.value.duration.inMinutes > 1) {
           WidgetsBinding.instance.addPostFrameCallback((_) async {
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return const CustomAlertDialogs(
-                    title: 'ฟรายเดย์',
-                    description: 'วิดีโอที่อัปโหลดต้องไม่เกิน 1 นาที');
-              },
-            );
+            Get.snackbar('ฟรายเดย์', 'วิดีโอที่อัปโหลดต้องไม่เกิน 1 นาที');
+
             await _disposeVideoController();
             setState(() {});
           });
@@ -171,11 +150,7 @@ class _UploadReviewImageandVideoState extends State<UploadReviewImageandVideo> {
         }
       }
     } catch (e) {
-      Get.dialog(CustomAlertDialogs(
-        title: 'ฟรายเดย์',
-        description: '$e',
-      ));
-
+      Get.snackbar('ฟรายเดย์', '$e');
       return;
     }
   }
@@ -251,8 +226,8 @@ class _UploadReviewImageandVideoState extends State<UploadReviewImageandVideo> {
                   onPressed: null,
                   child: Text(
                     '${_imageFileList.length}/5',
-                    style: TextStyle(
-                      color: theme_color_back1,
+                    style: const TextStyle(
+                      color: Color(0xFF515050),
                     ),
                   )),
             ),
@@ -284,7 +259,7 @@ class _UploadReviewImageandVideoState extends State<UploadReviewImageandVideo> {
                 radius: const Radius.circular(10),
                 dashPattern: const [6, 2],
                 strokeWidth: 0.5,
-                color: grayTextShade700,
+                color: Colors.grey.shade700,
                 child: Container(
                   padding: const EdgeInsets.all(12.0),
                   alignment: Alignment.center,
@@ -292,10 +267,11 @@ class _UploadReviewImageandVideoState extends State<UploadReviewImageandVideo> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(Icons.camera_alt_outlined,
-                          size: 28, color: grayTextShade700),
+                          size: 28, color: Colors.grey.shade700),
                       Text(
                         'รูปภาพ',
-                        style: TextStyle(fontSize: 12, color: grayTextShade700),
+                        style: TextStyle(
+                            fontSize: 12, color: Colors.grey.shade700),
                       ),
                     ],
                   ),
@@ -314,7 +290,7 @@ class _UploadReviewImageandVideoState extends State<UploadReviewImageandVideo> {
                 radius: const Radius.circular(10),
                 dashPattern: const [6, 2],
                 strokeWidth: 0.5,
-                color: grayTextShade700,
+                color: Colors.grey.shade700,
                 child: Container(
                   padding: const EdgeInsets.all(12.0),
                   alignment: Alignment.center,
@@ -322,10 +298,11 @@ class _UploadReviewImageandVideoState extends State<UploadReviewImageandVideo> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(Icons.videocam_outlined,
-                          size: 28, color: grayTextShade700),
+                          size: 28, color: Colors.grey.shade700),
                       Text(
                         'วิดีโอ',
-                        style: TextStyle(fontSize: 12, color: grayTextShade700),
+                        style: TextStyle(
+                            fontSize: 12, color: Colors.grey.shade700),
                       ),
                     ],
                   ),
@@ -350,7 +327,8 @@ class _UploadReviewImageandVideoState extends State<UploadReviewImageandVideo> {
               height: 70,
               decoration: BoxDecoration(
                   borderRadius: const BorderRadius.all(Radius.circular(8)),
-                  border: Border.all(color: grayText)),
+                  border: Border.all(
+                      color: const Color.fromARGB(255, 191, 191, 191))),
               child: Center(
                 child: Visibility(
                     visible: _controller != null,
@@ -453,7 +431,9 @@ class _UploadReviewImageandVideoState extends State<UploadReviewImageandVideo> {
                         decoration: BoxDecoration(
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(8)),
-                            border: Border.all(color: grayText)),
+                            border: Border.all(
+                                color:
+                                    const Color.fromARGB(255, 191, 191, 191))),
                         child: ClipRRect(
                             borderRadius: BorderRadius.circular(4),
                             child: Image.file(

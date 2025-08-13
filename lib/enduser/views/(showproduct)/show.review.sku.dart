@@ -1,8 +1,8 @@
-import 'package:fridayonline/enduser/components/appbar/appbar.nosearch.dart';
-import 'package:fridayonline/enduser/controller/review.ctr.dart';
-import 'package:fridayonline/enduser/views/(showproduct)/medias.review.dart';
-import 'package:fridayonline/enduser/views/(showproduct)/video.review.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.nosearch.dart';
+import 'package:appfridayecommerce/enduser/controller/review.ctr.dart';
+import 'package:appfridayecommerce/enduser/views/(showproduct)/medias.review.dart';
+import 'package:appfridayecommerce/enduser/views/(showproduct)/video.review.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -355,9 +355,9 @@ class _ShowReviewProductSkuState extends State<ShowReviewProductSku>
           constraints: const BoxConstraints(minWidth: 100),
           child: OutlinedButton(
               style: OutlinedButton.styleFrom(
-                  foregroundColor: theme_color_df,
+                  foregroundColor: themeColorDefault,
                   backgroundColor: Colors.white,
-                  side: BorderSide(color: theme_color_df),
+                  side: BorderSide(color: themeColorDefault),
                   padding:
                       const EdgeInsets.symmetric(vertical: 8, horizontal: 8)),
               onPressed: () {
@@ -431,7 +431,7 @@ class _ShowReviewProductSkuState extends State<ShowReviewProductSku>
                   side: BorderSide(
                       color: reviewCtr.isAll.value
                           ? Colors.grey.shade200
-                          : theme_color_df),
+                          : themeColorDefault),
                   backgroundColor: Colors.white,
                   padding:
                       const EdgeInsets.symmetric(vertical: 8, horizontal: 8)),
@@ -507,7 +507,7 @@ class _ShowReviewProductSkuState extends State<ShowReviewProductSku>
                                           ? Icon(
                                               Icons
                                                   .radio_button_checked_rounded,
-                                              color: theme_color_df,
+                                              color: themeColorDefault,
                                             )
                                           : Icon(
                                               Icons.circle_outlined,
@@ -571,14 +571,14 @@ class _ShowReviewProductSkuState extends State<ShowReviewProductSku>
                                 style: OutlinedButton.styleFrom(
                                     minimumSize: const Size(0, 40),
                                     backgroundColor: Colors.white,
-                                    foregroundColor: theme_color_df,
+                                    foregroundColor: themeColorDefault,
                                     shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(0)),
-                                    side: BorderSide(color: theme_color_df)),
+                                    side: BorderSide(color: themeColorDefault)),
                                 child: Text(
                                   'ดูทั้งหมด',
                                   style: GoogleFonts.notoSansThaiLooped(
-                                      color: theme_color_df),
+                                      color: themeColorDefault),
                                 )),
                           ),
                           const SizedBox(
@@ -604,11 +604,11 @@ class _ShowReviewProductSkuState extends State<ShowReviewProductSku>
                                 style: ElevatedButton.styleFrom(
                                     minimumSize: const Size(0, 40),
                                     elevation: 0,
-                                    backgroundColor: theme_color_df,
+                                    backgroundColor: themeColorDefault,
                                     foregroundColor: Colors.white,
                                     shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(0)),
-                                    side: BorderSide(color: theme_color_df)),
+                                    side: BorderSide(color: themeColorDefault)),
                                 child: Text(
                                   'ตกลง',
                                   style: GoogleFonts.notoSansThaiLooped(),

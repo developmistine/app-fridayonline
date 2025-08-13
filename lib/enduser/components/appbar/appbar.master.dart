@@ -1,4 +1,4 @@
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,7 +20,7 @@ appBarMasterEndUser(String titles) {
           },
           child: Icon(
             Icons.arrow_back_rounded,
-            color: theme_color_df,
+            color: themeColorDefault,
           ),
         ),
         centerTitle: true,

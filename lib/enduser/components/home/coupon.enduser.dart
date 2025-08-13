@@ -1,17 +1,17 @@
-import 'package:fridayonline/enduser/controller/brand.ctr.dart';
-import 'package:fridayonline/enduser/controller/cart.ctr.dart';
-import 'package:fridayonline/enduser/controller/enduser.home.ctr.dart';
-import 'package:fridayonline/enduser/controller/track.ctr.dart';
-import 'package:fridayonline/enduser/models/home/home.vouchers.model.dart';
-import 'package:fridayonline/enduser/services/coupon/coupon.services.dart';
-import 'package:fridayonline/enduser/views/(anonymous)/signin.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.main.dart';
-import 'package:fridayonline/enduser/views/(coupon)/coupon.all.dart';
-import 'package:fridayonline/enduser/views/(coupon)/coupon.detail.dart';
-import 'package:fridayonline/enduser/widgets/dialog.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
+import 'package:appfridayecommerce/enduser/controller/brand.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/enduser.home.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/track.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/home/home.vouchers.model.dart';
+import 'package:appfridayecommerce/enduser/services/coupon/coupon.services.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/views/(anonymous)/signin.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.main.dart';
+import 'package:appfridayecommerce/enduser/views/(coupon)/coupon.all.dart';
+import 'package:appfridayecommerce/enduser/views/(coupon)/coupon.detail.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/preferrence.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -71,7 +71,7 @@ class CouponEndUser extends StatelessWidget {
                                   style: GoogleFonts.notoSansThaiLooped(
                                       fontSize: 12,
                                       fontWeight: FontWeight.bold,
-                                      color: theme_color_df),
+                                      color: themeColorDefault),
                                 ),
                                 const SizedBox(
                                   width: 4,
@@ -80,7 +80,7 @@ class CouponEndUser extends StatelessWidget {
                                   width: 18,
                                   height: 18,
                                   child: CircleAvatar(
-                                      backgroundColor: theme_color_df,
+                                      backgroundColor: themeColorDefault,
                                       foregroundColor: Colors.white,
                                       child: const Icon(
                                         Icons.arrow_forward_ios_rounded,
@@ -219,7 +219,7 @@ class _CouponItemState extends State<CouponItem> {
                                       'เงื่อนไข',
                                       style: TextStyle(
                                         fontSize: 10,
-                                        color: theme_color_df,
+                                        color: themeColorDefault,
                                       ),
                                     ),
                                   ),
@@ -239,18 +239,18 @@ class _CouponItemState extends State<CouponItem> {
                         child: ElevatedButton(
                           style: ButtonStyle(
                             backgroundColor:
-                                WidgetStateProperty.all(theme_color_df),
-                            padding: WidgetStateProperty.all(
+                                MaterialStateProperty.all(themeColorDefault),
+                            padding: MaterialStateProperty.all(
                               const EdgeInsets.symmetric(
                                   vertical: 4, horizontal: 4),
                             ),
-                            shape: WidgetStateProperty.all(
+                            shape: MaterialStateProperty.all(
                               RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(6),
                               ),
                             ),
                             shadowColor:
-                                WidgetStateProperty.all(Colors.transparent),
+                                MaterialStateProperty.all(Colors.transparent),
                           ),
                           onPressed: () async {
                             SetData data = SetData();
@@ -328,7 +328,7 @@ class _CouponItemState extends State<CouponItem> {
                             style: OutlinedButton.styleFrom(
                                 padding: const EdgeInsets.symmetric(
                                     vertical: 4, horizontal: 4),
-                                side: BorderSide(color: theme_color_df),
+                                side: BorderSide(color: themeColorDefault),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(4),
                                 )),
@@ -352,7 +352,7 @@ class _CouponItemState extends State<CouponItem> {
                             child: Text(
                               'ใช้โค้ด',
                               style: GoogleFonts.notoSansThaiLooped(
-                                color: theme_color_df,
+                                color: themeColorDefault,
                                 fontSize: 10,
                               ),
                             ),

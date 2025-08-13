@@ -1,10 +1,8 @@
-// ignore_for_file: avoid_print
-
 import 'dart:convert';
 
-import '../../model/check_version/check_transferdist.dart';
-import '../../model/check_version/check_version_model.dart';
-import '../../model/set_data/set_data.dart';
+import 'package:appfridayecommerce/enduser/models/check_version/check_version_model.dart';
+import 'package:appfridayecommerce/preferrence.dart';
+
 import 'package:http/http.dart' as http;
 
 import '../pathapi.dart';
@@ -49,7 +47,7 @@ Future<CheckVersionModel?> call_check_version() async {
           "isForceUpdate": "1",
           "versionCode": "0",
           "uriPlayStore":
-              "https://play.google.com/store/apps/details?id=th.co.mistine.mistinecatalog",
+              "https://play.google.com/store/apps/details?id=th.co.friday.fridayonline",
           "showAlert": "true",
           "alertShowTitle": "Friday: ปรับปรุงเวอร์ชัน",
           "alertShowDetail": "กรุณาอัปเดตเวอร์ชันปัจจุบันค่ะ..",
@@ -90,33 +88,4 @@ Future<CheckVersionModel?> call_check_version() async {
     CheckVersionModel checkversion = checkVersionModelFromJson(json);
     return checkversion;
   }
-}
-
-Future<TransFerDist?> call_check_transfer_dist() async {
-  SetData data = SetData(); //เรียกใช้ model
-  try {
-    // var url = Uri.parse(
-    //     "${baseurl_home}api/CheckTransferDist/CheckTransferDist/type/value");
-    var url = Uri.parse("${base_api_app}api/v1/config/CheckTransferDist");
-    var jsonData = jsonEncode({
-      "repCode": await data.repCode,
-      "repSeq": await data.repSeq,
-      "repType": await data.repType,
-    });
-
-    var jsonCall = await http.post(url,
-        headers: <String, String>{
-          'Authorization': 'Bearer $apiToken',
-          'Content-type': 'application/json; charset=utf-8'
-        },
-        body: jsonData);
-
-    var jsonResponse = jsonCall.body;
-    TransFerDist checktransFer = transFerDistFromJson(jsonResponse);
-
-    return checktransFer;
-  } catch (e) {
-    print('Error function >>call_check_trans_fer_dist<< is $e');
-  }
-  return null;
 }

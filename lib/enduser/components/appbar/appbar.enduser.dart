@@ -1,17 +1,17 @@
-import 'package:fridayonline/enduser/controller/cart.ctr.dart';
-import 'package:fridayonline/enduser/controller/chat.ctr.dart';
-import 'package:fridayonline/enduser/controller/enduser.signin.ctr.dart';
-import 'package:fridayonline/enduser/controller/search.ctr.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.main.dart';
-import 'package:fridayonline/enduser/views/(chat)/chat.dart';
-import 'package:fridayonline/enduser/views/(search)/search.view.dart';
+import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/chat.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/enduser.signin.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/search.ctr.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.main.dart';
+import 'package:appfridayecommerce/enduser/views/(chat)/chat.dart';
+import 'package:appfridayecommerce/enduser/views/(search)/search.view.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/theme.dart';
 
 var border = const OutlineInputBorder(
   borderSide: BorderSide(
@@ -94,13 +94,13 @@ PreferredSize appbarEnduser(
                             hintText: 'ค้นหาสินค้า',
                             hintStyle: GoogleFonts.notoSansThaiLooped(
                               fontSize: 13,
-                              color: theme_color_df,
+                              color: themeColorDefault,
                             ),
                             prefixIcon: Padding(
                               padding: const EdgeInsets.only(left: 8, right: 8),
                               child: Icon(
                                 Icons.search,
-                                color: theme_color_df,
+                                color: themeColorDefault,
                               ),
                             ),
                             prefixIconConstraints: const BoxConstraints(
@@ -141,7 +141,7 @@ PreferredSize appbarEnduser(
                                 );
                         }),
                         badgeStyle: badges.BadgeStyle(
-                            badgeColor: theme_color_df,
+                            badgeColor: themeColorDefault,
                             padding: const EdgeInsets.all(5)),
                         child: IconButton(
                           highlightColor: Colors.transparent,
@@ -178,7 +178,7 @@ PreferredSize appbarEnduser(
                             );
                           }),
                           badgeStyle: badges.BadgeStyle(
-                              badgeColor: theme_color_df,
+                              badgeColor: themeColorDefault,
                               padding: const EdgeInsets.all(5)),
                           child: IconButton(
                             padding: const EdgeInsets.only(bottom: 12, top: 5),

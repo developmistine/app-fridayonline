@@ -1,5 +1,5 @@
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/homepage/webview/webview_full_screen.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/components/webview/webview_full.dart';
 import 'package:flutter/material.dart';
 
 class HelpFriday extends StatelessWidget {

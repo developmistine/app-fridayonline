@@ -1,6 +1,6 @@
-import 'package:fridayonline/enduser/views/(order)/order.detail.dart';
-import 'package:fridayonline/enduser/views/(profile)/edit.rating.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/views/(order)/order.detail.dart';
+import 'package:appfridayecommerce/enduser/views/(profile)/edit.rating.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -44,8 +44,7 @@ Widget noRatingCard() {
                 ),
               ),
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
+                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 12),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
@@ -77,7 +76,8 @@ Widget noRatingCard() {
                                 ),
                                 Text('สินค้าทั้งหมด 5 ชิ้น',
                                     style: TextStyle(
-                                        fontSize: 12, color: grayTextShade700)),
+                                        fontSize: 12,
+                                        color: Colors.grey.shade700)),
                               ],
                             ),
                           ),
@@ -100,18 +100,18 @@ Widget noRatingCard() {
                       ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor:
-                              WidgetStateProperty.all(theme_color_df),
-                          padding: WidgetStateProperty.all(
+                              MaterialStateProperty.all(themeColorDefault),
+                          padding: MaterialStateProperty.all(
                             const EdgeInsets.symmetric(
                                 vertical: 10, horizontal: 16),
                           ),
-                          shape: WidgetStateProperty.all(
+                          shape: MaterialStateProperty.all(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8),
                             ),
                           ),
                           shadowColor:
-                              WidgetStateProperty.all(Colors.transparent),
+                              MaterialStateProperty.all(Colors.transparent),
                         ),
                         onPressed: () {
                           Get.to(() => const EditRating());

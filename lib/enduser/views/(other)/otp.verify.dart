@@ -1,14 +1,13 @@
 import 'dart:async';
 
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/controller/profile.ctr.dart';
-import 'package:fridayonline/enduser/services/authen/b2cauthen.service.dart';
-import 'package:fridayonline/enduser/services/profile/profile.service.dart';
-import 'package:fridayonline/enduser/widgets/dialog.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_loading_theme.dart';
-import 'package:fridayonline/homepage/splashscreen.dart';
-import 'package:fridayonline/homepage/theme/formatter_text.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/controller/profile.ctr.dart';
+import 'package:appfridayecommerce/enduser/services/authen/b2cauthen.service.dart';
+import 'package:appfridayecommerce/enduser/services/profile/profile.service.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
+import 'package:appfridayecommerce/splashscreen.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -91,7 +90,7 @@ class _OtpVerifyState extends State<OtpVerify> {
                             ? false
                             : true,
                         pastedTextStyle: TextStyle(
-                          color: theme_color_df,
+                          color: themeColorDefault,
                           fontWeight: FontWeight.bold,
                         ),
                         length: 4,
@@ -106,10 +105,10 @@ class _OtpVerifyState extends State<OtpVerify> {
                           borderRadius: BorderRadius.circular(14),
                           fieldHeight: 58,
                           fieldWidth: 58,
-                          activeColor: theme_color_df,
-                          selectedColor: theme_color_df,
+                          activeColor: themeColorDefault,
+                          selectedColor: themeColorDefault,
                           inactiveColor: Colors.grey.shade400,
-                          inactiveFillColor: theme_color_df,
+                          inactiveFillColor: themeColorDefault,
                           activeFillColor:
                               hasError ? Colors.orange : Colors.white,
                         ),
@@ -195,7 +194,7 @@ class _OtpVerifyState extends State<OtpVerify> {
                                     },
                                   text: 'ส่งอีกครั้ง',
                                   style: GoogleFonts.notoSansThaiLooped(
-                                      color: theme_color_df),
+                                      color: themeColorDefault),
                                 )
                               ]),
                         );

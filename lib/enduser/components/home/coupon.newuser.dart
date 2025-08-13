@@ -1,14 +1,14 @@
-import 'package:fridayonline/enduser/controller/brand.ctr.dart';
-import 'package:fridayonline/enduser/controller/cart.ctr.dart';
-import 'package:fridayonline/enduser/controller/coupon.ctr.dart';
-import 'package:fridayonline/enduser/controller/enduser.home.ctr.dart';
-import 'package:fridayonline/enduser/services/coupon/coupon.services.dart';
-import 'package:fridayonline/enduser/views/(anonymous)/signin.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.main.dart';
-import 'package:fridayonline/enduser/views/(coupon)/coupon.detail.dart';
-import 'package:fridayonline/enduser/widgets/dialog.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/model/set_data/set_data.dart';
+import 'package:appfridayecommerce/enduser/controller/brand.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/coupon.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/enduser.home.ctr.dart';
+import 'package:appfridayecommerce/enduser/services/coupon/coupon.services.dart';
+import 'package:appfridayecommerce/enduser/views/(anonymous)/signin.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.main.dart';
+import 'package:appfridayecommerce/enduser/views/(coupon)/coupon.detail.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
+import 'package:appfridayecommerce/theme.dart';
+import 'package:appfridayecommerce/preferrence.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -146,7 +146,7 @@ class _CouponNewUserState extends State<CouponNewUser> {
                                                             .notoSansThaiLooped(
                                                                 fontSize: 12,
                                                                 color:
-                                                                    theme_color_df),
+                                                                    themeColorDefault),
                                                       ),
                                                     ),
                                                   ],
@@ -166,7 +166,7 @@ class _CouponNewUserState extends State<CouponNewUser> {
                                                   style:
                                                       ElevatedButton.styleFrom(
                                                           backgroundColor:
-                                                              theme_color_df),
+                                                              themeColorDefault),
                                                   onPressed: () async {
                                                     SetData data = SetData();
                                                     if (await data.b2cCustID ==
@@ -260,7 +260,8 @@ class _CouponNewUserState extends State<CouponNewUser> {
                                                         vertical: 4,
                                                         horizontal: 4),
                                                     side: BorderSide(
-                                                        color: theme_color_df),
+                                                        color:
+                                                            themeColorDefault),
                                                     shape:
                                                         RoundedRectangleBorder(
                                                       borderRadius:
@@ -293,7 +294,7 @@ class _CouponNewUserState extends State<CouponNewUser> {
                                                   'ใช้โค้ด',
                                                   style: GoogleFonts
                                                       .notoSansThaiLooped(
-                                                    color: theme_color_df,
+                                                    color: themeColorDefault,
                                                     fontSize: 10,
                                                   ),
                                                 ),

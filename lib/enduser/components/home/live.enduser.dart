@@ -1,9 +1,7 @@
-// import 'package:fridayonline/enduser/components/shimmer/shimmer.card.dart';
-// import 'package:fridayonline/enduser/controller/enduser.home.ctr.dart';
-// import 'package:fridayonline/enduser/widgets/gap.dart';
-// import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-// import 'package:fridayonline/homepage/theme/theme_color.dart';
-// import 'package:flutter/material.dart';
+// import 'package:appfridayecommerce/enduser/components/shimmer/shimmer.card.dart';
+// import 'package:appfridayecommerce/enduser/controller/enduser.home.ctr.dart';
+// import 'package:appfridayecommerce/enduser/widgets/gap.dart';
+// // import 'package:appfridayecommerce/theme.dart';// import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
 
 // final EndUserHomeCtr endUserHomeCtr = Get.find();
@@ -35,11 +33,11 @@
 //                         children: [
 //                           Text('ฟรายเดย์ Live',
 //                               style: TextStyle(
-//                                   color: theme_red,
+//                                   color: themeRed,
 //                                   fontWeight: FontWeight.bold)),
 //                           ElevatedButton(
 //                               style: ElevatedButton.styleFrom(
-//                                   backgroundColor: theme_color_df),
+//                                   backgroundColor: themeColorDefault),
 //                               onPressed: () {},
 //                               child: const Row(
 //                                 children: [
@@ -84,7 +82,7 @@
 //                                       Icon(
 //                                         Icons.live_tv_rounded,
 //                                         size: 40,
-//                                         color: icon_color_loading,
+//                                         color: themeColorDefault.withOpacity(0.2),
 //                                       ),
 //                                       Positioned(
 //                                         top: 4,
@@ -92,7 +90,7 @@
 //                                         child: Icon(
 //                                           Icons.bar_chart_rounded,
 //                                           size: 40,
-//                                           color: icon_color_loading,
+//                                           color: themeColorDefault.withOpacity(0.2),
 //                                         ),
 //                                       )
 //                                     ],
@@ -134,7 +132,7 @@
 //                 padding: const EdgeInsets.all(8),
 //                 margin: const EdgeInsets.all(3),
 //                 decoration: BoxDecoration(
-//                   color: theme_color_df,
+//                   color: themeColorDefault,
 //                   borderRadius: BorderRadius.circular(4),
 //                 ),
 //                 child: const Center(

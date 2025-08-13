@@ -1,19 +1,19 @@
-import 'package:fridayonline/enduser/controller/cart.ctr.dart';
-import 'package:fridayonline/enduser/controller/chat.ctr.dart';
-import 'package:fridayonline/enduser/controller/profile.ctr.dart';
-import 'package:fridayonline/enduser/views/(chat)/chat.platform.dart';
-import 'package:fridayonline/enduser/views/(coupon)/conpon.me.dart';
-import 'package:fridayonline/enduser/views/(coupon)/coupon.all.dart';
-import 'package:fridayonline/enduser/views/(other)/about.friday.dart';
-import 'package:fridayonline/enduser/views/(other)/deleteAcount.dart';
-import 'package:fridayonline/enduser/views/(other)/help.dart';
-import 'package:fridayonline/enduser/views/(profile)/edit.profile.dart';
-import 'package:fridayonline/enduser/views/(profile)/friday.coin.dart';
-import 'package:fridayonline/enduser/views/(profile)/myaddress.dart';
-import 'package:fridayonline/enduser/views/(profile)/myorder.dart';
-import 'package:fridayonline/enduser/views/(profile)/varsion.dart';
-import 'package:fridayonline/enduser/widgets/dialog.confirm.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/chat.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/profile.ctr.dart';
+import 'package:appfridayecommerce/enduser/views/(chat)/chat.platform.dart';
+import 'package:appfridayecommerce/enduser/views/(coupon)/conpon.me.dart';
+import 'package:appfridayecommerce/enduser/views/(coupon)/coupon.all.dart';
+import 'package:appfridayecommerce/enduser/views/(other)/about.friday.dart';
+import 'package:appfridayecommerce/enduser/views/(other)/deleteAcount.dart';
+import 'package:appfridayecommerce/enduser/views/(other)/help.dart';
+import 'package:appfridayecommerce/enduser/views/(profile)/edit.profile.dart';
+import 'package:appfridayecommerce/enduser/views/(profile)/friday.coin.dart';
+import 'package:appfridayecommerce/enduser/views/(profile)/myaddress.dart';
+import 'package:appfridayecommerce/enduser/views/(profile)/myorder.dart';
+import 'package:appfridayecommerce/enduser/views/(profile)/varsion.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.confirm.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -71,7 +71,7 @@ Widget buildMenuSection(
                             style: GoogleFonts.notoSansThaiLooped(
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold,
-                                color: theme_color_df),
+                                color: themeColorDefault),
                           ),
                           const SizedBox(
                             width: 4,
@@ -80,7 +80,7 @@ Widget buildMenuSection(
                             width: 18,
                             height: 18,
                             child: CircleAvatar(
-                                backgroundColor: theme_color_df,
+                                backgroundColor: themeColorDefault,
                                 foregroundColor: Colors.white,
                                 child: const Icon(
                                   Icons.arrow_forward_ios_rounded,

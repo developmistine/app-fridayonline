@@ -1,10 +1,10 @@
-import 'package:fridayonline/enduser/components/shimmer/shimmer.product.dart';
-import 'package:fridayonline/enduser/controller/enduser.home.ctr.dart';
-import 'package:fridayonline/enduser/controller/showproduct.sku.ctr.dart';
-import 'package:fridayonline/enduser/controller/track.ctr.dart';
-import 'package:fridayonline/enduser/views/(flashdeal)/flashdeal.deail.dart';
-import 'package:fridayonline/homepage/pageactivity/cart/cart_theme/cart_all_theme.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/shimmer/shimmer.product.dart';
+import 'package:appfridayecommerce/enduser/controller/enduser.home.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/showproduct.sku.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/track.ctr.dart';
+import 'package:appfridayecommerce/enduser/utils/format.dart';
+import 'package:appfridayecommerce/enduser/views/(flashdeal)/flashdeal.deail.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -197,11 +197,11 @@ class FlashDealFriday extends StatelessWidget {
             children: [
               Text(
                 'ดูเพิ่มเติม',
-                style: TextStyle(color: theme_color_df),
+                style: TextStyle(color: themeColorDefault),
               ),
               Icon(
                 Icons.arrow_forward_ios_rounded,
-                color: theme_color_df,
+                color: themeColorDefault,
               )
             ],
           )),
@@ -244,11 +244,12 @@ class FlashDealCountDown extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 5, right: 5),
+            const Padding(
+              padding: EdgeInsets.only(left: 5, right: 5),
               child: Text(
                 ':',
-                style: TextStyle(fontWeight: boldText, color: Colors.black),
+                style:
+                    TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
               ),
             ),
             Card(
@@ -264,11 +265,12 @@ class FlashDealCountDown extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 5, right: 5),
+            const Padding(
+              padding: EdgeInsets.only(left: 5, right: 5),
               child: Text(
                 ':',
-                style: TextStyle(fontWeight: boldText, color: Colors.black),
+                style:
+                    TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
               ),
             ),
             Card(
@@ -340,12 +342,12 @@ class FlashDealCountDownHomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 5, right: 5),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 5, right: 5),
                       child: Text(
                         ':',
                         style: TextStyle(
-                            fontWeight: boldText, color: Colors.black),
+                            fontWeight: FontWeight.bold, color: Colors.black),
                       ),
                     ),
                     Card(
@@ -364,12 +366,12 @@ class FlashDealCountDownHomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 5, right: 5),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 5, right: 5),
                       child: Text(
                         ':',
                         style: TextStyle(
-                            fontWeight: boldText, color: Colors.black),
+                            fontWeight: FontWeight.bold, color: Colors.black),
                       ),
                     ),
                     Card(
@@ -574,18 +576,18 @@ class FlashDealProductItem extends StatelessWidget {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       textAlign: TextAlign.center,
                       'ลด',
                       style: TextStyle(
-                          fontWeight: boldText,
+                          fontWeight: FontWeight.bold,
                           inherit: false,
                           color: Colors.white,
                           fontSize: 12),
                     ),
                     Text("${product.discount}%",
-                        style: TextStyle(
-                          fontWeight: boldText,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
                           inherit: false,
                           color: Colors.white,
                           fontSize: 12,

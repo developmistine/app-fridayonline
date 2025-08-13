@@ -1,10 +1,10 @@
 import 'dart:typed_data';
 
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/components/viewer/fullscreen.image.dart';
-import 'package:fridayonline/enduser/controller/chat.ctr.dart';
-import 'package:fridayonline/enduser/widgets/dialog.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/components/viewer/fullscreen.image.dart';
+import 'package:appfridayecommerce/enduser/controller/chat.ctr.dart';
+import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -490,7 +490,7 @@ class _ChatGallaryState extends State<ChatGallary> {
               return ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       elevation: 0,
-                      backgroundColor: theme_color_df,
+                      backgroundColor: themeColorDefault,
                       shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(8)))),
                   onPressed: chatController.selectedCount.value == 0

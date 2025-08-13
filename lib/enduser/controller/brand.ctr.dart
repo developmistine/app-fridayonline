@@ -1,16 +1,16 @@
 import 'dart:async';
 
-import 'package:fridayonline/enduser/models/brands/brands.model.dart';
-import 'package:fridayonline/enduser/models/brands/shopbanner.model.dart';
-import 'package:fridayonline/enduser/models/brands/shopcategory.model.dart';
-import 'package:fridayonline/enduser/models/brands/shopcontent.model.dart';
-import 'package:fridayonline/enduser/models/brands/shopfilter.model.dart';
-import 'package:fridayonline/enduser/models/brands/shopflashsale.model.dart';
-import 'package:fridayonline/enduser/models/brands/shopinfo.model.dart';
-import 'package:fridayonline/enduser/models/brands/shopvouchers.model.dart';
-import 'package:fridayonline/enduser/models/category/sort.model.dart';
-import 'package:fridayonline/enduser/services/brands/brands.service.dart';
-import 'package:fridayonline/enduser/services/category/category.service.dart';
+import 'package:appfridayecommerce/enduser/models/brands/brands.model.dart';
+import 'package:appfridayecommerce/enduser/models/brands/shopbanner.model.dart';
+import 'package:appfridayecommerce/enduser/models/brands/shopcategory.model.dart';
+import 'package:appfridayecommerce/enduser/models/brands/shopcontent.model.dart';
+import 'package:appfridayecommerce/enduser/models/brands/shopfilter.model.dart';
+import 'package:appfridayecommerce/enduser/models/brands/shopflashsale.model.dart';
+import 'package:appfridayecommerce/enduser/models/brands/shopinfo.model.dart';
+import 'package:appfridayecommerce/enduser/models/brands/shopvouchers.model.dart';
+import 'package:appfridayecommerce/enduser/models/category/sort.model.dart';
+import 'package:appfridayecommerce/enduser/services/brands/brands.service.dart';
+import 'package:appfridayecommerce/enduser/services/category/category.service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';

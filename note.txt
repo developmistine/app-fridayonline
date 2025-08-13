@@ -1,0 +1,78 @@
+https://apiback.fridayth.com/log/v1/interactions
+ 
+{
+    "session_id": "test-session-id",
+    "customer_id": 5486041,
+    "customer_code": "0999005499",
+    "customer_type": "2",
+    "customer_name": "คุณสมศรี มีความสามารถ",
+    "channel": "app", // app, web, line
+    "device_type": "android",
+    "device_token": "1212312121",
+    "context": {
+        // ---------- popup, popupsmall, banner, favorite, privileges, promotion, push, notify ----------
+        // "action": "content",
+        // "type": "popup",
+        // "content_id": "1077",
+        // "content_name": "R2502",
+        // "content_image": "https://s3.catalog-yupin.com/Yupindata/IMGPopup2025/1750220312.gif"
+ 
+        // ---------- catalog ----------
+        // "action": "content",
+        // "type": "catalog",
+        // "catalog_id": "2988",
+        // "catalog_type": "1",
+        // "catalog_brand": "10",
+        // "catalog_media": "01",
+        // "catalog_name": "แค็ตตาล็อกฟรายเดย์",
+        // "catalog_campaign": "202514",
+        // "catalog_image": "https://s3.catalog-yupin.com/MistineImages/IMGCat/img/2025/1751337727.jpg.webp"
+ 
+        // ---------- catalog_page ----------
+        // "action": "content",
+        // "type": "catalog_page",
+        // "catalog_id": "2988",
+        // "catalog_type": "1",
+        // "catalog_brand": "10",
+        // "catalog_media": "01",
+        // "catalog_campaign": "202514",
+        // "catalog_page_index": "001",
+        // "catalog_page_image":"https://s3.catalog-yupin.com/MistineImages/IMGCat/img/Page/202514/10/01/media01friday202514_001.jpg.webp",
+        // "catalog_page_time": 10
+ 
+        // ---------- category ----------
+        // "action": "content",
+        // "type": "category",
+        // "category_id": "01",
+        // "sub_category_id": "02",
+        // "category_name": "สกินแคร์",
+        // "sub_category_name": "ทำความสะอาดผิวหน้า"
+ 
+        // ---------- search ---------- (API ติด)
+        // "action": "search",
+        // "type": "search",
+        // "search_keyword": "ครีมอาบน้ำ",
+        // "search_status": "true" // true, false
+ 
+        // ---------- product ----------
+        "action": "product",
+        "type": "product",
+        "catalog_id": "2988",
+        "catalog_type": "1",
+        "catalog_name": "แค็ตตาล็อกฟรายเดย์ เล่มที่ 14",
+        "catalog_image": "https://s3.catalog-yupin.com/MistineImages/IMGCat/img/2025/1751337727.jpg.webp",
+        "catalog_index": "117",
+        "category_id":"01",
+        "sub_category_id": "03",
+        "category_name": "สกินแคร์",
+        "sub_category_name": "บำรุงผิวหน้าเพื่อผิวกระจ่างใส",
+        "product_code": "35267",
+        "product_brand": "10",
+        "product_campaign":"202514", // ส่ง catalog_camp
+        "product_media": "01",
+        "product_name": "สาเก ไบรท์เทนนิ่ง ซีรั่ม 45 มล.",
+        "product_image": "https://s3.catalog-yupin.com/MistineImages/products/41337.webp",
+        "product_price": 600,
+        "product_time": 10
+    }
+}

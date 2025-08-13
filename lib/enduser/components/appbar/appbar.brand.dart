@@ -1,15 +1,14 @@
-import 'package:fridayonline/enduser/controller/showproduct.sku.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/showproduct.sku.ctr.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-
-import '../../../homepage/theme/theme_color.dart';
 
 final ShowProductSkuCtr showProductCtr = Get.find();
 
 var border = OutlineInputBorder(
   borderSide: BorderSide(
-    color: theme_color_df,
+    color: themeColorDefault,
     width: 1,
   ),
   borderRadius: const BorderRadius.all(
@@ -68,7 +67,7 @@ Widget appbarBrand({
                             },
                             child: Icon(
                               Icons.arrow_back_rounded,
-                              color: theme_color_df,
+                              color: themeColorDefault,
                             ),
                           )
                         : InkWell(

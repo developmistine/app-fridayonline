@@ -1,9 +1,8 @@
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/components/coupon/coupon.plain.dart';
-import 'package:fridayonline/enduser/models/coupon/vouchers.detail.dart';
-import 'package:fridayonline/enduser/services/coupon/coupon.services.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
-import 'package:fridayonline/homepage/theme/theme_loading.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/components/coupon/coupon.plain.dart';
+import 'package:appfridayecommerce/enduser/models/coupon/vouchers.detail.dart';
+import 'package:appfridayecommerce/enduser/services/coupon/coupon.services.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -35,8 +34,8 @@ class CouponDetail extends StatelessWidget {
                 future: fetchVoucherDetail(couponId),
                 builder: (context, AsyncSnapshot<VoucherDetail?> snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return Center(
-                      child: theme_loading_df,
+                    return const Center(
+                      child: CircularProgressIndicator.adaptive(),
                     );
                   } else if (snapshot.data!.code == "-9") {
                     return const Center(
@@ -114,7 +113,7 @@ class CouponDetail extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                     elevation: 0,
                     foregroundColor: Colors.white,
-                    backgroundColor: theme_color_df),
+                    backgroundColor: themeColorDefault),
                 child: const Text('ตกลง'),
                 onPressed: () {
                   Get.back();

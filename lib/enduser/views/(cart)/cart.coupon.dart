@@ -1,16 +1,16 @@
-import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
-import 'package:fridayonline/enduser/components/coupon/coupon.check.dart';
-import 'package:fridayonline/enduser/controller/cart.ctr.dart';
-import 'package:fridayonline/enduser/controller/coupon.ctr.dart';
-import 'package:fridayonline/enduser/models/coupon/vouchers.platform.model.dart';
-import 'package:fridayonline/enduser/models/coupon/vouchers.shopcode.model.dart';
-import 'package:fridayonline/enduser/services/coupon/coupon.services.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.main.dart';
-import 'package:fridayonline/enduser/widgets/gap.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:appfridayecommerce/enduser/components/coupon/coupon.check.dart';
+import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/coupon.ctr.dart';
+import 'package:appfridayecommerce/enduser/models/coupon/vouchers.platform.model.dart';
+import 'package:appfridayecommerce/enduser/models/coupon/vouchers.shopcode.model.dart';
+import 'package:appfridayecommerce/enduser/services/coupon/coupon.services.dart';
+import 'package:appfridayecommerce/enduser/views/(cart)/cart.main.dart';
+import 'package:appfridayecommerce/enduser/widgets/gap.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class EndUserCartCoupon extends StatefulWidget {
@@ -258,7 +258,7 @@ class _EndUserCartCouponState extends State<EndUserCartCoupon> {
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               elevation: 0,
-                              backgroundColor: theme_color_df,
+                              backgroundColor: themeColorDefault,
                               padding: const EdgeInsets.symmetric(vertical: 12),
                               shape: const RoundedRectangleBorder(
                                   borderRadius: BorderRadius.all(

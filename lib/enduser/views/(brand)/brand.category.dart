@@ -1,14 +1,14 @@
 import 'dart:async';
 
-import 'package:fridayonline/enduser/components/appbar/appbar.nosearch.dart';
-import 'package:fridayonline/enduser/components/shimmer/shimmer.product.dart';
-import 'package:fridayonline/enduser/components/showproduct/nodata.dart';
-import 'package:fridayonline/enduser/components/showproduct/showproduct.category.dart';
-import 'package:fridayonline/enduser/controller/brand.ctr.dart';
-import 'package:fridayonline/enduser/controller/category.ctr.dart';
-import 'package:fridayonline/enduser/controller/showproduct.category.ctr.dart';
-import 'package:fridayonline/enduser/widgets/arrow_totop.dart';
-import 'package:fridayonline/homepage/theme/theme_color.dart';
+import 'package:appfridayecommerce/enduser/components/appbar/appbar.nosearch.dart';
+import 'package:appfridayecommerce/enduser/components/shimmer/shimmer.product.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/nodata.dart';
+import 'package:appfridayecommerce/enduser/components/showproduct/showproduct.category.dart';
+import 'package:appfridayecommerce/enduser/controller/brand.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/category.ctr.dart';
+import 'package:appfridayecommerce/enduser/controller/showproduct.category.ctr.dart';
+import 'package:appfridayecommerce/enduser/widgets/arrow_totop.dart';
+import 'package:appfridayecommerce/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
@@ -176,7 +176,7 @@ class _ShowProductCategoryState extends State<ShowProductBrands>
                                   border: Border(
                                       bottom: BorderSide(
                                           color: activeTab == index
-                                              ? theme_color_df
+                                              ? themeColorDefault
                                               : Colors.grey.shade300))),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -190,7 +190,7 @@ class _ShowProductCategoryState extends State<ShowProductBrands>
                                             ? FontWeight.bold
                                             : FontWeight.normal,
                                         color: activeTab == index
-                                            ? theme_color_df
+                                            ? themeColorDefault
                                             : Colors.grey.shade700),
                                   ),
                                   Builder(builder: (context) {
@@ -201,12 +201,12 @@ class _ShowProductCategoryState extends State<ShowProductBrands>
                                           return Icon(
                                               Icons.arrow_upward_outlined,
                                               size: 12,
-                                              color: theme_color_df);
+                                              color: themeColorDefault);
                                         }
                                         return Icon(
                                             Icons.arrow_downward_outlined,
                                             size: 12,
-                                            color: theme_color_df);
+                                            color: themeColorDefault);
                                       }
                                     }
                                     return const SizedBox();
