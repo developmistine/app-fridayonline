@@ -1,7 +1,7 @@
-import 'package:appfridayecommerce/enduser/controller/brand.ctr.dart';
-import 'package:appfridayecommerce/enduser/models/chat/seller.list.model.dart';
-import 'package:appfridayecommerce/enduser/views/(other)/help.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/controller/brand.ctr.dart';
+import 'package:fridayonline/enduser/models/chat/seller.list.model.dart';
+import 'package:fridayonline/enduser/views/(other)/help.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

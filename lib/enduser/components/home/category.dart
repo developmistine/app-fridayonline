@@ -1,9 +1,9 @@
-import 'package:appfridayecommerce/enduser/controller/category.ctr.dart';
-import 'package:appfridayecommerce/enduser/controller/enduser.home.ctr.dart';
-import 'package:appfridayecommerce/enduser/controller/showproduct.category.ctr.dart';
-import 'package:appfridayecommerce/enduser/controller/track.ctr.dart';
-import 'package:appfridayecommerce/enduser/utils/cached_image.dart';
-import 'package:appfridayecommerce/enduser/views/(category)/subcategory.view.dart';
+import 'package:fridayonline/enduser/controller/category.ctr.dart';
+import 'package:fridayonline/enduser/controller/enduser.home.ctr.dart';
+import 'package:fridayonline/enduser/controller/showproduct.category.ctr.dart';
+import 'package:fridayonline/enduser/controller/track.ctr.dart';
+import 'package:fridayonline/enduser/utils/cached_image.dart';
+import 'package:fridayonline/enduser/views/(category)/subcategory.view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

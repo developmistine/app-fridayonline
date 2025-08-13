@@ -2,17 +2,17 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:appfridayecommerce/enduser/models/reviews/pending.model.dart';
-import 'package:appfridayecommerce/enduser/models/reviews/reviewed.mode.dart';
-import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
+import 'package:fridayonline/enduser/models/reviews/pending.model.dart';
+import 'package:fridayonline/enduser/models/reviews/reviewed.mode.dart';
+import 'package:fridayonline/enduser/utils/auth_fetch.dart';
 
-import 'package:appfridayecommerce/preferrence.dart';
-import 'package:appfridayecommerce/service/pathapi.dart';
+import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/service/pathapi.dart';
 import 'package:http/http.dart' as http;
 
 Future<PendingReviews> fetchPendingReviewService(int orderShopId) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/products/user/pending_review");
+  var url = Uri.parse("${b2c_api_url}api/v1/products/user/pending_review");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -30,7 +30,7 @@ Future<PendingReviews> fetchPendingReviewService(int orderShopId) async {
       return pendingReviews;
     }
     return Future.error(
-        'Error get pending review : b2c/api/v1/products/user/pending_review');
+        'Error get pending review : api/v1/products/user/pending_review');
   } catch (e) {
     return Future.error('Error fetchPendingReviewService: $e');
   }
@@ -38,7 +38,7 @@ Future<PendingReviews> fetchPendingReviewService(int orderShopId) async {
 
 Future<Reviewed> fetchReviewedService(int orderShopId) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/products/user/reviewed");
+  var url = Uri.parse("${b2c_api_url}api/v1/products/user/reviewed");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -57,7 +57,7 @@ Future<Reviewed> fetchReviewedService(int orderShopId) async {
       return reviewed;
     }
     return Future.error(
-        'Error get reviewed review : b2c/api/v1/products/user/reviewed');
+        'Error get reviewed review : api/v1/products/user/reviewed');
   } catch (e) {
     return Future.error('Error fetchReviewedService: $e');
   }
@@ -68,7 +68,7 @@ Future<Response?> submitReview({
   required Map<int, List<File>?> images,
   Map<int, File>? video,
 }) async {
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/products/user/review");
+  var url = Uri.parse("${b2c_api_url}api/v1/products/user/review");
   try {
     Map<String, dynamic> reviewData = json;
     Map<String, String> fields = {

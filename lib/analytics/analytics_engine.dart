@@ -1,4 +1,4 @@
-import 'package:appfridayecommerce/firebase_options.dart';
+import 'package:fridayonline/firebase_options.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
 

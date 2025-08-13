@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/widgets/dialog.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:flutter/material.dart';
-// import 'package:appfridayecommerce/theme.dart';import 'package:flutter/material.dart';
+// import 'package:fridayonline/theme.dart';import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';

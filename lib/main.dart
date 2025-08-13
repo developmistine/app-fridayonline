@@ -1,23 +1,23 @@
 import 'dart:async';
 import 'dart:io';
-import 'package:appfridayecommerce/enduser/controller/chat.ctr.dart';
-import 'package:appfridayecommerce/enduser/controller/track.ctr.dart';
-import 'package:appfridayecommerce/enduser/services/track/track.service.dart';
-import 'package:appfridayecommerce/enduser/utils/branch_manager_main.dart';
-import 'package:appfridayecommerce/enduser/utils/logger.dart';
-import 'package:appfridayecommerce/preferrence.dart';
-import 'package:appfridayecommerce/print.dart';
-import 'package:appfridayecommerce/push/firebase_message_service.dart';
-import 'package:appfridayecommerce/push/huawei_notification.dart';
-import 'package:appfridayecommerce/push/local_notification_service.dart';
-import 'package:appfridayecommerce/router.dart';
-import 'package:appfridayecommerce/splashscreen.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/controller/chat.ctr.dart';
+import 'package:fridayonline/enduser/controller/track.ctr.dart';
+import 'package:fridayonline/enduser/services/track/track.service.dart';
+import 'package:fridayonline/enduser/utils/branch_manager_main.dart';
+import 'package:fridayonline/enduser/utils/logger.dart';
+import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/print.dart';
+import 'package:fridayonline/push/firebase_message_service.dart';
+import 'package:fridayonline/push/huawei_notification.dart';
+import 'package:fridayonline/push/local_notification_service.dart';
+import 'package:fridayonline/router.dart';
+import 'package:fridayonline/splashscreen.dart';
+import 'package:fridayonline/theme.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 
 import 'package:flutter/material.dart';
-import 'package:appfridayecommerce/binding/root_binging.dart';
+import 'package:fridayonline/binding/root_binging.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_branch_sdk/flutter_branch_sdk.dart';
 import 'package:get/get.dart';

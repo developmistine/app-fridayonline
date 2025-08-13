@@ -1,12 +1,12 @@
 import 'dart:convert';
 
-import 'package:appfridayecommerce/enduser/models/authen/b2clogin.model.dart';
-import 'package:appfridayecommerce/enduser/models/authen/b2cregis.model.dart';
-import 'package:appfridayecommerce/enduser/models/authen/b2creis.output.dart';
-import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
-import 'package:appfridayecommerce/preferrence.dart';
-import 'package:appfridayecommerce/print.dart';
-import 'package:appfridayecommerce/service/pathapi.dart';
+import 'package:fridayonline/enduser/models/authen/b2clogin.model.dart';
+import 'package:fridayonline/enduser/models/authen/b2cregis.model.dart';
+import 'package:fridayonline/enduser/models/authen/b2creis.output.dart';
+import 'package:fridayonline/enduser/utils/auth_fetch.dart';
+import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/print.dart';
+import 'package:fridayonline/service/pathapi.dart';
 import 'package:flutter/foundation.dart';
 
 import 'package:http/http.dart' as http;
@@ -14,7 +14,7 @@ import 'package:http/http.dart' as http;
 Future<B2CRegisterOutput?> b2cRegisterService(B2CRegister regis) async {
   //! dev_api_b2c , b2c_api_url
 
-  var url = Uri.parse("${b2c_api_url}b2c/register");
+  var url = Uri.parse("${b2c_api_url}register");
 
   try {
     var jsonData = jsonEncode(regis);
@@ -36,7 +36,7 @@ Future<B2CRegisterOutput?> b2cRegisterService(B2CRegister regis) async {
 }
 
 Future<B2CLogin?> refreshTokenService() async {
-  var url = Uri.parse("${b2c_api_url}b2c/refresh");
+  var url = Uri.parse("${b2c_api_url}refresh");
 
   SetData data = SetData();
 
@@ -67,14 +67,14 @@ Future<B2CLogin?> refreshTokenService() async {
     return b2CLogin;
   } catch (e) {
     if (kDebugMode) {
-      print('error b2c/refresh: $e');
+      print('error refresh: $e');
     }
     return null;
   }
 }
 
 Future<OtpResponse?> b2cSentOtpService(String otpType, String mobile) async {
-  var url = Uri.parse("${b2c_api_url}b2c/sent_otp");
+  var url = Uri.parse("${b2c_api_url}sent_otp");
 
   SetData data = SetData();
 
@@ -95,14 +95,14 @@ Future<OtpResponse?> b2cSentOtpService(String otpType, String mobile) async {
     final b2cOtp = otpResponseFromJson(jsonResponse);
     return b2cOtp;
   } catch (e) {
-    print('error b2c/sent_otp: $e');
+    print('error sent_otp: $e');
     return Future.error(e);
   }
 }
 
 Future<OtpResponse?> b2cVerifyOtpService(
     String otpType, String mobile, String otpCode) async {
-  var url = Uri.parse("${b2c_api_url}b2c/verify_otp");
+  var url = Uri.parse("${b2c_api_url}verify_otp");
 
   SetData data = SetData();
 
@@ -124,14 +124,14 @@ Future<OtpResponse?> b2cVerifyOtpService(
     final b2cOtp = otpResponseFromJson(jsonResponse);
     return b2cOtp;
   } catch (e) {
-    print('error b2c/verify_otp: $e');
+    print('error verify_otp: $e');
     return Future.error(e);
   }
 }
 
 Future b2cLogoutService() async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/customer/logout");
+  var url = Uri.parse("${b2c_api_url}api/v1/customer/logout");
   var accessToken = await data.accessToken;
   if (accessToken == "null" || accessToken == "") {
     return;
@@ -185,7 +185,7 @@ class OtpResponse {
 }
 
 Future checkUserByPhoneService(String mobile) async {
-  var url = Uri.parse("${b2c_api_url}b2c/check_msl_phone");
+  var url = Uri.parse("${b2c_api_url}check_msl_phone");
 
   SetData data = SetData();
 
@@ -210,7 +210,7 @@ Future checkUserByPhoneService(String mobile) async {
     }
   } catch (e) {
     if (kDebugMode) {
-      print('error b2c/refresh: $e');
+      print('error refresh: $e');
     }
     return Future.error(e);
   }

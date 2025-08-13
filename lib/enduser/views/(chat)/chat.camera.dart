@@ -1,6 +1,6 @@
 import 'dart:async';
-import 'package:appfridayecommerce/enduser/views/(chat)/chat.gallery.dart';
-import 'package:appfridayecommerce/enduser/views/(chat)/chat.stay.picture.dart';
+import 'package:fridayonline/enduser/views/(chat)/chat.gallery.dart';
+import 'package:fridayonline/enduser/views/(chat)/chat.stay.picture.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:get/get.dart';

@@ -4,8 +4,8 @@
 // import 'dart:convert';
 // import 'dart:math' as math;
 
-// import 'package:appfridayecommerce/enduser/controller/chat.ctr.dart';
-// import 'package:appfridayecommerce/preferrence.dart';
+// import 'package:fridayonline/enduser/controller/chat.ctr.dart';
+// import 'package:fridayonline/preferrence.dart';
 // import 'package:get/get.dart';
 // import 'package:web_socket_channel/web_socket_channel.dart';
 

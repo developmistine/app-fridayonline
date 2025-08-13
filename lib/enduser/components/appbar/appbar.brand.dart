@@ -1,5 +1,5 @@
-import 'package:appfridayecommerce/enduser/controller/showproduct.sku.ctr.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/controller/showproduct.sku.ctr.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';

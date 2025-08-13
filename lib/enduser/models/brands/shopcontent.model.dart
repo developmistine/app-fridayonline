@@ -3,7 +3,7 @@
 //     final shopContent = shopContentFromJson(jsonString);
 
 import 'dart:convert';
-import 'package:appfridayecommerce/enduser/models/home/home.content.model.dart';
+import 'package:fridayonline/enduser/models/home/home.content.model.dart';
 
 ShopContent shopContentFromJson(String str) =>
     ShopContent.fromJson(json.decode(str));

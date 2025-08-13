@@ -1,8 +1,8 @@
-import 'package:appfridayecommerce/enduser/models/category/sort.model.dart';
-import 'package:appfridayecommerce/enduser/models/search/search.suggest.model.dart';
-import 'package:appfridayecommerce/enduser/models/showproduct/product.category.model.dart';
-import 'package:appfridayecommerce/enduser/services/category/category.service.dart';
-import 'package:appfridayecommerce/enduser/services/search/search.service.dart';
+import 'package:fridayonline/enduser/models/category/sort.model.dart';
+import 'package:fridayonline/enduser/models/search/search.suggest.model.dart';
+import 'package:fridayonline/enduser/models/showproduct/product.category.model.dart';
+import 'package:fridayonline/enduser/services/category/category.service.dart';
+import 'package:fridayonline/enduser/services/search/search.service.dart';
 import 'package:get/get.dart';
 
 class SearchProductCtr extends GetxController {

@@ -1,8 +1,8 @@
-// import 'package:appfridayecommerce/enduser/components/appbar/apbar.master.dart';
-// import 'package:appfridayecommerce/enduser/controller/profile.ctr.dart';
-// import 'package:appfridayecommerce/enduser/models/profile/profile_data.dart';
-// import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
-// import 'package:appfridayecommerce/theme.dart';// import 'package:flutter/cupertino.dart';
+// import 'package:fridayonline/enduser/components/appbar/apbar.master.dart';
+// import 'package:fridayonline/enduser/controller/profile.ctr.dart';
+// import 'package:fridayonline/enduser/models/profile/profile_data.dart';
+// import 'package:fridayonline/enduser/widgets/dialog.dart';
+// import 'package:fridayonline/theme.dart';// import 'package:flutter/cupertino.dart';
 // import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
 // import 'package:google_fonts/google_fonts.dart';

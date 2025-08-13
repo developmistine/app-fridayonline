@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:appfridayecommerce/enduser/models/fair/fair.banner.model.dart';
-import 'package:appfridayecommerce/enduser/models/fair/fair.swipe.model.dart';
-import 'package:appfridayecommerce/enduser/models/fair/fari.content.model.dart';
-import 'package:appfridayecommerce/enduser/models/fair/fari.product.model.dart';
-import 'package:appfridayecommerce/enduser/models/fair/festival.model.dart';
-import 'package:appfridayecommerce/enduser/services/fair/fair.service.dart';
-import 'package:appfridayecommerce/enduser/views/(initials)/fair/fair.view.dart';
+import 'package:fridayonline/enduser/models/fair/fair.banner.model.dart';
+import 'package:fridayonline/enduser/models/fair/fair.swipe.model.dart';
+import 'package:fridayonline/enduser/models/fair/fari.content.model.dart';
+import 'package:fridayonline/enduser/models/fair/fari.product.model.dart';
+import 'package:fridayonline/enduser/models/fair/festival.model.dart';
+import 'package:fridayonline/enduser/services/fair/fair.service.dart';
+import 'package:fridayonline/enduser/views/(initials)/fair/fair.view.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 

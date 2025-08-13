@@ -1,7 +1,7 @@
-import 'package:appfridayecommerce/enduser/models/notify/notify.count.model.dart';
-import 'package:appfridayecommerce/enduser/models/notify/notify.group.model.dart';
-import 'package:appfridayecommerce/enduser/models/notify/notify.model.dart';
-import 'package:appfridayecommerce/enduser/services/notify/order.notify.service.dart';
+import 'package:fridayonline/enduser/models/notify/notify.count.model.dart';
+import 'package:fridayonline/enduser/models/notify/notify.group.model.dart';
+import 'package:fridayonline/enduser/models/notify/notify.model.dart';
+import 'package:fridayonline/enduser/services/notify/order.notify.service.dart';
 import 'package:get/get.dart';
 
 class NotifyController extends GetxController {

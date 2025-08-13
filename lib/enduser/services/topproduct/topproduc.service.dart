@@ -1,15 +1,15 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:appfridayecommerce/enduser/models/home/home.topproduct.model.dart';
-import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
+import 'package:fridayonline/enduser/models/home/home.topproduct.model.dart';
+import 'package:fridayonline/enduser/utils/auth_fetch.dart';
 
-import 'package:appfridayecommerce/preferrence.dart';
-import 'package:appfridayecommerce/service/pathapi.dart';
+import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/service/pathapi.dart';
 
 Future<TopProductsWeekly?> fetchTopProductsService(productLineId) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/products/top_products/weekly");
+  var url = Uri.parse("${b2c_api_url}api/v1/products/top_products/weekly");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -29,7 +29,7 @@ Future<TopProductsWeekly?> fetchTopProductsService(productLineId) async {
       return topProductsWeekly;
     }
     return Future.error(
-        'Error get top producs : b2c/api/v1/products/top_products/weekly');
+        'Error get top producs : api/v1/products/top_products/weekly');
   } catch (e) {
     return Future.error('Error : fetchTopProductsService $e');
   }

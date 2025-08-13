@@ -1,7 +1,7 @@
-import 'package:appfridayecommerce/enduser/models/checkin/checkin.model.dart';
-import 'package:appfridayecommerce/enduser/models/fair/cointransaction.model.dart';
-import 'package:appfridayecommerce/enduser/services/checkin/checkin.service.dart';
-import 'package:appfridayecommerce/enduser/services/fair/fair.service.dart';
+import 'package:fridayonline/enduser/models/checkin/checkin.model.dart';
+import 'package:fridayonline/enduser/models/fair/cointransaction.model.dart';
+import 'package:fridayonline/enduser/services/checkin/checkin.service.dart';
+import 'package:fridayonline/enduser/services/fair/fair.service.dart';
 import 'package:get/get.dart';
 
 class CoinCtr extends GetxController {

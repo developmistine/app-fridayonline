@@ -1,18 +1,18 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:appfridayecommerce/enduser/models/search/search.suggest.model.dart';
-import 'package:appfridayecommerce/enduser/models/search/serach.hint.model.dart';
-import 'package:appfridayecommerce/enduser/models/showproduct/product.category.model.dart';
-import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
+import 'package:fridayonline/enduser/models/search/search.suggest.model.dart';
+import 'package:fridayonline/enduser/models/search/serach.hint.model.dart';
+import 'package:fridayonline/enduser/models/showproduct/product.category.model.dart';
+import 'package:fridayonline/enduser/utils/auth_fetch.dart';
 
-import 'package:appfridayecommerce/preferrence.dart';
-import 'package:appfridayecommerce/service/pathapi.dart';
+import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/service/pathapi.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<SearchHint?> searchHintService(String keyword) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/products/search_hint");
+  var url = Uri.parse("${b2c_api_url}api/v1/products/search_hint");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -30,7 +30,7 @@ Future<SearchHint?> searchHintService(String keyword) async {
       final searchHint = searchHintFromJson(utf8.decode(jsonResponse));
       return searchHint;
     }
-    return Future.error('Error search : b2c/api/v1/products/search_hint');
+    return Future.error('Error search : api/v1/products/search_hint');
   } catch (e) {
     return Future.error('Error searchHintService : $e');
   }
@@ -39,7 +39,7 @@ Future<SearchHint?> searchHintService(String keyword) async {
 Future<ProductContent?> searchItemService(
     String keyword, int offset, String order, String sortBy) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/products/search_item");
+  var url = Uri.parse("${b2c_api_url}api/v1/products/search_item");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -61,7 +61,7 @@ Future<ProductContent?> searchItemService(
       final searchItem = productContentFromJson(utf8.decode(jsonResponse));
       return searchItem;
     }
-    return Future.error('Error search : b2c/api/v1/products/search_item');
+    return Future.error('Error search : api/v1/products/search_item');
   } catch (e) {
     return Future.error('Error searchItemService : $e');
   }
@@ -69,7 +69,7 @@ Future<ProductContent?> searchItemService(
 
 Future<SearchSuggest?> searchSuggestService(int offset) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/products/search_suggest");
+  var url = Uri.parse("${b2c_api_url}api/v1/products/search_suggest");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -88,7 +88,7 @@ Future<SearchSuggest?> searchSuggestService(int offset) async {
       final searchSuggest = searchSuggestFromJson(utf8.decode(jsonResponse));
       return searchSuggest;
     }
-    return Future.error('Error search : b2c/api/v1/products/search_suggest');
+    return Future.error('Error search : api/v1/products/search_suggest');
   } catch (e) {
     return Future.error('Error searchItemService : $e');
   }

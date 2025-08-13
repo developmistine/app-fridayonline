@@ -2,13 +2,13 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:appfridayecommerce/enduser/models/track/track.model.dart';
-import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
-import 'package:appfridayecommerce/global.dart';
+import 'package:fridayonline/enduser/models/track/track.model.dart';
+import 'package:fridayonline/enduser/utils/auth_fetch.dart';
+import 'package:fridayonline/global.dart';
 
-import 'package:appfridayecommerce/preferrence.dart';
-import 'package:appfridayecommerce/print.dart';
-import 'package:appfridayecommerce/service/pathapi.dart';
+import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/print.dart';
+import 'package:fridayonline/service/pathapi.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:package_info_plus/package_info_plus.dart';

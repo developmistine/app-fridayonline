@@ -1,25 +1,25 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:appfridayecommerce/enduser/controller/track.ctr.dart';
-import 'package:appfridayecommerce/enduser/models/cart/cart.bundle.model.dart';
-import 'package:appfridayecommerce/enduser/models/cart/cart.checkcon.model.dart';
-import 'package:appfridayecommerce/enduser/models/cart/cart.checkout.dart';
-import 'package:appfridayecommerce/enduser/models/cart/cart.checkout.input.dart';
-import 'package:appfridayecommerce/enduser/models/cart/cart.update.input.dart';
-import 'package:appfridayecommerce/enduser/models/cart/cart.update.output.dart';
-import 'package:appfridayecommerce/enduser/models/cart/getcart.model.dart';
-import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
-import 'package:appfridayecommerce/preferrence.dart';
-import 'package:appfridayecommerce/print.dart';
-import 'package:appfridayecommerce/service/pathapi.dart';
+import 'package:fridayonline/enduser/controller/track.ctr.dart';
+import 'package:fridayonline/enduser/models/cart/cart.bundle.model.dart';
+import 'package:fridayonline/enduser/models/cart/cart.checkcon.model.dart';
+import 'package:fridayonline/enduser/models/cart/cart.checkout.dart';
+import 'package:fridayonline/enduser/models/cart/cart.checkout.input.dart';
+import 'package:fridayonline/enduser/models/cart/cart.update.input.dart';
+import 'package:fridayonline/enduser/models/cart/cart.update.output.dart';
+import 'package:fridayonline/enduser/models/cart/getcart.model.dart';
+import 'package:fridayonline/enduser/utils/auth_fetch.dart';
+import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/print.dart';
+import 'package:fridayonline/service/pathapi.dart';
 import 'package:get/get.dart';
 
 Future<ResponseCart?> addToCartService(
     int shopId, int productId, int itemId, int qty, int action) async {
   SetData data = SetData();
 
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/cart/add");
+  var url = Uri.parse("${b2c_api_url}api/v1/cart/add");
   var trackData = Get.find<TrackCtr>();
   print("content id add to cart : ${trackData.contentId}");
   print("cotent type add to cart : ${trackData.contentType}");
@@ -46,7 +46,7 @@ Future<ResponseCart?> addToCartService(
       final addCart = addtoCartresponseFromJson(utf8.decode(jsonResponse));
       return addCart;
     }
-    return Future.error('Error addToCart : b2c/api/v1/cart/add');
+    return Future.error('Error addToCart : api/v1/cart/add');
   } catch (e) {
     return Future.error('Error: addToCart $e');
   }
@@ -56,7 +56,7 @@ Future<ResponseCart?> updateOptionCartService(int shopId, int productId,
     int itemId, int newItemId, int qty, int action) async {
   SetData data = SetData();
 
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/cart/add");
+  var url = Uri.parse("${b2c_api_url}api/v1/cart/add");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -79,7 +79,7 @@ Future<ResponseCart?> updateOptionCartService(int shopId, int productId,
       final addCart = addtoCartresponseFromJson(utf8.decode(jsonResponse));
       return addCart;
     }
-    return Future.error('Error updateOptionCartService : b2c/api/v1/cart/add');
+    return Future.error('Error updateOptionCartService : api/v1/cart/add');
   } catch (e) {
     return Future.error('Error: updateOptionCartService $e');
   }
@@ -88,7 +88,7 @@ Future<ResponseCart?> updateOptionCartService(int shopId, int productId,
 Future<GetCartItems> getCartService() async {
   SetData data = SetData();
 
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/cart/get");
+  var url = Uri.parse("${b2c_api_url}api/v1/cart/get");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -105,7 +105,7 @@ Future<GetCartItems> getCartService() async {
       final cartItems = getCartItemsFromJson(utf8.decode(jsonResponse));
       return cartItems;
     }
-    return Future.error('Error get cart : b2c/api/v1/cart/get');
+    return Future.error('Error get cart : api/v1/cart/get');
   } catch (e) {
     return Future.error('Error: getCartService() $e');
   }
@@ -114,7 +114,7 @@ Future<GetCartItems> getCartService() async {
 Future<ResponseCart?> deleteCartService(List<int> cartId) async {
   SetData data = SetData();
 
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/cart/delete");
+  var url = Uri.parse("${b2c_api_url}api/v1/cart/delete");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -132,14 +132,14 @@ Future<ResponseCart?> deleteCartService(List<int> cartId) async {
       final deleteCart = addtoCartresponseFromJson(utf8.decode(jsonResponse));
       return deleteCart;
     }
-    return Future.error('Error delete cart : b2c/api/v1/cart/delete');
+    return Future.error('Error delete cart : api/v1/cart/delete');
   } catch (e) {
     return Future.error('Error: deleteCartService $e');
   }
 }
 
 Future<UpdateCartOutput?> updateCartService(UpdateCartInput updateInput) async {
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/cart/update");
+  var url = Uri.parse("${b2c_api_url}api/v1/cart/update");
   // printWhite(jsonEncode(updateInput));
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -154,7 +154,7 @@ Future<UpdateCartOutput?> updateCartService(UpdateCartInput updateInput) async {
 
       return updateCartOutput;
     }
-    return Future.error('Error update cart : b2c/api/v1/cart/update');
+    return Future.error('Error update cart : api/v1/cart/update');
   } catch (e) {
     return Future.error('Error: updateCartService $e');
   }
@@ -163,7 +163,7 @@ Future<UpdateCartOutput?> updateCartService(UpdateCartInput updateInput) async {
 Future<CartCheckOut> cartCheckOutService(
     CartCheckOutInput checkOutInput) async {
   printWhite(jsonEncode(checkOutInput));
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/cart/checkout");
+  var url = Uri.parse("${b2c_api_url}api/v1/cart/checkout");
   try {
     var jsonCall = await AuthFetch.post(url,
         headers: <String, String>{
@@ -176,7 +176,7 @@ Future<CartCheckOut> cartCheckOutService(
 
       return cartCheckOut;
     }
-    return Future.error('Error checkout cart : b2c/api/v1/cart/chekcout');
+    return Future.error('Error checkout cart : api/v1/cart/chekcout');
   } catch (e) {
     return Future.error('Error: cartCheckOutService $e');
   }
@@ -184,7 +184,7 @@ Future<CartCheckOut> cartCheckOutService(
 
 Future<CheckCon> cartCheckConService(CartCheckOutInput checkConInput) async {
   // printJSON(checkConInput);
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/cart/check_con");
+  var url = Uri.parse("${b2c_api_url}api/v1/cart/check_con");
   try {
     var jsonCall = await AuthFetch.post(url,
         headers: <String, String>{
@@ -197,14 +197,14 @@ Future<CheckCon> cartCheckConService(CartCheckOutInput checkConInput) async {
       // printWhite(checkCon.code);
       return checkCon;
     }
-    return Future.error('Error checkout cart : b2c/api/v1/cart/check_con');
+    return Future.error('Error checkout cart : api/v1/cart/check_con');
   } catch (e) {
     return Future.error('Error: cartCheckConService $e');
   }
 }
 
 Future<ResponseCart> cartConfirmService(payload) async {
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/cart/confirm");
+  var url = Uri.parse("${b2c_api_url}api/v1/cart/confirm");
   try {
     var jsonCall = await AuthFetch.post(url,
         headers: <String, String>{
@@ -217,7 +217,7 @@ Future<ResponseCart> cartConfirmService(payload) async {
 
       return cartConfirm;
     }
-    return Future.error('Error confirm cart : b2c/api/v1/cart/confirm');
+    return Future.error('Error confirm cart : api/v1/cart/confirm');
   } catch (e) {
     return Future.error('Error: cartConfirmService $e');
   }
@@ -226,7 +226,7 @@ Future<ResponseCart> cartConfirmService(payload) async {
 Future<BundleDeal> getBundelDealService(int bundleId, int offset) async {
   SetData data = SetData();
 
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/products/bundle_deal");
+  var url = Uri.parse("${b2c_api_url}api/v1/products/bundle_deal");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -246,7 +246,7 @@ Future<BundleDeal> getBundelDealService(int bundleId, int offset) async {
       final bundleDeal = bundleDealFromJson(utf8.decode(jsonResponse));
       return bundleDeal;
     }
-    return Future.error('Error get cart : b2c/api/v1/products/bundle_deal');
+    return Future.error('Error get cart : api/v1/products/bundle_deal');
   } catch (e) {
     return Future.error('Error: getBundelDealService() $e');
   }

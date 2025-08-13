@@ -1,23 +1,23 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:appfridayecommerce/enduser/components/error/error.page.dart';
-import 'package:appfridayecommerce/enduser/models/check_version/check_version_model.dart';
-import 'package:appfridayecommerce/enduser/utils/branch_manager_main.dart';
-import 'package:appfridayecommerce/enduser/utils/image_preloader.dart';
-import 'package:appfridayecommerce/global.dart';
-import 'package:appfridayecommerce/preferrence.dart';
-import 'package:appfridayecommerce/print.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/components/error/error.page.dart';
+import 'package:fridayonline/enduser/models/check_version/check_version_model.dart';
+import 'package:fridayonline/enduser/utils/branch_manager_main.dart';
+import 'package:fridayonline/enduser/utils/image_preloader.dart';
+import 'package:fridayonline/global.dart';
+import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/print.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:flutter/services.dart';
 // import 'package:android_play_install_referrer/android_play_install_referrer.dart';
-import 'package:appfridayecommerce/controller/update_app_controller.dart';
-import 'package:appfridayecommerce/enduser/controller/enduser.home.ctr.dart';
-import 'package:appfridayecommerce/enduser/enduser.main.dart';
-import 'package:appfridayecommerce/enduser/models/authen/b2cregis.model.dart';
-import 'package:appfridayecommerce/enduser/services/authen/b2cauthen.service.dart';
-import 'package:appfridayecommerce/enduser/services/fair/fair.service.dart';
-// import 'package:appfridayecommerce/pam/notification_api.dart';
+import 'package:fridayonline/controller/update_app_controller.dart';
+import 'package:fridayonline/enduser/controller/enduser.home.ctr.dart';
+import 'package:fridayonline/enduser/enduser.main.dart';
+import 'package:fridayonline/enduser/models/authen/b2cregis.model.dart';
+import 'package:fridayonline/enduser/services/authen/b2cauthen.service.dart';
+import 'package:fridayonline/enduser/services/fair/fair.service.dart';
+// import 'package:fridayonline/pam/notification_api.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:device_information/device_information.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -237,7 +237,7 @@ class _SplashScreenState extends State<SplashScreen> {
         } else {
           loadLastDragTime();
         }
-        await checkAppNewVersion();
+        // await checkAppNewVersion();
 
         if (!mounted) return;
 

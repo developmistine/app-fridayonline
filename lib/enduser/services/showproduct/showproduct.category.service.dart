@@ -1,18 +1,18 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:appfridayecommerce/enduser/models/showproduct/product.category.model.dart';
-import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
+import 'package:fridayonline/enduser/models/showproduct/product.category.model.dart';
+import 'package:fridayonline/enduser/utils/auth_fetch.dart';
 
-import 'package:appfridayecommerce/preferrence.dart';
-import 'package:appfridayecommerce/service/pathapi.dart';
+import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/service/pathapi.dart';
 
 Future<ProductContent?> fetchProductContentService(
     int actionType, String actionValue, int offset) async {
   // actionType 1 url
   // actionType 2 category
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/products/content");
+  var url = Uri.parse("${b2c_api_url}api/v1/products/content");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -32,8 +32,7 @@ Future<ProductContent?> fetchProductContentService(
       final homeContent = productContentFromJson(utf8.decode(jsonResponse));
       return homeContent;
     }
-    return Future.error(
-        'Error get  product content : b2c/api/v1/products/content');
+    return Future.error('Error get  product content : api/v1/products/content');
   } catch (e) {
     return Future.error('Error fetchProductContentService: $e');
   }

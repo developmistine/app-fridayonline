@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
+import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';

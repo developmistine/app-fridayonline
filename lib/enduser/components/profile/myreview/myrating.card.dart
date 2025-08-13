@@ -1,8 +1,8 @@
-import 'package:appfridayecommerce/enduser/components/viewer/fullscreen.image.dart';
-import 'package:appfridayecommerce/enduser/components/viewer/product.media.dart';
-import 'package:appfridayecommerce/enduser/controller/review.ctr.dart';
-import 'package:appfridayecommerce/enduser/controller/showproduct.sku.ctr.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/components/viewer/fullscreen.image.dart';
+import 'package:fridayonline/enduser/components/viewer/product.media.dart';
+import 'package:fridayonline/enduser/controller/review.ctr.dart';
+import 'package:fridayonline/enduser/controller/showproduct.sku.ctr.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';

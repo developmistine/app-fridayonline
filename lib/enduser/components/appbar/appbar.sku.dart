@@ -1,15 +1,15 @@
-import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
-import 'package:appfridayecommerce/enduser/controller/search.ctr.dart';
-import 'package:appfridayecommerce/enduser/controller/showproduct.sku.ctr.dart';
-import 'package:appfridayecommerce/enduser/controller/track.ctr.dart';
-import 'package:appfridayecommerce/enduser/views/(cart)/cart.main.dart';
-import 'package:appfridayecommerce/enduser/views/(search)/search.view.dart';
+import 'package:fridayonline/enduser/controller/cart.ctr.dart';
+import 'package:fridayonline/enduser/controller/search.ctr.dart';
+import 'package:fridayonline/enduser/controller/showproduct.sku.ctr.dart';
+import 'package:fridayonline/enduser/controller/track.ctr.dart';
+import 'package:fridayonline/enduser/views/(cart)/cart.main.dart';
+import 'package:fridayonline/enduser/views/(search)/search.view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/theme.dart';
 
 final ShowProductSkuCtr showProductCtr = Get.find();
 final TrackCtr trackCtr = Get.find();

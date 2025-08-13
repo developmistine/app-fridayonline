@@ -4,7 +4,7 @@
 
 import 'dart:convert';
 
-import 'package:appfridayecommerce/enduser/models/chat/recieve.message.model.dart';
+import 'package:fridayonline/enduser/models/chat/recieve.message.model.dart';
 
 ChatHistory chatHistoryFromJson(String str) =>
     ChatHistory.fromJson(json.decode(str));

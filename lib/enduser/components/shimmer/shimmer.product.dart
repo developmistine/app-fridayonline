@@ -1,4 +1,4 @@
-import 'package:appfridayecommerce/enduser/components/shimmer/shimmer.card.dart';
+import 'package:fridayonline/enduser/components/shimmer/shimmer.card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,18 +1,18 @@
 import 'dart:ui';
 
-import 'package:appfridayecommerce/enduser/controller/coupon.ctr.dart';
-import 'package:appfridayecommerce/enduser/services/coupon/coupon.services.dart';
-import 'package:appfridayecommerce/enduser/utils/format.dart';
-import 'package:appfridayecommerce/enduser/views/(coupon)/coupon.detail.dart';
-import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/controller/coupon.ctr.dart';
+import 'package:fridayonline/enduser/services/coupon/coupon.services.dart';
+import 'package:fridayonline/enduser/utils/format.dart';
+import 'package:fridayonline/enduser/views/(coupon)/coupon.detail.dart';
+import 'package:fridayonline/enduser/widgets/dialog.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:appfridayecommerce/enduser/models/cart/cart.update.input.dart'
+import 'package:fridayonline/enduser/models/cart/cart.update.input.dart'
     as update_input;
 
 final endUserCouponCtr = Get.find<EndUserCouponCartCtr>();

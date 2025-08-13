@@ -1,18 +1,17 @@
-import 'package:appfridayecommerce/enduser/components/webview/webview.dart';
-import 'package:appfridayecommerce/enduser/controller/brand.ctr.dart';
-import 'package:appfridayecommerce/enduser/controller/category.ctr.dart';
-import 'package:appfridayecommerce/enduser/controller/showproduct.category.ctr.dart';
-import 'package:appfridayecommerce/enduser/controller/showproduct.sku.ctr.dart';
-import 'package:appfridayecommerce/enduser/controller/track.ctr.dart';
-import 'package:appfridayecommerce/enduser/views/(brand)/brand.category.dart';
-import 'package:appfridayecommerce/enduser/views/(category)/subcategory.view.dart';
-import 'package:appfridayecommerce/enduser/views/(coupon)/coupon.all.dart';
-import 'package:appfridayecommerce/enduser/views/(showproduct)/show.category.view.dart';
+import 'package:fridayonline/enduser/components/webview/webview.dart';
+import 'package:fridayonline/enduser/controller/brand.ctr.dart';
+import 'package:fridayonline/enduser/controller/category.ctr.dart';
+import 'package:fridayonline/enduser/controller/showproduct.category.ctr.dart';
+import 'package:fridayonline/enduser/controller/showproduct.sku.ctr.dart';
+import 'package:fridayonline/enduser/controller/track.ctr.dart';
+import 'package:fridayonline/enduser/views/(brand)/brand.category.dart';
+import 'package:fridayonline/enduser/views/(category)/subcategory.view.dart';
+import 'package:fridayonline/enduser/views/(coupon)/coupon.all.dart';
+import 'package:fridayonline/enduser/views/(showproduct)/show.category.view.dart';
 import 'package:get/get.dart';
-import 'package:appfridayecommerce/enduser/models/brands/shopcontent.model.dart'
+import 'package:fridayonline/enduser/models/brands/shopcontent.model.dart'
     as shop;
-import 'package:appfridayecommerce/enduser/models/notify/notify.model.dart'
-    as notify;
+import 'package:fridayonline/enduser/models/notify/notify.model.dart' as notify;
 
 final CategoryCtr categoryCtr = Get.find();
 final BrandCtr brandCtr = Get.find<BrandCtr>();

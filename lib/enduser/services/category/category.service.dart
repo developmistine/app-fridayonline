@@ -1,16 +1,16 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:appfridayecommerce/enduser/models/category/filter.model.dart';
-import 'package:appfridayecommerce/enduser/models/category/home.category.model.dart';
-import 'package:appfridayecommerce/enduser/models/category/sort.model.dart';
-import 'package:appfridayecommerce/enduser/models/category/subcategory.model.dart';
-import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
-import 'package:appfridayecommerce/preferrence.dart';
-import 'package:appfridayecommerce/service/pathapi.dart';
+import 'package:fridayonline/enduser/models/category/filter.model.dart';
+import 'package:fridayonline/enduser/models/category/home.category.model.dart';
+import 'package:fridayonline/enduser/models/category/sort.model.dart';
+import 'package:fridayonline/enduser/models/category/subcategory.model.dart';
+import 'package:fridayonline/enduser/utils/auth_fetch.dart';
+import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/service/pathapi.dart';
 
 Future<HomeCategory?> fetchHomeCategoryService() async {
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/home/categories");
+  var url = Uri.parse("${b2c_api_url}api/v1/home/categories");
 
   try {
     var jsonCall = await AuthFetch.get(
@@ -24,14 +24,14 @@ Future<HomeCategory?> fetchHomeCategoryService() async {
       final homeCategory = homeCategoryFromJson(utf8.decode(jsonResponse));
       return homeCategory;
     }
-    return Future.error('Error get home content : b2c/api/v1/home/categories');
+    return Future.error('Error get home content : api/v1/home/categories');
   } catch (e) {
     return Future.error('Error: $e');
   }
 }
 
 Future<Sort?> fetchSortService() async {
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/products/sorts");
+  var url = Uri.parse("${b2c_api_url}api/v1/products/sorts");
 
   try {
     var jsonCall = await AuthFetch.get(
@@ -45,7 +45,7 @@ Future<Sort?> fetchSortService() async {
       final sort = sortFromJson(utf8.decode(jsonResponse));
       return sort;
     }
-    return Future.error('Error get home content : b2c/api/v1/products/sorts');
+    return Future.error('Error get home content : api/v1/products/sorts');
   } catch (e) {
     return Future.error('Error: $e');
   }
@@ -53,7 +53,7 @@ Future<Sort?> fetchSortService() async {
 
 Future<SubCategorie?> fetchSubCategoryService(int catId) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/home/sub_categories");
+  var url = Uri.parse("${b2c_api_url}api/v1/home/sub_categories");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -70,8 +70,7 @@ Future<SubCategorie?> fetchSubCategoryService(int catId) async {
       final subCategorie = subCategorieFromJson(utf8.decode(jsonResponse));
       return subCategorie;
     }
-    return Future.error(
-        'Error get home content : b2c/api/v1/home/sub_categorie');
+    return Future.error('Error get home content : api/v1/home/sub_categorie');
   } catch (e) {
     return Future.error('Error: $e');
   }
@@ -80,7 +79,7 @@ Future<SubCategorie?> fetchSubCategoryService(int catId) async {
 Future<ProductsFilter?> fetchFilterProductCategoryService(int catId,
     int subCatId, String sortBy, String order, int limit, int offset) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/products/filter");
+  var url = Uri.parse("${b2c_api_url}api/v1/products/filter");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -103,8 +102,7 @@ Future<ProductsFilter?> fetchFilterProductCategoryService(int catId,
       final productsFilter = productsFilterFromJson(utf8.decode(jsonResponse));
       return productsFilter;
     }
-    return Future.error(
-        'Error get product filter : b2c/api/v1/products/filter');
+    return Future.error('Error get product filter : api/v1/products/filter');
   } catch (e) {
     return Future.error('Error: $e');
   }

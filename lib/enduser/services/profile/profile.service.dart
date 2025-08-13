@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:appfridayecommerce/enduser/models/profile/profile_special.dart';
-import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
-import 'package:appfridayecommerce/preferrence.dart';
+import 'package:fridayonline/enduser/models/profile/profile_special.dart';
+import 'package:fridayonline/enduser/utils/auth_fetch.dart';
+import 'package:fridayonline/preferrence.dart';
 import 'package:http/http.dart' as http;
 
 import '../../../service/pathapi.dart';
@@ -11,7 +11,7 @@ import '../../models/profile/profile_data.dart';
 class ApiProfile {
   Future<ProfileData?> fetchProfile() async {
     SetData data = SetData();
-    final url = Uri.parse("${b2c_api_url}b2c/api/v1/customer/info");
+    final url = Uri.parse("${b2c_api_url}api/v1/customer/info");
 
     try {
       final response = await AuthFetch.post(
@@ -50,7 +50,7 @@ class ApiProfile {
       required String mobile,
       required String email}) async {
     SetData data = SetData();
-    final url = Uri.parse("${b2c_api_url}b2c/api/v1/customer/edit/info");
+    final url = Uri.parse("${b2c_api_url}api/v1/customer/edit/info");
 
     try {
       final response = await AuthFetch.post(
@@ -89,7 +89,7 @@ class ApiProfile {
 
   Future<void> uploadProfileImage(File imageFile) async {
     SetData data = SetData();
-    var url = Uri.parse("${b2c_api_url}b2c/api/v1/customer/edit/image");
+    var url = Uri.parse("${b2c_api_url}api/v1/customer/edit/image");
     try {
       Map<String, String> fields = {};
 
@@ -133,7 +133,7 @@ class ApiProfile {
 
   Future<HomeSpecialB2C> fetchSpecialProject() async {
     SetData data = SetData();
-    final url = Uri.parse("${b2c_api_url}b2c/api/v1/home/special");
+    final url = Uri.parse("${b2c_api_url}api/v1/home/special");
     try {
       final response = await AuthFetch.post(
         url,
@@ -161,7 +161,7 @@ class ApiProfile {
 
   Future<Response> deleteAccountService() async {
     SetData data = SetData();
-    final url = Uri.parse("${b2c_api_url}b2c/api/v1/customer/delete_account");
+    final url = Uri.parse("${b2c_api_url}api/v1/customer/delete_account");
     try {
       final response = await AuthFetch.post(
         url,

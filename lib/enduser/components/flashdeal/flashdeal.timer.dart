@@ -1,5 +1,5 @@
-import 'package:appfridayecommerce/enduser/controller/brand.ctr.dart';
-import 'package:appfridayecommerce/enduser/controller/enduser.home.ctr.dart';
+import 'package:fridayonline/enduser/controller/brand.ctr.dart';
+import 'package:fridayonline/enduser/controller/enduser.home.ctr.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';

@@ -1,14 +1,14 @@
 import 'dart:io';
 
-import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
-import 'package:appfridayecommerce/enduser/utils/format.dart';
-// import 'package:appfridayecommerce/enduser/views/(profile)/edit.birthday.dart';
-import 'package:appfridayecommerce/enduser/views/(profile)/edit.email.dart';
-import 'package:appfridayecommerce/enduser/views/(profile)/edit.gender.dart';
-import 'package:appfridayecommerce/enduser/views/(profile)/edit.telphoneNum.dart';
-import 'package:appfridayecommerce/enduser/views/(profile)/edit.user.dart';
-import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
+import 'package:fridayonline/enduser/utils/format.dart';
+// import 'package:fridayonline/enduser/views/(profile)/edit.birthday.dart';
+import 'package:fridayonline/enduser/views/(profile)/edit.email.dart';
+import 'package:fridayonline/enduser/views/(profile)/edit.gender.dart';
+import 'package:fridayonline/enduser/views/(profile)/edit.telphoneNum.dart';
+import 'package:fridayonline/enduser/views/(profile)/edit.user.dart';
+import 'package:fridayonline/enduser/widgets/dialog.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

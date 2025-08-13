@@ -1,14 +1,14 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:appfridayecommerce/enduser/models/checkin/checkin.model.dart';
-import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
+import 'package:fridayonline/enduser/models/checkin/checkin.model.dart';
+import 'package:fridayonline/enduser/utils/auth_fetch.dart';
 
-import 'package:appfridayecommerce/preferrence.dart';
-import 'package:appfridayecommerce/service/pathapi.dart';
+import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/service/pathapi.dart';
 
 Future<CheckInData> fetchCheckInDataService() async {
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/activity/checkin/data");
+  var url = Uri.parse("${b2c_api_url}api/v1/activity/checkin/data");
   SetData data = SetData();
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -25,15 +25,14 @@ Future<CheckInData> fetchCheckInDataService() async {
       return checkInData;
     }
     return Future.error(
-        'Error fetchCheckInDataService : b2c/api/v1/activity/checkin/data');
+        'Error fetchCheckInDataService : api/v1/activity/checkin/data');
   } catch (e) {
     return Future.error('Error fetchCheckInDataService: $e');
   }
 }
 
 Future collectCoinsService(int point) async {
-  var url =
-      Uri.parse("${b2c_api_url}b2c/api/v1/activity/checkin/collect_coins");
+  var url = Uri.parse("${b2c_api_url}api/v1/activity/checkin/collect_coins");
   SetData data = SetData();
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -50,7 +49,7 @@ Future collectCoinsService(int point) async {
       return jsonResponse["code"];
     }
     return Future.error(
-        'Error collectCoinsService : b2c/api/v1/activity/checkin/collect_coins');
+        'Error collectCoinsService : api/v1/activity/checkin/collect_coins');
   } catch (e) {
     return Future.error('Error collectCoinsService: $e');
   }

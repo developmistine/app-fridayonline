@@ -1,11 +1,11 @@
-import 'package:appfridayecommerce/enduser/enduser.main.dart';
-import 'package:appfridayecommerce/enduser/views/(brand)/brand.store.dart';
-import 'package:appfridayecommerce/enduser/views/(cart)/cart.main.dart';
-import 'package:appfridayecommerce/enduser/views/(initials)/home/home.view.dart';
-import 'package:appfridayecommerce/enduser/views/(search)/search.result.dart';
-import 'package:appfridayecommerce/enduser/views/(search)/search.view.dart';
-import 'package:appfridayecommerce/enduser/views/(showproduct)/show.sku.view.dart';
-import 'package:appfridayecommerce/splashscreen.dart';
+import 'package:fridayonline/enduser/enduser.main.dart';
+import 'package:fridayonline/enduser/views/(brand)/brand.store.dart';
+import 'package:fridayonline/enduser/views/(cart)/cart.main.dart';
+import 'package:fridayonline/enduser/views/(initials)/home/home.view.dart';
+import 'package:fridayonline/enduser/views/(search)/search.result.dart';
+import 'package:fridayonline/enduser/views/(search)/search.view.dart';
+import 'package:fridayonline/enduser/views/(showproduct)/show.sku.view.dart';
+import 'package:fridayonline/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

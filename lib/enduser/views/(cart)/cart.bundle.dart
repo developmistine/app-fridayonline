@@ -1,6 +1,6 @@
-import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
-import 'package:appfridayecommerce/enduser/components/showproduct/showproduct.category.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
+import 'package:fridayonline/enduser/components/showproduct/showproduct.category.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';

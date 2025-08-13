@@ -1,22 +1,22 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:appfridayecommerce/enduser/models/fair/coininfo.model.dart';
-import 'package:appfridayecommerce/enduser/models/fair/cointransaction.model.dart';
-import 'package:appfridayecommerce/enduser/models/fair/fair.banner.model.dart';
-import 'package:appfridayecommerce/enduser/models/fair/fair.swipe.model.dart';
-import 'package:appfridayecommerce/enduser/models/fair/fari.content.model.dart';
-import 'package:appfridayecommerce/enduser/models/fair/fari.product.model.dart';
-import 'package:appfridayecommerce/enduser/models/fair/festival.model.dart';
-import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
+import 'package:fridayonline/enduser/models/fair/coininfo.model.dart';
+import 'package:fridayonline/enduser/models/fair/cointransaction.model.dart';
+import 'package:fridayonline/enduser/models/fair/fair.banner.model.dart';
+import 'package:fridayonline/enduser/models/fair/fair.swipe.model.dart';
+import 'package:fridayonline/enduser/models/fair/fari.content.model.dart';
+import 'package:fridayonline/enduser/models/fair/fari.product.model.dart';
+import 'package:fridayonline/enduser/models/fair/festival.model.dart';
+import 'package:fridayonline/enduser/utils/auth_fetch.dart';
 
-import 'package:appfridayecommerce/enduser/views/(initials)/fair/fair.view.dart';
-import 'package:appfridayecommerce/preferrence.dart';
-import 'package:appfridayecommerce/print.dart';
-import 'package:appfridayecommerce/service/pathapi.dart';
+import 'package:fridayonline/enduser/views/(initials)/fair/fair.view.dart';
+import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/print.dart';
+import 'package:fridayonline/service/pathapi.dart';
 
 Future<ProductSwipeContent?> fetchFairContentService() async {
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/fairs/product_swipe/content");
+  var url = Uri.parse("${b2c_api_url}api/v1/fairs/product_swipe/content");
 
   try {
     var jsonCall = await AuthFetch.get(url, headers: <String, String>{
@@ -30,7 +30,7 @@ Future<ProductSwipeContent?> fetchFairContentService() async {
       return productSwipeContent;
     }
     return Future.error(
-        'Error fetchFairContentService : /b2c/api/v1/fairs/product_swipe/content');
+        'Error fetchFairContentService : /api/v1/fairs/product_swipe/content');
   } catch (e) {
     return Future.error('Error fetchFairContentService : $e');
   }
@@ -38,7 +38,7 @@ Future<ProductSwipeContent?> fetchFairContentService() async {
 
 Future<CoinsTransaction?> fetchCoinsTransactionService(int offset) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/activity/coins/transaction");
+  var url = Uri.parse("${b2c_api_url}api/v1/activity/coins/transaction");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -60,7 +60,7 @@ Future<CoinsTransaction?> fetchCoinsTransactionService(int offset) async {
       return coinsTransaction;
     }
     return Future.error(
-        'Error fetchCoinsTransactionService : b2c/api/v1/activity/coins/transaction');
+        'Error fetchCoinsTransactionService : api/v1/activity/coins/transaction');
   } catch (e) {
     return Future.error('Error fetchCoinsTransactionService : $e');
   }
@@ -68,7 +68,7 @@ Future<CoinsTransaction?> fetchCoinsTransactionService(int offset) async {
 
 Future<CoinsInfo?> fetchCoinsInfoService() async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/activity/coins/info");
+  var url = Uri.parse("${b2c_api_url}api/v1/activity/coins/info");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -86,7 +86,7 @@ Future<CoinsInfo?> fetchCoinsInfoService() async {
       return coinsInfo;
     }
     return Future.error(
-        'Error fetchCoinsInfoService : b2c/api/v1/activity/coins/info');
+        'Error fetchCoinsInfoService : api/v1/activity/coins/info');
   } catch (e) {
     return Future.error('Error fetchCoinsInfoService : $e');
   }
@@ -94,7 +94,7 @@ Future<CoinsInfo?> fetchCoinsInfoService() async {
 
 Future<Festival?> fetchFestivalService(String contentStage) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/fairs/festival");
+  var url = Uri.parse("${b2c_api_url}api/v1/fairs/festival");
   // printWhite(await data.accessToken);
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -112,8 +112,7 @@ Future<Festival?> fetchFestivalService(String contentStage) async {
       final festival = festivalFromJson(utf8.decode(jsonResponse));
       return festival;
     }
-    return Future.error(
-        'Error fetchFestivalService : b2c/api/v1/fairs/festival');
+    return Future.error('Error fetchFestivalService : api/v1/fairs/festival');
   } catch (e) {
     return Future.error('Error fetchFestivalService : $e');
   }
@@ -121,7 +120,7 @@ Future<Festival?> fetchFestivalService(String contentStage) async {
 
 Future<FairBanner?> fetchFairBannerService() async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/fairs/banner");
+  var url = Uri.parse("${b2c_api_url}api/v1/fairs/banner");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -138,8 +137,7 @@ Future<FairBanner?> fetchFairBannerService() async {
       final fairBanner = fairBannerFromJson(utf8.decode(jsonResponse));
       return fairBanner;
     }
-    return Future.error(
-        'Error fetchFairBannerService : b2c/api/v1/fairs/festival');
+    return Future.error('Error fetchFairBannerService : api/v1/fairs/festival');
   } catch (e) {
     return Future.error('Error fetchFairBannerService : $e');
   }
@@ -151,7 +149,7 @@ Future<FairsProductSwipe?> fetchFairProductSwipeService(
   int fairId,
 ) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/fairs/product_swipe");
+  var url = Uri.parse("${b2c_api_url}api/v1/fairs/product_swipe");
   var payload = {};
   if (productData == null) {
     payload = {
@@ -193,7 +191,7 @@ Future<FairsProductSwipe?> fetchFairProductSwipeService(
       return fairsProductSwipe;
     }
     return Future.error(
-        'Error fetchFairProductSwipeService : b2c/api/v1/fairs/product_swipe');
+        'Error fetchFairProductSwipeService : api/v1/fairs/product_swipe');
   } catch (e) {
     return Future.error('Error fetchFairProductSwipeService : $e');
   }
@@ -201,7 +199,7 @@ Future<FairsProductSwipe?> fetchFairProductSwipeService(
 
 Future<FairsTopProduct?> fetchTopProductService() async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/fairs/top/products");
+  var url = Uri.parse("${b2c_api_url}api/v1/fairs/top/products");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -221,7 +219,7 @@ Future<FairsTopProduct?> fetchTopProductService() async {
       return fairsTopProduct;
     }
     return Future.error(
-        'Error fetchTopProductService : b2c/api/v1/fairs/top/products');
+        'Error fetchTopProductService : api/v1/fairs/top/products');
   } catch (e) {
     return Future.error('Error fetchTopProductService : $e');
   }
@@ -230,7 +228,7 @@ Future<FairsTopProduct?> fetchTopProductService() async {
 Future<FairsRedeem?> fetchProductSwipeRedeemService(
     String action, int fairId) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/fairs/product_swipe/redeem");
+  var url = Uri.parse("${b2c_api_url}api/v1/fairs/product_swipe/redeem");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -259,7 +257,7 @@ Future<FairsRedeem?> fetchProductSwipeRedeemService(
 }
 
 Future<bool> fetchFairVisibilityService() async {
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/fairs/visibility");
+  var url = Uri.parse("${b2c_api_url}api/v1/fairs/visibility");
 
   try {
     var jsonCall = await AuthFetch.get(
@@ -276,7 +274,7 @@ Future<bool> fetchFairVisibilityService() async {
       return visibility["show_fair_button"];
     }
     return Future.error(
-        'Error fetchFairVisibilityService : b2c/api/v1/fairs/visibility');
+        'Error fetchFairVisibilityService : api/v1/fairs/visibility');
   } catch (e) {
     return Future.error('Error fetchFairVisibilityService : $e');
   }

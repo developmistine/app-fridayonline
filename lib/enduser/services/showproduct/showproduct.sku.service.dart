@@ -1,20 +1,20 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:appfridayecommerce/enduser/models/showproduct/option.sku.dart';
-import 'package:appfridayecommerce/enduser/models/showproduct/product.category.model.dart';
-import 'package:appfridayecommerce/enduser/models/showproduct/product.sku.model.dart';
-import 'package:appfridayecommerce/enduser/models/showproduct/review.model.dart';
-import 'package:appfridayecommerce/enduser/models/showproduct/tier.variations.model.dart';
-import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
+import 'package:fridayonline/enduser/models/showproduct/option.sku.dart';
+import 'package:fridayonline/enduser/models/showproduct/product.category.model.dart';
+import 'package:fridayonline/enduser/models/showproduct/product.sku.model.dart';
+import 'package:fridayonline/enduser/models/showproduct/review.model.dart';
+import 'package:fridayonline/enduser/models/showproduct/tier.variations.model.dart';
+import 'package:fridayonline/enduser/utils/auth_fetch.dart';
 
-import 'package:appfridayecommerce/preferrence.dart';
-import 'package:appfridayecommerce/print.dart';
-import 'package:appfridayecommerce/service/pathapi.dart';
+import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/print.dart';
+import 'package:fridayonline/service/pathapi.dart';
 
 Future<EndUserProductDetail?> fetchProductDetailService(productId) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/products/detail");
+  var url = Uri.parse("${b2c_api_url}api/v1/products/detail");
 
   try {
     var jsonData = jsonEncode({
@@ -36,7 +36,7 @@ Future<EndUserProductDetail?> fetchProductDetailService(productId) async {
           endUserProductDetailFromJson(utf8.decode(jsonResponse));
       return endUserProductDetail;
     }
-    return Future.error('Error get productdetail : b2c/api/v1/products/detail');
+    return Future.error('Error get productdetail : api/v1/products/detail');
   } catch (e) {
     return Future.error('Error fetchProductDetailService : $e');
   }
@@ -44,7 +44,7 @@ Future<EndUserProductDetail?> fetchProductDetailService(productId) async {
 
 Future<TierVariations?> fetchProductTierVariationService(
     EndUserProductOptions options) async {
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/products/detail/select");
+  var url = Uri.parse("${b2c_api_url}api/v1/products/detail/select");
   printWhite(jsonEncode(options));
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -59,14 +59,14 @@ Future<TierVariations?> fetchProductTierVariationService(
       return tierVariations;
     }
     return Future.error(
-        'Error get option productdetail : b2c/api/v1/products/detail/select');
+        'Error get option productdetail : api/v1/products/detail/select');
   } catch (e) {
     return Future.error('Error: $e');
   }
 }
 
 Future<B2CReview?> fetchReivewSkuService(productId, type, limit, offset) async {
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/products/ratings");
+  var url = Uri.parse("${b2c_api_url}api/v1/products/ratings");
   SetData data = SetData();
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -89,7 +89,7 @@ Future<B2CReview?> fetchReivewSkuService(productId, type, limit, offset) async {
       return b2CReview;
     }
     return Future.error(
-        'Error get review productdetail : b2c/api/v1/products/review');
+        'Error get review productdetail : api/v1/products/review');
   } catch (e) {
     return Future.error('Error fetchReivewSkuService: $e');
   }
@@ -97,7 +97,7 @@ Future<B2CReview?> fetchReivewSkuService(productId, type, limit, offset) async {
 
 Future<ProductContent?> fetchProductRelateService(productId) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/products/relate");
+  var url = Uri.parse("${b2c_api_url}api/v1/products/relate");
 
   try {
     var jsonData = jsonEncode({
@@ -118,7 +118,7 @@ Future<ProductContent?> fetchProductRelateService(productId) async {
       final relateProduct = productContentFromJson(utf8.decode(jsonResponse));
       return relateProduct;
     }
-    return Future.error('Error get productdetail : b2c/api/v1/products/detail');
+    return Future.error('Error get productdetail : api/v1/products/detail');
   } catch (e) {
     return Future.error('Error fetchProductDetailService : $e');
   }

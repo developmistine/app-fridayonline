@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
-import 'package:appfridayecommerce/enduser/models/address/b2caddrss.model.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
+import 'package:fridayonline/enduser/models/address/b2caddrss.model.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';

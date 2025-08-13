@@ -1,12 +1,12 @@
-import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
-import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
+import 'package:fridayonline/enduser/widgets/dialog.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:timeline_tile/timeline_tile.dart';
-import 'package:appfridayecommerce/enduser/models/orders/orderdetail.model.dart'
+import 'package:fridayonline/enduser/models/orders/orderdetail.model.dart'
     as shipping;
 
 class ShippingDetail extends StatelessWidget {

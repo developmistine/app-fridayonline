@@ -1,21 +1,21 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:appfridayecommerce/enduser/models/coupon/coupon.user.model.dart';
-import 'package:appfridayecommerce/enduser/models/coupon/vouchers.detail.dart';
-import 'package:appfridayecommerce/enduser/models/coupon/vouchers.group.model.dart';
-import 'package:appfridayecommerce/enduser/models/coupon/vouchers.items.model.dart';
-import 'package:appfridayecommerce/enduser/models/coupon/vouchers.platform.model.dart';
-import 'package:appfridayecommerce/enduser/models/coupon/vouchers.recommend.model.dart';
-import 'package:appfridayecommerce/enduser/models/coupon/vouchers.group.user.model.dart';
-import 'package:appfridayecommerce/enduser/models/coupon/vouchers.shopcode.model.dart';
-import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
+import 'package:fridayonline/enduser/models/coupon/coupon.user.model.dart';
+import 'package:fridayonline/enduser/models/coupon/vouchers.detail.dart';
+import 'package:fridayonline/enduser/models/coupon/vouchers.group.model.dart';
+import 'package:fridayonline/enduser/models/coupon/vouchers.items.model.dart';
+import 'package:fridayonline/enduser/models/coupon/vouchers.platform.model.dart';
+import 'package:fridayonline/enduser/models/coupon/vouchers.recommend.model.dart';
+import 'package:fridayonline/enduser/models/coupon/vouchers.group.user.model.dart';
+import 'package:fridayonline/enduser/models/coupon/vouchers.shopcode.model.dart';
+import 'package:fridayonline/enduser/utils/auth_fetch.dart';
 
-import 'package:appfridayecommerce/preferrence.dart';
-import 'package:appfridayecommerce/service/pathapi.dart';
+import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/service/pathapi.dart';
 
 Future<VouchersGroup?> fetchVoucherGroupService() async {
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/vouchers/group");
+  var url = Uri.parse("${b2c_api_url}api/v1/vouchers/group");
 
   try {
     var jsonCall = await AuthFetch.post(
@@ -29,7 +29,7 @@ Future<VouchersGroup?> fetchVoucherGroupService() async {
       final vouchersGroup = vouchersGroupFromJson(utf8.decode(jsonResponse));
       return vouchersGroup;
     }
-    return Future.error('Error voucher group : b2c/api/v1/vouchers/group');
+    return Future.error('Error voucher group : api/v1/vouchers/group');
   } catch (e) {
     return Future.error('Error fetchVoucherGroupService : $e');
   }
@@ -37,7 +37,7 @@ Future<VouchersGroup?> fetchVoucherGroupService() async {
 
 Future<Vouchersitems?> fetchVoucherItemsService(int groupId) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/vouchers/get");
+  var url = Uri.parse("${b2c_api_url}api/v1/vouchers/get");
   try {
     var jsonCall = await AuthFetch.post(url,
         headers: <String, String>{
@@ -53,7 +53,7 @@ Future<Vouchersitems?> fetchVoucherItemsService(int groupId) async {
       final vouchersitems = vouchersitemsFromJson(utf8.decode(jsonResponse));
       return vouchersitems;
     }
-    return Future.error('Error voucher items : b2c/api/v1/vouchers/get');
+    return Future.error('Error voucher items : api/v1/vouchers/get');
   } catch (e) {
     return Future.error('Error fetchVoucherItemsService : $e');
   }
@@ -61,7 +61,7 @@ Future<Vouchersitems?> fetchVoucherItemsService(int groupId) async {
 
 Future<VoucherDetail?> fetchVoucherDetail(int couponId) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/vouchers/detail");
+  var url = Uri.parse("${b2c_api_url}api/v1/vouchers/detail");
   try {
     var jsonCall = await AuthFetch.post(url,
         headers: <String, String>{
@@ -77,7 +77,7 @@ Future<VoucherDetail?> fetchVoucherDetail(int couponId) async {
       final voucherDetail = voucherDetailFromJson(utf8.decode(jsonResponse));
       return voucherDetail;
     }
-    return Future.error('Error voucher items : b2c/api/v1/vouchers/get');
+    return Future.error('Error voucher items : api/v1/vouchers/get');
   } catch (e) {
     return Future.error('Error fetchVoucherItemsService : $e');
   }
@@ -85,7 +85,7 @@ Future<VoucherDetail?> fetchVoucherDetail(int couponId) async {
 
 Future<VoucherRecommend?> fetchVoucherRecommend(int shopId) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/vouchers/shop_recommend");
+  var url = Uri.parse("${b2c_api_url}api/v1/vouchers/shop_recommend");
   try {
     var jsonCall = await AuthFetch.post(url,
         headers: <String, String>{
@@ -102,8 +102,7 @@ Future<VoucherRecommend?> fetchVoucherRecommend(int shopId) async {
           voucherRecommendFromJson(utf8.decode(jsonResponse));
       return voucherRecommend;
     }
-    return Future.error(
-        'Error voucher items : b2c/api/v1/vouchers/shop_recommend');
+    return Future.error('Error voucher items : api/v1/vouchers/shop_recommend');
   } catch (e) {
     return Future.error('Error fetchVoucherRecommend : $e');
   }
@@ -112,9 +111,9 @@ Future<VoucherRecommend?> fetchVoucherRecommend(int shopId) async {
 Future<VouchersShopCode?> getCodeService(
     int shopId, String shopCode, String type) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/vouchers/shop_code");
+  var url = Uri.parse("${b2c_api_url}api/v1/vouchers/shop_code");
   if (type == 'platform') {
-    url = Uri.parse("${b2c_api_url}b2c/api/v1/vouchers/platform_code");
+    url = Uri.parse("${b2c_api_url}api/v1/vouchers/platform_code");
   }
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -136,8 +135,7 @@ Future<VouchersShopCode?> getCodeService(
           vouchersShopCodeFromJson(utf8.decode(jsonResponse));
       return vouchersShopCode;
     }
-    return Future.error(
-        'Error voucher shop code : b2c/api/v1/vouchers/shop_code');
+    return Future.error('Error voucher shop code : api/v1/vouchers/shop_code');
   } catch (e) {
     return Future.error('Error getShopCodeService : $e');
   }
@@ -145,7 +143,7 @@ Future<VouchersShopCode?> getCodeService(
 
 Future<Response> addVoucherItemsService(int listCouponId) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/vouchers/add");
+  var url = Uri.parse("${b2c_api_url}api/v1/vouchers/add");
   try {
     var jsonCall = await AuthFetch.post(url,
         headers: <String, String>{
@@ -161,7 +159,7 @@ Future<Response> addVoucherItemsService(int listCouponId) async {
       final response = responseFromJson(utf8.decode(jsonResponse));
       return response;
     }
-    return Future.error('Error voucher add : b2c/api/v1/vouchers/add');
+    return Future.error('Error voucher add : api/v1/vouchers/add');
   } catch (e) {
     return Future.error('Error addVoucherItemsService : $e');
   }
@@ -169,7 +167,7 @@ Future<Response> addVoucherItemsService(int listCouponId) async {
 
 Future<PlatformRecommend?> fetchPlatFormVoucherRecommend() async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/vouchers/platform_recommend");
+  var url = Uri.parse("${b2c_api_url}api/v1/vouchers/platform_recommend");
   try {
     var jsonCall = await AuthFetch.post(url,
         headers: <String, String>{
@@ -187,7 +185,7 @@ Future<PlatformRecommend?> fetchPlatFormVoucherRecommend() async {
       return platformRecommend;
     }
     return Future.error(
-        'Error voucher items : b2c/api/v1/vouchers/platform_recommend');
+        'Error voucher items : api/v1/vouchers/platform_recommend');
   } catch (e) {
     return Future.error('Error fetchPlatFormVoucherRecommend : $e');
   }
@@ -195,7 +193,7 @@ Future<PlatformRecommend?> fetchPlatFormVoucherRecommend() async {
 
 Future<VoucherGroupUser?> fetchVoucherGroupUser() async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/vouchers/group_user");
+  var url = Uri.parse("${b2c_api_url}api/v1/vouchers/group_user");
   try {
     var jsonCall = await AuthFetch.post(url,
         headers: <String, String>{
@@ -211,7 +209,7 @@ Future<VoucherGroupUser?> fetchVoucherGroupUser() async {
       final voucherUser = voucherGroupUserFromJson(utf8.decode(jsonResponse));
       return voucherUser;
     }
-    return Future.error('Error voucher items : b2c/api/v1/vouchers/group_user');
+    return Future.error('Error voucher items : api/v1/vouchers/group_user');
   } catch (e) {
     return Future.error('Error fetchVoucherUser : $e');
   }
@@ -220,7 +218,7 @@ Future<VoucherGroupUser?> fetchVoucherGroupUser() async {
 Future<VoucherUser?> fetchVoucherUser(
     int voucherPage, int groupType, int offset) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/vouchers/user");
+  var url = Uri.parse("${b2c_api_url}api/v1/vouchers/user");
   try {
     var jsonCall = await AuthFetch.post(url,
         headers: <String, String>{
@@ -240,7 +238,7 @@ Future<VoucherUser?> fetchVoucherUser(
       final voucherUser = voucherUserFromJson(utf8.decode(jsonResponse));
       return voucherUser;
     }
-    return Future.error('Error voucher items : b2c/api/v1/vouchers/group_user');
+    return Future.error('Error voucher items : api/v1/vouchers/group_user');
   } catch (e) {
     return Future.error('Error fetchVoucherUser : $e');
   }

@@ -1,9 +1,9 @@
-import 'package:appfridayecommerce/enduser/components/shimmer/shimmer.card.dart';
-import 'package:appfridayecommerce/enduser/controller/profile.ctr.dart';
-import 'package:appfridayecommerce/enduser/utils/format.dart';
-import 'package:appfridayecommerce/enduser/views/(profile)/edit.profile.dart';
-import 'package:appfridayecommerce/enduser/views/(profile)/friday.coin.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/components/shimmer/shimmer.card.dart';
+import 'package:fridayonline/enduser/controller/profile.ctr.dart';
+import 'package:fridayonline/enduser/utils/format.dart';
+import 'package:fridayonline/enduser/views/(profile)/edit.profile.dart';
+import 'package:fridayonline/enduser/views/(profile)/friday.coin.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';

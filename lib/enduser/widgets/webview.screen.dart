@@ -1,7 +1,7 @@
 import 'dart:io';
-import 'package:appfridayecommerce/enduser/controller/order.ctr.dart';
-import 'package:appfridayecommerce/enduser/views/(profile)/myorder.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/controller/order.ctr.dart';
+import 'package:fridayonline/enduser/views/(profile)/myorder.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';

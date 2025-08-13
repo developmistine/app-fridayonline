@@ -1,4 +1,4 @@
-import 'package:appfridayecommerce/enduser/components/viewer/video.fullscreen.dart';
+import 'package:fridayonline/enduser/components/viewer/video.fullscreen.dart';
 import 'package:flutter/material.dart';
 
 class ProductMedias extends StatefulWidget {

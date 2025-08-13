@@ -1,8 +1,8 @@
-import 'package:appfridayecommerce/analytics/analytics_engine.dart';
-import 'package:appfridayecommerce/enduser/components/category/category.group.dart';
-import 'package:appfridayecommerce/enduser/controller/enduser.home.ctr.dart';
-import 'package:appfridayecommerce/theme.dart';
-import 'package:appfridayecommerce/preferrence.dart';
+import 'package:fridayonline/analytics/analytics_engine.dart';
+import 'package:fridayonline/enduser/components/category/category.group.dart';
+import 'package:fridayonline/enduser/controller/enduser.home.ctr.dart';
+import 'package:fridayonline/theme.dart';
+import 'package:fridayonline/preferrence.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

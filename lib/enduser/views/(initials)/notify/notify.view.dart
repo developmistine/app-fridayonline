@@ -1,8 +1,8 @@
-import 'package:appfridayecommerce/enduser/components/notify/notify.order.list.dart';
-import 'package:appfridayecommerce/enduser/controller/notify.ctr.dart';
-import 'package:appfridayecommerce/enduser/controller/order.ctr.dart';
-import 'package:appfridayecommerce/enduser/views/(initials)/notify/notify.list.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/components/notify/notify.order.list.dart';
+import 'package:fridayonline/enduser/controller/notify.ctr.dart';
+import 'package:fridayonline/enduser/controller/order.ctr.dart';
+import 'package:fridayonline/enduser/views/(initials)/notify/notify.list.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

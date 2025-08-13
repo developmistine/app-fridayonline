@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:appfridayecommerce/controller/app_controller.dart';
-import 'package:appfridayecommerce/preferrence.dart';
-import 'package:appfridayecommerce/splashscreen.dart';
+import 'package:fridayonline/controller/app_controller.dart';
+import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/splashscreen.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

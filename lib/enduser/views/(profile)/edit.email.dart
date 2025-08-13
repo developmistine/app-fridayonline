@@ -1,7 +1,7 @@
-import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
-import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
-import 'package:appfridayecommerce/theme.dart';
-import 'package:appfridayecommerce/service/validators.dart';
+import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
+import 'package:fridayonline/enduser/widgets/dialog.dart';
+import 'package:fridayonline/theme.dart';
+import 'package:fridayonline/service/validators.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';

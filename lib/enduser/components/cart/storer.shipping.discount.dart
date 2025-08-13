@@ -1,9 +1,9 @@
-import 'package:appfridayecommerce/enduser/utils/format.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/utils/format.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:appfridayecommerce/enduser/models/cart/getcart.model.dart';
+import 'package:fridayonline/enduser/models/cart/getcart.model.dart';
 
 void storeShippingDiscount(
     BuildContext context, List<Datum> cartShop, int index) {

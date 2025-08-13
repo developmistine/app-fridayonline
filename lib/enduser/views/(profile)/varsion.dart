@@ -1,7 +1,7 @@
-import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
-import 'package:appfridayecommerce/global.dart';
+import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
+import 'package:fridayonline/global.dart';
 import 'package:flutter/material.dart';
-// import 'package:appfridayecommerce/theme.dart';import 'package:flutter/material.dart';
+// import 'package:fridayonline/theme.dart';import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 

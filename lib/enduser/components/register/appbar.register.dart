@@ -1,5 +1,5 @@
-import 'package:appfridayecommerce/enduser/controller/enduser.signin.ctr.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/controller/enduser.signin.ctr.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';

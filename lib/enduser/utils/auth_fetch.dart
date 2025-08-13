@@ -1,8 +1,8 @@
 import 'dart:convert';
-import 'package:appfridayecommerce/enduser/controller/chat.ctr.dart';
-import 'package:appfridayecommerce/print.dart';
-import 'package:appfridayecommerce/service/pathapi.dart';
-import 'package:appfridayecommerce/splashscreen.dart';
+import 'package:fridayonline/enduser/controller/chat.ctr.dart';
+import 'package:fridayonline/print.dart';
+import 'package:fridayonline/service/pathapi.dart';
+import 'package:fridayonline/splashscreen.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -194,7 +194,7 @@ class AuthFetch {
     try {
       final response = await http.post(
         //! dev_api_b2c , b2c_api_url
-        Uri.parse('${b2c_api_url}b2c/refresh'),
+        Uri.parse('${b2c_api_url}refresh'),
         headers: {
           'Content-Type': 'application/json',
         },

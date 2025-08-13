@@ -1,5 +1,5 @@
-import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
-import 'package:appfridayecommerce/enduser/views/(cart)/cart.set.address.dart';
+import 'package:fridayonline/enduser/controller/cart.ctr.dart';
+import 'package:fridayonline/enduser/views/(cart)/cart.set.address.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

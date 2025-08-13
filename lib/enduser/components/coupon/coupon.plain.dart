@@ -1,5 +1,5 @@
-// import 'package:appfridayecommerce/enduser/models/coupon/vouchers.detail.dart';
-import 'package:appfridayecommerce/enduser/views/(coupon)/coupon.detail.dart';
+// import 'package:fridayonline/enduser/models/coupon/vouchers.detail.dart';
+import 'package:fridayonline/enduser/views/(coupon)/coupon.detail.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

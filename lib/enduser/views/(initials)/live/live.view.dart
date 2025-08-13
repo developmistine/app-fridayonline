@@ -1,4 +1,4 @@
-import 'package:appfridayecommerce/enduser/views/(showproduct)/video.review.dart';
+import 'package:fridayonline/enduser/views/(showproduct)/video.review.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 

@@ -1,17 +1,17 @@
 import 'dart:async';
 
-import 'package:appfridayecommerce/enduser/components/shimmer/shimmer.product.dart';
-import 'package:appfridayecommerce/enduser/controller/search.ctr.dart';
-// import 'package:appfridayecommerce/enduser/controller/showproduct.sku.ctr.dart';
-// import 'package:appfridayecommerce/enduser/controller/showproduct.category.ctr.dart';
-import 'package:appfridayecommerce/enduser/models/search/serach.hint.model.dart';
-import 'package:appfridayecommerce/enduser/services/search/search.service.dart';
-import 'package:appfridayecommerce/enduser/views/(search)/search.result.dart';
-import 'package:appfridayecommerce/enduser/widgets/gap.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/components/shimmer/shimmer.product.dart';
+import 'package:fridayonline/enduser/controller/search.ctr.dart';
+// import 'package:fridayonline/enduser/controller/showproduct.sku.ctr.dart';
+// import 'package:fridayonline/enduser/controller/showproduct.category.ctr.dart';
+import 'package:fridayonline/enduser/models/search/serach.hint.model.dart';
+import 'package:fridayonline/enduser/services/search/search.service.dart';
+import 'package:fridayonline/enduser/views/(search)/search.result.dart';
+import 'package:fridayonline/enduser/widgets/gap.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-// // import 'package:appfridayecommerce/enduser/widgets/gap.dart';
-// import 'package:appfridayecommerce/theme.dart';import 'package:cached_network_image/cached_network_image.dart';
+// // import 'package:fridayonline/enduser/widgets/gap.dart';
+// import 'package:fridayonline/theme.dart';import 'package:cached_network_image/cached_network_image.dart';
 // import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';

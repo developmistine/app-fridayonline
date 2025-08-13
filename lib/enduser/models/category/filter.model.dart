@@ -3,7 +3,7 @@
 //     final productsFilter = productsFilterFromJson(jsonString);
 
 import 'dart:convert';
-import 'package:appfridayecommerce/enduser/models/showproduct/product.category.model.dart';
+import 'package:fridayonline/enduser/models/showproduct/product.category.model.dart';
 
 ProductsFilter productsFilterFromJson(String str) =>
     ProductsFilter.fromJson(json.decode(str));

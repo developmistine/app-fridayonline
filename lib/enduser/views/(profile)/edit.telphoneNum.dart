@@ -1,9 +1,9 @@
-import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
-import 'package:appfridayecommerce/enduser/services/authen/b2cauthen.service.dart';
-import 'package:appfridayecommerce/enduser/utils/format.dart';
-import 'package:appfridayecommerce/enduser/views/(other)/otp.verify.dart';
-import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
+import 'package:fridayonline/enduser/services/authen/b2cauthen.service.dart';
+import 'package:fridayonline/enduser/utils/format.dart';
+import 'package:fridayonline/enduser/views/(other)/otp.verify.dart';
+import 'package:fridayonline/enduser/widgets/dialog.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';

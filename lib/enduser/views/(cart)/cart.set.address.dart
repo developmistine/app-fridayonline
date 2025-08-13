@@ -1,14 +1,14 @@
 import 'dart:convert';
 
-import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
-import 'package:appfridayecommerce/enduser/models/address/address.model.dart';
-import 'package:appfridayecommerce/enduser/services/address/adress.service.dart';
-import 'package:appfridayecommerce/enduser/utils/format.dart';
-import 'package:appfridayecommerce/enduser/views/(address)/search.address.dart';
-import 'package:appfridayecommerce/enduser/widgets/dialog.dart';
-import 'package:appfridayecommerce/theme.dart';
-import 'package:appfridayecommerce/preferrence.dart';
-import 'package:appfridayecommerce/service/validators.dart';
+import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
+import 'package:fridayonline/enduser/models/address/address.model.dart';
+import 'package:fridayonline/enduser/services/address/adress.service.dart';
+import 'package:fridayonline/enduser/utils/format.dart';
+import 'package:fridayonline/enduser/views/(address)/search.address.dart';
+import 'package:fridayonline/enduser/widgets/dialog.dart';
+import 'package:fridayonline/theme.dart';
+import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/service/validators.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_switch/flutter_switch.dart';

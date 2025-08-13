@@ -2,22 +2,22 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:appfridayecommerce/enduser/models/orders/bank.model.dart';
-import 'package:appfridayecommerce/enduser/models/orders/courier.model.dart';
-import 'package:appfridayecommerce/enduser/models/orders/orderdetail.checkout.model.dart';
-import 'package:appfridayecommerce/enduser/models/orders/orderdetail.model.dart';
-import 'package:appfridayecommerce/enduser/models/orders/orderheader.model.dart';
-import 'package:appfridayecommerce/enduser/models/orders/orderlist.checkout.model.dart';
-import 'package:appfridayecommerce/enduser/models/orders/orderlist.model.dart';
-import 'package:appfridayecommerce/enduser/models/orders/reason.model.dart';
-import 'package:appfridayecommerce/enduser/models/orders/reason.return.model.dart';
-import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
-import 'package:appfridayecommerce/preferrence.dart';
-import 'package:appfridayecommerce/service/pathapi.dart';
+import 'package:fridayonline/enduser/models/orders/bank.model.dart';
+import 'package:fridayonline/enduser/models/orders/courier.model.dart';
+import 'package:fridayonline/enduser/models/orders/orderdetail.checkout.model.dart';
+import 'package:fridayonline/enduser/models/orders/orderdetail.model.dart';
+import 'package:fridayonline/enduser/models/orders/orderheader.model.dart';
+import 'package:fridayonline/enduser/models/orders/orderlist.checkout.model.dart';
+import 'package:fridayonline/enduser/models/orders/orderlist.model.dart';
+import 'package:fridayonline/enduser/models/orders/reason.model.dart';
+import 'package:fridayonline/enduser/models/orders/reason.return.model.dart';
+import 'package:fridayonline/enduser/utils/auth_fetch.dart';
+import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/service/pathapi.dart';
 import 'package:http/http.dart' as http;
 
 Future<OrdersHeader?> fetchOrderHeadersService() async {
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/orders/header");
+  var url = Uri.parse("${b2c_api_url}api/v1/orders/header");
 
   try {
     var jsonCall = await AuthFetch.post(
@@ -31,7 +31,7 @@ Future<OrdersHeader?> fetchOrderHeadersService() async {
       final ordersHeader = ordersHeaderFromJson(utf8.decode(jsonResponse));
       return ordersHeader;
     }
-    return Future.error('Error get order header : b2c/api/v1/orders/header');
+    return Future.error('Error get order header : api/v1/orders/header');
   } catch (e) {
     return Future.error('Error fetchOrderHeadersService : $e');
   }
@@ -40,7 +40,7 @@ Future<OrdersHeader?> fetchOrderHeadersService() async {
 Future<OrdersList?> fetchOrderListService(
     int orderType, int sellerId, int offset) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/orders/list");
+  var url = Uri.parse("${b2c_api_url}api/v1/orders/list");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -60,7 +60,7 @@ Future<OrdersList?> fetchOrderListService(
       final ordersList = ordersListFromJson(utf8.decode(jsonResponse));
       return ordersList;
     }
-    return Future.error('Error get order list : b2c/api/v1/orders/list');
+    return Future.error('Error get order list : api/v1/orders/list');
   } catch (e) {
     return Future.error('Error fetchOrderListService : $e');
   }
@@ -69,7 +69,7 @@ Future<OrdersList?> fetchOrderListService(
 Future<OrdersListCheckOut?> fetchOrderListCheckOutService(
     int orderType, int offset) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/orders/list_checkout");
+  var url = Uri.parse("${b2c_api_url}api/v1/orders/list_checkout");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -89,8 +89,7 @@ Future<OrdersListCheckOut?> fetchOrderListCheckOutService(
           ordersListCheckOutFromJson(utf8.decode(jsonResponse));
       return ordersListCheckOut;
     }
-    return Future.error(
-        'Error get order list : b2c/api/v1/orders/list_checkout');
+    return Future.error('Error get order list : api/v1/orders/list_checkout');
   } catch (e) {
     return Future.error('Error fetchOrderListCheckOutService : $e');
   }
@@ -98,7 +97,7 @@ Future<OrdersListCheckOut?> fetchOrderListCheckOutService(
 
 Future<OrderDetail?> fetchOrderDetailService(int orderId) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/orders/detail");
+  var url = Uri.parse("${b2c_api_url}api/v1/orders/detail");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -114,7 +113,7 @@ Future<OrderDetail?> fetchOrderDetailService(int orderId) async {
 
       return orderDetail;
     }
-    return Future.error('Error get order detail : b2c/api/v1/orders/detail');
+    return Future.error('Error get order detail : api/v1/orders/detail');
   } catch (e) {
     return Future.error('Error fetchOrderDetailService: $e');
   }
@@ -123,7 +122,7 @@ Future<OrderDetail?> fetchOrderDetailService(int orderId) async {
 Future<OrderDetailCheckOut?> fetchOrderDetailCheckOutService(
     int orderId) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/orders/detail_checkout");
+  var url = Uri.parse("${b2c_api_url}api/v1/orders/detail_checkout");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -143,7 +142,7 @@ Future<OrderDetailCheckOut?> fetchOrderDetailCheckOutService(
       return orderDetailCheckOut;
     }
     return Future.error(
-        'Error get order detail : b2c/api/v1/orders/detail_checkout');
+        'Error get order detail : api/v1/orders/detail_checkout');
   } catch (e) {
     return Future.error('Error fetchOrderDetailCheckOutService: $e');
   }
@@ -151,7 +150,7 @@ Future<OrderDetailCheckOut?> fetchOrderDetailCheckOutService(
 
 Future updateOrderAddressServices(int orderId, int addressId) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/orders/update_address");
+  var url = Uri.parse("${b2c_api_url}api/v1/orders/update_address");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -171,7 +170,7 @@ Future updateOrderAddressServices(int orderId, int addressId) async {
       return jsonDecode(orderDetailCheckOut);
     }
     return Future.error(
-        'Error get order detail : b2c/api/v1/orders/update_address');
+        'Error get order detail : api/v1/orders/update_address');
   } catch (e) {
     return Future.error('Error updateOrderAddressServices: $e');
   }
@@ -179,7 +178,7 @@ Future updateOrderAddressServices(int orderId, int addressId) async {
 
 Future updatePaymentServices(int orderId, String paymentType) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/orders/update_payment");
+  var url = Uri.parse("${b2c_api_url}api/v1/orders/update_payment");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -199,7 +198,7 @@ Future updatePaymentServices(int orderId, String paymentType) async {
       return jsonDecode(orderDetailCheckOut);
     }
     return Future.error(
-        'Error get order detail : b2c/api/v1/orders/update_address');
+        'Error get order detail : api/v1/orders/update_address');
   } catch (e) {
     return Future.error('Error updateOrderAddressServices: $e');
   }
@@ -207,7 +206,7 @@ Future updatePaymentServices(int orderId, String paymentType) async {
 
 Future<CancelOrderReason> fetchCancelReasonOrdersService(int shopId) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/orders/cancel_reason");
+  var url = Uri.parse("${b2c_api_url}api/v1/orders/cancel_reason");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -226,16 +225,16 @@ Future<CancelOrderReason> fetchCancelReasonOrdersService(int shopId) async {
       return cancelOrderReason;
     }
     return Future.error(
-        'Error fetchCancelReasonOrders : b2c/api/v1/orders/cancel_reason');
+        'Error fetchCancelReasonOrders : api/v1/orders/cancel_reason');
   } catch (e) {
     return Future.error(
-        'Error fetchCancelReasonOrdersService b2c/api/v1/orders/cancel_reason: $e');
+        'Error fetchCancelReasonOrdersService api/v1/orders/cancel_reason: $e');
   }
 }
 
 Future<ReturnReason> fetchReturnReasonOrdersService() async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/orders/return_reason");
+  var url = Uri.parse("${b2c_api_url}api/v1/orders/return_reason");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -253,15 +252,15 @@ Future<ReturnReason> fetchReturnReasonOrdersService() async {
       return returnOrder;
     }
     return Future.error(
-        'Error fetchCancelReasonOrders : b2c/api/v1/orders/return_reason');
+        'Error fetchCancelReasonOrders : api/v1/orders/return_reason');
   } catch (e) {
     return Future.error(
-        'Error fetchCancelReasonOrdersService b2c/api/v1/orders/return_reason: $e');
+        'Error fetchCancelReasonOrdersService api/v1/orders/return_reason: $e');
   }
 }
 
 Future<Bank> fetchBankService() async {
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/bank");
+  var url = Uri.parse("${b2c_api_url}api/v1/bank");
 
   try {
     var jsonCall = await AuthFetch.get(
@@ -276,14 +275,14 @@ Future<Bank> fetchBankService() async {
 
       return bank;
     }
-    return Future.error('Error fetchBankService : b2c/api/v1/bank');
+    return Future.error('Error fetchBankService : api/v1/bank');
   } catch (e) {
-    return Future.error('Error fetchBankService b2c/api/v1/bank: $e');
+    return Future.error('Error fetchBankService api/v1/bank: $e');
   }
 }
 
 Future<Courier> fetchCourierService() async {
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/courier");
+  var url = Uri.parse("${b2c_api_url}api/v1/courier");
 
   try {
     var jsonCall = await AuthFetch.get(
@@ -298,9 +297,9 @@ Future<Courier> fetchCourierService() async {
 
       return courier;
     }
-    return Future.error('Error fetchCourierService : b2c/api/v1/courier');
+    return Future.error('Error fetchCourierService : api/v1/courier');
   } catch (e) {
-    return Future.error('Error fetchCourierService b2c/api/v1/courier: $e');
+    return Future.error('Error fetchCourierService api/v1/courier: $e');
   }
 }
 
@@ -309,7 +308,7 @@ Future<Response?> submitReturnSaveService({
   required List<File> images,
   File? video,
 }) async {
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/orders/return_save");
+  var url = Uri.parse("${b2c_api_url}api/v1/orders/return_save");
   try {
     // 🔹 เพิ่มข้อมูลรีวิว (แปลงเป็น JSON)
     Map<String, dynamic> reviewData = json;
@@ -358,7 +357,7 @@ Future<Response?> submitReturnSaveService({
       return response;
     }
     return Future.error(
-        'Error chat submitReturnSaveService : b2c/api/v1/orders/return_save');
+        'Error chat submitReturnSaveService : api/v1/orders/return_save');
   } catch (e) {
     print("❗ เกิดข้อผิดพลาด: $e");
     return null;
@@ -369,7 +368,7 @@ Future<Response?> submitReturnUpdateInfoService({
   required Map<String, dynamic> json,
   required List<File> images,
 }) async {
-  var url = Uri.parse("${base_api_app}b2c/api/v1/orders/return_update_info");
+  var url = Uri.parse("${base_api_app}api/v1/orders/return_update_info");
   try {
     Map<String, dynamic> reviewData = json;
     Map<String, String> fields = {
@@ -410,7 +409,7 @@ Future<Response?> submitReturnUpdateInfoService({
       return response;
     }
     return Future.error(
-        'Error chat submitReturnUpdateInfoService : b2c/api/v1/orders/return_update_info');
+        'Error chat submitReturnUpdateInfoService : api/v1/orders/return_update_info');
   } catch (e) {
     print("❗ เกิดข้อผิดพลาด: $e");
     return null;
@@ -423,9 +422,9 @@ Future<SaveReason> saveCancelOrderService(
   String note,
 ) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/orders/cancel");
+  var url = Uri.parse("${b2c_api_url}api/v1/orders/cancel");
   if (note == "checkout") {
-    url = Uri.parse("${b2c_api_url}b2c/api/v1/orders/cancel_checkout");
+    url = Uri.parse("${b2c_api_url}api/v1/orders/cancel_checkout");
   }
 
   try {
@@ -446,11 +445,10 @@ Future<SaveReason> saveCancelOrderService(
 
       return saveReason;
     }
-    return Future.error(
-        'Error saveCancelOrderService : b2c/api/v1/orders/cancel');
+    return Future.error('Error saveCancelOrderService : api/v1/orders/cancel');
   } catch (e) {
     return Future.error(
-        'Error saveCancelOrderService b2c/api/v1/orders/cancel: $e');
+        'Error saveCancelOrderService api/v1/orders/cancel: $e');
   }
 }
 

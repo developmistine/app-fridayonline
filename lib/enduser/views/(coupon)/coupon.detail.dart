@@ -1,8 +1,8 @@
-import 'package:appfridayecommerce/enduser/components/appbar/appbar.master.dart';
-import 'package:appfridayecommerce/enduser/components/coupon/coupon.plain.dart';
-import 'package:appfridayecommerce/enduser/models/coupon/vouchers.detail.dart';
-import 'package:appfridayecommerce/enduser/services/coupon/coupon.services.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/components/appbar/appbar.master.dart';
+import 'package:fridayonline/enduser/components/coupon/coupon.plain.dart';
+import 'package:fridayonline/enduser/models/coupon/vouchers.detail.dart';
+import 'package:fridayonline/enduser/services/coupon/coupon.services.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';

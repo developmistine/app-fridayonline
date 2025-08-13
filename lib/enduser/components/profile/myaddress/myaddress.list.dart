@@ -1,8 +1,8 @@
-import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
-import 'package:appfridayecommerce/enduser/models/address/address.model.dart';
-import 'package:appfridayecommerce/enduser/utils/format.dart';
-import 'package:appfridayecommerce/enduser/views/(cart)/cart.set.address.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/controller/cart.ctr.dart';
+import 'package:fridayonline/enduser/models/address/address.model.dart';
+import 'package:fridayonline/enduser/utils/format.dart';
+import 'package:fridayonline/enduser/views/(cart)/cart.set.address.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,23 +1,23 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:appfridayecommerce/enduser/models/home/hom.mall.model.dart';
-import 'package:appfridayecommerce/enduser/models/home/home.banner.model.dart';
-import 'package:appfridayecommerce/enduser/models/home/home.brands.model.dart';
-import 'package:appfridayecommerce/enduser/models/home/home.content.model.dart';
-import 'package:appfridayecommerce/enduser/models/home/home.popup.model.dart';
-import 'package:appfridayecommerce/enduser/models/home/home.recommend.dart';
-import 'package:appfridayecommerce/enduser/models/home/home.short.model.dart';
-import 'package:appfridayecommerce/enduser/models/home/home.topsales.model.dart';
-import 'package:appfridayecommerce/enduser/models/home/home.vouchers.model.dart';
-import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
+import 'package:fridayonline/enduser/models/home/hom.mall.model.dart';
+import 'package:fridayonline/enduser/models/home/home.banner.model.dart';
+import 'package:fridayonline/enduser/models/home/home.brands.model.dart';
+import 'package:fridayonline/enduser/models/home/home.content.model.dart';
+import 'package:fridayonline/enduser/models/home/home.popup.model.dart';
+import 'package:fridayonline/enduser/models/home/home.recommend.dart';
+import 'package:fridayonline/enduser/models/home/home.short.model.dart';
+import 'package:fridayonline/enduser/models/home/home.topsales.model.dart';
+import 'package:fridayonline/enduser/models/home/home.vouchers.model.dart';
+import 'package:fridayonline/enduser/utils/auth_fetch.dart';
 
-import 'package:appfridayecommerce/preferrence.dart';
-import 'package:appfridayecommerce/print.dart';
-import 'package:appfridayecommerce/service/pathapi.dart';
+import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/print.dart';
+import 'package:fridayonline/service/pathapi.dart';
 
 Future<HomeContent?> fetchHomeContentService(contentType) async {
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/home/content");
+  var url = Uri.parse("${b2c_api_url}api/v1/home/content");
   SetData data = SetData();
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -34,7 +34,7 @@ Future<HomeContent?> fetchHomeContentService(contentType) async {
       final homeContent = homeContentFromJson(utf8.decode(jsonResponse));
       return homeContent;
     }
-    return Future.error('Error get home content : b2c/api/v1/home/content');
+    return Future.error('Error get home content : api/v1/home/content');
   } catch (e) {
     return Future.error('Error: $e');
   }
@@ -42,7 +42,7 @@ Future<HomeContent?> fetchHomeContentService(contentType) async {
 
 Future<HomeBanner?> fetchHomeBannerService() async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/home/banner");
+  var url = Uri.parse("${b2c_api_url}api/v1/home/banner");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -58,7 +58,7 @@ Future<HomeBanner?> fetchHomeBannerService() async {
       final homeBanner = homeBannerFromJson(utf8.decode(jsonResponse));
       return homeBanner;
     }
-    return Future.error('Error get home banner : b2c/api/v1/home/banner');
+    return Future.error('Error get home banner : api/v1/home/banner');
   } catch (e) {
     return Future.error('Error: fetchHomeBannerService $e');
   }
@@ -66,7 +66,7 @@ Future<HomeBanner?> fetchHomeBannerService() async {
 
 Future<HomeShortMenu?> fetchHomeShorMenuService() async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/home/key_menu");
+  var url = Uri.parse("${b2c_api_url}api/v1/home/key_menu");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -83,7 +83,7 @@ Future<HomeShortMenu?> fetchHomeShorMenuService() async {
 
       return homeShortMenu;
     }
-    return Future.error('Error get home short menu : b2c/api/v1/home/key_menu');
+    return Future.error('Error get home short menu : api/v1/home/key_menu');
   } catch (e) {
     return Future.error('Error: fetchHomeShorMenuService $e');
   }
@@ -91,7 +91,7 @@ Future<HomeShortMenu?> fetchHomeShorMenuService() async {
 
 Future<HomeVouchers> fetchHomeVoucherService(String groupType) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/home/vouchers");
+  var url = Uri.parse("${b2c_api_url}api/v1/home/vouchers");
   printWhite(await data.accessToken);
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -109,7 +109,7 @@ Future<HomeVouchers> fetchHomeVoucherService(String groupType) async {
 
       return homeVouchers;
     }
-    return Future.error('Error get home vouchers : b2c/api/v1/home/vouchers');
+    return Future.error('Error get home vouchers : api/v1/home/vouchers');
   } catch (e) {
     return Future.error('Error: fetchHomeVoucherService $e');
   }
@@ -117,7 +117,7 @@ Future<HomeVouchers> fetchHomeVoucherService(String groupType) async {
 
 Future<HomeBrands?> fetctBrandsService() async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/home/brands");
+  var url = Uri.parse("${b2c_api_url}api/v1/home/brands");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -135,7 +135,7 @@ Future<HomeBrands?> fetctBrandsService() async {
 
       return homeBrands;
     }
-    return Future.error('Error get brand : b2c/api/v1/home/brands');
+    return Future.error('Error get brand : api/v1/home/brands');
   } catch (e) {
     return Future.error('Error: $e');
   }
@@ -143,7 +143,7 @@ Future<HomeBrands?> fetctBrandsService() async {
 
 Future<HomeMalls?> fetchHomeMallService() async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/home/malls");
+  var url = Uri.parse("${b2c_api_url}api/v1/home/malls");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -161,7 +161,7 @@ Future<HomeMalls?> fetchHomeMallService() async {
 
       return homeMalls;
     }
-    return Future.error('Error get malls : b2c/api/v1/home/malls');
+    return Future.error('Error get malls : api/v1/home/malls');
   } catch (e) {
     return Future.error('Error: $e');
   }
@@ -169,7 +169,7 @@ Future<HomeMalls?> fetchHomeMallService() async {
 
 Future<ProductRecommend?> fetctProductRecommendService(int offset) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/home/product/recommend");
+  var url = Uri.parse("${b2c_api_url}api/v1/home/product/recommend");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -189,7 +189,7 @@ Future<ProductRecommend?> fetctProductRecommendService(int offset) async {
       return productRecommend;
     }
     return Future.error(
-        'Error get product recommend: b2c/api/v1/home/product/recommend');
+        'Error get product recommend: api/v1/home/product/recommend');
   } catch (e) {
     return Future.error('Error: fetctProductRecommendService $e');
   }
@@ -197,7 +197,7 @@ Future<ProductRecommend?> fetctProductRecommendService(int offset) async {
 
 Future<EndUserPopup?> fetctPopupService(int popupType) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/home/popup");
+  var url = Uri.parse("${b2c_api_url}api/v1/home/popup");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -215,14 +215,14 @@ Future<EndUserPopup?> fetctPopupService(int popupType) async {
 
       return response;
     }
-    return Future.error('Error get brand : b2c/api/v1/home/popup');
+    return Future.error('Error get brand : api/v1/home/popup');
   } catch (e) {
     return Future.error('Error : fetctPopupService $e');
   }
 }
 
 Future<TopSalesWeekly?> fetchTopSalesWeeklyService() async {
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/home/top_sales/weekly");
+  var url = Uri.parse("${b2c_api_url}api/v1/home/top_sales/weekly");
 
   try {
     var jsonCall = await AuthFetch.get(
@@ -237,8 +237,7 @@ Future<TopSalesWeekly?> fetchTopSalesWeeklyService() async {
 
       return topSalesWeekly;
     }
-    return Future.error(
-        'Error get top sales : b2c/api/v1/home/top_sales/weekly');
+    return Future.error('Error get top sales : api/v1/home/top_sales/weekly');
   } catch (e) {
     return Future.error('Error : fetchTopSalesWeekly $e');
   }

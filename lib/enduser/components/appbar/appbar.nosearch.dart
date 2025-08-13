@@ -1,9 +1,9 @@
-import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
-import 'package:appfridayecommerce/enduser/controller/chat.ctr.dart';
-import 'package:appfridayecommerce/enduser/controller/track.ctr.dart';
-import 'package:appfridayecommerce/enduser/views/(cart)/cart.main.dart';
-import 'package:appfridayecommerce/enduser/views/(chat)/chat.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/controller/cart.ctr.dart';
+import 'package:fridayonline/enduser/controller/chat.ctr.dart';
+import 'package:fridayonline/enduser/controller/track.ctr.dart';
+import 'package:fridayonline/enduser/views/(cart)/cart.main.dart';
+import 'package:fridayonline/enduser/views/(chat)/chat.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

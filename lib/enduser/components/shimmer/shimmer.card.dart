@@ -1,5 +1,5 @@
-// import 'package:appfridayecommerce/homepage/theme/constants.dart';
-import 'package:appfridayecommerce/theme.dart';
+// import 'package:fridayonline/homepage/theme/constants.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 

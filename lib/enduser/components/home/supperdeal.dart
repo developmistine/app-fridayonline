@@ -1,6 +1,6 @@
-import 'package:appfridayecommerce/enduser/controller/enduser.home.ctr.dart';
-import 'package:appfridayecommerce/enduser/utils/cached_image.dart';
-import 'package:appfridayecommerce/enduser/utils/event.dart';
+import 'package:fridayonline/enduser/controller/enduser.home.ctr.dart';
+import 'package:fridayonline/enduser/utils/cached_image.dart';
+import 'package:fridayonline/enduser/utils/event.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

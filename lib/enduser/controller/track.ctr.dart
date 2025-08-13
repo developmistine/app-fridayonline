@@ -1,4 +1,4 @@
-import 'package:appfridayecommerce/preferrence.dart';
+import 'package:fridayonline/preferrence.dart';
 import 'package:get/get.dart';
 
 class TrackCtr extends GetxController {

@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:appfridayecommerce/controller/update_app_controller.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/controller/update_app_controller.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:external_app_launcher/external_app_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

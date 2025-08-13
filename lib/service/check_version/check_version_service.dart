@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:appfridayecommerce/enduser/models/check_version/check_version_model.dart';
-import 'package:appfridayecommerce/preferrence.dart';
+import 'package:fridayonline/enduser/models/check_version/check_version_model.dart';
+import 'package:fridayonline/preferrence.dart';
 
 import 'package:http/http.dart' as http;
 

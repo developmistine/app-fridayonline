@@ -1,14 +1,14 @@
 import 'dart:convert';
 
-import 'package:appfridayecommerce/enduser/models/address/address.model.dart';
-import 'package:appfridayecommerce/enduser/models/address/b2caddrss.model.dart';
-import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
+import 'package:fridayonline/enduser/models/address/address.model.dart';
+import 'package:fridayonline/enduser/models/address/b2caddrss.model.dart';
+import 'package:fridayonline/enduser/utils/auth_fetch.dart';
 
-import 'package:appfridayecommerce/preferrence.dart';
-import 'package:appfridayecommerce/service/pathapi.dart';
+import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/service/pathapi.dart';
 
 Future<AddressList?> fetchAddressListService() async {
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/customer/address_list");
+  var url = Uri.parse("${b2c_api_url}api/v1/customer/address_list");
 
   SetData data = SetData();
 
@@ -28,7 +28,7 @@ Future<AddressList?> fetchAddressListService() async {
       return addressList;
     }
     return Future.error(
-        'Error fetchAddressListService : b2c/api/v1/customer/address_list');
+        'Error fetchAddressListService : api/v1/customer/address_list');
   } catch (e) {
     print('Error fetchAddressListService : $e');
     return Future.error(e);
@@ -36,7 +36,7 @@ Future<AddressList?> fetchAddressListService() async {
 }
 
 Future<B2CAddress?> searchAddressB2cService() async {
-  var url = Uri.parse("${b2c_api_url}b2c/address");
+  var url = Uri.parse("${b2c_api_url}address");
 
   SetData data = SetData();
 
@@ -61,7 +61,7 @@ Future<B2CAddress?> searchAddressB2cService() async {
 }
 
 Future<Response?> setAddressService(json) async {
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/customer/edit/address");
+  var url = Uri.parse("${b2c_api_url}api/v1/customer/edit/address");
 
   SetData data = SetData();
 
@@ -78,15 +78,15 @@ Future<Response?> setAddressService(json) async {
       return response;
     }
     return Future.error(
-        'Error setAddressService : b2c/api/v1/customer/edit/address');
+        'Error setAddressService : api/v1/customer/edit/address');
   } catch (e) {
-    print('error b2c/api/v1/customer/edit/address : $e');
-    return Future.error("$e  from b2c/api/v1/customer/edit/address");
+    print('error api/v1/customer/edit/address : $e');
+    return Future.error("$e  from api/v1/customer/edit/address");
   }
 }
 
 Future<Response?> setAddressDefalutService(int addressId) async {
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/customer/edit/default_address");
+  var url = Uri.parse("${b2c_api_url}api/v1/customer/edit/default_address");
 
   SetData data = SetData();
 
@@ -104,10 +104,10 @@ Future<Response?> setAddressDefalutService(int addressId) async {
       return response;
     }
     return Future.error(
-        'Error setAddressDefalutService : b2c/api/v1/customer/edit/default_address');
+        'Error setAddressDefalutService : api/v1/customer/edit/default_address');
   } catch (e) {
-    print('error b2c/api/v1/customer/edit/default_address : $e');
-    return Future.error("$e  from b2c/api/v1/customer/edit/default_address");
+    print('error api/v1/customer/edit/default_address : $e');
+    return Future.error("$e  from api/v1/customer/edit/default_address");
   }
 }
 

@@ -1,6 +1,6 @@
-import 'package:appfridayecommerce/enduser/views/(order)/order.detail.dart';
-import 'package:appfridayecommerce/enduser/views/(profile)/edit.rating.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/views/(order)/order.detail.dart';
+import 'package:fridayonline/enduser/views/(profile)/edit.rating.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,6 +1,6 @@
-import 'package:appfridayecommerce/enduser/models/category/sort.model.dart';
-import 'package:appfridayecommerce/enduser/models/category/subcategory.model.dart';
-import 'package:appfridayecommerce/enduser/services/category/category.service.dart';
+import 'package:fridayonline/enduser/models/category/sort.model.dart';
+import 'package:fridayonline/enduser/models/category/subcategory.model.dart';
+import 'package:fridayonline/enduser/services/category/category.service.dart';
 import 'package:get/get.dart';
 
 class CategoryCtr extends GetxController {

@@ -2,21 +2,21 @@ import 'dart:convert';
 import 'dart:typed_data';
 // import 'dart:typed_data';
 
-import 'package:appfridayecommerce/enduser/models/chat/addchat.model.dart';
-import 'package:appfridayecommerce/enduser/models/chat/chat.login.mode.dart';
-import 'package:appfridayecommerce/enduser/models/chat/chat.upload.model.dart';
-import 'package:appfridayecommerce/enduser/models/chat/history.model.dart';
-import 'package:appfridayecommerce/enduser/models/chat/seller.list.model.dart';
-import 'package:appfridayecommerce/enduser/models/chat/sticker_model.dart';
-import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
+import 'package:fridayonline/enduser/models/chat/addchat.model.dart';
+import 'package:fridayonline/enduser/models/chat/chat.login.mode.dart';
+import 'package:fridayonline/enduser/models/chat/chat.upload.model.dart';
+import 'package:fridayonline/enduser/models/chat/history.model.dart';
+import 'package:fridayonline/enduser/models/chat/seller.list.model.dart';
+import 'package:fridayonline/enduser/models/chat/sticker_model.dart';
+import 'package:fridayonline/enduser/utils/auth_fetch.dart';
 
-import 'package:appfridayecommerce/preferrence.dart';
-import 'package:appfridayecommerce/service/pathapi.dart';
+import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/service/pathapi.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
 
 Future<ChatStickerModel> fetchChatSticker() async {
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/messages/sticker");
+  var url = Uri.parse("${b2c_api_url}api/v1/messages/sticker");
 
   try {
     var jsonCall = await AuthFetch.post(
@@ -33,8 +33,7 @@ Future<ChatStickerModel> fetchChatSticker() async {
 
       return stickerChatList;
     }
-    return Future.error(
-        'Error chat conversations : b2c/api/v1/messages/sticker');
+    return Future.error('Error chat conversations : api/v1/messages/sticker');
   } catch (e) {
     return Future.error('Error fetchChatSticker : $e');
   }
@@ -67,7 +66,7 @@ Future<ChatLogin> chatLoginService() async {
 
 Future<SellerChatList> fetchSellerChatService(offset) async {
   SetData data = SetData();
-  // var url = Uri.parse("${b2c_api_url}b2c/api/v1/messages/conversations");
+  // var url = Uri.parse("${b2c_api_url}api/v1/messages/conversations");
   var url = Uri.parse("${b2c_api_url}ws/v1/conversations");
 
   try {
@@ -92,7 +91,7 @@ Future<SellerChatList> fetchSellerChatService(offset) async {
       return sellerChatList;
     }
     return Future.error(
-        'Error chat conversations : b2c/api/v1/messages/conversations');
+        'Error chat conversations : api/v1/messages/conversations');
   } catch (e) {
     return Future.error('Error fetchSellerChat : $e');
   }
@@ -103,7 +102,7 @@ Future<ChatUpload?> chatUploadService({
   required XFile? images,
   required XFile? video,
 }) async {
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/messages/attachments");
+  var url = Uri.parse("${b2c_api_url}api/v1/messages/attachments");
   try {
     // 🔹 เพิ่มข้อมูลรีวิว (แปลงเป็น JSON)
     Map<String, dynamic> reviewData = json;
@@ -150,7 +149,7 @@ Future<ChatUpload?> chatUploadService({
       return chatUpload;
     }
     return Future.error(
-        'Error chatUploadService : b2c/api/v1/messages/attachments');
+        'Error chatUploadService : api/v1/messages/attachments');
   } catch (e) {
     print("❗ เกิดข้อผิดพลาด: $e");
     return null;
@@ -162,7 +161,7 @@ Future<ChatHistory> fetchHistoryChatService(
   int offset,
 ) async {
   SetData data = SetData();
-  // var url = Uri.parse("${b2c_api_url}b2c/api/v1/messages/history");
+  // var url = Uri.parse("${b2c_api_url}api/v1/messages/history");
   var url = Uri.parse("${b2c_api_url}ws/v1/history");
   try {
     var jsonCall = await AuthFetch.post(
@@ -187,7 +186,7 @@ Future<ChatHistory> fetchHistoryChatService(
 
       return chatHistory;
     }
-    return Future.error('Error chat chatHistory : b2c/api/v1/messages/history');
+    return Future.error('Error chat chatHistory : api/v1/messages/history');
   } catch (e) {
     return Future.error('Error fetchHistoryChatService : $e');
   }
@@ -195,7 +194,7 @@ Future<ChatHistory> fetchHistoryChatService(
 
 Future<AddChatRoom> addChatRoomService(int sellerId) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/messages/add_chatroom");
+  var url = Uri.parse("${b2c_api_url}api/v1/messages/add_chatroom");
 
   try {
     var jsonCall = await AuthFetch.post(
@@ -217,7 +216,7 @@ Future<AddChatRoom> addChatRoomService(int sellerId) async {
       return addChatRoom;
     }
     return Future.error(
-        'Error chat addChatRoomService : b2c/api/v1/messages/add_chatroom');
+        'Error chat addChatRoomService : api/v1/messages/add_chatroom');
   } catch (e) {
     return Future.error('Error addChatRoomService : $e');
   }

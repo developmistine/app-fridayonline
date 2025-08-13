@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "appfridayecommerce" "\0"
+            VALUE "FileDescription", "fridayonline" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "appfridayecommerce" "\0"
+            VALUE "InternalName", "fridayonline" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "appfridayecommerce.exe" "\0"
-            VALUE "ProductName", "appfridayecommerce" "\0"
+            VALUE "OriginalFilename", "fridayonline.exe" "\0"
+            VALUE "ProductName", "fridayonline" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

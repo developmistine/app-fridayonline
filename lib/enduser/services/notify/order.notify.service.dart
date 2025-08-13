@@ -1,17 +1,17 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:appfridayecommerce/enduser/models/notify/notify.count.model.dart';
-import 'package:appfridayecommerce/enduser/models/notify/notify.group.model.dart';
-import 'package:appfridayecommerce/enduser/models/notify/notify.model.dart';
-import 'package:appfridayecommerce/enduser/utils/auth_fetch.dart';
+import 'package:fridayonline/enduser/models/notify/notify.count.model.dart';
+import 'package:fridayonline/enduser/models/notify/notify.group.model.dart';
+import 'package:fridayonline/enduser/models/notify/notify.model.dart';
+import 'package:fridayonline/enduser/utils/auth_fetch.dart';
 
-import 'package:appfridayecommerce/preferrence.dart';
-import 'package:appfridayecommerce/service/pathapi.dart';
+import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/service/pathapi.dart';
 
 Future<CountNotify> fetchNotifyCountService() async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/notify/count");
+  var url = Uri.parse("${b2c_api_url}api/v1/notify/count");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -29,8 +29,7 @@ Future<CountNotify> fetchNotifyCountService() async {
 
       return countNotify;
     }
-    return Future.error(
-        'Error fetchNotifyCountService : b2c/api/v1/notify/count');
+    return Future.error('Error fetchNotifyCountService : api/v1/notify/count');
   } catch (e) {
     return Future.error('Error fetchNotifyCountService: $e');
   }
@@ -38,7 +37,7 @@ Future<CountNotify> fetchNotifyCountService() async {
 
 Future<NotifyGroup> fetchNotifyGroupService() async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/notify/group");
+  var url = Uri.parse("${b2c_api_url}api/v1/notify/group");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -57,8 +56,7 @@ Future<NotifyGroup> fetchNotifyGroupService() async {
 
       return notifyGroup;
     }
-    return Future.error(
-        'Error fetchNotifyGroupService : b2c/api/v1/notify/group');
+    return Future.error('Error fetchNotifyGroupService : api/v1/notify/group');
   } catch (e) {
     return Future.error('Error fetchNotifyGroupService: $e');
   }
@@ -66,7 +64,7 @@ Future<NotifyGroup> fetchNotifyGroupService() async {
 
 Future<B2CNotify> fetchNotifyService(int groupId, int offset) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/notify");
+  var url = Uri.parse("${b2c_api_url}api/v1/notify");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -88,7 +86,7 @@ Future<B2CNotify> fetchNotifyService(int groupId, int offset) async {
 
       return b2CNotify;
     }
-    return Future.error('Error fetchNotifyService : b2c/api/v1/notify');
+    return Future.error('Error fetchNotifyService : api/v1/notify');
   } catch (e) {
     return Future.error('Error fetchNotifyService: $e');
   }
@@ -96,7 +94,7 @@ Future<B2CNotify> fetchNotifyService(int groupId, int offset) async {
 
 Future readStatusNotifyService(int groupId) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/notify/read_status");
+  var url = Uri.parse("${b2c_api_url}api/v1/notify/read_status");
 
   try {
     var jsonCall = await AuthFetch.patch(url,
@@ -116,7 +114,7 @@ Future readStatusNotifyService(int groupId) async {
       return readStatus;
     }
     return Future.error(
-        'Error readStatusNotifyService : b2c/api/v1/notify/read_status');
+        'Error readStatusNotifyService : api/v1/notify/read_status');
   } catch (e) {
     return Future.error('Error readStatusNotifyService: $e');
   }
@@ -125,7 +123,7 @@ Future readStatusNotifyService(int groupId) async {
 Future<B2CNotify> fetchNotifyOrderTrackingService(
     int groupId, int offset) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/notify");
+  var url = Uri.parse("${b2c_api_url}api/v1/notify");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -147,7 +145,7 @@ Future<B2CNotify> fetchNotifyOrderTrackingService(
 
       return notifyOrderTracking;
     }
-    return Future.error('Error fetchNotifyOrderTracking : b2c/api/v1/notify');
+    return Future.error('Error fetchNotifyOrderTracking : api/v1/notify');
   } catch (e) {
     return Future.error('Error fetchNotifyOrderTracking: $e');
   }
@@ -156,7 +154,7 @@ Future<B2CNotify> fetchNotifyOrderTrackingService(
 Future<NotifyOrderRead> fetchNotifyReadService(
     int notifyId, bool isReadAll) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}b2c/api/v1/notify/order_read");
+  var url = Uri.parse("${b2c_api_url}api/v1/notify/order_read");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -177,7 +175,7 @@ Future<NotifyOrderRead> fetchNotifyReadService(
       return notifyOrderRead;
     }
     return Future.error(
-        'Error fetchNotifyReadService : b2c/api/v1/notify/order_read');
+        'Error fetchNotifyReadService : api/v1/notify/order_read');
   } catch (e) {
     return Future.error('Error fetchNotifyReadService: $e');
   }

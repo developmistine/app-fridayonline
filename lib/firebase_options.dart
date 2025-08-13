@@ -64,7 +64,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '804780745431',
     projectId: 'mistineapp',
     storageBucket: 'mistineapp.appspot.com',
-    iosClientId: '804780745431-sbt9pk311aats776crgprcauhas6hpjl.apps.googleusercontent.com',
+    iosClientId:
+        '804780745431-sbt9pk311aats776crgprcauhas6hpjl.apps.googleusercontent.com',
     iosBundleId: 'com.betterway.yupin',
   );
 
@@ -74,7 +75,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '804780745431',
     projectId: 'mistineapp',
     storageBucket: 'mistineapp.appspot.com',
-    iosBundleId: 'com.example.appfridayecommerce',
+    iosBundleId: 'com.example.fridayonline',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(

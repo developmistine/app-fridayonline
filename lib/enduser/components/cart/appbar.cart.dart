@@ -1,8 +1,8 @@
-import 'package:appfridayecommerce/enduser/controller/cart.ctr.dart';
-import 'package:appfridayecommerce/enduser/controller/chat.ctr.dart';
-import 'package:appfridayecommerce/enduser/controller/enduser.signin.ctr.dart';
-import 'package:appfridayecommerce/enduser/views/(chat)/chat.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/controller/cart.ctr.dart';
+import 'package:fridayonline/enduser/controller/chat.ctr.dart';
+import 'package:fridayonline/enduser/controller/enduser.signin.ctr.dart';
+import 'package:fridayonline/enduser/views/(chat)/chat.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';

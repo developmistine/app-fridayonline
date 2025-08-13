@@ -1,9 +1,9 @@
-import 'package:appfridayecommerce/enduser/controller/order.ctr.dart';
-import 'package:appfridayecommerce/enduser/services/notify/order.notify.service.dart';
-import 'package:appfridayecommerce/enduser/views/(order)/order.checkout.dart';
-import 'package:appfridayecommerce/enduser/views/(order)/order.detail.dart';
-import 'package:appfridayecommerce/enduser/widgets/dialog.confirm.dart';
-import 'package:appfridayecommerce/theme.dart';
+import 'package:fridayonline/enduser/controller/order.ctr.dart';
+import 'package:fridayonline/enduser/services/notify/order.notify.service.dart';
+import 'package:fridayonline/enduser/views/(order)/order.checkout.dart';
+import 'package:fridayonline/enduser/views/(order)/order.detail.dart';
+import 'package:fridayonline/enduser/widgets/dialog.confirm.dart';
+import 'package:fridayonline/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

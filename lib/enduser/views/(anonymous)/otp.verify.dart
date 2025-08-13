@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:appfridayecommerce/enduser/controller/enduser.home.ctr.dart';
-import 'package:appfridayecommerce/enduser/controller/enduser.signin.ctr.dart';
-import 'package:appfridayecommerce/enduser/models/authen/b2cregis.model.dart';
-import 'package:appfridayecommerce/enduser/services/authen/b2cauthen.service.dart';
-import 'package:appfridayecommerce/enduser/utils/format.dart';
-import 'package:appfridayecommerce/theme.dart';
-import 'package:appfridayecommerce/preferrence.dart';
+import 'package:fridayonline/enduser/controller/enduser.home.ctr.dart';
+import 'package:fridayonline/enduser/controller/enduser.signin.ctr.dart';
+import 'package:fridayonline/enduser/models/authen/b2cregis.model.dart';
+import 'package:fridayonline/enduser/services/authen/b2cauthen.service.dart';
+import 'package:fridayonline/enduser/utils/format.dart';
+import 'package:fridayonline/theme.dart';
+import 'package:fridayonline/preferrence.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
