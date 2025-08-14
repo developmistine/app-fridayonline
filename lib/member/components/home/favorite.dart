@@ -147,7 +147,7 @@ class ShortCutMenus extends StatelessWidget {
                                 ],
                               ),
                               child: Image.asset(
-                                'assets/images/b2c/logo/logo_bg.png',
+                                'assets/images/b2c/logo/friday_online_loading.png',
                                 width: 40,
                               ),
                             ),

@@ -407,41 +407,45 @@ class _SplashScreenState extends State<SplashScreen> {
         backgroundColor: themeColorDefault,
       ),
       backgroundColor: themeColorDefault,
-      body: MediaQuery(
-        data: MediaQuery.of(context)
-            .copyWith(textScaler: const TextScaler.linear(1)),
-        child: Center(
-          child: Column(
-            children: [
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Center(
-                      child: Image.asset(
-                        'assets/images/b2c/logo/friday_online_label_white.png',
-                        width: 300,
-                        // height: 180,
+      body: SafeArea(
+        child: MediaQuery(
+          data: MediaQuery.of(context)
+              .copyWith(textScaler: const TextScaler.linear(1)),
+          child: Center(
+            child: Column(
+              children: [
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Center(
+                        child: Image.asset(
+                          'assets/images/b2c/logo/friday_online_label_white.png',
+                          width: 300,
+                          // height: 180,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  'เวอร์ชัน: $_versionApp ($buildNumbers)',
-                  style: const TextStyle(
-                      color: Colors.white, fontSize: 14, fontFamily: "notoreg"),
+                const SizedBox(
+                  height: 20,
                 ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-            ],
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'เวอร์ชัน: $_versionApp ($buildNumbers)',
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontFamily: "notoreg"),
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+              ],
+            ),
           ),
         ),
       ),

@@ -61,7 +61,7 @@ class _CategoryB2CState extends State<CategoryB2C> {
                                 border:
                                     Border.all(color: Colors.grey.shade200)),
                             child: Image.asset(
-                              'assets/images/b2c/logo/logo_bg.png',
+                              'assets/images/b2c/logo/friday_online_loading.png',
                             ),
                           );
                         },

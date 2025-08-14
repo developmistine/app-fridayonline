@@ -108,7 +108,7 @@ class _BannerEndUserState extends State<BannerEndUser> {
                       child: Padding(
                     padding: const EdgeInsets.only(top: 24.0),
                     child: Image.asset(
-                      'assets/images/b2c/logo/logo_bg.png',
+                      'assets/images/b2c/logo/friday_online_loading.png',
                       width: 80,
                     ),
                   )),

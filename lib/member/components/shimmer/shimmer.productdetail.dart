@@ -27,7 +27,7 @@ class LoadingProductDetail extends StatelessWidget {
                         bottom: BorderSide(color: Colors.grey.shade200))),
               ),
               Image.asset(
-                'assets/images/b2c/logo/logo_bg.png',
+                'assets/images/b2c/logo/friday_online_loading.png',
                 width: 100,
               ),
             ],
@@ -108,7 +108,7 @@ class LoadingProductDetail extends StatelessWidget {
                   color: Colors.grey.shade100,
                 ),
                 Image.asset(
-                  'assets/images/b2c/logo/logo_bg.png',
+                  'assets/images/b2c/logo/friday_online_loading.png',
                   width: 40,
                 ),
               ],

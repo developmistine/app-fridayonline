@@ -118,9 +118,9 @@ PreferredSize appbarEnduser(
                   //   width: 12,
                   // ),
                   SizedBox(
-                    width: 40,
+                    width: 55,
                     child: badges.Badge(
-                        position: badges.BadgePosition.topEnd(top: 2, end: 0),
+                        position: badges.BadgePosition.topEnd(top: 2, end: 8),
                         badgeAnimation: const badges.BadgeAnimation.slide(
                             loopAnimation: false),
                         badgeContent: Obx(() {
@@ -142,7 +142,7 @@ PreferredSize appbarEnduser(
                         }),
                         badgeStyle: badges.BadgeStyle(
                             badgeColor: themeColorDefault,
-                            padding: const EdgeInsets.all(5)),
+                            padding: const EdgeInsets.all(6)),
                         child: IconButton(
                           highlightColor: Colors.transparent,
                           splashColor: Colors.transparent,

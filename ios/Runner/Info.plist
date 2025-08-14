@@ -81,13 +81,13 @@
 			<string>_dartobservatory._tcp</string>
 		</array>
 		<key>NSCameraUsageDescription</key>
-		<string>ยินยอมให้แอปฟรายเดย์เข้ากล้องของคุณ</string>
+		<string>ยินยอมให้แอปFriday Onlineเข้ากล้องของคุณ</string>
 		<key>NSMicrophoneUsageDescription</key>
-		<string>ยินยอมให้แอปฟรายเดย์เข้าไมค์ของคุณ</string>
+		<string>ยินยอมให้แอปFriday Onlineเข้าไมค์ของคุณ</string>
 		<key>NSPhotoLibraryAddUsageDescription</key>
-		<string>ยินยอมให้แอปฟรายเดย์เข้าถึงรูปภาพของคุณ</string>
+		<string>ยินยอมให้แอปFriday Onlineเข้าถึงรูปภาพของคุณ</string>
 		<key>NSPhotoLibraryUsageDescription</key>
-		<string>ยินยอมให้แอปฟรายเดย์เข้าถึงคลังรูปภาพของคุณ</string>
+		<string>ยินยอมให้แอปFriday Onlineเข้าถึงคลังรูปภาพของคุณ</string>
 		<key>PHPhotoLibraryPreventAutomaticLimitedAccessAlert</key>
 		<true/>
 		<key>SKAdNetworkItems</key>

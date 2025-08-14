@@ -393,7 +393,7 @@ class _SwipeScreenState extends State<SwipeScreen>
                       borderRadius: BorderRadius.circular(8)),
                   child: Center(
                     child: Image.asset(
-                      'assets/images/b2c/logo/logo_bg.png',
+                      'assets/images/b2c/logo/friday_online_loading.png',
                       width: 50,
                     ),
                   )),
@@ -659,7 +659,7 @@ class _SwipeScreenState extends State<SwipeScreen>
             ),
             Center(
                 child: Image.asset(
-              'assets/images/b2c/logo/logo_bg.png',
+              'assets/images/b2c/logo/friday_online_loading.png',
               width: 50,
             )),
           ],
@@ -707,7 +707,7 @@ class _SwipeScreenState extends State<SwipeScreen>
                             ),
                             Center(
                                 child: Image.asset(
-                              'assets/images/b2c/logo/logo_bg.png',
+                              'assets/images/b2c/logo/friday_online_loading.png',
                               width: 50,
                             )),
                           ],
@@ -718,7 +718,7 @@ class _SwipeScreenState extends State<SwipeScreen>
                           color: Colors.grey.shade400.withOpacity(0.5),
                           child: Center(
                               child: Image.asset(
-                            'assets/images/b2c/logo/logo_bg.png',
+                            'assets/images/b2c/logo/friday_online_loading.png',
                             width: 50,
                           )),
                         );
@@ -1171,8 +1171,9 @@ class _SwipeRowState extends State<SwipeRow> with TickerProviderStateMixin {
               borderRadius: BorderRadius.circular(18),
             ),
             child: Center(
-              child:
-                  Image.asset('assets/images/b2c/logo/logo_bg.png', width: 100),
+              child: Image.asset(
+                  'assets/images/b2c/logo/friday_online_loading.png',
+                  width: 100),
             ));
       }
       var data =
