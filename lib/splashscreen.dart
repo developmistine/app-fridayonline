@@ -419,8 +419,8 @@ class _SplashScreenState extends State<SplashScreen> {
                   children: [
                     Center(
                       child: Image.asset(
-                        'assets/images/b2c/logo/f_fair2.png',
-                        width: 200,
+                        'assets/images/b2c/logo/friday_online_label_white.png',
+                        width: 300,
                         // height: 180,
                       ),
                     ),

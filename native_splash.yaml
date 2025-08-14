@@ -3,14 +3,12 @@ flutter_native_splash:
   ios: true
   web: false
 
-
   color: "#00adef"
-  image: "assets/images/b2c/logo/f_fair2.png"
+  image: "assets/images/b2c/logo/friday_online_splash_white.png"
 
   android_12:
-    image: "assets/splash.png"
+    image: "assets/images/b2c/logo/friday_online_splash_white.png"
     color: "#00adef"
     android_gravity: center
     icon_background_color: "#ffffff"
     fullscreen: true
-    
