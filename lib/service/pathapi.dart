@@ -3,7 +3,6 @@
 String baseurl_pathapi =
     "https://webservice-yupin.com/YupinService/ApiService/";
 String baseurl_home = 'https://webservice-yupin.com/yupinweb/';
-
 String baseurl_yupinmodern = 'https://webservice-yupin.com/yupinmodern/';
 
 String base_api_app = 'https://api.fridayth.com/';

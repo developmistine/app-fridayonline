@@ -1,4 +1,4 @@
-import 'package:fridayonline/enduser/models/push/push.model.dart';
+import 'package:fridayonline/member/models/push/push.model.dart';
 import 'package:fridayonline/push/push.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:fridayonline/enduser/models/check_version/check_version_model.dart';
+import 'package:fridayonline/member/models/check_version/check_version_model.dart';
 import 'package:fridayonline/preferrence.dart';
 
 import 'package:http/http.dart' as http;

@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:io';
-import 'package:fridayonline/enduser/controller/chat.ctr.dart';
-import 'package:fridayonline/enduser/controller/track.ctr.dart';
-import 'package:fridayonline/enduser/services/track/track.service.dart';
-import 'package:fridayonline/enduser/utils/branch_manager_main.dart';
-import 'package:fridayonline/enduser/utils/logger.dart';
+import 'package:fridayonline/member/controller/chat.ctr.dart';
+import 'package:fridayonline/member/controller/track.ctr.dart';
+import 'package:fridayonline/member/services/track/track.service.dart';
+import 'package:fridayonline/member/utils/branch_manager_main.dart';
+import 'package:fridayonline/member/utils/logger.dart';
 import 'package:fridayonline/preferrence.dart';
 import 'package:fridayonline/print.dart';
 import 'package:fridayonline/push/firebase_message_service.dart';
@@ -202,7 +202,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         return supportedLocales.first;
       },
       debugShowCheckedModeBanner: false,
-      title: 'ฟรายเดย์',
+      title: 'Friday Online',
       theme: themeData(),
       initialBinding: RootBinging(),
       builder: (context, child) {

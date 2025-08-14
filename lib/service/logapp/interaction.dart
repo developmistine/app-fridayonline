@@ -378,7 +378,7 @@ Future<void> logCatalogView() async {
       catalogType: "1",
       catalogBrand: "10",
       catalogMedia: "01",
-      catalogName: "แค็ตตาล็อกฟรายเดย์",
+      catalogName: "แค็ตตาล็อกFriday Online",
       catalogCampaign: "202514",
       catalogImage: "https://s3.catalog-yupin.com/MistineImages/IMGCat/img/2025/1751337727.jpg.webp",
     );
@@ -394,7 +394,7 @@ Future<void> logProductView() async {
     String response = await InteractionLogger.logProductInteraction(
       catalogId: "2988",
       catalogType: "1",
-      catalogName: "แค็ตตาล็อกฟรายเดย์ เล่มที่ 14",
+      catalogName: "แค็ตตาล็อกFriday Online เล่มที่ 14",
       catalogImage: "https://s3.catalog-yupin.com/MistineImages/IMGCat/img/2025/1751337727.jpg.webp",
       catalogIndex: "117",
       categoryId: "01",

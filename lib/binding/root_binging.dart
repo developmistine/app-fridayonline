@@ -1,25 +1,25 @@
 import 'package:fridayonline/controller/app_controller.dart';
 import 'package:fridayonline/controller/log_analytics/log_analytics_ctr.dart';
-import 'package:fridayonline/enduser/controller/brand.ctr.dart';
-import 'package:fridayonline/enduser/controller/cart.ctr.dart';
-import 'package:fridayonline/enduser/controller/chat.ctr.dart';
-import 'package:fridayonline/enduser/controller/coint.ctr.dart';
-import 'package:fridayonline/enduser/controller/coupon.ctr.dart';
-import 'package:fridayonline/enduser/controller/enduser.home.ctr.dart';
-import 'package:fridayonline/enduser/controller/enduser.signin.ctr.dart';
-import 'package:fridayonline/enduser/controller/fair.ctr.dart';
-import 'package:fridayonline/enduser/controller/notify.ctr.dart';
-import 'package:fridayonline/enduser/controller/order.ctr.dart';
-import 'package:fridayonline/enduser/controller/review.ctr.dart';
-import 'package:fridayonline/enduser/controller/search.ctr.dart';
-import 'package:fridayonline/enduser/controller/showproduct.category.ctr.dart';
-import 'package:fridayonline/enduser/controller/showproduct.sku.ctr.dart';
-import 'package:fridayonline/enduser/controller/topproduct.ctr.dart';
-import 'package:fridayonline/enduser/controller/track.ctr.dart';
-import 'package:fridayonline/enduser/views/(cart)/cart.main.dart';
+import 'package:fridayonline/member/controller/brand.ctr.dart';
+import 'package:fridayonline/member/controller/cart.ctr.dart';
+import 'package:fridayonline/member/controller/chat.ctr.dart';
+import 'package:fridayonline/member/controller/coint.ctr.dart';
+import 'package:fridayonline/member/controller/coupon.ctr.dart';
+import 'package:fridayonline/member/controller/enduser.home.ctr.dart';
+import 'package:fridayonline/member/controller/enduser.signin.ctr.dart';
+import 'package:fridayonline/member/controller/fair.ctr.dart';
+import 'package:fridayonline/member/controller/notify.ctr.dart';
+import 'package:fridayonline/member/controller/order.ctr.dart';
+import 'package:fridayonline/member/controller/review.ctr.dart';
+import 'package:fridayonline/member/controller/search.ctr.dart';
+import 'package:fridayonline/member/controller/showproduct.category.ctr.dart';
+import 'package:fridayonline/member/controller/showproduct.sku.ctr.dart';
+import 'package:fridayonline/member/controller/topproduct.ctr.dart';
+import 'package:fridayonline/member/controller/track.ctr.dart';
+import 'package:fridayonline/member/views/(cart)/cart.main.dart';
 import 'package:get/get.dart';
 import '../controller/update_app_controller.dart';
-import '../enduser/controller/category.ctr.dart';
+import '../member/controller/category.ctr.dart';
 
 class RootBinging implements Bindings {
   // ทำการ override dependencies ออกมา 1 ตัว

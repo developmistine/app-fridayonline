@@ -1,0 +1,134 @@
+{
+  "code": "100",
+  "data": {
+    "total_payable": 45,
+    "price_breakdown": [
+      {
+        "name": "รวมการสั่งซื้อ",
+        "value": 89,
+        "display_value": "฿89"
+      },
+      {
+        "name": "การจัดส่ง",
+        "value": 50,
+        "display_value": "฿50"
+      },
+      {
+        "name": "ส่วนลดค่าจัดส่ง",
+        "value": -50,
+        "display_value": "-฿-50"
+      },
+      {
+        "name": "ส่วนลด",
+        "value": -44,
+        "display_value": "-฿-44"
+      },
+      {
+        "name": "ยอดชำระเงินทั้งหมด",
+        "value": 45,
+        "display_value": "฿45"
+      }
+    ],
+    "discount_display": {
+      "code": "",
+      "text": ""
+    },
+    "promotion_data": {
+      "shop_vouchers": [
+        {
+          "shop_id": 7,
+          "shop_name": "MOSS_ZA555",
+          "shop_vouchers": [
+            {
+              "coupon_id": 99,
+              "coupon_code": "02723",
+              "shop_id": 7,
+              "is_shop_official": false,
+              "title": "ส่วนลด ฿5",
+              "image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/coupon/2024/02723_20241206102457_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20250205%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250205T131252Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=7f7808f62483d4a145eefa4b320bde465aee0cab6386309572771769edae1e5a",
+              "reward_info": {
+                "min_spend": 40,
+                "discount_value": 5,
+                "discount_percentage": 0,
+                "discount_cap": 500,
+                "current_spend": 45
+              },
+              "time_info": {
+                "start_time": "10/01/2025 00:00:00",
+                "end_time": "28/02/2025 23:59:00",
+                "claim_start_time": "10/01/2025 00:00:00",
+                "claim_end_time": "28/02/2025 23:59:00",
+                "valid_days": 23,
+                "time_format": "ใช้ได้ถึง 28 ก.พ.",
+                "has_expired": false
+              },
+              "quota_info": {
+                "percentage_claimed": 0,
+                "percentage_used": 0,
+                "quota_type": 0,
+                "fully_claimed": false,
+                "fully_used": false
+              },
+              "labels": [],
+              "scope_tags": [],
+              "user_status": {
+                "is_claimed": true,
+                "is_used": false,
+                "is_selected": false
+              },
+              "can_use": true
+            }
+          ]
+        }
+      ],
+      "platform_vouchers": []
+    },
+    "shoporders": [
+      {
+        "code": "100",
+        "description": "",
+        "shop": {
+          "icon": "",
+          "shop_id": 7,
+          "shop_code": "23005",
+          "shop_name": "MOSS_ZA555",
+          "product_count": 1,
+          "total": 45
+        },
+        "discount_voucher": "",
+        "carton": [
+          {
+            "only_one": true,
+            "carton_desc": "พัสดุกล่อง 1",
+            "item_checkout": [
+              {
+                "cart_id": 720,
+                "product_id": 7,
+                "product_name": "น้ำจิ้มสุกี้ ตราFriday Online เชฟ 330 กรัม",
+                "product_image": "https://b2c-image.s3.ap-southeast-1.amazonaws.com/product/23001/7/img/19876.jpg.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIX3TQJRMVN4JL22Q%2F20250205%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20250205T131252Z&X-Amz-Expires=7200&X-Amz-SignedHeaders=host&X-Amz-Signature=d957e84354c424f701353aa76dc46df14381eb3eca092716d0ded79270fa8500",
+                "item_id": 16,
+                "select_item": "",
+                "quantity": 1,
+                "have_discount": true,
+                "discount": 50,
+                "price": 45,
+                "price_before_discount": 89
+              }
+            ],
+            "logistic_channels": [
+              {
+                "code": "100",
+                "description": "",
+                "name": "Standard Delivery - ส่งธรรมดาในประเทศ",
+                "chargeable_shipping_fee": 0,
+                "shipping_fee_before_discount": 50,
+                "estimated_delivery_time": "จะได้รับสินค้ภายในวันที่ 08 กุมภาพันธ์ - 10 กุมภาพันธ์"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "message": "success"
+}
