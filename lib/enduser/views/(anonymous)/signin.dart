@@ -391,48 +391,22 @@ class _SignInScreen extends State<SignInScreen>
                                       ),
                                     )),
                                 // Image.asset(
-                                //   'assets/images/b2c/logo/f_fair2.png',
+                                //   'assets/images/b2c/logo/friday_online_label_white.png',
                                 //   width: 200,
                                 // ),
                                 const PreloadedImageWidget(
-                                  width: 200,
+                                  width: 230,
                                   assetPath:
-                                      'assets/images/b2c/logo/f_fair2.png',
+                                      'assets/images/b2c/logo/friday_online_label_white.png',
                                 ),
+                                const SizedBox(height: 32),
+                                // const SizedBox(
+                                //   width: 200,
+                                // ),
                                 const SizedBox(
                                   height: 8,
                                 ),
-                                const SizedBox(
-                                  width: 200,
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Expanded(
-                                          child: Divider(color: Colors.white)),
-                                      Padding(
-                                        padding:
-                                            EdgeInsets.symmetric(horizontal: 8),
-                                        child: Text(
-                                          'ฟรายเดย์ แฟร์',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 13),
-                                        ),
-                                      ),
-                                      Expanded(
-                                          child: Divider(color: Colors.white)),
-                                    ],
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 8,
-                                ),
-                                Text(
-                                  'แอปช้อปปิ้งออนไลน์ ครบทุกไลฟ์สไตล์คนไทย',
-                                  style: GoogleFonts.notoSansThaiLooped(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w500),
-                                ),
+
                                 const SizedBox(
                                   height: 24,
                                 ),
@@ -486,7 +460,7 @@ class _SignInScreen extends State<SignInScreen>
                                             ),
                                             const Center(
                                               child: Text(
-                                                'สั่งซื้อสินค้าสำหรับลูกค้าทั่วไป',
+                                                'เข้าสู่ระบบเพื่อสั่งซื้อสินค้า',
                                                 style: TextStyle(
                                                   color: Colors.black,
                                                   fontSize: 16,
@@ -764,95 +738,95 @@ class _SignInScreen extends State<SignInScreen>
                       ],
                     ),
                   ),
-                  Positioned(
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      child: Container(
-                        // height: 184,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: const BoxDecoration(
-                            gradient: LinearGradient(
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                                colors: [Color(0xFF0588CD), Color(0xff4FBBF3)]),
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(16),
-                                topRight: Radius.circular(16))),
-                        child: Column(
-                          children: [
-                            SizedBox(
-                              height: (isTablet ? 40 : 18).toDouble(),
-                            ),
-                            Text(
-                              'สมาชิกฟรายเดย์',
-                              style: GoogleFonts.notoSansThaiLooped(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 18,
-                                  color: Colors.white),
-                            ),
-                            Text(
-                              'สำหรับสมาชิก และลูกค้าของสมาชิกฟรายเดย์',
-                              style: GoogleFonts.notoSansThaiLooped(
-                                  fontSize: 14, color: Colors.white),
-                            ),
-                            SizedBox(
-                              height: (isTablet ? 40 : 18).toDouble(),
-                            ),
-                            Container(
-                              width: 74,
-                              height: 6,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(8)),
-                            ),
-                            SizedBox(
-                              height: (isTablet ? 40 : 18).toDouble(),
-                            ),
-                            InkWell(
-                              splashColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () {
-                                Get.toNamed('/login');
-                              },
-                              child: Container(
-                                width: Get.width,
-                                margin: const EdgeInsets.symmetric(
-                                    horizontal: 20, vertical: 8),
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 8),
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                        color: Colors.white, width: 1),
-                                    borderRadius: BorderRadius.circular(10)),
-                                child: Center(
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text('เข้าสู่ระบบสมาชิกฟรายเดย์',
-                                          style: GoogleFonts.notoSansThaiLooped(
-                                              color: Colors.white,
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w500)),
-                                      const SizedBox(
-                                        width: 8,
-                                      ),
-                                      SvgPicture.asset(
-                                        'assets/svg/signIn.svg',
-                                        width: 24,
-                                        height: 24,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: (isTablet ? 40 : 18),
-                            ),
-                          ],
-                        ),
-                      )),
+                  // Positioned(
+                  //     bottom: 0,
+                  //     left: 0,
+                  //     right: 0,
+                  //     child: Container(
+                  //       // height: 184,
+                  //       clipBehavior: Clip.antiAlias,
+                  //       decoration: const BoxDecoration(
+                  //           gradient: LinearGradient(
+                  //               begin: Alignment.topLeft,
+                  //               end: Alignment.bottomRight,
+                  //               colors: [Color(0xFF0588CD), Color(0xff4FBBF3)]),
+                  //           borderRadius: BorderRadius.only(
+                  //               topLeft: Radius.circular(16),
+                  //               topRight: Radius.circular(16))),
+                  //       child: Column(
+                  //         children: [
+                  //           SizedBox(
+                  //             height: (isTablet ? 40 : 18).toDouble(),
+                  //           ),
+                  //           Text(
+                  //             'สมาชิกฟรายเดย์',
+                  //             style: GoogleFonts.notoSansThaiLooped(
+                  //                 fontWeight: FontWeight.w600,
+                  //                 fontSize: 18,
+                  //                 color: Colors.white),
+                  //           ),
+                  //           Text(
+                  //             'สำหรับสมาชิก และลูกค้าของสมาชิกฟรายเดย์',
+                  //             style: GoogleFonts.notoSansThaiLooped(
+                  //                 fontSize: 14, color: Colors.white),
+                  //           ),
+                  //           SizedBox(
+                  //             height: (isTablet ? 40 : 18).toDouble(),
+                  //           ),
+                  //           Container(
+                  //             width: 74,
+                  //             height: 6,
+                  //             decoration: BoxDecoration(
+                  //                 color: Colors.white,
+                  //                 borderRadius: BorderRadius.circular(8)),
+                  //           ),
+                  //           SizedBox(
+                  //             height: (isTablet ? 40 : 18).toDouble(),
+                  //           ),
+                  //           InkWell(
+                  //             splashColor: Colors.transparent,
+                  //             highlightColor: Colors.transparent,
+                  //             onTap: () {
+                  //               Get.toNamed('/login');
+                  //             },
+                  //             child: Container(
+                  //               width: Get.width,
+                  //               margin: const EdgeInsets.symmetric(
+                  //                   horizontal: 20, vertical: 8),
+                  //               padding:
+                  //                   const EdgeInsets.symmetric(vertical: 8),
+                  //               decoration: BoxDecoration(
+                  //                   border: Border.all(
+                  //                       color: Colors.white, width: 1),
+                  //                   borderRadius: BorderRadius.circular(10)),
+                  //               child: Center(
+                  //                 child: Row(
+                  //                   mainAxisAlignment: MainAxisAlignment.center,
+                  //                   children: [
+                  //                     Text('เข้าสู่ระบบสมาชิกฟรายเดย์',
+                  //                         style: GoogleFonts.notoSansThaiLooped(
+                  //                             color: Colors.white,
+                  //                             fontSize: 16,
+                  //                             fontWeight: FontWeight.w500)),
+                  //                     const SizedBox(
+                  //                       width: 8,
+                  //                     ),
+                  //                     SvgPicture.asset(
+                  //                       'assets/svg/signIn.svg',
+                  //                       width: 24,
+                  //                       height: 24,
+                  //                     ),
+                  //                   ],
+                  //                 ),
+                  //               ),
+                  //             ),
+                  //           ),
+                  //           SizedBox(
+                  //             height: (isTablet ? 40 : 18),
+                  //           ),
+                  //         ],
+                  //       ),
+                  //     )),
                 ],
               ),
             ),

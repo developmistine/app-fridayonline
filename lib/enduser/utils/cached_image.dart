@@ -472,7 +472,7 @@ class _CacheImageBannerB2CState extends State<CacheImageBannerB2C>
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Image.asset(
-            'assets/images/b2c/logo/logo_bg.png',
+            'assets/images/b2c/logo/friday_online_loading.png',
             scale: 6,
           );
         }
@@ -695,7 +695,7 @@ class _CacheFavoriteIconsState extends State<CacheFavoriteIcons> {
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Image.asset(
-            'assets/images/b2c/logo/logo_bg.png',
+            'assets/images/b2c/logo/friday_online_loading.png',
             width: 40,
           );
         } else if (snapshot.hasData && snapshot.data != null) {
@@ -728,7 +728,7 @@ class _CacheFavoriteIconsState extends State<CacheFavoriteIcons> {
           );
         }
         return Image.asset(
-          'assets/images/b2c/logo/logo_bg.png',
+          'assets/images/b2c/logo/friday_online_loading.png',
           width: 40,
         );
       },

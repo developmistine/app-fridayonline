@@ -291,7 +291,7 @@ Future<void> loadImageOnboarding() async {
 Future<void> loadImageSignIn() async {
   final List<String> imagePaths = [
     'assets/images/login/login_bg.png',
-    'assets/images/b2c/logo/f_fair2.png',
+    'assets/images/b2c/logo/friday_online_label_white.png',
     'assets/images/login/google-login.png',
     'assets/images/login/facebook-login.png',
     'assets/images/login/apple.png',

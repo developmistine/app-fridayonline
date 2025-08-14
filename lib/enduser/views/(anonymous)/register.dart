@@ -448,7 +448,7 @@ class _RegisterScreen extends State<RegisterScreen> {
                                 height: 60,
                               ),
                               Image.asset(
-                                'assets/images/b2c/logo/f_fair2.png',
+                                'assets/images/b2c/logo/friday_online_label_white.png',
                                 width: 200,
                               ),
                               const SizedBox(
