@@ -172,17 +172,12 @@ flutter:
     - assets/images/profileimg/
     - assets/images/home/
     - assets/images/languages/
-    - assets/images/notify/
     - assets/images/cart/
     - assets/images/icon/
     - assets/images/error/
-    - assets/images/cartoon/
     - assets/images/flashsale/
-    - assets/images/lead/
-    - assets/images/live/
     - assets/images/review/
     - assets/images/check_order/
-    - assets/images/banner/
     - assets/images/coupon/
     - assets/images/lottie/
     - assets/images/order/
@@ -192,7 +187,6 @@ flutter:
     - assets/images/b2c/logo/
     - assets/images/b2c/icon/
     - assets/images/b2c/background/
-    - assets/images/onboarding/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

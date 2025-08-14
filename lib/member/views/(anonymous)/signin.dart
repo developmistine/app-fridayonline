@@ -397,7 +397,7 @@ class _SignInScreen extends State<SignInScreen>
                                 const PreloadedImageWidget(
                                   width: 200,
                                   assetPath:
-                                      'assets/images/b2c/logo/f_fair2.png',
+                                      'assets/images/b2c/logo/f_fridayonline.png',
                                 ),
                                 const SizedBox(
                                   height: 8,
@@ -427,12 +427,12 @@ class _SignInScreen extends State<SignInScreen>
                                 const SizedBox(
                                   height: 8,
                                 ),
-                                Text(
-                                  'แอปช้อปปิ้งออนไลน์ ครบทุกไลฟ์สไตล์คนไทย',
-                                  style: GoogleFonts.notoSansThaiLooped(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w500),
-                                ),
+                                // Text(
+                                //   'ฟรายเดย์ ออนไลช้อปปิ้ง',
+                                //   style: GoogleFonts.notoSansThaiLooped(
+                                //       color: Colors.white,
+                                //       fontWeight: FontWeight.w500),
+                                // ),
                                 const SizedBox(
                                   height: 24,
                                 ),
@@ -485,14 +485,14 @@ class _SignInScreen extends State<SignInScreen>
                                                           color: Colors.black)),
                                             ),
                                             const Center(
-                                              child: Text(
-                                                'สั่งซื้อสินค้าสำหรับลูกค้าทั่วไป',
-                                                style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 16,
+                                                // child: Text(
+                                                //   'สั่งซื้อสินค้า',
+                                                //   style: TextStyle(
+                                                //     color: Colors.black,
+                                                //     fontSize: 16,
+                                                //   ),
+                                                // ),
                                                 ),
-                                              ),
-                                            ),
                                             const SizedBox(
                                               height: 10,
                                             ),
@@ -764,95 +764,95 @@ class _SignInScreen extends State<SignInScreen>
                       ],
                     ),
                   ),
-                  Positioned(
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      child: Container(
-                        // height: 184,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: const BoxDecoration(
-                            gradient: LinearGradient(
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                                colors: [Color(0xFF0588CD), Color(0xff4FBBF3)]),
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(16),
-                                topRight: Radius.circular(16))),
-                        child: Column(
-                          children: [
-                            SizedBox(
-                              height: (isTablet ? 40 : 18).toDouble(),
-                            ),
-                            Text(
-                              'สมาชิกFriday Online',
-                              style: GoogleFonts.notoSansThaiLooped(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 18,
-                                  color: Colors.white),
-                            ),
-                            Text(
-                              'สำหรับสมาชิก และลูกค้าของสมาชิกFriday Online',
-                              style: GoogleFonts.notoSansThaiLooped(
-                                  fontSize: 14, color: Colors.white),
-                            ),
-                            SizedBox(
-                              height: (isTablet ? 40 : 18).toDouble(),
-                            ),
-                            Container(
-                              width: 74,
-                              height: 6,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(8)),
-                            ),
-                            SizedBox(
-                              height: (isTablet ? 40 : 18).toDouble(),
-                            ),
-                            InkWell(
-                              splashColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () {
-                                Get.toNamed('/login');
-                              },
-                              child: Container(
-                                width: Get.width,
-                                margin: const EdgeInsets.symmetric(
-                                    horizontal: 20, vertical: 8),
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 8),
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                        color: Colors.white, width: 1),
-                                    borderRadius: BorderRadius.circular(10)),
-                                child: Center(
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text('เข้าสู่ระบบสมาชิกFriday Online',
-                                          style: GoogleFonts.notoSansThaiLooped(
-                                              color: Colors.white,
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w500)),
-                                      const SizedBox(
-                                        width: 8,
-                                      ),
-                                      SvgPicture.asset(
-                                        'assets/svg/signIn.svg',
-                                        width: 24,
-                                        height: 24,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: (isTablet ? 40 : 18),
-                            ),
-                          ],
-                        ),
-                      )),
+                  // Positioned(
+                  //     bottom: 0,
+                  //     left: 0,
+                  //     right: 0,
+                  //     child: Container(
+                  //       // height: 184,
+                  //       clipBehavior: Clip.antiAlias,
+                  //       decoration: const BoxDecoration(
+                  //           gradient: LinearGradient(
+                  //               begin: Alignment.topLeft,
+                  //               end: Alignment.bottomRight,
+                  //               colors: [Color(0xFF0588CD), Color(0xff4FBBF3)]),
+                  //           borderRadius: BorderRadius.only(
+                  //               topLeft: Radius.circular(16),
+                  //               topRight: Radius.circular(16))),
+                  //       child: Column(
+                  //         children: [
+                  //           SizedBox(
+                  //             height: (isTablet ? 40 : 18).toDouble(),
+                  //           ),
+                  //           Text(
+                  //             'สมาชิกFriday Online',
+                  //             style: GoogleFonts.notoSansThaiLooped(
+                  //                 fontWeight: FontWeight.w600,
+                  //                 fontSize: 18,
+                  //                 color: Colors.white),
+                  //           ),
+                  //           Text(
+                  //             'สำหรับสมาชิก และลูกค้าของสมาชิกFriday Online',
+                  //             style: GoogleFonts.notoSansThaiLooped(
+                  //                 fontSize: 14, color: Colors.white),
+                  //           ),
+                  //           SizedBox(
+                  //             height: (isTablet ? 40 : 18).toDouble(),
+                  //           ),
+                  //           Container(
+                  //             width: 74,
+                  //             height: 6,
+                  //             decoration: BoxDecoration(
+                  //                 color: Colors.white,
+                  //                 borderRadius: BorderRadius.circular(8)),
+                  //           ),
+                  //           SizedBox(
+                  //             height: (isTablet ? 40 : 18).toDouble(),
+                  //           ),
+                  //           InkWell(
+                  //             splashColor: Colors.transparent,
+                  //             highlightColor: Colors.transparent,
+                  //             onTap: () {
+                  //               Get.toNamed('/login');
+                  //             },
+                  //             child: Container(
+                  //               width: Get.width,
+                  //               margin: const EdgeInsets.symmetric(
+                  //                   horizontal: 20, vertical: 8),
+                  //               padding:
+                  //                   const EdgeInsets.symmetric(vertical: 8),
+                  //               decoration: BoxDecoration(
+                  //                   border: Border.all(
+                  //                       color: Colors.white, width: 1),
+                  //                   borderRadius: BorderRadius.circular(10)),
+                  //               child: Center(
+                  //                 child: Row(
+                  //                   mainAxisAlignment: MainAxisAlignment.center,
+                  //                   children: [
+                  //                     Text('เข้าสู่ระบบสมาชิกFriday Online',
+                  //                         style: GoogleFonts.notoSansThaiLooped(
+                  //                             color: Colors.white,
+                  //                             fontSize: 16,
+                  //                             fontWeight: FontWeight.w500)),
+                  //                     const SizedBox(
+                  //                       width: 8,
+                  //                     ),
+                  //                     SvgPicture.asset(
+                  //                       'assets/svg/signIn.svg',
+                  //                       width: 24,
+                  //                       height: 24,
+                  //                     ),
+                  //                   ],
+                  //                 ),
+                  //               ),
+                  //             ),
+                  //           ),
+                  //           SizedBox(
+                  //             height: (isTablet ? 40 : 18),
+                  //           ),
+                  //         ],
+                  //       ),
+                  //     )),
                 ],
               ),
             ),

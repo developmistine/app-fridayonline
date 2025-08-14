@@ -448,7 +448,7 @@ class _RegisterScreen extends State<RegisterScreen> {
                                 height: 60,
                               ),
                               Image.asset(
-                                'assets/images/b2c/logo/f_fair2.png',
+                                'assets/images/b2c/logo/f_fridayonline.png',
                                 width: 200,
                               ),
                               const SizedBox(
@@ -478,12 +478,12 @@ class _RegisterScreen extends State<RegisterScreen> {
                               const SizedBox(
                                 height: 8,
                               ),
-                              Text(
-                                'แอปช้อปปิ้งออนไลน์ ครบทุกไลฟ์สไตล์คนไทย',
-                                style: GoogleFonts.notoSansThaiLooped(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500),
-                              ),
+                              // Text(
+                              //   'แอปช้อปปิ้งออนไลน์ ครบทุกไลฟ์สไตล์คนไทย',
+                              //   style: GoogleFonts.notoSansThaiLooped(
+                              //       color: Colors.white,
+                              //       fontWeight: FontWeight.w500),
+                              // ),
                               const SizedBox(
                                 height: 24,
                               ),
@@ -715,7 +715,7 @@ class _RegisterScreen extends State<RegisterScreen> {
                                                             .grey.shade500,
                                                         fontSize: 13),
                                                     text:
-                                                        'โดยการเปิดบัญชี Friday ท่านรับทราบและตกลงตามเงื่อนไขการให้บริการและ ',
+                                                        'โดยการเปิดบัญชี Friday Online ท่านรับทราบและตกลงตามเงื่อนไขการให้บริการและ ',
                                                     children: [
                                                       TextSpan(
                                                         text:
