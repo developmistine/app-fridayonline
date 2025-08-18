@@ -31,8 +31,8 @@
 				<string>com.betterway.yupin</string>
 				<key>CFBundleURLSchemes</key>
 				<array>
-					<string>appfriday</string>
-					<string>fb5801036159960829</string>
+					<string>FridayOnline</string>
+					<string>fb1832438484338305</string>
 					<string>line3rdp.$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 					<string>com.googleusercontent.apps.804780745431-sbt9pk311aats776crgprcauhas6hpjl</string>
 				</array>
@@ -41,9 +41,9 @@
 		<key>CFBundleVersion</key>
 		<string>$(FLUTTER_BUILD_NUMBER)</string>
 		<key>FacebookAppID</key>
-		<string>5801036159960829</string>
+		<string>1832438484338305</string>
 		<key>FacebookClientToken</key>
-		<string>1889d3ab772bcfd3078b413a34556cdd</string>
+		<string>015ad3089781aef5f7e7e461bf0aa507</string>
 		<key>FacebookDisplayName</key>
 		<string>Friday Online</string>
 		<key>FirebaseDynamicLinksCustomDomains</key>
@@ -81,13 +81,13 @@
 			<string>_dartobservatory._tcp</string>
 		</array>
 		<key>NSCameraUsageDescription</key>
-		<string>ยินยอมให้แอปFriday Onlineเข้ากล้องของคุณ</string>
+		<string>ยินยอมให้แอป Friday Online เข้าถึงกล้องของคุณ</string>
 		<key>NSMicrophoneUsageDescription</key>
-		<string>ยินยอมให้แอปFriday Onlineเข้าไมค์ของคุณ</string>
+		<string>ยินยอมให้แอป Friday Online เข้าถึงไมค์ของคุณ</string>
 		<key>NSPhotoLibraryAddUsageDescription</key>
-		<string>ยินยอมให้แอปFriday Onlineเข้าถึงรูปภาพของคุณ</string>
+		<string>ยินยอมให้แอป Friday Online เข้าถึงรูปภาพของคุณ</string>
 		<key>NSPhotoLibraryUsageDescription</key>
-		<string>ยินยอมให้แอปFriday Onlineเข้าถึงคลังรูปภาพของคุณ</string>
+		<string>ยินยอมให้แอป Friday Online เข้าถึงคลังรูปภาพของคุณ</string>
 		<key>PHPhotoLibraryPreventAutomaticLimitedAccessAlert</key>
 		<true/>
 		<key>SKAdNetworkItems</key>
