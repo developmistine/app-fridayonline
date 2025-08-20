@@ -36,12 +36,16 @@ class HomeVouchers {
 class Data {
   String contentHeader;
   String contentImg;
+  String voucherTitle;
+  String voucherDesc;
   int contentId;
   List<Voucher> vouchers;
 
   Data({
     required this.contentHeader,
     required this.contentImg,
+    required this.voucherTitle,
+    required this.voucherDesc,
     required this.contentId,
     required this.vouchers,
   });
@@ -49,6 +53,8 @@ class Data {
   factory Data.fromJson(Map<String, dynamic> json) => Data(
         contentHeader: json["content_header"],
         contentImg: json["content_img"],
+        voucherTitle: (json["voucher_title"] as String?)?.trim() ?? "",
+        voucherDesc: (json["voucher_desc"] as String?)?.trim() ?? "",
         contentId: json["content_id"] ?? 0,
         vouchers: List<Voucher>.from(
             json["vouchers"].map((x) => Voucher.fromJson(x))),
@@ -57,6 +63,8 @@ class Data {
   Map<String, dynamic> toJson() => {
         "content_header": contentHeader,
         "content_img": contentImg,
+        "voucher_title": voucherTitle,
+        "voucher_desc": voucherDesc,
         "content_id": contentId,
         "vouchers": List<dynamic>.from(vouchers.map((x) => x.toJson())),
       };

@@ -74,32 +74,34 @@ class _CouponCard extends StatelessWidget {
                   child: Column(
                     children: [
                       SizedBox(
-                        width: double.infinity,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                const SizedBox(width: 4),
-                                Image.asset(
-                                  'assets/images/b2c/icon/coupon3.png',
-                                  width: 18,
-                                  height: 18,
-                                ),
-                                const SizedBox(width: 4),
-                                Text(
-                                  'รวมคูปองส่วนลด',
+                          width: double.infinity,
+                          child: Row(
+                            children: [
+                              const SizedBox(width: 4),
+                              Image.asset(
+                                'assets/images/b2c/icon/coupon3.png',
+                                width: 18,
+                                height: 18,
+                              ),
+                              const SizedBox(width: 4),
+                              Expanded(
+                                child: Text(
+                                  (endUserHomeCtr.homeVouchers?.value.data
+                                              .voucherTitle ??
+                                          "")
+                                      .trim(),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  softWrap: false,
                                   style: GoogleFonts.ibmPlexSansThai(
                                     fontSize: 12,
                                     color: Colors.black,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
+                              ),
+                            ],
+                          )),
                       const SizedBox(height: 10),
                       Container(
                         height: 29,
@@ -118,7 +120,9 @@ class _CouponCard extends StatelessWidget {
                               // obx
                               Expanded(
                                 child: Text(
-                                  "มีคูปองใหม่! ",
+                                  endUserHomeCtr.homeVouchers?.value.data
+                                          .voucherDesc ??
+                                      "",
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   softWrap: false,
@@ -182,74 +186,85 @@ class _SmallCouponCard extends StatelessWidget {
                 ],
               ),
               child: GestureDetector(
-                onTap: () {
-                  final coupon = endUserHomeCtr.homeVouchers!.value.data;
-                  Get.find<TrackCtr>().setDataTrack(
-                    coupon.contentId,
-                    coupon.contentHeader,
-                    "home_coupon",
-                  );
-                  Get.to(() => const CouponAll());
-                },
-                child: Container(
-                  color: Colors.white,
-                  padding: const EdgeInsets.all(4),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            const SizedBox(width: 4),
-                            Image.asset(
-                              'assets/images/b2c/icon/coupon3.png',
-                              width: 28,
-                              height: 28,
-                            ),
-                            const SizedBox(width: 8),
-                            Flexible(
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'รวมคูปองส่วนลด',
-                                    style: GoogleFonts.ibmPlexSansThai(
-                                      fontSize: 12,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w600,
+                  onTap: () {
+                    final coupon = endUserHomeCtr.homeVouchers!.value.data;
+                    Get.find<TrackCtr>().setDataTrack(
+                      coupon.contentId,
+                      coupon.contentHeader,
+                      "home_coupon",
+                    );
+                    Get.to(() => const CouponAll());
+                  },
+                  child: Container(
+                    color: Colors.white,
+                    padding: const EdgeInsets.all(4),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              const SizedBox(width: 4),
+                              Image.asset('assets/images/b2c/icon/coupon3.png',
+                                  width: 28, height: 28),
+                              const SizedBox(width: 8),
+                              Expanded(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      (endUserHomeCtr.homeVouchers?.value.data
+                                                  .voucherTitle ??
+                                              '')
+                                          .trim(),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                      softWrap: false,
+                                      style: GoogleFonts.ibmPlexSansThai(
+                                        fontSize: 12,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    'มีคูปองใหม่!',
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: GoogleFonts.ibmPlexSansThai(
-                                      fontSize: 10,
-                                      color: const Color(0xFF5A5A5A),
-                                      fontWeight: FontWeight.w500,
+                                    Text(
+                                      (endUserHomeCtr.homeVouchers?.value.data
+                                                  .voucherDesc ??
+                                              '')
+                                          .trim(),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                      softWrap: false,
+                                      style: GoogleFonts.ibmPlexSansThai(
+                                        fontSize: 10,
+                                        color: const Color(0xFF5A5A5A),
+                                        fontWeight: FontWeight.w500,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+                        ConstrainedBox(
+                          constraints: const BoxConstraints(minWidth: 56),
+                          child: Text(
+                            'เก็บเลย',
+                            textAlign: TextAlign.center,
+                            softWrap: false,
+                            overflow: TextOverflow.visible,
+                            style: GoogleFonts.ibmPlexSansThai(
+                              color: themeColorDefault,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
                             ),
-                          ],
+                          ),
                         ),
-                      ),
-                      const SizedBox(width: 8),
-                      Text(
-                        'เก็บเลย',
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.ibmPlexSansThai(
-                          color: themeColorDefault,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+                      ],
+                    ),
+                  )),
             ),
           ],
         ),

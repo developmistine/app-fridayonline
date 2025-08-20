@@ -1124,7 +1124,7 @@ class _BottomAddToCartState extends State<BottomAddToCart> {
             }
           },
           child: Container(
-            height: 55,
+            height: 58,
             padding: const EdgeInsets.all(4),
             decoration: const BoxDecoration(color: Colors.white, boxShadow: [
               BoxShadow(
