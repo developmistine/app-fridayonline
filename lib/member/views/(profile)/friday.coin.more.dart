@@ -54,7 +54,7 @@ class _FridayCoinMoreState extends State<FridayCoinMore> {
   Widget build(BuildContext context) {
     return Theme(
       data: Theme.of(context).copyWith(
-        textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+        textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
           Theme.of(context).textTheme,
         ),
       ),
@@ -106,7 +106,7 @@ class _FridayCoinMoreState extends State<FridayCoinMore> {
                               ),
                               Text(
                                 _getCoinContent(item.coinAmount),
-                                style: GoogleFonts.notoSansThaiLooped(
+                                style: GoogleFonts.ibmPlexSansThai(
                                     color: _getCoinColor(item.coinAmount > 0)),
                               ),
                             ],

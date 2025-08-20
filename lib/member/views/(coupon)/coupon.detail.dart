@@ -22,8 +22,8 @@ class CouponDetail extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8)),
-                    textStyle: GoogleFonts.notoSansThaiLooped())),
-            textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                    textStyle: GoogleFonts.ibmPlexSansThai())),
+            textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
               Theme.of(context).textTheme,
             ),
           ),
@@ -79,7 +79,7 @@ class CouponDetail extends StatelessWidget {
                                   children: [
                                     Text(
                                       couponData.data.usageTerm[index].key,
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 13),
                                     ),
@@ -136,7 +136,7 @@ class CouponDetail extends StatelessWidget {
         Expanded(
           child: Text(
             text,
-            style: GoogleFonts.notoSansThaiLooped(
+            style: GoogleFonts.ibmPlexSansThai(
                 fontSize: 13, color: Colors.grey.shade700),
             softWrap: true,
           ),

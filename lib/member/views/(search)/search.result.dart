@@ -99,13 +99,13 @@ class _EndUserSearchResultState extends State<EndUserSearchResult> {
               style: OutlinedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
-                  textStyle: GoogleFonts.notoSansThaiLooped())),
+                  textStyle: GoogleFonts.ibmPlexSansThai())),
           elevatedButtonTheme: ElevatedButtonThemeData(
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
-                  textStyle: GoogleFonts.notoSansThaiLooped())),
-          textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                  textStyle: GoogleFonts.ibmPlexSansThai())),
+          textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
             Theme.of(context).textTheme,
           ),
         ),
@@ -184,7 +184,7 @@ class _EndUserSearchResultState extends State<EndUserSearchResult> {
               //           ),
               //           Text(
               //             'ตัวกรอง',
-              //             style: GoogleFonts.notoSansThaiLooped(
+              //             style: GoogleFonts.ibmPlexSansThai(
               //                 color: themeColorDefault,
               //                 fontSize: 12,
               //                 fontWeight: FontWeight.normal),
@@ -207,8 +207,8 @@ class _EndUserSearchResultState extends State<EndUserSearchResult> {
                               style: ElevatedButton.styleFrom(
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(8)),
-                                  textStyle: GoogleFonts.notoSansThaiLooped())),
-                          textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                                  textStyle: GoogleFonts.ibmPlexSansThai())),
+                          textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
                             Theme.of(context).textTheme,
                           ),
                         ),
@@ -292,7 +292,7 @@ class _EndUserSearchResultState extends State<EndUserSearchResult> {
                                                   items.text,
                                                   textAlign: TextAlign.center,
                                                   style: GoogleFonts
-                                                      .notoSansThaiLooped(
+                                                      .ibmPlexSansThai(
                                                           fontSize: 12,
                                                           fontWeight: searchCtr
                                                                       .activeTab

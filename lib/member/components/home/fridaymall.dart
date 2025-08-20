@@ -30,7 +30,7 @@ class _FridayMallState extends State<FridayMall> {
             children: [
               Text(
                 'FRIDAY MALL',
-                style: GoogleFonts.notoSansThaiLooped(
+                style: GoogleFonts.ibmPlexSansThai(
                     fontSize: 16,
                     color: themeColorDefault,
                     fontWeight: FontWeight.w900),

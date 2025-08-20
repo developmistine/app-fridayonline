@@ -114,7 +114,7 @@
 		<false/>
 		<key>UIStatusBarStyle</key>
 		<string></string>
-		<key>UISupportedInterfaceOrientations~ipad</key>
+		<key>UISupportedInterfaceOrientations</key>
 		<array>
 			<string>UIInterfaceOrientationPortrait</string>
 		</array>

@@ -48,14 +48,14 @@ showPopUpUpdateApp(context, UpdateAppController update) async {
                           Text(
                             "แอปใหม่พร้อมให้ใช้งานแล้ว!",
                             textAlign: TextAlign.center,
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 fontSize: 16, fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(height: 7),
                           Text(
                             textAlign: TextAlign.center,
                             update.detail.replaceAll('\\n', '\n'),
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 14,
                             ),
                           ).paddingSymmetric(horizontal: 8),
@@ -87,7 +87,7 @@ showPopUpUpdateApp(context, UpdateAppController update) async {
                                 width: width / 1.7,
                                 child: Center(
                                   child: Text('อัปเดตเลย!',
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold)),
                                 ),

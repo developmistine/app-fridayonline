@@ -50,8 +50,8 @@ class _EditProfileState extends State<EditUser> {
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
-                  textStyle: GoogleFonts.notoSansThaiLooped())),
-          textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                  textStyle: GoogleFonts.ibmPlexSansThai())),
+          textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
             Theme.of(context).textTheme,
           ),
         ),

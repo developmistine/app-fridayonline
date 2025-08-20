@@ -363,12 +363,12 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
                 children: [
                   Text(
                     msg.messageData.isRead == 1 ? "อ่านแล้ว" : "",
-                    style: GoogleFonts.notoSansThaiLooped(
+                    style: GoogleFonts.ibmPlexSansThai(
                         fontSize: 11, color: Colors.grey.shade700),
                   ),
                   Text(
                     formatChatTime(msg),
-                    style: GoogleFonts.notoSansThaiLooped(fontSize: 11),
+                    style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
                   ),
                 ],
               ),
@@ -394,7 +394,7 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
               const SizedBox(width: 8),
               Text(
                 formatChatTime(msg),
-                style: GoogleFonts.notoSansThaiLooped(fontSize: 11),
+                style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
               ),
             ],
           ],
@@ -456,12 +456,12 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
               children: [
                 Text(
                   msg.messageData.isRead == 1 ? "อ่านแล้ว" : "",
-                  style: GoogleFonts.notoSansThaiLooped(
+                  style: GoogleFonts.ibmPlexSansThai(
                       fontSize: 11, color: Colors.grey.shade700),
                 ),
                 Text(
                   formatChatTime(msg),
-                  style: GoogleFonts.notoSansThaiLooped(fontSize: 11),
+                  style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
                 ),
               ],
             ),
@@ -496,7 +496,7 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
             const SizedBox(width: 8),
             Text(
               formatChatTime(msg),
-              style: GoogleFonts.notoSansThaiLooped(fontSize: 11),
+              style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
             ),
           ],
         ],
@@ -622,12 +622,12 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
                   children: [
                     Text(
                       msg.messageData.isRead == 1 ? "อ่านแล้ว" : "",
-                      style: GoogleFonts.notoSansThaiLooped(
+                      style: GoogleFonts.ibmPlexSansThai(
                           fontSize: 11, color: Colors.grey.shade700),
                     ),
                     Text(
                       formatChatTime(msg),
-                      style: GoogleFonts.notoSansThaiLooped(fontSize: 11),
+                      style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
                     ),
                   ],
                 ))
@@ -637,7 +637,7 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
                 bottom: 8,
                 child: Text(
                   formatChatTime(msg),
-                  style: GoogleFonts.notoSansThaiLooped(fontSize: 11),
+                  style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
                 ))
         ],
       );
@@ -688,7 +688,7 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
                 ),
                 Text(
                   msg.messageData.messageText,
-                  style: GoogleFonts.notoSansThaiLooped(
+                  style: GoogleFonts.ibmPlexSansThai(
                     color: msg.isMe ? Colors.red : Colors.black,
                     fontSize: 12,
                   ),
@@ -698,7 +698,7 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
           }
           return Text(
             msg.messageData.messageText,
-            style: GoogleFonts.notoSansThaiLooped(
+            style: GoogleFonts.ibmPlexSansThai(
               color: msg.isMe ? Colors.white : Colors.black,
               fontSize: 14,
             ),
@@ -721,7 +721,7 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
                     bottom: 0,
                     child: Text(
                       formatChatTime(msg),
-                      style: GoogleFonts.notoSansThaiLooped(fontSize: 11),
+                      style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
                     ))
               else
                 Positioned(
@@ -729,7 +729,7 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
                     bottom: 0,
                     child: Text(
                       formatChatTime(msg),
-                      style: GoogleFonts.notoSansThaiLooped(fontSize: 11),
+                      style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
                     ))
             ],
           );
@@ -750,8 +750,8 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
-                  textStyle: GoogleFonts.notoSansThaiLooped())),
-          textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                  textStyle: GoogleFonts.ibmPlexSansThai())),
+          textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
             Theme.of(context).textTheme,
           ),
         ),
@@ -774,7 +774,7 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
                     return Center(
                       child: Text(
                         "รอสักครู่...",
-                        style: GoogleFonts.notoSansThaiLooped(fontSize: 11),
+                        style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
                       ),
                     );
                   }
@@ -931,8 +931,7 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
                               textInputAction: TextInputAction.newline,
                               keyboardType: TextInputType.multiline,
                               maxLines: null,
-                              style:
-                                  GoogleFonts.notoSansThaiLooped(fontSize: 14),
+                              style: GoogleFonts.ibmPlexSansThai(fontSize: 14),
                               controller: _controller,
                               onChanged: (val) {
                                 setState(() {});

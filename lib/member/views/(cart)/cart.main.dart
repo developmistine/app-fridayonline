@@ -119,8 +119,8 @@ class _EndUserCartState extends State<EndUserCart>
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8)),
-                    textStyle: GoogleFonts.notoSansThaiLooped())),
-            textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                    textStyle: GoogleFonts.ibmPlexSansThai())),
+            textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
               Theme.of(context).textTheme,
             ),
           ),
@@ -507,7 +507,7 @@ class _EndUserCartState extends State<EndUserCart>
           Expanded(
             child: Text(
               errorMessage,
-              style: GoogleFonts.notoSansThaiLooped(
+              style: GoogleFonts.ibmPlexSansThai(
                 color: Colors.red.shade700,
                 fontSize: 13,
                 fontWeight: FontWeight.bold,
@@ -610,7 +610,7 @@ class _EndUserCartState extends State<EndUserCart>
                     child: Text(
                       cartShop[index].shopName,
                       overflow: TextOverflow.ellipsis,
-                      style: GoogleFonts.notoSansThaiLooped(
+                      style: GoogleFonts.ibmPlexSansThai(
                           fontWeight: FontWeight.w900, fontSize: 13),
                     ),
                   ),
@@ -912,7 +912,7 @@ class _EndUserCartState extends State<EndUserCart>
                                   }
                                   return Text(
                                     '-',
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                         color: color),
                                   );
                                 }),
@@ -987,7 +987,7 @@ class _EndUserCartState extends State<EndUserCart>
                                   }
                                   return Text(
                                     '+',
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                         color: color),
                                   );
                                 }),
@@ -1380,7 +1380,7 @@ class _EndUserCartState extends State<EndUserCart>
                                       ),
                                       Text(
                                         'กรุณาเลือกสินค้าอย่างน้อย 1 ชิ้น',
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                           color: Colors.white,
                                           fontSize: 13,
                                         ),
@@ -1403,9 +1403,9 @@ class _EndUserCartState extends State<EndUserCart>
                                                           BorderRadius.circular(
                                                               8)),
                                                   textStyle: GoogleFonts
-                                                      .notoSansThaiLooped())),
-                                      textTheme: GoogleFonts
-                                          .notoSansThaiLoopedTextTheme(
+                                                      .ibmPlexSansThai())),
+                                      textTheme:
+                                          GoogleFonts.ibmPlexSansThaiTextTheme(
                                         Theme.of(context).textTheme,
                                       ),
                                     ),
@@ -1521,7 +1521,7 @@ class _EndUserCartState extends State<EndUserCart>
                                         color: Colors.grey, width: 0.8)),
                                 child: Text(
                                   'ลบ',
-                                  style: GoogleFonts.notoSansThaiLooped(),
+                                  style: GoogleFonts.ibmPlexSansThai(),
                                 )),
                           )
                         else
@@ -1634,8 +1634,8 @@ class _EndUserCartState extends State<EndUserCart>
                                             ),
                                             Text(
                                               'กรุณาเลือกสินค้าอย่างน้อย 1 ชิ้น',
-                                              style: GoogleFonts
-                                                  .notoSansThaiLooped(
+                                              style:
+                                                  GoogleFonts.ibmPlexSansThai(
                                                 color: Colors.white,
                                                 fontSize: 13,
                                               ),
@@ -1694,7 +1694,7 @@ class _EndUserCartState extends State<EndUserCart>
                                       },
                                       child: Text(
                                         'ชำระเงิน(${controller.seleletedProuduct.values.fold(0, (sum, list) => sum + list.length)})',
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                             fontWeight: FontWeight.w500),
                                       ));
                                 }),
@@ -1775,8 +1775,8 @@ class _EndUserCartState extends State<EndUserCart>
             style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8)),
-                textStyle: GoogleFonts.notoSansThaiLooped())),
-        textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                textStyle: GoogleFonts.ibmPlexSansThai())),
+        textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
           Theme.of(context).textTheme,
         ),
       ),
@@ -1840,7 +1840,7 @@ class _EndUserCartState extends State<EndUserCart>
                                     ),
                                     Text(
                                       'ทั้งหมด',
-                                      style: GoogleFonts.notoSansThaiLooped(),
+                                      style: GoogleFonts.ibmPlexSansThai(),
                                     ),
                                   ],
                                 ),
@@ -1872,7 +1872,7 @@ class _EndUserCartState extends State<EndUserCart>
                                   ),
                                   Text(
                                     'ทั้งหมด',
-                                    style: GoogleFonts.notoSansThaiLooped(),
+                                    style: GoogleFonts.ibmPlexSansThai(),
                                   ),
                                 ],
                               ),
@@ -1979,8 +1979,8 @@ class _EndUserCartState extends State<EndUserCart>
                                             ),
                                             Text(
                                               'กรุณาเลือกสินค้าอย่างน้อย 1 ชิ้น',
-                                              style: GoogleFonts
-                                                  .notoSansThaiLooped(
+                                              style:
+                                                  GoogleFonts.ibmPlexSansThai(
                                                 color: Colors.white,
                                                 fontSize: 13,
                                               ),
@@ -2038,7 +2038,7 @@ class _EndUserCartState extends State<EndUserCart>
                                       },
                                       child: Text(
                                         'ชำระเงิน(${controller.seleletedProuduct.values.fold(0, (sum, list) => sum + list.length)})',
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                             fontWeight: FontWeight.w500),
                                       ));
                                 }),
@@ -2077,7 +2077,7 @@ class _EndUserCartState extends State<EndUserCart>
                       padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: Text(
                         'รายละเอียดส่วนลด',
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                             fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -2095,12 +2095,11 @@ class _EndUserCartState extends State<EndUserCart>
                       children: [
                         Text(
                           cartCtr.discountBreakdown.value!.subtotal.label,
-                          style: GoogleFonts.notoSansThaiLooped(fontSize: 13),
+                          style: GoogleFonts.ibmPlexSansThai(fontSize: 13),
                         ),
                         Text(
                             "฿${myFormat.format(cartCtr.discountBreakdown.value!.subtotal.value)}",
-                            style:
-                                GoogleFonts.notoSansThaiLooped(fontSize: 13)),
+                            style: GoogleFonts.ibmPlexSansThai(fontSize: 13)),
                       ],
                     ),
                   ),
@@ -2120,13 +2119,12 @@ class _EndUserCartState extends State<EndUserCart>
                             Text(
                               cartCtr.discountBreakdown.value!.breakdown[index]
                                   .label,
-                              style:
-                                  GoogleFonts.notoSansThaiLooped(fontSize: 13),
+                              style: GoogleFonts.ibmPlexSansThai(fontSize: 13),
                             ),
                             Text(
                                 "- ฿${myFormat.format(cartCtr.discountBreakdown.value!.breakdown[index].value)}",
-                                style: GoogleFonts.notoSansThaiLooped(
-                                    fontSize: 13)),
+                                style:
+                                    GoogleFonts.ibmPlexSansThai(fontSize: 13)),
                           ],
                         );
                       }),
@@ -2140,12 +2138,12 @@ class _EndUserCartState extends State<EndUserCart>
                       children: [
                         Text(
                           cartCtr.discountBreakdown.value!.totalSaved.label,
-                          style: GoogleFonts.notoSansThaiLooped(
+                          style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 13, fontWeight: FontWeight.bold),
                         ),
                         Text(
                             "- ฿${myFormat.format(cartCtr.discountBreakdown.value!.totalSaved.value)}",
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w600,
                                 color: Colors.deepOrange.shade700)),
@@ -2159,12 +2157,12 @@ class _EndUserCartState extends State<EndUserCart>
                       children: [
                         Text(
                           cartCtr.discountBreakdown.value!.total.label,
-                          style: GoogleFonts.notoSansThaiLooped(
+                          style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 13, fontWeight: FontWeight.bold),
                         ),
                         Text(
                             "฿${myFormat.format(cartCtr.discountBreakdown.value!.total.value)}",
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 fontSize: 13, fontWeight: FontWeight.w600)),
                       ],
                     ),
@@ -2219,7 +2217,7 @@ class _EndUserCartState extends State<EndUserCart>
               padding: const EdgeInsets.symmetric(horizontal: 12.0),
               child: Text(
                 res.message,
-                style: GoogleFonts.notoSansThaiLooped(
+                style: GoogleFonts.ibmPlexSansThai(
                   color: Colors.white,
                   fontSize: 13,
                 ),
@@ -2267,7 +2265,7 @@ class _EndUserCartState extends State<EndUserCart>
               child: Center(
                 child: Text(
                   res.message,
-                  style: GoogleFonts.notoSansThaiLooped(
+                  style: GoogleFonts.ibmPlexSansThai(
                     color: Colors.white,
                     fontSize: 13,
                   ),

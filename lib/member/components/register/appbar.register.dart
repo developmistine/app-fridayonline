@@ -14,7 +14,7 @@ PreferredSize appbarEndUserRegister(pageCtr) {
             .copyWith(textScaler: const TextScaler.linear(1.0)),
         child: Theme(
           data: Theme.of(Get.context!).copyWith(
-            textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+            textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
               Theme.of(Get.context!).textTheme,
             ),
           ),
@@ -40,7 +40,7 @@ PreferredSize appbarEndUserRegister(pageCtr) {
                 endUserSignInCtr.currentPage.value == 2
                     ? 'สอบถามความสนใจของคุณ'
                     : 'สมัครสมาชิก',
-                style: GoogleFonts.notoSansThaiLooped(
+                style: GoogleFonts.ibmPlexSansThai(
                     color: Colors.black,
                     fontSize: 16,
                     fontWeight: FontWeight.normal),

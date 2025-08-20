@@ -40,7 +40,7 @@ AppBar appbarCart() {
           children: [
             Text(
               'ตะกร้า',
-              style: GoogleFonts.notoSansThaiLooped(
+              style: GoogleFonts.ibmPlexSansThai(
                   fontSize: 16, fontWeight: FontWeight.normal),
             ),
             const SizedBox(width: 4),
@@ -49,7 +49,7 @@ AppBar appbarCart() {
                   ? const Text('')
                   : Text(
                       '(${cartCtr.cartItems!.value.data.map((e) => e.items.length).fold(0, (previousValue, element) => previousValue + element)})',
-                      style: GoogleFonts.notoSansThaiLooped(
+                      style: GoogleFonts.ibmPlexSansThai(
                           fontSize: 14, fontWeight: FontWeight.bold),
                     );
             }),
@@ -93,7 +93,7 @@ AppBar appbarCart() {
                   badgeContent: Obx(() {
                     return Text(
                       chatCtr.countChat.value.toString(),
-                      style: GoogleFonts.notoSansThaiLooped(
+                      style: GoogleFonts.ibmPlexSansThai(
                           height: 1, color: Colors.white, fontSize: 10),
                     );
                   }),

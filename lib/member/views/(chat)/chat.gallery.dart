@@ -63,7 +63,7 @@ class _ChatGallaryState extends State<ChatGallary> {
         ),
         Text(
           "กรุณาให้สิทธิ์ในการเข้าถึงข้อมูล",
-          style: GoogleFonts.notoSansThaiLooped(
+          style: GoogleFonts.ibmPlexSansThai(
             color: Colors.white,
             fontSize: 13,
           ),
@@ -107,7 +107,7 @@ class _ChatGallaryState extends State<ChatGallary> {
         ),
         Text(
           "ไม่พบรูปหรือวิดีโอในเครื่อง",
-          style: GoogleFonts.notoSansThaiLooped(
+          style: GoogleFonts.ibmPlexSansThai(
             color: Colors.white,
             fontSize: 13,
           ),
@@ -301,7 +301,7 @@ class _ChatGallaryState extends State<ChatGallary> {
                                     ),
                                     Text(
                                       "เลือกรูปภาพหรือวิดีโอได้สูงสุด 9 ไฟล์",
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                         color: Colors.white,
                                         fontSize: 13,
                                       ),
@@ -334,7 +334,7 @@ class _ChatGallaryState extends State<ChatGallary> {
                                       ),
                                       Text(
                                         "$fileType นี้มีขนาดเกิน $maxSize",
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                           color: Colors.white,
                                           fontSize: 13,
                                         ),
@@ -381,7 +381,7 @@ class _ChatGallaryState extends State<ChatGallary> {
                                     ),
                                     Text(
                                       "เลือกรูปภาพหรือวิดีโอได้สูงสุด 9 ไฟล์",
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                         color: Colors.white,
                                         fontSize: 13,
                                       ),
@@ -414,7 +414,7 @@ class _ChatGallaryState extends State<ChatGallary> {
                                       ),
                                       Text(
                                         "$fileType นี้มีขนาดเกิน $maxSize",
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                           color: Colors.white,
                                           fontSize: 13,
                                         ),
@@ -470,8 +470,8 @@ class _ChatGallaryState extends State<ChatGallary> {
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
-                  textStyle: GoogleFonts.notoSansThaiLooped())),
-          textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                  textStyle: GoogleFonts.ibmPlexSansThai())),
+          textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
             Theme.of(context).textTheme,
           ),
         ),

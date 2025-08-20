@@ -102,11 +102,11 @@ class _EndUserCartSummaryState extends State<EndUserCartSummary> {
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
-                  textStyle: GoogleFonts.notoSansThaiLooped())),
-          textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                  textStyle: GoogleFonts.ibmPlexSansThai())),
+          textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
             Theme.of(context).textTheme,
           ),
-          primaryTextTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+          primaryTextTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
             Theme.of(context).textTheme,
           ),
         ),
@@ -440,7 +440,7 @@ class _EndUserCartSummaryState extends State<EndUserCartSummary> {
                                                 Text(
                                                   'รายการสินค้าหมด',
                                                   style: GoogleFonts
-                                                      .notoSansThaiLooped(
+                                                      .ibmPlexSansThai(
                                                           fontSize: 16,
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -454,7 +454,7 @@ class _EndUserCartSummaryState extends State<EndUserCartSummary> {
                                                       .replaceAll(r'\n', '\n'),
                                                   textAlign: TextAlign.center,
                                                   style: GoogleFonts
-                                                      .notoSansThaiLooped(
+                                                      .ibmPlexSansThai(
                                                           fontSize: 13,
                                                           color: Colors.black),
                                                 ),
@@ -484,7 +484,7 @@ class _EndUserCartSummaryState extends State<EndUserCartSummary> {
                                                         child: Text(
                                                           'ตกลง',
                                                           style: GoogleFonts
-                                                              .notoSansThaiLooped(
+                                                              .ibmPlexSansThai(
                                                                   fontSize: 14,
                                                                   color: Colors
                                                                       .white),
@@ -817,7 +817,7 @@ class _EndUserProductListState extends State<EndUserProductList> {
                         constraints: BoxConstraints(maxWidth: Get.width - 60),
                         child: Text(
                           items.shop.shopName,
-                          style: GoogleFonts.notoSansThaiLooped(
+                          style: GoogleFonts.ibmPlexSansThai(
                               fontWeight: FontWeight.w900, fontSize: 13),
                         ),
                       ),
@@ -1263,8 +1263,7 @@ class _EndUserAddressState extends State<EndUserAddress> {
                             padding: const EdgeInsets.all(12.0),
                             child: Text(
                               'กรุณาเพิ่มที่อยู่เพื่อทำการสั่งซื้อ',
-                              style:
-                                  GoogleFonts.notoSansThaiLooped(fontSize: 14),
+                              style: GoogleFonts.ibmPlexSansThai(fontSize: 14),
                             ),
                           )),
                           Container(
@@ -1284,8 +1283,8 @@ class _EndUserAddressState extends State<EndUserAddress> {
                                       },
                                       child: Center(
                                           child: Text('ยกเลิก',
-                                              style: GoogleFonts
-                                                  .notoSansThaiLooped(
+                                              style:
+                                                  GoogleFonts.ibmPlexSansThai(
                                                       fontSize: 14))),
                                     ),
                                   ),
@@ -1306,7 +1305,7 @@ class _EndUserAddressState extends State<EndUserAddress> {
                                       child: Center(
                                           child: Text(
                                         'เพิ่มที่อยู่ใหม่',
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                             color: Colors.deepOrange.shade700,
                                             fontSize: 14),
                                       )),

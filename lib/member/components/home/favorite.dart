@@ -83,7 +83,7 @@ class ShortCutMenus extends StatelessWidget {
                                 maxLines: 2,
                                 softWrap: true,
                                 overflow: TextOverflow.ellipsis,
-                                style: GoogleFonts.notoSansThaiLooped(
+                                style: GoogleFonts.ibmPlexSansThai(
                                     height: 1.2,
                                     fontSize: 12,
                                     color: Colors.black),
@@ -208,7 +208,7 @@ class ShortItems extends StatelessWidget {
             maxLines: 2,
             softWrap: true,
             overflow: TextOverflow.ellipsis,
-            style: GoogleFonts.notoSansThaiLooped(
+            style: GoogleFonts.ibmPlexSansThai(
                 height: 1.2, fontSize: 12, color: Colors.black),
           ),
         ],
@@ -302,7 +302,7 @@ class _ShortMenuAllState extends State<ShortMenuAll> {
   Widget build(BuildContext context) {
     return Theme(
       data: Theme.of(context).copyWith(
-        textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+        textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
           Theme.of(context).textTheme,
         ),
       ),

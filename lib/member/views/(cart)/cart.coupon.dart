@@ -46,8 +46,8 @@ class _EndUserCartCouponState extends State<EndUserCartCoupon> {
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8)),
-                    textStyle: GoogleFonts.notoSansThaiLooped())),
-            textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                    textStyle: GoogleFonts.ibmPlexSansThai())),
+            textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
               Theme.of(context).textTheme,
             ),
           ),
@@ -168,7 +168,7 @@ class _EndUserCartCouponState extends State<EndUserCartCoupon> {
                                     child: Text(
                                       errorCoupon,
                                       textAlign: TextAlign.center,
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                           fontSize: 12, color: Colors.red),
                                     ),
                                   ),
@@ -328,7 +328,7 @@ class NoSelectedProduct extends StatelessWidget {
                 ),
                 Text(
                   'กรุณาเลือกสินค้าในตะกร้าที่ต้องการใช้งานโค้ดส่วนลด',
-                  style: GoogleFonts.notoSansThaiLooped(fontSize: 13),
+                  style: GoogleFonts.ibmPlexSansThai(fontSize: 13),
                 ),
               ],
             )),

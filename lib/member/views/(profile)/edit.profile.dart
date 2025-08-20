@@ -103,7 +103,7 @@ class _EditProfileState extends State<EditProfile> {
                                   ),
                                   Text(
                                     'ข้อมูลวันเกิดไม่ถูกต้อง!',
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                         color: Colors.white, fontSize: 14),
                                   )
                                 ]);
@@ -138,7 +138,7 @@ class _EditProfileState extends State<EditProfile> {
                             },
                             child: Text(
                               'บันทึก',
-                              style: GoogleFonts.notoSansThaiLooped(),
+                              style: GoogleFonts.ibmPlexSansThai(),
                             ))
                       ],
                     ),
@@ -238,8 +238,8 @@ class _EditProfileState extends State<EditProfile> {
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
-                  textStyle: GoogleFonts.notoSansThaiLooped())),
-          textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                  textStyle: GoogleFonts.ibmPlexSansThai())),
+          textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
             Theme.of(context).textTheme,
           ),
         ),

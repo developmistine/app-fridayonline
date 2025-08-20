@@ -24,7 +24,7 @@ dialogConfirm(String title, String action1, String action2) {
                 Text(
                   title,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.notoSansThaiLooped(fontSize: 13),
+                  style: GoogleFonts.ibmPlexSansThai(fontSize: 13),
                 ),
                 const SizedBox(
                   height: 8,
@@ -44,7 +44,7 @@ dialogConfirm(String title, String action1, String action2) {
                             height: 40,
                             child: Center(
                               child: Text(action1,
-                                  style: GoogleFonts.notoSansThaiLooped(
+                                  style: GoogleFonts.ibmPlexSansThai(
                                       fontSize: 13)),
                             ),
                           )),
@@ -65,7 +65,7 @@ dialogConfirm(String title, String action1, String action2) {
                               height: 40,
                               child: Center(
                                 child: Text(action2,
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                         fontSize: 13,
                                         color: Colors.deepOrange.shade600)),
                               ),

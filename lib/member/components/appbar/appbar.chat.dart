@@ -85,7 +85,7 @@ appBarChat(SellerChat shop) {
                       children: [
                         Text(
                           shop.sellerName,
-                          style: GoogleFonts.notoSansThaiLooped(
+                          style: GoogleFonts.ibmPlexSansThai(
                             color: Colors.black,
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
@@ -93,7 +93,7 @@ appBarChat(SellerChat shop) {
                         ),
                         // Text(
                         //   'เข้าสู่ระบบเมื่อ 5 วินาทีที่เเล้ว',
-                        //   style: GoogleFonts.notoSansThaiLooped(
+                        //   style: GoogleFonts.ibmPlexSansThai(
                         //     height: 1,
                         //     fontWeight: FontWeight.normal,
                         //     color: Colors.grey.shade500,
@@ -120,7 +120,7 @@ appBarChat(SellerChat shop) {
                 child: Row(children: [
                   Text(
                     'ศูนย์ช่วยเหลือ',
-                    style: GoogleFonts.notoSansThaiLooped(
+                    style: GoogleFonts.ibmPlexSansThai(
                         color: Colors.red,
                         fontSize: 13,
                         fontWeight: FontWeight.normal),

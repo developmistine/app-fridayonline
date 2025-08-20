@@ -20,12 +20,12 @@ class DeleteAccount extends StatelessWidget {
           .copyWith(textScaler: const TextScaler.linear(1.0)),
       child: Theme(
         data: Theme.of(context).copyWith(
-            textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+            textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
               Theme.of(context).textTheme,
             ),
             elevatedButtonTheme: ElevatedButtonThemeData(
                 style: ElevatedButton.styleFrom(
-                    textStyle: GoogleFonts.notoSansThaiLooped()))),
+                    textStyle: GoogleFonts.ibmPlexSansThai()))),
         child: Scaffold(
           backgroundColor: Colors.grey.shade100,
           appBar: appBarMasterEndUser('สำคัญ'),
@@ -38,7 +38,7 @@ class DeleteAccount extends StatelessWidget {
               children: [
                 Text(
                   'โดยการคลิก "ดำเนินการต่อ" คุณได้ยอมรับเงื่อนไขต่อไปนี้:',
-                  style: GoogleFonts.notoSansThaiLooped(
+                  style: GoogleFonts.ibmPlexSansThai(
                       fontSize: 14, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 8),
@@ -76,7 +76,7 @@ class DeleteAccount extends StatelessWidget {
                   dialogAlert([
                     Text(
                       'กรุณายืนยันหมายเลขโทรศัพท์',
-                      style: GoogleFonts.notoSansThaiLooped(
+                      style: GoogleFonts.ibmPlexSansThai(
                           fontSize: 13, color: Colors.white),
                     )
                   ]);
@@ -119,7 +119,7 @@ List<Widget> _buildBulletPoints(List<String> items) {
           Expanded(
             child: Text(
               text,
-              style: GoogleFonts.notoSansThaiLooped(
+              style: GoogleFonts.ibmPlexSansThai(
                   fontSize: 13, color: Colors.black87),
             ),
           ),

@@ -95,7 +95,7 @@ class _EndUserSearchState extends State<EndUserSearch> {
           .copyWith(textScaler: const TextScaler.linear(1.0)),
       child: Theme(
         data: Theme.of(context).copyWith(
-          textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+          textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
             Theme.of(context).textTheme,
           ),
         ),

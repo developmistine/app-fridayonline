@@ -67,7 +67,7 @@ class _CoinState extends State<Coin> {
                             children: [
                               Text(
                                 coinController.checkIn!.value.checkinTitle,
-                                style: GoogleFonts.notoSansThaiLooped(
+                                style: GoogleFonts.ibmPlexSansThai(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold),
                               ),
@@ -82,7 +82,7 @@ class _CoinState extends State<Coin> {
                           ),
                           Text(
                             coinController.checkIn!.value.checkinDesc,
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500),
                           ),
@@ -123,7 +123,7 @@ class _CoinState extends State<Coin> {
                                     Text(
                                       'เช็คอินแล้ว',
                                       textAlign: TextAlign.end,
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                         fontSize: 13,
                                         color: Colors.white,
                                       ),
@@ -149,8 +149,8 @@ class _CoinState extends State<Coin> {
                                             ),
                                             Text(
                                               'ยินดีด้วย',
-                                              style: GoogleFonts
-                                                  .notoSansThaiLooped(
+                                              style:
+                                                  GoogleFonts.ibmPlexSansThai(
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       fontSize: 16),
@@ -160,8 +160,8 @@ class _CoinState extends State<Coin> {
                                             ),
                                             Text(
                                               'ขอบคุณที่คุณกลับมาอีกครั้ง รับรางวัลของคุณไปเลย',
-                                              style: GoogleFonts
-                                                  .notoSansThaiLooped(
+                                              style:
+                                                  GoogleFonts.ibmPlexSansThai(
                                                       fontSize: 14),
                                             ).paddingSymmetric(horizontal: 18),
                                             Padding(
@@ -186,7 +186,7 @@ class _CoinState extends State<Coin> {
                                                   Text(
                                                     'คุณได้รับ ',
                                                     style: GoogleFonts
-                                                        .notoSansThaiLooped(
+                                                        .ibmPlexSansThai(
                                                             fontWeight:
                                                                 FontWeight.bold,
                                                             fontSize: 16),
@@ -194,7 +194,7 @@ class _CoinState extends State<Coin> {
                                                   Text(
                                                     '+${point.points} coin',
                                                     style: GoogleFonts
-                                                        .notoSansThaiLooped(
+                                                        .ibmPlexSansThai(
                                                             fontSize: 16,
                                                             fontWeight:
                                                                 FontWeight.bold,
@@ -219,7 +219,7 @@ class _CoinState extends State<Coin> {
                                                 child: Text(
                                                   'ปิดหน้าต่างนี้',
                                                   style: GoogleFonts
-                                                      .notoSansThaiLooped(),
+                                                      .ibmPlexSansThai(),
                                                 )),
                                             const SizedBox(
                                               height: 12,
@@ -252,7 +252,7 @@ class _CoinState extends State<Coin> {
                                     ),
                                     child: Text(
                                       'รับ +${today.points} เหรียญ',
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                           fontSize: 14),
                                     ),
                                   ),
@@ -290,7 +290,7 @@ class _CoinState extends State<Coin> {
                                 "Coin ของฉัน : ${myFormat.format(
                                   coinController.checkIn?.value.availableAmount,
                                 )} Coin",
-                                style: GoogleFonts.notoSansThaiLooped(
+                                style: GoogleFonts.ibmPlexSansThai(
                                     color: const Color(0XFF5A5A5A),
                                     fontSize: 14)),
                             const SizedBox(
@@ -311,7 +311,7 @@ class _CoinState extends State<Coin> {
                             children: [
                               Text(
                                 'ดูข้อมูล',
-                                style: GoogleFonts.notoSansThaiLooped(
+                                style: GoogleFonts.ibmPlexSansThai(
                                     fontSize: 13,
                                     color: themeColorDefault,
                                     fontWeight: FontWeight.w600),
@@ -373,7 +373,7 @@ class CheckInProgress extends StatelessWidget {
     } else if (day.isToday) {
       return Text(
         'วันนี้',
-        style: GoogleFonts.notoSansThaiLooped(
+        style: GoogleFonts.ibmPlexSansThai(
           color: Colors.white,
           fontSize: 10,
           fontWeight: FontWeight.bold,
@@ -426,7 +426,7 @@ class CheckInProgress extends StatelessWidget {
                       children: [
                         Text(
                           '+${items[i].points}',
-                          style: GoogleFonts.notoSansThaiLooped(
+                          style: GoogleFonts.ibmPlexSansThai(
                             fontSize: 12,
                             fontWeight: FontWeight.w500,
                             color: items[i].isCompleted
@@ -469,7 +469,7 @@ class CheckInProgress extends StatelessWidget {
                         // Day name
                         Text(
                           items[i].dayName,
-                          style: GoogleFonts.notoSansThaiLooped(
+                          style: GoogleFonts.ibmPlexSansThai(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
                             color: items[i].isCompleted

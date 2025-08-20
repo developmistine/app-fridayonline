@@ -106,9 +106,9 @@ class _RegisterScreen extends State<RegisterScreen> {
       if (!Get.isSnackbarOpen) {
         Get.snackbar('', '',
             titleText: Text('แจ้งเตือน',
-                style: GoogleFonts.notoSansThaiLooped(color: Colors.white)),
+                style: GoogleFonts.ibmPlexSansThai(color: Colors.white)),
             messageText: Text(res.message,
-                style: GoogleFonts.notoSansThaiLooped(color: Colors.white)),
+                style: GoogleFonts.ibmPlexSansThai(color: Colors.white)),
             backgroundColor: Colors.red.withOpacity(0.8),
             colorText: Colors.white,
             duration: const Duration(seconds: 2));
@@ -130,10 +130,10 @@ class _RegisterScreen extends State<RegisterScreen> {
       if (!Get.isSnackbarOpen) {
         Get.snackbar('', '',
             titleText: Text('แจ้งเตือน',
-                style: GoogleFonts.notoSansThaiLooped(color: Colors.white)),
+                style: GoogleFonts.ibmPlexSansThai(color: Colors.white)),
             messageText: Text(
                 "ขออภัย เกิดข้อผิดพลาดกรุณากด 'อนุญาต' เพื่อเข้าใช้งาน",
-                style: GoogleFonts.notoSansThaiLooped(color: Colors.white)),
+                style: GoogleFonts.ibmPlexSansThai(color: Colors.white)),
             backgroundColor: Colors.red.withOpacity(0.8),
             colorText: Colors.white,
             duration: const Duration(seconds: 2));
@@ -152,10 +152,10 @@ class _RegisterScreen extends State<RegisterScreen> {
         if (!Get.isSnackbarOpen) {
           Get.snackbar('', '',
               titleText: Text('แจ้งเตือน',
-                  style: GoogleFonts.notoSansThaiLooped(color: Colors.white)),
+                  style: GoogleFonts.ibmPlexSansThai(color: Colors.white)),
               messageText: Text(
                   "ขออภัย เกิดข้อผิดพลาดกรุณากด 'อนุญาต' เพื่อเข้าใช้งาน",
-                  style: GoogleFonts.notoSansThaiLooped(color: Colors.white)),
+                  style: GoogleFonts.ibmPlexSansThai(color: Colors.white)),
               backgroundColor: Colors.red.withOpacity(0.8),
               colorText: Colors.white,
               duration: const Duration(seconds: 2));
@@ -166,10 +166,10 @@ class _RegisterScreen extends State<RegisterScreen> {
       if (!Get.isSnackbarOpen) {
         Get.snackbar('', '',
             titleText: Text('แจ้งเตือน',
-                style: GoogleFonts.notoSansThaiLooped(color: Colors.white)),
+                style: GoogleFonts.ibmPlexSansThai(color: Colors.white)),
             messageText: Text(
                 "ขออภัย เกิดข้อผิดพลาดกรุณากด 'อนุญาต' เพื่อเข้าใช้งาน",
-                style: GoogleFonts.notoSansThaiLooped(color: Colors.white)),
+                style: GoogleFonts.ibmPlexSansThai(color: Colors.white)),
             backgroundColor: Colors.red.withOpacity(0.8),
             colorText: Colors.white,
             duration: const Duration(seconds: 2));
@@ -235,10 +235,10 @@ class _RegisterScreen extends State<RegisterScreen> {
         Get.snackbar('', '',
             titleText: Text(
               'แจ้งเตือน',
-              style: GoogleFonts.notoSansThaiLooped(color: Colors.white),
+              style: GoogleFonts.ibmPlexSansThai(color: Colors.white),
             ),
             messageText: Text(res.message,
-                style: GoogleFonts.notoSansThaiLooped(color: Colors.white)),
+                style: GoogleFonts.ibmPlexSansThai(color: Colors.white)),
             backgroundColor: Colors.red.withOpacity(0.8),
             colorText: Colors.white,
             duration: const Duration(seconds: 2));
@@ -299,10 +299,10 @@ class _RegisterScreen extends State<RegisterScreen> {
         Get.snackbar('', '',
             titleText: Text(
               'แจ้งเตือน',
-              style: GoogleFonts.notoSansThaiLooped(color: Colors.white),
+              style: GoogleFonts.ibmPlexSansThai(color: Colors.white),
             ),
             messageText: Text(res.message,
-                style: GoogleFonts.notoSansThaiLooped(color: Colors.white)),
+                style: GoogleFonts.ibmPlexSansThai(color: Colors.white)),
             backgroundColor: Colors.red.withOpacity(0.8),
             colorText: Colors.white,
             duration: const Duration(seconds: 2));
@@ -318,11 +318,11 @@ class _RegisterScreen extends State<RegisterScreen> {
           Get.snackbar('', '',
               titleText: Text(
                 'แจ้งเตือน',
-                style: GoogleFonts.notoSansThaiLooped(color: Colors.white),
+                style: GoogleFonts.ibmPlexSansThai(color: Colors.white),
               ),
               messageText: Text(
                 'กรุณาระบุเบอร์โทรศัพท์ให้ครบ 10 หลัก',
-                style: GoogleFonts.notoSansThaiLooped(color: Colors.white),
+                style: GoogleFonts.ibmPlexSansThai(color: Colors.white),
               ),
               backgroundColor: Colors.red.withOpacity(0.8),
               colorText: Colors.white);
@@ -337,11 +337,11 @@ class _RegisterScreen extends State<RegisterScreen> {
               Get.snackbar('', '',
                   titleText: Text(
                     'แจ้งเตือน',
-                    style: GoogleFonts.notoSansThaiLooped(color: Colors.white),
+                    style: GoogleFonts.ibmPlexSansThai(color: Colors.white),
                   ),
                   messageText: Text(
                     'เกิดข้อผิดพลาดกรุณาลองใหม่อีกครั้งในภายหลัง',
-                    style: GoogleFonts.notoSansThaiLooped(color: Colors.white),
+                    style: GoogleFonts.ibmPlexSansThai(color: Colors.white),
                   ),
                   backgroundColor: Colors.red.withOpacity(0.8),
                   colorText: Colors.white);
@@ -371,11 +371,11 @@ class _RegisterScreen extends State<RegisterScreen> {
                   '',
                   titleText: Text(
                     'แจ้งเตือน',
-                    style: GoogleFonts.notoSansThaiLooped(color: Colors.white),
+                    style: GoogleFonts.ibmPlexSansThai(color: Colors.white),
                   ),
                   messageText: Text(
                     'เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง',
-                    style: GoogleFonts.notoSansThaiLooped(color: Colors.white),
+                    style: GoogleFonts.ibmPlexSansThai(color: Colors.white),
                   ),
                 );
               }
@@ -393,15 +393,15 @@ class _RegisterScreen extends State<RegisterScreen> {
           .copyWith(textScaler: const TextScaler.linear(1.0)),
       child: Theme(
         data: Theme.of(context).copyWith(
-          textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+          textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
             Theme.of(context).textTheme,
           ),
           elevatedButtonTheme: ElevatedButtonThemeData(
               style: ElevatedButton.styleFrom(
-                  textStyle: GoogleFonts.notoSansThaiLooped())),
+                  textStyle: GoogleFonts.ibmPlexSansThai())),
           outlinedButtonTheme: OutlinedButtonThemeData(
               style: OutlinedButton.styleFrom(
-                  textStyle: GoogleFonts.notoSansThaiLooped())),
+                  textStyle: GoogleFonts.ibmPlexSansThai())),
         ),
         child: Scaffold(
           backgroundColor: Colors.white,
@@ -480,7 +480,7 @@ class _RegisterScreen extends State<RegisterScreen> {
                               ),
                               // Text(
                               //   'แอปช้อปปิ้งออนไลน์ ครบทุกไลฟ์สไตล์คนไทย',
-                              //   style: GoogleFonts.notoSansThaiLooped(
+                              //   style: GoogleFonts.ibmPlexSansThai(
                               //       color: Colors.white,
                               //       fontWeight: FontWeight.w500),
                               // ),
@@ -523,8 +523,8 @@ class _RegisterScreen extends State<RegisterScreen> {
                                                 vertical: 4, horizontal: 8),
                                             width: Get.width,
                                             child: Text('ลงทะเบียน',
-                                                style: GoogleFonts
-                                                    .notoSansThaiLooped(
+                                                style:
+                                                    GoogleFonts.ibmPlexSansThai(
                                                         fontSize: 20,
                                                         fontWeight:
                                                             FontWeight.bold,
@@ -570,8 +570,8 @@ class _RegisterScreen extends State<RegisterScreen> {
                                               onChanged: (value) {
                                                 setState(() {});
                                               },
-                                              style: GoogleFonts
-                                                  .notoSansThaiLooped(
+                                              style:
+                                                  GoogleFonts.ibmPlexSansThai(
                                                       fontSize: 14),
                                               controller: telController,
                                               inputFormatters: [
@@ -609,7 +609,7 @@ class _RegisterScreen extends State<RegisterScreen> {
                                                 child: Text(
                                                   'ลงทะเบียน',
                                                   style: GoogleFonts
-                                                      .notoSansThaiLooped(
+                                                      .ibmPlexSansThai(
                                                           fontWeight:
                                                               FontWeight.bold,
                                                           fontSize: 14),
@@ -758,7 +758,7 @@ class _RegisterScreen extends State<RegisterScreen> {
                                                 child: Text(
                                                   'ย้อนกลับ',
                                                   style: GoogleFonts
-                                                      .notoSansThaiLooped(
+                                                      .ibmPlexSansThai(
                                                           fontWeight:
                                                               FontWeight.w500),
                                                 )),
@@ -879,6 +879,6 @@ InputDecoration textFieldstyle(String e) {
     filled: true,
     fillColor: Colors.white,
     hintText: e,
-    hintStyle: GoogleFonts.notoSansThaiLooped(fontSize: 14),
+    hintStyle: GoogleFonts.ibmPlexSansThai(fontSize: 14),
   );
 }

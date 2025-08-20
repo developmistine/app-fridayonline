@@ -116,8 +116,8 @@ class _SubCategoryState extends State<SubCategory> {
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8)),
-                    textStyle: GoogleFonts.notoSansThaiLooped())),
-            textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                    textStyle: GoogleFonts.ibmPlexSansThai())),
+            textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
               Theme.of(context).textTheme,
             ),
           ),
@@ -147,7 +147,7 @@ class _SubCategoryState extends State<SubCategory> {
                                 children: [
                                   Text(
                                     'Friday Mall',
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                         fontSize: 12,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -264,7 +264,7 @@ class _SubCategoryState extends State<SubCategory> {
                                   children: [
                                     Text(
                                       categoryCtr.subcategory!.data.catname,
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                           fontSize: 12,
                                           fontWeight: FontWeight.bold),
                                     ),
@@ -372,7 +372,7 @@ class _SubCategoryState extends State<SubCategory> {
                                                         maxLines: 2,
                                                         textAlign:
                                                             TextAlign.center,
-                                                        style: GoogleFonts.notoSansThaiLooped(
+                                                        style: GoogleFonts.ibmPlexSansThai(
                                                             fontWeight: categoryCtr
                                                                         .activeCat
                                                                         .value ==
@@ -493,7 +493,7 @@ class _SubCategoryState extends State<SubCategory> {
                                                           textAlign:
                                                               TextAlign.center,
                                                           style: GoogleFonts
-                                                              .notoSansThaiLooped(
+                                                              .ibmPlexSansThai(
                                                                   color:
                                                                       themeColorDefault,
                                                                   fontSize: 12,
@@ -603,7 +603,7 @@ class _SubCategoryState extends State<SubCategory> {
                                   Text(
                                     items.text,
                                     textAlign: TextAlign.center,
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                         fontSize: 12,
                                         fontWeight:
                                             categoryCtr.activeTab.value == index

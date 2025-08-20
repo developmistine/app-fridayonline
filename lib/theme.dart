@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
+Color themeColorDefault = const Color(0xFF00ADEF);
+Color themeRed = const Color.fromRGBO(253, 127, 107, 1);
+
 ThemeData themeData() {
   return ThemeData(
     primaryColor: themeColorDefault,
-    fontFamily: 'notoreg',
+    fontFamily: 'IBM_Regular',
     useMaterial3: false,
     progressIndicatorTheme:
         ProgressIndicatorThemeData(color: themeColorDefault),
@@ -14,7 +17,7 @@ ThemeData themeData() {
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
         textStyle: const TextStyle(
-          fontFamily: 'notoreg',
+          fontFamily: 'IBM_Regular',
           fontWeight: FontWeight.normal,
         ),
         shape: RoundedRectangleBorder(
@@ -28,7 +31,7 @@ ThemeData themeData() {
           borderRadius: BorderRadius.circular(30.0),
         ),
         textStyle: const TextStyle(
-          fontFamily: 'notoreg',
+          fontFamily: 'IBM_Regular',
           fontWeight: FontWeight.normal,
         ),
       ),
@@ -40,16 +43,13 @@ ThemeData themeData() {
           borderRadius: BorderRadius.circular(30.0),
         ),
         textStyle: const TextStyle(
-          fontFamily: 'notoreg',
+          fontFamily: 'IBM_Regular',
           fontWeight: FontWeight.normal,
         ),
       ),
     ),
   );
 }
-
-Color themeColorDefault = const Color(0xFF00adef);
-Color themeRed = const Color.fromRGBO(253, 127, 107, 1);
 
 Future<dynamic> loadingCart(context) {
   return showDialog(

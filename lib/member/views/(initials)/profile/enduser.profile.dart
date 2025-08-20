@@ -212,7 +212,7 @@ class _EndUserProfileState extends State<EndUserProfile> {
                                   const SizedBox(width: 4.0),
                                   Text(
                                     'ไปยังสมาชิกFriday Online',
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                         fontSize: 13,
                                         color: Colors.white,
                                         fontWeight: FontWeight.w500),
@@ -302,14 +302,14 @@ class _EndUserProfileState extends State<EndUserProfile> {
                                           cartCtr.cartItems == null
                                       ? Text(
                                           '0',
-                                          style: GoogleFonts.notoSansThaiLooped(
+                                          style: GoogleFonts.ibmPlexSansThai(
                                               height: 1,
                                               color: Colors.white,
                                               fontSize: 10),
                                         )
                                       : Text(
                                           '${cartCtr.cartItems!.value.data.map((e) => e.items.length).fold(0, (previousValue, element) => previousValue + element)}',
-                                          style: GoogleFonts.notoSansThaiLooped(
+                                          style: GoogleFonts.ibmPlexSansThai(
                                               height: 1,
                                               color: Colors.white,
                                               fontSize: 10),
@@ -349,7 +349,7 @@ class _EndUserProfileState extends State<EndUserProfile> {
                                   badgeContent: Obx(() {
                                     return Text(
                                       chatCtr.countChat.value.toString(),
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                           height: 1,
                                           color: Colors.white,
                                           fontSize: 10),

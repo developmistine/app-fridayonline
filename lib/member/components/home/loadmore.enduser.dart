@@ -177,7 +177,7 @@ class ProductCard extends StatelessWidget {
         recommend.title,
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
-        style: GoogleFonts.notoSansThaiLooped(
+        style: GoogleFonts.ibmPlexSansThai(
           fontSize: 14,
           color: const Color.fromARGB(255, 0, 0, 0),
         ),
@@ -200,7 +200,7 @@ class ProductCard extends StatelessWidget {
             "      ${recommend.title}",
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            style: GoogleFonts.notoSansThaiLooped(
+            style: GoogleFonts.ibmPlexSansThai(
               fontSize: 14,
               color: const Color.fromARGB(255, 0, 0, 0),
             ),
@@ -233,7 +233,7 @@ class ProductCard extends StatelessWidget {
           ),
           Text(
             '${recommend.ratingStar}',
-            style: GoogleFonts.notoSansThaiLooped(fontSize: 10),
+            style: GoogleFonts.ibmPlexSansThai(fontSize: 10),
           ),
         ],
       ),
@@ -247,7 +247,7 @@ class ProductCard extends StatelessWidget {
         recommend.discount > 0 ? _buildDiscountPrice() : _buildRegularPrice(),
         Text(
           recommend.unitSales,
-          style: GoogleFonts.notoSansThaiLooped(fontSize: 10),
+          style: GoogleFonts.ibmPlexSansThai(fontSize: 10),
         ),
       ],
     );
@@ -259,7 +259,7 @@ class ProductCard extends StatelessWidget {
       children: [
         Text(
           "฿${myFormat.format(recommend.price)}",
-          style: GoogleFonts.notoSansThaiLooped(
+          style: GoogleFonts.ibmPlexSansThai(
             fontSize: 14,
             fontWeight: FontWeight.bold,
             color: Colors.deepOrange.shade700,
@@ -268,7 +268,7 @@ class ProductCard extends StatelessWidget {
         const SizedBox(width: 2),
         Text(
           "฿${myFormat.format(recommend.priceBeforeDiscount)}",
-          style: GoogleFonts.notoSansThaiLooped(
+          style: GoogleFonts.ibmPlexSansThai(
             fontSize: 11,
             decoration: TextDecoration.lineThrough,
             color: Colors.grey.shade700,
@@ -281,7 +281,7 @@ class ProductCard extends StatelessWidget {
   Widget _buildRegularPrice() {
     return Text(
       "฿${myFormat.format(recommend.priceBeforeDiscount)}",
-      style: GoogleFonts.notoSansThaiLooped(
+      style: GoogleFonts.ibmPlexSansThai(
         fontSize: 14,
         fontWeight: FontWeight.bold,
         color: Colors.deepOrange.shade700,
@@ -298,7 +298,7 @@ class ProductCard extends StatelessWidget {
       ),
       child: Text(
         "- ${myFormat.format(recommend.discount)}%",
-        style: GoogleFonts.notoSansThaiLooped(
+        style: GoogleFonts.ibmPlexSansThai(
           color: Colors.deepOrange,
           fontSize: 11,
         ),
@@ -319,7 +319,7 @@ class ProductCard extends StatelessWidget {
           child: Center(
             child: Text(
               'สินค้าหมด',
-              style: GoogleFonts.notoSansThaiLooped(
+              style: GoogleFonts.ibmPlexSansThai(
                 color: Colors.white,
                 fontSize: 13,
                 fontWeight: FontWeight.bold,

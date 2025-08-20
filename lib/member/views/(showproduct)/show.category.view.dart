@@ -144,7 +144,7 @@ class _ShowProductCategoryState extends State<ShowProductCategory>
                                     Text(
                                       'กำลังโหลด...',
                                       textAlign: TextAlign.center,
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                           color: themeColorDefault,
                                           fontSize: 12,
                                           fontWeight: FontWeight.bold),

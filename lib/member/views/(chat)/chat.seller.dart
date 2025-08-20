@@ -239,12 +239,12 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
                 children: [
                   Text(
                     msg.messageData.isRead == 1 ? "อ่านแล้ว" : "",
-                    style: GoogleFonts.notoSansThaiLooped(
+                    style: GoogleFonts.ibmPlexSansThai(
                         fontSize: 11, color: Colors.grey.shade700),
                   ),
                   Text(
                     formatChatTime(msg),
-                    style: GoogleFonts.notoSansThaiLooped(fontSize: 11),
+                    style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
                   ),
                 ],
               ),
@@ -270,7 +270,7 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
               const SizedBox(width: 8),
               Text(
                 formatChatTime(msg),
-                style: GoogleFonts.notoSansThaiLooped(fontSize: 11),
+                style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
               ),
             ],
           ],
@@ -332,12 +332,12 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
               children: [
                 Text(
                   msg.messageData.isRead == 1 ? "อ่านแล้ว" : "",
-                  style: GoogleFonts.notoSansThaiLooped(
+                  style: GoogleFonts.ibmPlexSansThai(
                       fontSize: 11, color: Colors.grey.shade700),
                 ),
                 Text(
                   formatChatTime(msg),
-                  style: GoogleFonts.notoSansThaiLooped(fontSize: 11),
+                  style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
                 ),
               ],
             ),
@@ -372,7 +372,7 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
             const SizedBox(width: 8),
             Text(
               formatChatTime(msg),
-              style: GoogleFonts.notoSansThaiLooped(fontSize: 11),
+              style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
             ),
           ],
         ],
@@ -498,12 +498,12 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
                   children: [
                     Text(
                       msg.messageData.isRead == 1 ? "อ่านแล้ว" : "",
-                      style: GoogleFonts.notoSansThaiLooped(
+                      style: GoogleFonts.ibmPlexSansThai(
                           fontSize: 11, color: Colors.grey.shade700),
                     ),
                     Text(
                       formatChatTime(msg),
-                      style: GoogleFonts.notoSansThaiLooped(fontSize: 11),
+                      style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
                     ),
                   ],
                 ))
@@ -513,7 +513,7 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
                 bottom: 8,
                 child: Text(
                   formatChatTime(msg),
-                  style: GoogleFonts.notoSansThaiLooped(fontSize: 11),
+                  style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
                 ))
         ],
       );
@@ -561,14 +561,14 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
                           msg.messageData.title,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
-                          style: GoogleFonts.notoSansThaiLooped(fontSize: 13),
+                          style: GoogleFonts.ibmPlexSansThai(fontSize: 13),
                         ),
                         Builder(
                           builder: (context) {
                             if (msg.messageData.discount == 0) {
                               return Text(
                                 "฿${myFormat.format(msg.messageData.priceBeforeDiscount)}",
-                                style: GoogleFonts.notoSansThaiLooped(
+                                style: GoogleFonts.ibmPlexSansThai(
                                     fontSize: 13,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.deepOrange.shade700),
@@ -578,7 +578,7 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
                                 children: [
                                   Text(
                                     "฿${myFormat.format(msg.messageData.price)}",
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                         fontSize: 13,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.deepOrange.shade700),
@@ -588,7 +588,7 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
                                   ),
                                   Text(
                                     "฿${myFormat.format(msg.messageData.priceBeforeDiscount)}",
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                         decoration: TextDecoration.lineThrough,
                                         fontSize: 13,
                                         color: Colors.grey.shade500),
@@ -614,12 +614,12 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
                   children: [
                     Text(
                       msg.messageData.isRead == 1 ? "อ่านแล้ว" : "",
-                      style: GoogleFonts.notoSansThaiLooped(
+                      style: GoogleFonts.ibmPlexSansThai(
                           fontSize: 11, color: Colors.grey.shade700),
                     ),
                     Text(
                       formatChatTime(msg),
-                      style: GoogleFonts.notoSansThaiLooped(fontSize: 11),
+                      style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
                     ),
                   ],
                 ))
@@ -629,7 +629,7 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
                 bottom: 8,
                 child: Text(
                   formatChatTime(msg),
-                  style: GoogleFonts.notoSansThaiLooped(fontSize: 11),
+                  style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
                 ))
         ],
       );
@@ -708,7 +708,7 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
                                       msg.messageData.title,
                                       maxLines: 1,
                                       overflow: TextOverflow.ellipsis,
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                           fontSize: 11),
                                     ),
                                     Builder(
@@ -731,7 +731,7 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
 
                                         return Text(
                                           msg.messageData.orderStatusDesc,
-                                          style: GoogleFonts.notoSansThaiLooped(
+                                          style: GoogleFonts.ibmPlexSansThai(
                                               fontSize: 11,
                                               fontWeight: FontWeight.bold,
                                               color: getStatusColor(msg
@@ -742,7 +742,7 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
                                     ),
                                     Text(
                                       'สินค้า ${msg.messageData.orderTotalQty} ชิ้น ยอดรวม ฿${myFormat.format(msg.messageData.orderTotalAmount)}',
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                           fontSize: 11),
                                     )
                                   ],
@@ -756,14 +756,13 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
                           children: [
                             Text(
                               'หมายเลขคำสั่งซื้อ',
-                              style:
-                                  GoogleFonts.notoSansThaiLooped(fontSize: 11),
+                              style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
                             ),
                             Text(
                               msg.messageData.orderNo,
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
-                              style: GoogleFonts.notoSansThaiLooped(
+                              style: GoogleFonts.ibmPlexSansThai(
                                   fontSize: 11, fontWeight: FontWeight.bold),
                             ),
                           ],
@@ -784,12 +783,12 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
                   children: [
                     Text(
                       msg.messageData.isRead == 1 ? "อ่านแล้ว" : "",
-                      style: GoogleFonts.notoSansThaiLooped(
+                      style: GoogleFonts.ibmPlexSansThai(
                           fontSize: 11, color: Colors.grey.shade700),
                     ),
                     Text(
                       formatChatTime(msg),
-                      style: GoogleFonts.notoSansThaiLooped(fontSize: 11),
+                      style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
                     ),
                   ],
                 ))
@@ -799,7 +798,7 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
                 bottom: 8,
                 child: Text(
                   formatChatTime(msg),
-                  style: GoogleFonts.notoSansThaiLooped(fontSize: 11),
+                  style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
                 ))
         ],
       );
@@ -850,7 +849,7 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
                 ),
                 Text(
                   msg.messageData.messageText,
-                  style: GoogleFonts.notoSansThaiLooped(
+                  style: GoogleFonts.ibmPlexSansThai(
                     color: msg.isMe ? Colors.red : Colors.black,
                     fontSize: 12,
                   ),
@@ -863,7 +862,7 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
 
           // return Text(
           //   msg.messageData.messageText,
-          //   style: GoogleFonts.notoSansThaiLooped(
+          //   style: GoogleFonts.ibmPlexSansThai(
           //     color: msg.isMe ? Colors.white : Colors.black,
           //     fontSize: 14,
           //   ),
@@ -886,7 +885,7 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
                     bottom: 0,
                     child: Text(
                       formatChatTime(msg),
-                      style: GoogleFonts.notoSansThaiLooped(fontSize: 11),
+                      style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
                     ))
               else
                 Positioned(
@@ -894,7 +893,7 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
                     bottom: 0,
                     child: Text(
                       formatChatTime(msg),
-                      style: GoogleFonts.notoSansThaiLooped(fontSize: 11),
+                      style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
                     ))
             ],
           );
@@ -916,7 +915,7 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
       if (match.start > currentIndex) {
         spans.add(TextSpan(
           text: text.substring(currentIndex, match.start),
-          style: GoogleFonts.notoSansThaiLooped(
+          style: GoogleFonts.ibmPlexSansThai(
               color: isSender ? Colors.white : Colors.black),
         ));
       }
@@ -944,7 +943,7 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
     if (currentIndex < text.length) {
       spans.add(TextSpan(
         text: text.substring(currentIndex),
-        style: GoogleFonts.notoSansThaiLooped(
+        style: GoogleFonts.ibmPlexSansThai(
             color: isSender ? Colors.white : Colors.black),
       ));
     }
@@ -965,8 +964,8 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
-                  textStyle: GoogleFonts.notoSansThaiLooped())),
-          textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                  textStyle: GoogleFonts.ibmPlexSansThai())),
+          textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
             Theme.of(context).textTheme,
           ),
         ),
@@ -988,7 +987,7 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
                     return Center(
                       child: Text(
                         "รอสักครู่...",
-                        style: GoogleFonts.notoSansThaiLooped(fontSize: 11),
+                        style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
                       ),
                     );
                   }
@@ -1069,8 +1068,8 @@ class _ChatAppWithSellerState extends State<ChatAppWithSeller>
                                   textInputAction: TextInputAction.newline,
                                   keyboardType: TextInputType.multiline,
                                   maxLines: null,
-                                  style: GoogleFonts.notoSansThaiLooped(
-                                      fontSize: 14),
+                                  style:
+                                      GoogleFonts.ibmPlexSansThai(fontSize: 14),
                                   controller: _controller,
                                   onChanged: (val) {
                                     setState(() {});

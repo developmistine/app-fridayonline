@@ -272,7 +272,7 @@ class _OrderHistoryCardState extends State<OrderHistoryCard>
                                         ),
                                         Text(
                                           widget.data[index].shopInfo.shopName,
-                                          style: GoogleFonts.notoSansThaiLooped(
+                                          style: GoogleFonts.ibmPlexSansThai(
                                               fontSize: 14,
                                               fontWeight: FontWeight.w900),
                                         ),
@@ -653,8 +653,8 @@ class _OrderHistoryCheckOutCardState extends State<OrderHistoryCheckOutCard>
                                               ),
                                               Text(
                                                 shopList.shopInfo.shopName,
-                                                style: GoogleFonts
-                                                    .notoSansThaiLooped(
+                                                style:
+                                                    GoogleFonts.ibmPlexSansThai(
                                                         fontSize: 14,
                                                         fontWeight:
                                                             FontWeight.w900),

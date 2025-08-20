@@ -14,7 +14,7 @@ class Festival extends StatelessWidget {
   Widget build(BuildContext context) {
     return Theme(
       data: Theme.of(context).copyWith(
-        textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+        textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
           Theme.of(context).textTheme,
         ),
       ),

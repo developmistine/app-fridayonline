@@ -24,12 +24,12 @@ class _ChangeVerifyState extends State<ChangeVerify> {
             .copyWith(textScaler: const TextScaler.linear(1.0)),
         child: Theme(
             data: Theme.of(context).copyWith(
-                textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
                   Theme.of(context).textTheme,
                 ),
                 elevatedButtonTheme: ElevatedButtonThemeData(
                     style: ElevatedButton.styleFrom(
-                        textStyle: GoogleFonts.notoSansThaiLooped()))),
+                        textStyle: GoogleFonts.ibmPlexSansThai()))),
             child: Scaffold(
               appBar: appBarMasterEndUser('ระบบตรวจสอบความปลอดภัย'),
               body: SingleChildScrollView(

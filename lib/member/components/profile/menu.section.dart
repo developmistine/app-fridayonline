@@ -51,7 +51,7 @@ Widget buildMenuSection(
                 children: [
                   Text(
                     title,
-                    style: GoogleFonts.notoSansThaiLooped(
+                    style: GoogleFonts.ibmPlexSansThai(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                     ),
@@ -68,7 +68,7 @@ Widget buildMenuSection(
                         children: [
                           Text(
                             "ประวัติการซื้อ",
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold,
                                 color: themeColorDefault),

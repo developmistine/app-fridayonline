@@ -19,7 +19,7 @@ flashDealTimer() {
           alignment: Alignment.center,
           child: Text(
             endUserHomeCtr.countdown.value.split(":")[0],
-            style: GoogleFonts.notoSansThaiLooped(
+            style: GoogleFonts.ibmPlexSansThai(
                 height: 1.2, color: Colors.white, fontSize: 13),
           ),
         ),
@@ -27,7 +27,7 @@ flashDealTimer() {
           padding: const EdgeInsets.symmetric(horizontal: 4.0),
           child: Text(
             ':',
-            style: GoogleFonts.notoSansThaiLooped(
+            style: GoogleFonts.ibmPlexSansThai(
                 height: 1, color: Colors.black, fontSize: 13),
           ),
         ),
@@ -38,7 +38,7 @@ flashDealTimer() {
           alignment: Alignment.center,
           child: Text(
             endUserHomeCtr.countdown.value.split(":")[1],
-            style: GoogleFonts.notoSansThaiLooped(
+            style: GoogleFonts.ibmPlexSansThai(
                 height: 1.2, color: Colors.white, fontSize: 13),
           ),
         ),
@@ -46,7 +46,7 @@ flashDealTimer() {
           padding: const EdgeInsets.symmetric(horizontal: 4.0),
           child: Text(
             ':',
-            style: GoogleFonts.notoSansThaiLooped(
+            style: GoogleFonts.ibmPlexSansThai(
                 height: 1, color: Colors.black, fontSize: 13),
           ),
         ),
@@ -57,7 +57,7 @@ flashDealTimer() {
           alignment: Alignment.center,
           child: Text(
             endUserHomeCtr.countdown.value.split(":")[2],
-            style: GoogleFonts.notoSansThaiLooped(
+            style: GoogleFonts.ibmPlexSansThai(
                 height: 1.2, color: Colors.white, fontSize: 13),
           ),
         ),
@@ -78,7 +78,7 @@ shopflashDealTimer() {
           alignment: Alignment.center,
           child: Text(
             brandCtr.countdown.value.split(":")[0],
-            style: GoogleFonts.notoSansThaiLooped(
+            style: GoogleFonts.ibmPlexSansThai(
                 height: 1.2, color: Colors.white, fontSize: 13),
           ),
         ),
@@ -86,7 +86,7 @@ shopflashDealTimer() {
           padding: const EdgeInsets.symmetric(horizontal: 4.0),
           child: Text(
             ':',
-            style: GoogleFonts.notoSansThaiLooped(
+            style: GoogleFonts.ibmPlexSansThai(
                 height: 1, color: Colors.black, fontSize: 13),
           ),
         ),
@@ -97,7 +97,7 @@ shopflashDealTimer() {
           alignment: Alignment.center,
           child: Text(
             brandCtr.countdown.value.split(":")[1],
-            style: GoogleFonts.notoSansThaiLooped(
+            style: GoogleFonts.ibmPlexSansThai(
                 height: 1.2, color: Colors.white, fontSize: 13),
           ),
         ),
@@ -105,7 +105,7 @@ shopflashDealTimer() {
           padding: const EdgeInsets.symmetric(horizontal: 4.0),
           child: Text(
             ':',
-            style: GoogleFonts.notoSansThaiLooped(
+            style: GoogleFonts.ibmPlexSansThai(
                 height: 1, color: Colors.black, fontSize: 13),
           ),
         ),
@@ -116,7 +116,7 @@ shopflashDealTimer() {
           alignment: Alignment.center,
           child: Text(
             brandCtr.countdown.value.split(":")[2],
-            style: GoogleFonts.notoSansThaiLooped(
+            style: GoogleFonts.ibmPlexSansThai(
                 height: 1.2, color: Colors.white, fontSize: 13),
           ),
         ),

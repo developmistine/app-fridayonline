@@ -112,9 +112,9 @@ class _SignInScreen extends State<SignInScreen>
       if (!Get.isSnackbarOpen) {
         Get.snackbar('', '',
             titleText: Text('แจ้งเตือน',
-                style: GoogleFonts.notoSansThaiLooped(color: Colors.white)),
+                style: GoogleFonts.ibmPlexSansThai(color: Colors.white)),
             messageText: Text(res.message,
-                style: GoogleFonts.notoSansThaiLooped(color: Colors.white)),
+                style: GoogleFonts.ibmPlexSansThai(color: Colors.white)),
             backgroundColor: Colors.red.withOpacity(0.8),
             colorText: Colors.white,
             duration: const Duration(seconds: 2));
@@ -136,10 +136,10 @@ class _SignInScreen extends State<SignInScreen>
       if (!Get.isSnackbarOpen) {
         Get.snackbar('', '',
             titleText: Text('แจ้งเตือน',
-                style: GoogleFonts.notoSansThaiLooped(color: Colors.white)),
+                style: GoogleFonts.ibmPlexSansThai(color: Colors.white)),
             messageText: Text(
                 "ขออภัย เกิดข้อผิดพลาดกรุณากด 'อนุญาต' เพื่อเข้าใช้งาน",
-                style: GoogleFonts.notoSansThaiLooped(color: Colors.white)),
+                style: GoogleFonts.ibmPlexSansThai(color: Colors.white)),
             backgroundColor: Colors.red.withOpacity(0.8),
             colorText: Colors.white,
             duration: const Duration(seconds: 2));
@@ -158,10 +158,10 @@ class _SignInScreen extends State<SignInScreen>
         if (!Get.isSnackbarOpen) {
           Get.snackbar('', '',
               titleText: Text('แจ้งเตือน',
-                  style: GoogleFonts.notoSansThaiLooped(color: Colors.white)),
+                  style: GoogleFonts.ibmPlexSansThai(color: Colors.white)),
               messageText: Text(
                   "ขออภัย เกิดข้อผิดพลาดกรุณากด 'อนุญาต' เพื่อเข้าใช้งาน",
-                  style: GoogleFonts.notoSansThaiLooped(color: Colors.white)),
+                  style: GoogleFonts.ibmPlexSansThai(color: Colors.white)),
               backgroundColor: Colors.red.withOpacity(0.8),
               colorText: Colors.white,
               duration: const Duration(seconds: 2));
@@ -172,10 +172,10 @@ class _SignInScreen extends State<SignInScreen>
       if (!Get.isSnackbarOpen) {
         Get.snackbar('', '',
             titleText: Text('แจ้งเตือน',
-                style: GoogleFonts.notoSansThaiLooped(color: Colors.white)),
+                style: GoogleFonts.ibmPlexSansThai(color: Colors.white)),
             messageText: Text(
                 "ขออภัย เกิดข้อผิดพลาดกรุณากด 'อนุญาต' เพื่อเข้าใช้งาน",
-                style: GoogleFonts.notoSansThaiLooped(color: Colors.white)),
+                style: GoogleFonts.ibmPlexSansThai(color: Colors.white)),
             backgroundColor: Colors.red.withOpacity(0.8),
             colorText: Colors.white,
             duration: const Duration(seconds: 2));
@@ -201,7 +201,7 @@ class _SignInScreen extends State<SignInScreen>
       if (!Get.isSnackbarOpen) {
         Get.snackbar('', '',
             messageText: Text('เกิดข้อผิดพลาดกรุณาลองใหม่อีกครั้ง',
-                style: GoogleFonts.notoSansThaiLooped(color: Colors.white)),
+                style: GoogleFonts.ibmPlexSansThai(color: Colors.white)),
             backgroundColor: Colors.red.withOpacity(0.8),
             colorText: Colors.white,
             duration: const Duration(seconds: 2));
@@ -224,7 +224,7 @@ class _SignInScreen extends State<SignInScreen>
       if (!Get.isSnackbarOpen) {
         Get.snackbar('', '',
             messageText: Text('เกิดข้อผิดพลาดกรุณาลองใหม่อีกครั้ง',
-                style: GoogleFonts.notoSansThaiLooped(color: Colors.white)),
+                style: GoogleFonts.ibmPlexSansThai(color: Colors.white)),
             backgroundColor: Colors.red.withOpacity(0.8),
             colorText: Colors.white,
             duration: const Duration(seconds: 2));
@@ -240,11 +240,11 @@ class _SignInScreen extends State<SignInScreen>
           Get.snackbar('', '',
               titleText: Text(
                 'แจ้งเตือน',
-                style: GoogleFonts.notoSansThaiLooped(color: Colors.white),
+                style: GoogleFonts.ibmPlexSansThai(color: Colors.white),
               ),
               messageText: Text(
                 'กรุณาระบุเบอร์โทรศัพท์ให้ครบ 10 หลัก',
-                style: GoogleFonts.notoSansThaiLooped(color: Colors.white),
+                style: GoogleFonts.ibmPlexSansThai(color: Colors.white),
               ),
               backgroundColor: Colors.red.withOpacity(0.8),
               colorText: Colors.white);
@@ -259,11 +259,11 @@ class _SignInScreen extends State<SignInScreen>
               Get.snackbar('', '',
                   titleText: Text(
                     'แจ้งเตือน',
-                    style: GoogleFonts.notoSansThaiLooped(color: Colors.white),
+                    style: GoogleFonts.ibmPlexSansThai(color: Colors.white),
                   ),
                   messageText: Text(
                     'เกิดข้อผิดพลาดกรุณาลองใหม่อีกครั้งในภายหลัง',
-                    style: GoogleFonts.notoSansThaiLooped(color: Colors.white),
+                    style: GoogleFonts.ibmPlexSansThai(color: Colors.white),
                   ),
                   backgroundColor: Colors.red.withOpacity(0.8),
                   colorText: Colors.white);
@@ -293,11 +293,11 @@ class _SignInScreen extends State<SignInScreen>
                   '',
                   titleText: Text(
                     'แจ้งเตือน',
-                    style: GoogleFonts.notoSansThaiLooped(color: Colors.white),
+                    style: GoogleFonts.ibmPlexSansThai(color: Colors.white),
                   ),
                   messageText: Text(
                     'เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง',
-                    style: GoogleFonts.notoSansThaiLooped(color: Colors.white),
+                    style: GoogleFonts.ibmPlexSansThai(color: Colors.white),
                   ),
                 );
               }
@@ -320,12 +320,12 @@ class _SignInScreen extends State<SignInScreen>
           .copyWith(textScaler: const TextScaler.linear(1.0)),
       child: Theme(
         data: Theme.of(context).copyWith(
-            textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+            textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
               Theme.of(context).textTheme,
             ),
             elevatedButtonTheme: ElevatedButtonThemeData(
                 style: ElevatedButton.styleFrom(
-                    textStyle: GoogleFonts.notoSansThaiLooped()))),
+                    textStyle: GoogleFonts.ibmPlexSansThai()))),
         child: SafeAreaProvider(
           child: Scaffold(
             backgroundColor: Colors.grey.shade100,
@@ -429,7 +429,7 @@ class _SignInScreen extends State<SignInScreen>
                                 ),
                                 // Text(
                                 //   'ฟรายเดย์ ออนไลช้อปปิ้ง',
-                                //   style: GoogleFonts.notoSansThaiLooped(
+                                //   style: GoogleFonts.ibmPlexSansThai(
                                 //       color: Colors.white,
                                 //       fontWeight: FontWeight.w500),
                                 // ),
@@ -478,7 +478,7 @@ class _SignInScreen extends State<SignInScreen>
                                               width: Get.width,
                                               child: Text('เข้าสู่ระบบ',
                                                   style: GoogleFonts
-                                                      .notoSansThaiLooped(
+                                                      .ibmPlexSansThai(
                                                           fontSize: 20,
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -525,8 +525,8 @@ class _SignInScreen extends State<SignInScreen>
                                                 onChanged: (value) {
                                                   setState(() {});
                                                 },
-                                                style: GoogleFonts
-                                                    .notoSansThaiLooped(
+                                                style:
+                                                    GoogleFonts.ibmPlexSansThai(
                                                         fontSize: 14),
                                                 controller: telController,
                                                 inputFormatters: [
@@ -569,7 +569,7 @@ class _SignInScreen extends State<SignInScreen>
                                                   child: Text(
                                                     'เข้าสู่ระบบ',
                                                     style: GoogleFonts
-                                                        .notoSansThaiLooped(
+                                                        .ibmPlexSansThai(
                                                             fontWeight:
                                                                 FontWeight.bold,
                                                             fontSize: 14),
@@ -786,14 +786,14 @@ class _SignInScreen extends State<SignInScreen>
                   //           ),
                   //           Text(
                   //             'สมาชิกFriday Online',
-                  //             style: GoogleFonts.notoSansThaiLooped(
+                  //             style: GoogleFonts.ibmPlexSansThai(
                   //                 fontWeight: FontWeight.w600,
                   //                 fontSize: 18,
                   //                 color: Colors.white),
                   //           ),
                   //           Text(
                   //             'สำหรับสมาชิก และลูกค้าของสมาชิกFriday Online',
-                  //             style: GoogleFonts.notoSansThaiLooped(
+                  //             style: GoogleFonts.ibmPlexSansThai(
                   //                 fontSize: 14, color: Colors.white),
                   //           ),
                   //           SizedBox(
@@ -830,7 +830,7 @@ class _SignInScreen extends State<SignInScreen>
                   //                   mainAxisAlignment: MainAxisAlignment.center,
                   //                   children: [
                   //                     Text('เข้าสู่ระบบสมาชิกFriday Online',
-                  //                         style: GoogleFonts.notoSansThaiLooped(
+                  //                         style: GoogleFonts.ibmPlexSansThai(
                   //                             color: Colors.white,
                   //                             fontSize: 16,
                   //                             fontWeight: FontWeight.w500)),
@@ -966,6 +966,6 @@ InputDecoration textFieldstyle(String e) {
     filled: true,
     fillColor: Colors.white,
     hintText: e,
-    hintStyle: GoogleFonts.notoSansThaiLooped(fontSize: 14),
+    hintStyle: GoogleFonts.ibmPlexSansThai(fontSize: 14),
   );
 }

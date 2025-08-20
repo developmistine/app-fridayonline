@@ -78,7 +78,7 @@ class CouponCardWithCheck extends StatelessWidget {
                         children: [
                           Text(
                             voucher.title,
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                             ),
@@ -87,7 +87,7 @@ class CouponCardWithCheck extends StatelessWidget {
                           Text(
                             "ขั้นต่ำ ฿${myFormat.format(voucher.rewardInfo.minSpend)}",
                             overflow: TextOverflow.ellipsis,
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 13,
                               color: Colors.grey,
                             ),
@@ -132,7 +132,7 @@ class CouponCardWithCheck extends StatelessWidget {
                     children: [
                       Text(
                         voucher.timeInfo.timeFormat,
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                           fontSize: 12,
                           color: Colors.grey,
                         ),
@@ -227,7 +227,7 @@ class CouponCardWithCheck extends StatelessWidget {
                         children: [
                           Text(
                             voucher.title,
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                             ),
@@ -236,7 +236,7 @@ class CouponCardWithCheck extends StatelessWidget {
                           Text(
                             "ขั้นต่ำ ฿${myFormat.format(voucher.rewardInfo.minSpend)}",
                             overflow: TextOverflow.ellipsis,
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 13,
                               color: Colors.grey,
                             ),
@@ -281,7 +281,7 @@ class CouponCardWithCheck extends StatelessWidget {
                     children: [
                       Text(
                         voucher.timeInfo.timeFormat,
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                           fontSize: 12,
                           color: Colors.grey,
                         ),
@@ -327,7 +327,7 @@ class CouponCardWithCheck extends StatelessWidget {
                         dialogAlert([
                           Text(
                             res.message,
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 color: Colors.white, fontSize: 12),
                           )
                         ]);
@@ -498,7 +498,7 @@ class CouponCardWithCheck extends StatelessWidget {
                         children: [
                           Text(
                             voucher.title,
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                             ),
@@ -507,7 +507,7 @@ class CouponCardWithCheck extends StatelessWidget {
                           Text(
                             "ขั้นต่ำ ฿${myFormat.format(voucher.rewardInfo.minSpend)}",
                             overflow: TextOverflow.ellipsis,
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 13,
                               color: Colors.grey,
                             ),
@@ -544,7 +544,7 @@ class CouponCardWithCheck extends StatelessWidget {
                     children: [
                       Text(
                         voucher.timeInfo.timeFormat,
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                           fontSize: 12,
                           color: Colors.grey,
                         ),
@@ -598,7 +598,7 @@ class CouponCardWithCheck extends StatelessWidget {
                         dialogAlert([
                           Text(
                             res.message,
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 color: Colors.white, fontSize: 12),
                           )
                         ]);
@@ -722,7 +722,7 @@ class CouponCardPlatformWithCheck extends StatelessWidget {
                         children: [
                           Text(
                             voucher.title,
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                             ),
@@ -731,7 +731,7 @@ class CouponCardPlatformWithCheck extends StatelessWidget {
                           Text(
                             "ขั้นต่ำ ฿${myFormat.format(voucher.rewardInfo.minSpend)}",
                             overflow: TextOverflow.ellipsis,
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 13,
                               color: Colors.grey,
                             ),
@@ -776,7 +776,7 @@ class CouponCardPlatformWithCheck extends StatelessWidget {
                     children: [
                       Text(
                         voucher.timeInfo.timeFormat,
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                           fontSize: 12,
                           color: Colors.grey,
                         ),
@@ -871,7 +871,7 @@ class CouponCardPlatformWithCheck extends StatelessWidget {
                         children: [
                           Text(
                             voucher.title,
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                             ),
@@ -880,7 +880,7 @@ class CouponCardPlatformWithCheck extends StatelessWidget {
                           Text(
                             "ขั้นต่ำ ฿${myFormat.format(voucher.rewardInfo.minSpend)}",
                             overflow: TextOverflow.ellipsis,
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 13,
                               color: Colors.grey,
                             ),
@@ -925,7 +925,7 @@ class CouponCardPlatformWithCheck extends StatelessWidget {
                     children: [
                       Text(
                         voucher.timeInfo.timeFormat,
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                           fontSize: 12,
                           color: Colors.grey,
                         ),
@@ -973,7 +973,7 @@ class CouponCardPlatformWithCheck extends StatelessWidget {
                         dialogAlert([
                           Text(
                             res.message,
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 color: Colors.white, fontSize: 12),
                           )
                         ]);
@@ -1086,7 +1086,7 @@ class CouponCardPlatformWithCheck extends StatelessWidget {
                         children: [
                           Text(
                             voucher.title,
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                             ),
@@ -1095,7 +1095,7 @@ class CouponCardPlatformWithCheck extends StatelessWidget {
                           Text(
                             "ขั้นต่ำ ฿${myFormat.format(voucher.rewardInfo.minSpend)}",
                             overflow: TextOverflow.ellipsis,
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 13,
                               color: Colors.grey,
                             ),
@@ -1132,7 +1132,7 @@ class CouponCardPlatformWithCheck extends StatelessWidget {
                     children: [
                       Text(
                         voucher.timeInfo.timeFormat,
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                           fontSize: 12,
                           color: Colors.grey,
                         ),

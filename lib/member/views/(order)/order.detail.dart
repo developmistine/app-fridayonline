@@ -61,11 +61,11 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8)),
-                    textStyle: GoogleFonts.notoSansThaiLooped())),
+                    textStyle: GoogleFonts.ibmPlexSansThai())),
             outlinedButtonTheme: OutlinedButtonThemeData(
                 style: OutlinedButton.styleFrom(
-                    textStyle: GoogleFonts.notoSansThaiLooped())),
-            textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                    textStyle: GoogleFonts.ibmPlexSansThai())),
+            textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
               Theme.of(context).textTheme,
             ),
           ),
@@ -547,7 +547,7 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                       ),
                                       Text(
                                         orderDatailData.shopInfo.shopName,
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                             fontSize: 14,
                                             fontWeight: FontWeight.w900),
                                       ),
@@ -1191,19 +1191,19 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                         children: [
                           Text(
                             'โปรดระบุรายละเอียด',
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 fontWeight: FontWeight.bold),
                           ),
                           if (returnType == 1)
                             Text(
                               '( คืนเงิน คืนสินค้า )',
-                              style: GoogleFonts.notoSansThaiLooped(
+                              style: GoogleFonts.ibmPlexSansThai(
                                   fontSize: 11, color: Colors.red),
                             )
                           else
                             Text(
                               '( คืนเงิน ไม่คืนสินค้า )',
-                              style: GoogleFonts.notoSansThaiLooped(
+                              style: GoogleFonts.ibmPlexSansThai(
                                   fontSize: 11, color: Colors.red),
                             ),
                         ],
@@ -1251,7 +1251,7 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                 Expanded(
                                   child: Text(
                                     'โปรดระบุข้อมูลให้ถูกต้อง\nหลังกดยืนยันจะไม่สามารถแก้ไขได้อีก',
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                         fontSize: 13),
                                   ),
                                 ),
@@ -1270,7 +1270,7 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                 children: [
                                   Text(
                                     'บัญชีธนาคารที่ต้องการรับเงินคืน',
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                         fontWeight: FontWeight.bold),
                                   ),
                                   const SizedBox(
@@ -1349,7 +1349,7 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                       validator: Validators.required(
                                           'กรุณาระบุชื่อบัญชีของคุณ'),
                                       controller: bankNameCtr,
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                           fontSize: 13),
                                       decoration:
                                           textStyle(label: 'ชื่อบัญชี')),
@@ -1361,7 +1361,7 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                           'กรุณาระบุหมายเลขบัญชีของคุณ'),
                                       keyboardType: TextInputType.phone,
                                       controller: bankNoCtr,
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                           fontSize: 13),
                                       decoration:
                                           textStyle(label: 'หมายเลขบัญชี')),
@@ -1372,12 +1372,12 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                     children: [
                                       Text(
                                         'ขนส่งเข้ารับพัสดุ',
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                             fontSize: 13),
                                       ),
                                       Text(
                                         returnInfo.returnPickupCondition,
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                             fontSize: 12,
                                             fontWeight: FontWeight.bold,
                                             color: Colors.blue.shade400),
@@ -1396,7 +1396,7 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                             color: Colors.blue.shade50),
                                         child: Text(
                                           courier.data[0].courierName,
-                                          style: GoogleFonts.notoSansThaiLooped(
+                                          style: GoogleFonts.ibmPlexSansThai(
                                               fontSize: 12,
                                               color: Colors.black),
                                         ),
@@ -1406,7 +1406,7 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                       ),
                                       Text(
                                         'ที่อยู่เข้ารับพัสดุ',
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                             fontSize: 13),
                                       ),
                                       Container(
@@ -1431,7 +1431,7 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                                   child: Text(
                                                     custAddr.shippingName,
                                                     style: GoogleFonts
-                                                        .notoSansThaiLooped(
+                                                        .ibmPlexSansThai(
                                                             fontSize: 12,
                                                             color:
                                                                 Colors.black),
@@ -1443,7 +1443,7 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                                     "(${custAddr.shippingPhone})",
                                                     textAlign: TextAlign.start,
                                                     style: GoogleFonts
-                                                        .notoSansThaiLooped(
+                                                        .ibmPlexSansThai(
                                                             fontSize: 12,
                                                             color:
                                                                 Colors.black),
@@ -1454,8 +1454,8 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                             Text(
                                               custAddr.shippingAddress,
                                               textAlign: TextAlign.start,
-                                              style: GoogleFonts
-                                                  .notoSansThaiLooped(
+                                              style:
+                                                  GoogleFonts.ibmPlexSansThai(
                                                       fontSize: 12,
                                                       color: Colors.black),
                                             ),
@@ -1476,7 +1476,7 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                         const Divider(),
                                         Text(
                                           'กรุณาจัดส่งสินค้าที่ต้องการคืนมายังที่อยู่ด้านล่างนี้',
-                                          style: GoogleFonts.notoSansThaiLooped(
+                                          style: GoogleFonts.ibmPlexSansThai(
                                               fontWeight: FontWeight.bold),
                                         ),
                                         Container(
@@ -1487,9 +1487,8 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                                   BorderRadius.circular(4)),
                                           child: Text(
                                             address,
-                                            style:
-                                                GoogleFonts.notoSansThaiLooped(
-                                                    fontSize: 11),
+                                            style: GoogleFonts.ibmPlexSansThai(
+                                                fontSize: 11),
                                           ),
                                         ),
                                         const SizedBox(
@@ -1573,9 +1572,8 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                             validator: Validators.required(
                                                 'กรุณาระบุเลขพัสดุ'),
                                             controller: courierNoCtr,
-                                            style:
-                                                GoogleFonts.notoSansThaiLooped(
-                                                    fontSize: 13),
+                                            style: GoogleFonts.ibmPlexSansThai(
+                                                fontSize: 13),
                                             decoration:
                                                 textStyle(label: 'เลขพัสดุ')),
                                         const SizedBox(
@@ -1586,9 +1584,8 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                                 'กรุณาระบุค่าจัดส่ง'),
                                             keyboardType: TextInputType.phone,
                                             controller: courierPriceCtr,
-                                            style:
-                                                GoogleFonts.notoSansThaiLooped(
-                                                    fontSize: 13),
+                                            style: GoogleFonts.ibmPlexSansThai(
+                                                fontSize: 13),
                                             decoration:
                                                 textStyle(label: 'ค่าจัดส่ง')),
                                         const SizedBox(
@@ -1596,7 +1593,7 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                         ),
                                         Text(
                                           'อัพโหลดหลักฐานใบจัดส่ง (ex. ใบเสร็จ)',
-                                          style: GoogleFonts.notoSansThaiLooped(
+                                          style: GoogleFonts.ibmPlexSansThai(
                                               fontWeight: FontWeight.bold),
                                         ),
                                         const SizedBox(
@@ -1690,10 +1687,10 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                         if (returnType == 1 && selectedImages.isEmpty) {
                           Get.snackbar('', '',
                               titleText: Text('แจ้งเตือน',
-                                  style: GoogleFonts.notoSansThaiLooped(
+                                  style: GoogleFonts.ibmPlexSansThai(
                                       color: Colors.white)),
                               messageText: Text('กรุณาแนบใบเสร็จค่าจัดส่ง',
-                                  style: GoogleFonts.notoSansThaiLooped(
+                                  style: GoogleFonts.ibmPlexSansThai(
                                       color: Colors.white)),
                               backgroundColor: Colors.red.withOpacity(0.8),
                               colorText: Colors.white,
@@ -1752,11 +1749,11 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                               if (!Get.isSnackbarOpen) {
                                 Get.snackbar('', '',
                                     titleText: Text('แจ้งเตือน',
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                             color: Colors.white)),
                                     messageText: Text(
                                         'เกิดข้อผิดพลาดกรุณาลองใหม่อีกครั้ง',
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                             color: Colors.white)),
                                     backgroundColor:
                                         Colors.red.withOpacity(0.8),
@@ -1775,7 +1772,7 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                   BorderRadius.all(Radius.circular(4)))),
                       child: Text(
                         'ยืนยัน',
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                             fontWeight: FontWeight.bold, fontSize: 13),
                       )),
                 ),
@@ -1819,7 +1816,7 @@ bottomReasonCancel(CancelOrderReason value, int orderId, bool isCheckOut) {
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
                     'กรุณาเลือกเหตุผลในการยกเลิก',
-                    style: GoogleFonts.notoSansThaiLooped(
+                    style: GoogleFonts.ibmPlexSansThai(
                         fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -1848,7 +1845,7 @@ bottomReasonCancel(CancelOrderReason value, int orderId, bool isCheckOut) {
                       Expanded(
                         child: Text(
                           'กรุณาเลือกเหตุผลที่คุณต้องการยกเลิกคำสั่งซื้อ สินค้าทุกชิ้นในคำสั่งซื้อนี้จะถูกยกเลิกและ ไม่สามารถแก้ไขคำขอยกเลิกได้',
-                          style: GoogleFonts.notoSansThaiLooped(fontSize: 13),
+                          style: GoogleFonts.ibmPlexSansThai(fontSize: 13),
                         ),
                       ),
                     ],
@@ -1892,7 +1889,7 @@ bottomReasonCancel(CancelOrderReason value, int orderId, bool isCheckOut) {
                                   Expanded(
                                     child: Text(
                                       value.data[index].cancelReason.trim(),
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                           fontSize: 13),
                                     ),
                                   ),
@@ -1936,7 +1933,7 @@ bottomReasonCancel(CancelOrderReason value, int orderId, bool isCheckOut) {
                                     ),
                                     Text(
                                       res.message,
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                         color: Colors.white,
                                         fontSize: 13,
                                       ),
@@ -1963,7 +1960,7 @@ bottomReasonCancel(CancelOrderReason value, int orderId, bool isCheckOut) {
                                     ),
                                     Text(
                                       res.message,
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                         color: Colors.white,
                                         fontSize: 13,
                                       ),
@@ -1987,7 +1984,7 @@ bottomReasonCancel(CancelOrderReason value, int orderId, bool isCheckOut) {
                           : null,
                       child: Text(
                         'ยกเลิกคำสั่งซื้อ',
-                        style: GoogleFonts.notoSansThaiLooped(),
+                        style: GoogleFonts.ibmPlexSansThai(),
                       )),
                 )
               ],

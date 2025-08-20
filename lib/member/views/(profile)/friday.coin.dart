@@ -25,7 +25,7 @@ class FridayCoin extends StatelessWidget {
     coinController.fetchTransaction();
     return Theme(
       data: Theme.of(context).copyWith(
-        textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+        textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
           Theme.of(context).textTheme,
         ),
       ),
@@ -68,7 +68,7 @@ class FridayCoin extends StatelessWidget {
                                       children: [
                                         Text(
                                           'Coin ของฉัน :',
-                                          style: GoogleFonts.notoSansThaiLooped(
+                                          style: GoogleFonts.ibmPlexSansThai(
                                               color: Colors.white,
                                               fontWeight: FontWeight.bold),
                                         ),
@@ -77,7 +77,7 @@ class FridayCoin extends StatelessWidget {
                                             coinController.transaction!.data
                                                 .availableAmount,
                                           )} Coin",
-                                          style: GoogleFonts.notoSansThaiLooped(
+                                          style: GoogleFonts.ibmPlexSansThai(
                                               color: Colors.white,
                                               fontWeight: FontWeight.bold),
                                         ),
@@ -115,7 +115,7 @@ class FridayCoin extends StatelessWidget {
                                   Text(
                                     coinController.transaction!.data
                                         .expiryInfo[0].displayText,
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                         color: Colors.white, fontSize: 14),
                                   ),
                               ],
@@ -142,7 +142,7 @@ class FridayCoin extends StatelessWidget {
                                 children: [
                                   Text(
                                     'เช็คอินรายวัน',
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                         fontWeight: FontWeight.bold),
                                   ),
                                   const SizedBox(
@@ -150,7 +150,7 @@ class FridayCoin extends StatelessWidget {
                                   ),
                                   Text(
                                     'เช็คอินรายวันเพื่อรับคูปองสุดพิเศษ!',
-                                    style: GoogleFonts.notoSansThaiLooped(),
+                                    style: GoogleFonts.ibmPlexSansThai(),
                                   ),
                                   const SizedBox(
                                     height: 12,
@@ -198,8 +198,8 @@ class FridayCoin extends StatelessWidget {
                                             children: [
                                               Text(
                                                 'รับรางวัล',
-                                                style: GoogleFonts
-                                                    .notoSansThaiLooped(
+                                                style:
+                                                    GoogleFonts.ibmPlexSansThai(
                                                         fontWeight:
                                                             FontWeight.w500,
                                                         color: Colors.white),
@@ -225,7 +225,7 @@ class FridayCoin extends StatelessWidget {
                           children: [
                             Text(
                               'ประวัติการทำรายการ',
-                              style: GoogleFonts.notoSansThaiLooped(
+                              style: GoogleFonts.ibmPlexSansThai(
                                   fontWeight: FontWeight.bold),
                             ),
                             InkWell(
@@ -278,7 +278,7 @@ class FridayCoin extends StatelessWidget {
                                         ),
                                         Text(
                                           _getCoinContent(item.coinAmount),
-                                          style: GoogleFonts.notoSansThaiLooped(
+                                          style: GoogleFonts.ibmPlexSansThai(
                                               color: _getCoinColor(
                                                   item.coinAmount > 0)),
                                         ),
@@ -338,8 +338,7 @@ class FridayCoin extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 'วิธีการเก็บคะแนน',
-                style:
-                    GoogleFonts.notoSansThaiLooped(fontWeight: FontWeight.bold),
+                style: GoogleFonts.ibmPlexSansThai(fontWeight: FontWeight.bold),
               ),
             ),
             const Divider(
@@ -357,12 +356,12 @@ class FridayCoin extends StatelessWidget {
                           children: [
                             Text(
                               item.key,
-                              style: GoogleFonts.notoSansThaiLooped(
+                              style: GoogleFonts.ibmPlexSansThai(
                                   fontWeight: FontWeight.w500),
                             ),
                             Text(
                               item.value,
-                              style: GoogleFonts.notoSansThaiLooped(),
+                              style: GoogleFonts.ibmPlexSansThai(),
                             ),
                           ],
                         ),
@@ -385,7 +384,7 @@ class FridayCoin extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8))),
                         child: Text('ปิดหน้าต่าง',
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 fontWeight: FontWeight.w500))),
                   )
                 ],

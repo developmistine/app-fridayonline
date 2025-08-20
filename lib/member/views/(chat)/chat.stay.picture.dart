@@ -73,8 +73,8 @@ class _StayPictureState extends State<StayPicture> {
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8)),
-                    textStyle: GoogleFonts.notoSansThaiLooped())),
-            textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                    textStyle: GoogleFonts.ibmPlexSansThai())),
+            textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
               Theme.of(context).textTheme,
             ),
           ),
@@ -140,7 +140,7 @@ class _StayPictureState extends State<StayPicture> {
                             ),
                             Text(
                               "$fileType นี้มีขนาดเกิน $maxSize",
-                              style: GoogleFonts.notoSansThaiLooped(
+                              style: GoogleFonts.ibmPlexSansThai(
                                 color: Colors.white,
                                 fontSize: 13,
                               ),

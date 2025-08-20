@@ -21,11 +21,11 @@ void storerCoupon(BuildContext context) {
         data: Theme.of(context).copyWith(
             elevatedButtonTheme: ElevatedButtonThemeData(
                 style: ElevatedButton.styleFrom(
-                    textStyle: GoogleFonts.notoSansThaiLooped())),
-            textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                    textStyle: GoogleFonts.ibmPlexSansThai())),
+            textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
               Theme.of(context).textTheme,
             ),
-            primaryTextTheme: GoogleFonts.notoSansThaiLoopedTextTheme()),
+            primaryTextTheme: GoogleFonts.ibmPlexSansThaiTextTheme()),
         child: SafeArea(
           child: MediaQuery(
             data: MediaQuery.of(context)
@@ -52,7 +52,7 @@ void storerCoupon(BuildContext context) {
                             children: [
                               Text(
                                 'โค้ดส่วนลดของร้าน ${endUserCouponCtr.shopName.value}',
-                                style: GoogleFonts.notoSansThaiLooped(
+                                style: GoogleFonts.ibmPlexSansThai(
                                     fontWeight: FontWeight.w500),
                               ),
                               InkWell(
@@ -92,7 +92,7 @@ void storerCoupon(BuildContext context) {
                                         ),
                                         Text(
                                           'กรุณาเลือกสินค้าในตะกร้าที่ต้องการใช้งานโค้ดส่วนลด',
-                                          style: GoogleFonts.notoSansThaiLooped(
+                                          style: GoogleFonts.ibmPlexSansThai(
                                               fontSize: 13),
                                         ),
                                       ],
@@ -123,7 +123,7 @@ void storerCoupon(BuildContext context) {
                                   Center(
                                       child: Text(
                                     'ไม่พบโค้ดส่วนลดร้านค้า',
-                                    style: GoogleFonts.notoSansThaiLooped(),
+                                    style: GoogleFonts.ibmPlexSansThai(),
                                   )),
                               ],
                             ),
@@ -184,11 +184,11 @@ storerCouponSelected(BuildContext context) {
         data: Theme.of(context).copyWith(
             elevatedButtonTheme: ElevatedButtonThemeData(
                 style: ElevatedButton.styleFrom(
-                    textStyle: GoogleFonts.notoSansThaiLooped())),
-            textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                    textStyle: GoogleFonts.ibmPlexSansThai())),
+            textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
               Theme.of(context).textTheme,
             ),
-            primaryTextTheme: GoogleFonts.notoSansThaiLoopedTextTheme()),
+            primaryTextTheme: GoogleFonts.ibmPlexSansThaiTextTheme()),
         child: StatefulBuilder(
             builder: (BuildContext context, StateSetter setState) {
           return SafeArea(
@@ -218,7 +218,7 @@ storerCouponSelected(BuildContext context) {
                               children: [
                                 Text(
                                   'โค้ดส่วนลดของร้าน ${endUserCouponCtr.shopName.value}',
-                                  style: GoogleFonts.notoSansThaiLooped(
+                                  style: GoogleFonts.ibmPlexSansThai(
                                       fontWeight: FontWeight.w500),
                                 ),
                                 InkWell(
@@ -374,7 +374,7 @@ storerCouponSelected(BuildContext context) {
                                   if (errorCoupon != "")
                                     Text(
                                       errorCoupon,
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                           color: Colors.red, fontSize: 12),
                                     ).paddingOnly(top: 4),
                                   const SizedBox(
@@ -403,7 +403,7 @@ storerCouponSelected(BuildContext context) {
                                     Center(
                                         child: Text(
                                       'ไม่พบโค้ดส่วนลดร้านค้า',
-                                      style: GoogleFonts.notoSansThaiLooped(),
+                                      style: GoogleFonts.ibmPlexSansThai(),
                                     )),
                                 ],
                               ),
@@ -436,7 +436,7 @@ storerCouponSelected(BuildContext context) {
                                   children: [
                                     Text(
                                       'เลือกโค้ดแล้ว 1 โค้ด',
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                           fontSize: 12,
                                           fontWeight: FontWeight.bold),
                                     ),

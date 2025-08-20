@@ -19,7 +19,7 @@ var border = const OutlineInputBorder(
     width: 0,
   ),
   borderRadius: BorderRadius.all(
-    Radius.circular(4),
+    Radius.circular(36),
   ),
 );
 PreferredSize appbarEnduser(
@@ -65,15 +65,24 @@ PreferredSize appbarEnduser(
                       padding: const EdgeInsets.symmetric(vertical: 18.0),
                       child: Container(
                         decoration: BoxDecoration(
-                          boxShadow: !isSetAppbar
-                              ? [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
-                                    offset: const Offset(0, 0),
-                                    blurRadius: 2,
-                                  ),
-                                ]
-                              : [],
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(36),
+                          ),
+                          border: Border.all(
+                            color: isSetAppbar
+                                ? const Color.fromARGB(255, 208, 208, 208)
+                                : Colors.transparent,
+                            width: 1.0,
+                          ),
+                          // boxShadow: !isSetAppbar
+                          //     ? [
+                          //         BoxShadow(
+                          //           color: Colors.grey.withOpacity(0.5),
+                          //           offset: const Offset(0, 0),
+                          //           blurRadius: 1,
+                          //         ),
+                          //       ]
+                          //     : [],
                         ),
                         child: TextField(
                           onTap: () {
@@ -92,12 +101,13 @@ PreferredSize appbarEnduser(
                             enabledBorder: border,
                             isDense: true,
                             hintText: 'ค้นหาสินค้า',
-                            hintStyle: GoogleFonts.notoSansThaiLooped(
-                              fontSize: 13,
+                            hintStyle: GoogleFonts.ibmPlexSansThai(
+                              fontSize: 14,
                               color: themeColorDefault,
                             ),
                             prefixIcon: Padding(
-                              padding: const EdgeInsets.only(left: 8, right: 8),
+                              padding:
+                                  const EdgeInsets.only(left: 12, right: 12),
                               child: Icon(
                                 Icons.search,
                                 color: themeColorDefault,
@@ -108,7 +118,7 @@ PreferredSize appbarEnduser(
                               minHeight: 10,
                             ),
                             filled: true,
-                            fillColor: Colors.grey.shade200,
+                            fillColor: Colors.white,
                           ),
                         ),
                       ),
@@ -127,14 +137,14 @@ PreferredSize appbarEnduser(
                           return cartCtr.isLoadingCart.value
                               ? Text(
                                   '0',
-                                  style: GoogleFonts.notoSansThaiLooped(
+                                  style: GoogleFonts.ibmPlexSansThai(
                                       height: 1,
                                       color: Colors.white,
                                       fontSize: 10),
                                 )
                               : Text(
                                   '${cartCtr.cartItems!.value.data.map((e) => e.items.length).fold(0, (previousValue, element) => previousValue + element)}',
-                                  style: GoogleFonts.notoSansThaiLooped(
+                                  style: GoogleFonts.ibmPlexSansThai(
                                       height: 1,
                                       color: Colors.white,
                                       fontSize: 10),
@@ -173,7 +183,7 @@ PreferredSize appbarEnduser(
                           badgeContent: Obx(() {
                             return Text(
                               chatCtr.countChat.value.toString(),
-                              style: GoogleFonts.notoSansThaiLooped(
+                              style: GoogleFonts.ibmPlexSansThai(
                                   height: 1, color: Colors.white, fontSize: 10),
                             );
                           }),

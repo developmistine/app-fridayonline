@@ -79,8 +79,8 @@ class _MyOrderHistoryState extends State<MyOrderHistory>
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8)),
-                      textStyle: GoogleFonts.notoSansThaiLooped())),
-              textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                      textStyle: GoogleFonts.ibmPlexSansThai())),
+              textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
                 Theme.of(context).textTheme,
               ),
             ),
@@ -99,11 +99,11 @@ class _MyOrderHistoryState extends State<MyOrderHistory>
                         indicatorColor: themeColorDefault,
                         indicatorWeight: 2,
                         splashFactory: NoSplash.splashFactory,
-                        unselectedLabelStyle: GoogleFonts.notoSansThaiLooped(
+                        unselectedLabelStyle: GoogleFonts.ibmPlexSansThai(
                           color: Colors.black,
                           fontSize: 14,
                         ),
-                        labelStyle: GoogleFonts.notoSansThaiLooped(
+                        labelStyle: GoogleFonts.ibmPlexSansThai(
                           color: themeColorDefault,
                           fontSize: 14,
                         ),

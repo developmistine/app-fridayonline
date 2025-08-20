@@ -31,7 +31,7 @@ Future dialogError(String msg) {
                   Text(
                     msg,
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.notoSansThaiLooped(
+                    style: GoogleFonts.ibmPlexSansThai(
                       color: Colors.white,
                       fontSize: 13,
                     ),

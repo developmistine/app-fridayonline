@@ -65,8 +65,8 @@ class _EditProfileState extends State<EditTelphoneNumber> {
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8)),
-                    textStyle: GoogleFonts.notoSansThaiLooped())),
-            textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                    textStyle: GoogleFonts.ibmPlexSansThai())),
+            textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
               Theme.of(context).textTheme,
             ),
           ),
@@ -96,7 +96,7 @@ class _EditProfileState extends State<EditTelphoneNumber> {
                         RichText(
                           text: TextSpan(
                             text: "เบอร์โทรศัพท์",
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                               color: themeColorDefault,
@@ -104,7 +104,7 @@ class _EditProfileState extends State<EditTelphoneNumber> {
                             children: [
                               TextSpan(
                                 text: " *",
-                                style: GoogleFonts.notoSansThaiLooped(
+                                style: GoogleFonts.ibmPlexSansThai(
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.red,
@@ -210,7 +210,7 @@ class _EditProfileState extends State<EditTelphoneNumber> {
                 dialogAlert([
                   Text(
                     'บันทึกข้อมูลสำเร็จ',
-                    style: GoogleFonts.notoSansThaiLooped(
+                    style: GoogleFonts.ibmPlexSansThai(
                         color: Colors.white, fontSize: 13),
                   )
                 ]);
@@ -235,7 +235,7 @@ class _EditProfileState extends State<EditTelphoneNumber> {
             dialogAlert([
               Text(
                 'บันทึกข้อมูลสำเร็จ',
-                style: GoogleFonts.notoSansThaiLooped(
+                style: GoogleFonts.ibmPlexSansThai(
                     color: Colors.white, fontSize: 13),
               )
             ]);

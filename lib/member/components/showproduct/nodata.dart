@@ -19,7 +19,7 @@ Widget nodata(BuildContext context) {
           ),
           Text(
             'ไม่พบข้อมูลสินค้า',
-            style: GoogleFonts.notoSansThaiLooped(),
+            style: GoogleFonts.ibmPlexSansThai(),
           )
         ],
       ),
@@ -45,7 +45,7 @@ Widget nodataTitle(BuildContext context, String title) {
           ),
           Text(
             title,
-            style: GoogleFonts.notoSansThaiLooped(),
+            style: GoogleFonts.ibmPlexSansThai(),
           )
         ],
       ),

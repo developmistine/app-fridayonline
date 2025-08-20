@@ -23,8 +23,8 @@ class ChatOrders extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8)),
-                      textStyle: GoogleFonts.notoSansThaiLooped())),
-              textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                      textStyle: GoogleFonts.ibmPlexSansThai())),
+              textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
                 Theme.of(context).textTheme,
               ),
             ),
@@ -76,13 +76,13 @@ class ChatOrders extends StatelessWidget {
                                         width: 4,
                                       ),
                                       Text(order.shopInfo.shopName,
-                                          style: GoogleFonts.notoSansThaiLooped(
+                                          style: GoogleFonts.ibmPlexSansThai(
                                               fontSize: 14,
                                               fontWeight: FontWeight.bold)),
                                     ],
                                   ),
                                   Text(order.orderStatus.description,
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                           color: _getStatusColor(order
                                               .orderStatus.colorCode
                                               .toLowerCase()),
@@ -132,8 +132,8 @@ class ChatOrders extends StatelessWidget {
                                                 items.productName,
                                                 maxLines: 2,
                                                 overflow: TextOverflow.ellipsis,
-                                                style: GoogleFonts
-                                                    .notoSansThaiLooped(
+                                                style:
+                                                    GoogleFonts.ibmPlexSansThai(
                                                         fontSize: 14),
                                               ),
                                               Row(
@@ -147,7 +147,7 @@ class ChatOrders extends StatelessWidget {
                                                         return Text(
                                                           "฿${myFormat.format(items.priceBeforeDiscount)}",
                                                           style: GoogleFonts
-                                                              .notoSansThaiLooped(
+                                                              .ibmPlexSansThai(
                                                                   fontSize: 14,
                                                                   color: Colors
                                                                       .deepOrange
@@ -159,7 +159,7 @@ class ChatOrders extends StatelessWidget {
                                                             Text(
                                                               "฿${myFormat.format(items.price)}",
                                                               style: GoogleFonts
-                                                                  .notoSansThaiLooped(
+                                                                  .ibmPlexSansThai(
                                                                       fontSize:
                                                                           14,
                                                                       color: Colors
@@ -171,7 +171,7 @@ class ChatOrders extends StatelessWidget {
                                                             ),
                                                             Text(
                                                               "฿${myFormat.format(items.priceBeforeDiscount)}",
-                                                              style: GoogleFonts.notoSansThaiLooped(
+                                                              style: GoogleFonts.ibmPlexSansThai(
                                                                   decoration:
                                                                       TextDecoration
                                                                           .lineThrough,
@@ -198,16 +198,16 @@ class ChatOrders extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text('รวม',
-                                      style: GoogleFonts.notoSansThaiLooped()),
+                                      style: GoogleFonts.ibmPlexSansThai()),
                                   Row(
                                     children: [
                                       Text(
                                           'สินค้า ${order.summary.productCount} ชิ้น | ',
-                                          style: GoogleFonts.notoSansThaiLooped(
+                                          style: GoogleFonts.ibmPlexSansThai(
                                               fontSize: 14)),
                                       Text(
                                           '฿${myFormat.format(order.summary.finalTotal)}',
-                                          style: GoogleFonts.notoSansThaiLooped(
+                                          style: GoogleFonts.ibmPlexSansThai(
                                               fontSize: 14,
                                               fontWeight: FontWeight.bold,
                                               color:
@@ -233,7 +233,7 @@ class ChatOrders extends StatelessWidget {
                                       },
                                       child: Text(
                                         "ส่ง",
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                             fontSize: 14,
                                             fontWeight: FontWeight.bold,
                                             color: themeColorDefault),

@@ -113,7 +113,7 @@ class OptionItems extends StatelessWidget {
                   "฿${myFormat.format(
                     shopProductItems.price,
                   )}",
-                  style: GoogleFonts.notoSansThaiLooped(
+                  style: GoogleFonts.ibmPlexSansThai(
                     color: Colors.deepOrange.shade700,
                     fontWeight: FontWeight.w600,
                     fontSize: 24,
@@ -123,7 +123,7 @@ class OptionItems extends StatelessWidget {
             : [
                 Text(
                   "฿${myFormat.format(shopProductItems.priceBeforeDiscount)}",
-                  style: GoogleFonts.notoSansThaiLooped(
+                  style: GoogleFonts.ibmPlexSansThai(
                     color: Colors.deepOrange.shade700,
                     fontWeight: FontWeight.w600,
                     fontSize: 24,
@@ -281,11 +281,9 @@ class OptionItems extends StatelessWidget {
                                           ),
                                           Text(
                                             'คลัง : ${myFormat.format(cartCtr.stock.value)}',
-                                            style:
-                                                GoogleFonts.notoSansThaiLooped(
-                                                    fontSize: 12,
-                                                    color:
-                                                        Colors.grey.shade700),
+                                            style: GoogleFonts.ibmPlexSansThai(
+                                                fontSize: 12,
+                                                color: Colors.grey.shade700),
                                           )
                                         ],
                                       )
@@ -329,8 +327,8 @@ class OptionItems extends StatelessWidget {
                                             children: [
                                               Text(
                                                 tierVariation.name,
-                                                style: GoogleFonts
-                                                    .notoSansThaiLooped(
+                                                style:
+                                                    GoogleFonts.ibmPlexSansThai(
                                                         fontSize: 12),
                                               ),
                                               Wrap(
@@ -473,7 +471,7 @@ class OptionItems extends StatelessWidget {
                                                                   overflow:
                                                                       TextOverflow
                                                                           .ellipsis,
-                                                                  style: GoogleFonts.notoSansThaiLooped(
+                                                                  style: GoogleFonts.ibmPlexSansThai(
                                                                       fontSize: 12,
                                                                       color: tierVariation.options[i].displayIndicators == 2
                                                                           ? Colors.grey.shade400
@@ -507,9 +505,8 @@ class OptionItems extends StatelessWidget {
                                         children: [
                                           Text(
                                             'จำนวน',
-                                            style:
-                                                GoogleFonts.notoSansThaiLooped(
-                                                    fontSize: 12),
+                                            style: GoogleFonts.ibmPlexSansThai(
+                                                fontSize: 12),
                                           ),
                                           Container(
                                             height: 30,
@@ -562,7 +559,7 @@ class OptionItems extends StatelessWidget {
                                                           textAlign:
                                                               TextAlign.center,
                                                           style: GoogleFonts
-                                                              .notoSansThaiLooped(
+                                                              .ibmPlexSansThai(
                                                                   fontSize: 12),
                                                           onChanged: (value) {
                                                             if (value.isEmpty) {
@@ -601,7 +598,7 @@ class OptionItems extends StatelessWidget {
                                                                           .none,
                                                                   labelStyle:
                                                                       GoogleFonts
-                                                                          .notoSansThaiLooped()),
+                                                                          .ibmPlexSansThai()),
                                                           keyboardType:
                                                               TextInputType
                                                                   .number),
@@ -667,7 +664,7 @@ class OptionItems extends StatelessWidget {
                                   ),
                                   Text(
                                     'กรุณาเลือกตัวเลือก "${shopProductItems.tierVariations[nullKeys.isEmpty ? 0 : nullKeys.first].name}"',
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                       color: Colors.white,
                                       fontSize: 13,
                                     ),
@@ -704,7 +701,7 @@ class OptionItems extends StatelessWidget {
                                     ),
                                     Text(
                                       res.message,
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                         color: Colors.white,
                                         fontSize: 13,
                                       ),
@@ -800,7 +797,7 @@ class OptionItems extends StatelessWidget {
                                       padding: const EdgeInsets.all(8.0),
                                       child: Text(
                                         res.message,
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                           color: Colors.white,
                                           fontSize: 13,
                                         ),
@@ -833,7 +830,7 @@ class OptionItems extends StatelessWidget {
                                         borderRadius: BorderRadius.circular(4)),
                                     child: Center(
                                       child: Text('ยืนยัน',
-                                          style: GoogleFonts.notoSansThaiLooped(
+                                          style: GoogleFonts.ibmPlexSansThai(
                                               color: isAllSelected
                                                   ? Colors.white
                                                   : Colors.grey,
@@ -974,7 +971,7 @@ class OptionItems extends StatelessWidget {
   //         ? [
   //             Text(
   //               "฿${myFormat.format(shopProductItems.price)}",
-  //               style: GoogleFonts.notoSansThaiLooped(
+  //               style: GoogleFonts.ibmPlexSansThai(
   //                 color: Colors.deepOrange.shade700,
   //                 fontWeight: FontWeight.w600,
   //                 fontSize: 24,
@@ -984,7 +981,7 @@ class OptionItems extends StatelessWidget {
   //         : [
   //             Text(
   //               "฿${myFormat.format(shopProductItems.priceBeforeDiscount)}",
-  //               style: GoogleFonts.notoSansThaiLooped(
+  //               style: GoogleFonts.ibmPlexSansThai(
   //                 color: Colors.deepOrange.shade700,
   //                 fontWeight: FontWeight.w600,
   //                 fontSize: 24,
@@ -1020,7 +1017,7 @@ productPriceWidget({required productPrices, required bool showPercent}) {
         productPrices.priceBeforeDiscount.singleValue > 0
             ? '฿${myFormat.format(productPrices.priceBeforeDiscount.singleValue)} '
             : "฿${myFormat.format(productPrices.priceBeforeDiscount.rangeMin)} - ${myFormat.format(productPrices.priceBeforeDiscount.rangeMax)}",
-        style: GoogleFonts.notoSansThaiLooped(
+        style: GoogleFonts.ibmPlexSansThai(
           color: Colors.deepOrange.shade700,
           fontWeight: FontWeight.w600,
           fontSize: 24,
@@ -1034,7 +1031,7 @@ productPriceWidget({required productPrices, required bool showPercent}) {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Text('฿${myFormat.format(productPrices.price.singleValue)} ',
-                style: GoogleFonts.notoSansThaiLooped(
+                style: GoogleFonts.ibmPlexSansThai(
                   color: Colors.deepOrange.shade700,
                   fontWeight: FontWeight.w600,
                   fontSize: 24,
@@ -1042,7 +1039,7 @@ productPriceWidget({required productPrices, required bool showPercent}) {
             if (productPrices.priceBeforeDiscount.singleValue > 0)
               Text(
                 '฿${myFormat.format(productPrices.priceBeforeDiscount.singleValue)}',
-                style: GoogleFonts.notoSansThaiLooped(
+                style: GoogleFonts.ibmPlexSansThai(
                   decoration: TextDecoration.lineThrough,
                   fontSize: 14,
                   height: 2.4,
@@ -1052,7 +1049,7 @@ productPriceWidget({required productPrices, required bool showPercent}) {
             else
               Text(
                 '฿${myFormat.format(productPrices.priceBeforeDiscount.rangeMin)} - ฿${myFormat.format(productPrices.priceBeforeDiscount.rangeMax)}',
-                style: GoogleFonts.notoSansThaiLooped(
+                style: GoogleFonts.ibmPlexSansThai(
                     decoration: TextDecoration.lineThrough,
                     height: 2.4,
                     fontSize: 14,
@@ -1066,7 +1063,7 @@ productPriceWidget({required productPrices, required bool showPercent}) {
           children: [
             Text(
               '฿${myFormat.format(productPrices.price.rangeMin)} - ฿${myFormat.format(productPrices.price.rangeMax)}',
-              style: GoogleFonts.notoSansThaiLooped(
+              style: GoogleFonts.ibmPlexSansThai(
                 color: Colors.deepOrange.shade700,
                 fontWeight: FontWeight.w600,
                 fontSize: 24,
@@ -1074,7 +1071,7 @@ productPriceWidget({required productPrices, required bool showPercent}) {
             ),
             Text(
               '฿${myFormat.format(productPrices.priceBeforeDiscount.rangeMin)} - ฿${myFormat.format(productPrices.priceBeforeDiscount.rangeMax)}',
-              style: GoogleFonts.notoSansThaiLooped(
+              style: GoogleFonts.ibmPlexSansThai(
                   decoration: TextDecoration.lineThrough,
                   height: 2.4,
                   fontSize: 14,
@@ -1092,7 +1089,7 @@ productPriceWidget({required productPrices, required bool showPercent}) {
           ),
           child: Text(
             '${productPrices.discount} %',
-            style: GoogleFonts.notoSansThaiLooped(
+            style: GoogleFonts.ibmPlexSansThai(
                 color: Colors.deepOrange, fontSize: 10, height: 1.4),
           ),
         )

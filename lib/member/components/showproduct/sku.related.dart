@@ -64,7 +64,7 @@ class _RalatedProductState extends State<RalatedProduct> {
                         child: Text(
                           'สินค้าแนะนำ',
                           textAlign: TextAlign.center,
-                          style: GoogleFonts.notoSansThaiLooped(fontSize: 14),
+                          style: GoogleFonts.ibmPlexSansThai(fontSize: 14),
                         ),
                       ),
                       Expanded(
@@ -207,8 +207,8 @@ class _RalatedProductState extends State<RalatedProduct> {
                                             ),
                                             Text(
                                               product.ratingStar.toString(),
-                                              style: GoogleFonts
-                                                  .notoSansThaiLooped(
+                                              style:
+                                                  GoogleFonts.ibmPlexSansThai(
                                                       fontSize: 10),
                                             ),
                                           ],
@@ -228,7 +228,7 @@ class _RalatedProductState extends State<RalatedProduct> {
                                                 Text(
                                                   "฿${myFormat.format(product.price)}",
                                                   style: GoogleFonts
-                                                      .notoSansThaiLooped(
+                                                      .ibmPlexSansThai(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -242,7 +242,7 @@ class _RalatedProductState extends State<RalatedProduct> {
                                                 Text(
                                                   "฿${myFormat.format(product.priceBeforeDiscount)}",
                                                   style: GoogleFonts
-                                                      .notoSansThaiLooped(
+                                                      .ibmPlexSansThai(
                                                           fontSize: 11,
                                                           decoration:
                                                               TextDecoration
@@ -255,16 +255,15 @@ class _RalatedProductState extends State<RalatedProduct> {
                                           }
                                           return Text(
                                             '฿${myFormat.format(product.priceBeforeDiscount)}',
-                                            style:
-                                                GoogleFonts.notoSansThaiLooped(
-                                                    fontWeight: FontWeight.bold,
-                                                    color: Colors
-                                                        .deepOrange.shade700),
+                                            style: GoogleFonts.ibmPlexSansThai(
+                                                fontWeight: FontWeight.bold,
+                                                color:
+                                                    Colors.deepOrange.shade700),
                                           );
                                         }),
                                         Text(
                                           product.unitSales,
-                                          style: GoogleFonts.notoSansThaiLooped(
+                                          style: GoogleFonts.ibmPlexSansThai(
                                               fontSize: 10),
                                         )
                                       ],

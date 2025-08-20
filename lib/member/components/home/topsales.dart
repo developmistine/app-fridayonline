@@ -53,7 +53,7 @@ class _BestSellingProductsState extends State<BestSellingProducts> {
                     children: [
                       Text(
                         'สินค้าขายดี',
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                             fontSize: 13, fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(
@@ -172,7 +172,7 @@ class _BestSellingProductsState extends State<BestSellingProducts> {
                                                   items.selling,
                                                   textAlign: TextAlign.center,
                                                   style: GoogleFonts
-                                                      .notoSansThaiLooped(
+                                                      .ibmPlexSansThai(
                                                           fontSize: 12,
                                                           fontWeight:
                                                               FontWeight.bold,

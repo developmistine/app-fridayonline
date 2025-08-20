@@ -44,8 +44,8 @@ class _EditRatingState extends State<EditRating> {
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8)),
-                    textStyle: GoogleFonts.notoSansThaiLooped())),
-            textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                    textStyle: GoogleFonts.ibmPlexSansThai())),
+            textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
               Theme.of(context).textTheme,
             ),
           ),
@@ -268,11 +268,11 @@ class _EditRatingState extends State<EditRating> {
                               if (!Get.isSnackbarOpen) {
                                 Get.snackbar('', '',
                                     titleText: Text('แจ้งเตือน',
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                             color: Colors.white)),
                                     messageText: Text(
                                         'เกิดข้อผิดพลาดกรุณาลองใหม่อีกครั้ง',
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                             color: Colors.white)),
                                     backgroundColor:
                                         Colors.red.withOpacity(0.8),

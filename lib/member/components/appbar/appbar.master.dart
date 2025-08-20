@@ -27,7 +27,7 @@ appBarMasterEndUser(String titles) {
         backgroundColor: Colors.white,
         title: Text(
           titles,
-          style: GoogleFonts.notoSansThaiLooped(
+          style: GoogleFonts.ibmPlexSansThai(
             color: Colors.black,
             fontSize: 16,
             fontWeight: FontWeight.normal,

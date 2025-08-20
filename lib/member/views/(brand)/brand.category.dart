@@ -184,7 +184,7 @@ class _ShowProductCategoryState extends State<ShowProductBrands>
                                   Text(
                                     items.text,
                                     textAlign: TextAlign.center,
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                         fontSize: 12,
                                         fontWeight: activeTab == index
                                             ? FontWeight.bold

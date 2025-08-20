@@ -108,7 +108,7 @@ PreferredSize appbarSku(
                                 enabledBorder: border,
                                 isDense: true,
                                 hintText: 'ค้นหาสินค้า',
-                                hintStyle: GoogleFonts.notoSansThaiLooped(
+                                hintStyle: GoogleFonts.ibmPlexSansThai(
                                   fontSize: 13,
                                   color: themeColorDefault,
                                 ),
@@ -196,7 +196,7 @@ PreferredSize appbarSku(
                                                   ? Text(
                                                       '${cartCtr.cartItems!.value.data.map((e) => e.items.length).fold(0, (previousValue, element) => previousValue + element)}',
                                                       style: GoogleFonts
-                                                          .notoSansThaiLooped(
+                                                          .ibmPlexSansThai(
                                                               height: 1,
                                                               color:
                                                                   Colors.white,
@@ -205,7 +205,7 @@ PreferredSize appbarSku(
                                                   : Text(
                                                       '${cartCtr.cartItems!.value.data.map((e) => e.items.length).fold(0, (previousValue, element) => previousValue + element)}',
                                                       style: GoogleFonts
-                                                          .notoSansThaiLooped(
+                                                          .ibmPlexSansThai(
                                                               height: 1,
                                                               color:
                                                                   Colors.white,

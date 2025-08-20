@@ -40,7 +40,7 @@ class _EndUserNewAddressState extends State<EndUserSetAddress> {
   InputDecoration textFieldstyle(Widget e) {
     return InputDecoration(
       label: e,
-      labelStyle: GoogleFonts.notoSansThaiLooped(),
+      labelStyle: GoogleFonts.ibmPlexSansThai(),
       filled: true,
       fillColor: Colors.white,
       isDense: true,
@@ -205,13 +205,13 @@ class _EndUserNewAddressState extends State<EndUserSetAddress> {
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8)),
-                    textStyle: GoogleFonts.notoSansThaiLooped())),
+                    textStyle: GoogleFonts.ibmPlexSansThai())),
             outlinedButtonTheme: OutlinedButtonThemeData(
                 style: OutlinedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8)),
-                    textStyle: GoogleFonts.notoSansThaiLooped())),
-            textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                    textStyle: GoogleFonts.ibmPlexSansThai())),
+            textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
               Theme.of(context).textTheme,
             ),
           ),
@@ -274,7 +274,7 @@ class _EndUserNewAddressState extends State<EndUserSetAddress> {
                                           maxLength,
                                           required isFocused}) =>
                                       null,
-                                  style: GoogleFonts.notoSansThaiLooped(
+                                  style: GoogleFonts.ibmPlexSansThai(
                                       fontSize: 13, color: Colors.black),
                                   inputFormatters: [
                                     labelItem.control == telTextCtr
@@ -537,7 +537,7 @@ class _EndUserNewAddressState extends State<EndUserSetAddress> {
                 Text(
                   msg,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.notoSansThaiLooped(fontSize: 13),
+                  style: GoogleFonts.ibmPlexSansThai(fontSize: 13),
                 ),
                 const SizedBox(
                   height: 4,
@@ -552,7 +552,7 @@ class _EndUserNewAddressState extends State<EndUserSetAddress> {
                     width: Get.width,
                     child: Text(
                       'ตกลง',
-                      style: GoogleFonts.notoSansThaiLooped(
+                      style: GoogleFonts.ibmPlexSansThai(
                           color: themeColorDefault, fontSize: 14),
                     ),
                   ),
@@ -588,7 +588,7 @@ class _EndUserNewAddressState extends State<EndUserSetAddress> {
                 Text(
                   msg,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.notoSansThaiLooped(
+                  style: GoogleFonts.ibmPlexSansThai(
                       fontSize: 13, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
@@ -607,7 +607,7 @@ class _EndUserNewAddressState extends State<EndUserSetAddress> {
                           width: Get.width,
                           child: Text(
                             'ยกเลิก',
-                            style: GoogleFonts.notoSansThaiLooped(fontSize: 14),
+                            style: GoogleFonts.ibmPlexSansThai(fontSize: 14),
                           ),
                         ),
                       ),
@@ -629,7 +629,7 @@ class _EndUserNewAddressState extends State<EndUserSetAddress> {
                                 ),
                                 Text(
                                   "คุณไม่สามารถลบที่อยู่ตั้งต้นได้",
-                                  style: GoogleFonts.notoSansThaiLooped(
+                                  style: GoogleFonts.ibmPlexSansThai(
                                     color: Colors.white,
                                     fontSize: 13,
                                   ),
@@ -698,7 +698,7 @@ class _EndUserNewAddressState extends State<EndUserSetAddress> {
                           width: Get.width,
                           child: Text(
                             'ลบ',
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 color: themeColorDefault, fontSize: 14),
                           ),
                         ),

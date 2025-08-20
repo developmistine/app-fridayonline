@@ -41,10 +41,10 @@ class ShippingDetail extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8)),
-              textStyle: GoogleFonts.notoSansThaiLooped(),
+              textStyle: GoogleFonts.ibmPlexSansThai(),
             ),
           ),
-          textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+          textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
             Theme.of(context).textTheme,
           ),
         ),
@@ -174,10 +174,9 @@ class ShippingDetail extends StatelessWidget {
                                         dialogAlert([
                                           Text(
                                             'คัดลอกเลขที่พัสดุแล้ว',
-                                            style:
-                                                GoogleFonts.notoSansThaiLooped(
-                                                    color: Colors.white,
-                                                    fontSize: 13),
+                                            style: GoogleFonts.ibmPlexSansThai(
+                                                color: Colors.white,
+                                                fontSize: 13),
                                           )
                                         ]);
                                         Future.delayed(

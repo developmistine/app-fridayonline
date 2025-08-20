@@ -38,11 +38,11 @@ class _ReturnProdutState extends State<ReturnProdut> {
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8)),
-                      textStyle: GoogleFonts.notoSansThaiLooped())),
+                      textStyle: GoogleFonts.ibmPlexSansThai())),
               outlinedButtonTheme: OutlinedButtonThemeData(
                   style: OutlinedButton.styleFrom(
-                      textStyle: GoogleFonts.notoSansThaiLooped())),
-              textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                      textStyle: GoogleFonts.ibmPlexSansThai())),
+              textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
                 Theme.of(context).textTheme,
               ),
             ),
@@ -698,7 +698,7 @@ class _ReturnProdutState extends State<ReturnProdut> {
                           children: [
                             Text(
                               'โปรดระบุเหตุผลในการคืนสินค้า',
-                              style: GoogleFonts.notoSansThaiLooped(
+                              style: GoogleFonts.ibmPlexSansThai(
                                   fontSize: 12, fontWeight: FontWeight.bold),
                             ),
                             InkWell(
@@ -748,7 +748,7 @@ class _ReturnProdutState extends State<ReturnProdut> {
                                     ),
                                     Text(
                                       reason[index].returnReason,
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                           fontSize: 12),
                                     )
                                   ],
@@ -760,7 +760,7 @@ class _ReturnProdutState extends State<ReturnProdut> {
                       ),
                       Text(
                         "เหตุผลในการคืนสินค้า",
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                             fontWeight: FontWeight.bold, fontSize: 12),
                       ),
                       Padding(
@@ -769,7 +769,7 @@ class _ReturnProdutState extends State<ReturnProdut> {
                           maxLines: 3,
                           minLines: 3,
                           controller: commentTextCtr,
-                          style: GoogleFonts.notoSansThaiLooped(fontSize: 12),
+                          style: GoogleFonts.ibmPlexSansThai(fontSize: 12),
                           decoration: const InputDecoration(
                             hintText: 'กรอกรายละเอียดปัญหาที่คุณพบ (ไม่บังคับ)',
                             border: OutlineInputBorder(),
@@ -780,12 +780,12 @@ class _ReturnProdutState extends State<ReturnProdut> {
                         children: [
                           Text(
                             'แนบรูปภาพ ',
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 fontWeight: FontWeight.bold, fontSize: 12),
                           ),
                           Text(
                             '(ขนาดไม่เกิน 5 MB, สูงสุด 5 รูป)',
-                            style: GoogleFonts.notoSansThaiLooped(fontSize: 11),
+                            style: GoogleFonts.ibmPlexSansThai(fontSize: 11),
                           ),
                         ],
                       ),
@@ -820,13 +820,13 @@ class _ReturnProdutState extends State<ReturnProdut> {
                                           color: Colors.grey.shade700),
                                       Text(
                                         'รูปภาพ',
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                             fontSize: 12,
                                             color: Colors.grey.shade700),
                                       ),
                                       Text(
                                         '($countImg / 5)',
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                             fontSize: 12,
                                             color: Colors.grey.shade700),
                                       ),
@@ -861,13 +861,13 @@ class _ReturnProdutState extends State<ReturnProdut> {
                                           color: Colors.grey.shade700),
                                       Text(
                                         'วิดีโอ',
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                             fontSize: 12,
                                             color: Colors.grey.shade700),
                                       ),
                                       Text(
                                         '(${controller != null ? 1 : 0} / 1)',
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                             fontSize: 12,
                                             color: Colors.grey.shade700),
                                       ),
@@ -983,7 +983,7 @@ class _ReturnProdutState extends State<ReturnProdut> {
                                   backgroundColor: themeColorDefault),
                               child: Text(
                                 'ยืนยัน',
-                                style: GoogleFonts.notoSansThaiLooped(
+                                style: GoogleFonts.ibmPlexSansThai(
                                     fontWeight: FontWeight.bold),
                               )),
                         );

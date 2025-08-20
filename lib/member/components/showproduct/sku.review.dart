@@ -56,7 +56,7 @@ class ReViewSku extends StatelessWidget {
                     ),
                     Text(
                       'คะแนนสินค้า (${showProductCtr.productDetail.value!.data.productReview.totalRatingCount})',
-                      style: GoogleFonts.notoSansThaiLooped(fontSize: 13),
+                      style: GoogleFonts.ibmPlexSansThai(fontSize: 13),
                     )
                   ],
                 ),
@@ -73,7 +73,7 @@ class ReViewSku extends StatelessWidget {
                     children: [
                       Text(
                         'ดูทั้งหมด',
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                             color: Colors.grey.shade600, fontSize: 12),
                       ),
                       Icon(
@@ -141,8 +141,8 @@ class ReViewSku extends StatelessWidget {
                               ),
                               Text(
                                 review.ratings[index].comment,
-                                style: GoogleFonts.notoSansThaiLooped(
-                                    fontSize: 13),
+                                style:
+                                    GoogleFonts.ibmPlexSansThai(fontSize: 13),
                               ),
                               SingleChildScrollView(
                                 scrollDirection: Axis.horizontal,

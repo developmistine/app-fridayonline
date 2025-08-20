@@ -302,13 +302,13 @@ class _BrandStoreState extends State<BrandStore>
                     style: OutlinedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8)),
-                        textStyle: GoogleFonts.notoSansThaiLooped())),
+                        textStyle: GoogleFonts.ibmPlexSansThai())),
                 elevatedButtonTheme: ElevatedButtonThemeData(
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8)),
-                        textStyle: GoogleFonts.notoSansThaiLooped())),
-                textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                        textStyle: GoogleFonts.ibmPlexSansThai())),
+                textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
                   Theme.of(context).textTheme,
                 )),
             child: SafeAreaProvider(
@@ -517,7 +517,7 @@ class _BrandStoreState extends State<BrandStore>
                     Expanded(
                       child: Text(
                         "สินค้าทั้งหมด",
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                             color: Colors.black,
                             fontSize: 13,
                             fontWeight: FontWeight.bold),
@@ -570,7 +570,7 @@ class _BrandStoreState extends State<BrandStore>
                                 Expanded(
                                   child: Text(
                                     data.catname,
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                         fontSize: 13,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -635,8 +635,8 @@ class _BrandStoreState extends State<BrandStore>
                                                 sub.displayName,
                                                 maxLines: 1,
                                                 overflow: TextOverflow.ellipsis,
-                                                style: GoogleFonts
-                                                    .notoSansThaiLooped(
+                                                style:
+                                                    GoogleFonts.ibmPlexSansThai(
                                                         fontSize: 13),
                                               ),
                                               Icon(
@@ -878,7 +878,7 @@ class _BrandStoreState extends State<BrandStore>
                             if (detail.showContentName)
                               Text(
                                 detail.contentName,
-                                style: GoogleFonts.notoSansThaiLooped(
+                                style: GoogleFonts.ibmPlexSansThai(
                                     fontWeight: FontWeight.w500, fontSize: 13),
                               ),
                             SingleChildScrollView(
@@ -1016,7 +1016,7 @@ class _BrandStoreState extends State<BrandStore>
                       var text = items.contentDetail[index];
                       return HtmlWidget(
                         text.contentName,
-                        // style: GoogleFonts.notoSansThaiLooped(fontSize: 13),
+                        // style: GoogleFonts.ibmPlexSansThai(fontSize: 13),
                       );
                     }),
                   ],
@@ -1199,7 +1199,7 @@ class _BrandStoreState extends State<BrandStore>
                     items.shopName,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: GoogleFonts.notoSansThaiLooped(
+                    style: GoogleFonts.ibmPlexSansThai(
                         color: Colors.white, fontWeight: FontWeight.w900),
                   ),
                 ),
@@ -1208,12 +1208,12 @@ class _BrandStoreState extends State<BrandStore>
                   children: [
                     Text(
                       "เข้าร่วมเมื่อ ${items.account.dateJoined}",
-                      style: GoogleFonts.notoSansThaiLooped(
+                      style: GoogleFonts.ibmPlexSansThai(
                           color: Colors.white, fontSize: 12),
                     ),
                     Text(
                       " |  รายการสินค้า (${items.itemCount})",
-                      style: GoogleFonts.notoSansThaiLooped(
+                      style: GoogleFonts.ibmPlexSansThai(
                           color: Colors.white, fontSize: 12),
                     ),
                   ],
@@ -1374,7 +1374,7 @@ class _BrandStoreState extends State<BrandStore>
                                         coupon.title,
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                             color: Colors.black,
                                             fontSize: 13,
                                             fontWeight: FontWeight.bold),
@@ -1465,8 +1465,8 @@ class _BrandStoreState extends State<BrandStore>
                                           dialogAlert([
                                             Text(
                                               res.message,
-                                              style: GoogleFonts
-                                                  .notoSansThaiLooped(
+                                              style:
+                                                  GoogleFonts.ibmPlexSansThai(
                                                       color: Colors.white,
                                                       fontSize: 12),
                                             )
@@ -1776,7 +1776,7 @@ class _BrandStoreState extends State<BrandStore>
                                   Text(
                                     items.text,
                                     textAlign: TextAlign.center,
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                         fontSize: 12,
                                         fontWeight:
                                             brandCtr.activeTab.value == index
@@ -1991,7 +1991,7 @@ Widget tabBar(setTapActive, tapActive) {
                                   color: themeColorDefault,
                                   fontSize: 13,
                                   fontWeight: FontWeight.bold)
-                              : GoogleFonts.notoSansThaiLooped(
+                              : GoogleFonts.ibmPlexSansThai(
                                   color: Colors.black,
                                   fontSize: 13,
                                   fontWeight: FontWeight.normal),
@@ -2074,7 +2074,7 @@ class ProductItems extends StatelessWidget {
                       product.title,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: GoogleFonts.notoSansThaiLooped(
+                      style: GoogleFonts.ibmPlexSansThai(
                           color: Colors.black87, fontSize: 11),
                     ),
                   ),
@@ -2124,7 +2124,7 @@ class ProductItems extends StatelessWidget {
               ),
               child: Text(
                 '-${myFormat.format(product.discount)}%',
-                style: GoogleFonts.notoSansThaiLooped(
+                style: GoogleFonts.ibmPlexSansThai(
                     color: Colors.deepOrange, fontSize: 11),
               ),
             ),
@@ -2143,7 +2143,7 @@ class ProductItems extends StatelessWidget {
                   child: Center(
                     child: Text(
                       'สินค้าหมด',
-                      style: GoogleFonts.notoSansThaiLooped(
+                      style: GoogleFonts.ibmPlexSansThai(
                         color: Colors.white,
                         fontSize: 10,
                         fontWeight: FontWeight.bold,

@@ -123,8 +123,8 @@ class _CouponMeState extends State<CouponMe> {
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8)),
-                    textStyle: GoogleFonts.notoSansThaiLooped())),
-            textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                    textStyle: GoogleFonts.ibmPlexSansThai())),
+            textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
               Theme.of(context).textTheme,
             ),
           ),
@@ -254,7 +254,7 @@ class _CouponMeState extends State<CouponMe> {
                                                     overflow:
                                                         TextOverflow.ellipsis,
                                                     style: GoogleFonts
-                                                        .notoSansThaiLooped(
+                                                        .ibmPlexSansThai(
                                                             color: Colors.black,
                                                             fontSize: 13,
                                                             fontWeight:
@@ -412,7 +412,7 @@ class _CouponMeState extends State<CouponMe> {
                                                     overflow:
                                                         TextOverflow.ellipsis,
                                                     style: GoogleFonts
-                                                        .notoSansThaiLooped(
+                                                        .ibmPlexSansThai(
                                                       fontSize: 12,
                                                     ),
                                                   ),

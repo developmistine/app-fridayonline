@@ -57,9 +57,9 @@ class _EditGenderState extends State<EditGender> {
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0)),
-                  textStyle: GoogleFonts.notoSansThaiLooped())),
-          textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
-              Theme.of(context).textTheme),
+                  textStyle: GoogleFonts.ibmPlexSansThai())),
+          textTheme:
+              GoogleFonts.ibmPlexSansThaiTextTheme(Theme.of(context).textTheme),
         ),
         child: Scaffold(
           backgroundColor: Colors.grey[50],

@@ -19,8 +19,8 @@ void storeShippingDiscount(
           data: Theme.of(context).copyWith(
             elevatedButtonTheme: ElevatedButtonThemeData(
                 style: ElevatedButton.styleFrom(
-                    textStyle: GoogleFonts.notoSansThaiLooped())),
-            textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                    textStyle: GoogleFonts.ibmPlexSansThai())),
+            textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
               Theme.of(context).textTheme,
             ),
           ),
@@ -43,7 +43,7 @@ void storeShippingDiscount(
                               padding: const EdgeInsets.all(8.0),
                               child: Text(
                                 'ส่วนลดค่าจัดส่ง - ${cartShop[index].shopName}',
-                                style: GoogleFonts.notoSansThaiLooped(
+                                style: GoogleFonts.ibmPlexSansThai(
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
@@ -59,14 +59,14 @@ void storeShippingDiscount(
                                     Expanded(
                                       child: Text(
                                         'ขั้นต่ำ',
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                             fontSize: 12),
                                       ),
                                     ),
                                     Expanded(
                                       child: Text(
                                         'ส่วนลด',
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                             fontSize: 12),
                                       ),
                                     ),
@@ -74,7 +74,7 @@ void storeShippingDiscount(
                                       flex: 3,
                                       child: Text(
                                         'ตัวเลือกการจัดส่ง',
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                             fontSize: 12),
                                       ),
                                     ),
@@ -91,16 +91,16 @@ void storeShippingDiscount(
                                           Expanded(
                                             child: Text(
                                               "฿${myFormat.format(cartShop[index].drawerEntries[childIndex].minSpend)}",
-                                              style: GoogleFonts
-                                                  .notoSansThaiLooped(
+                                              style:
+                                                  GoogleFonts.ibmPlexSansThai(
                                                       fontSize: 12),
                                             ),
                                           ),
                                           Expanded(
                                             child: Text(
                                               "฿${myFormat.format(cartShop[index].drawerEntries[childIndex].shippingDiscount)}",
-                                              style: GoogleFonts
-                                                  .notoSansThaiLooped(
+                                              style:
+                                                  GoogleFonts.ibmPlexSansThai(
                                                       fontSize: 12),
                                             ),
                                           ),
@@ -123,7 +123,7 @@ void storeShippingDiscount(
                                                                   .shippingOptions[
                                                               shipIndex],
                                                           style: GoogleFonts
-                                                              .notoSansThaiLooped(
+                                                              .ibmPlexSansThai(
                                                                   fontSize: 12),
                                                         ))
                                               ],

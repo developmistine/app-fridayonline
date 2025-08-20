@@ -42,7 +42,7 @@ class ProductCategoryComponents extends StatelessWidget {
         },
         child: Theme(
           data: Theme.of(context).copyWith(
-            textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+            textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
               Theme.of(context).textTheme,
             ),
           ),
@@ -87,7 +87,7 @@ class ProductCategoryComponents extends StatelessWidget {
                                                 child: Text(
                                                   'สินค้าหมด',
                                                   style: GoogleFonts
-                                                      .notoSansThaiLooped(
+                                                      .ibmPlexSansThai(
                                                           color: Colors.white,
                                                           fontSize:
                                                               heigth != null
@@ -126,7 +126,7 @@ class ProductCategoryComponents extends StatelessWidget {
                               ),
                               child: Text(
                                 '-${myFormat.format(item.discount)}%',
-                                style: GoogleFonts.notoSansThaiLooped(
+                                style: GoogleFonts.ibmPlexSansThai(
                                     color: Colors.deepOrange, fontSize: 11),
                               ),
                             )
@@ -145,7 +145,7 @@ class ProductCategoryComponents extends StatelessWidget {
                               item.title,
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
-                              style: GoogleFonts.notoSansThaiLooped(
+                              style: GoogleFonts.ibmPlexSansThai(
                                   fontSize: 12,
                                   color: const Color.fromARGB(255, 0, 0, 0)),
                             )
@@ -169,7 +169,7 @@ class ProductCategoryComponents extends StatelessWidget {
                                   "       ${item.title}",
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
-                                  style: GoogleFonts.notoSansThaiLooped(
+                                  style: GoogleFonts.ibmPlexSansThai(
                                       fontSize: 12,
                                       color:
                                           const Color.fromARGB(255, 0, 0, 0)),
@@ -207,7 +207,7 @@ class ProductCategoryComponents extends StatelessWidget {
                                       ),
                                       Text(
                                         myFormat.format(item.ratingStar),
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                             fontSize: 10),
                                       ),
                                     ],
@@ -217,7 +217,7 @@ class ProductCategoryComponents extends StatelessWidget {
                                 Text(
                                   item.unitSales,
                                   textAlign: TextAlign.end,
-                                  style: GoogleFonts.notoSansThaiLooped(
+                                  style: GoogleFonts.ibmPlexSansThai(
                                     fontSize: 10,
                                     color: Colors.grey.shade700,
                                   ),
@@ -237,7 +237,7 @@ class ProductCategoryComponents extends StatelessWidget {
                                       children: [
                                         Text(
                                           "฿${myFormat.format(item.price)}",
-                                          style: GoogleFonts.notoSansThaiLooped(
+                                          style: GoogleFonts.ibmPlexSansThai(
                                               fontSize: 14,
                                               fontWeight: FontWeight.bold,
                                               color:
@@ -248,7 +248,7 @@ class ProductCategoryComponents extends StatelessWidget {
                                         ),
                                         Text(
                                           "฿${myFormat.format(item.priceBeforeDiscount)}",
-                                          style: GoogleFonts.notoSansThaiLooped(
+                                          style: GoogleFonts.ibmPlexSansThai(
                                               fontSize: 11,
                                               decoration:
                                                   TextDecoration.lineThrough,
@@ -258,7 +258,7 @@ class ProductCategoryComponents extends StatelessWidget {
                                     )
                                   : Text(
                                       "฿${myFormat.format(item.priceBeforeDiscount)}",
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                           fontSize: 14,
                                           fontWeight: FontWeight.bold,
                                           color: Colors.deepOrange.shade700),

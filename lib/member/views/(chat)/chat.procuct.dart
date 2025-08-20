@@ -73,8 +73,8 @@ class _ChatProductsState extends State<ChatProducts> {
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8)),
-                      textStyle: GoogleFonts.notoSansThaiLooped())),
-              textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                      textStyle: GoogleFonts.ibmPlexSansThai())),
+              textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
                 Theme.of(context).textTheme,
               ),
             ),
@@ -134,7 +134,7 @@ class _ChatProductsState extends State<ChatProducts> {
                                           items.title,
                                           maxLines: 2,
                                           overflow: TextOverflow.ellipsis,
-                                          style: GoogleFonts.notoSansThaiLooped(
+                                          style: GoogleFonts.ibmPlexSansThai(
                                               fontSize: 14),
                                         ),
                                         Row(
@@ -147,7 +147,7 @@ class _ChatProductsState extends State<ChatProducts> {
                                                   return Text(
                                                     "฿${myFormat.format(items.priceBeforeDiscount)}",
                                                     style: GoogleFonts
-                                                        .notoSansThaiLooped(
+                                                        .ibmPlexSansThai(
                                                             fontSize: 14,
                                                             fontWeight:
                                                                 FontWeight.bold,
@@ -161,7 +161,7 @@ class _ChatProductsState extends State<ChatProducts> {
                                                       Text(
                                                         "฿${myFormat.format(items.price)}",
                                                         style: GoogleFonts
-                                                            .notoSansThaiLooped(
+                                                            .ibmPlexSansThai(
                                                                 fontSize: 14,
                                                                 color: Colors
                                                                     .deepOrange
@@ -173,7 +173,7 @@ class _ChatProductsState extends State<ChatProducts> {
                                                       Text(
                                                         "฿${myFormat.format(items.priceBeforeDiscount)}",
                                                         style: GoogleFonts
-                                                            .notoSansThaiLooped(
+                                                            .ibmPlexSansThai(
                                                                 decoration:
                                                                     TextDecoration
                                                                         .lineThrough,
@@ -204,7 +204,7 @@ class _ChatProductsState extends State<ChatProducts> {
                                                 child: Text(
                                                   "ส่ง",
                                                   style: GoogleFonts
-                                                      .notoSansThaiLooped(
+                                                      .ibmPlexSansThai(
                                                           fontWeight:
                                                               FontWeight.bold,
                                                           color:

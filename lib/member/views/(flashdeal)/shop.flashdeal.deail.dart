@@ -71,8 +71,8 @@ class _FlashSaleEndUserState extends State<ShopFlashSale> {
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
-                  textStyle: GoogleFonts.notoSansThaiLooped())),
-          textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                  textStyle: GoogleFonts.ibmPlexSansThai())),
+          textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
             Theme.of(context).textTheme,
           ),
         ),
@@ -141,7 +141,7 @@ class _FlashSaleEndUserState extends State<ShopFlashSale> {
                                           product.title,
                                           maxLines: 2,
                                           overflow: TextOverflow.ellipsis,
-                                          style: GoogleFonts.notoSansThaiLooped(
+                                          style: GoogleFonts.ibmPlexSansThai(
                                               fontSize: 12),
                                         ),
                                       ),
@@ -149,12 +149,11 @@ class _FlashSaleEndUserState extends State<ShopFlashSale> {
                                         children: [
                                           Text(
                                             '฿${myFormat.format(product.price)}',
-                                            style:
-                                                GoogleFonts.notoSansThaiLooped(
-                                                    height: 1,
-                                                    color: Colors
-                                                        .deepOrange.shade700,
-                                                    fontSize: 16),
+                                            style: GoogleFonts.ibmPlexSansThai(
+                                                height: 1,
+                                                color:
+                                                    Colors.deepOrange.shade700,
+                                                fontSize: 16),
                                             textAlign: TextAlign.end,
                                           ),
                                           const SizedBox(
@@ -162,12 +161,11 @@ class _FlashSaleEndUserState extends State<ShopFlashSale> {
                                           ),
                                           Text(
                                             '฿${myFormat.format(product.priceBeforeDiscount)}',
-                                            style:
-                                                GoogleFonts.notoSansThaiLooped(
-                                                    decoration: TextDecoration
-                                                        .lineThrough,
-                                                    color: Colors.grey,
-                                                    fontSize: 12),
+                                            style: GoogleFonts.ibmPlexSansThai(
+                                                decoration:
+                                                    TextDecoration.lineThrough,
+                                                color: Colors.grey,
+                                                fontSize: 12),
                                             textAlign: TextAlign.end,
                                           ),
                                         ],
@@ -266,7 +264,7 @@ class _FlashSaleEndUserState extends State<ShopFlashSale> {
                                 Text(
                                   'กำลังโหลด...',
                                   textAlign: TextAlign.center,
-                                  style: GoogleFonts.notoSansThaiLooped(
+                                  style: GoogleFonts.ibmPlexSansThai(
                                       color: themeColorDefault,
                                       fontSize: 12,
                                       fontWeight: FontWeight.bold),
@@ -326,7 +324,7 @@ class _FlashSaleEndUserState extends State<ShopFlashSale> {
                     child: Center(
                       child: Text(
                         'สินค้าหมด',
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                             color: Colors.white,
                             fontSize: 12,
                             fontWeight: FontWeight.bold),
@@ -347,12 +345,12 @@ class _FlashSaleEndUserState extends State<ShopFlashSale> {
                 children: [
                   Text(
                     '${product.discount}%',
-                    style: GoogleFonts.notoSansThaiLooped(
+                    style: GoogleFonts.ibmPlexSansThai(
                         fontSize: 12, color: Colors.white),
                   ),
                   Text(
                     'ลด',
-                    style: GoogleFonts.notoSansThaiLooped(
+                    style: GoogleFonts.ibmPlexSansThai(
                         height: 1, fontSize: 10, color: Colors.white),
                   ),
                 ],

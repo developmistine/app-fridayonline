@@ -217,7 +217,7 @@ class _CustomCameraPageState extends State<CameraPage> {
                       child: _isRecording
                           ? Text(
                               _recordDuration.toStringAsFixed(1),
-                              style: GoogleFonts.notoSansThaiLooped(
+                              style: GoogleFonts.ibmPlexSansThai(
                                   color: Colors.white,
                                   fontSize: 11,
                                   fontWeight: FontWeight.bold),
@@ -314,7 +314,7 @@ class _CustomCameraPageState extends State<CameraPage> {
                     children: [
                       Text(
                         "รูปภาพ",
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                           decorationThickness: 4,
                           fontWeight: _isVideoMode
                               ? FontWeight.normal
@@ -348,7 +348,7 @@ class _CustomCameraPageState extends State<CameraPage> {
                     children: [
                       Text(
                         "วิดีโอ",
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                           fontWeight: _isVideoMode
                               ? FontWeight.bold
                               : FontWeight.normal,

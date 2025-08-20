@@ -54,11 +54,11 @@ class _OrderCheckoutState extends State<OrderCheckout> {
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
-                  textStyle: GoogleFonts.notoSansThaiLooped())),
+                  textStyle: GoogleFonts.ibmPlexSansThai())),
           outlinedButtonTheme: OutlinedButtonThemeData(
               style: OutlinedButton.styleFrom(
-                  textStyle: GoogleFonts.notoSansThaiLooped())),
-          textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                  textStyle: GoogleFonts.ibmPlexSansThai())),
+          textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
             Theme.of(context).textTheme,
           ),
         ),
@@ -308,7 +308,7 @@ class _OrderCheckoutState extends State<OrderCheckout> {
                                     ),
                                     Text(
                                       data.shopInfo.shopName,
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                           fontSize: 14,
                                           fontWeight: FontWeight.w900),
                                     ),
@@ -580,7 +580,7 @@ class _OrderCheckoutState extends State<OrderCheckout> {
                               ),
                               Text(
                                 "เกิดข้อผิดพลาดกรุณาลองใหม่อีกครั้ง",
-                                style: GoogleFonts.notoSansThaiLooped(
+                                style: GoogleFonts.ibmPlexSansThai(
                                   color: Colors.white,
                                   fontSize: 13,
                                 ),

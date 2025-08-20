@@ -149,7 +149,7 @@ showPopupEndUser(BuildContext context) async {
                             ),
                           Text(
                             'ไม่ต้องแสดงอีกในวันนี้',
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 fontSize: 12, color: Colors.white),
                           )
                         ],
@@ -177,7 +177,7 @@ showPopupEndUser(BuildContext context) async {
                         child: Center(
                           child: Text(
                             'ปิด',
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 fontSize: 16, fontWeight: FontWeight.bold),
                           ),
                         ),

@@ -438,7 +438,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     style: const TextStyle(
                         color: Colors.white,
                         fontSize: 14,
-                        fontFamily: "notoreg"),
+                        fontFamily: "IBM_Regular"),
                   ),
                 ),
                 const SizedBox(

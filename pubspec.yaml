@@ -134,7 +134,7 @@ dependencies:
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: ture
-  image_path: "assets/images/friday_online_logo.png"
+  image_path: "assets/images/friday_online_logo_blue.png"
   remove_alpha_ios: true
   min_sdk_android: 21
 
@@ -169,7 +169,7 @@ flutter:
     - assets/images/menu/market/
     - assets/images/login/
     - assets/images/profileimg/
-    - assets/images/home/
+    - assets/images/banner/
     - assets/images/languages/
     - assets/images/cart/
     - assets/images/icon/
@@ -211,6 +211,18 @@ flutter:
     - family: notoreg
       fonts:
         - asset: fonts/NotoSansThai-Regular.ttf
+
+    - family: IBM_Bold
+      fonts:
+        - asset: fonts/IBMPlexSansThai-Bold.ttf
+
+    - family: IBM_Medium
+      fonts:
+        - asset: fonts/IBMPlexSansThai-Medium.ttf
+
+    - family: IBM_Regular
+      fonts:
+        - asset: fonts/IBMPlexSansThai-Regular.ttf
 
   #
   # For details regarding fonts from package dependencies,

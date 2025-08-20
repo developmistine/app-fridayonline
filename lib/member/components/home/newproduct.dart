@@ -74,7 +74,7 @@ class NewCollection extends StatelessWidget {
                                       children: [
                                         Text(
                                           'สินค้าใหม่',
-                                          style: GoogleFonts.notoSansThaiLooped(
+                                          style: GoogleFonts.ibmPlexSansThai(
                                               fontSize: 16,
                                               fontWeight: FontWeight.bold),
                                         ),
@@ -100,7 +100,7 @@ class NewCollection extends StatelessWidget {
                                                   Text(
                                                     'ดูทั้งหมด',
                                                     style: GoogleFonts
-                                                        .notoSansThaiLooped(
+                                                        .ibmPlexSansThai(
                                                             fontSize: 14),
                                                   ),
                                                   const Icon(
@@ -215,7 +215,7 @@ class NewProductItem extends StatelessWidget {
                         child: Center(
                           child: Text(
                             'สินค้าหมด',
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 color: Colors.white,
                                 fontSize: 13,
                                 fontWeight: FontWeight.bold),
@@ -237,7 +237,7 @@ class NewProductItem extends StatelessWidget {
                         "      ${product.title}",
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                             color: Colors.black, fontSize: 12),
                       ),
                       Positioned(
@@ -257,7 +257,7 @@ class NewProductItem extends StatelessWidget {
                       children: [
                         Text(
                           '฿${myFormat.format(product.price)}',
-                          style: GoogleFonts.notoSansThaiLooped(
+                          style: GoogleFonts.ibmPlexSansThai(
                               color: Colors.deepOrange.shade700,
                               fontWeight: FontWeight.bold,
                               fontSize: 13),
@@ -267,7 +267,7 @@ class NewProductItem extends StatelessWidget {
                         ),
                         Text(
                           '฿${myFormat.format(product.priceBeforeDiscount)}',
-                          style: GoogleFonts.notoSansThaiLooped(
+                          style: GoogleFonts.ibmPlexSansThai(
                               decoration: TextDecoration.lineThrough,
                               color: Colors.grey.shade500,
                               fontSize: 12),
@@ -277,14 +277,14 @@ class NewProductItem extends StatelessWidget {
                   else
                     Text(
                       '฿${myFormat.format(product.priceBeforeDiscount)}',
-                      style: GoogleFonts.notoSansThaiLooped(
+                      style: GoogleFonts.ibmPlexSansThai(
                           color: Colors.deepOrange.shade700,
                           fontWeight: FontWeight.bold,
                           fontSize: 13),
                     ),
                   // Text(
                   //   '฿ ${myFormat.format(product.discount)}',
-                  //   style: GoogleFonts.notoSansThaiLooped(
+                  //   style: GoogleFonts.ibmPlexSansThai(
                   //       decoration: TextDecoration.lineThrough,
                   //       decorationStyle: TextDecorationStyle.solid,
                   //       color: Colors.grey.shade700,

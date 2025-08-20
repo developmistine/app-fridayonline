@@ -51,7 +51,7 @@ class CouponEndUser extends StatelessWidget {
                         children: [
                           Text(
                             'คูปองสุดคุ้ม',
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 fontSize: 13, fontWeight: FontWeight.bold),
                           ),
                           InkWell(
@@ -68,7 +68,7 @@ class CouponEndUser extends StatelessWidget {
                               children: [
                                 Text(
                                   "ดูเพิ่มเติม",
-                                  style: GoogleFonts.notoSansThaiLooped(
+                                  style: GoogleFonts.ibmPlexSansThai(
                                       fontSize: 12,
                                       fontWeight: FontWeight.bold,
                                       color: themeColorDefault),
@@ -151,7 +151,7 @@ class _CouponItemState extends State<CouponItem> {
           alignment: Alignment.centerRight,
           children: [
             SizedBox(
-              height: 74,
+              height: 78,
               child: Card(
                 elevation: 0,
                 child: Row(
@@ -270,7 +270,7 @@ class _CouponItemState extends State<CouponItem> {
                                 dialogAlert([
                                   Text(
                                     res.message,
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                         color: Colors.white, fontSize: 12),
                                   )
                                 ]);
@@ -283,7 +283,7 @@ class _CouponItemState extends State<CouponItem> {
                           },
                           child: Text(
                             'เก็บ',
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                               fontWeight: FontWeight.w500,
                               color: Colors.white,
                               fontSize: 10,
@@ -351,7 +351,7 @@ class _CouponItemState extends State<CouponItem> {
                             },
                             child: Text(
                               'ใช้โค้ด',
-                              style: GoogleFonts.notoSansThaiLooped(
+                              style: GoogleFonts.ibmPlexSansThai(
                                 color: themeColorDefault,
                                 fontSize: 10,
                               ),

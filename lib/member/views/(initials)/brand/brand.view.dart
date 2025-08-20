@@ -95,16 +95,16 @@ class _BrandCategoryState extends State<BrandB2C>
               style: OutlinedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
-                  textStyle: GoogleFonts.notoSansThaiLooped())),
+                  textStyle: GoogleFonts.ibmPlexSansThai())),
           elevatedButtonTheme: ElevatedButtonThemeData(
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
-                  textStyle: GoogleFonts.notoSansThaiLooped())),
-          textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                  textStyle: GoogleFonts.ibmPlexSansThai())),
+          textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
             Theme.of(context).textTheme,
           ),
-          primaryTextTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+          primaryTextTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
             Theme.of(context).textTheme,
           ),
         ),
@@ -208,7 +208,7 @@ class _BrandCategoryState extends State<BrandB2C>
                                 children: [
                                   Text(
                                     "FRIDAY MALL",
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                         color: Colors.white,
                                         fontSize: 14,
                                         fontWeight: FontWeight.w900),
@@ -230,11 +230,10 @@ class _BrandCategoryState extends State<BrandB2C>
                                           ),
                                           Text(
                                             'สินค้าแบรนด์แท้ 100%',
-                                            style:
-                                                GoogleFonts.notoSansThaiLooped(
-                                                    fontWeight: FontWeight.bold,
-                                                    color: Colors.white,
-                                                    fontSize: 11),
+                                            style: GoogleFonts.ibmPlexSansThai(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white,
+                                                fontSize: 11),
                                           ),
                                         ],
                                       ),
@@ -253,11 +252,10 @@ class _BrandCategoryState extends State<BrandB2C>
                                           ),
                                           Text(
                                             'โปรโมชั่นสุดพิเศษ',
-                                            style:
-                                                GoogleFonts.notoSansThaiLooped(
-                                                    fontWeight: FontWeight.bold,
-                                                    color: Colors.white,
-                                                    fontSize: 11),
+                                            style: GoogleFonts.ibmPlexSansThai(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white,
+                                                fontSize: 11),
                                           ),
                                         ],
                                       ),
@@ -290,8 +288,8 @@ class _BrandCategoryState extends State<BrandB2C>
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text('แบรนด์ดังสำหรับคุณ',
-                                              style: GoogleFonts
-                                                  .notoSansThaiLooped(
+                                              style:
+                                                  GoogleFonts.ibmPlexSansThai(
                                                       fontSize: 13,
                                                       fontWeight:
                                                           FontWeight.bold)),
@@ -450,7 +448,7 @@ class _BrandCategoryState extends State<BrandB2C>
                                 children: [
                                   Text(
                                     "FRIDAY MALL",
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                         color: Colors.white,
                                         fontSize: 14,
                                         fontWeight: FontWeight.w900),
@@ -472,11 +470,10 @@ class _BrandCategoryState extends State<BrandB2C>
                                           ),
                                           Text(
                                             'สินค้าแบรนด์แท้ 100%',
-                                            style:
-                                                GoogleFonts.notoSansThaiLooped(
-                                                    fontWeight: FontWeight.bold,
-                                                    color: Colors.white,
-                                                    fontSize: 11),
+                                            style: GoogleFonts.ibmPlexSansThai(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white,
+                                                fontSize: 11),
                                           ),
                                         ],
                                       ),
@@ -495,11 +492,10 @@ class _BrandCategoryState extends State<BrandB2C>
                                           ),
                                           Text(
                                             'โปรโมชั่นสุดพิเศษ',
-                                            style:
-                                                GoogleFonts.notoSansThaiLooped(
-                                                    fontWeight: FontWeight.bold,
-                                                    color: Colors.white,
-                                                    fontSize: 11),
+                                            style: GoogleFonts.ibmPlexSansThai(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white,
+                                                fontSize: 11),
                                           ),
                                         ],
                                       ),

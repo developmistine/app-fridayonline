@@ -484,7 +484,7 @@ class FlashDealProductItem extends StatelessWidget {
                               child: Center(
                                 child: Text(
                                   'สินค้าหมด',
-                                  style: GoogleFonts.notoSansThaiLooped(
+                                  style: GoogleFonts.ibmPlexSansThai(
                                       color: Colors.white,
                                       fontSize: 13,
                                       fontWeight: FontWeight.bold),

@@ -168,8 +168,8 @@ class _CouponAllState extends State<CouponAll>
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
-                  textStyle: GoogleFonts.notoSansThaiLooped())),
-          textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                  textStyle: GoogleFonts.ibmPlexSansThai())),
+          textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
             Theme.of(context).textTheme,
           ),
         ),
@@ -194,12 +194,11 @@ class _CouponAllState extends State<CouponAll>
                             indicatorColor: themeColorDefault,
                             indicatorWeight: 2,
                             splashFactory: NoSplash.splashFactory,
-                            unselectedLabelStyle:
-                                GoogleFonts.notoSansThaiLooped(
+                            unselectedLabelStyle: GoogleFonts.ibmPlexSansThai(
                               color: Colors.black,
                               fontSize: 14,
                             ),
-                            labelStyle: GoogleFonts.notoSansThaiLooped(
+                            labelStyle: GoogleFonts.ibmPlexSansThai(
                               color: themeColorDefault,
                               fontSize: 14,
                             ),
@@ -331,7 +330,7 @@ class _CouponAllState extends State<CouponAll>
                         coupon.title,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                             color: Colors.black,
                             fontSize: 13,
                             fontWeight: FontWeight.bold),
@@ -437,7 +436,7 @@ class _CouponAllState extends State<CouponAll>
                               ),
                               Text(
                                 'เก็บคูปองเรียบร้อย',
-                                style: GoogleFonts.notoSansThaiLooped(
+                                style: GoogleFonts.ibmPlexSansThai(
                                     color: Colors.white, fontSize: 14),
                               )
                             ]);
@@ -454,7 +453,7 @@ class _CouponAllState extends State<CouponAll>
                               ),
                               Text(
                                 'เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง',
-                                style: GoogleFonts.notoSansThaiLooped(
+                                style: GoogleFonts.ibmPlexSansThai(
                                     color: Colors.white, fontSize: 14),
                               )
                             ]);
@@ -466,7 +465,7 @@ class _CouponAllState extends State<CouponAll>
                         },
                         child: Text(
                           'เก็บ',
-                          style: GoogleFonts.notoSansThaiLooped(
+                          style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 12, fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -501,7 +500,7 @@ class _CouponAllState extends State<CouponAll>
                         'ใช้โค้ด',
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: GoogleFonts.notoSansThaiLooped(fontSize: 12),
+                        style: GoogleFonts.ibmPlexSansThai(fontSize: 12),
                       ),
                     ),
                   );

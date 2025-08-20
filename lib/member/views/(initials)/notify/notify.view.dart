@@ -187,7 +187,7 @@ class _EndUserNotifyState extends State<EndUserNotify> {
                                       child: Text(
                                         items.totalNotifications.toString(),
                                         textAlign: TextAlign.center,
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                             fontSize: 11,
                                             color: Colors.white,
                                             height: 1),

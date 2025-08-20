@@ -251,11 +251,11 @@ class _SwipeScreenState extends State<SwipeScreen>
                               Text(productName,
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
-                                  style: GoogleFonts.notoSansThaiLooped(
+                                  style: GoogleFonts.ibmPlexSansThai(
                                       color: Colors.black, fontSize: 12)),
                               if (diffTime != "")
                                 Text(diffTime,
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                         color: Colors.black, fontSize: 12)),
                             ],
                           ),
@@ -285,7 +285,7 @@ class _SwipeScreenState extends State<SwipeScreen>
   Widget build(BuildContext context) {
     return Theme(
       data: Theme.of(context).copyWith(
-        textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+        textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
           Theme.of(context).textTheme,
         ),
       ),
@@ -317,7 +317,7 @@ class _SwipeScreenState extends State<SwipeScreen>
                       ),
                       Text(
                         "ยินดีต้อนรับสู่ Friday Fair ของราคาดีมีน้อย กด เอฟก่อนหมด",
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                             fontSize: 14, fontWeight: FontWeight.w500),
                       ),
                       const SizedBox(
@@ -410,7 +410,7 @@ class _SwipeScreenState extends State<SwipeScreen>
         children: [
           Text(
             productTop.title,
-            style: GoogleFonts.notoSansThaiLooped(fontWeight: FontWeight.bold),
+            style: GoogleFonts.ibmPlexSansThai(fontWeight: FontWeight.bold),
           ),
           const SizedBox(
             height: 8,
@@ -445,7 +445,7 @@ class _SwipeScreenState extends State<SwipeScreen>
                                 width: 30),
                             Text(
                               (index + 1).toString(),
-                              style: GoogleFonts.notoSansThaiLooped(
+                              style: GoogleFonts.ibmPlexSansThai(
                                   height: 1,
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold),
@@ -486,8 +486,7 @@ class _SwipeScreenState extends State<SwipeScreen>
             children: [
               Text(
                 'Festival',
-                style:
-                    GoogleFonts.notoSansThaiLooped(fontWeight: FontWeight.bold),
+                style: GoogleFonts.ibmPlexSansThai(fontWeight: FontWeight.bold),
               ),
               InkWell(
                   onTap: () {
@@ -538,14 +537,14 @@ class _SwipeScreenState extends State<SwipeScreen>
                         ),
                         Text(
                           festivalItem[index].contentName,
-                          style: GoogleFonts.notoSansThaiLooped(
+                          style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 12, fontWeight: FontWeight.bold),
                         ),
                         Text(
                           festivalItem[index].contentDesc,
                           maxLines: 3,
                           overflow: TextOverflow.ellipsis,
-                          style: GoogleFonts.notoSansThaiLooped(
+                          style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 10, color: Colors.grey.shade600),
                         ),
                         const SizedBox(
@@ -583,8 +582,7 @@ class _SwipeScreenState extends State<SwipeScreen>
             children: [
               Text(
                 'Coming soon',
-                style:
-                    GoogleFonts.notoSansThaiLooped(fontWeight: FontWeight.bold),
+                style: GoogleFonts.ibmPlexSansThai(fontWeight: FontWeight.bold),
               ),
             ],
           ),
@@ -624,12 +622,12 @@ class _SwipeScreenState extends State<SwipeScreen>
                     ),
                     Text(
                       item[index].contentName,
-                      style: GoogleFonts.notoSansThaiLooped(
+                      style: GoogleFonts.ibmPlexSansThai(
                           fontSize: 12, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       item[index].contentDesc,
-                      style: GoogleFonts.notoSansThaiLooped(
+                      style: GoogleFonts.ibmPlexSansThai(
                           fontSize: 10, color: Colors.grey.shade600),
                     ),
                     const SizedBox(
@@ -1193,12 +1191,12 @@ class _SwipeRowState extends State<SwipeRow> with TickerProviderStateMixin {
                     children: [
                       Text(
                         data.promotionName,
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
                         data.promotionDesc,
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                             color: Colors.grey.shade600, fontSize: 14),
                       ),
                     ],
@@ -1210,19 +1208,19 @@ class _SwipeRowState extends State<SwipeRow> with TickerProviderStateMixin {
                     children: [
                       Text(
                         'ปัดได้อีก ',
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                             color: Colors.black, fontSize: 14),
                       ),
                       Text(
                         '${fairController.userRemainingQuota}',
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                             color: const Color(0xFFF54900),
                             fontSize: 17,
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
                         ' ครั้ง',
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                             color: Colors.black, fontSize: 14),
                       ),
                     ],
@@ -1242,14 +1240,14 @@ class _SwipeRowState extends State<SwipeRow> with TickerProviderStateMixin {
                     ),
                     Text(
                       'สินค้าหมดแล้ว',
-                      style: GoogleFonts.notoSansThaiLooped(
+                      style: GoogleFonts.ibmPlexSansThai(
                           fontSize: 24, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 10),
                     Text(
                       'ขออภัย สินค้าประจำวันนี้หมดแล้ว\n กรุณากลับมาปัดใหม่ในวันถัดไป',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.notoSansThaiLooped(
+                      style: GoogleFonts.ibmPlexSansThai(
                           fontSize: 16, color: Colors.grey[600]),
                     ),
                   ],
@@ -1271,15 +1269,15 @@ class _SwipeRowState extends State<SwipeRow> with TickerProviderStateMixin {
               children: [
                 Text(
                   data.promotionName,
-                  style: GoogleFonts.notoSansThaiLooped(
-                      fontWeight: FontWeight.bold),
+                  style:
+                      GoogleFonts.ibmPlexSansThai(fontWeight: FontWeight.bold),
                 ),
                 Row(
                   children: [
                     Expanded(
                       child: Text(
                         data.promotionDesc,
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                             color: Colors.grey.shade600, fontSize: 14),
                       ),
                     ),
@@ -1290,19 +1288,19 @@ class _SwipeRowState extends State<SwipeRow> with TickerProviderStateMixin {
                         children: [
                           Text(
                             'ปัดได้อีก ',
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 color: Colors.black, fontSize: 14),
                           ),
                           Text(
                             '${fairController.userRemainingQuota}',
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 color: const Color(0xFFF54900),
                                 fontSize: 17,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
                             ' ครั้ง',
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 color: Colors.black, fontSize: 14),
                           ),
                         ],
@@ -1560,7 +1558,7 @@ class _SwipeRowState extends State<SwipeRow> with TickerProviderStateMixin {
                                                     'ปัดซ้ายหากคุณไม่สนใจสินค้านี้,\n ปัดขวาหรือกดปุ่ม “เอฟก่อน” เพื่อเพิ่มสินค้าในตระกร้า',
                                                     textAlign: TextAlign.center,
                                                     style: GoogleFonts
-                                                        .notoSansThaiLooped(
+                                                        .ibmPlexSansThai(
                                                             fontSize: 14,
                                                             fontWeight:
                                                                 FontWeight.w500,
@@ -1591,7 +1589,7 @@ class _SwipeRowState extends State<SwipeRow> with TickerProviderStateMixin {
                                                       child: Text(
                                                           "เริ่มช้อปเลย!",
                                                           style: GoogleFonts
-                                                              .notoSansThaiLooped(
+                                                              .ibmPlexSansThai(
                                                                   color: Colors
                                                                       .white,
                                                                   fontWeight:
@@ -1754,7 +1752,7 @@ class _ProductCardState extends State<ProductCard> {
                       children: [
                         Text(
                           "${widget.product.productName}       ",
-                          style: GoogleFonts.notoSansThaiLooped(
+                          style: GoogleFonts.ibmPlexSansThai(
                             fontSize: 15,
                             fontWeight: FontWeight.w500,
                           ),
@@ -1773,7 +1771,7 @@ class _ProductCardState extends State<ProductCard> {
                                   borderRadius: BorderRadius.circular(12)),
                               child: Text(
                                 'ดีลลับ',
-                                style: GoogleFonts.notoSansThaiLooped(
+                                style: GoogleFonts.ibmPlexSansThai(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white,
                                     fontSize: 12),
@@ -1784,7 +1782,7 @@ class _ProductCardState extends State<ProductCard> {
                   else
                     Text(
                       widget.product.productName,
-                      style: GoogleFonts.notoSansThaiLooped(
+                      style: GoogleFonts.ibmPlexSansThai(
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
                       ),
@@ -1817,7 +1815,7 @@ class _ProductCardState extends State<ProductCard> {
                               ),
                               Text(
                                 widget.product.viewerText,
-                                style: GoogleFonts.notoSansThaiLooped(
+                                style: GoogleFonts.ibmPlexSansThai(
                                   color: Colors.grey.shade600,
                                   fontSize: 12,
                                 ),
@@ -1843,12 +1841,12 @@ class _ProductCardState extends State<ProductCard> {
                         children: [
                           Text(
                             widget.product.normalPrice.key,
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 fontSize: 14, fontWeight: FontWeight.w500),
                           ),
                           Text(
                             widget.product.normalPrice.value,
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 fontSize: 14,
                                 decoration: TextDecoration.lineThrough,
                                 color: Colors.grey.shade700,
@@ -1869,7 +1867,7 @@ class _ProductCardState extends State<ProductCard> {
                             children: [
                               Text(
                                 widget.product.discount.key,
-                                style: GoogleFonts.notoSansThaiLooped(
+                                style: GoogleFonts.ibmPlexSansThai(
                                     fontSize: 14,
                                     color: const Color(0xFFD80A0A)),
                               ),
@@ -1884,7 +1882,7 @@ class _ProductCardState extends State<ProductCard> {
                                     widget.product.discount.value == ""
                                         ? "฿0"
                                         : widget.product.discount.value,
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w500,
                                       fontSize: 14,
@@ -1898,14 +1896,14 @@ class _ProductCardState extends State<ProductCard> {
                             children: [
                               Text(
                                 widget.product.fridayFairPrice.key,
-                                style: GoogleFonts.notoSansThaiLooped(
+                                style: GoogleFonts.ibmPlexSansThai(
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black),
                               ),
                               Text(
                                 widget.product.fridayFairPrice.value,
-                                style: GoogleFonts.notoSansThaiLooped(
+                                style: GoogleFonts.ibmPlexSansThai(
                                   color: const Color(0xFFD80A0A),
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
@@ -1923,7 +1921,7 @@ class _ProductCardState extends State<ProductCard> {
                       Expanded(
                         child: Text(
                           widget.product.lotInfo.displayText,
-                          style: GoogleFonts.notoSansThaiLooped(
+                          style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 14, fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -1931,7 +1929,7 @@ class _ProductCardState extends State<ProductCard> {
                         child: Text(
                           widget.product.lotInfo.remainingText,
                           textAlign: TextAlign.end,
-                          style: GoogleFonts.notoSansThaiLooped(
+                          style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                               color: Colors.deepOrange.shade400),
@@ -1977,7 +1975,7 @@ class _ProductCardState extends State<ProductCard> {
                   if (widget.product.lotInfo.hasTimeLimit)
                     Text(
                       widget.product.lotInfo.infoText,
-                      style: GoogleFonts.notoSansThaiLooped(
+                      style: GoogleFonts.ibmPlexSansThai(
                           fontSize: 14, color: Colors.grey.shade700),
                     ),
 
@@ -2001,7 +1999,7 @@ class _ProductCardState extends State<ProductCard> {
                             ),
                             Text(
                               widget.product.shopInfo.shopName.toUpperCase(),
-                              style: GoogleFonts.notoSansThaiLooped(
+                              style: GoogleFonts.ibmPlexSansThai(
                                   fontSize: 13, fontWeight: FontWeight.bold),
                             ),
                           ],
@@ -2018,7 +2016,7 @@ class _ProductCardState extends State<ProductCard> {
                           children: [
                             Text(
                               'ดูร้านค้า',
-                              style: GoogleFonts.notoSansThaiLooped(
+                              style: GoogleFonts.ibmPlexSansThai(
                                   fontSize: 14, color: Colors.grey.shade600),
                             ),
                             Icon(Icons.arrow_forward_ios_rounded,
@@ -2073,7 +2071,7 @@ class _ProductCardState extends State<ProductCard> {
                             ),
                             child: Text(
                               "ไม่สนใจ",
-                              style: GoogleFonts.notoSansThaiLooped(
+                              style: GoogleFonts.ibmPlexSansThai(
                                   color: Colors.black),
                             ),
                           ),
@@ -2107,7 +2105,7 @@ class _ProductCardState extends State<ProductCard> {
                                 ),
                                 Text(
                                   "เอฟก่อน",
-                                  style: GoogleFonts.notoSansThaiLooped(
+                                  style: GoogleFonts.ibmPlexSansThai(
                                       color: Colors.white),
                                 ),
                               ],
@@ -2202,7 +2200,7 @@ Future<dynamic> limitDialog({required PopupResponse productData}) {
     ),
     Text(
       productData.title,
-      style: GoogleFonts.notoSansThaiLooped(
+      style: GoogleFonts.ibmPlexSansThai(
           fontWeight: FontWeight.bold, fontSize: 14),
     ),
     const SizedBox(
@@ -2221,7 +2219,7 @@ Future<dynamic> limitDialog({required PopupResponse productData}) {
               ])),
       child: Text(
         productData.subtitle,
-        style: GoogleFonts.notoSansThaiLooped(
+        style: GoogleFonts.ibmPlexSansThai(
             fontSize: 13, color: Colors.white, fontWeight: FontWeight.bold),
       ),
     ),
@@ -2230,7 +2228,7 @@ Future<dynamic> limitDialog({required PopupResponse productData}) {
     ),
     Text(
       "แต่คุณยังสามารถสนุกต่อได้",
-      style: GoogleFonts.notoSansThaiLooped(fontSize: 13),
+      style: GoogleFonts.ibmPlexSansThai(fontSize: 13),
     ),
     const SizedBox(
       height: 8,
@@ -2256,7 +2254,7 @@ Future<dynamic> limitDialog({required PopupResponse productData}) {
                       borderRadius: BorderRadius.circular(8))),
               child: Text(
                 productData.actions[0].display,
-                style: GoogleFonts.notoSansThaiLooped(
+                style: GoogleFonts.ibmPlexSansThai(
                     fontSize: 13, color: const Color(0xFF1C9AD6)),
               ),
               onPressed: () {
@@ -2306,7 +2304,7 @@ Future<dynamic> changeCoinPopup({required code, String? title}) {
     ),
     Text(
       code == "-9" ? 'ทำรายการไม่สำเร็จ' : 'เรียบร้อย',
-      style: GoogleFonts.notoSansThaiLooped(
+      style: GoogleFonts.ibmPlexSansThai(
           fontWeight: FontWeight.bold, fontSize: 14),
     ),
     const SizedBox(
@@ -2316,21 +2314,21 @@ Future<dynamic> changeCoinPopup({required code, String? title}) {
       Text(
         title,
         textAlign: TextAlign.center,
-        style: GoogleFonts.notoSansThaiLooped(
+        style: GoogleFonts.ibmPlexSansThai(
             fontSize: 13, color: Colors.grey.shade700),
       )
     else if (code == "-9")
       Text(
         'เนื่องจาก Coin ของคุณไม่เพียงพอ\nกรุณาทำรายการอีกครั้ง',
         textAlign: TextAlign.center,
-        style: GoogleFonts.notoSansThaiLooped(
+        style: GoogleFonts.ibmPlexSansThai(
             fontSize: 13, color: Colors.grey.shade700),
       )
     else
       Text(
         'ทำรายการสำเร็จ ย้อนกลับดีลลับเรียบร้อยแล้ว',
         textAlign: TextAlign.center,
-        style: GoogleFonts.notoSansThaiLooped(
+        style: GoogleFonts.ibmPlexSansThai(
             fontSize: 13, color: Colors.grey.shade700),
       ),
     const SizedBox(
@@ -2342,7 +2340,7 @@ Future<dynamic> changeCoinPopup({required code, String? title}) {
       },
       child: Text(
         'ปิดหน้าต่าง',
-        style: GoogleFonts.notoSansThaiLooped(
+        style: GoogleFonts.ibmPlexSansThai(
             fontSize: 13,
             color: Colors.grey.shade700,
             fontWeight: FontWeight.w500),
@@ -2371,7 +2369,7 @@ Future<dynamic> previousDialog(FairsProductSwipe popupData) {
     ),
     Text(
       data.title,
-      style: GoogleFonts.notoSansThaiLooped(
+      style: GoogleFonts.ibmPlexSansThai(
           fontWeight: FontWeight.bold, fontSize: 14),
     ),
     const SizedBox(
@@ -2390,7 +2388,7 @@ Future<dynamic> previousDialog(FairsProductSwipe popupData) {
               ])),
       child: Text(
         data.subtitle,
-        style: GoogleFonts.notoSansThaiLooped(
+        style: GoogleFonts.ibmPlexSansThai(
             fontSize: 13, color: Colors.white, fontWeight: FontWeight.bold),
       ),
     ),
@@ -2426,7 +2424,7 @@ Future<dynamic> previousDialog(FairsProductSwipe popupData) {
                       borderRadius: BorderRadius.circular(8))),
               child: Text(
                 data.actions[0].display,
-                style: GoogleFonts.notoSansThaiLooped(
+                style: GoogleFonts.ibmPlexSansThai(
                     fontSize: 13, color: const Color(0xFF1C9AD6)),
               ),
               onPressed: () {
@@ -2470,7 +2468,7 @@ class ShowHtmlTag extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return HtmlWidget(
-      textStyle: GoogleFonts.notoSansThaiLooped(fontSize: fontsSize ?? 14),
+      textStyle: GoogleFonts.ibmPlexSansThai(fontSize: fontsSize ?? 14),
       data,
       onErrorBuilder: (context, element, error) {
         return Container();
@@ -2523,7 +2521,7 @@ Future<dynamic> completeDialog({required PopupResponse popupData}) {
     ),
     Text(
       popupData.title,
-      style: GoogleFonts.notoSansThaiLooped(
+      style: GoogleFonts.ibmPlexSansThai(
           fontWeight: FontWeight.bold, fontSize: 14),
     ),
     const SizedBox(
@@ -2531,7 +2529,7 @@ Future<dynamic> completeDialog({required PopupResponse popupData}) {
     ),
     Text(
       popupData.subtitle,
-      style: GoogleFonts.notoSansThaiLooped(fontSize: 13),
+      style: GoogleFonts.ibmPlexSansThai(fontSize: 13),
     ),
     const SizedBox(
       height: 12,
@@ -2553,7 +2551,7 @@ Future<dynamic> completeDialog({required PopupResponse popupData}) {
                       borderRadius: BorderRadius.circular(8))),
               child: Text(
                 popupData.actions[0].display,
-                style: GoogleFonts.notoSansThaiLooped(
+                style: GoogleFonts.ibmPlexSansThai(
                     fontSize: 13, color: const Color(0xFF1C9AD6)),
               ),
               onPressed: () {
@@ -2886,9 +2884,8 @@ addToCart(fairId) async {
                                         children: [
                                           Text(
                                             tierVariation.name,
-                                            style:
-                                                GoogleFonts.notoSansThaiLooped(
-                                                    fontSize: 12),
+                                            style: GoogleFonts.ibmPlexSansThai(
+                                                fontSize: 12),
                                           ),
                                           Wrap(
                                             children: [
@@ -3041,7 +3038,7 @@ addToCart(fairId) async {
                                                               overflow:
                                                                   TextOverflow
                                                                       .ellipsis,
-                                                              style: GoogleFonts.notoSansThaiLooped(
+                                                              style: GoogleFonts.ibmPlexSansThai(
                                                                   fontSize: 12,
                                                                   color: tierVariation.options[i].displayIndicators == 2
                                                                       ? Colors.grey.shade400
@@ -3127,7 +3124,7 @@ addToCart(fairId) async {
                                 },
                                 child: Text(
                                   'เพิ่มสินค้าไปยังตะกร้า',
-                                  style: GoogleFonts.notoSansThaiLooped(
+                                  style: GoogleFonts.ibmPlexSansThai(
                                     fontWeight: FontWeight.bold,
                                     color: isAllSelected
                                         ? Colors.white

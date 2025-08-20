@@ -155,7 +155,7 @@ class _DataProfilesState extends State<DataProfiles> {
                       children: [
                         Text(
                           profile?.displayName ?? 'N/A',
-                          style: GoogleFonts.notoSansThaiLooped(
+                          style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
                               color: Colors.black),
@@ -189,12 +189,12 @@ class _DataProfilesState extends State<DataProfiles> {
                         children: [
                           Text(
                             "Coin ของฉัน : ",
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 color: Colors.white, fontSize: 13),
                           ),
                           Text(
                             myFormat.format(profile!.coinBalance),
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 color: Colors.yellow, fontSize: 13),
                           ),
                           const SizedBox(

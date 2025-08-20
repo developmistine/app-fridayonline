@@ -49,12 +49,12 @@ class _OtpVerifyState extends State<OtpVerify> {
           .copyWith(textScaler: const TextScaler.linear(1.0)),
       child: Theme(
         data: Theme.of(context).copyWith(
-            textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+            textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
               Theme.of(context).textTheme,
             ),
             elevatedButtonTheme: ElevatedButtonThemeData(
                 style: ElevatedButton.styleFrom(
-                    textStyle: GoogleFonts.notoSansThaiLooped()))),
+                    textStyle: GoogleFonts.ibmPlexSansThai()))),
         child: GestureDetector(
           onTap: () {
             FocusScope.of(context).unfocus();
@@ -145,7 +145,7 @@ class _OtpVerifyState extends State<OtpVerify> {
                                 dialogAlert([
                                   Text(
                                     'ทำการลบบัญชีเรียบร้อย',
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                         color: Colors.white, fontSize: 13),
                                   )
                                 ]);
@@ -183,7 +183,7 @@ class _OtpVerifyState extends State<OtpVerify> {
                         return RichText(
                           text: TextSpan(
                               text: "ไม่ได้รับข้อความ? ",
-                              style: GoogleFonts.notoSansThaiLooped(
+                              style: GoogleFonts.ibmPlexSansThai(
                                   color: Colors.grey.shade700),
                               children: [
                                 TextSpan(
@@ -193,7 +193,7 @@ class _OtpVerifyState extends State<OtpVerify> {
                                       otpCtr.startTimer();
                                     },
                                   text: 'ส่งอีกครั้ง',
-                                  style: GoogleFonts.notoSansThaiLooped(
+                                  style: GoogleFonts.ibmPlexSansThai(
                                       color: themeColorDefault),
                                 )
                               ]),

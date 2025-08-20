@@ -228,7 +228,7 @@ class _BottomAddToCartState extends State<BottomAddToCart> {
                                       }),
                                       Text(
                                         'คลัง : ${myFormat.format(showProductCtr.stock.value)}',
-                                        style: GoogleFonts.notoSansThaiLooped(
+                                        style: GoogleFonts.ibmPlexSansThai(
                                             fontSize: 12,
                                             color: Colors.grey.shade700),
                                       )
@@ -276,8 +276,8 @@ class _BottomAddToCartState extends State<BottomAddToCart> {
                                           children: [
                                             Text(
                                               tierVariation.name,
-                                              style: GoogleFonts
-                                                  .notoSansThaiLooped(
+                                              style:
+                                                  GoogleFonts.ibmPlexSansThai(
                                                       fontSize: 12),
                                             ),
                                             Wrap(
@@ -423,7 +423,7 @@ class _BottomAddToCartState extends State<BottomAddToCart> {
                                                                 overflow:
                                                                     TextOverflow
                                                                         .ellipsis,
-                                                                style: GoogleFonts.notoSansThaiLooped(
+                                                                style: GoogleFonts.ibmPlexSansThai(
                                                                     fontSize: 12,
                                                                     color: tierVariation.options[i].displayIndicators == 2
                                                                         ? Colors.grey.shade400
@@ -494,9 +494,8 @@ class _BottomAddToCartState extends State<BottomAddToCart> {
                                         children: [
                                           Text(
                                             'จำนวน',
-                                            style:
-                                                GoogleFonts.notoSansThaiLooped(
-                                                    fontSize: 12),
+                                            style: GoogleFonts.ibmPlexSansThai(
+                                                fontSize: 12),
                                           ),
                                           Stack(
                                             alignment: Alignment.center,
@@ -583,7 +582,7 @@ class _BottomAddToCartState extends State<BottomAddToCart> {
                                                                   TextAlign
                                                                       .center,
                                                               style: GoogleFonts
-                                                                  .notoSansThaiLooped(
+                                                                  .ibmPlexSansThai(
                                                                       fontSize:
                                                                           12),
                                                               onChanged:
@@ -642,7 +641,7 @@ class _BottomAddToCartState extends State<BottomAddToCart> {
                                                                           .none,
                                                                       labelStyle:
                                                                           GoogleFonts
-                                                                              .notoSansThaiLooped()),
+                                                                              .ibmPlexSansThai()),
                                                               keyboardType:
                                                                   TextInputType
                                                                       .number),
@@ -762,7 +761,7 @@ class _BottomAddToCartState extends State<BottomAddToCart> {
                               ),
                               Text(
                                 'กรุณาเลือกตัวเลือก "${showProductCtr.productDetail.value!.data.tierVariations[nullKeys.isEmpty ? 0 : nullKeys.first].name}"',
-                                style: GoogleFonts.notoSansThaiLooped(
+                                style: GoogleFonts.ibmPlexSansThai(
                                   color: Colors.white,
                                   fontSize: 13,
                                 ),
@@ -813,7 +812,7 @@ class _BottomAddToCartState extends State<BottomAddToCart> {
                                 ),
                                 Text(
                                   res.message,
-                                  style: GoogleFonts.notoSansThaiLooped(
+                                  style: GoogleFonts.ibmPlexSansThai(
                                     color: Colors.white,
                                     fontSize: 13,
                                   ),
@@ -840,7 +839,7 @@ class _BottomAddToCartState extends State<BottomAddToCart> {
                                   child: Text(
                                     res.message,
                                     textAlign: TextAlign.center,
-                                    style: GoogleFonts.notoSansThaiLooped(
+                                    style: GoogleFonts.ibmPlexSansThai(
                                       color: Colors.white,
                                       fontSize: 13,
                                     ),
@@ -873,7 +872,7 @@ class _BottomAddToCartState extends State<BottomAddToCart> {
                                     borderRadius: BorderRadius.circular(4)),
                                 child: Center(
                                   child: Text('เพิ่มสินค้าไปยังตะกร้า',
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                           color: isAllSelected
                                               ? Colors.white
                                               : Colors.grey,
@@ -1152,7 +1151,7 @@ class _BottomAddToCartState extends State<BottomAddToCart> {
                       ),
                       Text(
                         'เพิ่มไปยังตะกร้า',
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                           color: Colors.white,
                           fontSize: 12,
                         ),
@@ -1176,7 +1175,7 @@ productPriceWidget({required productPrices, required bool showPercent}) {
         productPrices.priceBeforeDiscount.singleValue > 0
             ? '฿${myFormat.format(productPrices.priceBeforeDiscount.singleValue)} '
             : "฿${myFormat.format(productPrices.priceBeforeDiscount.rangeMin)} - ${myFormat.format(productPrices.priceBeforeDiscount.rangeMax)}",
-        style: GoogleFonts.notoSansThaiLooped(
+        style: GoogleFonts.ibmPlexSansThai(
           color: Colors.deepOrange.shade700,
           fontWeight: FontWeight.w600,
           fontSize: 24,
@@ -1190,7 +1189,7 @@ productPriceWidget({required productPrices, required bool showPercent}) {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Text('฿${myFormat.format(productPrices.price.singleValue)} ',
-                style: GoogleFonts.notoSansThaiLooped(
+                style: GoogleFonts.ibmPlexSansThai(
                   color: Colors.deepOrange.shade700,
                   fontWeight: FontWeight.w600,
                   fontSize: 24,
@@ -1198,7 +1197,7 @@ productPriceWidget({required productPrices, required bool showPercent}) {
             if (productPrices.priceBeforeDiscount.singleValue > 0)
               Text(
                 '฿${myFormat.format(productPrices.priceBeforeDiscount.singleValue)}',
-                style: GoogleFonts.notoSansThaiLooped(
+                style: GoogleFonts.ibmPlexSansThai(
                   decoration: TextDecoration.lineThrough,
                   fontSize: 14,
                   height: 2.4,
@@ -1208,7 +1207,7 @@ productPriceWidget({required productPrices, required bool showPercent}) {
             else
               Text(
                 '฿${myFormat.format(productPrices.priceBeforeDiscount.rangeMin)} - ฿${myFormat.format(productPrices.priceBeforeDiscount.rangeMax)}',
-                style: GoogleFonts.notoSansThaiLooped(
+                style: GoogleFonts.ibmPlexSansThai(
                     decoration: TextDecoration.lineThrough,
                     height: 2.4,
                     fontSize: 14,
@@ -1222,7 +1221,7 @@ productPriceWidget({required productPrices, required bool showPercent}) {
           children: [
             Text(
               '฿${myFormat.format(productPrices.price.rangeMin)} - ฿${myFormat.format(productPrices.price.rangeMax)}',
-              style: GoogleFonts.notoSansThaiLooped(
+              style: GoogleFonts.ibmPlexSansThai(
                 color: Colors.deepOrange.shade700,
                 fontWeight: FontWeight.w600,
                 fontSize: 24,
@@ -1230,7 +1229,7 @@ productPriceWidget({required productPrices, required bool showPercent}) {
             ),
             Text(
               '฿${myFormat.format(productPrices.priceBeforeDiscount.rangeMin)} - ฿${myFormat.format(productPrices.priceBeforeDiscount.rangeMax)}',
-              style: GoogleFonts.notoSansThaiLooped(
+              style: GoogleFonts.ibmPlexSansThai(
                   decoration: TextDecoration.lineThrough,
                   height: 2.4,
                   fontSize: 14,
@@ -1248,7 +1247,7 @@ productPriceWidget({required productPrices, required bool showPercent}) {
           ),
           child: Text(
             '${productPrices.discount} %',
-            style: GoogleFonts.notoSansThaiLooped(
+            style: GoogleFonts.ibmPlexSansThai(
                 color: Colors.deepOrange, fontSize: 10, height: 1.4),
           ),
         )

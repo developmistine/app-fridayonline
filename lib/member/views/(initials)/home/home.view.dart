@@ -1,18 +1,20 @@
 import 'package:fridayonline/controller/update_app_controller.dart';
 import 'package:fridayonline/member/components/appbar/appbar.enduser.dart';
 import 'package:fridayonline/member/components/home/banner.enduser.dart';
-import 'package:fridayonline/member/components/home/checkin.dart';
+import 'package:fridayonline/member/components/home/banner.project.dart';
+import 'package:fridayonline/member/components/home/checkinv2.dart';
+import 'package:fridayonline/member/components/home/coupon.enduserv2.dart';
 import 'package:fridayonline/member/components/home/coupon.newuser.dart';
+import 'package:fridayonline/member/components/home/favoritev2.dart';
 import 'package:fridayonline/member/components/home/fridaymall.dart';
 import 'package:fridayonline/member/components/home/newproduct.dart';
 import 'package:fridayonline/member/components/home/supperdeal.dart';
 import 'package:fridayonline/member/components/home/topsales.dart';
 import 'package:fridayonline/member/components/home/category.dart';
-import 'package:fridayonline/member/components/home/coupon.enduser.dart';
 import 'package:fridayonline/member/components/home/flashdeal.dart';
 import 'package:fridayonline/member/components/home/loadmore.enduser.dart';
 import 'package:fridayonline/member/components/home/popup.enduser.dart';
-import 'package:fridayonline/member/components/home/favorite.dart';
+import 'package:fridayonline/member/controller/coint.ctr.dart';
 import 'package:fridayonline/member/utils/event.dart';
 import 'package:fridayonline/member/widgets/arrow_totop.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -121,36 +123,35 @@ class _HomePageState extends State<EndUserHomePage>
     super.build(context);
     return Theme(
       data: Theme.of(context).copyWith(
-        textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+        textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
           Theme.of(context).textTheme,
         ),
       ),
       child: Scaffold(
-        // extendBodyBehindAppBar: true,
         backgroundColor: Colors.grey.shade100,
         body: Stack(
           children: [
             SingleChildScrollView(
               controller: scrCtrl,
               physics: const ClampingScrollPhysics(),
-              // physics:
-              //     const ClampingScrollPhysics(parent: BouncingScrollPhysics()),
               padding: EdgeInsets.zero,
-              child: const Column(
+              child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  BannerEndUser(),
-                  ShortCutMenus(),
-                  SupperDeal(),
-                  CouponNewUser(),
-                  CouponEndUser(),
-                  Coin(),
-                  CategoryB2C(),
-                  NewCollection(),
-                  FlashDealFriday(),
-                  FridayMall(),
-                  BestSellingProducts(),
-                  LoadmoreEndUser(),
+                  const BannerEndUser(),
+
+                  _checkInAndCouponContainer(),
+                  const BannerProject(),
+                  const SupperDeal(),
+                  const CouponNewUser(),
+                  // const CouponEndUser(),
+                  //  Coin(),
+                  const CategoryB2C(),
+                  const NewCollection(),
+                  const FlashDealFriday(),
+                  const FridayMall(),
+                  const BestSellingProducts(),
+                  const LoadmoreEndUser(),
                 ],
               ),
             ),
@@ -161,7 +162,6 @@ class _HomePageState extends State<EndUserHomePage>
               child: appbarEnduser(ctx: context, isSetAppbar: isSetAppbar),
             ),
             if (buttonPosition != null)
-              // Draggable Floating Button
               Positioned(
                 left: buttonPosition!.dx,
                 top: buttonPosition!.dy,
@@ -170,7 +170,6 @@ class _HomePageState extends State<EndUserHomePage>
                   childWhenDragging: Container(),
                   onDragEnd: (details) {
                     setState(() {
-                      // Update the position of the button
                       buttonPosition = details.offset;
                     });
                   },
@@ -245,6 +244,60 @@ class _HomePageState extends State<EndUserHomePage>
           ],
         );
       }),
+    );
+  }
+
+  Widget _checkInAndCouponContainer() {
+    final coinCtr = Get.find<CoinCtr>();
+    final endUser = Get.find<EndUserHomeCtr>();
+
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment(0.50, 0.0),
+          end: Alignment(0.50, 1.0),
+          colors: [Color(0x4C00AEEF), Color(0x0000AEEF)],
+        ),
+      ),
+      child: Column(
+        children: [
+          Obx(() {
+            final coin = coinCtr.checkIn?.value;
+
+            final showCoin = !coinCtr.isLoadingCheckIn.value &&
+                coin != null &&
+                coin.code != '-9';
+            final hv = endUser.homeVouchers?.value;
+            final showCoupon =
+                !endUser.isLoadingCoupon.value && hv != null && hv.code != "-9";
+
+            // const showCoin = true;
+            // const showCoupon = true;
+
+            final isSoloCoin = showCoin && !showCoupon;
+            final isSoloCoupon = showCoupon && !showCoin;
+
+            final children = <Widget>[];
+            if (showCoin) {
+              children.add(Expanded(child: CoinV2(compact: isSoloCoin)));
+            }
+            if (showCoin && showCoupon) children.add(const SizedBox(width: 8));
+            if (showCoupon) {
+              children
+                  .add(Expanded(child: CouponEndUserV2(compact: isSoloCoupon)));
+            }
+
+            if (children.isEmpty) return const SizedBox.shrink();
+            return Padding(
+              padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
+              child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: children),
+            );
+          }),
+          const ShortCutMenusV2(),
+        ],
+      ),
     );
   }
 }

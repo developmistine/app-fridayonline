@@ -87,12 +87,12 @@ class _ShowReviewProductSkuState extends State<ShowReviewProductSku>
                   .copyWith(textScaler: const TextScaler.linear(1)),
               child: Theme(
                 data: Theme.of(context).copyWith(
-                    textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                    textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
                       Theme.of(context).textTheme,
                     ),
                     outlinedButtonTheme: OutlinedButtonThemeData(
                         style: OutlinedButton.styleFrom(
-                            textStyle: GoogleFonts.notoSansThaiLooped()))),
+                            textStyle: GoogleFonts.ibmPlexSansThai()))),
                 child: Stack(
                   children: [
                     SingleChildScrollView(
@@ -117,7 +117,7 @@ class _ShowReviewProductSkuState extends State<ShowReviewProductSku>
                                     ),
                                     Text(
                                       'ไม่พบข้อมูลรีวิว',
-                                      style: GoogleFonts.notoSansThaiLooped(),
+                                      style: GoogleFonts.ibmPlexSansThai(),
                                     ),
                                   ],
                                 ),
@@ -463,8 +463,8 @@ class _ShowReviewProductSkuState extends State<ShowReviewProductSku>
           data: Theme.of(context).copyWith(
             elevatedButtonTheme: ElevatedButtonThemeData(
                 style: ElevatedButton.styleFrom(
-                    textStyle: GoogleFonts.notoSansThaiLooped())),
-            textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                    textStyle: GoogleFonts.ibmPlexSansThai())),
+            textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
               Theme.of(context).textTheme,
             ),
           ),
@@ -577,7 +577,7 @@ class _ShowReviewProductSkuState extends State<ShowReviewProductSku>
                                     side: BorderSide(color: themeColorDefault)),
                                 child: Text(
                                   'ดูทั้งหมด',
-                                  style: GoogleFonts.notoSansThaiLooped(
+                                  style: GoogleFonts.ibmPlexSansThai(
                                       color: themeColorDefault),
                                 )),
                           ),
@@ -611,7 +611,7 @@ class _ShowReviewProductSkuState extends State<ShowReviewProductSku>
                                     side: BorderSide(color: themeColorDefault)),
                                 child: Text(
                                   'ตกลง',
-                                  style: GoogleFonts.notoSansThaiLooped(),
+                                  style: GoogleFonts.ibmPlexSansThai(),
                                 )),
                           ),
                         ],

@@ -7,7 +7,7 @@ Widget buttonSeeAll() {
     children: [
       Text(
         'ดูทั้งหมด',
-        style: GoogleFonts.notoSansThaiLooped(
+        style: GoogleFonts.ibmPlexSansThai(
             fontSize: 13,
             color: themeColorDefault,
             fontWeight: FontWeight.w500),

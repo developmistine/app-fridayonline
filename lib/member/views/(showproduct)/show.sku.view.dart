@@ -175,7 +175,7 @@ class _ShowProductCategoryState extends State<ShowProductSku>
             .copyWith(textScaler: const TextScaler.linear(1.0)),
         child: Theme(
           data: Theme.of(context).copyWith(
-            textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+            textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
               Theme.of(context).textTheme,
             ),
           ),
@@ -492,7 +492,7 @@ class _ShowProductCategoryState extends State<ShowProductSku>
                                       child: Obx(() {
                                         return Text(
                                           '${showProductCtr.activeSlide.value + 1}/${mediaUrls.length}',
-                                          style: GoogleFonts.notoSansThaiLooped(
+                                          style: GoogleFonts.ibmPlexSansThai(
                                               height: 1.2,
                                               color: Colors.grey.shade700,
                                               fontSize: 12),
@@ -536,11 +536,9 @@ class _ShowProductCategoryState extends State<ShowProductSku>
                                               horizontal: 8.0),
                                           child: Text(
                                             '${showProductCtr.productDetail.value!.data.productDatail.length} ตัวเลือกสินค้า',
-                                            style:
-                                                GoogleFonts.notoSansThaiLooped(
-                                                    fontSize: 12,
-                                                    color:
-                                                        Colors.grey.shade600),
+                                            style: GoogleFonts.ibmPlexSansThai(
+                                                fontSize: 12,
+                                                color: Colors.grey.shade600),
                                           ),
                                         ),
                                       const SizedBox(
@@ -721,7 +719,7 @@ class _ShowProductCategoryState extends State<ShowProductSku>
                                                     Text(
                                                       'SUPER DAYFAIR',
                                                       style: GoogleFonts
-                                                          .notoSansThaiLooped(
+                                                          .ibmPlexSansThai(
                                                               fontSize: 13,
                                                               fontWeight:
                                                                   FontWeight
@@ -736,7 +734,7 @@ class _ShowProductCategoryState extends State<ShowProductSku>
                                                     Text(
                                                       'สิ้นสุดใน',
                                                       style: GoogleFonts
-                                                          .notoSansThaiLooped(
+                                                          .ibmPlexSansThai(
                                                               fontSize: 12,
                                                               color:
                                                                   Colors.white),
@@ -783,8 +781,8 @@ class _ShowProductCategoryState extends State<ShowProductSku>
                                             Text(
                                               showProductCtr.productDetail
                                                   .value!.data.unitSales,
-                                              style: GoogleFonts
-                                                  .notoSansThaiLooped(
+                                              style:
+                                                  GoogleFonts.ibmPlexSansThai(
                                                       fontSize: 12),
                                             )
                                           ],
@@ -820,7 +818,7 @@ class _ShowProductCategoryState extends State<ShowProductSku>
                                                     Text(
                                                       'SUPER DAYFAIR',
                                                       style: GoogleFonts
-                                                          .notoSansThaiLooped(
+                                                          .ibmPlexSansThai(
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w800,
@@ -839,7 +837,7 @@ class _ShowProductCategoryState extends State<ShowProductSku>
                                                           .teaserFlashsale
                                                           .startTime,
                                                       style: GoogleFonts
-                                                          .notoSansThaiLooped(
+                                                          .ibmPlexSansThai(
                                                               fontSize: 12,
                                                               color:
                                                                   Colors.white),
@@ -911,8 +909,8 @@ class _ShowProductCategoryState extends State<ShowProductSku>
                                                   .value!
                                                   .data
                                                   .shippingEstimated,
-                                              style: GoogleFonts
-                                                  .notoSansThaiLooped(
+                                              style:
+                                                  GoogleFonts.ibmPlexSansThai(
                                                       fontSize: 13),
                                             ),
                                           ],
@@ -1028,7 +1026,7 @@ class _ShowProductCategoryState extends State<ShowProductSku>
                                                 Text(
                                                   'จากร้านเดียวกัน',
                                                   style: GoogleFonts
-                                                      .notoSansThaiLooped(
+                                                      .ibmPlexSansThai(
                                                           fontSize: 11,
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -1077,7 +1075,7 @@ class _ShowProductCategoryState extends State<ShowProductSku>
                                         horizontal: 8.0),
                                     child: Text(
                                       'รายละเอียด',
-                                      style: GoogleFonts.notoSansThaiLooped(
+                                      style: GoogleFonts.ibmPlexSansThai(
                                           fontWeight: FontWeight.bold),
                                     )),
                                 const Divider(),
@@ -1097,7 +1095,7 @@ class _ShowProductCategoryState extends State<ShowProductSku>
                                         child: HtmlWidget(
                                           // key: showProductCtr.htmlKeys ?? null,
                                           textStyle:
-                                              GoogleFonts.notoSansThaiLooped(
+                                              GoogleFonts.ibmPlexSansThai(
                                                   fontSize: 14),
                                           '''
                                           ${showProductCtr.productDetail.value!.data.description}
@@ -1177,9 +1175,8 @@ class _ShowProductCategoryState extends State<ShowProductSku>
                                             showProductCtr.isExpanded.value
                                                 ? 'ดูน้อยลง'
                                                 : 'เพิ่มเติม',
-                                            style:
-                                                GoogleFonts.notoSansThaiLooped(
-                                                    fontSize: 14),
+                                            style: GoogleFonts.ibmPlexSansThai(
+                                                fontSize: 14),
                                           ),
                                           Icon(
                                             !showProductCtr.isExpanded.value
@@ -1309,7 +1306,7 @@ class _ShowProductCategoryState extends State<ShowProductSku>
                     children: [
                       Text(
                         shopDetailed.shopName,
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                             fontSize: 14,
                             color: Colors.black,
                             fontWeight: FontWeight.w900),
@@ -1318,12 +1315,12 @@ class _ShowProductCategoryState extends State<ShowProductSku>
                         children: [
                           Text(
                             "รายการสินค้า",
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 color: Colors.grey.shade700, fontSize: 12),
                           ),
                           Text(
                             " ${myFormat.format(shopDetailed.itemCount)} รายการ",
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 color: Colors.grey.shade900, fontSize: 12),
                           ),
                         ],
@@ -1353,7 +1350,7 @@ class _ShowProductCategoryState extends State<ShowProductSku>
                           border: Border.all(color: themeColorDefault)),
                       child: Text(
                         'ดูร้านค้า',
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
                             color: themeColorDefault),
@@ -1377,7 +1374,7 @@ productPriceMain(
         productPrices.priceBeforeDiscount.singleValue > 0
             ? '฿${myFormat.format(productPrices.priceBeforeDiscount.singleValue)} '
             : "฿${myFormat.format(productPrices.priceBeforeDiscount.rangeMin)} - ${myFormat.format(productPrices.priceBeforeDiscount.rangeMax)}",
-        style: GoogleFonts.notoSansThaiLooped(
+        style: GoogleFonts.ibmPlexSansThai(
           color: Colors.deepOrange.shade700,
           fontWeight: FontWeight.w600,
           fontSize: 24,
@@ -1391,7 +1388,7 @@ productPriceMain(
           children: [
             Text(
               '฿${myFormat.format(productPrices.price.singleValue)} ',
-              style: GoogleFonts.notoSansThaiLooped(
+              style: GoogleFonts.ibmPlexSansThai(
                   color: Colors.deepOrange.shade700,
                   fontWeight: FontWeight.w600,
                   fontSize: 24,
@@ -1400,7 +1397,7 @@ productPriceMain(
             if (productPrices.priceBeforeDiscount.singleValue > 0)
               Text(
                 '฿${myFormat.format(productPrices.priceBeforeDiscount.singleValue)}',
-                style: GoogleFonts.notoSansThaiLooped(
+                style: GoogleFonts.ibmPlexSansThai(
                     decoration: TextDecoration.lineThrough,
                     fontSize: 14,
                     height: 2.6,
@@ -1409,7 +1406,7 @@ productPriceMain(
             else
               Text(
                 '฿${myFormat.format(productPrices.priceBeforeDiscount.rangeMin)} - ฿${myFormat.format(productPrices.priceBeforeDiscount.rangeMax)}',
-                style: GoogleFonts.notoSansThaiLooped(
+                style: GoogleFonts.ibmPlexSansThai(
                     decoration: TextDecoration.lineThrough,
                     fontSize: 14,
                     height: 2.6,
@@ -1423,7 +1420,7 @@ productPriceMain(
           children: [
             Text(
               '฿${myFormat.format(productPrices.price.rangeMin)} - ฿${myFormat.format(productPrices.price.rangeMax)}',
-              style: GoogleFonts.notoSansThaiLooped(
+              style: GoogleFonts.ibmPlexSansThai(
                   color: Colors.deepOrange.shade700,
                   fontWeight: FontWeight.w600,
                   fontSize: 24,
@@ -1431,7 +1428,7 @@ productPriceMain(
             ),
             Text(
               '฿${myFormat.format(productPrices.priceBeforeDiscount.rangeMin)} - ฿${myFormat.format(productPrices.priceBeforeDiscount.rangeMax)}',
-              style: GoogleFonts.notoSansThaiLooped(
+              style: GoogleFonts.ibmPlexSansThai(
                   decoration: TextDecoration.lineThrough,
                   fontSize: 14,
                   height: 2.6,
@@ -1449,7 +1446,7 @@ productPriceMain(
           ),
           child: Text(
             '${productPrices.discount} %',
-            style: GoogleFonts.notoSansThaiLooped(
+            style: GoogleFonts.ibmPlexSansThai(
                 color: Colors.deepOrange, fontSize: 10, height: 1.4),
           ),
         )
@@ -1467,7 +1464,7 @@ productPriceDetail(
         productDetail.priceBeforeDiscount.singleValue > 0
             ? '฿${myFormat.format(productDetail.priceBeforeDiscount.singleValue)} '
             : "฿${myFormat.format(productDetail.priceBeforeDiscount.rangeMin)} - ${myFormat.format(productDetail.priceBeforeDiscount.rangeMax)}",
-        style: GoogleFonts.notoSansThaiLooped(
+        style: GoogleFonts.ibmPlexSansThai(
           color: Colors.deepOrange.shade700,
           fontWeight: FontWeight.w600,
           fontSize: 24,
@@ -1482,7 +1479,7 @@ productPriceDetail(
           children: [
             Text(
               '฿${myFormat.format(productDetail.price.singleValue)} ',
-              style: GoogleFonts.notoSansThaiLooped(
+              style: GoogleFonts.ibmPlexSansThai(
                 color: Colors.deepOrange.shade700,
                 fontWeight: FontWeight.w600,
                 fontSize: 24,
@@ -1492,7 +1489,7 @@ productPriceDetail(
             if (productDetail.priceBeforeDiscount.singleValue > 0)
               Text(
                 '฿${myFormat.format(productDetail.priceBeforeDiscount.singleValue)}',
-                style: GoogleFonts.notoSansThaiLooped(
+                style: GoogleFonts.ibmPlexSansThai(
                     decoration: TextDecoration.lineThrough,
                     fontSize: 14,
                     height: 2.6,
@@ -1501,7 +1498,7 @@ productPriceDetail(
             else
               Text(
                 '฿${myFormat.format(productDetail.priceBeforeDiscount.rangeMin)} - ฿${myFormat.format(productDetail.priceBeforeDiscount.rangeMax)}',
-                style: GoogleFonts.notoSansThaiLooped(
+                style: GoogleFonts.ibmPlexSansThai(
                     decoration: TextDecoration.lineThrough,
                     fontSize: 14,
                     height: 2.6,
@@ -1514,7 +1511,7 @@ productPriceDetail(
           children: [
             Text(
               '฿${myFormat.format(productDetail.price.rangeMin)} - ฿${myFormat.format(productDetail.price.rangeMax)}',
-              style: GoogleFonts.notoSansThaiLooped(
+              style: GoogleFonts.ibmPlexSansThai(
                 color: Colors.deepOrange.shade700,
                 fontWeight: FontWeight.w600,
                 fontSize: 24,
@@ -1523,7 +1520,7 @@ productPriceDetail(
             ),
             Text(
               '฿${myFormat.format(productDetail.priceBeforeDiscount.rangeMin)} - ฿${myFormat.format(productDetail.priceBeforeDiscount.rangeMax)}',
-              style: GoogleFonts.notoSansThaiLooped(
+              style: GoogleFonts.ibmPlexSansThai(
                   decoration: TextDecoration.lineThrough,
                   fontSize: 14,
                   height: 2.6,
@@ -1543,7 +1540,7 @@ productPriceDetail(
           ),
           child: Text(
             '${productDetail.discount} %',
-            style: GoogleFonts.notoSansThaiLooped(
+            style: GoogleFonts.ibmPlexSansThai(
                 color: Colors.deepOrange, fontSize: 10, height: 1.4),
           ),
         )

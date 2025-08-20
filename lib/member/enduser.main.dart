@@ -531,8 +531,8 @@ class _EndUserHomeState extends State<EndUserHome>
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8)),
-                    textStyle: GoogleFonts.notoSansThaiLooped())),
-            textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                    textStyle: GoogleFonts.ibmPlexSansThai())),
+            textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
               Theme.of(context).textTheme,
             )),
         child: Scaffold(
@@ -606,7 +606,7 @@ class _EndUserHomeState extends State<EndUserHome>
                           const SizedBox(height: 4),
                           Text(
                             _labels[index],
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                               color: textColor,
                               fontSize: 14,
                               fontWeight: index == _selectedIndex
@@ -635,7 +635,7 @@ class _EndUserHomeState extends State<EndUserHome>
                         const SizedBox(height: 4),
                         Text(
                           _labels[index],
-                          style: GoogleFonts.notoSansThaiLooped(
+                          style: GoogleFonts.ibmPlexSansThai(
                             color: textColor,
                             fontSize: 14,
                             fontWeight: index == _selectedIndex
@@ -708,7 +708,7 @@ class _EndUserHomeState extends State<EndUserHome>
                       const SizedBox(height: 4),
                       Text(
                         _labels[index],
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                           color: textColor,
                           fontSize: 14,
                           fontWeight: index == _selectedIndex
@@ -737,7 +737,7 @@ class _EndUserHomeState extends State<EndUserHome>
                     const SizedBox(height: 4),
                     Text(
                       _labels[index],
-                      style: GoogleFonts.notoSansThaiLooped(
+                      style: GoogleFonts.ibmPlexSansThai(
                         color: textColor,
                         fontSize: 14,
                         fontWeight: index == _selectedIndex
@@ -776,7 +776,7 @@ class _EndUserHomeState extends State<EndUserHome>
               const badges.BadgeAnimation.slide(loopAnimation: false),
           badgeContent: Text(
             notiCtr.countNoti!.data.totalNotifications.toString(),
-            style: GoogleFonts.notoSansThaiLooped(
+            style: GoogleFonts.ibmPlexSansThai(
                 height: 1, color: Colors.white, fontSize: 10),
           ),
           child: child_);

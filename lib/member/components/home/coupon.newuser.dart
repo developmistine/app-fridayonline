@@ -103,7 +103,7 @@ class _CouponNewUserState extends State<CouponNewUser> {
                                                   overflow:
                                                       TextOverflow.ellipsis,
                                                   style: GoogleFonts
-                                                      .notoSansThaiLooped(
+                                                      .ibmPlexSansThai(
                                                           fontSize: 13,
                                                           fontWeight:
                                                               FontWeight.bold),
@@ -111,7 +111,7 @@ class _CouponNewUserState extends State<CouponNewUser> {
                                                 Text(
                                                   "ขั้นต่ำ ฿${coupon.rewardInfo.minSpend}",
                                                   style: GoogleFonts
-                                                      .notoSansThaiLooped(
+                                                      .ibmPlexSansThai(
                                                           fontSize: 12,
                                                           color: Colors
                                                               .grey.shade700),
@@ -125,7 +125,7 @@ class _CouponNewUserState extends State<CouponNewUser> {
                                                       coupon
                                                           .timeInfo.timeFormat,
                                                       style: GoogleFonts
-                                                          .notoSansThaiLooped(
+                                                          .ibmPlexSansThai(
                                                               fontSize: 12,
                                                               color: Colors.grey
                                                                   .shade600),
@@ -143,7 +143,7 @@ class _CouponNewUserState extends State<CouponNewUser> {
                                                       child: Text(
                                                         "เงื่อนไข",
                                                         style: GoogleFonts
-                                                            .notoSansThaiLooped(
+                                                            .ibmPlexSansThai(
                                                                 fontSize: 12,
                                                                 color:
                                                                     themeColorDefault),
@@ -191,7 +191,7 @@ class _CouponNewUserState extends State<CouponNewUser> {
                                                           Text(
                                                             res.message,
                                                             style: GoogleFonts
-                                                                .notoSansThaiLooped(
+                                                                .ibmPlexSansThai(
                                                                     color: Colors
                                                                         .white,
                                                                     fontSize:
@@ -293,7 +293,7 @@ class _CouponNewUserState extends State<CouponNewUser> {
                                                 child: Text(
                                                   'ใช้โค้ด',
                                                   style: GoogleFonts
-                                                      .notoSansThaiLooped(
+                                                      .ibmPlexSansThai(
                                                     color: themeColorDefault,
                                                     fontSize: 10,
                                                   ),
@@ -333,7 +333,7 @@ class _CouponNewUserState extends State<CouponNewUser> {
                         Text(
                           endUserHomeCtr
                               .homeVouchersNewUser!.value.data.contentHeader,
-                          style: GoogleFonts.notoSansThaiLooped(
+                          style: GoogleFonts.ibmPlexSansThai(
                               height: 1,
                               color: Colors.white,
                               fontWeight: FontWeight.bold),

@@ -40,7 +40,7 @@ class _EndUserNewAddressState extends State<B2cRequestEtax> {
   InputDecoration textFieldstyle(Widget e) {
     return InputDecoration(
       label: e,
-      labelStyle: GoogleFonts.notoSansThaiLooped(),
+      labelStyle: GoogleFonts.ibmPlexSansThai(),
       filled: true,
       fillColor: Colors.white,
       isDense: true,
@@ -227,13 +227,13 @@ class _EndUserNewAddressState extends State<B2cRequestEtax> {
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8)),
-                    textStyle: GoogleFonts.notoSansThaiLooped())),
+                    textStyle: GoogleFonts.ibmPlexSansThai())),
             outlinedButtonTheme: OutlinedButtonThemeData(
                 style: OutlinedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8)),
-                    textStyle: GoogleFonts.notoSansThaiLooped())),
-            textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                    textStyle: GoogleFonts.ibmPlexSansThai())),
+            textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
               Theme.of(context).textTheme,
             ),
           ),
@@ -437,8 +437,8 @@ class _EndUserNewAddressState extends State<B2cRequestEtax> {
                                                       maxLength,
                                                       required isFocused}) =>
                                                   null,
-                                              style: GoogleFonts
-                                                  .notoSansThaiLooped(
+                                              style:
+                                                  GoogleFonts.ibmPlexSansThai(
                                                       fontSize: 13,
                                                       color: Colors.black),
                                               inputFormatters: [
@@ -545,8 +545,8 @@ class _EndUserNewAddressState extends State<B2cRequestEtax> {
                                                       maxLength,
                                                       required isFocused}) =>
                                                   null,
-                                              style: GoogleFonts
-                                                  .notoSansThaiLooped(
+                                              style:
+                                                  GoogleFonts.ibmPlexSansThai(
                                                       fontSize: 13,
                                                       color: Colors.black),
                                               inputFormatters: [
@@ -736,7 +736,7 @@ class _EndUserNewAddressState extends State<B2cRequestEtax> {
                 Text(
                   msg,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.notoSansThaiLooped(fontSize: 13),
+                  style: GoogleFonts.ibmPlexSansThai(fontSize: 13),
                 ),
                 const SizedBox(
                   height: 4,
@@ -751,7 +751,7 @@ class _EndUserNewAddressState extends State<B2cRequestEtax> {
                     width: Get.width,
                     child: Text(
                       'ตกลง',
-                      style: GoogleFonts.notoSansThaiLooped(
+                      style: GoogleFonts.ibmPlexSansThai(
                           color: themeColorDefault, fontSize: 14),
                     ),
                   ),
@@ -787,7 +787,7 @@ class _EndUserNewAddressState extends State<B2cRequestEtax> {
                 Text(
                   msg,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.notoSansThaiLooped(
+                  style: GoogleFonts.ibmPlexSansThai(
                       fontSize: 13, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
@@ -806,7 +806,7 @@ class _EndUserNewAddressState extends State<B2cRequestEtax> {
                           width: Get.width,
                           child: Text(
                             'ยกเลิก',
-                            style: GoogleFonts.notoSansThaiLooped(fontSize: 14),
+                            style: GoogleFonts.ibmPlexSansThai(fontSize: 14),
                           ),
                         ),
                       ),
@@ -828,7 +828,7 @@ class _EndUserNewAddressState extends State<B2cRequestEtax> {
                                 ),
                                 Text(
                                   "คุณไม่สามารถลบที่อยู่ตั้งต้นได้",
-                                  style: GoogleFonts.notoSansThaiLooped(
+                                  style: GoogleFonts.ibmPlexSansThai(
                                     color: Colors.white,
                                     fontSize: 13,
                                   ),
@@ -897,7 +897,7 @@ class _EndUserNewAddressState extends State<B2cRequestEtax> {
                           width: Get.width,
                           child: Text(
                             'ลบ',
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 color: themeColorDefault, fontSize: 14),
                           ),
                         ),

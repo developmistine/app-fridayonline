@@ -71,8 +71,8 @@ class _BundleProductsState extends State<BundleProducts> {
                       style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)),
-                          textStyle: GoogleFonts.notoSansThaiLooped())),
-                  textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                          textStyle: GoogleFonts.ibmPlexSansThai())),
+                  textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
                     Theme.of(context).textTheme,
                   ),
                 ),
@@ -93,7 +93,7 @@ class _BundleProductsState extends State<BundleProducts> {
                           ),
                           Text(
                             'ไม่พบข้อมูลสินค้า',
-                            style: GoogleFonts.notoSansThaiLooped(),
+                            style: GoogleFonts.ibmPlexSansThai(),
                           )
                         ],
                       ),
@@ -129,7 +129,7 @@ class _BundleProductsState extends State<BundleProducts> {
                               Expanded(
                                 child: Text(
                                   prouduct.bundleDealDetail,
-                                  style: GoogleFonts.notoSansThaiLooped(
+                                  style: GoogleFonts.ibmPlexSansThai(
                                     fontSize: 12,
                                   ),
                                 ),

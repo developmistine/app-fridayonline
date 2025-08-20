@@ -18,7 +18,7 @@ appBarNoSearchEndUser(String titles, {String? page}) {
           .copyWith(textScaler: const TextScaler.linear(1.0)),
       child: Theme(
         data: Theme.of(Get.context!).copyWith(
-          textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+          textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
             Theme.of(Get.context!).textTheme,
           ),
         ),
@@ -39,7 +39,7 @@ appBarNoSearchEndUser(String titles, {String? page}) {
           backgroundColor: Colors.white,
           title: Text(
             titles,
-            style: GoogleFonts.notoSansThaiLooped(
+            style: GoogleFonts.ibmPlexSansThai(
                 color: Colors.black,
                 fontSize: 16,
                 fontWeight: FontWeight.normal),
@@ -56,12 +56,12 @@ appBarNoSearchEndUser(String titles, {String? page}) {
                     return cartCtr.isLoadingCart.value
                         ? Text(
                             '0',
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 height: 1, color: Colors.white, fontSize: 10),
                           )
                         : Text(
                             '${cartCtr.cartItems!.value.data.map((e) => e.items.length).fold(0, (previousValue, element) => previousValue + element)}',
-                            style: GoogleFonts.notoSansThaiLooped(
+                            style: GoogleFonts.ibmPlexSansThai(
                                 height: 1, color: Colors.white, fontSize: 10),
                           );
                   }),
@@ -91,7 +91,7 @@ appBarNoSearchEndUser(String titles, {String? page}) {
                   badgeContent: Obx(() {
                     return Text(
                       chatCtr.countChat.value.toString(),
-                      style: GoogleFonts.notoSansThaiLooped(
+                      style: GoogleFonts.ibmPlexSansThai(
                           height: 1, color: Colors.white, fontSize: 10),
                     );
                   }),

@@ -74,8 +74,8 @@ class _ChatAppState extends State<ChatApp> {
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
-                  textStyle: GoogleFonts.notoSansThaiLooped())),
-          textTheme: GoogleFonts.notoSansThaiLoopedTextTheme(
+                  textStyle: GoogleFonts.ibmPlexSansThai())),
+          textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
             Theme.of(context).textTheme,
           ),
         ),
@@ -100,7 +100,7 @@ class _ChatAppState extends State<ChatApp> {
                       ),
                       Text(
                         'ยังไม่มีประวัติการสนทนา',
-                        style: GoogleFonts.notoSansThaiLooped(
+                        style: GoogleFonts.ibmPlexSansThai(
                             color: Colors.grey.shade600,
                             fontWeight: FontWeight.w500),
                       ),
@@ -231,7 +231,7 @@ class _ChatAppState extends State<ChatApp> {
                                                       Text(
                                                         shop.sellerName,
                                                         style: GoogleFonts
-                                                            .notoSansThaiLooped(
+                                                            .ibmPlexSansThai(
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .bold,
@@ -245,7 +245,7 @@ class _ChatAppState extends State<ChatApp> {
                                                         overflow: TextOverflow
                                                             .ellipsis,
                                                         style: GoogleFonts
-                                                            .notoSansThaiLooped(
+                                                            .ibmPlexSansThai(
                                                                 fontSize: 13,
                                                                 color: Colors
                                                                     .grey
@@ -262,7 +262,7 @@ class _ChatAppState extends State<ChatApp> {
                                                       formatContactChatTime(
                                                           shop.lastSend),
                                                       style: GoogleFonts
-                                                          .notoSansThaiLooped(
+                                                          .ibmPlexSansThai(
                                                               fontSize: 11,
                                                               color: Colors.grey
                                                                   .shade500),
@@ -282,7 +282,7 @@ class _ChatAppState extends State<ChatApp> {
                                                           shop.unRead
                                                               .toString(),
                                                           style: GoogleFonts
-                                                              .notoSansThaiLooped(
+                                                              .ibmPlexSansThai(
                                                                   height: 1,
                                                                   fontSize: 11,
                                                                   color: Colors

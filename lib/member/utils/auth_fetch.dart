@@ -126,6 +126,7 @@ class AuthFetch {
   }) async {
     final prefs = await SharedPreferences.getInstance();
     String? accessToken = prefs.getString('accessToken');
+    printWhite(accessToken);
 
     Map<String, String> requestHeaders = {
       'Authorization': 'Bearer $accessToken',
@@ -210,6 +211,7 @@ class AuthFetch {
             data['access_token'].toString().isNotEmpty &&
             data['refresh_token'] != null &&
             data['refresh_token'].toString().isNotEmpty) {
+          printWhite(data['access_token'].toString());
           await prefs.setString('accessToken', data['access_token']);
           await prefs.setString('refreshToken', data['refresh_token']);
 
