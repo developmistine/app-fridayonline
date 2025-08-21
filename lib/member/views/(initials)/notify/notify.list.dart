@@ -92,7 +92,7 @@ class _NotifyListState extends State<NotifyList> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Image.asset('assets/images/home/zero_noti.png',
+                        Image.asset('assets/images/error/zero_noti.png',
                             width: 150),
                         const Text(
                           "ไม่พบข้อมูลการแจ้งเตือน",
