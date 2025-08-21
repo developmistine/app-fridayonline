@@ -3,6 +3,7 @@ import 'package:fridayonline/member/components/appbar/appbar.master.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:fridayonline/safearea.dart';
 import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
@@ -89,26 +90,28 @@ class _WebViewAppState extends State<WebViewApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: appBarMasterEndUser(widget.mparamTitleName!),
-      body: Container(
-        color: Colors.grey.shade100,
-        child: Stack(
-          alignment: Alignment.center,
-          children: <Widget>[
-            WebViewWidget(
-              key: _key,
-              gestureRecognizers: gestureRecognizers,
-              controller: controller,
-            ),
-            if (isWebViewLoading)
-              Container(
-                color: Colors.white,
-                child: const Center(
-                  child: CircularProgressIndicator.adaptive(),
-                ),
-              )
-          ],
+    return SafeAreaProvider(
+      child: Scaffold(
+        appBar: appBarMasterEndUser(widget.mparamTitleName!),
+        body: Container(
+          color: Colors.grey.shade100,
+          child: Stack(
+            alignment: Alignment.center,
+            children: <Widget>[
+              WebViewWidget(
+                key: _key,
+                gestureRecognizers: gestureRecognizers,
+                controller: controller,
+              ),
+              if (isWebViewLoading)
+                Container(
+                  color: Colors.white,
+                  child: const Center(
+                    child: CircularProgressIndicator.adaptive(),
+                  ),
+                )
+            ],
+          ),
         ),
       ),
     );
