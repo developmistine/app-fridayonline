@@ -255,26 +255,30 @@ class _UploadReviewImageandVideoState extends State<UploadReviewImageandVideo> {
                   await _openImagePicker();
                 }
               },
-              child: DottedBorder(
-                borderType: BorderType.RRect,
-                radius: const Radius.circular(10),
-                dashPattern: const [6, 2],
-                strokeWidth: 0.5,
-                color: Colors.grey.shade700,
-                child: Container(
-                  padding: const EdgeInsets.all(12.0),
-                  alignment: Alignment.center,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(Icons.camera_alt_outlined,
-                          size: 28, color: Colors.grey.shade700),
-                      Text(
-                        'รูปภาพ',
-                        style: TextStyle(
-                            fontSize: 12, color: Colors.grey.shade700),
-                      ),
-                    ],
+              child: DecoratedBox(
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                child: DottedBorder(
+                  options: RectDottedBorderOptions(
+                    dashPattern: const [6, 2],
+                    strokeWidth: 0.5,
+                    color: Colors.grey.shade700,
+                  ),
+                  child: Container(
+                    padding: const EdgeInsets.all(12.0),
+                    alignment: Alignment.center,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.camera_alt_outlined,
+                            size: 28, color: Colors.grey.shade700),
+                        Text(
+                          'รูปภาพ',
+                          style: TextStyle(
+                              fontSize: 12, color: Colors.grey.shade700),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -286,26 +290,30 @@ class _UploadReviewImageandVideoState extends State<UploadReviewImageandVideo> {
                 isPlay = true;
                 _openVidePicker();
               },
-              child: DottedBorder(
-                borderType: BorderType.RRect,
-                radius: const Radius.circular(10),
-                dashPattern: const [6, 2],
-                strokeWidth: 0.5,
-                color: Colors.grey.shade700,
-                child: Container(
-                  padding: const EdgeInsets.all(12.0),
-                  alignment: Alignment.center,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(Icons.videocam_outlined,
-                          size: 28, color: Colors.grey.shade700),
-                      Text(
-                        'วิดีโอ',
-                        style: TextStyle(
-                            fontSize: 12, color: Colors.grey.shade700),
-                      ),
-                    ],
+              child: DecoratedBox(
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                child: DottedBorder(
+                  options: RectDottedBorderOptions(
+                    dashPattern: const [6, 2],
+                    strokeWidth: 0.5,
+                    color: Colors.grey.shade700,
+                  ),
+                  child: Container(
+                    padding: const EdgeInsets.all(12.0),
+                    alignment: Alignment.center,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.videocam_outlined,
+                            size: 28, color: Colors.grey.shade700),
+                        Text(
+                          'วิดีโอ',
+                          style: TextStyle(
+                              fontSize: 12, color: Colors.grey.shade700),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

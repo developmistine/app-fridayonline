@@ -12,7 +12,7 @@ class SetData {
   Future<String> device = setDevice();
   Future<String> enduserId = setEnduserId();
   Future<String> loginStatus = setLoginStatus();
-  Future<String> imei = setImei();
+  // Future<String> imei = setImei();
   Future<String> deviceNameMobile = setDeviceNameMobile();
   Future<String> tokenChat = setTokenChat();
 
@@ -192,12 +192,12 @@ Future<String> setuserTypeMarket() async {
   return userTypeMarket;
 }
 
-Future<String> setImei() async {
-  final Future<SharedPreferences> pref = SharedPreferences.getInstance();
-  final SharedPreferences prefs = await pref;
-  String mIMEI = prefs.getString("IMEI").toString();
-  return mIMEI;
-}
+// Future<String> setImei() async {
+//   final Future<SharedPreferences> pref = SharedPreferences.getInstance();
+//   final SharedPreferences prefs = await pref;
+//   String mIMEI = prefs.getString("IMEI").toString();
+//   return mIMEI;
+// }
 
 Future<String> setEnduserName() async {
   final Future<SharedPreferences> pref = SharedPreferences.getInstance();

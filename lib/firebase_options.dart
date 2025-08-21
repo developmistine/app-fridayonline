@@ -41,50 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBnztLwDgSNj80Q0Ot8zLbQkASZhc_-Wp0',
-    appId: '1:804780745431:web:68ecda4d6963c78cbbc692',
-    messagingSenderId: '804780745431',
-    projectId: 'mistineapp',
-    authDomain: 'mistineapp.firebaseapp.com',
-    storageBucket: 'mistineapp.appspot.com',
-    measurementId: 'G-WCRNLC37SD',
+    apiKey: 'AIzaSyDhCzOe_waDSU9KhQdbMsxKoQG5sibwXts',
+    appId: '1:436932745041:web:350f7524e8eb60b36d2570',
+    messagingSenderId: '436932745041',
+    projectId: 'friday-online-40aa7',
+    authDomain: 'friday-online-40aa7.firebaseapp.com',
+    storageBucket: 'friday-online-40aa7.firebasestorage.app',
+    measurementId: 'G-HLD6MY8ZKR',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD-0BGCzvcekNpbimjEoDnzJvqDYb6m3QM',
-    appId: '1:804780745431:android:0defd3fb14910376bbc692',
-    messagingSenderId: '804780745431',
-    projectId: 'mistineapp',
-    storageBucket: 'mistineapp.appspot.com',
+    apiKey: 'AIzaSyCjvJA2BHkFegQ3saNwwzNuDizw6bjGLIE',
+    appId: '1:436932745041:android:ca77bd7efc6a0be26d2570',
+    messagingSenderId: '436932745041',
+    projectId: 'friday-online-40aa7',
+    storageBucket: 'friday-online-40aa7.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyA7iMYb1FThG4cYn-qQHg71RJZn9o8fBPg',
-    appId: '1:804780745431:ios:8170dac1427645e6bbc692',
-    messagingSenderId: '804780745431',
-    projectId: 'mistineapp',
-    storageBucket: 'mistineapp.appspot.com',
-    iosClientId:
-        '804780745431-sbt9pk311aats776crgprcauhas6hpjl.apps.googleusercontent.com',
-    iosBundleId: 'com.betterway.yupin',
+    apiKey: 'AIzaSyAbnGeT6cZVKfjLmm1oDrLshqhc6zKUJeM',
+    appId: '1:436932745041:ios:acd40b2d53799ae36d2570',
+    messagingSenderId: '436932745041',
+    projectId: 'friday-online-40aa7',
+    storageBucket: 'friday-online-40aa7.firebasestorage.app',
+    iosBundleId: 'com.example.fridayOnline',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyA7iMYb1FThG4cYn-qQHg71RJZn9o8fBPg',
-    appId: '1:804780745431:ios:0b2c07ce8a277635bbc692',
-    messagingSenderId: '804780745431',
-    projectId: 'mistineapp',
-    storageBucket: 'mistineapp.appspot.com',
-    iosBundleId: 'com.example.fridayonline',
+    apiKey: 'AIzaSyAbnGeT6cZVKfjLmm1oDrLshqhc6zKUJeM',
+    appId: '1:436932745041:ios:acd40b2d53799ae36d2570',
+    messagingSenderId: '436932745041',
+    projectId: 'friday-online-40aa7',
+    storageBucket: 'friday-online-40aa7.firebasestorage.app',
+    iosBundleId: 'com.example.fridayOnline',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyBnztLwDgSNj80Q0Ot8zLbQkASZhc_-Wp0',
-    appId: '1:804780745431:web:67e441b292dc3295bbc692',
-    messagingSenderId: '804780745431',
-    projectId: 'mistineapp',
-    authDomain: 'mistineapp.firebaseapp.com',
-    storageBucket: 'mistineapp.appspot.com',
-    measurementId: 'G-R1TFR7MGEE',
+    apiKey: 'AIzaSyDhCzOe_waDSU9KhQdbMsxKoQG5sibwXts',
+    appId: '1:436932745041:web:621a7fcd69214af36d2570',
+    messagingSenderId: '436932745041',
+    projectId: 'friday-online-40aa7',
+    authDomain: 'friday-online-40aa7.firebaseapp.com',
+    storageBucket: 'friday-online-40aa7.firebasestorage.app',
+    measurementId: 'G-8RLL76LY94',
   );
+
 }

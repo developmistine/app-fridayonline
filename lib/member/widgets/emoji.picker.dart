@@ -120,7 +120,6 @@ class MyAppState extends State<EmojiDev> {
                               ? 1.2
                               : 1.0),
                     ),
-                    swapCategoryAndBottomBar: false,
                     skinToneConfig: const SkinToneConfig(),
                     categoryViewConfig: const CategoryViewConfig(),
                     bottomActionBarConfig: const BottomActionBarConfig(),

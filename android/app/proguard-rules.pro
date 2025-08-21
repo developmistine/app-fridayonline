@@ -1,3 +1,0 @@
--keep class com.google.android.gms.** { *; }
--keep class com.huawei.hms.ads.** { *; }
--keep interface com.huawei.hms.ads.** { *; }

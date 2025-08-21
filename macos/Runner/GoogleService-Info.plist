@@ -2,18 +2,22 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CLIENT_ID</key>
+	<string>436932745041-562nv5msbpkrf5vot9c93f8vn6v0gpbl.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.436932745041-562nv5msbpkrf5vot9c93f8vn6v0gpbl</string>
 	<key>API_KEY</key>
-	<string>AIzaSyA7iMYb1FThG4cYn-qQHg71RJZn9o8fBPg</string>
+	<string>AIzaSyAbnGeT6cZVKfjLmm1oDrLshqhc6zKUJeM</string>
 	<key>GCM_SENDER_ID</key>
-	<string>804780745431</string>
+	<string>436932745041</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.fridayonline</string>
+	<string>com.example.fridayOnline</string>
 	<key>PROJECT_ID</key>
-	<string>mistineapp</string>
+	<string>friday-online-40aa7</string>
 	<key>STORAGE_BUCKET</key>
-	<string>mistineapp.appspot.com</string>
+	<string>friday-online-40aa7.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:804780745431:ios:0b2c07ce8a277635bbc692</string>
+	<string>1:436932745041:ios:acd40b2d53799ae36d2570</string>
 </dict>
 </plist>

@@ -12,7 +12,8 @@ class BannerProject extends StatelessWidget {
       child: GestureDetector(
         onTap: () {
           Get.to(() => const WebViewApp(
-              mparamurl: "https://www.friday.co.th:8443/projects/pa-insurance",
+              mparamurl:
+                  "https://sp.fridayth.com/webnew/b2cpoint?cust_id=381&member_code=N2501&content_type=special&content_id=1091&device=web",
               mparamTitleName: 'โครงการพิเศษ'));
         },
         child: ClipRRect(

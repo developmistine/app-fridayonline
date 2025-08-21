@@ -20,17 +20,17 @@ import "package:fridayonline/theme.dart";
 import "package:firebase_analytics/firebase_analytics.dart";
 import "package:firebase_messaging/firebase_messaging.dart";
 import "package:flutter/material.dart";
-import "package:flutter/scheduler.dart";
+// import "package:flutter/scheduler.dart";
 import "package:flutter/services.dart";
 import "package:get/get.dart";
-import "package:flutter/foundation.dart" as foundation;
+// import "package:flutter/foundation.dart" as foundation;
 import "package:google_fonts/google_fonts.dart";
-import "package:huawei_push/huawei_push.dart" as huawei;
-import "package:uni_links/uni_links.dart";
+// import "package:huawei_push/huawei_push.dart" as huawei;
+// import "package:uni_links/uni_links.dart";
 import "package:badges/badges.dart" as badges;
-import "package:shared_preferences/shared_preferences.dart";
+// import "package:shared_preferences/shared_preferences.dart";
 
-bool _initialURILinkHandled = false;
+// bool _initialURILinkHandled = false;
 
 class EndUserHome extends StatefulWidget {
   EndUserHome({super.key});
@@ -56,7 +56,7 @@ class _EndUserHomeState extends State<EndUserHome>
   List<Widget>? _pages;
   String lslogin = "0";
 
-  Uri? _initialURI;
+  // Uri? _initialURI;
   StreamSubscription? _streamSubscription;
   String mChannel = "";
 
@@ -88,102 +88,102 @@ class _EndUserHomeState extends State<EndUserHome>
     }
   }
 
-  void initURIHandler() async {
-    if (!_initialURILinkHandled) {
-      _initialURILinkHandled = true;
-      try {
-        final initialURI = await getInitialUri();
-        // Use the initialURI and warn the user if it is not correct,
-        // but keep in mind it could be `null`.
-        if (initialURI != null) {
-          debugPrint("Initial URI received : $initialURI");
-          if (!mounted) {
-            return;
-          }
+  // void initURIHandler() async {
+  //   if (!_initialURILinkHandled) {
+  //     _initialURILinkHandled = true;
+  //     try {
+  //       final initialURI = await getInitialUri();
+  //       // Use the initialURI and warn the user if it is not correct,
+  //       // but keep in mind it could be `null`.
+  //       if (initialURI != null) {
+  //         debugPrint("Initial URI received : $initialURI");
+  //         if (!mounted) {
+  //           return;
+  //         }
 
-          var url = initialURI.queryParameters;
-          String? repCodeParam = url["parent_id"];
-          String? usertype = url["usertype"];
-          String? refid = url["refid"];
-          String? refcode = url["refcode"];
-          String? channelId = url["channel"];
-          String? typeparam = url["typeparam"];
-          String? valueparam = url["valueparam"];
-          String? parentId = url["parent_id"];
-          String? linkId = url["linkId"];
+  //         var url = initialURI.queryParameters;
+  //         String? repCodeParam = url["parent_id"];
+  //         String? usertype = url["usertype"];
+  //         String? refid = url["refid"];
+  //         String? refcode = url["refcode"];
+  //         String? channelId = url["channel"];
+  //         String? typeparam = url["typeparam"];
+  //         String? valueparam = url["valueparam"];
+  //         String? parentId = url["parent_id"];
+  //         String? linkId = url["linkId"];
 
-          setState(() {
-            _initialURI = initialURI;
-          });
-          SchedulerBinding.instance.addPostFrameCallback((_) {
-            if (_initialURI != null) {
-              gotopageParam(usertype, refid, refcode, channelId, typeparam,
-                  valueparam, repCodeParam, parentId, linkId);
-            }
-          });
-        } else {
-          // _initialURILinkHandled = false;
-          debugPrint("Null Initial URI received");
-        }
-      } on PlatformException {
-        // Platform messages may fail, so we use a try/catch PlatformException.
-        // Handle exception by warning the user their action did not succeed
-        debugPrint("Failed to receive initial uri");
-      } on FormatException {
-        if (!mounted) {
-          return;
-        }
-        debugPrint("Malformed Initial URI received");
-      }
-    }
-  }
+  //         setState(() {
+  //           _initialURI = initialURI;
+  //         });
+  //         SchedulerBinding.instance.addPostFrameCallback((_) {
+  //           if (_initialURI != null) {
+  //             gotopageParam(usertype, refid, refcode, channelId, typeparam,
+  //                 valueparam, repCodeParam, parentId, linkId);
+  //           }
+  //         });
+  //       } else {
+  //         // _initialURILinkHandled = false;
+  //         debugPrint("Null Initial URI received");
+  //       }
+  //     } on PlatformException {
+  //       // Platform messages may fail, so we use a try/catch PlatformException.
+  //       // Handle exception by warning the user their action did not succeed
+  //       debugPrint("Failed to receive initial uri");
+  //     } on FormatException {
+  //       if (!mounted) {
+  //         return;
+  //       }
+  //       debugPrint("Malformed Initial URI received");
+  //     }
+  //   }
+  // }
 
   // Handle incoming deeplink. while app open.
-  void incomingLinkHandler() {
-    if (!foundation.kIsWeb) {
-      _streamSubscription = uriLinkStream.listen((Uri? uri) {
-        if (!mounted) {
-          return;
-        }
-        // FlutterBranchSdk.handleDeepLink("$uri");
-      }, onError: (Object err) {
-        if (!mounted) {
-          return;
-        }
-        debugPrint("Error occurred: $err");
-        setState(() {
-          _initialURI = null;
-          if (err is FormatException) {
-          } else {}
-        });
-      });
-    }
-  }
+  // void incomingLinkHandler() {
+  //   if (!foundation.kIsWeb) {
+  //     _streamSubscription = uriLinkStream.listen((Uri? uri) {
+  //       if (!mounted) {
+  //         return;
+  //       }
+  //       // FlutterBranchSdk.handleDeepLink("$uri");
+  //     }, onError: (Object err) {
+  //       if (!mounted) {
+  //         return;
+  //       }
+  //       debugPrint("Error occurred: $err");
+  //       setState(() {
+  //         _initialURI = null;
+  //         if (err is FormatException) {
+  //         } else {}
+  //       });
+  //     });
+  //   }
+  // }
 
   // Huawei push notificaiton
-  void backgroundMessageCallback(huawei.RemoteMessage remoteMessage) async {
-    String data = remoteMessage.data as String;
-    huawei.Push.localNotification({
-      huawei.HMSLocalNotificationAttr.TITLE: "[Headless] DataMessage Received",
-      huawei.HMSLocalNotificationAttr.MESSAGE: data
-    });
-  }
+  // void backgroundMessageCallback(huawei.RemoteMessage remoteMessage) async {
+  //   String data = remoteMessage.data as String;
+  //   huawei.Push.localNotification({
+  //     huawei.HMSLocalNotificationAttr.TITLE: "[Headless] DataMessage Received",
+  //     huawei.HMSLocalNotificationAttr.MESSAGE: data
+  //   });
+  // }
 
   // on message received push huawei.
-  void _onMessageReceived(huawei.RemoteMessage remoteMessage) {
-    String? data = remoteMessage.data;
-    if (data != null) {
-      huawei.Push.localNotification(
-        <String, String>{
-          huawei.HMSLocalNotificationAttr.TITLE: "DataMessage Received",
-          huawei.HMSLocalNotificationAttr.MESSAGE: data,
-        },
-      );
-      //showResult("onMessageReceived", "Data: $data");
-    } else {
-      //showResult("onMessageReceived", "No data is present.");
-    }
-  }
+  // void _onMessageReceived(huawei.RemoteMessage remoteMessage) {
+  //   String? data = remoteMessage.data;
+  //   if (data != null) {
+  //     huawei.Push.localNotification(
+  //       <String, String>{
+  //         huawei.HMSLocalNotificationAttr.TITLE: "DataMessage Received",
+  //         huawei.HMSLocalNotificationAttr.MESSAGE: data,
+  //       },
+  //     );
+  //     //showResult("onMessageReceived", "Data: $data");
+  //   } else {
+  //     //showResult("onMessageReceived", "No data is present.");
+  //   }
+  // }
 
   void showResult(
     String name, [
@@ -191,22 +191,22 @@ class _EndUserHomeState extends State<EndUserHome>
   ]) {
     msg ??= "";
     debugPrint("[$name]: $msg");
-    huawei.Push.showToast("[$name]: $msg");
+    // huawei.Push.showToast("[$name]: $msg");
   }
 
-  void _onRemoteMessageSendStatus(String event) {
-    // showResult("RemoteMessageSendStatus", "Status: $event");
-  }
+  // void _onRemoteMessageSendStatus(String event) {
+  //   // showResult("RemoteMessageSendStatus", "Status: $event");
+  // }
 
-  void _onNewIntent(String? intentString) {
-    intentString = intentString ?? "";
-    if (intentString != "") {}
-  }
+  // void _onNewIntent(String? intentString) {
+  //   intentString = intentString ?? "";
+  //   if (intentString != "") {}
+  // }
 
-  void _onIntentError(Object err) {
-    PlatformException e = err as PlatformException;
-    debugPrint("Error on intent stream:  $e.toString()");
-  }
+  // void _onIntentError(Object err) {
+  //   PlatformException e = err as PlatformException;
+  //   debugPrint("Error on intent stream:  $e.toString()");
+  // }
 
   // Received message push huawei
   Future<void> initPlatformState() async {
@@ -216,38 +216,38 @@ class _EndUserHomeState extends State<EndUserHome>
     if (mdevice != "ios") {
       if (!mounted) return;
       try {
-        await huawei.Push.setAutoInitEnabled(true);
+        // await huawei.Push.setAutoInitEnabled(true);
 
-        huawei.Push.onNotificationOpenedApp.listen(_onNotificationOpenedApp);
-        dynamic initialNotification =
-            await huawei.Push.getInitialNotification();
+        // huawei.Push.onNotificationOpenedApp.listen(_onNotificationOpenedApp);
+        // dynamic initialNotification =
+        //     await huawei.Push.getInitialNotification();
 
-        huawei.Push.getIntentStream
-            .listen(_onNewIntent, onError: _onIntentError);
-        String? intent = await huawei.Push.getInitialIntent();
-        _onNewIntent(intent);
-        _onNotificationOpenedApp(initialNotification);
+        // huawei.Push.getIntentStream
+        //     .listen(_onNewIntent, onError: _onIntentError);
+        // String? intent = await huawei.Push.getInitialIntent();
+        // _onNewIntent(intent);
+        // _onNotificationOpenedApp(initialNotification);
 
-        huawei.Push.onMessageReceivedStream.listen(
-          _onMessageReceived,
-          //onError: _onMessageReceiveError,
-        );
+        // huawei.Push.onMessageReceivedStream.listen(
+        //   _onMessageReceived,
+        //   //onError: _onMessageReceiveError,
+        // );
 
-        huawei.Push.getRemoteMsgSendStatusStream.listen(
-          _onRemoteMessageSendStatus,
-          //onError: _onRemoteMessageSendError,
-        );
+        // huawei.Push.getRemoteMsgSendStatusStream.listen(
+        //   _onRemoteMessageSendStatus,
+        //   //onError: _onRemoteMessageSendError,
+        // );
       } catch (e) {
         debugPrint("catch huawei.Push");
       }
     }
   }
 
-  _onNotificationOpenedApp(dynamic initalNotification) {
-    if (initalNotification != null) {
-      //showResult("onNotificationOpenedApp", initalNotification.toString());
-    }
-  }
+  // _onNotificationOpenedApp(dynamic initalNotification) {
+  //   if (initalNotification != null) {
+  //     //showResult("onNotificationOpenedApp", initalNotification.toString());
+  //   }
+  // }
 
   @override
   void initState() {
@@ -265,8 +265,8 @@ class _EndUserHomeState extends State<EndUserHome>
     checkShowFair();
     _onItemTapped(mAppbarBackReload);
     // getFirebaseMessage();
-    incomingLinkHandler();
-    initURIHandler();
+    // incomingLinkHandler();
+    // initURIHandler();
     //new dynamiclink
     _branchManager = BranchManager();
     // เริ่ม listen dynamic links
@@ -275,18 +275,18 @@ class _EndUserHomeState extends State<EndUserHome>
     // _checkAndProcessFirstInstall();
   }
 
-  void _checkAndProcessFirstInstall() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool isFirstLaunch = prefs.getBool("is_first_launch") ?? true;
+  // void _checkAndProcessFirstInstall() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool isFirstLaunch = prefs.getBool("is_first_launch") ?? true;
 
-    if (isFirstLaunch) {
-      // ประมวลผล Branch data ครั้งแรก
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        _branchManager.getBranchData(context);
-      });
-      await prefs.setBool("is_first_launch", false);
-    }
-  }
+  //   if (isFirstLaunch) {
+  //     // ประมวลผล Branch data ครั้งแรก
+  //     WidgetsBinding.instance.addPostFrameCallback((_) {
+  //       _branchManager.getBranchData(context);
+  //     });
+  //     await prefs.setBool("is_first_launch", false);
+  //   }
+  // }
 
   @override
   void dispose() {

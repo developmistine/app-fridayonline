@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+import 'package:fridayonline/firebase_options.dart';
 import 'package:fridayonline/member/controller/chat.ctr.dart';
 import 'package:fridayonline/member/controller/track.ctr.dart';
 import 'package:fridayonline/member/services/track/track.service.dart';
@@ -23,7 +24,7 @@ import 'package:flutter_branch_sdk/flutter_branch_sdk.dart';
 import 'package:get/get.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:huawei_push/huawei_push.dart' as huawei;
+// import 'package:huawei_push/huawei_push.dart' as huawei;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uuid/uuid.dart';
 
@@ -44,11 +45,19 @@ class PostHttpOverrides extends HttpOverrides {
   }
 }
 
+Future<void> initializeDefault() async {
+  FirebaseApp app = await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  print('Initialized default app $app');
+}
+
 Future<void> main() async {
   WidgetsBinding widgetBinding = WidgetsFlutterBinding.ensureInitialized();
 
   // Firebase initial
-  await Firebase.initializeApp();
+  // await Firebase.initializeApp();
+  await initializeDefault();
 
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
@@ -66,7 +75,7 @@ Future<void> main() async {
   HttpOverrides.global = PostHttpOverrides();
 
   if (Platform.isAndroid) {
-    huawei.Push.registerBackgroundMessageHandler(backgroundMessageCallback);
+    // huawei.Push.registerBackgroundMessageHandler(backgroundMessageCallback);
   }
 
   runApp(const MyApp());

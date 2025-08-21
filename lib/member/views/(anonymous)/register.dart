@@ -49,6 +49,7 @@ class _RegisterScreen extends State<RegisterScreen> {
   @override
   void initState() {
     super.initState();
+    _googleSignInProvider.initialize();
     lineSDKInit();
   }
 
@@ -183,7 +184,7 @@ class _RegisterScreen extends State<RegisterScreen> {
   Future<void> loginGoogle() async {
     SetData data = SetData();
     loadingProductStock(context);
-    final user = await _googleSignInProvider.signInWithGoogle();
+    final user = await _googleSignInProvider.signIn();
     setState(() {
       _currentUser = user;
     });
@@ -782,19 +783,53 @@ class SignInWithProvider extends StatelessWidget {
 }
 
 class GoogleSignInProvider {
-  final GoogleSignIn _googleSignIn = GoogleSignIn();
+  final GoogleSignIn _googleSignIn = GoogleSignIn.instance;
+  GoogleSignInAccount? _currentUser;
 
-  Future<GoogleSignInAccount?> signInWithGoogle() async {
+  // Stream สำหรับ listen การเปลี่ยนแปลง user state
+  GoogleSignInAccount? get currentUser => _currentUser;
+
+  Future<void> initialize() async {
     try {
-      final GoogleSignInAccount? account = await _googleSignIn.signIn();
-      return account;
-    } catch (error) {
+      // Initialize Google Sign-In (clientId และ serverClientId จะอ่านจาก config files อัตโนมัติ)
+      await _googleSignIn.initialize();
+
+      // Listen authentication events
+      _googleSignIn.authenticationEvents.listen(_handleAuthEvent);
+
+      // ลอง sign in อัตโนมัติถ้าเคย sign in ไว้แล้ว
+      await _googleSignIn.attemptLightweightAuthentication();
+    } catch (e) {
+      print('Google Sign-In Initialize Error: $e');
+    }
+  }
+
+  void _handleAuthEvent(GoogleSignInAuthenticationEvent event) {
+    final GoogleSignInAccount? user = switch (event) {
+      GoogleSignInAuthenticationEventSignIn() => event.user,
+      GoogleSignInAuthenticationEventSignOut() => null,
+    };
+
+    _currentUser = user;
+  }
+
+  Future<GoogleSignInAccount?> signIn() async {
+    try {
+      await _googleSignIn.authenticate();
+      return _currentUser;
+    } catch (e) {
+      print('Google Sign-In Error: $e');
       return null;
     }
   }
 
   Future<void> signOut() async {
-    await _googleSignIn.signOut();
+    try {
+      await _googleSignIn
+          .disconnect(); // หรือใช้ signOut() ถ้าไม่ต้องการ disconnect
+    } catch (e) {
+      print('Google Sign-Out Error: $e');
+    }
   }
 }
 

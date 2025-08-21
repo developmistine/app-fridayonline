@@ -802,35 +802,39 @@ class _ReturnProdutState extends State<ReturnProdut> {
                               onTap: () async {
                                 await openImagePicker();
                               },
-                              child: DottedBorder(
-                                borderType: BorderType.RRect,
-                                radius: const Radius.circular(10),
-                                dashPattern: const [6, 2],
-                                strokeWidth: 0.5,
-                                color: Colors.grey.shade700,
-                                child: Container(
-                                  width: 80,
-                                  padding: const EdgeInsets.all(12.0),
-                                  alignment: Alignment.center,
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Icon(Icons.camera_alt_outlined,
-                                          size: 28,
-                                          color: Colors.grey.shade700),
-                                      Text(
-                                        'รูปภาพ',
-                                        style: GoogleFonts.ibmPlexSansThai(
-                                            fontSize: 12,
+                              child: DecoratedBox(
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: DottedBorder(
+                                  options: RectDottedBorderOptions(
+                                    dashPattern: const [6, 2],
+                                    strokeWidth: 0.5,
+                                    color: Colors.grey.shade700,
+                                  ),
+                                  child: Container(
+                                    width: 80,
+                                    padding: const EdgeInsets.all(12.0),
+                                    alignment: Alignment.center,
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Icon(Icons.camera_alt_outlined,
+                                            size: 28,
                                             color: Colors.grey.shade700),
-                                      ),
-                                      Text(
-                                        '($countImg / 5)',
-                                        style: GoogleFonts.ibmPlexSansThai(
-                                            fontSize: 12,
-                                            color: Colors.grey.shade700),
-                                      ),
-                                    ],
+                                        Text(
+                                          'รูปภาพ',
+                                          style: GoogleFonts.ibmPlexSansThai(
+                                              fontSize: 12,
+                                              color: Colors.grey.shade700),
+                                        ),
+                                        Text(
+                                          '($countImg / 5)',
+                                          style: GoogleFonts.ibmPlexSansThai(
+                                              fontSize: 12,
+                                              color: Colors.grey.shade700),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
@@ -843,35 +847,39 @@ class _ReturnProdutState extends State<ReturnProdut> {
                                 isPlay = true;
                                 await openVidePicker();
                               },
-                              child: DottedBorder(
-                                borderType: BorderType.RRect,
-                                radius: const Radius.circular(10),
-                                dashPattern: const [6, 2],
-                                strokeWidth: 0.5,
-                                color: Colors.grey.shade700,
-                                child: Container(
-                                  width: 80,
-                                  padding: const EdgeInsets.all(12.0),
-                                  alignment: Alignment.center,
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Icon(Icons.videocam_outlined,
-                                          size: 28,
-                                          color: Colors.grey.shade700),
-                                      Text(
-                                        'วิดีโอ',
-                                        style: GoogleFonts.ibmPlexSansThai(
-                                            fontSize: 12,
+                              child: DecoratedBox(
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: DottedBorder(
+                                  options: RectDottedBorderOptions(
+                                    dashPattern: const [6, 2],
+                                    strokeWidth: 0.5,
+                                    color: Colors.grey.shade700,
+                                  ),
+                                  child: Container(
+                                    width: 80,
+                                    padding: const EdgeInsets.all(12.0),
+                                    alignment: Alignment.center,
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Icon(Icons.videocam_outlined,
+                                            size: 28,
                                             color: Colors.grey.shade700),
-                                      ),
-                                      Text(
-                                        '(${controller != null ? 1 : 0} / 1)',
-                                        style: GoogleFonts.ibmPlexSansThai(
-                                            fontSize: 12,
-                                            color: Colors.grey.shade700),
-                                      ),
-                                    ],
+                                        Text(
+                                          'วิดีโอ',
+                                          style: GoogleFonts.ibmPlexSansThai(
+                                              fontSize: 12,
+                                              color: Colors.grey.shade700),
+                                        ),
+                                        Text(
+                                          '(${controller != null ? 1 : 0} / 1)',
+                                          style: GoogleFonts.ibmPlexSansThai(
+                                              fontSize: 12,
+                                              color: Colors.grey.shade700),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),

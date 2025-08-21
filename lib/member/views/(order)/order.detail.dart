@@ -1631,35 +1631,42 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                             width: 100,
                                             child: InkWell(
                                               onTap: pickImages,
-                                              child: DottedBorder(
-                                                borderType: BorderType.RRect,
-                                                radius:
-                                                    const Radius.circular(10),
-                                                dashPattern: const [6, 2],
-                                                strokeWidth: 0.5,
-                                                color: Colors.grey.shade700,
-                                                child: Container(
-                                                  padding: const EdgeInsets.all(
-                                                      12.0),
-                                                  alignment: Alignment.center,
-                                                  child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.min,
-                                                    children: [
-                                                      Icon(
-                                                          Icons
-                                                              .camera_alt_outlined,
-                                                          size: 28,
-                                                          color: Colors
-                                                              .grey.shade700),
-                                                      Text(
-                                                        'รูปภาพ ${selectedImages.length}/2',
-                                                        style: TextStyle(
-                                                            fontSize: 12,
+                                              child: DecoratedBox(
+                                                decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10)),
+                                                child: DottedBorder(
+                                                  options:
+                                                      RectDottedBorderOptions(
+                                                    dashPattern: const [6, 2],
+                                                    strokeWidth: 0.5,
+                                                    color: Colors.grey.shade700,
+                                                  ),
+                                                  child: Container(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            12.0),
+                                                    alignment: Alignment.center,
+                                                    child: Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      children: [
+                                                        Icon(
+                                                            Icons
+                                                                .camera_alt_outlined,
+                                                            size: 28,
                                                             color: Colors
                                                                 .grey.shade700),
-                                                      ),
-                                                    ],
+                                                        Text(
+                                                          'รูปภาพ ${selectedImages.length}/2',
+                                                          style: TextStyle(
+                                                              fontSize: 12,
+                                                              color: Colors.grey
+                                                                  .shade700),
+                                                        ),
+                                                      ],
+                                                    ),
                                                   ),
                                                 ),
                                               ),

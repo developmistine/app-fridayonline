@@ -1,4 +1,4 @@
-package th.co.friday.fridayonline
+package com.example.fridayOnline
 
 import io.flutter.embedding.android.FlutterActivity
 import android.content.pm.PackageManager

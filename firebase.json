@@ -3,36 +3,36 @@
     "platforms": {
       "android": {
         "default": {
-          "projectId": "mistineapp",
-          "appId": "1:804780745431:android:0defd3fb14910376bbc692",
+          "projectId": "friday-online-40aa7",
+          "appId": "1:436932745041:android:ca77bd7efc6a0be26d2570",
           "fileOutput": "android/app/google-services.json"
         }
       },
       "ios": {
         "default": {
-          "projectId": "mistineapp",
-          "appId": "1:804780745431:ios:8170dac1427645e6bbc692",
+          "projectId": "friday-online-40aa7",
+          "appId": "1:436932745041:ios:acd40b2d53799ae36d2570",
           "uploadDebugSymbols": false,
           "fileOutput": "ios/Runner/GoogleService-Info.plist"
         }
       },
       "macos": {
         "default": {
-          "projectId": "mistineapp",
-          "appId": "1:804780745431:ios:0b2c07ce8a277635bbc692",
+          "projectId": "friday-online-40aa7",
+          "appId": "1:436932745041:ios:acd40b2d53799ae36d2570",
           "uploadDebugSymbols": false,
           "fileOutput": "macos/Runner/GoogleService-Info.plist"
         }
       },
       "dart": {
         "lib/firebase_options.dart": {
-          "projectId": "mistineapp",
+          "projectId": "friday-online-40aa7",
           "configurations": {
-            "android": "1:804780745431:android:0defd3fb14910376bbc692",
-            "ios": "1:804780745431:ios:8170dac1427645e6bbc692",
-            "macos": "1:804780745431:ios:0b2c07ce8a277635bbc692",
-            "web": "1:804780745431:web:68ecda4d6963c78cbbc692",
-            "windows": "1:804780745431:web:67e441b292dc3295bbc692"
+            "android": "1:436932745041:android:ca77bd7efc6a0be26d2570",
+            "ios": "1:436932745041:ios:acd40b2d53799ae36d2570",
+            "macos": "1:436932745041:ios:acd40b2d53799ae36d2570",
+            "web": "1:436932745041:web:350f7524e8eb60b36d2570",
+            "windows": "1:436932745041:web:621a7fcd69214af36d2570"
           }
         }
       }

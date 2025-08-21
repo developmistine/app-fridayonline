@@ -19,12 +19,12 @@ import 'package:fridayonline/member/services/authen/b2cauthen.service.dart';
 import 'package:fridayonline/member/services/fair/fair.service.dart';
 // import 'package:fridayonline/pam/notification_api.dart';
 import 'package:device_info_plus/device_info_plus.dart';
-import 'package:device_information/device_information.dart';
+// import 'package:device_information/device_information.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
-import 'package:huawei_push/huawei_push.dart';
+// import 'package:huawei_push/huawei_push.dart';
 // import 'package:platform_device_id/platform_device_id.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -63,7 +63,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   // ทำการประกาศตัวแปลนั้น
   String statusLoadApp = '';
-  String _deviceIMEINumber = '';
+  final String _deviceIMEINumber = '';
   String _versionApp = "";
   String deviceName = '';
   String deviceVersion = '';
@@ -163,7 +163,7 @@ class _SplashScreenState extends State<SplashScreen> {
     BranchManagerMain.disposePending();
   }
 
-  checkAppNewVersion() async {
+  Future<void> checkAppNewVersion() async {
     CheckVersionModel? checkversion = await call_check_version();
 
     if (Platform.isAndroid) {
@@ -212,12 +212,12 @@ class _SplashScreenState extends State<SplashScreen> {
     }
   }
 
-  checkShowFair() async {
+  Future<void> checkShowFair() async {
     bool isVisibility = await fetchFairVisibilityService();
     endUserHomeCtr.isVisibilityFair.value = isVisibility;
   }
 
-  checkNetworkConnection() async {
+  Future<void> checkNetworkConnection() async {
     SetData data = SetData();
     printWhite("refresh token is : ${await data.refreshToken}");
     String repType = await data.repType;
@@ -358,8 +358,6 @@ class _SplashScreenState extends State<SplashScreen> {
         await prefs.setString("deviceName", "android");
         await prefs.setString("IMEI", "");
       } else if (Platform.isIOS) {
-        _deviceIMEINumber = await DeviceInformation.deviceIMEINumber;
-        await prefs.setString("IMEI", _deviceIMEINumber);
         await prefs.setString("deviceName", "ios");
       }
     } on PlatformException {
@@ -373,8 +371,8 @@ class _SplashScreenState extends State<SplashScreen> {
     } catch (e) {
       if (Platform.isAndroid) {
         debugPrint('Error get Token $e');
-        Push.getToken('');
-        Push.getTokenStream.listen(_onTokenEvent);
+        // Push.getToken('');
+        // Push.getTokenStream.listen(_onTokenEvent);
       }
     }
   }

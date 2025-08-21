@@ -1040,7 +1040,7 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
                                   ? 1.2
                                   : 1.0),
                         ),
-                        swapCategoryAndBottomBar: false,
+                        // swapCategoryAndBottomBar: false,
                         skinToneConfig: const SkinToneConfig(),
                         categoryViewConfig: CategoryViewConfig(
                             backgroundColor: Colors.white,

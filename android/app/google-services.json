@@ -1,49 +1,48 @@
 {
   "project_info": {
-    "project_number": "804780745431",
-    "firebase_url": "https://mistineapp-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "mistineapp",
-    "storage_bucket": "mistineapp.firebasestorage.app"
+    "project_number": "436932745041",
+    "project_id": "friday-online-40aa7",
+    "storage_bucket": "friday-online-40aa7.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:804780745431:android:0defd3fb14910376bbc692",
+        "mobilesdk_app_id": "1:436932745041:android:ede54abc064fb4d36d2570",
         "android_client_info": {
-          "package_name": "th.co.friday.fridayonline"
+          "package_name": "com.example.fridayOnline"
         }
       },
       "oauth_client": [
         {
-          "client_id": "804780745431-5j7jvlcgpericcv3ekgg61s9akmghmf4.apps.googleusercontent.com",
+          "client_id": "436932745041-d3ocrkffr8m3rcmvjilkcq9nqem71mef.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "th.co.friday.fridayonline",
-            "certificate_hash": "e8502488d91b941699bdc07482d2558c7e4965c9"
+            "package_name": "com.example.fridayOnline",
+            "certificate_hash": "64d056c822bf9af928057515e248b02d11a89590"
           }
         },
         {
-          "client_id": "804780745431-esdf6af4c3joq47vhgu1ohsvuei5oojq.apps.googleusercontent.com",
+          "client_id": "436932745041-5t5mep50v2b6rt0elqshfljc8h2qbu6o.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD-0BGCzvcekNpbimjEoDnzJvqDYb6m3QM"
+          "current_key": "AIzaSyCjvJA2BHkFegQ3saNwwzNuDizw6bjGLIE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "804780745431-esdf6af4c3joq47vhgu1ohsvuei5oojq.apps.googleusercontent.com",
+              "client_id": "436932745041-5t5mep50v2b6rt0elqshfljc8h2qbu6o.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "804780745431-p4tl6j792m9kb8d9abpcchu4r1r1kreb.apps.googleusercontent.com",
+              "client_id": "436932745041-562nv5msbpkrf5vot9c93f8vn6v0gpbl.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.fridayonline"
+                "bundle_id": "com.example.fridayOnline"
               }
             }
           ]
