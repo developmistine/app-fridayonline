@@ -13,7 +13,10 @@ class EndUserSignInCtr extends GetxController {
   RxBool isAccept = false.obs;
   RxInt currentPage = 0.obs;
   List<int> listInterest = <int>[].obs;
+
   RxString telNumber = "".obs;
+  RxString otpRef = "".obs;
+
   Timer? _timer; // เก็บตัวแปร Timer
   RxBool isLoading = false.obs;
   // String mslChangeView = "";

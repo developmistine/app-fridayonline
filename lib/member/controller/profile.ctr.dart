@@ -138,6 +138,7 @@ class ProfileOtpCtr extends GetxController {
   RxInt currentPage = 0.obs;
   List<int> listInterest = <int>[].obs;
   RxString telNumber = "".obs;
+  RxString otpRef = "".obs;
   Timer? _timer; // เก็บตัวแปร Timer
 
   // Start Timer

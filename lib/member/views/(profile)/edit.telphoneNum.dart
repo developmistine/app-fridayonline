@@ -197,14 +197,21 @@ class _EditProfileState extends State<EditTelphoneNumber> {
           otpCtl.remainingSeconds.value == 60) {
         otpCtl.resetTimer();
         loadingProductStock(context);
-        await b2cSentOtpService("edit_profile", telNumber).then((value) async {
+
+        await b2cSentOtpService("edit_profile", telNumber).then((res) async {
           Get.back();
-          if (value!.code == "100") {
+          if (res?.code == "100") {
             otpCtl.startTimer();
-            await Get.to(
-                    () => OtpVerify(phone: telNumber, type: 'edit_profile'))!
-                .then((value) async {
-              if (value == true) {
+
+            otpCtl.otpRef.value = res?.otpRef ?? "";
+
+            await Get.to(() => OtpVerify(
+                      phone: telNumber,
+                      type: 'edit_profile',
+                      otpRef: otpCtl.otpRef.value,
+                    ))!
+                .then((verified) async {
+              if (verified == true) {
                 profileCtl.fetchUpdateUserName(
                     displayName, gender, birthday, telNumber, email);
                 dialogAlert([
@@ -227,9 +234,13 @@ class _EditProfileState extends State<EditTelphoneNumber> {
           }
         });
       } else {
-        await Get.to(() => OtpVerify(phone: telNumber, type: 'edit_profile'))!
-            .then((value) async {
-          if (value == true) {
+        await Get.to(() => OtpVerify(
+                  phone: telNumber,
+                  type: 'edit_profile',
+                  otpRef: otpCtl.otpRef.value,
+                ))!
+            .then((verified) async {
+          if (verified == true) {
             profileCtl.fetchUpdateUserName(
                 displayName, gender, birthday, telNumber, email);
             dialogAlert([
@@ -246,8 +257,6 @@ class _EditProfileState extends State<EditTelphoneNumber> {
           }
         });
       }
-
-      // profileCtl.fetchUpdateUserName(displayName, telNumber);
     } else {
       Get.snackbar("Error", "เบอร์โทรศัพท์ไม่ถูกต้อง",
           snackPosition: SnackPosition.BOTTOM,

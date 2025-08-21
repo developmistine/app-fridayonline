@@ -28,27 +28,30 @@ class B2CRegister {
   String device;
   String sessionId;
   String identityId;
+  String otpCode;
+  String otpRef;
 
-  B2CRegister({
-    required this.registerId,
-    required this.registerType,
-    required this.moblie,
-    required this.email,
-    required this.prefix,
-    required this.firstName,
-    required this.lastName,
-    required this.displayName,
-    required this.image,
-    required this.referringBrowser,
-    required this.referringId,
-    required this.gender,
-    required this.birthDate,
-    required this.address,
-    required this.tokenApp,
-    required this.device,
-    required this.sessionId,
-    required this.identityId
-  });
+  B2CRegister(
+      {required this.registerId,
+      required this.registerType,
+      required this.moblie,
+      required this.email,
+      required this.prefix,
+      required this.firstName,
+      required this.lastName,
+      required this.displayName,
+      required this.image,
+      required this.referringBrowser,
+      required this.referringId,
+      required this.gender,
+      required this.birthDate,
+      required this.address,
+      required this.tokenApp,
+      required this.device,
+      required this.sessionId,
+      required this.identityId,
+      required this.otpCode,
+      required this.otpRef});
 
   factory B2CRegister.fromJson(Map<String, dynamic> json) => B2CRegister(
         registerId: json["register_id"],
@@ -68,7 +71,9 @@ class B2CRegister {
         tokenApp: json["token_app"],
         device: json["device"],
         sessionId: json["session_id"],
-        identityId: json["identity_id"]
+        identityId: json["identity_id"],
+        otpCode: json["otp_code"],
+        otpRef: json["otp_ref"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -89,7 +94,9 @@ class B2CRegister {
         "token_app": tokenApp,
         "device": device,
         "session_id": sessionId,
-        "identity_id": identityId
+        "identity_id": identityId,
+        "otp_code": otpCode,
+        "otp_ref": otpRef
       };
 }
 

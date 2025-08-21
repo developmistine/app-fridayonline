@@ -18,7 +18,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 class OtpVerify extends StatefulWidget {
   final String phone;
   final String type;
-  const OtpVerify({super.key, required this.phone, required this.type});
+  final String otpRef;
+  const OtpVerify(
+      {super.key,
+      required this.phone,
+      required this.type,
+      required this.otpRef});
 
   @override
   State<OtpVerify> createState() => _OtpVerifyState();
@@ -93,7 +98,7 @@ class _OtpVerifyState extends State<OtpVerify> {
                           color: themeColorDefault,
                           fontWeight: FontWeight.bold,
                         ),
-                        length: 4,
+                        length: 6,
                         obscureText: false,
                         obscuringCharacter: '*',
                         animationType: AnimationType.fade,
@@ -102,9 +107,9 @@ class _OtpVerifyState extends State<OtpVerify> {
                           inactiveBorderWidth: 0.8,
                           activeBorderWidth: 1,
                           shape: PinCodeFieldShape.box,
-                          borderRadius: BorderRadius.circular(14),
-                          fieldHeight: 58,
-                          fieldWidth: 58,
+                          borderRadius: BorderRadius.circular(12),
+                          fieldHeight: 52,
+                          fieldWidth: 52,
                           activeColor: themeColorDefault,
                           selectedColor: themeColorDefault,
                           inactiveColor: Colors.grey.shade400,
@@ -132,7 +137,7 @@ class _OtpVerifyState extends State<OtpVerify> {
 
                           loadingProductStock(context);
                           var res = await b2cVerifyOtpService(
-                              widget.type, widget.phone, v);
+                              widget.type, widget.phone, v, widget.otpRef);
                           Get.back();
                           if (res!.code == '100') {
                             otpCtr.resetTimer();

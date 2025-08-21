@@ -74,7 +74,7 @@ Future<B2CLogin?> refreshTokenService() async {
 }
 
 Future<OtpResponse?> b2cSentOtpService(String otpType, String mobile) async {
-  var url = Uri.parse("${b2c_api_url}sent_otp");
+  var url = Uri.parse("${b2c_api_url}sent_otp_v1");
 
   SetData data = SetData();
 
@@ -101,7 +101,7 @@ Future<OtpResponse?> b2cSentOtpService(String otpType, String mobile) async {
 }
 
 Future<OtpResponse?> b2cVerifyOtpService(
-    String otpType, String mobile, String otpCode) async {
+    String otpType, String mobile, String otpCode, String otpRef) async {
   var url = Uri.parse("${b2c_api_url}verify_otp");
 
   SetData data = SetData();
@@ -112,7 +112,8 @@ Future<OtpResponse?> b2cVerifyOtpService(
       "otp_type": otpType,
       "mobile_no": mobile,
       "device": await data.device,
-      "otp_code": otpCode
+      "otp_code": otpCode,
+      "otp_ref": otpRef
     });
 
     var jsonCall = await AuthFetch.post(url,
@@ -164,23 +165,26 @@ class OtpResponse {
   String code;
   String message1;
   String message2;
+  String? otpRef;
 
   OtpResponse({
     required this.code,
     required this.message1,
     required this.message2,
+    required this.otpRef,
   });
 
   factory OtpResponse.fromJson(Map<String, dynamic> json) => OtpResponse(
-        code: json["code"],
-        message1: json["message1"],
-        message2: json["message2"],
-      );
+      code: json["code"],
+      message1: json["message1"],
+      message2: json["message2"],
+      otpRef: json["otp_ref"] ?? '');
 
   Map<String, dynamic> toJson() => {
         "code": code,
         "message1": message1,
         "message2": message2,
+        "otp_ref": otpRef
       };
 }
 

@@ -56,11 +56,12 @@ class _ChangeVerifyState extends State<ChangeVerify> {
                             if (profileCtr.remainingSeconds.value == 0) {
                               profileCtr.resetTimer();
                             }
+                            profileCtr.otpRef.value = value.otpRef ?? '';
                             profileCtr.startTimer();
                             Get.to(() => OtpVerify(
-                                  phone: widget.phone,
-                                  type: 'delete_account',
-                                ));
+                                phone: widget.phone,
+                                type: 'delete_account',
+                                otpRef: profileCtr.otpRef.value));
                           } else {
                             Get.snackbar('แจ้งเตือน',
                                 'เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง',

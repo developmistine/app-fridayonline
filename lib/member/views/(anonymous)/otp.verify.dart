@@ -136,7 +136,7 @@ class _OtpVerifyState extends State<OtpVerify> {
                                 color: themeColorDefault,
                                 fontWeight: FontWeight.bold,
                               ),
-                              length: 4,
+                              length: 6,
                               obscureText: false,
                               obscuringCharacter: '*',
                               animationType: AnimationType.fade,
@@ -146,9 +146,9 @@ class _OtpVerifyState extends State<OtpVerify> {
                                 inactiveBorderWidth: 0.8,
                                 activeBorderWidth: 0.5,
                                 shape: PinCodeFieldShape.box,
-                                borderRadius: BorderRadius.circular(14),
-                                fieldHeight: 72,
-                                fieldWidth: 72,
+                                borderRadius: BorderRadius.circular(12),
+                                fieldHeight: 52,
+                                fieldWidth: 52,
                                 activeColor: themeColorDefault,
                                 selectedColor: themeColorDefault,
                                 inactiveColor: Colors.grey.shade400,
@@ -176,69 +176,81 @@ class _OtpVerifyState extends State<OtpVerify> {
                                 // print(v);
                                 SetData data = SetData();
                                 loadingProductStock(context);
-                                var res = await b2cVerifyOtpService("register",
-                                    endUserSignInCtr.telNumber.value, v);
-                                Get.back();
-                                if (res!.code == "100") {
-                                  endUserSignInCtr.resetTimer();
-                                  final SharedPreferences prefs = await _prefs;
-                                  String deepLinkSource =
-                                      prefs.getString("deepLinkSource") ?? '';
-                                  String deepLinkId =
-                                      prefs.getString("deepLinkId") ?? '';
-                                  var payload = B2CRegister(
-                                    registerId:
-                                        endUserSignInCtr.telNumber.value,
-                                    registerType: 'phone',
-                                    moblie: endUserSignInCtr.telNumber.value,
-                                    email: '',
-                                    prefix: '',
+
+                                endUserSignInCtr.resetTimer();
+                                final SharedPreferences prefs = await _prefs;
+                                String deepLinkSource =
+                                    prefs.getString("deepLinkSource") ?? '';
+                                String deepLinkId =
+                                    prefs.getString("deepLinkId") ?? '';
+                                var payload = B2CRegister(
+                                  otpCode: v,
+                                  otpRef: endUserSignInCtr.otpRef.value,
+                                  registerId: endUserSignInCtr.telNumber.value,
+                                  registerType: 'phone',
+                                  moblie: endUserSignInCtr.telNumber.value,
+                                  email: '',
+                                  prefix: '',
+                                  firstName: '',
+                                  lastName: '',
+                                  displayName: '',
+                                  image: '',
+                                  referringBrowser: deepLinkSource,
+                                  referringId: deepLinkId,
+                                  gender: '',
+                                  birthDate: '',
+                                  address: Address(
                                     firstName: '',
                                     lastName: '',
-                                    displayName: '',
-                                    image: '',
-                                    referringBrowser: deepLinkSource,
-                                    referringId: deepLinkId,
-                                    gender: '',
-                                    birthDate: '',
-                                    address: Address(
-                                      firstName: '',
-                                      lastName: '',
-                                      address1: '',
-                                      address2: '',
-                                      tombonId: 0,
-                                      amphurId: 0,
-                                      provinceId: 0,
-                                      postCode: '',
-                                      mobile: '',
-                                    ),
-                                    tokenApp: await data.tokenId,
-                                    device: await data.device,
-                                    sessionId: await data.sessionId,
-                                    identityId: await data.deviceId,
-                                  );
-                                  var res = await b2cRegisterService(payload);
+                                    address1: '',
+                                    address2: '',
+                                    tombonId: 0,
+                                    amphurId: 0,
+                                    provinceId: 0,
+                                    postCode: '',
+                                    mobile: '',
+                                  ),
+                                  tokenApp: await data.tokenId,
+                                  device: await data.device,
+                                  sessionId: await data.sessionId,
+                                  identityId: await data.deviceId,
+                                );
+                                var res = await b2cRegisterService(payload);
 
-                                  // printWhite(
-                                  //     "Login ด้วย เบอร์ CustId : ${res!.data.custId}");
-                                  await prefs.setString(
-                                      "accessToken", res!.data.accessToken);
-                                  await prefs.setString(
-                                      "refreshToken", res.data.refreshToken);
-                                  prefs.remove("deepLinkSource");
-                                  prefs.remove("deepLinkId");
-                                  await endUserSignInCtr.settingPreference(
-                                      '1',
+                                if (res?.code == '100') {
+                                  var verifyRes = await b2cVerifyOtpService(
+                                      "register",
                                       endUserSignInCtr.telNumber.value,
-                                      '5',
-                                      res.data.custId);
-                                } else {
-                                  if (!Get.isSnackbarOpen) {
-                                    Get.snackbar('แจ้งเตือน', 'OTP ไม่ถูกต้อง',
-                                        backgroundColor:
-                                            Colors.red.withOpacity(0.8),
-                                        colorText: Colors.white);
+                                      v,
+                                      endUserSignInCtr.otpRef.value);
+                                  Get.back();
+                                  if (verifyRes!.code == "100") {
+                                    await prefs.setString(
+                                        "accessToken", res!.data.accessToken);
+                                    await prefs.setString(
+                                        "refreshToken", res.data.refreshToken);
+                                    prefs.remove("deepLinkSource");
+                                    prefs.remove("deepLinkId");
+                                    await endUserSignInCtr.settingPreference(
+                                        '1',
+                                        endUserSignInCtr.telNumber.value,
+                                        '5',
+                                        res.data.custId);
+                                  } else {
+                                    if (!Get.isSnackbarOpen) {
+                                      Get.snackbar(
+                                          'แจ้งเตือน', 'OTP ไม่ถูกต้อง',
+                                          backgroundColor:
+                                              Colors.red.withOpacity(0.8),
+                                          colorText: Colors.white);
+                                    }
                                   }
+                                } else {
+                                  Get.snackbar('เกิดข้อผิดพลาด',
+                                      'ไม่สามารถเข้าสู่ระบบได้',
+                                      backgroundColor:
+                                          Colors.red.withOpacity(0.8),
+                                      colorText: Colors.white);
                                 }
                               },
                             );
@@ -280,11 +292,16 @@ class _OtpVerifyState extends State<OtpVerify> {
                                               borderRadius:
                                                   BorderRadius.circular(12)),
                                         ),
-                                        onPressed: () {
-                                          b2cSentOtpService("register",
+                                        onPressed: () async {
+                                          final res = await b2cSentOtpService(
+                                              "register",
                                               endUserSignInCtr.telNumber.value);
-                                          endUserSignInCtr.resetTimer();
-                                          endUserSignInCtr.startTimer();
+                                          if (res?.code == "100") {
+                                            endUserSignInCtr.otpRef.value =
+                                                res?.otpRef ?? "";
+                                            endUserSignInCtr.resetTimer();
+                                            endUserSignInCtr.startTimer();
+                                          }
                                         },
                                         child: const Text(
                                           "ส่งรหัสอีกครั้ง",

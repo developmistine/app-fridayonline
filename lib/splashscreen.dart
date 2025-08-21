@@ -300,6 +300,8 @@ class _SplashScreenState extends State<SplashScreen> {
     prefs.setBool('branch_first_processed', alreadyProcessed);
 
     var payload = B2CRegister(
+      otpCode: "",
+      otpRef: "",
       registerId: "",
       registerType: "guest",
       moblie: '',

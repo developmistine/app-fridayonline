@@ -69,7 +69,7 @@ class _CategoryB2CState extends State<CategoryB2C> {
                     );
                   }
                   return ConstrainedBox(
-                    constraints: const BoxConstraints(maxHeight: 162),
+                    constraints: const BoxConstraints(maxHeight: 190),
                     child: GridView.builder(
                       scrollDirection: Axis.horizontal,
                       gridDelegate:
@@ -100,12 +100,12 @@ class _CategoryB2CState extends State<CategoryB2C> {
                             child: Column(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.all(4.0),
+                                  padding: const EdgeInsets.all(8),
                                   child: SizedBox(
-                                    width: 40,
-                                    height: 40,
+                                    width: 48,
+                                    height: 48,
                                     child: CacheImageProducts(
-                                        height: 40, url: items.image),
+                                        height: 48, url: items.image),
                                   ),
                                 ),
                                 Padding(

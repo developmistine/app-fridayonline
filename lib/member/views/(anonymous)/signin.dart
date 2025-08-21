@@ -18,7 +18,6 @@ import 'package:flutter_facebook_auth/flutter_facebook_auth.dart'
     as facebook_auth;
 import 'package:flutter/material.dart';
 import 'package:flutter_line_sdk/flutter_line_sdk.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -73,6 +72,8 @@ class _SignInScreen extends State<SignInScreen>
     String deepLinkId = prefs.getString("deepLinkId") ?? '';
     SetData data = SetData();
     var payload = B2CRegister(
+        otpCode: "",
+        otpRef: "",
         registerId: userId ?? "",
         registerType: type ?? "",
         moblie: '',
@@ -251,57 +252,30 @@ class _SignInScreen extends State<SignInScreen>
         }
       } else {
         loadingProductStock(context);
-        await checkUserByPhoneService(telController.text.replaceAll('-', ''))
-            .then((value) async {
-          if (value == null) {
-            if (!Get.isSnackbarOpen) {
-              Get.back();
-              Get.snackbar('', '',
-                  titleText: Text(
-                    'แจ้งเตือน',
-                    style: GoogleFonts.ibmPlexSansThai(color: Colors.white),
-                  ),
-                  messageText: Text(
-                    'เกิดข้อผิดพลาดกรุณาลองใหม่อีกครั้งในภายหลัง',
-                    style: GoogleFonts.ibmPlexSansThai(color: Colors.white),
-                  ),
-                  backgroundColor: Colors.red.withOpacity(0.8),
-                  colorText: Colors.white);
-            }
-            return;
-          }
-          if (value["is_msl"]) {
-            Get.back();
-            Get.toNamed('/login');
-            return;
+        endUserSignInCtr.telNumber.value =
+            telController.text.replaceAll('-', '');
+        await b2cSentOtpService("register", endUserSignInCtr.telNumber.value)
+            .then((value) {
+          Get.back();
+          if (value!.code == "100") {
+            endUserSignInCtr.otpRef.value = value.otpRef ?? '';
+            telController.clear();
+            endUserSignInCtr.resetTimer();
+            endUserSignInCtr.startTimer();
+            Get.to(() => const OtpVerify());
           } else {
-            // clear textfield
-            endUserSignInCtr.telNumber.value =
-                telController.text.replaceAll('-', '');
-            await b2cSentOtpService(
-                    "register", endUserSignInCtr.telNumber.value)
-                .then((value) {
-              Get.back();
-              if (value!.code == "100") {
-                telController.clear();
-                endUserSignInCtr.resetTimer();
-                endUserSignInCtr.startTimer();
-                Get.to(() => const OtpVerify());
-              } else {
-                Get.snackbar(
-                  '',
-                  '',
-                  titleText: Text(
-                    'แจ้งเตือน',
-                    style: GoogleFonts.ibmPlexSansThai(color: Colors.white),
-                  ),
-                  messageText: Text(
-                    'เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง',
-                    style: GoogleFonts.ibmPlexSansThai(color: Colors.white),
-                  ),
-                );
-              }
-            });
+            Get.snackbar(
+              '',
+              '',
+              titleText: Text(
+                'แจ้งเตือน',
+                style: GoogleFonts.ibmPlexSansThai(color: Colors.white),
+              ),
+              messageText: Text(
+                'เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง',
+                style: GoogleFonts.ibmPlexSansThai(color: Colors.white),
+              ),
+            );
           }
         });
       }

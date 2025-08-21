@@ -3,6 +3,7 @@ import 'package:fridayonline/member/components/appbar/appbar.enduser.dart';
 import 'package:fridayonline/member/components/home/banner.enduser.dart';
 import 'package:fridayonline/member/components/home/banner.project.dart';
 import 'package:fridayonline/member/components/home/checkinv2.dart';
+import 'package:fridayonline/member/components/home/coupon.enduser.dart';
 import 'package:fridayonline/member/components/home/coupon.enduserv2.dart';
 import 'package:fridayonline/member/components/home/coupon.newuser.dart';
 import 'package:fridayonline/member/components/home/favoritev2.dart';
@@ -144,9 +145,10 @@ class _HomePageState extends State<EndUserHomePage>
                   const BannerProject(),
                   const SupperDeal(),
                   const CouponNewUser(),
-                  // const CouponEndUser(),
+
                   //  Coin(),
                   const CategoryB2C(),
+                  const CouponEndUser(),
                   const NewCollection(),
                   const FlashDealFriday(),
                   const FridayMall(),
