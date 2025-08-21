@@ -24,6 +24,8 @@ String pathShare = 'https://web.fridayth.com/share_product_enduser';
 String b2c_path = "https://friday.co.th";
 // ?production
 String b2c_api_url = "https://api.friday.co.th/fridayonline/";
+String base_api_url = "https://api.friday.co.th/";
+
 // ?dev
 // String b2c_api_url = "https://dev-app.friday.co.th/";
 String webview_b2c = "https://www.friday.co.th/";

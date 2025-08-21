@@ -41,7 +41,7 @@ Future<ChatStickerModel> fetchChatSticker() async {
 
 Future<ChatLogin> chatLoginService() async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}ws/v1/login");
+  var url = Uri.parse("${base_api_url}ws/v1/login");
 
   try {
     var jsonCall = await http.post(
@@ -67,7 +67,7 @@ Future<ChatLogin> chatLoginService() async {
 Future<SellerChatList> fetchSellerChatService(offset) async {
   SetData data = SetData();
   // var url = Uri.parse("${b2c_api_url}api/v1/messages/conversations");
-  var url = Uri.parse("${b2c_api_url}ws/v1/conversations");
+  var url = Uri.parse("${base_api_url}ws/v1/conversations");
 
   try {
     var jsonCall = await http.post(
@@ -162,7 +162,7 @@ Future<ChatHistory> fetchHistoryChatService(
 ) async {
   SetData data = SetData();
   // var url = Uri.parse("${b2c_api_url}api/v1/messages/history");
-  var url = Uri.parse("${b2c_api_url}ws/v1/history");
+  var url = Uri.parse("${base_api_url}ws/v1/history");
   try {
     var jsonCall = await AuthFetch.post(
       url,

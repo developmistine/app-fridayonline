@@ -51,7 +51,7 @@ class ChatController extends GetxController {
     messages.clear();
   }
 
-  fetchSellerChat(int offset) async {
+  Future<void> fetchSellerChat(int offset) async {
     try {
       isLoadingConversation(true);
       var items = await fetchSellerChatService(offset);
@@ -143,7 +143,7 @@ class WebSocketController extends GetxController {
       printWhite("socket connct with cust id : $userId");
       // final uri = Uri.parse('wss://app.friday.co.th/ws/chat?userId=CU$userId');
       final uri = Uri.parse(
-          'wss://app.friday.co.th/ws/v1/chat?token=${tokenChat.accessToken}');
+          'wss://api.friday.co.th/ws/v1/chat?token=${tokenChat.accessToken}');
 
       channel = WebSocketChannel.connect(uri);
 

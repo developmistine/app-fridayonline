@@ -3,6 +3,8 @@ import 'package:fridayonline/member/components/appbar/appbar.master.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:fridayonline/member/controller/enduser.signin.ctr.dart';
+import 'package:fridayonline/member/views/(anonymous)/signin.dart';
 import 'package:fridayonline/safearea.dart';
 import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -27,6 +29,8 @@ class _WebViewAppState extends State<WebViewApp> {
   _WebViewAppState(this.mparamValue);
   late WebViewController controller;
   final UniqueKey _key = UniqueKey();
+
+  final signInController = Get.put(EndUserSignInCtr());
 
   int count = 0;
   Timer? timer;
@@ -70,6 +74,14 @@ class _WebViewAppState extends State<WebViewApp> {
               Get.back();
             } else if (backUrl == 'close.php') {
               Get.back();
+            } else if (backUrl == 'close') {
+              if (signInController.custId == 0) {
+                Get.back();
+                Get.to(() => const SignInScreen());
+                return;
+              } else {
+                Get.back();
+              }
             }
           },
           onPageFinished: (String url) {

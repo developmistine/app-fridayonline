@@ -83,13 +83,13 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
     super.dispose();
   }
 
-  fetchProfile() {
+  void fetchProfile() {
     if (profileController.profileData.value == null) {
       profileController.fetchProfile();
     }
   }
 
-  addChatRoom() async {
+  Future<void> addChatRoom() async {
     chatController.isLoading.value = true;
     await addChatRoomService(1).then((res) async {
       chatController.openChatRoom.value = res.data.chatRoomId;
@@ -111,31 +111,31 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
         });
       });
       fetchProfile();
-      connectWebSocket();
+      // connectWebSocket();
     });
   }
 
-  connectWebSocket() async {
-    SetData data = SetData();
-    // สร้าง channel ใหม่
-    channel = WebSocketChannel.connect(
-      Uri.parse(
-          'wss://app.friday.co.th/ws/chat?userId=CU${await data.b2cCustID}'),
-    );
-    final message = {
-      "event": "customer_readall_message",
-      "receiver_id": sellerId,
-      "is_me": true,
-      "message_data": {
-        "chat_room_id": chatRoomId,
-        "sender_role": "customer",
-        "sender_id": await data.b2cCustID
-      }
-    };
-    channel!.sink.add(jsonEncode(message));
-    // ตั้ง listener
-    receieveMessage();
-  }
+  // connectWebSocket() async {
+  //   SetData data = SetData();
+  //   // สร้าง channel ใหม่
+  //   channel = WebSocketChannel.connect(
+  //     Uri.parse(
+  //         'wss://app.friday.co.th/ws/chat?userId=CU${await data.b2cCustID}'),
+  //   );
+  //   final message = {
+  //     "event": "customer_readall_message",
+  //     "receiver_id": sellerId,
+  //     "is_me": true,
+  //     "message_data": {
+  //       "chat_room_id": chatRoomId,
+  //       "sender_role": "customer",
+  //       "sender_id": await data.b2cCustID
+  //     }
+  //   };
+  //   channel!.sink.add(jsonEncode(message));
+  //   // ตั้ง listener
+  //   receieveMessage();
+  // }
 
   StreamSubscription<dynamic> receieveMessage() {
     return channel!.stream.listen(
