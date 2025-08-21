@@ -63,12 +63,11 @@ class _SplashScreenState extends State<SplashScreen> {
 
   // ทำการประกาศตัวแปลนั้น
   String statusLoadApp = '';
-  final String _deviceIMEINumber = '';
   String _versionApp = "";
   String deviceName = '';
   String deviceVersion = '';
   String identifier = '';
-  String _tokenApp = '';
+  // final String _tokenApp = '';
 
   PackageInfo _packageInfo = PackageInfo(
     appName: 'Unknown',
@@ -382,13 +381,13 @@ class _SplashScreenState extends State<SplashScreen> {
     return identifier ?? 'unknown';
   }
 
-  void _onTokenEvent(String event) async {
-    final SharedPreferences prefs = await _prefs;
-    _tokenApp = event;
-    prefs.setString("Token", _tokenApp);
-    prefs.setBool("huawei", true);
-    debugPrint('=token= : $_tokenApp');
-  }
+  // void _onTokenEvent(String event) async {
+  //   final SharedPreferences prefs = await _prefs;
+  //   _tokenApp = event;
+  //   prefs.setString("Token", _tokenApp);
+  //   prefs.setBool("huawei", true);
+  //   debugPrint('=token= : $_tokenApp');
+  // }
 
   @override
   Widget build(BuildContext context) {

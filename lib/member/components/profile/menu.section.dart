@@ -252,7 +252,7 @@ Widget buildMenuSection(
   );
 }
 
-setColor(title) {
+Color setColor(title) {
   switch (title) {
     case 'คูปองของฉัน':
       return Colors.teal;
@@ -263,7 +263,7 @@ setColor(title) {
   }
 }
 
-handleMenuTap(String title) async {
+Future<void> handleMenuTap(String title) async {
   final profile = profileCtl.profileData.value;
   switch (title) {
     case "คูปองของฉัน":
@@ -321,10 +321,7 @@ handleMenuTap(String title) async {
       break;
     case "chat กับเรา":
       {
-        Get.find<WebSocketController>().onClose();
-        await Get.to(() => const ChatAppWithPlatform())!.then((res) {
-          Get.find<WebSocketController>().connectWebSocket();
-        });
+        await Get.to(() => const ChatAppWithPlatform());
         break;
       }
 

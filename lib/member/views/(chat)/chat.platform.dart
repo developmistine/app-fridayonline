@@ -51,7 +51,7 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
   FocusNode textFocus = FocusNode();
   List<XFile>? imageFile = [];
   final chatScrollController = ScrollController();
-  WebSocketChannel? channel;
+  // WebSocketChannel? channel;
   int chatRoomId = 0;
   int sellerId = 0;
   // final ImagePicker _pickerImage = ImagePicker();
@@ -79,7 +79,7 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
     _scrollController.dispose();
     chatController.resetRecommend();
     chatScrollController.dispose();
-    // channel!.sink.close(status.goingAway);
+    // Get.find<WebSocketController>().onClose();
     super.dispose();
   }
 
@@ -111,123 +111,7 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
         });
       });
       fetchProfile();
-      // connectWebSocket();
     });
-  }
-
-  // connectWebSocket() async {
-  //   SetData data = SetData();
-  //   // สร้าง channel ใหม่
-  //   channel = WebSocketChannel.connect(
-  //     Uri.parse(
-  //         'wss://app.friday.co.th/ws/chat?userId=CU${await data.b2cCustID}'),
-  //   );
-  //   final message = {
-  //     "event": "customer_readall_message",
-  //     "receiver_id": sellerId,
-  //     "is_me": true,
-  //     "message_data": {
-  //       "chat_room_id": chatRoomId,
-  //       "sender_role": "customer",
-  //       "sender_id": await data.b2cCustID
-  //     }
-  //   };
-  //   channel!.sink.add(jsonEncode(message));
-  //   // ตั้ง listener
-  //   receieveMessage();
-  // }
-
-  StreamSubscription<dynamic> receieveMessage() {
-    return channel!.stream.listen(
-      (message) {
-        final socketMessage = receieveMessageFromJson(message);
-        if (socketMessage.event == "message") {
-          if (!mounted) return;
-          setState(() {
-            var newMsg = ReciveMessage(
-              messageData: MessageData(
-                messageText: socketMessage.messageData.messageText,
-                messageType: socketMessage.messageData.messageType,
-                messageId: socketMessage.messageData.messageId,
-                chatRoomId: socketMessage.messageData.chatRoomId,
-                senderId: socketMessage.messageData.senderId,
-                senderRole: socketMessage.messageData.senderRole,
-                imgPath: socketMessage.messageData.imgPath,
-                imgFilename: socketMessage.messageData.imgFilename,
-                isRead: socketMessage.messageData.isRead,
-                sendDate: socketMessage.messageData.sendDate,
-                attachment: socketMessage.messageData.attachment,
-                productId: socketMessage.messageData.productId,
-                title: socketMessage.messageData.title,
-                discount: socketMessage.messageData.discount,
-                price: socketMessage.messageData.price,
-                priceBeforeDiscount:
-                    socketMessage.messageData.priceBeforeDiscount,
-                image: socketMessage.messageData.image,
-                orderId: socketMessage.messageData.orderId,
-                orderNo: socketMessage.messageData.orderNo,
-                orderStatus: socketMessage.messageData.orderStatus,
-                orderColorCode: socketMessage.messageData.orderColorCode,
-                orderStatusDesc: socketMessage.messageData.orderStatusDesc,
-                orderTotalQty: socketMessage.messageData.orderTotalQty,
-                orderTotalAmount: socketMessage.messageData.orderTotalAmount,
-              ),
-              event: socketMessage.event,
-              isMe: socketMessage.messageData.senderRole == "customer" ||
-                      socketMessage.messageData.senderRole == "system"
-                  ? true
-                  : false,
-            );
-            chatController.addMessage(newMsg);
-            // chatController.messages.insert(0, newMsg);
-            if (socketMessage.messageData.senderRole == "customer") return;
-            if (chatController.openChatRoom.value ==
-                socketMessage.messageData.chatRoomId) {
-              var payload = {
-                "event": "customer_read_message",
-                "receiver_id": socketMessage.messageData.senderId,
-                "message_data": {
-                  "chat_room_id": socketMessage.messageData.chatRoomId,
-                  "message_id": socketMessage.messageData.messageId,
-                  "sender_role": "customer"
-                }
-              };
-              channel!.sink.add(jsonEncode(payload));
-            }
-          });
-        } else if (socketMessage.event == "read_message") {
-          if (chatController.openChatRoom.value ==
-              socketMessage.messageData.chatRoomId) {
-            var isSellerRead = chatController.messages.firstWhereOrNull((e) =>
-                e.messageData.messageId == socketMessage.messageData.messageId);
-            if (isSellerRead == null) return;
-
-            isSellerRead.messageData.isRead = 1;
-            chatController.messages.refresh();
-          }
-        } else if (socketMessage.event == "readall_message") {
-          if (chatController.openChatRoom.value ==
-              socketMessage.messageData.chatRoomId) {
-            for (var chat in chatController.messages) {
-              if (chat.messageData.chatRoomId ==
-                  chatController.openChatRoom.value) {
-                chat.messageData.isRead = 1;
-              }
-            }
-            chatController.messages.refresh();
-          }
-        }
-      },
-      onDone: () {
-        print('WebSocket closed');
-        // startReconnect();
-      },
-      onError: (error) {
-        print('WebSocket error: $error');
-        // startReconnect();
-      },
-      cancelOnError: true,
-    );
   }
 
   Future<void> sendMessage(int type, String path, String fileName) async {
@@ -281,7 +165,7 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
   }
 
   void sendMessageSocket(Map<String, Object> message) {
-    channel!.sink.add(jsonEncode(message));
+    Get.find<WebSocketController>().channel!.sink.add(jsonEncode(message));
 
     _controller.clear();
   }
