@@ -3,6 +3,7 @@ import 'package:fridayonline/member/components/appbar/appbar.master.dart';
 import 'package:fridayonline/member/controller/chat.ctr.dart';
 import 'package:fridayonline/member/models/chat/recieve.message.model.dart';
 import 'package:fridayonline/member/utils/function.dart';
+import 'package:fridayonline/member/views/(chat)/chat.platform.dart';
 import 'package:fridayonline/member/views/(chat)/chat.seller.dart';
 import 'package:fridayonline/preferrence.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -149,13 +150,15 @@ class _ChatAppState extends State<ChatApp> {
                                   shop.chatRoomId);
                               chatController.openChatRoom.value =
                                   shop.chatRoomId;
-                              await Get.to(() => ChatAppWithSeller(
-                                      shop: shop,
-                                      channel: webSocketController.channel))!
-                                  .then((value) {
-                                shop.unRead = 0;
-                                chatController.conversations!.refresh();
-                              });
+                              await Get.to(() => ChatAppWithPlatform());
+
+                              // ChatAppWithSeller(
+                              //         shop: shop,
+                              //         channel: webSocketController.channel))!
+                              //     .then((value) {
+                              //   shop.unRead = 0;
+                              //   chatController.conversations!.refresh();
+                              // });
                             },
                             child: Column(
                               children: [

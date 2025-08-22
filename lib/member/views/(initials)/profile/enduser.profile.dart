@@ -10,6 +10,7 @@ import 'package:fridayonline/member/controller/order.ctr.dart';
 import 'package:fridayonline/member/controller/profile.ctr.dart';
 import 'package:fridayonline/member/views/(cart)/cart.main.dart';
 import 'package:fridayonline/member/views/(chat)/chat.dart';
+import 'package:fridayonline/member/views/(chat)/chat.platform.dart';
 import 'package:fridayonline/member/views/(profile)/settings.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:fridayonline/preferrence.dart';
@@ -61,21 +62,21 @@ class _EndUserProfileState extends State<EndUserProfile> {
       "title": "อื่นๆ",
       "subtitle": [
         {
+          "name": "โครงการพิเศษ",
+          "icon": Image.asset('assets/images/icon/projects.png', width: 28),
+        },
+        {
           "name": "คูปองของฉัน",
-          "icon": Image.asset('assets/images/icon/coupon_me.png', width: 32),
+          "icon": Image.asset('assets/images/icon/coupon_me.png', width: 28),
         },
         {
           "name": "รวมคูปอง",
-          "icon": Image.asset('assets/images/icon/coupon_all.png', width: 32),
+          "icon": Image.asset('assets/images/icon/coupon_all.png', width: 28),
         },
         {
-          "name": "Friday Online Coin",
+          "name": "ฟรายเดย์ Coin",
           "icon":
-              Image.asset('assets/images/b2c/icon/friday_coin.png', width: 32),
-        },
-        {
-          "name": "",
-          "icon": null,
+              Image.asset('assets/images/b2c/icon/friday_coin.png', width: 28),
         },
       ]
     },
@@ -98,7 +99,7 @@ class _EndUserProfileState extends State<EndUserProfile> {
     },
   ];
   bool showActivity = true;
-  setShowActivity() {
+  void setShowActivity() {
     setState(() {
       showActivity = !showActivity;
     });
@@ -365,7 +366,7 @@ class _EndUserProfileState extends State<EndUserProfile> {
                                     splashColor: Colors.transparent,
                                     onPressed: () async {
                                       chatCtr.fetchSellerChat(0);
-                                      Get.to(() => const ChatApp());
+                                      Get.to(() => const ChatAppWithPlatform());
                                     },
                                     icon: Image.asset(
                                         "assets/images/b2c/chat/chat-grey.png"),

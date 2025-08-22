@@ -4,6 +4,7 @@ import 'package:fridayonline/member/controller/enduser.signin.ctr.dart';
 import 'package:fridayonline/member/controller/search.ctr.dart';
 import 'package:fridayonline/member/views/(cart)/cart.main.dart';
 import 'package:fridayonline/member/views/(chat)/chat.dart';
+import 'package:fridayonline/member/views/(chat)/chat.platform.dart';
 import 'package:fridayonline/member/views/(search)/search.view.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
@@ -196,7 +197,7 @@ PreferredSize appbarEnduser(
                             splashColor: Colors.transparent,
                             onPressed: () async {
                               chatCtr.fetchSellerChat(0);
-                              Get.to(() => const ChatApp());
+                              Get.to(() => const ChatAppWithPlatform());
                             },
                             icon: Image.asset(
                               isSetAppbar

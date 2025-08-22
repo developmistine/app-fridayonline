@@ -24,6 +24,7 @@ import 'package:fridayonline/member/utils/format.dart';
 import 'package:fridayonline/member/views/(cart)/cart.bundle.dart';
 import 'package:fridayonline/member/views/(cart)/cart.coupon.dart';
 import 'package:fridayonline/member/views/(cart)/cart.sumary.dart';
+import 'package:fridayonline/member/views/(chat)/chat.platform.dart';
 import 'package:fridayonline/member/views/(chat)/chat.seller.dart';
 import 'package:fridayonline/member/widgets/dialog.dart';
 import 'package:fridayonline/print.dart';
@@ -73,7 +74,7 @@ class _EndUserCartState extends State<EndUserCart>
     super.dispose();
   }
 
-  setControllerSlide() async {
+  Future<void> setControllerSlide() async {
     if (!isLoaded) {
       isLoaded = true;
 
@@ -640,21 +641,22 @@ class _EndUserCartState extends State<EndUserCart>
                   webSocketController.channel!.sink.add(jsonEncode(message));
                   final chatController = Get.find<ChatController>();
                   chatController.openChatRoom.value = res.data.chatRoomId;
-                  Get.to(() => ChatAppWithSeller(
-                        shop: SellerChat(
-                            chatRoomId: res.data.chatRoomId,
-                            customerId: custId,
-                            customerName: '',
-                            customerImage: '',
-                            sellerId: res.data.sellerId,
-                            sellerName: cartShop[index].shopName,
-                            sellerImage: cartShop[index].icon,
-                            messageType: 1,
-                            messageText: '',
-                            lastSend: '',
-                            unRead: 0),
-                        channel: webSocketController.channel!,
-                      ));
+                  Get.to(() => ChatAppWithPlatform());
+                  // ChatAppWithSeller(
+                  //       shop: SellerChat(
+                  //           chatRoomId: res.data.chatRoomId,
+                  //           customerId: custId,
+                  //           customerName: '',
+                  //           customerImage: '',
+                  //           sellerId: res.data.sellerId,
+                  //           sellerName: cartShop[index].shopName,
+                  //           sellerImage: cartShop[index].icon,
+                  //           messageType: 1,
+                  //           messageText: '',
+                  //           lastSend: '',
+                  //           unRead: 0),
+                  //       channel: webSocketController.channel!,
+                  //     ));
                 },
                 child: Image.asset("assets/images/b2c/chat/chat-grey.png",
                     width: 24)),
@@ -1042,7 +1044,7 @@ class _EndUserCartState extends State<EndUserCart>
     return problematicItemsMatched;
   }
 
-  matchErrorText(Item shopProductItems) {
+  dynamic matchErrorText(Item shopProductItems) {
     var matchingItem = cartCtr.problematicItems.firstWhere(
       (element) =>
           element['item_id'] == shopProductItems.productId ||
@@ -1301,7 +1303,7 @@ class _EndUserCartState extends State<EndUserCart>
                               splashColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                await controller.deselectAllCart();
+                                controller.deselectAllCart();
                                 await controller.updateCart();
                               },
                               child: Row(
@@ -1333,7 +1335,7 @@ class _EndUserCartState extends State<EndUserCart>
                             splashColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              await controller.deselectAllCart();
+                              controller.deselectAllCart();
                               await controller.selectAllCart();
                               // for (var data in cartCtr.cartItems!.value.data) {
                               //   await controller.selectAllForShop(
@@ -1482,7 +1484,7 @@ class _EndUserCartState extends State<EndUserCart>
                                                         Get.back();
                                                         if (response!.code ==
                                                             "100") {
-                                                          await controller
+                                                          controller
                                                               .deselectAllCart();
                                                           await controller
                                                               .updateCart();
@@ -1814,7 +1816,7 @@ class _EndUserCartState extends State<EndUserCart>
                                 splashColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  await controller.deselectAllCart();
+                                  controller.deselectAllCart();
                                   await controller.updateCart();
                                   Get.back();
                                 },
@@ -1850,7 +1852,7 @@ class _EndUserCartState extends State<EndUserCart>
                               splashColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                await controller.deselectAllCart();
+                                controller.deselectAllCart();
                                 await controller.selectAllCart();
 
                                 Get.back();
@@ -2436,7 +2438,7 @@ class CheckboxController extends GetxController {
   RxMap<int, List<Item>> seleletedProuduct = <int, List<Item>>{}.obs;
 
   // เพิ่มการเลือก
-  addSelection(int shopId, Item item) async {
+  Future<void> addSelection(int shopId, Item item) async {
     final key = '$shopId-${item.selectItemId}-${item.productId}';
     selectedKeys.add(key); // ใช้ RxSet.add() แทน
     if (!seleletedProuduct.containsKey(shopId)) {
@@ -2454,7 +2456,7 @@ class CheckboxController extends GetxController {
   }
 
   // ลบการเลือก
-  removeSelection(int shopId, int itemId, int productId) async {
+  Future<void> removeSelection(int shopId, int itemId, int productId) async {
     final key = '$shopId-$itemId-$productId';
     printWhite(selectedKeys);
     if (!selectedKeys.contains(key)) {
@@ -2485,7 +2487,7 @@ class CheckboxController extends GetxController {
   }
 
   // เลือกร้านทั้งหมด
-  selectAllCart() async {
+  Future<void> selectAllCart() async {
     for (var data in cartCtr.cartItems!.value.data) {
       // make key
       final keys = data.items
@@ -2511,7 +2513,7 @@ class CheckboxController extends GetxController {
   }
 
   // เลือกทั้งหมดสำหรับ shop ที่ระบุ
-  selectAllForShop(int shopId, List<Item> products) async {
+  Future<void> selectAllForShop(int shopId, List<Item> products) async {
     final keys = products
         .where((element) => element.normalStock != 0 && element.stock != 0)
         .map(
@@ -2536,7 +2538,7 @@ class CheckboxController extends GetxController {
   }
 
   // ยกเลิกการเลือกทั้งหมดสำหรับ shop ที่ระบุ
-  deselectAllForShop(int shopId, List<Item> products) async {
+  Future<void> deselectAllForShop(int shopId, List<Item> products) async {
     final keys = products
         .map(
             (product) => '$shopId-${product.selectItemId}-${product.productId}')
@@ -2565,7 +2567,7 @@ class CheckboxController extends GetxController {
   }
 
   // ยกเลิกการเลือกทั้งหมด
-  deselectAllCart() {
+  void deselectAllCart() {
     seleletedProuduct.clear();
     seleletedProuduct.refresh();
     selectedKeys.clear();
@@ -2740,7 +2742,7 @@ class CheckboxController extends GetxController {
     // printWhite(jsonEncode(mergedArray));
   }
 
-  clearVal() {
+  void clearVal() {
     selectedKeys.clear();
     seleletedProuduct.clear();
   }

@@ -2,6 +2,7 @@ import 'package:fridayonline/member/controller/cart.ctr.dart';
 import 'package:fridayonline/member/controller/chat.ctr.dart';
 import 'package:fridayonline/member/controller/enduser.signin.ctr.dart';
 import 'package:fridayonline/member/views/(chat)/chat.dart';
+import 'package:fridayonline/member/views/(chat)/chat.platform.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -106,7 +107,7 @@ AppBar appbarCart() {
                     splashColor: Colors.transparent,
                     onPressed: () async {
                       chatCtr.fetchSellerChat(0);
-                      Get.to(() => const ChatApp());
+                      Get.to(() => const ChatAppWithPlatform());
                     },
                     icon: Image.asset("assets/images/b2c/chat/chat-grey.png",
                         width: 24),

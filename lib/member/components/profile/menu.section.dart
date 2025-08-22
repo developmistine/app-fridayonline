@@ -1,5 +1,4 @@
 import 'package:fridayonline/member/controller/cart.ctr.dart';
-import 'package:fridayonline/member/controller/chat.ctr.dart';
 import 'package:fridayonline/member/controller/profile.ctr.dart';
 import 'package:fridayonline/member/views/(chat)/chat.platform.dart';
 import 'package:fridayonline/member/views/(coupon)/conpon.me.dart';
@@ -11,6 +10,7 @@ import 'package:fridayonline/member/views/(profile)/edit.profile.dart';
 import 'package:fridayonline/member/views/(profile)/friday.coin.dart';
 import 'package:fridayonline/member/views/(profile)/myaddress.dart';
 import 'package:fridayonline/member/views/(profile)/myorder.dart';
+import 'package:fridayonline/member/views/(profile)/projects.dart';
 import 'package:fridayonline/member/views/(profile)/varsion.dart';
 import 'package:fridayonline/member/widgets/dialog.confirm.dart';
 import 'package:fridayonline/theme.dart';
@@ -36,16 +36,15 @@ Widget buildMenuSection(
 
       return Container(
         padding: const EdgeInsets.all(8),
-        margin: const EdgeInsets.all(4),
+        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
         decoration: BoxDecoration(
             color: Colors.white, borderRadius: BorderRadius.circular(8)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Title
-            // if (title != "ช่วยเหลือ")
             Padding(
-              padding: const EdgeInsets.only(top: 4.0, left: 8, bottom: 4),
+              padding: const EdgeInsets.only(left: 8.0, right: 4.0, bottom: 2),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -93,116 +92,123 @@ Widget buildMenuSection(
                 ],
               ),
             ),
+
             // Subtitle Items
-
             if (title != "ช่วยเหลือ")
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: Row(
-                  children: [
-                    ...List.generate(subtitles.length, (subIndex) {
-                      var subtitle = subtitles[subIndex];
-                      var name = subtitle["name"] as String;
-                      var icon = subtitle["icon"] as Widget?;
+              GridView.builder(
+                padding: EdgeInsets.zero,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: subtitles.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 4,
+                  mainAxisSpacing: 2,
+                  crossAxisSpacing: 4,
+                  childAspectRatio: 1.15,
+                ),
+                itemBuilder: (context, subIndex) {
+                  final subtitle = subtitles[subIndex];
+                  final name = subtitle["name"] as String;
+                  final icon = subtitle["icon"] as Widget?;
 
-                      return Expanded(
-                        child: InkWell(
-                          splashColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () {
-                            handleMenuTap(name);
-                          },
-                          child: Column(
+                  return InkWell(
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () => handleMenuTap(name),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        if (icon != null)
+                          Stack(
+                            clipBehavior: Clip.none,
+                            alignment: Alignment.topRight,
                             children: [
-                              if (icon != null)
-                                Stack(
-                                  clipBehavior: Clip.none,
-                                  alignment: Alignment.topRight,
-                                  children: [
-                                    icon,
-                                    if (title == 'ข้อมูลการสั่งซื้อ')
-                                      Positioned(
-                                        top: -8,
-                                        right: -8,
-                                        child: Obx(() {
-                                          if (orderCtr.isLoading.value) {
-                                            return const SizedBox();
-                                          }
-                                          if (orderCtr.header == null) {
-                                            return const SizedBox();
-                                          }
-                                          var countData = orderCtr.header!.data
-                                              .firstWhereOrNull(
-                                                  (e) => e.description == name);
+                              icon,
+                              if (title == 'ข้อมูลการสั่งซื้อ')
+                                Positioned(
+                                  top: -8,
+                                  right: -8,
+                                  child: Obx(() {
+                                    if (orderCtr.isLoading.value) {
+                                      return const SizedBox.shrink();
+                                    }
+                                    if (orderCtr.header == null) {
+                                      return const SizedBox.shrink();
+                                    }
 
-                                          if (countData != null &&
-                                              countData.count != 0) {
-                                            return Container(
-                                                width: 18,
-                                                height: 18,
-                                                alignment: Alignment.center,
-                                                decoration: const BoxDecoration(
-                                                    color: Colors.red,
-                                                    shape: BoxShape.circle),
-                                                child: Text(
-                                                  orderCtr.header!
-                                                      .data[subIndex].count
-                                                      .toString(),
-                                                  style: const TextStyle(
-                                                      fontSize: 11,
-                                                      inherit: false,
-                                                      color: Colors.white),
-                                                ));
-                                          }
-                                          var cancelReturn = orderCtr
-                                              .header!.data
-                                              .where((e) =>
-                                                  e.description == 'ยกเลิก' ||
-                                                  e.description == 'คืนสินค้า')
-                                              .toList();
-                                          if (cancelReturn.isNotEmpty) {
-                                            var countLast = cancelReturn.fold(
-                                                0, (p, e) => p + e.count);
-                                            if (name == 'ยกเลิก/คืนเงิน' &&
-                                                countLast > 0) {
-                                              return Container(
-                                                  width: 18,
-                                                  height: 18,
-                                                  alignment: Alignment.center,
-                                                  decoration:
-                                                      const BoxDecoration(
-                                                          color: Colors.red,
-                                                          shape:
-                                                              BoxShape.circle),
-                                                  child: Text(
-                                                    countLast.toString(),
-                                                    style: const TextStyle(
-                                                        fontSize: 11,
-                                                        inherit: false,
-                                                        color: Colors.white),
-                                                  ));
-                                            }
-                                          }
+                                    final countData = orderCtr.header!.data
+                                        .firstWhereOrNull(
+                                            (e) => e.description == name);
 
-                                          return const SizedBox();
-                                        }),
-                                      )
-                                  ],
+                                    if (countData != null &&
+                                        countData.count != 0) {
+                                      return Container(
+                                        width: 18,
+                                        height: 18,
+                                        alignment: Alignment.center,
+                                        decoration: const BoxDecoration(
+                                          color: Colors.red,
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: Text(
+                                          countData.count.toString(),
+                                          style: const TextStyle(
+                                            fontSize: 11,
+                                            inherit: false,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      );
+                                    }
+
+                                    final cancelReturn = orderCtr.header!.data
+                                        .where((e) =>
+                                            e.description == 'ยกเลิก' ||
+                                            e.description == 'คืนสินค้า')
+                                        .toList();
+
+                                    if (cancelReturn.isNotEmpty) {
+                                      final countLast = cancelReturn.fold(
+                                          0, (p, e) => p + e.count);
+                                      if (name == 'ยกเลิก/คืนเงิน' &&
+                                          countLast > 0) {
+                                        return Container(
+                                          width: 18,
+                                          height: 18,
+                                          alignment: Alignment.center,
+                                          decoration: const BoxDecoration(
+                                            color: Colors.red,
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: Text(
+                                            countLast.toString(),
+                                            style: const TextStyle(
+                                              fontSize: 11,
+                                              inherit: false,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        );
+                                      }
+                                    }
+
+                                    return const SizedBox();
+                                  }),
                                 ),
-                              Text(
-                                name,
-                                style: const TextStyle(
-                                  fontSize: 12,
-                                ),
-                              ).marginOnly(top: 8),
                             ],
                           ),
-                        ),
-                      );
-                    }),
-                  ],
-                ),
+                        Text(
+                          name,
+                          style: const TextStyle(fontSize: 12),
+                          textAlign: TextAlign.center,
+                        ).marginOnly(top: 8),
+                      ],
+                    ),
+                  );
+                },
               ),
+
             if (title == "ช่วยเหลือ")
               ...List.generate(subtitles.length, (index) {
                 return InkWell(
@@ -266,6 +272,9 @@ Color setColor(title) {
 Future<void> handleMenuTap(String title) async {
   final profile = profileCtl.profileData.value;
   switch (title) {
+    case "โครงการพิเศษ":
+      Get.to(() => const SpecialProjects());
+      break;
     case "คูปองของฉัน":
       Get.to(() => const CouponMe());
       break;
@@ -283,7 +292,7 @@ Future<void> handleMenuTap(String title) async {
         Get.to(() => const CouponAll());
         break;
       }
-    case "Friday Online Coin":
+    case "ฟรายเดย์ Coin":
       {
         Get.to(() => FridayCoin());
         break;

@@ -24,6 +24,7 @@ import 'package:fridayonline/member/utils/format.dart';
 import 'package:fridayonline/member/views/(anonymous)/signin.dart';
 import 'package:fridayonline/member/views/(brand)/brand.category.dart';
 import 'package:fridayonline/member/views/(cart)/cart.main.dart';
+import 'package:fridayonline/member/views/(chat)/chat.platform.dart';
 import 'package:fridayonline/member/views/(chat)/chat.seller.dart';
 import 'package:fridayonline/member/views/(coupon)/coupon.detail.dart';
 import 'package:fridayonline/member/views/(flashdeal)/shop.flashdeal.deail.dart';
@@ -89,7 +90,7 @@ class _BrandStoreState extends State<BrandStore>
   int offset = 40;
   final CarouselSliderController carouselCtr = CarouselSliderController();
 
-  setTapActive(tap) {
+  void setTapActive(tap) {
     if (tap == tapActive) return;
     var tapParams = Get.parameters;
     var sectionId = int.tryParse(tapParams["sectionId"] ?? "") ?? 0;
@@ -127,7 +128,7 @@ class _BrandStoreState extends State<BrandStore>
     setPauseVideo();
   }
 
-  tapSort(int index, sort.Datum items) {
+  void tapSort(int index, sort.Datum items) {
     brandCtr.setActiveTab(index);
     offset = 40;
     if (items.subLevels.isNotEmpty) {
@@ -282,7 +283,7 @@ class _BrandStoreState extends State<BrandStore>
     });
   }
 
-  setPauseVideo() {
+  void setPauseVideo() {
     if (!mounted) return;
     videoControllers.forEach((key, value) {
       value.pause();
@@ -369,24 +370,25 @@ class _BrandStoreState extends State<BrandStore>
                                       };
                                       webSocketController.channel!.sink
                                           .add(jsonEncode(message));
-                                      Get.to(() => ChatAppWithSeller(
-                                            shop: SellerChat(
-                                                chatRoomId: res.data.chatRoomId,
-                                                customerId: custId,
-                                                customerName: '',
-                                                customerImage: '',
-                                                sellerId: res.data.sellerId,
-                                                sellerName: brandCtr
-                                                    .shopInfo!.data.shopName,
-                                                sellerImage: brandCtr.shopInfo!
-                                                    .data.account.image,
-                                                messageType: 1,
-                                                messageText: '',
-                                                lastSend: '',
-                                                unRead: 0),
-                                            channel:
-                                                webSocketController.channel!,
-                                          ));
+                                      Get.to(() => ChatAppWithPlatform());
+                                      // ChatAppWithSeller(
+                                      //       shop: SellerChat(
+                                      //           chatRoomId: res.data.chatRoomId,
+                                      //           customerId: custId,
+                                      //           customerName: '',
+                                      //           customerImage: '',
+                                      //           sellerId: res.data.sellerId,
+                                      //           sellerName: brandCtr
+                                      //               .shopInfo!.data.shopName,
+                                      //           sellerImage: brandCtr.shopInfo!
+                                      //               .data.account.image,
+                                      //           messageType: 1,
+                                      //           messageText: '',
+                                      //           lastSend: '',
+                                      //           unRead: 0),
+                                      //       channel:
+                                      //           webSocketController.channel!,
+                                      //     ));
                                     },
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(

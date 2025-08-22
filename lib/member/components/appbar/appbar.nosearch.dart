@@ -3,6 +3,7 @@ import 'package:fridayonline/member/controller/chat.ctr.dart';
 import 'package:fridayonline/member/controller/track.ctr.dart';
 import 'package:fridayonline/member/views/(cart)/cart.main.dart';
 import 'package:fridayonline/member/views/(chat)/chat.dart';
+import 'package:fridayonline/member/views/(chat)/chat.platform.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
@@ -105,7 +106,7 @@ appBarNoSearchEndUser(String titles, {String? page}) {
                     onPressed: () async {
                       Get.find<TrackCtr>().clearLogContent();
                       chatCtr.fetchSellerChat(0);
-                      Get.to(() => const ChatApp());
+                      Get.to(() => const ChatAppWithPlatform());
                     },
                     icon: Image.asset("assets/images/b2c/chat/chat-blue.png"),
                   )),

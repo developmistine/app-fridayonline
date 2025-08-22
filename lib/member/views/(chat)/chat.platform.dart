@@ -23,7 +23,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
-import 'package:web_socket_channel/web_socket_channel.dart';
 import 'package:image_picker/image_picker.dart' as img_picker;
 
 class ChatRenderItem {
