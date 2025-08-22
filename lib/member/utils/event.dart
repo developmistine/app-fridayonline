@@ -45,7 +45,7 @@ Future<void> eventBanner(contentDetails, String contentType) async {
           Get.to(() => const CouponAll());
           break;
         } else {
-          Get.to(() => WebViewApp(
+          await Get.to(() => WebViewApp(
               mparamurl: actionValue, mparamTitleName: 'Friday Online'));
         }
 

@@ -1,7 +1,9 @@
 import 'package:fridayonline/member/controller/enduser.home.ctr.dart';
 import 'package:fridayonline/member/models/home/home.popup.model.dart';
 import 'package:fridayonline/member/services/home/home.service.dart';
+import 'package:fridayonline/member/services/track/track.service.dart';
 import 'package:fridayonline/member/utils/event.dart';
+import 'package:fridayonline/print.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:fridayonline/preferrence.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -14,6 +16,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 EndUserHomeCtr homeCtr = Get.find();
 final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 
+// ignore: strict_top_level_inference
 showPopupEndUser(BuildContext context) async {
   int current = 0;
   bool isCheck = false;
@@ -48,7 +51,7 @@ showPopupEndUser(BuildContext context) async {
                             SizedBox(
                           width: Get.width,
                           child: InkWell(
-                            onTap: () {
+                            onTap: () async {
                               Get.back();
                               var bannerItem = popup.data[itemIndex];
                               eventBanner(bannerItem, 'home_popup');
@@ -188,6 +191,17 @@ showPopupEndUser(BuildContext context) async {
               ],
             ),
           );
-        })));
+        }))).then((value) {
+      printWhite("ปิด HOME POPUP");
+      final item = popup.data[current];
+      setTrackIncentiveContentViewServices(
+        item.contentId,
+        item.contentName,
+        'home_popup',
+        0,
+        item.pgmId,
+        'close',
+      );
+    });
   }
 }

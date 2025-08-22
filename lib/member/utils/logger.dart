@@ -29,6 +29,7 @@ class GetRouteLogger extends RouteObserver<PageRoute<dynamic>> {
         _enterTimes.remove(previousName);
       }
     }
+
     // if (previousName == '/EndUserHome') {
     //   _handleLeaveEndUserHome();
     // }
@@ -385,6 +386,11 @@ class GetRouteLogger extends RouteObserver<PageRoute<dynamic>> {
       case '/BundleProducts':
         {
           routeName = 'bundle_products_page';
+          break;
+        }
+      case '/WebViewApp':
+        {
+          routeName = 'webview_page';
           break;
         }
       default:

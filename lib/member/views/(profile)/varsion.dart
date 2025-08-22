@@ -40,7 +40,7 @@ class VersionApp extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: Image.asset(
-                    'assets/images/b2c/logo/new_splas_1.png',
+                    'assets/images/b2c/logo/friday_online_logo_blue.png',
                     width: 80,
                   ),
                 ),

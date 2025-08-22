@@ -6,6 +6,7 @@ import 'package:fridayonline/member/models/home/home.banner.model.dart';
 import 'package:fridayonline/member/models/home/home.brands.model.dart';
 import 'package:fridayonline/member/models/home/home.content.model.dart';
 import 'package:fridayonline/member/models/home/home.popup.model.dart';
+import 'package:fridayonline/member/models/home/home.projects.banner.dart';
 import 'package:fridayonline/member/models/home/home.recommend.dart';
 import 'package:fridayonline/member/models/home/home.short.model.dart';
 import 'package:fridayonline/member/models/home/home.topsales.model.dart';
@@ -61,6 +62,34 @@ Future<HomeBanner?> fetchHomeBannerService() async {
     return Future.error('Error get home banner : api/v1/home/banner');
   } catch (e) {
     return Future.error('Error: fetchHomeBannerService $e');
+  }
+}
+
+Future<HomeProjectsBanner?> fetchHomeProjectsBannerService() async {
+  SetData data = SetData();
+  var url = Uri.parse("${b2c_api_url}api/v1/home/incentive_program");
+
+  try {
+    var jsonCall = await AuthFetch.post(url,
+        headers: <String, String>{
+          'Content-type': 'application/json; charset=utf-8'
+        },
+        body: jsonEncode({
+          "cust_id": await data.b2cCustID,
+          "device": await data.device,
+          "session_id": await data.sessionId,
+          "token_app": await data.tokenId
+        }));
+    if (jsonCall.statusCode == 200) {
+      Uint8List jsonResponse = jsonCall.bodyBytes;
+      final homeProjectsBanner =
+          homeProjectsBannerFromJson(utf8.decode(jsonResponse));
+      return homeProjectsBanner;
+    }
+    return Future.error(
+        'Error get home projects banner : api/v1/home/incentive_program');
+  } catch (e) {
+    return Future.error('Error: fetchHomeProjectsBannerService $e');
   }
 }
 
@@ -207,7 +236,9 @@ Future<EndUserPopup?> fetctPopupService(int popupType) async {
         body: jsonEncode({
           "cust_id": await data.b2cCustID,
           "device": await data.device,
-          "popup_type": popupType
+          "popup_type": popupType,
+          "session_id": await data.sessionId,
+          "token_app": await data.tokenId
         }));
     if (jsonCall.statusCode == 200) {
       Uint8List jsonResponse = jsonCall.bodyBytes;

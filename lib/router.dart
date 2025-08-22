@@ -1,3 +1,4 @@
+import 'package:fridayonline/member/components/webview/webview.dart';
 import 'package:fridayonline/member/enduser.main.dart';
 import 'package:fridayonline/member/views/(brand)/brand.store.dart';
 import 'package:fridayonline/member/views/(cart)/cart.main.dart';
@@ -33,4 +34,5 @@ List<GetPage<dynamic>> router = [
       page: () => Store(
             storeId: Get.parameters['id']!,
           )),
+  GetPage(name: '/WebViewApp', page: () => const WebViewApp()),
 ];

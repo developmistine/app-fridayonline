@@ -479,7 +479,7 @@ class _CacheImageBannerB2CState extends State<CacheImageBannerB2C>
         if (snapshot.hasData && snapshot.data != null) {
           return Image.file(
             snapshot.data!,
-            fit: BoxFit.fill,
+            fit: BoxFit.cover,
             width: double.infinity,
             alignment: Alignment.center,
             errorBuilder: (context, error, stackTrace) {

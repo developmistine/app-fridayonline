@@ -17,10 +17,7 @@ Future<TracksResponse?> setTrackPageViewServices(
     String action, String page, int timeSpent, int referrerId,
     {int? sellerId}) async {
   SetData data = SetData();
-  var repType = await data.repType;
-  if (repType == '2') {
-    return null;
-  }
+
   var url = Uri.parse("${b2c_api_url}logs/behaviors/track");
 
   try {
@@ -67,10 +64,7 @@ Future<TracksResponse?> setTrackContentViewServices(
     int contentId, String contentTitle, String contentType, int timeSpent,
     {int? sellerId}) async {
   SetData data = SetData();
-  var repType = await data.repType;
-  if (repType == '2') {
-    return null;
-  }
+
   var url = Uri.parse("${b2c_api_url}logs/behaviors/track");
 
   try {
@@ -108,6 +102,50 @@ Future<TracksResponse?> setTrackContentViewServices(
   }
 }
 
+Future<TracksResponse?> setTrackIncentiveContentViewServices(
+    int contentId,
+    String contentTitle,
+    String contentType,
+    int timeSpent,
+    int pgmId,
+    String flag,
+    {int? sellerId}) async {
+  SetData data = SetData();
+
+  var url = Uri.parse("${b2c_api_url}api/log/incentive_program");
+
+  var payload = {
+    "action": "content_view",
+    "content_id": contentId,
+    "content_title": contentTitle,
+    "content_type": contentType,
+    "flag": flag, // close กดปิด, view กดอ่าน , accept กดยอมรับ
+    "durations": timeSpent,
+    "pgm_id": pgmId,
+    "session_id": await data.sessionId,
+    "token_app": await data.tokenId,
+    "device": await data.device
+  };
+
+  try {
+    var jsonCall = await AuthFetch.post(url,
+        headers: <String, String>{
+          'Content-type': 'application/json; charset=utf-8'
+        },
+        body: jsonEncode(payload));
+    if (jsonCall.statusCode == 200) {
+      Uint8List jsonResponse = jsonCall.bodyBytes;
+      final tracksResponse = tracksResponseFromJson(utf8.decode(jsonResponse));
+      printWhite(payload);
+      printWhite(tracksResponse);
+      return tracksResponse;
+    }
+    return Future.error('Error logs tracks content view: logs/behaviors/track');
+  } catch (e) {
+    return Future.error('Error : setTrackContentViewServices $e');
+  }
+}
+
 Future<TracksResponse?> setTrackProductViewServices(
   int shopId,
   int productId,
@@ -121,10 +159,7 @@ Future<TracksResponse?> setTrackProductViewServices(
   int timeSpent,
 ) async {
   SetData data = SetData();
-  var repType = await data.repType;
-  if (repType == '2') {
-    return null;
-  }
+
   var url = Uri.parse("${b2c_api_url}logs/behaviors/track");
 
   try {

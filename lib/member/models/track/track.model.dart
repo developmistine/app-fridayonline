@@ -1,6 +1,5 @@
-// To parse this JSON data, do
-//
-//     final tracksResponse = tracksResponseFromJson(jsonString);
+// To parse this JSON data, do:
+// final tracksResponse = tracksResponseFromJson(jsonString);
 
 import 'dart:convert';
 
@@ -10,45 +9,51 @@ TracksResponse tracksResponseFromJson(String str) =>
 String tracksResponseToJson(TracksResponse data) => json.encode(data.toJson());
 
 class TracksResponse {
-  String code;
-  Data data;
-  String message;
+  final String code;
+  final String message;
+  final Data? data; // <-- ทำให้ nullable
 
   TracksResponse({
     required this.code,
-    required this.data,
     required this.message,
+    this.data,
   });
 
   factory TracksResponse.fromJson(Map<String, dynamic> json) => TracksResponse(
-        code: json["code"],
-        data: Data.fromJson(json["data"]),
-        message: json["message"],
+        code: json['code']?.toString() ?? '',
+        message: json['message']?.toString() ?? '',
+        // รองรับกรณี data ไม่มี / เป็น null / ไม่ใช่ Map
+        data: (json['data'] is Map<String, dynamic>)
+            ? Data.fromJson(json['data'] as Map<String, dynamic>)
+            : null,
       );
 
-  Map<String, dynamic> toJson() => {
-        "code": code,
-        "data": data.toJson(),
-        "message": message,
-      };
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{
+      'code': code,
+      'message': message,
+    };
+    if (data != null) map['data'] = data!.toJson();
+    return map;
+  }
 }
 
 class Data {
-  String journeyId;
-  String sessionId;
+  final String? journeyId;
+  final String? sessionId;
 
   Data({
-    required this.journeyId,
-    required this.sessionId,
+    this.journeyId,
+    this.sessionId,
   });
 
   factory Data.fromJson(Map<String, dynamic> json) => Data(
-        journeyId: json["journey_id"],
-        sessionId: json["session_id"],
+        journeyId: json['journey_id']?.toString(),
+        sessionId: json['session_id']?.toString(),
       );
 
-  Map<String, dynamic> toJson() => {
-        "journey_id": journeyId,
-        "session_id": sessionId,
-      };
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        'journey_id': journeyId,
+        'session_id': sessionId,
+      }..removeWhere((_, v) => v == null); // ตัด field ที่เป็น null ออก
 }

@@ -80,9 +80,9 @@ class _WebViewAppState extends State<WebViewApp> {
           onUrlChange: (change) {
             var url = change.url ?? "";
             var lastUrl = url.split('/').last;
-            if (lastUrl == 'close') {
+            if (lastUrl == 'accept') {
               if (signInController.custId == 0) {
-                Get.back(result: 'signIn');
+                Get.back(result: 'accept');
                 Get.to(() => const SignInScreen());
                 return;
               } else {

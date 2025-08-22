@@ -1,26 +1,28 @@
 // To parse this JSON data, do
 //
-//     final endUserPopup = endUserPopupFromJson(jsonString);
+//     final homeProjectsBanner = homeProjectsBannerFromJson(jsonString);
 
 import 'dart:convert';
 
-EndUserPopup endUserPopupFromJson(String str) =>
-    EndUserPopup.fromJson(json.decode(str));
+HomeProjectsBanner homeProjectsBannerFromJson(String str) =>
+    HomeProjectsBanner.fromJson(json.decode(str));
 
-String endUserPopupToJson(EndUserPopup data) => json.encode(data.toJson());
+String homeProjectsBannerToJson(HomeProjectsBanner data) =>
+    json.encode(data.toJson());
 
-class EndUserPopup {
+class HomeProjectsBanner {
   String code;
   List<Datum> data;
   String message;
 
-  EndUserPopup({
+  HomeProjectsBanner({
     required this.code,
     required this.data,
     required this.message,
   });
 
-  factory EndUserPopup.fromJson(Map<String, dynamic> json) => EndUserPopup(
+  factory HomeProjectsBanner.fromJson(Map<String, dynamic> json) =>
+      HomeProjectsBanner(
         code: json["code"],
         data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
         message: json["message"],
@@ -35,44 +37,40 @@ class EndUserPopup {
 
 class Datum {
   int contentId;
-  int? sectionId;
-  int? viewType;
   String contentName;
+  int pgmId;
   int actionType;
   String actionValue;
   String image;
-  int pgmId;
+  String imageDesktop;
 
   Datum({
     required this.contentId,
-    required this.sectionId,
-    required this.viewType,
     required this.contentName,
+    required this.pgmId,
     required this.actionType,
     required this.actionValue,
     required this.image,
-    required this.pgmId,
+    required this.imageDesktop,
   });
 
   factory Datum.fromJson(Map<String, dynamic> json) => Datum(
         contentId: json["content_id"],
-        sectionId: json["section_id"] ?? 0,
-        viewType: json["view_type"] ?? 0,
         contentName: json["content_name"],
+        pgmId: json["pgm_id"],
         actionType: json["action_type"],
         actionValue: json["action_value"],
         image: json["image"],
-        pgmId: json["pgm_id"],
+        imageDesktop: json["image_desktop"],
       );
 
   Map<String, dynamic> toJson() => {
         "content_id": contentId,
-        "section_id": sectionId,
-        "view_type": viewType,
         "content_name": contentName,
+        "pgm_id": pgmId,
         "action_type": actionType,
         "action_value": actionValue,
         "image": image,
-        "pgm_id": pgmId
+        "image_desktop": imageDesktop,
       };
 }

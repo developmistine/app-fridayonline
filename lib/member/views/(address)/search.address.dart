@@ -123,7 +123,7 @@ class _B2cSearchAddressState extends State<B2cSearchAddress> {
                     ),
                     if (controller!.text != "" && searchResult.isEmpty)
                       const Center(
-                          heightFactor: 20, child: Text('ไม่พบข้อมูลที่อยู่'))
+                          heightFactor: 10, child: Text('ไม่พบข้อมูลที่อยู่'))
                     else
                       Expanded(
                           child: ListView.builder(

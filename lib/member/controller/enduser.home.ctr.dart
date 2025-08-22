@@ -15,6 +15,7 @@ import 'package:fridayonline/member/models/home/hom.mall.model.dart';
 import 'package:fridayonline/member/models/home/home.brands.model.dart';
 import 'package:fridayonline/member/models/home/home.content.model.dart';
 import 'package:fridayonline/member/models/home/home.popup.model.dart';
+import 'package:fridayonline/member/models/home/home.projects.banner.dart';
 import 'package:fridayonline/member/models/home/home.recommend.dart';
 import 'package:fridayonline/member/models/home/home.short.model.dart';
 import 'package:fridayonline/member/models/home/home.topsales.model.dart';
@@ -31,6 +32,7 @@ import '../models/home/home.banner.model.dart';
 
 class EndUserHomeCtr extends GetxController {
   final RxBool isLoadingBanner = false.obs;
+  final RxBool isLoadingProjectsBanner = false.obs;
   final RxBool isLoadingShortMenu = false.obs;
   final RxBool isLoadingFlashDeal = false.obs;
   final RxBool isLoadingCoupon = false.obs;
@@ -48,6 +50,7 @@ class EndUserHomeCtr extends GetxController {
   final RxBool isFetchingLoadmore = false.obs;
 
   HomeBanner? homeBanner;
+  HomeProjectsBanner? homeProjectsBanner;
   HomeShortMenu? homeShortMenu;
   HomeCategory? homeCategory;
   // * Model เหมือนกันค่อยปรับ
@@ -73,10 +76,11 @@ class EndUserHomeCtr extends GetxController {
   RxBool isLoadingPopup = false.obs;
   RxBool isVisibilityFair = false.obs;
 
-  endUserGetAllHomePage() async {
+  Future<void> endUserGetAllHomePage() async {
     Get.find<CoinCtr>().fetchCheckIn();
     fetchPopup();
     fetchBanner();
+    fetchProjectsBanner();
     fetchShortMenu();
     fetchFlashDeal(0);
     fetchTopSalesWeekly();
@@ -114,7 +118,7 @@ class EndUserHomeCtr extends GetxController {
     isViewPopup.value = false;
   }
 
-  fetchPopup() async {
+  Future<void> fetchPopup() async {
     try {
       isLoadingPopup.value = true;
       popupSmall = await fetctPopupService(3);
@@ -123,7 +127,7 @@ class EndUserHomeCtr extends GetxController {
     }
   }
 
-  fetchBanner() async {
+  Future<void> fetchBanner() async {
     try {
       isLoadingBanner.value = true;
       homeBanner = await fetchHomeBannerService();
@@ -132,7 +136,16 @@ class EndUserHomeCtr extends GetxController {
     }
   }
 
-  fetchNewProducts(int contentType) async {
+  Future<void> fetchProjectsBanner() async {
+    try {
+      isLoadingProjectsBanner.value = true;
+      homeProjectsBanner = await fetchHomeProjectsBannerService();
+    } finally {
+      isLoadingProjectsBanner.value = false;
+    }
+  }
+
+  Future<void> fetchNewProducts(int contentType) async {
     try {
       isLoadingNewProduts.value = true;
       newProducts = await fetchHomeContentService(contentType);
@@ -141,7 +154,7 @@ class EndUserHomeCtr extends GetxController {
     }
   }
 
-  fetchSupperDeal(int contentType) async {
+  Future<void> fetchSupperDeal(int contentType) async {
     try {
       isLoadingSupperDeal.value = true;
 
@@ -151,7 +164,7 @@ class EndUserHomeCtr extends GetxController {
     }
   }
 
-  fetchShortMenu() async {
+  Future<void> fetchShortMenu() async {
     try {
       isLoadingShortMenu.value = true;
       homeShortMenu = await fetchHomeShorMenuService();
@@ -160,7 +173,7 @@ class EndUserHomeCtr extends GetxController {
     }
   }
 
-  fetchTopSalesWeekly() async {
+  Future<void> fetchTopSalesWeekly() async {
     try {
       isLoadingTopSales.value = true;
       topSalesWeekly = await fetchTopSalesWeeklyService();
@@ -169,7 +182,7 @@ class EndUserHomeCtr extends GetxController {
     }
   }
 
-  fetchMall() async {
+  Future<void> fetchMall() async {
     try {
       isLoadingMall(true);
       mall = await fetchHomeMallService();
@@ -178,7 +191,7 @@ class EndUserHomeCtr extends GetxController {
     }
   }
 
-  fetchBrands() async {
+  Future<void> fetchBrands() async {
     try {
       isLoadingBrands(true);
       brands = await fetctBrandsService();
@@ -187,7 +200,7 @@ class EndUserHomeCtr extends GetxController {
     }
   }
 
-  fetchFlashDeal(int offset) async {
+  Future<void> fetchFlashDeal(int offset) async {
     try {
       isLoadingFlashDeal.value = true;
       flashSale = await fetchFlashSaleHomeService(offset);
@@ -227,7 +240,7 @@ class EndUserHomeCtr extends GetxController {
     }
   }
 
-  fetchCoupon() async {
+  Future<void> fetchCoupon() async {
     try {
       isLoadingCoupon.value = true;
       final item = await fetchHomeVoucherService("regular_customer");
@@ -237,7 +250,7 @@ class EndUserHomeCtr extends GetxController {
     }
   }
 
-  fetchCouponNewUser() async {
+  Future<void> fetchCouponNewUser() async {
     try {
       isLoadingCouponNewUser.value = true;
       final item = await fetchHomeVoucherService("new_customer");
@@ -247,7 +260,7 @@ class EndUserHomeCtr extends GetxController {
     }
   }
 
-  fetchLoadmore(int offset) async {
+  Future<void> fetchLoadmore(int offset) async {
     try {
       isLoadingLoadmore.value = true;
       recommend = await fetctProductRecommendService(offset);
@@ -256,7 +269,7 @@ class EndUserHomeCtr extends GetxController {
     }
   }
 
-  fetchCategory() async {
+  Future<void> fetchCategory() async {
     try {
       isLoadingCategory.value = true;
       homeCategory = await fetchHomeCategoryService();

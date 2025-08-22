@@ -1,0 +1,15 @@
+{
+  "code": "100",
+  "data": [
+    {
+      "content_id": 3,
+      "content_name": "content incentive โครงการสั่งซื้อครบ 800 บาท รับประกันอุบัติเหตุ",
+      "pgm_id": 1,
+      "action_type": 1,
+      "action_value": "https://www.friday.co.th:8443/projects/pa-insurance?cust_id=0&content_type=home_incentive&content_id=3&device=android&pgm_id=1&session_id=8cb65701-e944-4e65-92fd-876a90b29a27&token_app=eRLm5t4URUqXK08P-wyrCd:APA91bG_4A6RtCm4S-B2KCNpQXAVov5F-73Xv0qNKJiwE-84AiLLoQXG_21LWQ4n46YvQWpHQc4oYQSl8SYylIwGWMrLInLh5DcEadmS87Kb-j3xjtwWN9Y",
+      "image": "https://s3.fridayth.com/b2c/contents/2025/10409/web_20250821164315_1.webp",
+      "image_desktop": ""
+    }
+  ],
+  "message": "สำเร็จ"
+}

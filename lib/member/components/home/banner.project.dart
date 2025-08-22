@@ -2,30 +2,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:fridayonline/member/components/webview/webview.dart';
 import 'package:fridayonline/member/controller/enduser.home.ctr.dart';
+import 'package:fridayonline/member/services/track/track.service.dart';
+import 'package:fridayonline/member/utils/cached_image.dart';
 import 'package:get/get.dart';
-
-final banner = [
-  {
-    "content_id": 1265,
-    "action_type": 4,
-    "action_value": "1265",
-    "content_name": "แบนเนอร์มิสทิน ลด 50.- วันที่ 15-24 สิงหาคม 2568",
-    "start_date": "15/08/2025 00:01:37",
-    "end_date": "24/08/2025 23:59:37",
-    "image": "assets/images/banner/accidental_insurance.png",
-    "image_desktop": "assets/images/banner/accidental_insurance.png"
-  },
-  // {
-  //   "content_id": 1265,
-  //   "action_type": 4,
-  //   "action_value": "1265",
-  //   "content_name": "แบนเนอร์มิสทิน ลด 50.- วันที่ 15-24 สิงหาคม 2568",
-  //   "start_date": "15/08/2025 00:01:37",
-  //   "end_date": "24/08/2025 23:59:37",
-  //   "image": "assets/images/banner/accidental_insurance.png",
-  //   "image_desktop": "assets/images/banner/accidental_insurance.png"
-  // },
-];
 
 class BannerProject extends StatefulWidget {
   const BannerProject({super.key});
@@ -37,72 +16,93 @@ class BannerProject extends StatefulWidget {
 class _BannerProjectState extends State<BannerProject> {
   final EndUserHomeCtr endUserHomeCtr = Get.find();
   final CarouselSliderController _controller = CarouselSliderController();
-  int _current = 0;
+  bool _navigating = false;
+  String flag = '';
 
   @override
   Widget build(BuildContext context) {
-    if (!endUserHomeCtr.isLoadingBanner.value &&
-        endUserHomeCtr.homeBanner!.code == "-9") {
-      return const SizedBox();
-    }
+    return Obx(() {
+      if (endUserHomeCtr.isLoadingProjectsBanner.value) {
+        return const SizedBox.shrink();
+      }
 
-    final items = banner; // หรือ endUserHomeCtr.homeBanner!.data
-    final canSlide = items.length > 1;
+      final resp = endUserHomeCtr.homeProjectsBanner;
+      final items = resp?.data ?? const [];
+      if (resp == null || resp.code == '-9' || items.isEmpty) {
+        return const SizedBox.shrink();
+      }
 
-    return Column(
-      children: [
-        Stack(
-          children: [
-            SizedBox(
-              width: Get.width,
-              child: CarouselSlider.builder(
-                key: ValueKey(items.length),
-                carouselController: _controller,
-                itemCount: items.length,
-                itemBuilder: (BuildContext context, int itemIndex, int _) {
-                  return SizedBox(
-                    width: Get.width,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: InkWell(
-                        onTap: () {
-                          Get.to(() => const WebViewApp(
-                                mparamurl:
-                                    "https://www.friday.co.th:8443/projects/pa-insurance",
-                                mparamTitleName: 'โครงการพิเศษ',
-                              ));
-                        },
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: Image.asset(
-                            'assets/images/banner/accidental_insurance.png',
-                            width: double.infinity,
-                            fit: BoxFit.fitWidth,
-                          ),
-                        ),
-                      ),
-                    ),
-                  );
+      final canSlide = items.length > 1;
+
+      return SizedBox(
+        width: Get.width,
+        child: CarouselSlider.builder(
+          carouselController: _controller,
+          itemCount: items.length,
+          itemBuilder: (context, index, _) {
+            final item = items[index];
+            final img = item.image;
+            if (img.isEmpty) return const SizedBox.shrink();
+
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                onTap: () async {
+                  if (_navigating) return;
+                  _navigating = true;
+
+                  if (item.actionType != 1) return;
+                  final sw = Stopwatch()..start();
+
+                  try {
+                    final result = await Get.to(() => WebViewApp(
+                          mparamurl: item.actionValue,
+                          mparamTitleName: 'โครงการพิเศษ',
+                        ));
+                    if (result == 'accept') {
+                      flag = result;
+                    } else {
+                      flag = 'view';
+                    }
+                  } finally {
+                    sw.stop();
+                    final secs = (sw.elapsedMilliseconds / 1000).round();
+                    final spent = secs < 1 ? 1 : secs;
+
+                    try {
+                      await setTrackIncentiveContentViewServices(
+                        item.contentId,
+                        item.contentName,
+                        'home_incentive',
+                        spent,
+                        item.pgmId,
+                        flag,
+                      );
+                    } catch (_) {}
+
+                    _navigating = false;
+                  }
                 },
-                options: CarouselOptions(
-                  height: 120,
-                  viewportFraction: 1,
-                  autoPlay: canSlide,
-                  enableInfiniteScroll: canSlide,
-                  scrollPhysics: canSlide
-                      ? const PageScrollPhysics()
-                      : const NeverScrollableScrollPhysics(),
-                  autoPlayInterval: const Duration(seconds: 3),
-                  autoPlayAnimationDuration: const Duration(milliseconds: 500),
-                  onPageChanged: (index, reason) {
-                    setState(() => _current = index);
-                  },
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: CacheImageBannerB2C(url: img),
                 ),
               ),
-            ),
-          ],
+            );
+          },
+          options: CarouselOptions(
+            height: 120,
+            viewportFraction: 1,
+            autoPlay: canSlide,
+            enableInfiniteScroll: canSlide,
+            scrollPhysics: canSlide
+                ? const PageScrollPhysics()
+                : const NeverScrollableScrollPhysics(),
+            autoPlayInterval: const Duration(seconds: 3),
+            autoPlayAnimationDuration: const Duration(milliseconds: 500),
+          ),
         ),
-      ],
-    );
+      );
+    });
   }
 }
