@@ -798,7 +798,6 @@ class GoogleSignInProvider {
       _googleSignIn.authenticationEvents.listen(_handleAuthEvent);
 
       // ลอง sign in อัตโนมัติถ้าเคย sign in ไว้แล้ว
-      await _googleSignIn.attemptLightweightAuthentication();
     } catch (e) {
       print('Google Sign-In Initialize Error: $e');
     }
