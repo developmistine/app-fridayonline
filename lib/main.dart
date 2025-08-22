@@ -9,7 +9,7 @@ import 'package:fridayonline/member/utils/logger.dart';
 import 'package:fridayonline/preferrence.dart';
 import 'package:fridayonline/print.dart';
 import 'package:fridayonline/push/firebase_message_service.dart';
-import 'package:fridayonline/push/huawei_notification.dart';
+// import 'package:fridayonline/push/huawei_notification.dart';
 import 'package:fridayonline/push/local_notification_service.dart';
 import 'package:fridayonline/router.dart';
 import 'package:fridayonline/splashscreen.dart';
@@ -158,18 +158,18 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     }
   }
 
-  void _checkAndProcessFirstInstall() async {
-    final prefs = await SharedPreferences.getInstance();
-    bool isFirstLaunch = prefs.getBool("is_first_launch") ?? true;
+  // void _checkAndProcessFirstInstall() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   bool isFirstLaunch = prefs.getBool("is_first_launch") ?? true;
 
-    if (isFirstLaunch) {
-      // ประมวลผล Branch data ครั้งแรก
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        BranchManagerMain.getBranchData(context);
-      });
-      await prefs.setBool("is_first_launch", false);
-    }
-  }
+  //   if (isFirstLaunch) {
+  //     // ประมวลผล Branch data ครั้งแรก
+  //     WidgetsBinding.instance.addPostFrameCallback((_) {
+  //       BranchManagerMain.getBranchData(context);
+  //     });
+  //     await prefs.setBool("is_first_launch", false);
+  //   }
+  // }
 
   @override
   void initState() {
