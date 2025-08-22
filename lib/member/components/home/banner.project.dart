@@ -85,13 +85,15 @@ class _BannerProjectState extends State<BannerProject> {
                 },
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8),
-                  child: CacheImageBannerB2C(url: img),
+                  child: CacheImageBannerB2C(
+                    url: img,
+                  ),
                 ),
               ),
             );
           },
           options: CarouselOptions(
-            height: 120,
+            height: 100,
             viewportFraction: 1,
             autoPlay: canSlide,
             enableInfiniteScroll: canSlide,
