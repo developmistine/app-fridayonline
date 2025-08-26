@@ -64,7 +64,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '436932745041',
     projectId: 'friday-online-40aa7',
     storageBucket: 'friday-online-40aa7.firebasestorage.app',
-    iosBundleId: 'com.example.fridayOnline',
+    iosBundleId: 'th.co.friday.fridayonline',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
@@ -73,7 +73,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '436932745041',
     projectId: 'friday-online-40aa7',
     storageBucket: 'friday-online-40aa7.firebasestorage.app',
-    iosBundleId: 'com.example.fridayOnline',
+    iosBundleId: 'th.co.friday.fridayonline',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
@@ -85,5 +85,4 @@ class DefaultFirebaseOptions {
     storageBucket: 'friday-online-40aa7.firebasestorage.app',
     measurementId: 'G-8RLL76LY94',
   );
-
 }

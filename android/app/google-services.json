@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:436932745041:android:ede54abc064fb4d36d2570",
         "android_client_info": {
-          "package_name": "com.example.fridayOnline"
+          "package_name": "th.co.friday.fridayonline"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "436932745041-d3ocrkffr8m3rcmvjilkcq9nqem71mef.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.fridayOnline",
+            "package_name": "th.co.friday.fridayonline",
             "certificate_hash": "64d056c822bf9af928057515e248b02d11a89590"
           }
         },
@@ -42,7 +42,7 @@
               "client_id": "436932745041-562nv5msbpkrf5vot9c93f8vn6v0gpbl.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.fridayOnline"
+                "bundle_id": "th.co.friday.fridayonline"
               }
             }
           ]
