@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>436932745041-562nv5msbpkrf5vot9c93f8vn6v0gpbl.apps.googleusercontent.com</string>
+	<string>436932745041-a0mmm42547vdgrj091q02etl2ltguld1.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.436932745041-562nv5msbpkrf5vot9c93f8vn6v0gpbl</string>
+	<string>com.googleusercontent.apps.436932745041-a0mmm42547vdgrj091q02etl2ltguld1</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>436932745041-d3ocrkffr8m3rcmvjilkcq9nqem71mef.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAbnGeT6cZVKfjLmm1oDrLshqhc6zKUJeM</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.fridayOnline</string>
+	<string>th.co.friday.fridayonline</string>
 	<key>PROJECT_ID</key>
 	<string>friday-online-40aa7</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:436932745041:ios:acd40b2d53799ae36d2570</string>
+	<string>1:436932745041:ios:dcc07ffa0d4891ce6d2570</string>
 </dict>
 </plist>
