@@ -132,11 +132,12 @@ class CacheImageProduct extends StatelessWidget {
               return FadeInImage(
                 image: FileImage(snapshot.data!),
                 placeholderFilterQuality: FilterQuality.low,
-                placeholder:
-                    const AssetImage('assets/images/b2c/logo/f_fair.png'),
+                placeholder: const AssetImage(
+                    'assets/images/b2c/logo/friday_online_loading.png'),
                 imageErrorBuilder: (context, error, stackTrace) {
                   return const Image(
-                    image: AssetImage('assets/images/b2c/logo/f_fair.png'),
+                    image: AssetImage(
+                        'assets/images/b2c/logo/friday_online_loading.png'),
                   );
                 },
               );

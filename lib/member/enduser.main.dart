@@ -69,8 +69,8 @@ class _EndUserHomeState extends State<EndUserHome>
 
   late BranchManager _branchManager;
 
-  gotopageParam(usertype, refid, refcode, channelId, typeparam, valueparam,
-      repCodeParam, parentId, linkId) async {
+  Future<void> gotopageParam(usertype, refid, refcode, channelId, typeparam,
+      valueparam, repCodeParam, parentId, linkId) async {
     switch (typeparam) {
       case "coupon":
         {
@@ -299,7 +299,7 @@ class _EndUserHomeState extends State<EndUserHome>
     streamSubscription?.cancel();
   }
 
-  getType() async {
+  Future<void> getType() async {
     typeUser = await data.repType;
   }
 
@@ -495,7 +495,7 @@ class _EndUserHomeState extends State<EndUserHome>
     changeView(index);
   }
 
-  checkShowFair() {
+  void checkShowFair() {
     if (!homeCtr.isVisibilityFair.value) {
       _labels.removeWhere((e) => e == "");
       _imageIconsActive.removeWhere((e) => e == null);
@@ -526,44 +526,43 @@ class _EndUserHomeState extends State<EndUserHome>
       data: MediaQuery.of(context)
           .copyWith(textScaler: const TextScaler.linear(1.0)),
       child: Theme(
-        data: Theme.of(context).copyWith(
-            elevatedButtonTheme: ElevatedButtonThemeData(
-                style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8)),
-                    textStyle: GoogleFonts.ibmPlexSansThai())),
-            textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
-              Theme.of(context).textTheme,
-            )),
-        child: Scaffold(
-          appBar: _pages![_selectedIndex].runtimeType == EndUserHomePage ||
-                  _pages![_selectedIndex].runtimeType == EndUserProfile
-              ? null
-              : _pages![_selectedIndex].runtimeType == EndUserNotify
-                  ? appBarNoSearchEndUser("การแจ้งเตือน", page: "home")
-                  : appbarEnduser(
-                      ctx: context,
-                      isSetAppbar: true,
-                    ),
-          body: IndexedStack(
-            index: _selectedIndex,
-            children: List.generate(5, (index) {
-              // โหลดหน้าเฉพาะที่ถูกเข้าชมแล้ว
-              if (_visitedPages.contains(index)) {
-                return _buildPage(index);
-              } else {
-                // แสดง loading placeholder สำหรับหน้าที่ยังไม่ได้เข้าชม
-                return const SizedBox();
-              }
-            }),
-          ),
-          floatingActionButtonLocation:
-              FloatingActionButtonLocation.centerDocked,
-          bottomNavigationBar: homeCtr.isVisibilityFair.value
-              ? bottomBarFair()
-              : bottomBarNoFair(),
-        ),
-      ),
+          data: Theme.of(context).copyWith(
+              elevatedButtonTheme: ElevatedButtonThemeData(
+                  style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8)),
+                      textStyle: GoogleFonts.ibmPlexSansThai())),
+              textTheme: GoogleFonts.ibmPlexSansThaiTextTheme(
+                Theme.of(context).textTheme,
+              )),
+          child: Scaffold(
+            appBar: _pages![_selectedIndex].runtimeType == EndUserHomePage ||
+                    _pages![_selectedIndex].runtimeType == EndUserProfile
+                ? null
+                : _pages![_selectedIndex].runtimeType == EndUserNotify
+                    ? appBarNoSearchEndUser("การแจ้งเตือน", page: "home")
+                    : appbarEnduser(
+                        ctx: context,
+                        isSetAppbar: true,
+                      ),
+            body: IndexedStack(
+              index: _selectedIndex,
+              children: List.generate(5, (index) {
+                // โหลดหน้าเฉพาะที่ถูกเข้าชมแล้ว
+                if (_visitedPages.contains(index)) {
+                  return _buildPage(index);
+                } else {
+                  // แสดง loading placeholder สำหรับหน้าที่ยังไม่ได้เข้าชม
+                  return const SizedBox();
+                }
+              }),
+            ),
+            floatingActionButtonLocation:
+                FloatingActionButtonLocation.centerDocked,
+            bottomNavigationBar: homeCtr.isVisibilityFair.value
+                ? bottomBarFair()
+                : bottomBarNoFair(),
+          )),
     );
   }
 
@@ -673,7 +672,8 @@ class _EndUserHomeState extends State<EndUserHome>
                       // spreadRadius: 1,
                     )
                   ]),
-              child: Image.asset("assets/images/b2c/logo/f_fair.png"),
+              child: Image.asset(
+                  "assets/images/b2c/logo/friday_online_logo_white.png"),
             ),
           ),
         ),
@@ -683,8 +683,19 @@ class _EndUserHomeState extends State<EndUserHome>
 
   Widget bottomBarNoFair() {
     return BottomAppBar(
-      child: SizedBox(
+      child: Container(
         height: 65,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Color(0x0C000000),
+              blurRadius: 24,
+              offset: Offset(0, -4),
+              spreadRadius: 0,
+            )
+          ],
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: List.generate(_labels.length, (index) {
