@@ -14,7 +14,7 @@ import 'package:http/http.dart' as http;
 Future<B2CRegisterOutput?> b2cRegisterService(B2CRegister regis) async {
   //! dev_api_b2c , b2c_api_url
 
-  var url = Uri.parse("${b2c_api_url}register");
+  var url = Uri.parse("${b2c_api_url}register_v1");
 
   try {
     var jsonData = jsonEncode(regis);

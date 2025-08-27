@@ -392,7 +392,7 @@ class _EndUserProfileState extends State<EndUserProfile> {
                     buildMenuSection("ข้อมูลคำสั่งซื้อ", ordermMenu),
                     buildMenuSection("คูปองส่วนลด", couponMenu),
                     buildMenuSection("คำแนะนำการใช่้งาน", helpMenu),
-                    const B2cSpecialProject(),
+                    // const B2cSpecialProject(),
                     const LoadmoreEndUser(),
                   ],
                 ),

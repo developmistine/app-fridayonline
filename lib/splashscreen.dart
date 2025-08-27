@@ -6,6 +6,7 @@ import 'package:fridayonline/member/models/check_version/check_version_model.dar
 import 'package:fridayonline/member/utils/branch_manager_main.dart';
 import 'package:fridayonline/member/utils/image_preloader.dart';
 import 'package:fridayonline/global.dart';
+import 'package:fridayonline/member/views/(profile)/projects.dart';
 import 'package:fridayonline/preferrence.dart';
 import 'package:fridayonline/print.dart';
 import 'package:fridayonline/theme.dart';
@@ -53,7 +54,8 @@ class AppChecker {
 }
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+  const SplashScreen({super.key, this.redirect});
+  final String? redirect;
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
@@ -267,7 +269,12 @@ class _SplashScreenState extends State<SplashScreen> {
           await checkShowFair();
           endUserHomeCtr.endUserGetAllHomePage();
           if (mounted) {
-            Get.offAll(() => EndUserHome(), routeName: "/EndUserHome");
+            if (widget.redirect == 'special_project') {
+              Get.offAll(() => EndUserHome(), routeName: "/EndUserHome");
+              Get.to(() => SpecialProjects());
+            } else {
+              Get.offAll(() => EndUserHome(), routeName: "/EndUserHome");
+            }
           }
         }
       }
@@ -299,37 +306,37 @@ class _SplashScreenState extends State<SplashScreen> {
     prefs.setBool('branch_first_processed', alreadyProcessed);
 
     var payload = B2CRegister(
-      otpCode: "",
-      otpRef: "",
-      registerId: "",
-      registerType: "guest",
-      moblie: '',
-      email: "",
-      prefix: '',
-      firstName: '',
-      lastName: '',
-      displayName: "",
-      image: "",
-      referringBrowser: '',
-      referringId: '',
-      gender: '',
-      birthDate: '',
-      address: Address(
+        otpCode: "",
+        otpRef: "",
+        registerId: "",
+        registerType: "guest",
+        moblie: '',
+        email: "",
+        prefix: '',
         firstName: '',
         lastName: '',
-        address1: '',
-        address2: '',
-        tombonId: 0,
-        amphurId: 0,
-        provinceId: 0,
-        postCode: '',
-        mobile: '',
-      ),
-      tokenApp: await data.tokenId == "null" ? "" : await data.tokenId,
-      device: await data.device,
-      sessionId: await data.sessionId,
-      identityId: await data.deviceId,
-    );
+        displayName: "",
+        image: "",
+        referringBrowser: '',
+        referringId: '',
+        gender: '',
+        birthDate: '',
+        address: Address(
+          firstName: '',
+          lastName: '',
+          address1: '',
+          address2: '',
+          tombonId: 0,
+          amphurId: 0,
+          provinceId: 0,
+          postCode: '',
+          mobile: '',
+        ),
+        tokenApp: await data.tokenId == "null" ? "" : await data.tokenId,
+        device: await data.device,
+        sessionId: await data.sessionId,
+        identityId: await data.deviceId,
+        accessToken: "");
 
     var res = await b2cRegisterService(payload);
     if (res != null) {
