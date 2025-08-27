@@ -143,6 +143,8 @@ class ApiProfile {
         body: jsonEncode({
           "cust_id": await data.b2cCustID,
           "device": await data.device,
+          "session_id": await data.sessionId,
+          "token_app": await data.tokenId
         }),
       );
 

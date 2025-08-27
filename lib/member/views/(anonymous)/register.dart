@@ -59,7 +59,7 @@ class _RegisterScreen extends State<RegisterScreen> {
   }
 
   void lineSDKInit() async {
-    await LineSDK.instance.setup("2006591395").then((_) {});
+    await LineSDK.instance.setup("2007999835").then((_) {});
   }
 
   void loginAndRegister(userId, displayName, image, email, type) async {
@@ -96,7 +96,8 @@ class _RegisterScreen extends State<RegisterScreen> {
         tokenApp: await data.tokenId,
         device: await data.device,
         sessionId: await data.sessionId,
-        identityId: await data.deviceId);
+        identityId: await data.deviceId,
+        accessToken: "");
     var res = await b2cRegisterService(payload);
     if (res!.code == "100") {
       prefs.remove("deepLinkSource");
@@ -197,37 +198,37 @@ class _RegisterScreen extends State<RegisterScreen> {
     String deepLinkSource = prefs.getString("deepLinkSource") ?? '';
     String deepLinkId = prefs.getString("deepLinkId") ?? '';
     var payload = B2CRegister(
-      otpCode: "",
-      otpRef: "",
-      registerId: _currentUser!.id,
-      registerType: 'google',
-      moblie: '',
-      email: _currentUser!.email,
-      prefix: '',
-      firstName: '',
-      lastName: '',
-      displayName: _currentUser!.displayName ?? "",
-      image: "",
-      // image: _currentUser!.photoUrl ?? "",
-      referringBrowser: deepLinkSource,
-      referringId: deepLinkId,
-      gender: '',
-      birthDate: '',
-      address: Address(
-          firstName: '',
-          lastName: '',
-          address1: '',
-          address2: '',
-          tombonId: 0,
-          amphurId: 0,
-          provinceId: 0,
-          postCode: '',
-          mobile: ''),
-      tokenApp: await data.tokenId,
-      device: await data.device,
-      sessionId: await data.sessionId,
-      identityId: await data.deviceId,
-    );
+        otpCode: "",
+        otpRef: "",
+        registerId: _currentUser!.id,
+        registerType: 'google',
+        moblie: '',
+        email: _currentUser!.email,
+        prefix: '',
+        firstName: '',
+        lastName: '',
+        displayName: _currentUser!.displayName ?? "",
+        image: "",
+        // image: _currentUser!.photoUrl ?? "",
+        referringBrowser: deepLinkSource,
+        referringId: deepLinkId,
+        gender: '',
+        birthDate: '',
+        address: Address(
+            firstName: '',
+            lastName: '',
+            address1: '',
+            address2: '',
+            tombonId: 0,
+            amphurId: 0,
+            provinceId: 0,
+            postCode: '',
+            mobile: ''),
+        tokenApp: await data.tokenId,
+        device: await data.device,
+        sessionId: await data.sessionId,
+        identityId: await data.deviceId,
+        accessToken: "");
     var res = await b2cRegisterService(payload);
     if (res!.code == "100") {
       prefs.remove("deepLinkSource");
@@ -264,36 +265,36 @@ class _RegisterScreen extends State<RegisterScreen> {
     String deepLinkSource = prefs.getString("deepLinkSource") ?? '';
     String deepLinkId = prefs.getString("deepLinkId") ?? '';
     var payload = B2CRegister(
-      otpCode: "",
-      otpRef: "",
-      registerId: user.userIdentifier ?? "",
-      registerType: 'apple',
-      moblie: '',
-      email: user.email ?? "",
-      prefix: '',
-      firstName: user.givenName ?? "",
-      lastName: user.familyName ?? "",
-      displayName: user.givenName ?? "",
-      image: "",
-      referringBrowser: deepLinkSource,
-      referringId: deepLinkId,
-      gender: '',
-      birthDate: '',
-      address: Address(
-          firstName: '',
-          lastName: '',
-          address1: '',
-          address2: '',
-          tombonId: 0,
-          amphurId: 0,
-          provinceId: 0,
-          postCode: '',
-          mobile: ''),
-      tokenApp: await data.tokenId,
-      device: await data.device,
-      sessionId: await data.sessionId,
-      identityId: await data.deviceId,
-    );
+        otpCode: "",
+        otpRef: "",
+        registerId: user.userIdentifier ?? "",
+        registerType: 'apple',
+        moblie: '',
+        email: user.email ?? "",
+        prefix: '',
+        firstName: user.givenName ?? "",
+        lastName: user.familyName ?? "",
+        displayName: user.givenName ?? "",
+        image: "",
+        referringBrowser: deepLinkSource,
+        referringId: deepLinkId,
+        gender: '',
+        birthDate: '',
+        address: Address(
+            firstName: '',
+            lastName: '',
+            address1: '',
+            address2: '',
+            tombonId: 0,
+            amphurId: 0,
+            provinceId: 0,
+            postCode: '',
+            mobile: ''),
+        tokenApp: await data.tokenId,
+        device: await data.device,
+        sessionId: await data.sessionId,
+        identityId: await data.deviceId,
+        accessToken: "");
     var res = await b2cRegisterService(payload);
     if (res!.code == "100") {
       prefs.remove("deepLinkSource");

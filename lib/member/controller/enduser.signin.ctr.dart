@@ -35,11 +35,11 @@ class EndUserSignInCtr extends GetxController {
     listInterest.add(index);
   }
 
-  changeAccept() {
+  void changeAccept() {
     isAccept.value = !isAccept.value;
   }
 
-  fetchB2cCustId() async {
+  Future<void> fetchB2cCustId() async {
     try {
       isLoading(true);
       SetData data = SetData();
@@ -82,8 +82,9 @@ class EndUserSignInCtr extends GetxController {
   }
 
   // set preference login or register
-  settingPreference(
-      String lsSuccess, String mobile, String lsTypeUser, int cusId) async {
+  Future<void> settingPreference(
+      String lsSuccess, String mobile, String lsTypeUser, int cusId,
+      {String? redirect = ''}) async {
     // เรียกใช้งาน SharedPreferences ที่เป็น future
     final SharedPreferences prefs = await _prefs;
     // ทำการ Get Data ออกมาทำการตรวจสอบก่อน
@@ -94,10 +95,10 @@ class EndUserSignInCtr extends GetxController {
     await prefs.setString("UserType", lsTypeUser);
     await prefs.setInt("B2cCustId", cusId);
     Get.find<AppController>().setCurrentNavIngetB2c(0);
-    Get.offAll(() => const SplashScreen());
+    Get.offAll(() => SplashScreen(redirect: redirect));
   }
 
-  settingPreferencePush(
+  Future<void> settingPreferencePush(
       String lsSuccess, String mobile, String lsTypeUser, int cusId) async {
     print("type is : lsTypeUser");
     // เรียกใช้งาน SharedPreferences ที่เป็น future

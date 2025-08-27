@@ -8,6 +8,7 @@ import 'package:fridayonline/member/utils/image_preloader.dart';
 import 'package:fridayonline/member/views/(anonymous)/otp.verify.dart';
 import 'package:fridayonline/member/views/(anonymous)/register.dart';
 import 'package:fridayonline/member/views/(other)/instructions.dart';
+import 'package:fridayonline/member/views/(profile)/projects.dart';
 import 'package:fridayonline/splashscreen.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:fridayonline/preferrence.dart';
@@ -25,7 +26,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 class SignInScreen extends StatefulWidget {
-  const SignInScreen({super.key});
+  const SignInScreen({super.key, this.redirect});
+  final String? redirect;
 
   @override
   _SignInScreen createState() => _SignInScreen();
@@ -63,10 +65,11 @@ class _SignInScreen extends State<SignInScreen>
   }
 
   void lineSDKInit() async {
-    await LineSDK.instance.setup("2006591395").then((_) {});
+    await LineSDK.instance.setup("2007999835").then((_) {});
   }
 
-  void loginAndRegister(userId, displayName, image, email, type) async {
+  void loginAndRegister(
+      userId, displayName, image, email, type, lineAccessToken) async {
     final SharedPreferences prefs = await _prefs;
     String deepLinkSource = prefs.getString("deepLinkSource") ?? '';
     String deepLinkId = prefs.getString("deepLinkId") ?? '';
@@ -82,7 +85,7 @@ class _SignInScreen extends State<SignInScreen>
         firstName: '',
         lastName: '',
         displayName: displayName ?? "",
-        image: "",
+        image: image,
         referringBrowser: deepLinkSource,
         referringId: deepLinkId,
         gender: '',
@@ -100,7 +103,8 @@ class _SignInScreen extends State<SignInScreen>
         tokenApp: await data.tokenId,
         device: await data.device,
         sessionId: await data.sessionId,
-        identityId: await data.deviceId);
+        identityId: await data.deviceId,
+        accessToken: lineAccessToken);
     var res = await b2cRegisterService(payload);
     if (res!.code == "100") {
       prefs.remove("deepLinkSource");
@@ -108,7 +112,7 @@ class _SignInScreen extends State<SignInScreen>
       await prefs.setString("accessToken", res.data.accessToken);
       await prefs.setString("refreshToken", res.data.refreshToken);
       endUserSignInCtr.settingPreference('1', '', '5', res.data.custId);
-      Get.offAll(() => const SplashScreen());
+      Get.offAll(() => SplashScreen(redirect: widget.redirect));
     } else {
       if (!Get.isSnackbarOpen) {
         Get.snackbar('', '',
@@ -132,7 +136,8 @@ class _SignInScreen extends State<SignInScreen>
           result.userProfile?.displayName,
           result.userProfile?.pictureUrl,
           "",
-          "line");
+          "line",
+          result.accessToken.value);
     } on PlatformException {
       if (!Get.isSnackbarOpen) {
         Get.snackbar('', '',
@@ -154,7 +159,7 @@ class _SignInScreen extends State<SignInScreen>
       final user = await _facebookSignInProvider.signInWithFacebook();
       if (user != null) {
         loginAndRegister(
-            user['id'], user['name'], "", user['email'], "facebook");
+            user['id'], user['name'], "", user['email'], "facebook", "");
       } else {
         if (!Get.isSnackbarOpen) {
           Get.snackbar('', '',
@@ -197,7 +202,7 @@ class _SignInScreen extends State<SignInScreen>
     }
     try {
       loginAndRegister(_currentUser!.id, _currentUser!.displayName ?? "", "",
-          _currentUser!.email, 'google');
+          _currentUser!.email, 'google', "");
     } on Exception catch (_) {
       if (!Get.isSnackbarOpen) {
         Get.snackbar('', '',
@@ -220,7 +225,7 @@ class _SignInScreen extends State<SignInScreen>
     }
     try {
       loginAndRegister(user.userIdentifier ?? "", user.givenName ?? "", "",
-          user.email ?? "", 'apple');
+          user.email ?? "", 'apple', "");
     } on Exception catch (_) {
       if (!Get.isSnackbarOpen) {
         Get.snackbar('', '',
@@ -262,7 +267,7 @@ class _SignInScreen extends State<SignInScreen>
             telController.clear();
             endUserSignInCtr.resetTimer();
             endUserSignInCtr.startTimer();
-            Get.to(() => const OtpVerify());
+            Get.to(() => OtpVerify(redirect: widget.redirect));
           } else {
             Get.snackbar(
               '',

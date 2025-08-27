@@ -5,7 +5,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fridayonline/member/controller/enduser.signin.ctr.dart';
 import 'package:fridayonline/member/views/(anonymous)/signin.dart';
-import 'package:fridayonline/print.dart';
 import 'package:fridayonline/safearea.dart';
 import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -81,13 +80,13 @@ class _WebViewAppState extends State<WebViewApp> {
             var url = change.url ?? "";
             var lastUrl = url.split('/').last;
             if (lastUrl == 'accept') {
+              Get.back(result: 'accept');
               if (signInController.custId == 0) {
-                Get.back(result: 'accept');
-                Get.to(() => const SignInScreen());
+                Get.to(() => const SignInScreen(redirect: 'special_project'));
                 return;
-              } else {
-                Get.back(result: 'closed');
               }
+            } else if (lastUrl == 'close') {
+              Get.back();
             }
           },
           onPageFinished: (String url) {

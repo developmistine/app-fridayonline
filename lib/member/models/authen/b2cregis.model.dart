@@ -30,6 +30,7 @@ class B2CRegister {
   String identityId;
   String otpCode;
   String otpRef;
+  String accessToken;
 
   B2CRegister(
       {required this.registerId,
@@ -51,30 +52,31 @@ class B2CRegister {
       required this.sessionId,
       required this.identityId,
       required this.otpCode,
-      required this.otpRef});
+      required this.otpRef,
+      required this.accessToken});
 
   factory B2CRegister.fromJson(Map<String, dynamic> json) => B2CRegister(
-        registerId: json["register_id"],
-        registerType: json["register_type"],
-        moblie: json["moblie"],
-        email: json["email"],
-        prefix: json["prefix"],
-        firstName: json["first_name"],
-        lastName: json["last_name"],
-        displayName: json["display_name"],
-        image: json["image"],
-        referringBrowser: json["referring_browser"],
-        referringId: json["referring_id"],
-        gender: json["gender"],
-        birthDate: json["birth_date"],
-        address: Address.fromJson(json["address"]),
-        tokenApp: json["token_app"],
-        device: json["device"],
-        sessionId: json["session_id"],
-        identityId: json["identity_id"],
-        otpCode: json["otp_code"],
-        otpRef: json["otp_ref"],
-      );
+      registerId: json["register_id"],
+      registerType: json["register_type"],
+      moblie: json["moblie"],
+      email: json["email"],
+      prefix: json["prefix"],
+      firstName: json["first_name"],
+      lastName: json["last_name"],
+      displayName: json["display_name"],
+      image: json["image"],
+      referringBrowser: json["referring_browser"],
+      referringId: json["referring_id"],
+      gender: json["gender"],
+      birthDate: json["birth_date"],
+      address: Address.fromJson(json["address"]),
+      tokenApp: json["token_app"],
+      device: json["device"],
+      sessionId: json["session_id"],
+      identityId: json["identity_id"],
+      otpCode: json["otp_code"],
+      otpRef: json["otp_ref"],
+      accessToken: json["oauth_token_hash"]);
 
   Map<String, dynamic> toJson() => {
         "register_id": registerId,
@@ -96,7 +98,8 @@ class B2CRegister {
         "session_id": sessionId,
         "identity_id": identityId,
         "otp_code": otpCode,
-        "otp_ref": otpRef
+        "otp_ref": otpRef,
+        "oauth_token_hash": accessToken
       };
 }
 

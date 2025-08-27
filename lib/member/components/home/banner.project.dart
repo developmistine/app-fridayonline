@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:fridayonline/member/components/webview/webview.dart';
 import 'package:fridayonline/member/controller/enduser.home.ctr.dart';
+import 'package:fridayonline/member/controller/enduser.signin.ctr.dart';
 import 'package:fridayonline/member/services/track/track.service.dart';
 import 'package:fridayonline/member/utils/cached_image.dart';
 import 'package:get/get.dart';
@@ -16,8 +17,9 @@ class BannerProject extends StatefulWidget {
 class _BannerProjectState extends State<BannerProject> {
   final EndUserHomeCtr endUserHomeCtr = Get.find();
   final CarouselSliderController _controller = CarouselSliderController();
+  final signInController = Get.put(EndUserSignInCtr());
+
   bool _navigating = false;
-  String flag = '';
 
   @override
   Widget build(BuildContext context) {
@@ -54,29 +56,26 @@ class _BannerProjectState extends State<BannerProject> {
                   if (item.actionType != 1) return;
                   final sw = Stopwatch()..start();
 
+                  String result = '';
                   try {
-                    final result = await Get.to(() => WebViewApp(
+                    result = await Get.to(() => WebViewApp(
                           mparamurl: item.actionValue,
                           mparamTitleName: 'โครงการพิเศษ',
                         ));
-                    if (result == 'accept') {
-                      flag = result;
-                    } else {
-                      flag = 'view';
-                    }
                   } finally {
                     sw.stop();
                     final secs = (sw.elapsedMilliseconds / 1000).round();
                     final spent = secs < 1 ? 1 : secs;
 
                     try {
+                      final actionFlag = result == 'accept' ? 'accept' : 'view';
                       await setTrackIncentiveContentViewServices(
                         item.contentId,
                         item.contentName,
                         'home_incentive',
                         spent,
                         item.pgmId,
-                        flag,
+                        actionFlag,
                       );
                     } catch (_) {}
 
