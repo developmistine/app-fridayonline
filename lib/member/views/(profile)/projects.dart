@@ -108,8 +108,6 @@ class SpecialProjects extends StatelessWidget {
                                                     BorderRadius.circular(8),
                                                 child: Image.network(
                                                   item.image,
-                                                  width: double.infinity,
-                                                  height: 100,
                                                   fit: BoxFit.contain,
                                                 ),
                                               ),
@@ -123,7 +121,21 @@ class SpecialProjects extends StatelessWidget {
                                                       const Color(0xFF1F1F1F),
                                                   fontWeight: FontWeight.w600,
                                                 ),
+                                                maxLines: 2,
+                                                overflow: TextOverflow.ellipsis,
                                               ),
+                                              // Text(
+                                              //   'ช้อปทุกเดือนก็ได้รับสิทธิ์ความคุ้มครองฟรี!เพียงมียอดซื้อสะสม\nตั้งแต่ ฿800บาท ขึ้นไปต่อเดือนก็จะได้รับสิทธิ์ประกันโดยไม่มีค่าใช้จ่ายเพิ่มเติมมอบความมั่นใจให้ทุกการช้อป',
+                                              //   style:
+                                              //       GoogleFonts.ibmPlexSansThai(
+                                              //     fontSize: 12,
+                                              //     color:
+                                              //         const Color(0xFF8C8A94),
+                                              //     fontWeight: FontWeight.w400,
+                                              //   ),
+                                              //   maxLines: 2,
+                                              //   overflow: TextOverflow.ellipsis,
+                                              // )
                                             ],
                                           ),
                                         ),
