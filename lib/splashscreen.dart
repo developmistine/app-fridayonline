@@ -214,8 +214,8 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> checkShowFair() async {
-    bool isVisibility = await fetchFairVisibilityService();
-    endUserHomeCtr.isVisibilityFair.value = isVisibility;
+    // bool isVisibility = await fetchFairVisibilityService();
+    // endUserHomeCtr.isVisibilityFair.value = isVisibility;
   }
 
   Future<void> checkNetworkConnection() async {
@@ -345,7 +345,7 @@ class _SplashScreenState extends State<SplashScreen> {
       String deviceId = await getDeviceId();
       await prefs.setString("deviceId", deviceId);
     }
-    await checkShowFair();
+    // await checkShowFair();
     endUserHomeCtr.endUserGetAllHomePage();
     if (mounted) {
       Get.offAll(() => EndUserHome(), routeName: "/EndUserHome");

@@ -69,7 +69,7 @@ class _SignInScreen extends State<SignInScreen>
   }
 
   void loginAndRegister(
-      userId, displayName, image, email, type, lineAccessToken) async {
+      userId, displayName, image, email, type, accessToken) async {
     final SharedPreferences prefs = await _prefs;
     String deepLinkSource = prefs.getString("deepLinkSource") ?? '';
     String deepLinkId = prefs.getString("deepLinkId") ?? '';
@@ -104,7 +104,7 @@ class _SignInScreen extends State<SignInScreen>
         device: await data.device,
         sessionId: await data.sessionId,
         identityId: await data.deviceId,
-        accessToken: lineAccessToken);
+        accessToken: accessToken);
     var res = await b2cRegisterService(payload);
     if (res!.code == "100") {
       prefs.remove("deepLinkSource");
@@ -193,16 +193,17 @@ class _SignInScreen extends State<SignInScreen>
   Future<void> loginGoogle() async {
     loadingProductStock(context);
     final user = await _googleSignInProvider.signIn();
-    setState(() {
-      _currentUser = user;
-    });
     Get.back();
-    if (_currentUser == null) {
+    if (user == null) {
       return;
     }
     try {
-      loginAndRegister(_currentUser!.id, _currentUser!.displayName ?? "", "",
-          _currentUser!.email, 'google', "");
+      final GoogleSignInAuthentication auth = await user.authentication;
+      final String? accessToken = auth.idToken;
+      print('Access Token: $accessToken');
+
+      loginAndRegister(user.id, user.displayName, user.photoUrl,
+          user.email, 'google', accessToken);
     } on Exception catch (_) {
       if (!Get.isSnackbarOpen) {
         Get.snackbar('', '',
@@ -888,6 +889,7 @@ class GoogleSignInProvider {
   Future<GoogleSignInAccount?> signIn() async {
     try {
       await _googleSignIn.authenticate();
+      await Future.delayed(Duration(milliseconds: 100));
       return _currentUser;
     } catch (e) {
       print('Google Sign-In Error: $e');

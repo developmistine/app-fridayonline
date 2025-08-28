@@ -23,6 +23,16 @@ android {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
 
+    // แก้ไข debug signing config ที่มีอยู่แล้ว
+    signingConfigs {
+        getByName("debug") {
+            keyAlias = "androiddebugkey"
+            keyPassword = "android"
+            storeFile = file("debug.keystore")
+            storePassword = "android"
+        }
+    }
+
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "th.co.friday.fridayonline"
@@ -35,6 +45,10 @@ android {
     }
 
     buildTypes {
+        debug {
+            signingConfig = signingConfigs.getByName("debug")
+        }
+        
         release {
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -48,10 +62,13 @@ android {
 flutter {
     source = "../.."
 }
+
 dependencies {
     // Core library desugaring
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
     
     // Other dependencies
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.0")
+
+    implementation("com.google.android.gms:play-services-auth:20.5.0")
 }
