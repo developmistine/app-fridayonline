@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:fridayonline/member/components/error/error.page.dart';
+import 'package:fridayonline/member/components/webview/webview.dart';
 import 'package:fridayonline/member/models/check_version/check_version_model.dart';
 import 'package:fridayonline/member/utils/branch_manager_main.dart';
 import 'package:fridayonline/member/utils/image_preloader.dart';
@@ -271,7 +272,12 @@ class _SplashScreenState extends State<SplashScreen> {
           if (mounted) {
             if (widget.redirect == 'special_project') {
               Get.offAll(() => EndUserHome(), routeName: "/EndUserHome");
-              Get.to(() => SpecialProjects());
+              Get.to(() => WebViewApp(
+                    mparamurl:
+                        'https://www.friday.co.th:8443/fridayonline/special-projects',
+                    mparamTitleName: 'โครงการพิเศษ',
+                  ));
+              // Get.to(() => SpecialProjects());
             } else {
               Get.offAll(() => EndUserHome(), routeName: "/EndUserHome");
             }

@@ -1,3 +1,4 @@
+import 'package:fridayonline/member/components/webview/webview.dart';
 import 'package:fridayonline/member/controller/cart.ctr.dart';
 import 'package:fridayonline/member/controller/profile.ctr.dart';
 import 'package:fridayonline/member/views/(chat)/chat.platform.dart';
@@ -273,7 +274,12 @@ Future<void> handleMenuTap(String title) async {
   final profile = profileCtl.profileData.value;
   switch (title) {
     case "โครงการพิเศษ":
-      Get.to(() => const SpecialProjects());
+      Get.to(() => WebViewApp(
+            mparamurl:
+                'https://www.friday.co.th:8443/fridayonline/special-projects',
+            mparamTitleName: 'โครงการพิเศษ',
+          ));
+      // Get.to(() => const SpecialProjects());
       break;
     case "คูปองของฉัน":
       Get.to(() => const CouponMe());
