@@ -157,9 +157,15 @@ class _SignInScreen extends State<SignInScreen>
   Future<void> loginFacebook() async {
     try {
       final user = await _facebookSignInProvider.signInWithFacebook();
+
       if (user != null) {
         loginAndRegister(
-            user['id'], user['name'], "", user['email'], "facebook", "");
+            user['id'],
+            user['name'],
+            user['picture']['data']['url'],
+            user['email'],
+            "facebook",
+            user['accessToken']);
       } else {
         if (!Get.isSnackbarOpen) {
           Get.snackbar('', '',
@@ -198,12 +204,12 @@ class _SignInScreen extends State<SignInScreen>
       return;
     }
     try {
-      final GoogleSignInAuthentication auth = await user.authentication;
+      final GoogleSignInAuthentication auth = user.authentication;
       final String? accessToken = auth.idToken;
       print('Access Token: $accessToken');
 
-      loginAndRegister(user.id, user.displayName, user.photoUrl,
-          user.email, 'google', accessToken);
+      loginAndRegister(user.id, user.displayName, user.photoUrl, user.email,
+          'google', accessToken);
     } on Exception catch (_) {
       if (!Get.isSnackbarOpen) {
         Get.snackbar('', '',
@@ -917,6 +923,10 @@ class FacebookSignInProvider {
       final facebook_auth.LoginResult result = await _facebookAuth.login();
       if (result.status == facebook_auth.LoginStatus.success) {
         final userData = await _facebookAuth.getUserData();
+        final facebook_auth.AccessToken? accessToken = result.accessToken;
+
+        userData['accessToken'] = accessToken?.tokenString;
+
         return userData;
       }
     } catch (error) {

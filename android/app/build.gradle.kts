@@ -69,6 +69,6 @@ dependencies {
     
     // Other dependencies
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.0")
-
     implementation("com.google.android.gms:play-services-auth:20.5.0")
+    implementation("com.facebook.android:facebook-android-sdk:18.1.3")
 }

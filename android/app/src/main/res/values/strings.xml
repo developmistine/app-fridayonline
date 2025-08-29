@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="facebook_app_id">1832438484338305</string>
-    <string name="fb_login_protocol_scheme">fb1832438484338305</string>
+    <string name="facebook_app_id">1534959551248309</string>
+    <string name="fb_login_protocol_scheme">fb1534959551248309</string>
     <string name="facebook_client_token">015ad3089781aef5f7e7e461bf0aa507</string>
     <string name="app_name">Friday Online</string>
     <string name="asset_statements" translatable="false">[{\"include\": \"https://push.fridayth.com/.well-known/assetlinks.json\"}]</string>

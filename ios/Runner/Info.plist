@@ -27,8 +27,12 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<string>th.co.friday.fridayonline</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>fridayonline</string>
+				<string>fb1534959551248309</string>
+                <string>line3rdp.$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 				<string>com.googleusercontent.apps.436932745041-562nv5msbpkrf5vot9c93f8vn6v0gpbl</string>
 			</array>
 		</dict>
@@ -36,7 +40,7 @@
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>FacebookAppID</key>
-	<string>1832438484338305</string>
+	<string>1534959551248309</string>
 	<key>FacebookClientToken</key>
 	<string>015ad3089781aef5f7e7e461bf0aa507</string>
 	<key>FacebookDisplayName</key>
