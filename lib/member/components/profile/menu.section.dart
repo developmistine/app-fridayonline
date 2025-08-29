@@ -14,6 +14,7 @@ import 'package:fridayonline/member/views/(profile)/myorder.dart';
 import 'package:fridayonline/member/views/(profile)/projects.dart';
 import 'package:fridayonline/member/views/(profile)/varsion.dart';
 import 'package:fridayonline/member/widgets/dialog.confirm.dart';
+import 'package:fridayonline/preferrence.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -272,11 +273,17 @@ Color setColor(title) {
 
 Future<void> handleMenuTap(String title) async {
   final profile = profileCtl.profileData.value;
+  SetData data = SetData();
+  int custId = await data.b2cCustID;
+  String device = await data.device;
+  String sessionId = await data.sessionId;
+  String tokenApp = await data.tokenId;
+
   switch (title) {
     case "โครงการพิเศษ":
       Get.to(() => WebViewApp(
             mparamurl:
-                'https://www.friday.co.th:8443/fridayonline/special-projects',
+                'https://www.friday.co.th:8443/fridayonline/special-projects?cust_id=$custId&device=$device&session_id=$sessionId&token_app$tokenApp',
             mparamTitleName: 'โครงการพิเศษ',
           ));
       // Get.to(() => const SpecialProjects());

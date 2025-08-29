@@ -224,6 +224,9 @@ class _SplashScreenState extends State<SplashScreen> {
     printWhite("refresh token is : ${await data.refreshToken}");
     String repType = await data.repType;
     String sessionId = await data.sessionId;
+    int custId = await data.b2cCustID;
+    String device = await data.device;
+    String tokenApp = await data.tokenId;
     try {
       final result = await InternetAddress.lookup('google.com');
 
@@ -274,7 +277,7 @@ class _SplashScreenState extends State<SplashScreen> {
               Get.offAll(() => EndUserHome(), routeName: "/EndUserHome");
               Get.to(() => WebViewApp(
                     mparamurl:
-                        'https://www.friday.co.th:8443/fridayonline/special-projects',
+                        'https://www.friday.co.th:8443/fridayonline/special-projects?cust_id=$custId&device=$device&session_id=$sessionId&token_app$tokenApp',
                     mparamTitleName: 'โครงการพิเศษ',
                   ));
               // Get.to(() => SpecialProjects());
