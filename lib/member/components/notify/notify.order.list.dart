@@ -6,6 +6,7 @@ import 'package:fridayonline/member/widgets/dialog.confirm.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 Widget orderNotiList({required Function(dynamic number) setOffset}) {
   final notifyOrder = Get.find<OrderController>();
@@ -94,9 +95,13 @@ Widget orderNotiList({required Function(dynamic number) setOffset}) {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Image.network(
-                      data.image,
+                    CachedNetworkImage(
+                      imageUrl: data.image,
                       width: 38,
+                      errorWidget: (context, url, error) => const Icon(
+                        Icons.image_not_supported_rounded,
+                        color: Color(0xFFEEEEEE),
+                      ),
                     ),
                     Expanded(
                       child: Padding(

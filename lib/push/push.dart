@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:fridayonline/member/components/webview/webview.dart';
 import 'package:fridayonline/member/controller/brand.ctr.dart';
 import 'package:fridayonline/member/controller/category.ctr.dart';
 import 'package:fridayonline/member/controller/enduser.home.ctr.dart';
@@ -46,6 +47,7 @@ Future<void> managePushMain(
   String sellerId = pushNotify.sellerId;
   String orderType = pushNotify.orderType;
   String orderId = pushNotify.orderId;
+  String url = pushNotify.url;
   var pushType = pushNotify.contentType.toString().toLowerCase();
   var categoryID = pushNotify.categoryId;
   var sectionId = pushNotify.sectionId;
@@ -204,6 +206,18 @@ Future<void> managePushMain(
             trackCtr.setLogContentAddToCart(int.parse(notifyId), channel);
             await Get.offAllNamed('/EndUserHome',
                     parameters: {'changeView': "2"})!
+                .then((value) {
+              trackCtr.clearLogContent();
+            });
+            break;
+          }
+        case 'url':
+          {
+            trackCtr.setLogContentAddToCart(int.parse(notifyId), channel);
+            await Get.to(() => WebViewApp(
+                      mparamurl: url,
+                      mparamTitleName: '',
+                    ))!
                 .then((value) {
               trackCtr.clearLogContent();
             });

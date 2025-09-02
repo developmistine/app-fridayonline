@@ -880,11 +880,19 @@ class _ShowProductCategoryState extends State<ShowProductSku>
                                                 padding:
                                                     const EdgeInsets.all(2),
                                                 child: CachedNetworkImage(
-                                                    imageUrl: showProductCtr
-                                                        .productDetail
-                                                        .value!
-                                                        .data
-                                                        .icon),
+                                                  imageUrl: showProductCtr
+                                                      .productDetail
+                                                      .value!
+                                                      .data
+                                                      .icon,
+                                                  errorWidget:
+                                                      (context, url, error) =>
+                                                          const Icon(
+                                                    Icons
+                                                        .image_not_supported_rounded,
+                                                    color: Color(0xFFEEEEEE),
+                                                  ),
+                                                ),
                                               ),
                                           ],
                                         ),
@@ -1365,7 +1373,7 @@ class _ShowProductCategoryState extends State<ShowProductSku>
   }
 }
 
-productPriceMain(
+List<Widget> productPriceMain(
     {required product_model.ProductPrice productPrices,
     required bool showPercent}) {
   if (!productPrices.haveDiscount) {
@@ -1454,7 +1462,7 @@ productPriceMain(
   }
 }
 
-productPriceDetail(
+List<Widget> productPriceDetail(
     {required product_model.ProductDatail productDetail,
     required bool showPercent}) {
   if (!productDetail.haveDiscount) {
