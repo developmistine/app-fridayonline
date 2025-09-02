@@ -110,7 +110,8 @@ class _SignInScreen extends State<SignInScreen>
       prefs.remove("deepLinkId");
       await prefs.setString("accessToken", res.data.accessToken);
       await prefs.setString("refreshToken", res.data.refreshToken);
-      endUserSignInCtr.settingPreference('1', '', '5', res.data.custId);
+      endUserSignInCtr.settingPreference('1', '', '5', res.data.custId,
+          redirect: widget.redirect);
       Get.offAll(() => SplashScreen(redirect: widget.redirect));
     } else {
       if (!Get.isSnackbarOpen) {
