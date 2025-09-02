@@ -577,7 +577,7 @@ class _EndUserHomeState extends State<EndUserHome>
       children: [
         BottomAppBar(
           child: SizedBox(
-            height: 65,
+            height: 58,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: List.generate(_labels.length, (index) {
@@ -602,12 +602,12 @@ class _EndUserHomeState extends State<EndUserHome>
                           index == _selectedIndex
                               ? _imageIconsActive[index] ?? const SizedBox()
                               : _imageIconsInactive[index] ?? const SizedBox(),
-                          const SizedBox(height: 4),
+                          const SizedBox(height: 2),
                           Text(
                             _labels[index],
                             style: GoogleFonts.ibmPlexSansThai(
                               color: textColor,
-                              fontSize: 14,
+                              fontSize: 12,
                               fontWeight: index == _selectedIndex
                                   ? FontWeight.bold
                                   : FontWeight.normal,
@@ -631,12 +631,12 @@ class _EndUserHomeState extends State<EndUserHome>
                         index == _selectedIndex
                             ? _imageIconsActive[index] ?? const SizedBox()
                             : _imageIconsInactive[index] ?? const SizedBox(),
-                        const SizedBox(height: 4),
+                        const SizedBox(height: 2),
                         Text(
                           _labels[index],
                           style: GoogleFonts.ibmPlexSansThai(
                             color: textColor,
-                            fontSize: 14,
+                            fontSize: 12,
                             fontWeight: index == _selectedIndex
                                 ? FontWeight.bold
                                 : FontWeight.normal,
@@ -684,7 +684,7 @@ class _EndUserHomeState extends State<EndUserHome>
   Widget bottomBarNoFair() {
     return BottomAppBar(
       child: Container(
-        height: 65,
+        height: 58,
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
@@ -716,12 +716,12 @@ class _EndUserHomeState extends State<EndUserHome>
                       index == _selectedIndex
                           ? _imageIconsActive[index] ?? const SizedBox()
                           : _imageIconsInactive[index] ?? const SizedBox(),
-                      const SizedBox(height: 4),
+                      const SizedBox(height: 2),
                       Text(
                         _labels[index],
                         style: GoogleFonts.ibmPlexSansThai(
                           color: textColor,
-                          fontSize: 14,
+                          fontSize: 12,
                           fontWeight: index == _selectedIndex
                               ? FontWeight.bold
                               : FontWeight.normal,
@@ -745,12 +745,12 @@ class _EndUserHomeState extends State<EndUserHome>
                     index == _selectedIndex
                         ? _imageIconsActive[index] ?? const SizedBox()
                         : _imageIconsInactive[index] ?? const SizedBox(),
-                    const SizedBox(height: 4),
+                    const SizedBox(height: 2),
                     Text(
                       _labels[index],
                       style: GoogleFonts.ibmPlexSansThai(
                         color: textColor,
-                        fontSize: 14,
+                        fontSize: 12,
                         fontWeight: index == _selectedIndex
                             ? FontWeight.bold
                             : FontWeight.normal,

@@ -698,8 +698,10 @@ class _SignInScreen extends State<SignInScreen>
                                                   highlightColor:
                                                       Colors.transparent,
                                                   onTap: () {
-                                                    Get.to(() =>
-                                                        const RegisterScreen());
+                                                    Get.to(() => RegisterScreen(
+                                                          redirect:
+                                                              widget.redirect,
+                                                        ));
                                                   },
                                                   child: Text(
                                                     'ลงทะเบียน',
