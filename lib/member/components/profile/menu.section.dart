@@ -11,7 +11,6 @@ import 'package:fridayonline/member/views/(profile)/edit.profile.dart';
 import 'package:fridayonline/member/views/(profile)/friday.coin.dart';
 import 'package:fridayonline/member/views/(profile)/myaddress.dart';
 import 'package:fridayonline/member/views/(profile)/myorder.dart';
-import 'package:fridayonline/member/views/(profile)/projects.dart';
 import 'package:fridayonline/member/views/(profile)/varsion.dart';
 import 'package:fridayonline/member/widgets/dialog.confirm.dart';
 import 'package:fridayonline/preferrence.dart';

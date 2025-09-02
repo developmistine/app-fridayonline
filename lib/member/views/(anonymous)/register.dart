@@ -26,7 +26,8 @@ import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 final EndUserSignInCtr endUserSignInCtr = Get.put(EndUserSignInCtr());
 
 class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({super.key});
+  const RegisterScreen({super.key, this.redirect});
+  final String? redirect;
 
   @override
   _RegisterScreen createState() => _RegisterScreen();
@@ -62,7 +63,8 @@ class _RegisterScreen extends State<RegisterScreen> {
     await LineSDK.instance.setup("2007999835").then((_) {});
   }
 
-  void loginAndRegister(userId, displayName, image, email, type) async {
+  void loginAndRegister(
+      userId, displayName, image, email, type, accessToken) async {
     final SharedPreferences prefs = await _prefs;
     String deepLinkSource = prefs.getString("deepLinkSource") ?? '';
     String deepLinkId = prefs.getString("deepLinkId") ?? '';
@@ -78,7 +80,7 @@ class _RegisterScreen extends State<RegisterScreen> {
         firstName: '',
         lastName: '',
         displayName: displayName ?? "",
-        image: "",
+        image: image,
         referringBrowser: deepLinkSource,
         referringId: deepLinkId,
         gender: '',
@@ -97,7 +99,7 @@ class _RegisterScreen extends State<RegisterScreen> {
         device: await data.device,
         sessionId: await data.sessionId,
         identityId: await data.deviceId,
-        accessToken: "");
+        accessToken: accessToken);
     var res = await b2cRegisterService(payload);
     if (res!.code == "100") {
       prefs.remove("deepLinkSource");
@@ -105,7 +107,7 @@ class _RegisterScreen extends State<RegisterScreen> {
       await prefs.setString("accessToken", res.data.accessToken);
       await prefs.setString("refreshToken", res.data.refreshToken);
       endUserSignInCtr.settingPreference('1', '', '5', res.data.custId);
-      Get.offAll(() => const SplashScreen());
+      Get.offAll(() => SplashScreen(redirect: widget.redirect));
     } else {
       if (!Get.isSnackbarOpen) {
         Get.snackbar('', '',
@@ -129,7 +131,8 @@ class _RegisterScreen extends State<RegisterScreen> {
           result.userProfile?.displayName,
           result.userProfile?.pictureUrl,
           "",
-          "line");
+          "line",
+          result.accessToken.value);
     } on PlatformException {
       if (!Get.isSnackbarOpen) {
         Get.snackbar('', '',
@@ -151,7 +154,12 @@ class _RegisterScreen extends State<RegisterScreen> {
       final user = await _facebookSignInProvider.signInWithFacebook();
       if (user != null) {
         loginAndRegister(
-            user['id'], user['name'], "", user['email'], "facebook");
+            user['id'],
+            user['name'],
+            user['picture']['data']['url'],
+            user['email'],
+            "facebook",
+            user['accessToken']);
       } else {
         if (!Get.isSnackbarOpen) {
           Get.snackbar('', '',
@@ -183,67 +191,23 @@ class _RegisterScreen extends State<RegisterScreen> {
   }
 
   Future<void> loginGoogle() async {
-    SetData data = SetData();
     loadingProductStock(context);
     final user = await _googleSignInProvider.signIn();
-    setState(() {
-      _currentUser = user;
-    });
     Get.back();
-    if (_currentUser == null) {
+    if (user == null) {
       return;
     }
+    try {
+      final GoogleSignInAuthentication auth = user.authentication;
+      final String? accessToken = auth.idToken;
+      print('Access Token: $accessToken');
 
-    final SharedPreferences prefs = await _prefs;
-    String deepLinkSource = prefs.getString("deepLinkSource") ?? '';
-    String deepLinkId = prefs.getString("deepLinkId") ?? '';
-    var payload = B2CRegister(
-        otpCode: "",
-        otpRef: "",
-        registerId: _currentUser!.id,
-        registerType: 'google',
-        moblie: '',
-        email: _currentUser!.email,
-        prefix: '',
-        firstName: '',
-        lastName: '',
-        displayName: _currentUser!.displayName ?? "",
-        image: "",
-        // image: _currentUser!.photoUrl ?? "",
-        referringBrowser: deepLinkSource,
-        referringId: deepLinkId,
-        gender: '',
-        birthDate: '',
-        address: Address(
-            firstName: '',
-            lastName: '',
-            address1: '',
-            address2: '',
-            tombonId: 0,
-            amphurId: 0,
-            provinceId: 0,
-            postCode: '',
-            mobile: ''),
-        tokenApp: await data.tokenId,
-        device: await data.device,
-        sessionId: await data.sessionId,
-        identityId: await data.deviceId,
-        accessToken: "");
-    var res = await b2cRegisterService(payload);
-    if (res!.code == "100") {
-      prefs.remove("deepLinkSource");
-      prefs.remove("deepLinkId");
-      await prefs.setString("accessToken", res.data.accessToken);
-      await prefs.setString("refreshToken", res.data.refreshToken);
-      endUserSignInCtr.settingPreference('1', '', '5', res.data.custId);
-    } else {
+      loginAndRegister(user.id, user.displayName, user.photoUrl, user.email,
+          'google', accessToken);
+    } on Exception catch (_) {
       if (!Get.isSnackbarOpen) {
         Get.snackbar('', '',
-            titleText: Text(
-              'แจ้งเตือน',
-              style: GoogleFonts.ibmPlexSansThai(color: Colors.white),
-            ),
-            messageText: Text(res.message,
+            messageText: Text('เกิดข้อผิดพลาดกรุณาลองใหม่อีกครั้ง',
                 style: GoogleFonts.ibmPlexSansThai(color: Colors.white)),
             backgroundColor: Colors.red.withOpacity(0.8),
             colorText: Colors.white,
@@ -254,62 +218,19 @@ class _RegisterScreen extends State<RegisterScreen> {
   }
 
   Future<void> loginApple() async {
-    SetData data = SetData();
     loadingProductStock(context);
     final user = await _appleSignInProvider.signInApple();
     Get.back();
     if (user == null) {
       return;
     }
-    final SharedPreferences prefs = await _prefs;
-    String deepLinkSource = prefs.getString("deepLinkSource") ?? '';
-    String deepLinkId = prefs.getString("deepLinkId") ?? '';
-    var payload = B2CRegister(
-        otpCode: "",
-        otpRef: "",
-        registerId: user.userIdentifier ?? "",
-        registerType: 'apple',
-        moblie: '',
-        email: user.email ?? "",
-        prefix: '',
-        firstName: user.givenName ?? "",
-        lastName: user.familyName ?? "",
-        displayName: user.givenName ?? "",
-        image: "",
-        referringBrowser: deepLinkSource,
-        referringId: deepLinkId,
-        gender: '',
-        birthDate: '',
-        address: Address(
-            firstName: '',
-            lastName: '',
-            address1: '',
-            address2: '',
-            tombonId: 0,
-            amphurId: 0,
-            provinceId: 0,
-            postCode: '',
-            mobile: ''),
-        tokenApp: await data.tokenId,
-        device: await data.device,
-        sessionId: await data.sessionId,
-        identityId: await data.deviceId,
-        accessToken: "");
-    var res = await b2cRegisterService(payload);
-    if (res!.code == "100") {
-      prefs.remove("deepLinkSource");
-      prefs.remove("deepLinkId");
-      await prefs.setString("accessToken", res.data.accessToken);
-      await prefs.setString("refreshToken", res.data.refreshToken);
-      endUserSignInCtr.settingPreference('1', '', '5', res.data.custId);
-    } else {
+    try {
+      loginAndRegister(user.userIdentifier ?? "", user.givenName ?? "", "",
+          user.email ?? "", 'apple', "");
+    } on Exception catch (_) {
       if (!Get.isSnackbarOpen) {
         Get.snackbar('', '',
-            titleText: Text(
-              'แจ้งเตือน',
-              style: GoogleFonts.ibmPlexSansThai(color: Colors.white),
-            ),
-            messageText: Text(res.message,
+            messageText: Text('เกิดข้อผิดพลาดกรุณาลองใหม่อีกครั้ง',
                 style: GoogleFonts.ibmPlexSansThai(color: Colors.white)),
             backgroundColor: Colors.red.withOpacity(0.8),
             colorText: Colors.white,
@@ -343,10 +264,11 @@ class _RegisterScreen extends State<RegisterScreen> {
             .then((value) {
           Get.back();
           if (value!.code == "100") {
+            endUserSignInCtr.otpRef.value = value.otpRef ?? '';
             telController.clear();
             endUserSignInCtr.resetTimer();
             endUserSignInCtr.startTimer();
-            Get.to(() => const OtpVerify());
+            Get.to(() => OtpVerify(redirect: widget.redirect));
           } else {
             Get.snackbar(
               '',
@@ -797,8 +719,6 @@ class GoogleSignInProvider {
 
       // Listen authentication events
       _googleSignIn.authenticationEvents.listen(_handleAuthEvent);
-
-      // ลอง sign in อัตโนมัติถ้าเคย sign in ไว้แล้ว
     } catch (e) {
       print('Google Sign-In Initialize Error: $e');
     }
@@ -816,6 +736,7 @@ class GoogleSignInProvider {
   Future<GoogleSignInAccount?> signIn() async {
     try {
       await _googleSignIn.authenticate();
+      await Future.delayed(Duration(milliseconds: 100));
       return _currentUser;
     } catch (e) {
       print('Google Sign-In Error: $e');
@@ -839,10 +760,13 @@ class FacebookSignInProvider {
 
   Future<Map<String, dynamic>?> signInWithFacebook() async {
     try {
-      // เริ่มการล็อกอิน
       final facebook_auth.LoginResult result = await _facebookAuth.login();
       if (result.status == facebook_auth.LoginStatus.success) {
         final userData = await _facebookAuth.getUserData();
+        final facebook_auth.AccessToken? accessToken = result.accessToken;
+
+        userData['accessToken'] = accessToken?.tokenString;
+
         return userData;
       }
     } catch (error) {

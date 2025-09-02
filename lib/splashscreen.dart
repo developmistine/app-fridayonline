@@ -7,7 +7,6 @@ import 'package:fridayonline/member/models/check_version/check_version_model.dar
 import 'package:fridayonline/member/utils/branch_manager_main.dart';
 import 'package:fridayonline/member/utils/image_preloader.dart';
 import 'package:fridayonline/global.dart';
-import 'package:fridayonline/member/views/(profile)/projects.dart';
 import 'package:fridayonline/preferrence.dart';
 import 'package:fridayonline/print.dart';
 import 'package:fridayonline/theme.dart';
@@ -18,7 +17,6 @@ import 'package:fridayonline/member/controller/enduser.home.ctr.dart';
 import 'package:fridayonline/member/enduser.main.dart';
 import 'package:fridayonline/member/models/authen/b2cregis.model.dart';
 import 'package:fridayonline/member/services/authen/b2cauthen.service.dart';
-import 'package:fridayonline/member/services/fair/fair.service.dart';
 // import 'package:fridayonline/pam/notification_api.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 // import 'package:device_information/device_information.dart';

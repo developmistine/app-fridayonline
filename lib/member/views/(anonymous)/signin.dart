@@ -8,7 +8,6 @@ import 'package:fridayonline/member/utils/image_preloader.dart';
 import 'package:fridayonline/member/views/(anonymous)/otp.verify.dart';
 import 'package:fridayonline/member/views/(anonymous)/register.dart';
 import 'package:fridayonline/member/views/(other)/instructions.dart';
-import 'package:fridayonline/member/views/(profile)/projects.dart';
 import 'package:fridayonline/splashscreen.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:fridayonline/preferrence.dart';
