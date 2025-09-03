@@ -1,13 +1,18 @@
 import 'package:fridayonline/member/components/appbar/appbar.master.dart';
 import 'package:fridayonline/member/controller/cart.ctr.dart';
+import 'package:fridayonline/member/controller/coupon.ctr.dart';
 import 'package:fridayonline/member/services/address/adress.service.dart';
 import 'package:fridayonline/member/utils/format.dart';
 import 'package:fridayonline/member/views/(cart)/cart.set.address.dart';
+import 'package:fridayonline/member/views/(cart)/cart.sumary.dart';
 import 'package:fridayonline/member/widgets/empty.address.dart';
+import 'package:fridayonline/preferrence.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:fridayonline/member/models/cart/cart.checkout.input.dart'
+    as checkout_model;
 
 class EndUserSelectAddress extends StatelessWidget {
   const EndUserSelectAddress({super.key});
@@ -15,6 +20,9 @@ class EndUserSelectAddress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final EndUserCartCtr cartCtr = Get.find();
+    final cartCouponCtr = Get.find<EndUserCouponCartCtr>();
+    SetData data = SetData();
+
     return MediaQuery(
       data: MediaQuery.of(context)
           .copyWith(textScaler: const TextScaler.linear(1.0)),
@@ -60,8 +68,26 @@ class EndUserSelectAddress extends StatelessWidget {
                       return InkWell(
                         onTap: () async {
                           var res = await setAddressDefalutService(addrss.id);
+                          cartCouponCtr
+                                  .promotionDataCheckOut.unusedPlatformVoucher =
+                              cartCouponCtr.promotionData.unusedPlatformVoucher;
+                          cartCouponCtr.promotionDataCheckOut.platformVouchers =
+                              cartCouponCtr.promotionData.platformVouchers;
+
+                          var payload = checkout_model.CartCheckOutInput(
+                            custId: await data.b2cCustID,
+                            checkoutShopOrders: itemsUpdate(),
+                            promotionData: checkout_model.PromotionData(
+                                freeShipping: [],
+                                unusedPlatformVoucher: cartCouponCtr
+                                    .promotionData.unusedPlatformVoucher,
+                                platformVouchers: cartCouponCtr
+                                    .promotionData.platformVouchers,
+                                shopVouchers: cartCouponCtr.promotionShop),
+                          );
                           if (res!.code == '100') {
                             Get.find<EndUserCartCtr>().fetchAddressList();
+                            cartCtr.fetchCartCheckOut(payload);
                             Get.back(result: addrss.id);
                           }
                         },
