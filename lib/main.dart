@@ -27,6 +27,9 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 // import 'package:huawei_push/huawei_push.dart' as huawei;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uuid/uuid.dart';
+import 'package:intl/intl.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 // Firebase push notification
 @pragma('vm:entry-point')
@@ -58,6 +61,9 @@ Future<void> main() async {
   // Firebase initial
   // await Firebase.initializeApp();
   await initializeDefault();
+
+  await initializeDateFormatting('th_TH', null);
+  Intl.defaultLocale = 'th_TH';
 
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
@@ -201,6 +207,15 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     return GetMaterialApp(
       navigatorKey: navigatorKey,
       navigatorObservers: [GetRouteLogger()],
+      supportedLocales: const [
+        Locale('th', 'TH'),
+        Locale('en', 'US'),
+      ],
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
       localeListResolutionCallback: (locale, supportedLocales) {
         for (var supportedLocaleLanguage in supportedLocales) {
           if (supportedLocaleLanguage.languageCode == _locale.languageCode &&
