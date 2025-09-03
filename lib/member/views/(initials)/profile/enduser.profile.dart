@@ -1,5 +1,4 @@
 import 'package:fridayonline/member/components/home/loadmore.enduser.dart';
-import 'package:fridayonline/member/components/profile/banner.special.project.dart';
 import 'package:fridayonline/member/components/profile/enduser.profile.dart';
 import 'package:fridayonline/member/components/profile/menu.section.dart';
 import 'package:fridayonline/member/controller/cart.ctr.dart';
@@ -9,18 +8,14 @@ import 'package:fridayonline/member/controller/enduser.signin.ctr.dart';
 import 'package:fridayonline/member/controller/order.ctr.dart';
 import 'package:fridayonline/member/controller/profile.ctr.dart';
 import 'package:fridayonline/member/views/(cart)/cart.main.dart';
-import 'package:fridayonline/member/views/(chat)/chat.dart';
 import 'package:fridayonline/member/views/(chat)/chat.platform.dart';
 import 'package:fridayonline/member/views/(profile)/settings.dart';
 import 'package:fridayonline/theme.dart';
-import 'package:fridayonline/preferrence.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:badges/badges.dart' as badges;
 
-final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 final ProfileCtl profileCtl = Get.put(ProfileCtl());
 final EndUserCartCtr cartCtr = Get.find();
 final OrderController orderCtr = Get.find<OrderController>();
@@ -39,19 +34,19 @@ class _EndUserProfileState extends State<EndUserProfile> {
       "subtitle": [
         {
           "name": "ที่ต้องชำระ",
-          "icon": Image.asset('assets/images/icon/paying.png', width: 28),
+          "icon": Image.asset('assets/images/icon/paying2.png', width: 28),
         },
         {
           "name": "ที่ต้องจัดส่ง",
-          "icon": Image.asset('assets/images/icon/delivering.png', width: 28),
+          "icon": Image.asset('assets/images/icon/delivering2.png', width: 28),
         },
         {
           "name": "ที่ต้องได้รับ",
-          "icon": Image.asset('assets/images/icon/recieving.png', width: 28),
+          "icon": Image.asset('assets/images/icon/recieving2.png', width: 28),
         },
         {
           "name": "ยกเลิก/คืนเงิน",
-          "icon": Image.asset('assets/images/icon/cancel.png', width: 28),
+          "icon": Image.asset('assets/images/icon/cancel2.png', width: 28),
         },
       ]
     },
@@ -63,20 +58,19 @@ class _EndUserProfileState extends State<EndUserProfile> {
       "subtitle": [
         {
           "name": "โครงการพิเศษ",
-          "icon": Image.asset('assets/images/icon/projects.png', width: 28),
+          "icon": Image.asset('assets/images/icon/projects2.png', width: 32),
         },
         {
           "name": "คูปองของฉัน",
-          "icon": Image.asset('assets/images/icon/coupon_me.png', width: 28),
+          "icon": Image.asset('assets/images/icon/coupon_me2.png', width: 32),
         },
         {
           "name": "รวมคูปอง",
-          "icon": Image.asset('assets/images/icon/coupon_all.png', width: 28),
+          "icon": Image.asset('assets/images/icon/coupon_all2.png', width: 32),
         },
         {
           "name": "ฟรายเดย์ Coin",
-          "icon":
-              Image.asset('assets/images/b2c/icon/friday_coin.png', width: 28),
+          "icon": Image.asset('assets/images/icon/friday_coin2.png', width: 32),
         },
       ]
     },
@@ -151,254 +145,209 @@ class _EndUserProfileState extends State<EndUserProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey.shade100,
-        body: CustomScrollView(
-          controller: _scrollController,
-          physics: const ClampingScrollPhysics(),
-          slivers: [
-            SliverAppBar(
-              clipBehavior: Clip.none,
-              backgroundColor: Colors.white,
-              elevation: 0,
-              titleSpacing: 0,
-              floating: true,
-              snap: true,
-              pinned: false, // ถ้าต้องการให้หายไปจริงๆ ตอน scroll
-              toolbarHeight: 40,
-              title: Padding(
-                padding: EdgeInsets.zero,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Obx(() {
-                      if (endUserSignInCtr.isLoading.value) {
-                        return const SizedBox();
-                      }
-                      if (endUserSignInCtr.repSeq != "") {
-                        return Container(
-                            decoration: BoxDecoration(
-                                gradient: LinearGradient(colors: [
-                                  Colors.blue,
-                                  themeColorDefault.withOpacity(1),
-                                  themeColorDefault.withOpacity(1),
-                                  themeColorDefault.withOpacity(0.8),
-                                ]),
-                                borderRadius: const BorderRadius.only(
-                                  topRight: Radius.circular(20),
-                                  bottomRight: Radius.circular(20),
-                                )),
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 8, vertical: 5),
-                            child: GestureDetector(
-                              onTap: () async {
-                                var socketCtr = Get.find<WebSocketController>();
-                                SetData data = SetData();
-                                if (await data.repSeq == "" ||
-                                    await data.repSeq == "null") {
-                                  return;
-                                }
-                                socketCtr.onClose();
-
-                                endUserSignInCtr.settingPreference(
-                                    '1', '', '2', await data.b2cCustID);
-                                // Get.offAll(
-                                //     () => const SplashScreen());
-                              },
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
+        backgroundColor: Colors.transparent,
+        body: SingleChildScrollView(
+          child: Stack(
+            children: [
+              Image.asset(
+                'assets/images/profileimg/background.png',
+                fit: BoxFit.cover,
+                height: 220,
+              ),
+              Column(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SafeArea(
+                        child: Padding(
+                          padding: EdgeInsets.zero,
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-                                  const Icon(Icons.shopping_bag,
-                                      size: 20, color: Colors.white),
-                                  const SizedBox(width: 4.0),
-                                  Text(
-                                    'ไปยังสมาชิกFriday Online',
-                                    style: GoogleFonts.ibmPlexSansThai(
-                                        fontSize: 13,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                  const SizedBox(
-                                    width: 4,
-                                  ),
-                                  const Icon(Icons.arrow_forward_ios_rounded,
-                                      size: 12, color: Colors.white)
-                                ],
-                              ),
-                            ));
-                      } else {
-                        return InkWell(
-                          splashColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () {
-                            Get.offAllNamed('/EndUserHome',
-                                parameters: {'changeView': "0"});
-                          },
-                          child: Container(
-                              decoration: BoxDecoration(
-                                  gradient: LinearGradient(colors: [
-                                    Colors.blue,
-                                    themeColorDefault.withOpacity(1),
-                                    themeColorDefault.withOpacity(1),
-                                    themeColorDefault.withOpacity(0.8),
-                                  ]),
-                                  borderRadius: const BorderRadius.only(
-                                    topRight: Radius.circular(20),
-                                    bottomRight: Radius.circular(20),
-                                  )),
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 8, vertical: 5),
-                              child: const Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Icon(Icons.home_outlined,
-                                      size: 24, color: Colors.white),
-                                  SizedBox(
-                                    width: 4,
-                                  )
-                                ],
-                              )),
-                        );
-                      }
-                    }),
-                    Obx(() {
-                      if (profileCtl.isLoading.value) {
-                        return const SizedBox();
-                      }
-                      return Row(
-                        children: [
-                          InkWell(
-                            highlightColor: Colors.transparent,
-                            splashFactory: NoSplash.splashFactory,
-                            onTap: () async {
-                              await Get.to(() => const Settings(), arguments: {
-                                "displayName":
-                                    profileCtl.profileData.value!.displayName,
-                                "mobile": profileCtl.profileData.value!.mobile,
-                                "image": profileCtl.profileData.value!.image
-                              })?.then((result) {
-                                profileCtl.fetchProfile();
-                              });
-                            },
-                            child: Icon(
-                              Icons.settings_outlined,
-                              color: Colors.grey.shade700,
-                              size: 30,
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 4,
-                          ),
-                          SizedBox(
-                            width: 45,
-                            child: badges.Badge(
-                                position:
-                                    badges.BadgePosition.topEnd(top: 2, end: 0),
-                                badgeAnimation:
-                                    const badges.BadgeAnimation.slide(
-                                        loopAnimation: false),
-                                badgeContent: Obx(() {
-                                  return cartCtr.isLoadingCart.value &&
-                                          cartCtr.cartItems == null
-                                      ? Text(
-                                          '0',
-                                          style: GoogleFonts.ibmPlexSansThai(
-                                              height: 1,
-                                              color: Colors.white,
-                                              fontSize: 10),
-                                        )
-                                      : Text(
-                                          '${cartCtr.cartItems!.value.data.map((e) => e.items.length).fold(0, (previousValue, element) => previousValue + element)}',
-                                          style: GoogleFonts.ibmPlexSansThai(
-                                              height: 1,
-                                              color: Colors.white,
-                                              fontSize: 10),
-                                        );
-                                }),
-                                badgeStyle: badges.BadgeStyle(
-                                    badgeColor: themeColorDefault,
-                                    padding: const EdgeInsets.all(5)),
-                                child: IconButton(
-                                  highlightColor: Colors.transparent,
-                                  splashColor: Colors.transparent,
-                                  onPressed: () async {
-                                    Get.find<EndUserCartCtr>().fetchCartItems();
-                                    Get.to(() => const EndUserCart());
-                                  },
-                                  icon: Image.asset(
-                                    'assets/images/icon/cart-grey.png',
-                                  ),
-                                )),
-                          ),
-                          Obx(() {
-                            if (endUserSignInCtr.isLoading.value) {
-                              return const SizedBox();
-                            } else if (endUserSignInCtr.custId == 0) {
-                              return const SizedBox();
-                            }
-                            return Container(
-                              // width: 40,
-                              // color: Colors.amber,
-                              margin: const EdgeInsets.only(right: 5.0),
-                              child: badges.Badge(
-                                  position: badges.BadgePosition.topEnd(
-                                      top: 2, end: 6),
-                                  badgeAnimation:
-                                      const badges.BadgeAnimation.slide(
-                                          loopAnimation: false),
-                                  badgeContent: Obx(() {
-                                    return Text(
-                                      chatCtr.countChat.value.toString(),
-                                      style: GoogleFonts.ibmPlexSansThai(
-                                          height: 1,
-                                          color: Colors.white,
-                                          fontSize: 10),
+                                  SizedBox(),
+                                  Obx(() {
+                                    if (profileCtl.isLoading.value) {
+                                      return const SizedBox();
+                                    }
+                                    return Row(
+                                      children: [
+                                        InkWell(
+                                            highlightColor: Colors.transparent,
+                                            splashFactory:
+                                                NoSplash.splashFactory,
+                                            onTap: () async {
+                                              await Get.to(
+                                                  () => const Settings(),
+                                                  arguments: {
+                                                    "displayName": profileCtl
+                                                        .profileData
+                                                        .value!
+                                                        .displayName,
+                                                    "mobile": profileCtl
+                                                        .profileData
+                                                        .value!
+                                                        .mobile,
+                                                    "image": profileCtl
+                                                        .profileData
+                                                        .value!
+                                                        .image
+                                                  })?.then((result) {
+                                                profileCtl.fetchProfile();
+                                              });
+                                            },
+                                            child: Image.asset(
+                                              "assets/images/profileimg/setting.png",
+                                              width: 28,
+                                            )),
+                                        const SizedBox(
+                                          width: 4,
+                                        ),
+                                        SizedBox(
+                                          width: 45,
+                                          child: badges.Badge(
+                                              position:
+                                                  badges.BadgePosition.topEnd(
+                                                      top: 2, end: 0),
+                                              badgeAnimation: const badges
+                                                  .BadgeAnimation.slide(
+                                                  loopAnimation: false),
+                                              badgeContent: Obx(() {
+                                                return cartCtr.isLoadingCart
+                                                            .value &&
+                                                        cartCtr.cartItems ==
+                                                            null
+                                                    ? Text(
+                                                        '0',
+                                                        style: GoogleFonts
+                                                            .ibmPlexSansThai(
+                                                                height: 1,
+                                                                color:
+                                                                    themeColorDefault,
+                                                                fontSize: 10),
+                                                      )
+                                                    : Text(
+                                                        '${cartCtr.cartItems!.value.data.map((e) => e.items.length).fold(0, (previousValue, element) => previousValue + element)}',
+                                                        style: GoogleFonts
+                                                            .ibmPlexSansThai(
+                                                                height: 1,
+                                                                color:
+                                                                    themeColorDefault,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                                fontSize: 10),
+                                                      );
+                                              }),
+                                              badgeStyle: badges.BadgeStyle(
+                                                  badgeColor: Colors.white,
+                                                  padding:
+                                                      const EdgeInsets.all(5)),
+                                              child: IconButton(
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                splashColor: Colors.transparent,
+                                                onPressed: () async {
+                                                  Get.find<EndUserCartCtr>()
+                                                      .fetchCartItems();
+                                                  Get.to(() =>
+                                                      const EndUserCart());
+                                                },
+                                                icon: Image.asset(
+                                                  "assets/images/profileimg/cart.png",
+                                                  width: 26,
+                                                ),
+                                              )),
+                                        ),
+                                        Obx(() {
+                                          if (endUserSignInCtr
+                                              .isLoading.value) {
+                                            return const SizedBox();
+                                          } else if (endUserSignInCtr.custId ==
+                                              0) {
+                                            return const SizedBox();
+                                          }
+                                          return Container(
+                                            // width: 40,
+                                            // color: Colors.amber,
+                                            margin: const EdgeInsets.only(
+                                                right: 5.0),
+                                            child: badges.Badge(
+                                                position:
+                                                    badges.BadgePosition.topEnd(
+                                                        top: 2, end: 6),
+                                                badgeAnimation: const badges
+                                                    .BadgeAnimation.slide(
+                                                    loopAnimation: false),
+                                                badgeContent: Obx(() {
+                                                  return Text(
+                                                    chatCtr.countChat.value
+                                                        .toString(),
+                                                    style: GoogleFonts
+                                                        .ibmPlexSansThai(
+                                                            height: 1,
+                                                            color:
+                                                                themeColorDefault,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                            fontSize: 10),
+                                                  );
+                                                }),
+                                                badgeStyle: badges.BadgeStyle(
+                                                    badgeColor: Colors.white,
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            5)),
+                                                child: IconButton(
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  onPressed: () async {
+                                                    chatCtr.fetchSellerChat(0);
+                                                    Get.to(() =>
+                                                        const ChatAppWithPlatform());
+                                                  },
+                                                  icon: Image.asset(
+                                                    "assets/images/profileimg/chat.png",
+                                                    width: 28,
+                                                  ),
+                                                )),
+                                          );
+                                        }),
+                                      ],
                                     );
                                   }),
-                                  badgeStyle: badges.BadgeStyle(
-                                      badgeColor: themeColorDefault,
-                                      padding: const EdgeInsets.all(5)),
-                                  child: IconButton(
-                                    padding: const EdgeInsets.only(
-                                        bottom: 12, top: 5),
-                                    highlightColor: Colors.transparent,
-                                    splashColor: Colors.transparent,
-                                    onPressed: () async {
-                                      chatCtr.fetchSellerChat(0);
-                                      Get.to(() => const ChatAppWithPlatform());
-                                    },
-                                    icon: Image.asset(
-                                        "assets/images/b2c/chat/chat-grey.png"),
-                                  )),
-                            );
-                          }),
-                        ],
-                      );
-                    }),
-                  ],
-                ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      MediaQuery(
+                        data: MediaQuery.of(context)
+                            .copyWith(textScaler: const TextScaler.linear(1.0)),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const DataProfiles(),
+                            buildMenuSection("ข้อมูลคำสั่งซื้อ", ordermMenu),
+                            buildMenuSection("คูปองส่วนลด", couponMenu),
+                            buildMenuSection("คำแนะนำการใช่้งาน", helpMenu),
+                            // const B2cSpecialProject(),
+                            const LoadmoreEndUser(),
+                          ],
+                        ),
+                      )
+                    ],
+                  )
+                ],
               ),
-            ),
-            // ส่วน Body ที่จะ scroll ได้
-            SliverToBoxAdapter(
-              child: MediaQuery(
-                data: MediaQuery.of(context)
-                    .copyWith(textScaler: const TextScaler.linear(1.0)),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const DataProfiles(),
-                    buildMenuSection("ข้อมูลคำสั่งซื้อ", ordermMenu),
-                    buildMenuSection("คูปองส่วนลด", couponMenu),
-                    buildMenuSection("คำแนะนำการใช่้งาน", helpMenu),
-                    // const B2cSpecialProject(),
-                    const LoadmoreEndUser(),
-                  ],
-                ),
-              ),
-            ),
-          ],
+            ],
+          ),
         ));
   }
 }

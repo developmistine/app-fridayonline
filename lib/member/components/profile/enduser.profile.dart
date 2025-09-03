@@ -3,7 +3,6 @@ import 'package:fridayonline/member/controller/profile.ctr.dart';
 import 'package:fridayonline/member/utils/format.dart';
 import 'package:fridayonline/member/views/(profile)/edit.profile.dart';
 import 'package:fridayonline/member/views/(profile)/friday.coin.dart';
-import 'package:fridayonline/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -29,25 +28,27 @@ class _DataProfilesState extends State<DataProfiles> {
     return Obx(() {
       if (profileCtl.isLoading.value) {
         return Container(
-          height: 90,
+          height: 60,
           padding: const EdgeInsets.all(8),
           margin: const EdgeInsets.all(4),
           decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(8)),
+              color: Colors.transparent,
+              borderRadius: BorderRadius.circular(8)),
           child: Row(
             children: [
               Stack(
                 alignment: Alignment.center,
                 children: [
-                  const ShimmerCard(
-                    width: 60,
-                    height: 60,
+                  ShimmerCard(
+                    width: 48,
+                    height: 48,
                     radius: 50,
+                    color: Colors.white.withOpacity(0.2),
                   ),
                   Icon(
                     Icons.image,
                     size: 20,
-                    color: themeColorDefault.withOpacity(0.2),
+                    color: Colors.black.withOpacity(0.2),
                   )
                 ],
               ),
@@ -60,6 +61,7 @@ class _DataProfilesState extends State<DataProfiles> {
                       width: Get.width,
                       height: 12,
                       radius: 2,
+                      color: Colors.white.withOpacity(0.2),
                     ),
                     const SizedBox(
                       height: 4,
@@ -68,6 +70,7 @@ class _DataProfilesState extends State<DataProfiles> {
                       width: Get.width,
                       height: 12,
                       radius: 2,
+                      color: Colors.white.withOpacity(0.2),
                     ),
                   ],
                 ),
@@ -85,7 +88,7 @@ class _DataProfilesState extends State<DataProfiles> {
         padding: const EdgeInsets.all(8),
         margin: const EdgeInsets.only(bottom: 4),
         decoration: BoxDecoration(
-            color: Colors.white, borderRadius: BorderRadius.circular(8)),
+            color: Colors.transparent, borderRadius: BorderRadius.circular(8)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -106,7 +109,7 @@ class _DataProfilesState extends State<DataProfiles> {
                   Container(
                     clipBehavior: Clip.antiAlias,
                     decoration: BoxDecoration(
-                      border: Border.all(color: Colors.white, width: 1),
+                      // border: Border.all(color: Colors.white, width: 1),
                       borderRadius: BorderRadius.circular(40),
                     ),
                     padding: const EdgeInsets.all(2),
@@ -158,13 +161,13 @@ class _DataProfilesState extends State<DataProfiles> {
                           style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black),
+                              color: Colors.white),
                         ),
                         const SizedBox(height: 4),
                         Text(
                           formatTelHidden(telNumFormat),
                           style: const TextStyle(
-                              fontSize: 13, color: Colors.black),
+                              fontSize: 13, color: Colors.white),
                         ),
                       ],
                     ),
@@ -175,34 +178,35 @@ class _DataProfilesState extends State<DataProfiles> {
                     },
                     child: Container(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 6, vertical: 4),
+                          horizontal: 8, vertical: 4),
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          gradient: const LinearGradient(
-                              begin: Alignment.centerLeft,
-                              end: Alignment.centerRight,
-                              colors: [
-                                Color(0xFFFF512F),
-                                Color(0xFFF09819),
-                              ])),
+                        borderRadius: BorderRadius.circular(12),
+                        color: Colors.white,
+                      ),
                       child: Row(
                         children: [
                           Text(
                             "Coin ของฉัน : ",
                             style: GoogleFonts.ibmPlexSansThai(
-                                color: Colors.white, fontSize: 13),
+                              color: const Color(0xFF1F1F1F),
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                           Text(
                             myFormat.format(profile!.coinBalance),
                             style: GoogleFonts.ibmPlexSansThai(
-                                color: Colors.yellow, fontSize: 13),
+                              color: const Color(0xFF1F1F1F),
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                           const SizedBox(
                             width: 4,
                           ),
                           Image.asset(
-                            'assets/images/b2c/icon/coin2.png',
-                            width: 20,
+                            'assets/images/b2c/icon/coin.png',
+                            width: 16,
                           )
                         ],
                       ),

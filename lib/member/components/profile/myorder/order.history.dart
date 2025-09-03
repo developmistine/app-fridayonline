@@ -97,11 +97,11 @@ class _OrderHistoryCardState extends State<OrderHistoryCard>
   ElevatedButton buttonDetail(String page, int index) {
     return ElevatedButton(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(Colors.white),
-        padding: MaterialStateProperty.all(
+        backgroundColor: WidgetStateProperty.all(Colors.white),
+        padding: WidgetStateProperty.all(
           const EdgeInsets.symmetric(vertical: 4, horizontal: 16),
         ),
-        shape: MaterialStateProperty.all(
+        shape: WidgetStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
             side: BorderSide(
@@ -110,7 +110,7 @@ class _OrderHistoryCardState extends State<OrderHistoryCard>
             ),
           ),
         ),
-        shadowColor: MaterialStateProperty.all(Colors.transparent),
+        shadowColor: WidgetStateProperty.all(Colors.transparent),
       ),
       onPressed: () async {
         if (page == 'checkout') {
@@ -483,11 +483,11 @@ class _OrderHistoryCheckOutCardState extends State<OrderHistoryCheckOutCard>
   ElevatedButton buttonDetail(int index) {
     return ElevatedButton(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(Colors.white),
-        padding: MaterialStateProperty.all(
+        backgroundColor: WidgetStateProperty.all(Colors.white),
+        padding: WidgetStateProperty.all(
           const EdgeInsets.symmetric(vertical: 4, horizontal: 16),
         ),
-        shape: MaterialStateProperty.all(
+        shape: WidgetStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
             side: BorderSide(
@@ -496,7 +496,7 @@ class _OrderHistoryCheckOutCardState extends State<OrderHistoryCheckOutCard>
             ),
           ),
         ),
-        shadowColor: MaterialStateProperty.all(Colors.transparent),
+        shadowColor: WidgetStateProperty.all(Colors.transparent),
       ),
       onPressed: () async {
         orderCtr.fetchOrderDetailCheckOut(widget.data[index].orderId);

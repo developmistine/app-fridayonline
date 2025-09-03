@@ -201,7 +201,10 @@ Widget buildMenuSection(
                           ),
                         Text(
                           name,
-                          style: const TextStyle(fontSize: 12),
+                          style: const TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                          ),
                           textAlign: TextAlign.center,
                         ).marginOnly(top: 8),
                       ],
