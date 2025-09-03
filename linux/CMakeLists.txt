@@ -9,7 +9,7 @@ set(BINARY_NAME "friday_online")
 # https://wiki.gnome.org/HowDoI/ChooseApplicationID
 set(APPLICATION_ID "th.co.friday.fridayonline")
 
-# Explicitly opt in to modern CMake behaviors to avoid warnings with recent
+# Explicitly opt in to modern CMake friday_online/behaviors to avoid warnings with recent
 # versions of CMake.
 cmake_policy(SET CMP0063 NEW)
 

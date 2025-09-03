@@ -18,7 +18,7 @@ Future<TracksResponse?> setTrackPageViewServices(
     {int? sellerId}) async {
   SetData data = SetData();
 
-  var url = Uri.parse("${b2c_api_url}logs/behaviors/track");
+  var url = Uri.parse("${b2c_api_url}logs/friday_online/behaviors/track");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -54,7 +54,8 @@ Future<TracksResponse?> setTrackPageViewServices(
           'PageView ✅ : \npage $page , \ntime :$timeSpent ,\nreferrer : $referrerId \ncusId : ${await data.b2cCustID} \nsellerId : $sellerId');
       return tracksResponse;
     }
-    return Future.error('Error logs tracks page view: logs/behaviors/track');
+    return Future.error(
+        'Error logs tracks page view: logs/friday_online/behaviors/track');
   } catch (e) {
     return Future.error('Error : setTrackPageViewServices $e');
   }
@@ -65,7 +66,7 @@ Future<TracksResponse?> setTrackContentViewServices(
     {int? sellerId}) async {
   SetData data = SetData();
 
-  var url = Uri.parse("${b2c_api_url}logs/behaviors/track");
+  var url = Uri.parse("${b2c_api_url}logs/friday_online/behaviors/track");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -96,7 +97,8 @@ Future<TracksResponse?> setTrackContentViewServices(
           'ContentView ✅ : time :$timeSpent \ncontentId:$contentId \ncontentTitle:$contentTitle \ntype : $contentType');
       return tracksResponse;
     }
-    return Future.error('Error logs tracks content view: logs/behaviors/track');
+    return Future.error(
+        'Error logs tracks content view: logs/friday_online/behaviors/track');
   } catch (e) {
     return Future.error('Error : setTrackContentViewServices $e');
   }
@@ -140,7 +142,8 @@ Future<TracksResponse?> setTrackIncentiveContentViewServices(
       printWhite(tracksResponse);
       return tracksResponse;
     }
-    return Future.error('Error logs tracks content view: logs/behaviors/track');
+    return Future.error(
+        'Error logs tracks content view: logs/friday_online/behaviors/track');
   } catch (e) {
     return Future.error('Error : setTrackContentViewServices $e');
   }
@@ -160,7 +163,7 @@ Future<TracksResponse?> setTrackProductViewServices(
 ) async {
   SetData data = SetData();
 
-  var url = Uri.parse("${b2c_api_url}logs/behaviors/track");
+  var url = Uri.parse("${b2c_api_url}logs/friday_online/behaviors/track");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -196,7 +199,8 @@ Future<TracksResponse?> setTrackProductViewServices(
           'Product View ✅ : \ntime : $timeSpent \nproductId: $productId \npage: $page \nreferrer: $referrer');
       return tracksResponse;
     }
-    return Future.error('Error logs tracks product view: logs/behaviors/track');
+    return Future.error(
+        'Error logs tracks product view: logs/friday_online/behaviors/track');
   } catch (e) {
     return Future.error('Error : setTrackProductViewServices $e');
   }
