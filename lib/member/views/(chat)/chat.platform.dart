@@ -88,6 +88,20 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
     }
   }
 
+  Future<bool> _ensureSocketReady() async {
+    final ws = Get.find<WebSocketController>();
+    if (ws.channel == null ||
+        ws.subscription == null ||
+        !ws.isConnected.value) {
+      try {
+        await ws.connectWebSocket();
+      } catch (_) {
+        return false;
+      }
+    }
+    return ws.channel != null && ws.isConnected.value;
+  }
+
   Future<void> addChatRoom() async {
     chatController.isLoading.value = true;
     await addChatRoomService(1).then((res) async {
@@ -163,10 +177,25 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
     }
   }
 
-  void sendMessageSocket(Map<String, Object> message) {
-    Get.find<WebSocketController>().channel!.sink.add(jsonEncode(message));
-
-    _controller.clear();
+  Future<void> sendMessageSocket(Map<String, Object> message) async {
+    final ok = await _ensureSocketReady();
+    if (!ok) {
+      if (mounted) {
+        Get.snackbar('กำลังเชื่อมต่อใหม่', 'เครือข่ายขัดข้อง ลองอีกครั้ง',
+            snackPosition: SnackPosition.BOTTOM);
+      }
+      return;
+    }
+    try {
+      final ws = Get.find<WebSocketController>();
+      ws.channel!.sink.add(jsonEncode(message));
+      _controller.clear();
+    } catch (e) {
+      if (mounted) {
+        Get.snackbar('ส่งไม่สำเร็จ', 'โปรดลองอีกครั้ง',
+            snackPosition: SnackPosition.BOTTOM);
+      }
+    }
   }
 
   void fetchMoreHistoryChat() async {

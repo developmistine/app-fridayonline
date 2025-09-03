@@ -25,6 +25,7 @@ class ChatController extends GetxController {
   RxBool emojiShowing = true.obs;
   RxBool optionShowing = true.obs;
   RxInt openChatRoom = 0.obs;
+  final Set<int> _seenMessageIds = <int>{};
 
   // gallery
   int page = 0;
@@ -44,6 +45,10 @@ class ChatController extends GetxController {
   }
 
   void addMessage(ReciveMessage message) {
+    final id = message.messageData.messageId;
+    // ถ้าไม่มี messageId ให้สร้าง key รวม (roomId+senderId+timestamp+type+text)
+    if (_seenMessageIds.contains(id)) return;
+    _seenMessageIds.add(id);
     messages.add(message);
   }
 
@@ -124,6 +129,14 @@ class WebSocketController extends GetxController {
   }
 
   Future<void> connectWebSocket() async {
+    if (channel != null && isConnected.value && subscription != null) {
+      return;
+    }
+
+    await subscription?.cancel();
+    subscription = null;
+    await channel?.sink.close();
+    channel = null;
     final SharedPreferences prefs = await _prefs;
 
     var tokenChat = await chatLoginService();
@@ -149,7 +162,7 @@ class WebSocketController extends GetxController {
 
       isConnected.value = true;
       _reconnectAttempt = 0; // reset counter เมื่อ connect สำเร็จ
-
+      await subscription?.cancel();
       subscription = channel!.stream.listen(
         (message) => _handleMessage(message),
         onDone: () {
