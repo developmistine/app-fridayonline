@@ -147,154 +147,103 @@ class _EndUserProfileState extends State<EndUserProfile> {
     return Scaffold(
         backgroundColor: Colors.transparent,
         body: SingleChildScrollView(
-          child: Stack(
-            children: [
-              Image.asset(
-                'assets/images/profileimg/background.png',
-                fit: BoxFit.cover,
-                height: 220,
-              ),
-              Column(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SafeArea(
-                        child: Padding(
-                          padding: EdgeInsets.zero,
-                          child: Column(
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  SizedBox(),
-                                  Obx(() {
-                                    if (profileCtl.isLoading.value) {
-                                      return const SizedBox();
-                                    }
-                                    return Row(
-                                      children: [
-                                        InkWell(
-                                            highlightColor: Colors.transparent,
-                                            splashFactory:
-                                                NoSplash.splashFactory,
-                                            onTap: () async {
-                                              await Get.to(
-                                                  () => const Settings(),
-                                                  arguments: {
-                                                    "displayName": profileCtl
-                                                        .profileData
-                                                        .value!
-                                                        .displayName,
-                                                    "mobile": profileCtl
-                                                        .profileData
-                                                        .value!
-                                                        .mobile,
-                                                    "image": profileCtl
-                                                        .profileData
-                                                        .value!
-                                                        .image
-                                                  })?.then((result) {
-                                                profileCtl.fetchProfile();
-                                              });
-                                            },
-                                            child: Image.asset(
-                                              "assets/images/profileimg/setting.png",
-                                              width: 28,
-                                            )),
-                                        const SizedBox(
-                                          width: 4,
-                                        ),
-                                        SizedBox(
-                                          width: 45,
-                                          child: badges.Badge(
-                                              position:
-                                                  badges.BadgePosition.topEnd(
-                                                      top: 2, end: 0),
-                                              badgeAnimation: const badges
-                                                  .BadgeAnimation.slide(
-                                                  loopAnimation: false),
-                                              badgeContent: Obx(() {
-                                                return cartCtr.isLoadingCart
-                                                            .value &&
-                                                        cartCtr.cartItems ==
-                                                            null
-                                                    ? Text(
-                                                        '0',
-                                                        style: GoogleFonts
-                                                            .ibmPlexSansThai(
-                                                                height: 1,
-                                                                color:
-                                                                    themeColorDefault,
-                                                                fontSize: 10),
-                                                      )
-                                                    : Text(
-                                                        '${cartCtr.cartItems!.value.data.map((e) => e.items.length).fold(0, (previousValue, element) => previousValue + element)}',
-                                                        style: GoogleFonts
-                                                            .ibmPlexSansThai(
-                                                                height: 1,
-                                                                color:
-                                                                    themeColorDefault,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                                fontSize: 10),
-                                                      );
-                                              }),
-                                              badgeStyle: badges.BadgeStyle(
-                                                  badgeColor: Colors.white,
-                                                  padding:
-                                                      const EdgeInsets.all(5)),
-                                              child: IconButton(
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                splashColor: Colors.transparent,
-                                                onPressed: () async {
-                                                  Get.find<EndUserCartCtr>()
-                                                      .fetchCartItems();
-                                                  Get.to(() =>
-                                                      const EndUserCart());
-                                                },
-                                                icon: Image.asset(
-                                                  "assets/images/profileimg/cart.png",
-                                                  width: 26,
-                                                ),
+          child: Container(
+            color: const Color(0xFFF3F3F4),
+            child: Stack(
+              children: [
+                Image.asset(
+                  'assets/images/profileimg/background.png',
+                  fit: BoxFit.cover,
+                  height: 220,
+                ),
+                Column(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SafeArea(
+                          child: Padding(
+                            padding: EdgeInsets.zero,
+                            child: Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    SizedBox(),
+                                    Obx(() {
+                                      if (profileCtl.isLoading.value) {
+                                        return const SizedBox();
+                                      }
+                                      return Row(
+                                        children: [
+                                          InkWell(
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              splashFactory:
+                                                  NoSplash.splashFactory,
+                                              onTap: () async {
+                                                await Get.to(
+                                                    () => const Settings(),
+                                                    arguments: {
+                                                      "displayName": profileCtl
+                                                          .profileData
+                                                          .value!
+                                                          .displayName,
+                                                      "mobile": profileCtl
+                                                          .profileData
+                                                          .value!
+                                                          .mobile,
+                                                      "image": profileCtl
+                                                          .profileData
+                                                          .value!
+                                                          .image
+                                                    })?.then((result) {
+                                                  profileCtl.fetchProfile();
+                                                });
+                                              },
+                                              child: Image.asset(
+                                                "assets/images/profileimg/setting.png",
+                                                width: 28,
                                               )),
-                                        ),
-                                        Obx(() {
-                                          if (endUserSignInCtr
-                                              .isLoading.value) {
-                                            return const SizedBox();
-                                          } else if (endUserSignInCtr.custId ==
-                                              0) {
-                                            return const SizedBox();
-                                          }
-                                          return Container(
-                                            // width: 40,
-                                            // color: Colors.amber,
-                                            margin: const EdgeInsets.only(
-                                                right: 5.0),
+                                          const SizedBox(
+                                            width: 4,
+                                          ),
+                                          SizedBox(
+                                            width: 45,
                                             child: badges.Badge(
                                                 position:
                                                     badges.BadgePosition.topEnd(
-                                                        top: 2, end: 6),
+                                                        top: 2, end: 0),
                                                 badgeAnimation: const badges
                                                     .BadgeAnimation.slide(
                                                     loopAnimation: false),
                                                 badgeContent: Obx(() {
-                                                  return Text(
-                                                    chatCtr.countChat.value
-                                                        .toString(),
-                                                    style: GoogleFonts
-                                                        .ibmPlexSansThai(
-                                                            height: 1,
-                                                            color:
-                                                                themeColorDefault,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                            fontSize: 10),
-                                                  );
+                                                  return cartCtr.isLoadingCart
+                                                              .value &&
+                                                          cartCtr.cartItems ==
+                                                              null
+                                                      ? Text(
+                                                          '0',
+                                                          style: GoogleFonts
+                                                              .ibmPlexSansThai(
+                                                                  height: 1,
+                                                                  color:
+                                                                      themeColorDefault,
+                                                                  fontSize: 10),
+                                                        )
+                                                      : Text(
+                                                          '${cartCtr.cartItems!.value.data.map((e) => e.items.length).fold(0, (previousValue, element) => previousValue + element)}',
+                                                          style: GoogleFonts
+                                                              .ibmPlexSansThai(
+                                                                  height: 1,
+                                                                  color:
+                                                                      themeColorDefault,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  fontSize: 10),
+                                                        );
                                                 }),
                                                 badgeStyle: badges.BadgeStyle(
                                                     badgeColor: Colors.white,
@@ -307,46 +256,105 @@ class _EndUserProfileState extends State<EndUserProfile> {
                                                   splashColor:
                                                       Colors.transparent,
                                                   onPressed: () async {
-                                                    chatCtr.fetchSellerChat(0);
+                                                    Get.find<EndUserCartCtr>()
+                                                        .fetchCartItems();
                                                     Get.to(() =>
-                                                        const ChatAppWithPlatform());
+                                                        const EndUserCart());
                                                   },
                                                   icon: Image.asset(
-                                                    "assets/images/profileimg/chat.png",
-                                                    width: 28,
+                                                    "assets/images/profileimg/cart.png",
+                                                    width: 26,
                                                   ),
                                                 )),
-                                          );
-                                        }),
-                                      ],
-                                    );
-                                  }),
-                                ],
-                              ),
-                            ],
+                                          ),
+                                          Obx(() {
+                                            if (endUserSignInCtr
+                                                .isLoading.value) {
+                                              return const SizedBox();
+                                            } else if (endUserSignInCtr
+                                                    .custId ==
+                                                0) {
+                                              return const SizedBox();
+                                            }
+                                            return Container(
+                                              // width: 40,
+                                              // color: Colors.amber,
+                                              margin: const EdgeInsets.only(
+                                                  right: 5.0),
+                                              child: badges.Badge(
+                                                  position: badges.BadgePosition
+                                                      .topEnd(top: 2, end: 6),
+                                                  badgeAnimation: const badges
+                                                      .BadgeAnimation.slide(
+                                                      loopAnimation: false),
+                                                  badgeContent: Obx(() {
+                                                    return Text(
+                                                      chatCtr.countChat.value
+                                                          .toString(),
+                                                      style: GoogleFonts
+                                                          .ibmPlexSansThai(
+                                                              height: 1,
+                                                              color:
+                                                                  themeColorDefault,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              fontSize: 10),
+                                                    );
+                                                  }),
+                                                  badgeStyle: badges.BadgeStyle(
+                                                      badgeColor: Colors.white,
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              5)),
+                                                  child: IconButton(
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    onPressed: () async {
+                                                      chatCtr
+                                                          .fetchSellerChat(0);
+                                                      Get.to(() =>
+                                                          const ChatAppWithPlatform());
+                                                    },
+                                                    icon: Image.asset(
+                                                      "assets/images/profileimg/chat.png",
+                                                      width: 28,
+                                                    ),
+                                                  )),
+                                            );
+                                          }),
+                                        ],
+                                      );
+                                    }),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      MediaQuery(
-                        data: MediaQuery.of(context)
-                            .copyWith(textScaler: const TextScaler.linear(1.0)),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const DataProfiles(),
-                            buildMenuSection("ข้อมูลคำสั่งซื้อ", ordermMenu),
-                            buildMenuSection("คูปองส่วนลด", couponMenu),
-                            buildMenuSection("คำแนะนำการใช่้งาน", helpMenu),
-                            // const B2cSpecialProject(),
-                            const LoadmoreEndUser(),
-                          ],
-                        ),
-                      )
-                    ],
-                  )
-                ],
-              ),
-            ],
+                        MediaQuery(
+                          data: MediaQuery.of(context).copyWith(
+                              textScaler: const TextScaler.linear(1.0)),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const DataProfiles(),
+                              buildMenuSection("ข้อมูลคำสั่งซื้อ", ordermMenu),
+                              buildMenuSection("คูปองส่วนลด", couponMenu),
+                              buildMenuSection("คำแนะนำการใช่้งาน", helpMenu),
+                              // const B2cSpecialProject(),
+                              const LoadmoreEndUser(),
+                            ],
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ],
+            ),
           ),
         ));
   }
