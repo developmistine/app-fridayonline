@@ -7,3 +7,5 @@ clean:
 release:
 	flutter run --release
 
+# Update Pod
+# pod install --repo-update 
