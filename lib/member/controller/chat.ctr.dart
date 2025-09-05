@@ -25,6 +25,7 @@ class ChatController extends GetxController {
   RxBool emojiShowing = true.obs;
   RxBool optionShowing = true.obs;
   RxInt openChatRoom = 0.obs;
+  RxBool openPlatformChatRoom = false.obs;
   final Set<int> _seenMessageIds = <int>{};
 
   // gallery
@@ -46,7 +47,6 @@ class ChatController extends GetxController {
 
   void addMessage(ReciveMessage message) {
     final id = message.messageData.messageId;
-    // ถ้าไม่มี messageId ให้สร้าง key รวม (roomId+senderId+timestamp+type+text)
     if (_seenMessageIds.contains(id)) return;
     _seenMessageIds.add(id);
     messages.add(message);
@@ -204,32 +204,32 @@ class WebSocketController extends GetxController {
     final socketMessage = receieveMessageFromJson(message);
 
     if (socketMessage.event == "message") {
-      var updateChat = chatController.conversations!.value.data
-          .firstWhereOrNull((element) =>
-              element.chatRoomId == socketMessage.messageData.chatRoomId);
+      // var updateChat = chatController.conversations!.value.data
+      //     .firstWhereOrNull((element) =>
+      //         element.chatRoomId == socketMessage.messageData.chatRoomId);
 
-      if (updateChat == null) {
-        var newMsg = ReciveMessage(
-          messageData: socketMessage.messageData,
-          event: socketMessage.event,
-          isMe: socketMessage.messageData.senderRole == "customer" ||
-              socketMessage.messageData.senderRole == "system",
-        );
+      // if (updateChat == null) {
+      //   var newMsg = ReciveMessage(
+      //     messageData: socketMessage.messageData,
+      //     event: socketMessage.event,
+      //     isMe: socketMessage.messageData.senderRole == "customer" ||
+      //         socketMessage.messageData.senderRole == "system",
+      //   );
 
-        chatController.addMessage(newMsg);
-        return;
-      }
+      //   chatController.addMessage(newMsg);
+      //   return;
+      // }
 
-      updateChat.messageText = socketMessage.messageData.messageText;
-      updateChat.lastSend = socketMessage.messageData.sendDate;
-      updateChat.unRead = socketMessage.messageData.isRead == 0
-          ? (socketMessage.messageData.senderRole == "customer"
-              ? updateChat.unRead
-              : updateChat.unRead + 1)
-          : updateChat.unRead;
+      // updateChat.messageText = socketMessage.messageData.messageText;
+      // updateChat.lastSend = socketMessage.messageData.sendDate;
+      // updateChat.unRead = socketMessage.messageData.isRead == 0
+      //     ? (socketMessage.messageData.senderRole == "customer"
+      //         ? updateChat.unRead
+      //         : updateChat.unRead + 1)
+      //     : updateChat.unRead;
 
       if (socketMessage.messageData.senderRole != "customer" &&
-          updateChat.unRead == 1) {
+          !chatController.openPlatformChatRoom.value) {
         chatController.countChat.value += 1;
       }
 

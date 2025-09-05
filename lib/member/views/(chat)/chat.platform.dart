@@ -24,6 +24,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:image_picker/image_picker.dart' as img_picker;
+import 'package:emoji_picker_flutter/emoji_picker_flutter.dart' as emoji;
 
 class ChatRenderItem {
   final Widget widget;
@@ -106,6 +107,7 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
     chatController.isLoading.value = true;
     await addChatRoomService(1).then((res) async {
       chatController.openChatRoom.value = res.data.chatRoomId;
+      chatController.openPlatformChatRoom.value = true;
 
       setState(() {
         chatRoomId = res.data.chatRoomId;
@@ -941,7 +943,7 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
                     child: EmojiPicker(
                       textEditingController: _controller,
                       scrollController: _scrollController,
-                      config: Config(
+                      config: emoji.Config(
                         height: 306,
                         checkPlatformCompatibility: true,
                         emojiViewConfig: EmojiViewConfig(

@@ -116,8 +116,12 @@ class ApiProfile {
       );
 
       if (response.statusCode == 200) {
-        final decodedJson =
-            jsonDecode(utf8.decode(await response.stream.toBytes()));
+        final responseBytes = await response.stream.toBytes();
+        final responseString = utf8.decode(responseBytes);
+        print("Response body: $responseString");
+
+        final decodedJson = jsonDecode(responseString);
+        print("Decoded JSON: $decodedJson");
 
         if (decodedJson['code'] == "100") {
           return;
