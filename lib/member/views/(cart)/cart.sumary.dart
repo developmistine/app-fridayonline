@@ -39,10 +39,10 @@ String? getPaymentUrl(
     String paymentType, int custId, int orderId, String accessToken) {
   if (paymentType == 'qr' || paymentType == 'qrcode') {
     checkoutCtr.routeName = "payment_qrcode_page";
-    return '${webview_b2c}payment/app/pmq_Z3kLj5w4RBsH2xCyVNu9tg?custId=$custId&orderId=$orderId&accessToken=$accessToken';
+    return '${webview_b2c}payment/app/pmq_Z3kLj5w4RBsH2xCyVNu9tg?custId=$custId&orderId=$orderId&accessToken=$accessToken&isFridayonline=true';
   } else if (paymentType == 'card') {
     checkoutCtr.routeName = "payment_card_page";
-    return '${webview_b2c}payment/app/pmc_b2E9v7GjFdQwXsLkY3zpNe?custId=$custId&orderId=$orderId&accessToken=$accessToken';
+    return '${webview_b2c}payment/app/pmc_b2E9v7GjFdQwXsLkY3zpNe?custId=$custId&orderId=$orderId&accessToken=$accessToken&isFridayonline=true';
   }
   return null;
 }
@@ -1235,7 +1235,7 @@ class _EndUserAddressState extends State<EndUserAddress> {
     checkB2cAddress();
   }
 
-  checkB2cAddress() async {
+  Future<void> checkB2cAddress() async {
     var res = await fetchAddressListService();
     var defaultAddress = res!.data.firstWhereOrNull(
       (element) => element.isDeliveryAddress,

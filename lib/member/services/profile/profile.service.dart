@@ -1,8 +1,10 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:dio/dio.dart';
 import 'package:fridayonline/member/models/profile/profile_special.dart';
 import 'package:fridayonline/member/utils/auth_fetch.dart';
 import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/print.dart';
 import 'package:http/http.dart' as http;
 
 import '../../../service/pathapi.dart';
@@ -96,15 +98,12 @@ class ApiProfile {
       List<http.MultipartFile> files = [];
 
       files.add(
-        await http.MultipartFile.fromPath(
-          'profile',
-          imageFile.path,
-        ),
+        await http.MultipartFile.fromPath('profile', imageFile.path,
+            contentType: DioMediaType('image', 'jpeg')),
       );
 
       fields['profile'] = jsonEncode({"cust_id": await data.b2cCustID});
 
-      // ใช้ AuthFetch สำหรับ multipart request
       var response = await AuthFetch.multipartRequestWithAuth(
         url, // แปลง Uri เป็น String
         method: 'POST',
@@ -118,10 +117,8 @@ class ApiProfile {
       if (response.statusCode == 200) {
         final responseBytes = await response.stream.toBytes();
         final responseString = utf8.decode(responseBytes);
-        print("Response body: $responseString");
 
         final decodedJson = jsonDecode(responseString);
-        print("Decoded JSON: $decodedJson");
 
         if (decodedJson['code'] == "100") {
           return;
