@@ -231,8 +231,14 @@ class _SignInScreen extends State<SignInScreen>
       return;
     }
     try {
-      loginAndRegister(user.userIdentifier ?? "", user.givenName ?? "", "",
-          user.email ?? "", 'apple', "");
+      loginAndRegister(
+        user.userIdentifier ?? "",
+        user.givenName ?? "",
+        "",
+        user.email ?? "",
+        'apple',
+        user.identityToken ?? "",
+      );
     } on Exception catch (_) {
       if (!Get.isSnackbarOpen) {
         Get.snackbar('', '',
