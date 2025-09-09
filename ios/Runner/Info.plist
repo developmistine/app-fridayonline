@@ -34,7 +34,7 @@
 				<string>fridayonline</string>
 				<string>fb1534959551248309</string>
                 <string>line3rdp.$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-				<string>com.googleusercontent.apps.436932745041-562nv5msbpkrf5vot9c93f8vn6v0gpbl</string>
+				<string>com.googleusercontent.apps.436932745041-a0mmm42547vdgrj091q02etl2ltguld1</string>
 			</array>
 		</dict>
 	</array>
@@ -54,7 +54,7 @@
 	<key>FlutterDeepLinkingEnabled</key>
 	<true/>
 	<key>GIDClientID</key>
-	<string>436932745041-562nv5msbpkrf5vot9c93f8vn6v0gpbl.apps.googleusercontent.com</string>
+	<string>436932745041-a0mmm42547vdgrj091q02etl2ltguld1.apps.googleusercontent.com</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>lineauth2</string>
