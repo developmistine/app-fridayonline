@@ -203,16 +203,31 @@ class _EndUserSearchState extends State<EndUserSearch> {
                             ),
                           ),
                         ),
-                        Container(
-                            height: 36,
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
-                            decoration: BoxDecoration(
-                                color: themeColorDefault,
-                                borderRadius: const BorderRadius.only(
-                                  topRight: Radius.circular(8),
-                                  bottomRight: Radius.circular(8),
-                                )),
-                            child: const Icon(Icons.search))
+                        GestureDetector(
+                          onTap: () async {
+                            if (searchTextCtr.text.isNotEmpty) {
+                              await saveSearchHistoryService(
+                                  searchTextCtr.text);
+                              searchCtr.fetchProductByKeyword(
+                                  searchTextCtr.text, 0, "", "ctime");
+                              await Get.to(() => const EndUserSearchResult())!
+                                  .then((value) {
+                                setState(() {});
+                              });
+                            }
+                          },
+                          child: Container(
+                              height: 36,
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 8),
+                              decoration: BoxDecoration(
+                                  color: themeColorDefault,
+                                  borderRadius: const BorderRadius.only(
+                                    topRight: Radius.circular(8),
+                                    bottomRight: Radius.circular(8),
+                                  )),
+                              child: const Icon(Icons.search)),
+                        ),
                       ],
                     ),
                   ),

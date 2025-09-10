@@ -77,7 +77,7 @@ class _HomePageState extends State<EndUserHomePage>
     });
   }
 
-  checkShowPopUp() async {
+  Future<void> checkShowPopUp() async {
     final prefs = await _prefs;
     final now = DateTime.now();
     final date = '${now.year}-${now.month}-${now.day}';
@@ -144,7 +144,7 @@ class _HomePageState extends State<EndUserHomePage>
                   _checkInAndCouponContainer(),
                   const BannerProject(),
                   const SupperDeal(),
-                  const CouponNewUser(),
+                  // const CouponNewUser(),
 
                   //  Coin(),
                   const CategoryB2C(),
