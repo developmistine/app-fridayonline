@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
+import 'dart:io';
 
 // by_jukkapun  02/09/2022
 class WebViewFullScreen extends StatefulWidget {
@@ -27,7 +28,7 @@ class WebviewFullScreenState extends State<WebViewFullScreen> {
   WebviewFullScreenState(this.mparamurl);
   String mparamurl;
 
-  _logout() async {
+  Future<void> _logout() async {
     await FacebookAuth.instance.logOut();
     setState(() {});
   }
@@ -150,6 +151,7 @@ class WebviewFullScreenState extends State<WebViewFullScreen> {
                 child: CircularProgressIndicator.adaptive(),
               )
             : SafeArea(
+                bottom: Platform.isAndroid ? true : false,
                 child: WebViewWidget(
                   key: key,
                   gestureRecognizers: gestureRecognizers,

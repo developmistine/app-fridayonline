@@ -76,6 +76,18 @@ class _EndUserProfileState extends State<EndUserProfile> {
     },
   ];
 
+  List<Map<String, Object>> affiliateMenu = [
+    {
+      "title": "Affiliate",
+      "subtitle": [
+        {
+          "name": "Friday Sales Affiliate",
+          "icon": Image.asset('assets/images/b2c/icon/basket.png', width: 24),
+        },
+      ]
+    },
+  ];
+
   List<Map<String, Object>> helpMenu = [
     {
       "title": "ช่วยเหลือ",
@@ -342,6 +354,7 @@ class _EndUserProfileState extends State<EndUserProfile> {
                             children: [
                               const DataProfiles(),
                               buildMenuSection("ข้อมูลคำสั่งซื้อ", ordermMenu),
+                              buildMenuSection("Affiliate", affiliateMenu),
                               buildMenuSection("คูปองส่วนลด", couponMenu),
                               buildMenuSection("คำแนะนำการใช่้งาน", helpMenu),
                               // const B2cSpecialProject(),

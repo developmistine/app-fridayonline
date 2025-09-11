@@ -185,6 +185,8 @@ flutter:
     - assets/images/b2c/logo/
     - assets/images/b2c/icon/
     - assets/images/b2c/background/
+    - assets/images/affiliate/
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
