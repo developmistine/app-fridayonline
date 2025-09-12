@@ -4,9 +4,14 @@ import 'package:fridayonline/member/components/profile/affiliate/user.header.dar
 import 'package:fridayonline/member/components/profile/affiliate/user.slide.dart';
 import 'package:fridayonline/safearea.dart';
 
-class AffiliateUser extends StatelessWidget {
+class AffiliateUser extends StatefulWidget {
   const AffiliateUser({super.key});
 
+  @override
+  State<AffiliateUser> createState() => _AffiliateUserState();
+}
+
+class _AffiliateUserState extends State<AffiliateUser> {
   @override
   Widget build(BuildContext context) {
     return SafeAreaProvider(
