@@ -139,12 +139,14 @@ Future b2cLogoutService() async {
   }
 
   try {
-    var jsonCall = await AuthFetch.post(
-      url,
-      headers: <String, String>{
-        'Content-type': 'application/json; charset=utf-8'
-      },
-    );
+    var jsonData = jsonEncode(
+        {"token_app": await data.tokenId, "device": await data.device});
+
+    var jsonCall = await AuthFetch.post(url,
+        headers: <String, String>{
+          'Content-type': 'application/json; charset=utf-8'
+        },
+        body: jsonData);
     if (jsonCall.statusCode == 200) {
       print('logout success');
     } else {

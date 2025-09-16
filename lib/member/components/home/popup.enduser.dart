@@ -52,7 +52,7 @@ showPopupEndUser(BuildContext context) async {
                           width: Get.width,
                           child: InkWell(
                             onTap: () async {
-                              Get.back();
+                              Get.back(result: 'view');
                               var bannerItem = popup.data[itemIndex];
                               eventBanner(bannerItem, 'home_popup');
                             },
@@ -97,8 +97,8 @@ showPopupEndUser(BuildContext context) async {
                                   color: (current == index
                                           ? Colors.red
                                           : Colors.grey.shade400)
-                                      .withOpacity(
-                                          current == index ? 0.9 : 0.5)),
+                                      .withValues(
+                                          alpha: current == index ? 0.9 : 0.5)),
                             );
                           }),
                         ),
@@ -172,7 +172,7 @@ showPopupEndUser(BuildContext context) async {
                           final SharedPreferences prefs = await _prefs;
                           prefs.setString("ClosePopupDay", date);
                         }
-                        Get.back();
+                        Get.back(result: 'close');
                       },
                       child: SizedBox(
                         width: 30,
@@ -192,16 +192,17 @@ showPopupEndUser(BuildContext context) async {
             ),
           );
         }))).then((value) {
-      printWhite("ปิด HOME POPUP");
       final item = popup.data[current];
-      setTrackIncentiveContentViewServices(
-        item.contentId,
-        item.contentName,
-        'home_popup',
-        0,
-        item.pgmId,
-        'close',
-      );
+      if (value != 'view' && item.pgmId != 0) {
+        setTrackIncentiveContentViewServices(
+          item.contentId,
+          item.contentName,
+          'home_popup',
+          0,
+          item.pgmId,
+          'close',
+        );
+      }
     });
   }
 }

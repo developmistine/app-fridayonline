@@ -299,7 +299,7 @@ class _SplashScreenState extends State<SplashScreen> {
     bool alreadyProcessed = prefs.getBool('branch_first_processed') ?? false;
     String? lastProcessedTimestamp =
         prefs.getString('last_processed_click_timestamp');
-    await prefs.clear();
+    // await prefs.clear();
     // tokenId
     SetData data = SetData();
     String sessionId = await data.sessionId;
@@ -308,6 +308,9 @@ class _SplashScreenState extends State<SplashScreen> {
     }
     await _deviceDetails();
     await initPlatformState();
+
+    final tokenApp = await ensureFcmToken();
+
     prefs.setString(
         'last_processed_click_timestamp', lastProcessedTimestamp.toString());
     prefs.setBool('branch_first_processed', alreadyProcessed);
@@ -339,7 +342,7 @@ class _SplashScreenState extends State<SplashScreen> {
           postCode: '',
           mobile: '',
         ),
-        tokenApp: await data.tokenId == "null" ? "" : await data.tokenId,
+        tokenApp: tokenApp,
         device: await data.device,
         sessionId: await data.sessionId,
         identityId: await data.deviceId,
@@ -378,21 +381,51 @@ class _SplashScreenState extends State<SplashScreen> {
     }
     try {
       await FirebaseMessaging.instance.requestPermission();
-      String? tokenApp = await FirebaseMessaging.instance.getToken();
-      await prefs.setString("Token", tokenApp!);
-      debugPrint('=token= : $tokenApp');
+      final token = await FirebaseMessaging.instance.getToken();
+      final safe = (token == null || token.isEmpty) ? "" : token;
+      await prefs.setString("Token", safe);
+      printWhite('=token= : $safe');
     } catch (e) {
+      await prefs.setString("Token", "");
       if (Platform.isAndroid) {
-        debugPrint('Error get Token $e');
-        // Push.getToken('');
-        // Push.getTokenStream.listen(_onTokenEvent);
+        printWhite('Error get Token $e');
       }
     }
+    FirebaseMessaging.instance.onTokenRefresh.listen((newToken) async {
+      await prefs.setString("Token", newToken ?? "");
+    });
   }
 
   Future<String> getDeviceId() async {
     String? identifier = await UniqueIdentifier.serial;
     return identifier ?? 'unknown';
+  }
+
+  Future<String> ensureFcmToken({int retries = 3}) async {
+    final prefs = await _prefs;
+    String? token;
+
+    for (int i = 0; i < retries; i++) {
+      try {
+        await FirebaseMessaging.instance.requestPermission();
+        token = await FirebaseMessaging.instance.getToken();
+        if (token != null && token.isNotEmpty) break;
+        await Future.delayed(const Duration(milliseconds: 600));
+      } catch (_) {
+        // ignore and retry
+      }
+    }
+
+    // fallback: prefs เดิม (รองรับทั้ง "Token" และ legacy keys)
+    token ??= prefs.getString("Token");
+
+    // normalize ให้ไม่เป็น null
+    token = (token == null || token.isEmpty || token == "null") ? "" : token;
+
+    // เก็บกลับด้วยคีย์มาตรฐานเดียว
+    await prefs.setString("Token", token);
+
+    return token;
   }
 
   // void _onTokenEvent(String event) async {

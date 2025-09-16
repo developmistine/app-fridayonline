@@ -25,6 +25,7 @@ String b2c_path = "https://friday.co.th";
 // ?production
 String b2c_api_url = "https://api.friday.co.th/fridayonline/";
 String base_api_url = "https://api.friday.co.th/";
+String base_app_url = "https://app.friday.co.th/";
 
 // ?dev
 // String b2c_api_url = "https://dev-app.friday.co.th/";

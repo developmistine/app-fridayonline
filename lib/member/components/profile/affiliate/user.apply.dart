@@ -2,21 +2,21 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fridayonline/member/controller/affiliate.dart';
+import 'package:fridayonline/member/controller/affiliate.ctr.dart';
 import 'package:get/get.dart';
 import 'package:fridayonline/theme.dart';
 
 enum ApplyField { shop, email, phone }
 
-class Apply extends StatefulWidget {
-  const Apply({super.key});
+class UserApply extends StatefulWidget {
+  const UserApply({super.key});
 
   @override
-  State<Apply> createState() => _ApplyState();
+  State<UserApply> createState() => _ApplyState();
 }
 
-class _ApplyState extends State<Apply> {
-  final AffiliateController affiliateCtl = Get.put(AffiliateController());
+class _ApplyState extends State<UserApply> {
+  final affiliateCtl = Get.find<AffiliateController>();
   @override
   void initState() {
     super.initState();
@@ -168,7 +168,7 @@ class _ApplyState extends State<Apply> {
                                 'ฉันยืนยันว่าข้อมูลทั้งหมดที่กรอกไปเป็นความจริง และยอมรับ ',
                             style: TextStyle(
                               color: Color(0xFF5A5A5A),
-                              fontSize: 14,
+                              fontSize: 12,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -176,7 +176,7 @@ class _ApplyState extends State<Apply> {
                               text: 'ข้อกำหนดและเงื่อนไข',
                               style: const TextStyle(
                                 color: Color(0xFF1C9AD6),
-                                fontSize: 14,
+                                fontSize: 12,
                                 fontWeight: FontWeight.w400,
                                 decoration: TextDecoration.underline,
                               ),
@@ -185,7 +185,7 @@ class _ApplyState extends State<Apply> {
                             text: ' ของ ฟรายเดย์ Affiliate',
                             style: TextStyle(
                               color: Color(0xFF5A5A5A),
-                              fontSize: 14,
+                              fontSize: 12,
                               fontWeight: FontWeight.w400,
                             ),
                           ),

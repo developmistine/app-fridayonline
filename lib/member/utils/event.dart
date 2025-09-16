@@ -4,10 +4,13 @@ import 'package:fridayonline/member/controller/category.ctr.dart';
 import 'package:fridayonline/member/controller/showproduct.category.ctr.dart';
 import 'package:fridayonline/member/controller/showproduct.sku.ctr.dart';
 import 'package:fridayonline/member/controller/track.ctr.dart';
+import 'package:fridayonline/member/models/home/home.popup.model.dart';
+import 'package:fridayonline/member/services/track/track.service.dart';
 import 'package:fridayonline/member/views/(brand)/brand.category.dart';
 import 'package:fridayonline/member/views/(category)/subcategory.view.dart';
 import 'package:fridayonline/member/views/(coupon)/coupon.all.dart';
 import 'package:fridayonline/member/views/(showproduct)/show.category.view.dart';
+import 'package:fridayonline/print.dart';
 import 'package:get/get.dart';
 import 'package:fridayonline/member/models/brands/shopcontent.model.dart'
     as shop;
@@ -15,10 +18,14 @@ import 'package:fridayonline/member/models/notify/notify.model.dart' as notify;
 
 final CategoryCtr categoryCtr = Get.find();
 final BrandCtr brandCtr = Get.find<BrandCtr>();
-Future<void> eventBanner(contentDetails, String contentType) async {
+Future<void> eventBanner(
+  contentDetails,
+  String contentType,
+) async {
   var actionType = 0;
   var actionValue = "";
   int contentId = 0;
+  bool navigating = false;
 
   try {
     actionType = contentDetails.actionType;
@@ -41,16 +48,49 @@ Future<void> eventBanner(contentDetails, String contentType) async {
         // ไปหน้า webview
         Get.find<TrackCtr>()
             .setDataTrack(0, contentDetails.contentName, contentType);
+
         if (contentDetails.contentName == 'รวมคูปอง') {
-          Get.to(() => const CouponAll());
+          await Get.to(() => const CouponAll());
           break;
-        } else {
-          await Get.to(() => WebViewApp(
-              mparamurl: actionValue, mparamTitleName: 'Friday Online'));
+        }
+
+        navigating = true;
+        final sw = Stopwatch()..start();
+
+        try {
+          final String? result = await Get.to<String>(() => WebViewApp(
+                mparamurl: actionValue,
+                mparamTitleName: 'Friday Online',
+              ));
+
+          sw.stop();
+          final secs = (sw.elapsedMilliseconds / 1000).round();
+          final spent = secs < 1 ? 1 : secs;
+          final String actionFlag = (result == 'accept') ? 'accept' : 'view';
+
+          final int pgmId = contentDetails.pgmId ?? 0;
+          final int contentId = contentDetails.contentId ?? 0;
+          final String contentName = contentDetails.contentName ?? '';
+
+          if (pgmId != 0) {
+            await setTrackIncentiveContentViewServices(
+              contentId,
+              contentName,
+              'home_incentive',
+              spent,
+              pgmId,
+              actionFlag, // 'accept' หรือ 'view'
+            );
+          }
+        } catch (e, st) {
+          printWhite('track error: $e\n$st');
+        } finally {
+          navigating = false;
         }
 
         break;
       }
+
     case 2:
       {
         // prouct filter ไปหน้ารายการสินค้า

@@ -15,14 +15,14 @@ final slides = [
   },
 ];
 
-class Slides extends StatefulWidget {
-  const Slides({super.key});
+class UserSlides extends StatefulWidget {
+  const UserSlides({super.key});
 
   @override
-  State<Slides> createState() => _SlidesState();
+  State<UserSlides> createState() => _SlidesState();
 }
 
-class _SlidesState extends State<Slides> {
+class _SlidesState extends State<UserSlides> {
   final _page = PageController(viewportFraction: 0.88); // โชว์การ์ดถัดไปนิด ๆ
   int _index = 0;
 
@@ -35,7 +35,7 @@ class _SlidesState extends State<Slides> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12),
+      padding: const EdgeInsets.symmetric(vertical: 4),
       child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,

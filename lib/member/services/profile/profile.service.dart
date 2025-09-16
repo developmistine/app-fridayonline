@@ -173,6 +173,7 @@ class ApiProfile {
         },
         body: jsonEncode({
           "cust_id": await data.b2cCustID,
+          "token_app": await data.tokenId,
           "device": await data.device,
         }),
       );

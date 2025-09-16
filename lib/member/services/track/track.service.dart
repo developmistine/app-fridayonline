@@ -18,7 +18,7 @@ Future<TracksResponse?> setTrackPageViewServices(
     {int? sellerId}) async {
   SetData data = SetData();
 
-  var url = Uri.parse("${b2c_api_url}logs/friday_online/behaviors/track");
+  var url = Uri.parse("${base_app_url}logs/friday_online/behaviors/track");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -66,7 +66,7 @@ Future<TracksResponse?> setTrackContentViewServices(
     {int? sellerId}) async {
   SetData data = SetData();
 
-  var url = Uri.parse("${b2c_api_url}logs/friday_online/behaviors/track");
+  var url = Uri.parse("${base_app_url}logs/friday_online/behaviors/track");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -139,7 +139,6 @@ Future<TracksResponse?> setTrackIncentiveContentViewServices(
       Uint8List jsonResponse = jsonCall.bodyBytes;
       final tracksResponse = tracksResponseFromJson(utf8.decode(jsonResponse));
       printWhite(payload);
-      printWhite(tracksResponse);
       return tracksResponse;
     }
     return Future.error(
@@ -163,7 +162,7 @@ Future<TracksResponse?> setTrackProductViewServices(
 ) async {
   SetData data = SetData();
 
-  var url = Uri.parse("${b2c_api_url}logs/friday_online/behaviors/track");
+  var url = Uri.parse("${base_app_url}logs/friday_online/behaviors/track");
 
   try {
     var jsonCall = await AuthFetch.post(url,

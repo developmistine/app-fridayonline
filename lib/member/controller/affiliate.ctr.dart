@@ -3,6 +3,11 @@ import 'package:fridayonline/member/components/profile/affiliate/user.apply.dart
 import 'package:get/get.dart';
 
 class AffiliateController extends GetxController {
+  // shop info
+  RxBool isValidUser = true.obs;
+  RxDouble volume = 0.0.obs;
+
+  // apply
   final shopNameCtrl = TextEditingController();
   final emailCtrl = TextEditingController();
   final phoneCtrl = TextEditingController();
@@ -35,15 +40,6 @@ class AffiliateController extends GetxController {
       errorPhone != null;
   bool get showAgreeError => submitted.value && !agreed.value;
 
-  @override
-  void onInit() {
-    super.onInit();
-    everAll([shop, email, phone, agreed], (_) {
-      // ดูในคอนโซลว่ามีเด้งทุกครั้งที่พิมพ์/ติ๊กไหม
-      // print([shop.value, email.value, phone.value, agreed.value]);
-    });
-  }
-
   void toggleAgree() => agreed.toggle();
 
   // ===== Validators =====
@@ -74,8 +70,8 @@ class AffiliateController extends GetxController {
     submitted.value = true;
     if (!isValid) return;
     // TODO: ส่ง API
-    Get.snackbar('สำเร็จ', 'ส่งคำขอลงทะเบียนเรียบร้อย',
-        snackPosition: SnackPosition.BOTTOM);
+
+    isValidUser.value = true;
   }
 
   @override

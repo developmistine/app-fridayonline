@@ -69,14 +69,16 @@ class _BannerProjectState extends State<BannerProject> {
 
                     try {
                       final actionFlag = result == 'accept' ? 'accept' : 'view';
-                      await setTrackIncentiveContentViewServices(
-                        item.contentId,
-                        item.contentName,
-                        'home_incentive',
-                        spent,
-                        item.pgmId,
-                        actionFlag,
-                      );
+                      if (item.pgmId != 0) {
+                        await setTrackIncentiveContentViewServices(
+                          item.contentId,
+                          item.contentName,
+                          'home_incentive',
+                          spent,
+                          item.pgmId,
+                          actionFlag,
+                        );
+                      }
                     } catch (_) {}
 
                     _navigating = false;

@@ -1,13 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fridayonline/member/components/profile/affiliate/shop.product.dart';
-import 'package:fridayonline/member/components/profile/affiliate/user.apply.dart';
-import 'package:fridayonline/member/components/profile/affiliate/user.header.dart';
-import 'package:fridayonline/member/components/profile/affiliate/user.menu.dart';
-import 'package:fridayonline/member/components/profile/affiliate/user.slide.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/content.dart';
-import 'package:fridayonline/member/controller/affiliate.ctr.dart';
-import 'package:fridayonline/safearea.dart';
-import 'package:get/get.dart';
 
 final productData = [
   {
@@ -18,8 +10,8 @@ final productData = [
             "https://ct.fridayth.com/b2c/seller/000021/logo20250725143715_0.jpg",
         "product_id": 10353,
         "title": "FOOT FIX HEEL CR.50G ครีมบำรุงส้นเท้าแตกฟุตฟิกซ์ 50กรัม",
-        "discount": 0,
-        "price": 0,
+        "discount": 20,
+        "price": 39,
         "price_before_discount": 69,
         "labels": [],
         "rating_star": 5,
@@ -193,20 +185,8 @@ final productData = [
   }
 ];
 
-class AffiliateUser extends StatefulWidget {
-  const AffiliateUser({super.key});
-
-  @override
-  State<AffiliateUser> createState() => _AffiliateUserState();
-}
-
-class _AffiliateUserState extends State<AffiliateUser> {
-  final AffiliateController affiliateCtl = Get.put(AffiliateController());
-
-  @override
-  void initState() {
-    super.initState();
-  }
+class ShopProduct extends StatelessWidget {
+  const ShopProduct({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -215,42 +195,31 @@ class _AffiliateUserState extends State<AffiliateUser> {
             .map((e) => Map<String, dynamic>.from(e as Map))
             .toList();
 
-    return SafeAreaProvider(child: Obx(() {
-      final isValid = affiliateCtl.isValidUser.value;
-      return Scaffold(
-        backgroundColor:
-            isValid ? const Color.fromARGB(255, 244, 244, 244) : Colors.white,
-        body: SingleChildScrollView(
-          padding: EdgeInsets.zero,
+    final bool isEmpty = items.isEmpty;
+
+    return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 243, 243, 243),
+      resizeToAvoidBottomInset: true,
+      body: SafeArea(
+        top: false,
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(8),
           child: Column(
-            spacing: 6,
+            spacing: 8,
             children: [
-              UserHeader(),
-              SafeArea(
-                top: false,
-                child: Obx(() => affiliateCtl.isValidUser.value
-                    ? Column(
-                        children: [
-                          UserMenu(),
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
-                            child: buildProductSection(items),
-                          )
-                        ],
-                      )
-                    : Column(
-                        spacing: 8,
-                        children: const [
-                          UserSlides(),
-                          UserApply(),
-                        ],
-                      )),
-              )
+              if (isEmpty)
+                buildEmptyBox(
+                  'ไม่พบรายการสินค้า',
+                  'เพิ่มสินค้าเพื่อรับค่าคอมมิชชั่น',
+                  'เพิ่มรายการสินค้า',
+                ),
+              if (!isEmpty) buildProductSection(items),
             ],
           ),
         ),
-      );
-    }));
+      ),
+      bottomNavigationBar:
+          isEmpty ? const SizedBox() : buildBottomButton('เพิ่มรายการสินค้า'),
+    );
   }
 }
