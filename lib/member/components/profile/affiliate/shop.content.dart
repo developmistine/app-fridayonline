@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/content.dart';
+import 'package:fridayonline/member/controller/affiliate.ctr.dart';
+import 'package:get/get.dart';
 
 const contentData = [
   {
@@ -298,40 +300,60 @@ class ShopContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bool isEmpty = contentData.isEmpty;
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 243, 243, 243),
-      resizeToAvoidBottomInset: true,
-      body: SafeArea(
-        top: false,
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(8),
-          child: Column(
-            spacing: 6,
-            children: [
-              buildHeaderBox(),
-              if (isEmpty)
-                buildEmptyBox(
-                    'ไม่พบเนื้อหา',
-                    'เพิ่มเนื้อหาร้านค้าเพื่อตกแต่งร้านของคุณ',
-                    'สร้างหมวดหมู่'),
-              if (!isEmpty)
-                ListView.builder(
-                  padding: EdgeInsets.zero,
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: contentData.length,
-                  itemBuilder: (context, index) {
-                    final Map<String, dynamic> items =
-                        contentData[index] as Map<String, dynamic>;
-                    return buildContentSection(items);
-                  },
-                ),
-            ],
-          ),
+
+    final affiliateCtl = Get.find<AffiliateController>();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (affiliateCtl.contentEmpty.value != isEmpty) {
+        affiliateCtl.contentEmpty.value = isEmpty;
+      }
+    });
+
+    return CustomScrollView(
+      key: const PageStorageKey('tab_shop_content'),
+      slivers: [
+        SliverOverlapInjector(
+          handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
         ),
-      ),
-      bottomNavigationBar:
-          isEmpty ? const SizedBox() : buildBottomButton('จัดการเนื้อหา'),
+        if (isEmpty)
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Padding(
+              padding: const EdgeInsets.all(8),
+              child: buildEmptyBox(
+                'ไม่พบเนื้อหา',
+                'เพิ่มเนื้อหาร้านค้าเพื่อตกแต่งร้านของคุณ',
+                'สร้างหมวดหมู่',
+              ),
+            ),
+          )
+        else ...[
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
+              child: buildHeaderBox(),
+            ),
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.symmetric(vertical: 0),
+            sliver: SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  final Map<String, dynamic> items =
+                      contentData[index] as Map<String, dynamic>;
+
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                    ),
+                    child: buildContentSection(items),
+                  );
+                },
+                childCount: contentData.length,
+              ),
+            ),
+          ),
+        ],
+      ],
     );
   }
 }

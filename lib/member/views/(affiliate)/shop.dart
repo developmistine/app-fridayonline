@@ -1,10 +1,11 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:fridayonline/member/components/profile/affiliate/shop.category.dart';
-import 'package:fridayonline/member/components/profile/affiliate/shop.content.dart'
-    hide themeColorDefault;
+import 'package:fridayonline/member/components/profile/affiliate/shop.content.dart';
 import 'package:fridayonline/member/components/profile/affiliate/shop.product.dart';
 import 'package:fridayonline/member/components/profile/affiliate/user.header.dart';
+import 'package:fridayonline/member/components/profile/affiliate/utils/content.dart';
+import 'package:fridayonline/member/controller/affiliate.ctr.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
@@ -88,18 +89,97 @@ class _ProfileRow extends StatelessWidget {
   }
 }
 
-class AffiliateShop extends StatelessWidget {
+class AffiliateShop extends StatefulWidget {
   const AffiliateShop({super.key});
 
   @override
+  State<AffiliateShop> createState() => _AffiliateShopState();
+}
+
+class _AffiliateShopState extends State<AffiliateShop>
+    with SingleTickerProviderStateMixin {
+  late final TabController _tab;
+  AffiliateController affiliateCtl = Get.isRegistered<AffiliateController>()
+      ? Get.find<AffiliateController>()
+      : Get.put(AffiliateController(), permanent: true);
+
+  String _textFor(int i) {
+    switch (i) {
+      case 0:
+        return 'จัดการเนื้อหา';
+      case 1:
+        return 'จัดการรายการสินค้า';
+      case 2:
+        return 'จัดการหมวดหมู่';
+      default:
+        return '';
+    }
+  }
+
+  VoidCallback? _actionFor(int i) {
+    switch (i) {
+      case 0:
+        return () {/* TODO: จัดการเนื้อหา */};
+      case 1:
+        return () {/* TODO: จัดการสินค้า */};
+      case 2:
+        return () {/* TODO: จัดการหมวดหมู่ */};
+      default:
+        return null;
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _tab = TabController(length: shopTabs.length, vsync: this);
+
+    void refresh() {
+      if (mounted) setState(() {});
+    }
+
+    _tab.addListener(refresh);
+    _tab.animation?.addListener(refresh);
+
+    final _ = affiliateCtl;
+  }
+
+  @override
+  void dispose() {
+    _tab.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: shopTabs.length,
-      child: Scaffold(
-        backgroundColor: const Color(0xFFF4F4F4),
-        body: NestedScrollView(
-          headerSliverBuilder: (context, innerBoxIsScrolled) => [
-            SliverAppBar(
+    return Scaffold(
+      backgroundColor: const Color(0xFFF4F4F4),
+      bottomNavigationBar: AnimatedBuilder(
+        animation: _tab.animation!,
+        builder: (context, _) {
+          final idx = (_tab.animation?.value ?? _tab.index).round();
+
+          final onPressed = _actionFor(idx);
+          if (onPressed == null) return const SizedBox.shrink();
+          return Obx(() {
+            final isEmptyNow = switch (idx) {
+              0 => affiliateCtl.contentEmpty.value,
+              1 => affiliateCtl.productEmpty.value,
+              2 => affiliateCtl.categoryEmpty.value,
+              _ => true,
+            };
+
+            if (isEmptyNow) return const SizedBox.shrink();
+
+            return buildBottomButton(_textFor(idx));
+          });
+        },
+      ),
+      body: NestedScrollView(
+        headerSliverBuilder: (context, innerBoxIsScrolled) => [
+          SliverOverlapAbsorber(
+            handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+            sliver: SliverAppBar(
               pinned: true,
               primary: true,
               backgroundColor: Colors.white,
@@ -185,6 +265,7 @@ class AffiliateShop extends StatelessWidget {
                   child: ColoredBox(
                     color: Colors.white,
                     child: TabBar(
+                      controller: _tab,
                       isScrollable: false,
                       indicatorColor: themeColorDefault,
                       indicatorWeight: 2,
@@ -204,14 +285,15 @@ class AffiliateShop extends StatelessWidget {
                 ),
               ),
             ),
-          ],
-          body: const TabBarView(
-            children: [
-              ShopContent(),
-              ShopProduct(),
-              ShopCategory(),
-            ],
           ),
+        ],
+        body: TabBarView(
+          controller: _tab,
+          children: [
+            ShopContent(),
+            ShopProduct(),
+            ShopCategory(),
+          ],
         ),
       ),
     );

@@ -60,7 +60,7 @@ class _BannerProjectState extends State<BannerProject> {
                   try {
                     result = await Get.to(() => WebViewApp(
                           mparamurl: item.actionValue,
-                          mparamTitleName: 'โครงการพิเศษ',
+                          mparamTitleName: 'สิทธิพิเศษ',
                         ));
                   } finally {
                     sw.stop();

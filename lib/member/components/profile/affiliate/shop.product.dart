@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/content.dart';
+import 'package:fridayonline/member/controller/affiliate.ctr.dart';
+import 'package:get/get.dart';
 
 final productData = [
   {
@@ -197,29 +199,48 @@ class ShopProduct extends StatelessWidget {
 
     final bool isEmpty = items.isEmpty;
 
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 243, 243, 243),
-      resizeToAvoidBottomInset: true,
-      body: SafeArea(
-        top: false,
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(8),
-          child: Column(
-            spacing: 8,
-            children: [
-              if (isEmpty)
-                buildEmptyBox(
-                  'ไม่พบรายการสินค้า',
-                  'เพิ่มสินค้าเพื่อรับค่าคอมมิชชั่น',
-                  'เพิ่มรายการสินค้า',
-                ),
-              if (!isEmpty) buildProductSection(items),
-            ],
-          ),
+    final affiliateCtl = Get.find<AffiliateController>();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (affiliateCtl.productEmpty.value != isEmpty) {
+        affiliateCtl.productEmpty.value = isEmpty;
+      }
+    });
+
+    return CustomScrollView(
+      key: const PageStorageKey('tab_shop_product'),
+      slivers: [
+        SliverOverlapInjector(
+          handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
         ),
-      ),
-      bottomNavigationBar:
-          isEmpty ? const SizedBox() : buildBottomButton('เพิ่มรายการสินค้า'),
+        if (isEmpty)
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Padding(
+              padding: const EdgeInsets.all(8),
+              child: buildEmptyBox(
+                'ไม่พบรายการสินค้า',
+                'เพิ่มสินค้าเพื่อรับค่าคอมมิชชั่น',
+                'เพิ่มรายการสินค้า',
+              ),
+            ),
+          )
+        else ...[
+          SliverToBoxAdapter(
+            child: Container(
+              color: Colors.white,
+              // padding: const EdgeInsets.all(8),
+              child: buildProductSort(),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Container(
+              color: Colors.white,
+              padding: const EdgeInsets.all(8),
+              child: buildProductSection(items),
+            ),
+          ),
+        ],
+      ],
     );
   }
 }

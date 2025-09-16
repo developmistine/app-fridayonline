@@ -57,7 +57,7 @@ class _EndUserProfileState extends State<EndUserProfile> {
       "title": "อื่นๆ",
       "subtitle": [
         {
-          "name": "โครงการพิเศษ",
+          "name": "สิทธิพิเศษ",
           "icon": Image.asset('assets/images/icon/projects2.png', width: 32),
         },
         {

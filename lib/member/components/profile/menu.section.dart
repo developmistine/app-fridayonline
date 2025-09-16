@@ -318,11 +318,11 @@ Future<void> handleMenuTap(String title) async {
     case "Friday Sales Affiliate":
       Get.to(() => AffiliateUser());
       break;
-    case "โครงการพิเศษ":
+    case "สิทธิพิเศษ":
       Get.to(() => WebViewApp(
             mparamurl:
                 'https://www.friday.co.th:8443/fridayonline/special-projects?cust_id=$custId&device=$device&session_id=$sessionId&token_app$tokenApp',
-            mparamTitleName: 'โครงการพิเศษ',
+            mparamTitleName: 'สิทธิพิเศษ',
           ));
       // Get.to(() => const SpecialProjects());
       break;

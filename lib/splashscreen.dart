@@ -276,7 +276,7 @@ class _SplashScreenState extends State<SplashScreen> {
               Get.to(() => WebViewApp(
                     mparamurl:
                         'https://www.friday.co.th:8443/fridayonline/special-projects?cust_id=$custId&device=$device&session_id=$sessionId&token_app$tokenApp',
-                    mparamTitleName: 'โครงการพิเศษ',
+                    mparamTitleName: 'สิทธิพิเศษ',
                   ));
               // Get.to(() => SpecialProjects());
             } else {

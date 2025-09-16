@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:fridayonline/member/components/profile/affiliate/user.apply.dart';
+import 'package:fridayonline/member/controller/category.ctr.dart';
 import 'package:get/get.dart';
+
+final CategoryCtr categoryCtr = Get.find();
 
 class AffiliateController extends GetxController {
   // shop info
   RxBool isValidUser = true.obs;
   RxDouble volume = 0.0.obs;
+  // shop content
+  final contentEmpty = false.obs;
+
+  // shop product
+  final productEmpty = false.obs;
+  RxInt tabSort = 0.obs;
+  RxBool isPriceUp = false.obs;
+
+  // shop category
+  final categoryEmpty = false.obs;
 
   // apply
   final shopNameCtrl = TextEditingController();
@@ -72,6 +85,17 @@ class AffiliateController extends GetxController {
     // TODO: ส่ง API
 
     isValidUser.value = true;
+  }
+
+  void setSortTab(int index, int priceIndex) {
+    if (tabSort.value == index && index == priceIndex) {
+      isPriceUp.toggle();
+    } else {
+      tabSort.value = index;
+      if (index != priceIndex) {
+        isPriceUp.value = false;
+      }
+    }
   }
 
   @override

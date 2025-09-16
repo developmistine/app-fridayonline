@@ -37,7 +37,7 @@ class SpecialProjects extends StatelessWidget {
           ),
           child: Scaffold(
             backgroundColor: const Color.fromRGBO(245, 245, 245, 1),
-            appBar: appBarMasterEndUser('โครงการพิเศษ'),
+            appBar: appBarMasterEndUser('สิทธิพิเศษ'),
             body: Padding(
               padding: const EdgeInsets.all(12),
               child: Column(

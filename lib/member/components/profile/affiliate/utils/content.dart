@@ -4,16 +4,18 @@ import 'package:flutter_svg/svg.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/product.dart';
 import 'package:fridayonline/member/controller/affiliate.ctr.dart';
+import 'package:fridayonline/member/controller/category.ctr.dart';
 import 'package:fridayonline/member/models/home/home.content.model.dart';
 import 'package:fridayonline/member/utils/cached_image.dart';
-import 'package:fridayonline/member/utils/format.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:path_drawing/path_drawing.dart';
 import 'package:video_player/video_player.dart';
-
 import '../../myreview/myrating.card.dart';
+
+final affiliateCtl = Get.find<AffiliateController>();
+final CategoryCtr categoryCtr = Get.find();
 
 Widget buildHeaderBox() {
   return Container(
@@ -138,11 +140,9 @@ Widget buildProductSection(List<Map<String, dynamic>> items) {
         itemBuilder: (context, index) {
           final pMap = items[index];
 
-          // ถ้า ProductContent.fromJson รองรับ snake_case อยู่แล้ว ใช้ได้เลย
-          // ถ้าไม่รองรับ ลองแมปคีย์เองก่อนค่อยส่งเข้า model
           final product = ProductContent.fromJson(pMap);
 
-          return ProductItems(
+          return productItem(
             product: product,
             onTap: () {
               // TODO: เปิดหน้ารายละเอียด/เพิ่มลงตะกร้า ฯลฯ
@@ -152,6 +152,87 @@ Widget buildProductSection(List<Map<String, dynamic>> items) {
       );
     },
   );
+}
+
+Widget buildProductSort() {
+  return Obx(() {
+    final isLoading = categoryCtr.isLoadingSort.value;
+    final currentTab = affiliateCtl.tabSort.value;
+    final isPriceUp = affiliateCtl.isPriceUp.value;
+
+    if (isLoading) return const SizedBox();
+
+    return Container(
+      color: Colors.white,
+      width: Get.width,
+      child: Row(
+        children: List.generate(categoryCtr.sortData!.data.length, (index) {
+          final sort = categoryCtr.sortData!.data[index];
+          final bool isActive = currentTab == index;
+
+          return Expanded(
+            child: Stack(
+              alignment: Alignment.centerRight,
+              children: [
+                InkWell(
+                  onTap: () => affiliateCtl.setSortTab(
+                    index,
+                    categoryCtr.sortData!.data.length - 1, // priceIndex
+                  ),
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          color: isActive
+                              ? themeColorDefault
+                              : Colors.grey.shade300,
+                        ),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          sort.text,
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.ibmPlexSansThai(
+                            fontSize: 12,
+                            fontWeight:
+                                isActive ? FontWeight.bold : FontWeight.normal,
+                            color: isActive
+                                ? themeColorDefault
+                                : Colors.grey.shade700,
+                          ),
+                        ),
+                        if (index == categoryCtr.sortData!.data.length - 1 &&
+                            isActive)
+                          Padding(
+                            padding: const EdgeInsets.only(left: 4),
+                            child: Icon(
+                              isPriceUp
+                                  ? Icons.arrow_upward_outlined
+                                  : Icons.arrow_downward_outlined,
+                              size: 12,
+                              color: themeColorDefault,
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                ),
+                if (index != categoryCtr.sortData!.data.length - 1)
+                  IgnorePointer(
+                    child: Text("|",
+                        style: TextStyle(color: Colors.grey.shade300)),
+                  ),
+              ],
+            ),
+          );
+        }),
+      ),
+    );
+  });
 }
 
 // --- content_type == 1 : Banner
@@ -312,7 +393,7 @@ Widget _buildType3(List<dynamic> details) {
               final pMap = products[index] as Map<String, dynamic>;
               final product = ProductContent.fromJson(pMap);
 
-              return ProductItems(
+              return productItem(
                 product: product,
                 onTap: () {},
               );
@@ -381,8 +462,6 @@ Widget _buildType4(
 
 // --- content_type == 5 : วิดีโอ
 Widget _buildType5(List<dynamic> details) {
-  final affiliateCtl = Get.find<AffiliateController>();
-
   return Column(
     crossAxisAlignment: CrossAxisAlignment.stretch,
     children: List.generate(details.length, (idx) {

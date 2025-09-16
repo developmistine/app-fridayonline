@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/content.dart';
+import 'package:fridayonline/member/controller/affiliate.ctr.dart';
+import 'package:get/get.dart';
 
 const cetegoryData = [
   // {
@@ -16,37 +18,53 @@ class ShopCategory extends StatelessWidget {
   Widget build(BuildContext context) {
     final bool isEmpty = cetegoryData.isEmpty;
 
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 243, 243, 243),
-      resizeToAvoidBottomInset: true,
-      body: SafeArea(
-        top: false,
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(10),
-          child: Column(
-            spacing: 8,
-            children: [
-              if (isEmpty)
-                buildEmptyBox('ไม่พบหมวดหมู่', 'โปรดสร้างหมวดหมู่สินค้า',
-                    'สร้างหมวดหมู่'),
-              if (!isEmpty)
-                ListView.builder(
-                  padding: EdgeInsets.zero,
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: cetegoryData.length,
-                  itemBuilder: (context, index) {
-                    final Map<String, dynamic> items =
-                        cetegoryData[index] as Map<String, dynamic>;
-                    return buildContentSection(items);
-                  },
-                ),
-            ],
-          ),
+    final affiliateCtl = Get.find<AffiliateController>();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      affiliateCtl.categoryEmpty.value = isEmpty;
+    });
+
+    return CustomScrollView(
+      key: const PageStorageKey('tab_shop_content'),
+      slivers: [
+        SliverOverlapInjector(
+          handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
         ),
-      ),
-      bottomNavigationBar:
-          isEmpty ? const SizedBox() : buildBottomButton('จัดการหมวดหมู่'),
+        if (isEmpty)
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Padding(
+              padding: const EdgeInsets.all(8),
+              child: buildEmptyBox(
+                  'ไม่พบหมวดหมู่', 'โปรดสร้างหมวดหมู่สินค้า', 'สร้างหมวดหมู่'),
+            ),
+          )
+        else ...[
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
+              child: buildHeaderBox(),
+            ),
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.symmetric(vertical: 0),
+            sliver: SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  final Map<String, dynamic> items =
+                      cetegoryData[index] as Map<String, dynamic>;
+
+                  return Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+                    child: buildContentSection(items),
+                  );
+                },
+                childCount: cetegoryData.length,
+              ),
+            ),
+          ),
+        ],
+      ],
     );
   }
 }
