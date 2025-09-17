@@ -32,7 +32,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fridayonline</string>
-				<string>fb1534959551248309</string>
+				<string>fb1832438484338305</string>
                 <string>line3rdp.$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 				<string>com.googleusercontent.apps.436932745041-a0mmm42547vdgrj091q02etl2ltguld1</string>
 			</array>
@@ -41,7 +41,7 @@
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>FacebookAppID</key>
-	<string>1534959551248309</string>
+	<string>1832438484338305</string>
 	<key>FacebookClientToken</key>
 	<string>015ad3089781aef5f7e7e461bf0aa507</string>
 	<key>FacebookDisplayName</key>

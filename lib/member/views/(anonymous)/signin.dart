@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 import 'package:fridayonline/member/controller/enduser.signin.ctr.dart';
 import 'package:fridayonline/member/models/authen/b2cregis.model.dart';
@@ -23,6 +24,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
+import 'package:permission_handler/permission_handler.dart' as ph;
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key, this.redirect});
@@ -927,8 +929,13 @@ class FacebookSignInProvider {
 
   Future<Map<String, dynamic>?> signInWithFacebook() async {
     try {
-      // เริ่มการล็อกอิน
-      final facebook_auth.LoginResult result = await _facebookAuth.login();
+      await ph.Permission.appTrackingTransparency.request();
+
+      final result = await facebook_auth.FacebookAuth.instance.login(
+        permissions: ['public_profile', 'email'],
+        loginBehavior: facebook_auth.LoginBehavior.nativeWithFallback,
+        loginTracking: facebook_auth.LoginTracking.enabled, // (เฉพาะ iOS)
+      );
       if (result.status == facebook_auth.LoginStatus.success) {
         final userData = await _facebookAuth.getUserData();
         final facebook_auth.AccessToken? accessToken = result.accessToken;
