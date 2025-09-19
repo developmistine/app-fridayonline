@@ -6,6 +6,7 @@ import 'package:fridayonline/member/components/profile/affiliate/shop.product.da
 import 'package:fridayonline/member/components/profile/affiliate/user.header.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/content.dart';
 import 'package:fridayonline/member/controller/affiliate.ctr.dart';
+import 'package:fridayonline/member/views/(affiliate)/edit.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
@@ -99,9 +100,7 @@ class AffiliateShop extends StatefulWidget {
 class _AffiliateShopState extends State<AffiliateShop>
     with SingleTickerProviderStateMixin {
   late final TabController _tab;
-  AffiliateController affiliateCtl = Get.isRegistered<AffiliateController>()
-      ? Get.find<AffiliateController>()
-      : Get.put(AffiliateController(), permanent: true);
+  AffiliateController affiliateCtl = Get.find<AffiliateController>();
 
   String _textFor(int i) {
     switch (i) {
@@ -117,16 +116,11 @@ class _AffiliateShopState extends State<AffiliateShop>
   }
 
   VoidCallback? _actionFor(int i) {
-    switch (i) {
-      case 0:
-        return () {/* TODO: จัดการเนื้อหา */};
-      case 1:
-        return () {/* TODO: จัดการสินค้า */};
-      case 2:
-        return () {/* TODO: จัดการหมวดหมู่ */};
-      default:
-        return null;
-    }
+    return () {
+      Get.to(() => AffiliateEdit(
+            index: i,
+          ));
+    };
   }
 
   @override
@@ -171,7 +165,7 @@ class _AffiliateShopState extends State<AffiliateShop>
 
             if (isEmptyNow) return const SizedBox.shrink();
 
-            return buildBottomButton(_textFor(idx));
+            return buildBottomButton(_textFor(idx), onPressed);
           });
         },
       ),
@@ -290,9 +284,9 @@ class _AffiliateShopState extends State<AffiliateShop>
         body: TabBarView(
           controller: _tab,
           children: [
-            ShopContent(),
-            ShopProduct(),
-            ShopCategory(),
+            ShopContent(index: _tab.index),
+            ShopProduct(index: _tab.index),
+            ShopCategory(index: _tab.index),
           ],
         ),
       ),

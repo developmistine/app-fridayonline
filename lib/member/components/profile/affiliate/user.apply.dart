@@ -3,10 +3,9 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fridayonline/member/controller/affiliate.ctr.dart';
+import 'package:fridayonline/member/controller/profile.ctr.dart';
 import 'package:get/get.dart';
 import 'package:fridayonline/theme.dart';
-
-enum ApplyField { shop, email, phone }
 
 class UserApply extends StatefulWidget {
   const UserApply({super.key});
@@ -17,9 +16,17 @@ class UserApply extends StatefulWidget {
 
 class _ApplyState extends State<UserApply> {
   final affiliateCtl = Get.find<AffiliateController>();
+  final profileCtl = Get.find<ProfileCtl>();
   @override
   void initState() {
     super.initState();
+    affiliateCtl.prefillFromProfile(profileCtl.profileData.value);
+  }
+
+  @override
+  void dispose() {
+    affiliateCtl.clearForm();
+    super.dispose();
   }
 
   @override
@@ -90,35 +97,75 @@ class _ApplyState extends State<UserApply> {
             ),
 
             // ===== ชื่อร้าน =====
-            _FieldLabel(title: 'ชื่อร้านค้าของท่าน', requiredMark: true),
-            _InputBox(
-              controller: affiliateCtl.shopNameCtrl,
-              hint: 'เสื้อผ้าแฟชั่น By คุณนัท',
-              ctl: affiliateCtl,
-              field: ApplyField.shop,
-              onChanged: affiliateCtl.onShopChanged,
+
+            Column(
+              spacing: 4,
+              children: [
+                _FieldLabel(title: 'ชื่อร้านค้าของท่าน', requiredMark: true),
+                _InputBox(
+                  controller: affiliateCtl.shopNameCtrl,
+                  hint: 'เสื้อผ้าแฟชั่น By คุณนัท',
+                  ctl: affiliateCtl,
+                  field: ApplyField.shop,
+                  onChanged: affiliateCtl.onShopChanged,
+                ),
+              ],
+            ),
+
+            // ===== Username =====
+            Column(
+              spacing: 4,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _FieldLabel(title: 'ชื่อผู้ใช้ (username)', requiredMark: true),
+                _InputBox(
+                  controller: affiliateCtl.usernameCtrl,
+                  hint: 'nutshop',
+                  ctl: affiliateCtl,
+                  field: ApplyField.username,
+                  onChanged: affiliateCtl.onUsernameChanged,
+                ),
+                Text(
+                  'กรุณาระบุชื่อผู้ใช้ (username) สำหรับลิงก์โปรไฟล์ของท่าน โดยจะต้องประกอบไปด้วยตัวอักษร ตัวเลข ขีดล่าง และจุดเท่านั้น',
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 102, 102, 102),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ],
             ),
 
             // ===== อีเมล =====
-            _FieldLabel(title: 'อีเมล', requiredMark: true),
-            _InputBox(
-              controller: affiliateCtl.emailCtrl,
-              hint: 'example@friday.co.th',
-              keyboardType: TextInputType.emailAddress,
-              ctl: affiliateCtl,
-              field: ApplyField.email,
-              onChanged: affiliateCtl.onEmailChanged,
+            Column(
+              spacing: 4,
+              children: [
+                _FieldLabel(title: 'อีเมล', requiredMark: true),
+                _InputBox(
+                  controller: affiliateCtl.emailCtrl,
+                  hint: 'example@friday.co.th',
+                  keyboardType: TextInputType.emailAddress,
+                  ctl: affiliateCtl,
+                  field: ApplyField.email,
+                  onChanged: affiliateCtl.onEmailChanged,
+                ),
+              ],
             ),
 
             // ===== เบอร์โทร =====
-            _FieldLabel(title: 'หมายเลขโทรศัพท์', requiredMark: true),
-            _InputBox(
-              controller: affiliateCtl.phoneCtrl,
-              hint: '0XX-XXX-XXXX',
-              keyboardType: TextInputType.phone,
-              ctl: affiliateCtl,
-              field: ApplyField.phone,
-              onChanged: affiliateCtl.onPhoneChanged,
+            Column(
+              spacing: 4,
+              children: [
+                _FieldLabel(title: 'หมายเลขโทรศัพท์', requiredMark: true),
+                _InputBox(
+                  controller: affiliateCtl.phoneCtrl,
+                  hint: '0XX-XXX-XXXX',
+                  keyboardType: TextInputType.phone,
+                  ctl: affiliateCtl,
+                  field: ApplyField.phone,
+                  onChanged: affiliateCtl.onPhoneChanged,
+                ),
+              ],
             ),
 
             // ===== Checkbox + Terms =====
@@ -322,6 +369,8 @@ class _InputBox extends StatelessWidget {
     switch (field) {
       case ApplyField.shop:
         return ctl.errorShop;
+      case ApplyField.username:
+        return ctl.errorUsername;
       case ApplyField.email:
         return ctl.errorEmail;
       case ApplyField.phone:
@@ -333,6 +382,8 @@ class _InputBox extends StatelessWidget {
     switch (field) {
       case ApplyField.shop:
         return ctl.showShopError;
+      case ApplyField.username:
+        return ctl.showUsernameError;
       case ApplyField.email:
         return ctl.showEmailError;
       case ApplyField.phone:
@@ -342,6 +393,7 @@ class _InputBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isUsernameField = field == ApplyField.username;
     final isPhone = field == ApplyField.phone;
     final formatters = isPhone
         ? <TextInputFormatter>[
@@ -368,25 +420,54 @@ class _InputBox extends StatelessWidget {
             onFocusChange: (hasFocus) {
               if (!hasFocus) ctl.markTouched(field);
             },
-            child: TextField(
-              controller: controller,
-              keyboardType: keyboardType,
-              inputFormatters: formatters,
-              textInputAction: TextInputAction.next,
-              onChanged: onChanged,
-              style: TextStyle(
-                  color: textColor, fontSize: 14, fontWeight: FontWeight.w400),
-              decoration: InputDecoration(
-                isCollapsed: true,
-                border: InputBorder.none,
-                hintText: hint,
-                hintStyle: TextStyle(
-                  color: hintColor ?? const Color(0xFF8C8A94),
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
+            child: Obx(() {
+              final localErr = _errorText();
+              final uname = ctl.username.value.trim();
+
+              return TextField(
+                controller: controller,
+                keyboardType: keyboardType,
+                inputFormatters: formatters,
+                textInputAction: TextInputAction.next,
+                onChanged: onChanged,
+                style: TextStyle(
+                    color: textColor,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400),
+                decoration: InputDecoration(
+                  isCollapsed: true,
+                  border: InputBorder.none,
+                  hintText: hint,
+                  hintStyle: TextStyle(
+                    color:
+                        hintColor ?? const Color.fromARGB(255, 160, 158, 167),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                  ),
+                  suffixIcon: isUsernameField
+                      ? (localErr != null || uname.isEmpty
+                          ? const SizedBox.shrink()
+                          : (ctl.isCheckingUsername.value
+                              ? const Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: SizedBox(
+                                    width: 16,
+                                    height: 16,
+                                    child: CircularProgressIndicator(
+                                        strokeWidth: 2),
+                                  ),
+                                )
+                              : (ctl.usernameAvailable.value == true
+                                  ? const Icon(Icons.check_circle,
+                                      color: Colors.green, size: 18)
+                                  : (ctl.usernameAvailable.value == false
+                                      ? const Icon(Icons.cancel,
+                                          color: Colors.red, size: 18)
+                                      : const SizedBox.shrink()))))
+                      : null,
                 ),
-              ),
-            ),
+              );
+            }),
           ),
         ),
         Obx(() {

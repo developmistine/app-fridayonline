@@ -1,5 +1,6 @@
 import 'package:fridayonline/controller/app_controller.dart';
 import 'package:fridayonline/controller/log_analytics/log_analytics_ctr.dart';
+import 'package:fridayonline/member/controller/affiliate.ctr.dart';
 import 'package:fridayonline/member/controller/brand.ctr.dart';
 import 'package:fridayonline/member/controller/cart.ctr.dart';
 import 'package:fridayonline/member/controller/chat.ctr.dart';
@@ -50,5 +51,6 @@ class RootBinging implements Bindings {
     Get.put(ChatController());
     Get.put(FairController());
     Get.put(CoinCtr());
+    Get.put(AffiliateController());
   }
 }

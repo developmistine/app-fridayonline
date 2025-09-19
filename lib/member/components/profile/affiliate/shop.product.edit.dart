@@ -187,8 +187,8 @@ final productData = [
   }
 ];
 
-class ShopProduct extends StatelessWidget {
-  const ShopProduct({super.key, required this.index});
+class ShopEditProduct extends StatelessWidget {
+  const ShopEditProduct({super.key, required this.index});
   final int index;
 
   @override
@@ -227,17 +227,17 @@ class ShopProduct extends StatelessWidget {
           )
         else ...[
           SliverToBoxAdapter(
-            child: Container(
-              color: Colors.white,
-              // padding: const EdgeInsets.all(8),
-              child: buildProductSort(),
-            ),
-          ),
+              child: buildEmptyBoxButton('เพิ่มรายการสินค้า', index)),
+          // SliverToBoxAdapter(
+          //   child: Container(
+          //     color: Colors.white,
+          //     child: buildProductSort(),
+          //   ),
+          // ),
           SliverToBoxAdapter(
-            child: Container(
-              color: Colors.white,
-              padding: const EdgeInsets.all(8),
-              child: buildProductSection(items),
+            child: Padding(
+              padding: const EdgeInsets.only(right: 8, left: 8, top: 8),
+              child: buildEditProduct(items),
             ),
           ),
         ],

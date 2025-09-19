@@ -157,3 +157,79 @@ Widget productItem({
     ],
   );
 }
+
+Widget productItemList({
+  required ProductContent product,
+  VoidCallback? onTap,
+}) {
+  return Row(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    spacing: 10,
+    children: [
+      // รูปสินค้า
+      ClipRRect(
+        borderRadius: BorderRadius.circular(4),
+        child: Stack(
+          children: [
+            Image.network(product.image,
+                width: 60, height: 60, fit: BoxFit.cover),
+          ],
+        ),
+      ),
+
+      // ชื่อ + ราคา
+      Expanded(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              product.title,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(fontSize: 12, color: Colors.black87),
+            ),
+            if (product.discount > 0 && product.price > 0)
+              Row(
+                spacing: 6,
+                children: [
+                  Text(
+                    '฿${myFormat.format(product.price)}',
+                    style: TextStyle(
+                      color: Colors.black87,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12,
+                    ),
+                  ),
+                  Text(
+                    '฿${myFormat.format(product.priceBeforeDiscount)}',
+                    style: TextStyle(
+                      color: Colors.grey.shade600,
+                      decoration: TextDecoration.lineThrough,
+                      fontSize: 10,
+                    ),
+                  ),
+                ],
+              )
+            else
+              Text(
+                '฿${myFormat.format(product.priceBeforeDiscount)}',
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12,
+                ),
+              ),
+            Text(
+              'ค่าคอมมิชชั่น 12.5 %',
+              style: TextStyle(
+                color: Colors.deepOrange.shade600,
+                fontWeight: FontWeight.bold,
+                fontSize: 13,
+              ),
+            ),
+          ],
+        ),
+      ),
+    ],
+  );
+}

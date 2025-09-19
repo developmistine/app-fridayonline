@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fridayonline/member/components/profile/affiliate/shop.product.dart';
 import 'package:fridayonline/member/components/profile/affiliate/user.apply.dart';
 import 'package:fridayonline/member/components/profile/affiliate/user.header.dart';
 import 'package:fridayonline/member/components/profile/affiliate/user.menu.dart';
@@ -8,6 +7,7 @@ import 'package:fridayonline/member/components/profile/affiliate/utils/content.d
 import 'package:fridayonline/member/controller/affiliate.ctr.dart';
 import 'package:fridayonline/safearea.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 final productData = [
   {
@@ -201,11 +201,13 @@ class AffiliateUser extends StatefulWidget {
 }
 
 class _AffiliateUserState extends State<AffiliateUser> {
-  final AffiliateController affiliateCtl = Get.put(AffiliateController());
+  late final AffiliateController affiliateCtl;
 
   @override
   void initState() {
     super.initState();
+    affiliateCtl = Get.find<AffiliateController>();
+    affiliateCtl.checkStatus();
   }
 
   @override
@@ -216,39 +218,96 @@ class _AffiliateUserState extends State<AffiliateUser> {
             .toList();
 
     return SafeAreaProvider(child: Obx(() {
-      final isValid = affiliateCtl.isValidUser.value;
+      if (affiliateCtl.isCheckingStatus.value) {
+        return const Scaffold(
+          body: Center(child: CircularProgressIndicator()),
+        );
+      }
+      final status = affiliateCtl.validStatus.value;
+      final statusMsg = affiliateCtl.validStatusMsg.value;
+      final isNotApplied = status == 'not_applied';
+      final isPending = status == 'pending';
+      // final isRejected = status == 'rejected';
+      final isApproved = status == 'approved';
+
       return Scaffold(
-        backgroundColor:
-            isValid ? const Color.fromARGB(255, 244, 244, 244) : Colors.white,
+        backgroundColor: isApproved
+            ? const Color.fromARGB(255, 244, 244, 244)
+            : Colors.white,
         body: SingleChildScrollView(
           padding: EdgeInsets.zero,
-          child: Column(
-            spacing: 6,
-            children: [
-              UserHeader(),
-              SafeArea(
+          child: Column(spacing: 6, children: [
+            UserHeader(),
+            SafeArea(
                 top: false,
-                child: Obx(() => affiliateCtl.isValidUser.value
-                    ? Column(
-                        children: [
-                          UserMenu(),
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
-                            child: buildProductSection(items),
+                child: isNotApplied
+                    ? Column(children: [
+                        UserSlides(),
+                        UserApply(),
+                      ])
+                    : isApproved
+                        ? Column(
+                            children: [
+                              UserMenu(),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8.0),
+                                child: buildProductSection(items),
+                              )
+                            ],
                           )
-                        ],
-                      )
-                    : Column(
-                        spacing: 8,
-                        children: const [
-                          UserSlides(),
-                          UserApply(),
-                        ],
-                      )),
-              )
-            ],
-          ),
+                        : Container(
+                            height: 400,
+                            alignment: Alignment.center,
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 6, horizontal: 8),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              spacing: 12,
+                              children: [
+                                SizedBox(
+                                  width: 200,
+                                  child: Image.asset(
+                                    isPending
+                                        ? 'assets/images/affiliate/register_pending.png'
+                                        : 'assets/images/affiliate/register_rejected.png',
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
+                                Column(
+                                  children: [
+                                    Text(
+                                      isPending
+                                          ? 'อยู่ระหว่างการตรวจสอบ'
+                                          : 'ไม่ผ่านการตรวจสอบ',
+                                      textAlign: TextAlign.center,
+                                      style: GoogleFonts.ibmPlexSansThai(
+                                        color: const Color(0xFF1F1F1F),
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                      maxLines: 3,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                    Text(
+                                      statusMsg,
+                                      textAlign: TextAlign.center,
+                                      style: GoogleFonts.ibmPlexSansThai(
+                                        color: const Color(0xFF5A5A5A),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                      maxLines: 3,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ))
+          ]),
         ),
       );
     }));

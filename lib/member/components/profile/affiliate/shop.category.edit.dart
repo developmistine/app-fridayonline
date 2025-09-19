@@ -11,8 +11,8 @@ const cetegoryData = [
   // }
 ];
 
-class ShopCategory extends StatelessWidget {
-  const ShopCategory({super.key, required this.index});
+class ShopEditCategory extends StatelessWidget {
+  const ShopEditCategory({super.key, required this.index});
   final int index;
 
   @override

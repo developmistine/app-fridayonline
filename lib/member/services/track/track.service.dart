@@ -50,8 +50,8 @@ Future<TracksResponse?> setTrackPageViewServices(
     if (jsonCall.statusCode == 200) {
       Uint8List jsonResponse = jsonCall.bodyBytes;
       final tracksResponse = tracksResponseFromJson(utf8.decode(jsonResponse));
-      printWhite(
-          'PageView ✅ : \npage $page , \ntime :$timeSpent ,\nreferrer : $referrerId \ncusId : ${await data.b2cCustID} \nsellerId : $sellerId');
+      // printWhite(
+      //     'PageView ✅ : \npage $page , \ntime :$timeSpent ,\nreferrer : $referrerId \ncusId : ${await data.b2cCustID} \nsellerId : $sellerId');
       return tracksResponse;
     }
     return Future.error(

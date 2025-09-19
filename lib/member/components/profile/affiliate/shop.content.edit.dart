@@ -294,8 +294,8 @@ const contentData = [
   },
 ];
 
-class ShopContent extends StatelessWidget {
-  const ShopContent({super.key, required this.index});
+class ShopEditContent extends StatelessWidget {
+  const ShopEditContent({super.key, required this.index});
   final int index;
 
   @override
@@ -323,17 +323,12 @@ class ShopContent extends StatelessWidget {
               child: buildEmptyBox(
                   'ไม่พบเนื้อหา',
                   'เพิ่มเนื้อหาร้านค้าเพื่อตกแต่งร้านของคุณ',
-                  'สร้างหมวดหมู่',
+                  'เพิ่มเนื้อหา',
                   index),
             ),
           )
         else ...[
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
-              child: buildHeaderBox(),
-            ),
-          ),
+          SliverToBoxAdapter(child: buildEmptyBoxButton('เพิ่มเนื้อหา', index)),
           SliverPadding(
             padding: const EdgeInsets.symmetric(vertical: 0),
             sliver: SliverList(
@@ -343,10 +338,8 @@ class ShopContent extends StatelessWidget {
                       contentData[index] as Map<String, dynamic>;
 
                   return Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 8,
-                    ),
-                    child: buildContentSection(items),
+                    padding: const EdgeInsets.only(right: 8, left: 8, top: 8),
+                    child: buildEditContent(items),
                   );
                 },
                 childCount: contentData.length,

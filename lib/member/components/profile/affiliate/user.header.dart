@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fridayonline/member/components/utils/status.dialog.dart';
 import 'package:fridayonline/member/controller/affiliate.ctr.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -342,7 +343,15 @@ class Profile extends StatelessWidget {
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () async {
+              Get.bottomSheet(
+                Text('data'),
+                isScrollControlled: true, // เต็มสูง/เลื่อนตามคีย์บอร์ด
+                backgroundColor: Colors.transparent, // ให้มุมโค้งทำงาน
+                barrierColor: Colors.black.withValues(alpha: .45),
+                enableDrag: true,
+              );
+            },
             icon: Icon(Icons.edit, color: Colors.white),
             tooltip: 'แก้ไขโปรไฟล์',
           )
@@ -389,9 +398,13 @@ class _HeaderState extends State<UserHeader> {
           SafeArea(
             bottom: false,
             child: Column(children: [
-              AppBar(affiliateCtl.isValidUser.value),
-              affiliateCtl.isValidUser.value ? Profile() : SizedBox(),
-              affiliateCtl.isValidUser.value ? Perfomance() : Steps(),
+              AppBar(affiliateCtl.validStatus.value == 'approved'),
+              affiliateCtl.validStatus.value == 'approved'
+                  ? Profile()
+                  : SizedBox(),
+              affiliateCtl.validStatus.value == 'approved'
+                  ? Perfomance()
+                  : Steps(),
             ]),
           )
         ],

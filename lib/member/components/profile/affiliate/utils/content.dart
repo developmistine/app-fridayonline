@@ -2,6 +2,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+import 'package:fridayonline/member/components/profile/affiliate/shop.category.add.dart';
+import 'package:fridayonline/member/components/profile/affiliate/shop.content.add.dart';
+import 'package:fridayonline/member/components/profile/affiliate/shop.product.add.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/product.dart';
 import 'package:fridayonline/member/controller/affiliate.ctr.dart';
 import 'package:fridayonline/member/controller/category.ctr.dart';
@@ -48,10 +51,9 @@ Widget buildHeaderBox() {
   );
 }
 
-Widget buildEmptyBox(String title, String desc, String textBtn) {
+Widget buildEmptyBox(String title, String desc, String textBtn, int tabIndex) {
   return Container(
     width: double.infinity,
-    height: 400,
     padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
     decoration: BoxDecoration(
         color: Colors.transparent, borderRadius: BorderRadius.circular(12)),
@@ -80,7 +82,7 @@ Widget buildEmptyBox(String title, String desc, String textBtn) {
             ),
           ],
         ),
-        buildEmptyBoxButton(textBtn)
+        buildEmptyBoxButton(textBtn, tabIndex)
       ],
     ),
   );
@@ -197,7 +199,7 @@ Widget buildProductSort() {
                           sort.text,
                           textAlign: TextAlign.center,
                           style: GoogleFonts.ibmPlexSansThai(
-                            fontSize: 12,
+                            fontSize: 14,
                             fontWeight:
                                 isActive ? FontWeight.bold : FontWeight.normal,
                             color: isActive
@@ -575,33 +577,36 @@ Widget _buildType5(List<dynamic> details) {
   );
 }
 
-Widget buildEmptyBoxButton(String text) {
+Widget buildEmptyBoxButton(String text, int tabIndex) {
   return AnimatedPadding(
     duration: const Duration(milliseconds: 150),
     curve: Curves.easeOut,
     padding: EdgeInsets.only(bottom: 4),
     child: SafeArea(
       top: false,
-      minimum: const EdgeInsets.fromLTRB(12, 8, 12, 12),
+      minimum: const EdgeInsets.fromLTRB(12, 8, 12, 0),
       child: InkWell(
-        onTap: () {},
-        borderRadius: BorderRadius.circular(12),
+        onTap: () {
+          buildAddSection(tabIndex);
+        },
+        borderRadius: BorderRadius.circular(6),
         child: CustomPaint(
           painter: DashedRRectPainter(),
           child: Container(
             width: 175,
             padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
             decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(12)),
+                color: Colors.white.withValues(alpha: 0.6),
+                borderRadius: BorderRadius.circular(6)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(Icons.add, color: Color(0xFF5A5A5A)),
+                Icon(Icons.add, color: themeColorDefault),
                 const SizedBox(width: 6),
                 Text(
                   text,
                   style: GoogleFonts.ibmPlexSansThai(
-                    color: const Color(0xFF5A5A5A),
+                    color: themeColorDefault,
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
                   ),
@@ -615,7 +620,7 @@ Widget buildEmptyBoxButton(String text) {
   );
 }
 
-Widget buildBottomButton(String text) {
+Widget buildBottomButton(String text, VoidCallback onPressed) {
   return AnimatedPadding(
     duration: const Duration(milliseconds: 150),
     curve: Curves.easeOut,
@@ -624,7 +629,7 @@ Widget buildBottomButton(String text) {
       top: false,
       minimum: const EdgeInsets.fromLTRB(12, 8, 12, 12),
       child: InkWell(
-        onTap: () {},
+        onTap: onPressed,
         borderRadius: BorderRadius.circular(12),
         child: CustomPaint(
           painter: DashedRRectPainter(),
@@ -654,12 +659,378 @@ Widget buildBottomButton(String text) {
   );
 }
 
+// edit
+String _renderContentType(int contentType) {
+  switch (contentType) {
+    case 1:
+      return 'Banner';
+    case 2:
+      return 'Carousel';
+    case 3:
+      return 'Product';
+    case 4:
+      return 'Gallery';
+    case 5:
+      return 'Video';
+    default: // Text
+      return '';
+  }
+}
+
+Widget _typeChip(int type) {
+  final label = _renderContentType(type);
+  final color = switch (type) {
+    1 => Colors.indigo,
+    2 => Colors.teal,
+    3 => Colors.orange,
+    4 => Colors.purple,
+    5 => Colors.red,
+    _ => Colors.grey,
+  };
+  return Container(
+    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+    decoration: BoxDecoration(
+      color: color.withValues(alpha: .1),
+      borderRadius: BorderRadius.circular(999),
+      border: Border.all(color: color.withValues(alpha: .25)),
+    ),
+    child: Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Text(label,
+            style: TextStyle(
+                color: color, fontWeight: FontWeight.w600, fontSize: 12)),
+      ],
+    ),
+  );
+}
+
+Widget _cardBottom({
+  required List<dynamic> details,
+  VoidCallback? onEdit,
+  VoidCallback? onDelete,
+  VoidCallback? onMoveUp,
+  VoidCallback? onHide,
+}) {
+  final btnStyle = OutlinedButton.styleFrom(
+    side: BorderSide(color: Colors.grey.shade300),
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+    padding: const EdgeInsets.all(4),
+    foregroundColor: Colors.black87,
+    backgroundColor: Colors.white,
+    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+    visualDensity: VisualDensity.compact,
+  );
+
+  Widget ob(IconData icon, String tooltip, VoidCallback? onPressed) {
+    return Tooltip(
+      message: tooltip,
+      padding: EdgeInsets.zero,
+      child: OutlinedButton(
+        onPressed: onPressed,
+        style: btnStyle,
+        child: Icon(
+          icon,
+          size: 18,
+          color: Colors.grey.shade800,
+        ),
+      ),
+    );
+  }
+
+  return Align(
+    alignment: Alignment.centerRight,
+    child: Row(
+      mainAxisSize: MainAxisSize.min,
+      spacing: 6,
+      children: [
+        if (onDelete != null) ob(Icons.delete_outline_rounded, 'ลบ', onDelete),
+        if (onHide != null) ob(Icons.remove_red_eye_outlined, 'ซ่อน', onHide),
+        if (onEdit != null) ob(Icons.edit_rounded, 'แก้ไข', onEdit),
+        if (onMoveUp != null)
+          ob(Icons.arrow_upward_rounded, 'เลื่อนขึ้น', onMoveUp),
+      ],
+    ),
+  );
+}
+
+Widget _cardHeader({required int contentType, required List<dynamic> details}) {
+  String? title;
+  if (details.isNotEmpty) {
+    final d = (details.first as Map<String, dynamic>);
+    title = (d['content_name'] as String?)?.trim();
+    title = (title == null || title.isEmpty) ? null : title;
+  }
+
+  return Row(
+    crossAxisAlignment: CrossAxisAlignment.center,
+    spacing: 8,
+    children: [
+      Expanded(
+        child: Text(
+          title ?? _renderContentType(contentType),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: const TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w700,
+              overflow: TextOverflow.ellipsis),
+        ),
+      ),
+      _typeChip(contentType),
+    ],
+  );
+}
+
+Widget _smartImage(String url, {double aspectRatio = 1, double radius = 8}) {
+  return ClipRRect(
+    borderRadius: BorderRadius.circular(radius),
+    child: AspectRatio(
+      aspectRatio: aspectRatio,
+      child: Image.network(
+        url,
+        fit: BoxFit.cover,
+        errorBuilder: (context, error, stackTrace) => Container(
+          color: Colors.grey.shade200,
+          child: const Icon(Icons.broken_image, color: Colors.grey),
+        ),
+      ),
+    ),
+  );
+}
+
+Widget _productGrid(List<dynamic> products) {
+  if (products.isEmpty) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.grey.shade50,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: Colors.grey.shade200),
+      ),
+      child: const Center(child: Text('ยังไม่มีสินค้า')),
+    );
+  }
+
+  return SizedBox(
+    height: 80, // fix ความสูงการ์ดแนวนอน
+    child: ListView.separated(
+      scrollDirection: Axis.horizontal,
+      separatorBuilder: (_, __) => const SizedBox(width: 6),
+      itemCount: products.length,
+      itemBuilder: (_, i) {
+        final p = products[i] as Map<String, dynamic>;
+        final imageUrl = p['image'] as String? ?? '';
+
+        return Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.grey.shade200),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: _smartImage(imageUrl),
+        );
+      },
+    ),
+  );
+}
+
+Widget _horizontalPreview(List<String> images) {
+  return SizedBox(
+    height: 80,
+    child: ListView.separated(
+      scrollDirection: Axis.horizontal,
+      itemCount: images.length,
+      separatorBuilder: (_, __) => const SizedBox(width: 6),
+      itemBuilder: (_, i) => Container(
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey.shade200),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: _smartImage(images[i]),
+      ),
+    ),
+  );
+}
+
+Widget buildEditContent(Map<String, dynamic> items) {
+  final int contentType = (items['content_type'] ?? 0) as int;
+  final List<dynamic> details =
+      (items['content_detail'] ?? []) as List<dynamic>;
+  if (details.isEmpty) return const SizedBox.shrink();
+
+  return Container(
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(12),
+      border: Border.all(color: Colors.grey.shade200),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.black.withValues(alpha: .03),
+          blurRadius: 16,
+          offset: const Offset(0, 6),
+        )
+      ],
+    ),
+    padding: const EdgeInsets.all(10),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      spacing: 8,
+      children: [
+        _cardHeader(
+          contentType: contentType,
+          details: details,
+        ),
+        _buildEditContentType(contentType, details),
+        _cardBottom(
+          details: details,
+          onEdit: () {
+            // TODO: เปิด modal แก้ไขคอนเทนต์
+          },
+          onDelete: () {
+            // TODO: ลบคอนเทนต์
+          },
+          onMoveUp: () {
+            // TODO: ย้ายตำแหน่งขึ้น
+          },
+          onHide: () {
+            // TODO: ย้ายตำแหน่งลง
+          },
+        ),
+      ],
+    ),
+  );
+}
+
+Widget _buildEditContentType(int contentType, List<dynamic> details) {
+  final first = (details.first as Map<String, dynamic>);
+
+  switch (contentType) {
+    case 1:
+      {
+        final image =
+            (first['image'] ?? first['image_desktop'] ?? '') as String;
+        return SizedBox(
+            height: 130, child: _smartImage(aspectRatio: (16 / 6), image));
+      }
+
+    case 2:
+      {
+        final images = details
+            .map((e) => (e as Map<String, dynamic>)['image'] as String? ?? '')
+            .where((e) => e.isNotEmpty)
+            .toList();
+        return _horizontalPreview(images);
+      }
+
+    case 3:
+      {
+        final productList = (first['product_content'] ?? []) as List<dynamic>;
+        return _productGrid(productList);
+      }
+
+    case 4:
+      {
+        final images = details
+            .map((e) => (e as Map<String, dynamic>)['image'] as String? ?? '')
+            .where((e) => e.isNotEmpty)
+            .toList();
+        return _horizontalPreview(images);
+      }
+
+    case 5:
+      {
+        final image =
+            (first['image'] ?? first['image_desktop'] ?? '') as String;
+        return Stack(
+          children: [
+            _smartImage(image),
+            Positioned.fill(
+              child: Center(
+                child: Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.black.withValues(alpha: .35),
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(Icons.play_arrow_rounded,
+                      color: Colors.white, size: 40),
+                ),
+              ),
+            ),
+          ],
+        );
+      }
+
+    default:
+      return SizedBox();
+  }
+}
+
+Widget buildEditProduct(List<Map<String, dynamic>> products) {
+  final items =
+      products.map((e) => Map<String, dynamic>.from(e)).toList(growable: false);
+
+  return ListView.separated(
+    padding: EdgeInsets.zero,
+    shrinkWrap: true,
+    physics: const NeverScrollableScrollPhysics(),
+    itemCount: items.length,
+    separatorBuilder: (_, __) => const SizedBox(height: 8),
+    itemBuilder: (context, index) {
+      final pMap = items[index];
+      final product = ProductContent.fromJson(pMap);
+
+      return Container(
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: Colors.grey.shade200),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: .03),
+              blurRadius: 16,
+              offset: const Offset(0, 6),
+            )
+          ],
+        ),
+        child: Column(
+          children: [
+            productItemList(product: product),
+            _cardBottom(
+              details: const [],
+              onDelete: () {/* TODO */},
+              onHide: () {/* TODO */},
+            ),
+          ],
+        ),
+      );
+    },
+  );
+}
+
+Future<void> buildAddSection(int tabIndex) async {
+  switch (tabIndex) {
+    case 0:
+      await Get.to(() => ShopAddContent());
+      break;
+    case 1:
+      addProductDrawer();
+      break;
+    case 2:
+      await Get.to(() => ShopAddCategory());
+      break;
+    default:
+      break;
+  }
+}
+
 class DashedRRectPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final rrect = RRect.fromRectAndRadius(
       Rect.fromLTWH(0, 0, size.width, size.height),
-      const Radius.circular(12), // 👈 กำหนด radius มุมโค้ง
+      const Radius.circular(6),
     );
 
     final paint = Paint()
@@ -667,10 +1038,9 @@ class DashedRRectPainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1.5;
 
-    // ทำเส้นประด้วย dashPath
     final dashedPath = dashPath(
       Path()..addRRect(rrect),
-      dashArray: CircularIntervalList<double>([6, 4]), // [เส้น, ช่องว่าง]
+      dashArray: CircularIntervalList<double>([6, 4]),
     );
 
     canvas.drawPath(dashedPath, paint);
