@@ -373,7 +373,7 @@ class _CacheImageProductsState extends State<CacheImageProducts>
             width: double.infinity,
             // height: widget.height ?? 176,
             height: widget.setHeight != null ? null : (widget.height ?? 176),
-            fit: BoxFit.cover,
+            fit: BoxFit.contain,
             cacheWidth: 300,
             cacheHeight: 300,
             errorBuilder: (context, error, stackTrace) {

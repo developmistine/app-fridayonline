@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fridayonline/member/components/profile/affiliate/shop.category.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/content.dart';
-import 'package:fridayonline/member/controller/affiliate.ctr.dart';
+import 'package:fridayonline/member/controller/affiliate/affiliate.content.ctr.dart';
 import 'package:get/get.dart';
-
-const cetegoryData = [
-  // {
-  //   "catid": 846,
-  //   "catname": "โฟมล้างหน้าตัวดังมิสทิน ชิ้นละ 65.-",
-  //   "sub_categories": []
-  // }
-];
 
 class ShopEditCategory extends StatelessWidget {
   const ShopEditCategory({super.key, required this.index});
@@ -19,9 +12,10 @@ class ShopEditCategory extends StatelessWidget {
   Widget build(BuildContext context) {
     final bool isEmpty = cetegoryData.isEmpty;
 
-    final affiliateCtl = Get.find<AffiliateController>();
+    final affContentCtl = Get.find<AffiliateContentCtr>();
+
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      affiliateCtl.categoryEmpty.value = isEmpty;
+      affContentCtl.categoryEmpty.value = isEmpty;
     });
 
     return CustomScrollView(
@@ -41,23 +35,18 @@ class ShopEditCategory extends StatelessWidget {
           )
         else ...[
           SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
-              child: buildHeaderBox(),
-            ),
-          ),
+              child: buildEmptyBoxButton('เพิ่มหมวดหมู่', index)),
           SliverPadding(
             padding: const EdgeInsets.symmetric(vertical: 0),
             sliver: SliverList(
               delegate: SliverChildBuilderDelegate(
-                (context, index) {
+                (context, i) {
                   final Map<String, dynamic> items =
-                      cetegoryData[index] as Map<String, dynamic>;
+                      cetegoryData[i] as Map<String, dynamic>;
 
                   return Padding(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
-                    child: buildContentSection(items),
+                    padding: const EdgeInsets.only(right: 8, left: 8, top: 8),
+                    child: buildEditCategory(items),
                   );
                 },
                 childCount: cetegoryData.length,

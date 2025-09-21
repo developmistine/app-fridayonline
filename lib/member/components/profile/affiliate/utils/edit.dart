@@ -1,12 +1,12 @@
-import 'dart:ffi';
 import 'dart:io';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:fridayonline/member/components/profile/affiliate/shop.product.add.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/content.dart';
+import 'package:fridayonline/member/components/profile/affiliate/utils/product.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/upload.dart';
-import 'package:fridayonline/member/controller/affiliate.ctr.dart';
+import 'package:fridayonline/member/controller/affiliate/affiliate.content.ctr.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,10 +17,10 @@ class PreviewContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final affiliateCtl = Get.find<AffiliateController>();
+    final affContentCtl = Get.find<AffiliateContentCtr>();
 
     return Obx(() {
-      final t = affiliateCtl.contentTypeId.value;
+      final t = affContentCtl.contentTypeId.value;
       Widget child;
 
       switch (t) {
@@ -57,7 +57,7 @@ class PreviewContent extends StatelessWidget {
 
 // --- content_type == 1 : Banner
 Widget _buildType1() {
-  final files = affiliateCtl.selectedImages;
+  final files = affContentCtl.selectedImages;
 
   if (files.isEmpty) {
     return Container(
@@ -102,7 +102,7 @@ Widget _buildType1() {
             top: 8,
             right: 8,
             child: InkWell(
-              onTap: () => affiliateCtl.removeImageAt(0),
+              onTap: () => affContentCtl.removeImageAt(0),
               borderRadius: BorderRadius.circular(16),
               child: Container(
                 decoration: BoxDecoration(
@@ -122,57 +122,99 @@ Widget _buildType1() {
 
 // --- content_type == 2 : Product
 Widget _buildType2() {
-  return GridView.builder(
-    shrinkWrap: true,
-    physics: const NeverScrollableScrollPhysics(),
-    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
-    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-      crossAxisCount: 2,
-      mainAxisSpacing: 12,
-      crossAxisSpacing: 12,
-      childAspectRatio: 0.82,
-    ),
-    itemCount: 2,
-    itemBuilder: (context, index) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          AspectRatio(
-            aspectRatio: 1,
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                color: const Color(0xFFF3F3F4),
-              ),
-              child: Center(
-                child: Image.asset(
-                  'assets/images/affiliate/loading_bag.png',
-                  width: 58,
-                  height: 58,
-                  color: const Color(0xFFC6C5C9),
+  final products = affContentCtl.selectedProducts;
+
+  if (products.isEmpty) {
+    return GridView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        mainAxisSpacing: 12,
+        crossAxisSpacing: 12,
+        childAspectRatio: 0.82,
+      ),
+      itemCount: 2,
+      itemBuilder: (context, index) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            AspectRatio(
+              aspectRatio: 1,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: const Color(0xFFF3F3F4),
+                ),
+                child: Center(
+                  child: Image.asset(
+                    'assets/images/affiliate/loading_bag.png',
+                    width: 58,
+                    height: 58,
+                    color: const Color(0xFFC6C5C9),
+                  ),
                 ),
               ),
             ),
-          ),
-          const SizedBox(height: 6),
-          Container(
-            height: 12,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(6),
-              color: const Color(0xFFF3F3F4),
+            const SizedBox(height: 6),
+            Container(
+              height: 12,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(6),
+                color: const Color(0xFFF3F3F4),
+              ),
             ),
-          ),
-          const SizedBox(height: 4),
-          Container(
-            height: 12,
-            width: 80,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(6),
-              color: const Color(0xFFF3F3F4),
+            const SizedBox(height: 4),
+            Container(
+              height: 12,
+              width: 80,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(6),
+                color: const Color(0xFFF3F3F4),
+              ),
             ),
-          ),
-        ],
+          ],
+        );
+      },
+    );
+  }
+
+  // ---- แสดงสินค้าที่เลือกแล้ว ----
+  return ListView.separated(
+    padding: EdgeInsets.zero,
+    shrinkWrap: true,
+    physics: const NeverScrollableScrollPhysics(),
+    itemCount: products.length,
+    separatorBuilder: (_, __) => const SizedBox(height: 8),
+    itemBuilder: (context, index) {
+      final pMap = products[index];
+
+      return Container(
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: Colors.grey.shade200),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: .03),
+              blurRadius: 16,
+              offset: const Offset(0, 6),
+            )
+          ],
+        ),
+        child: Column(
+          children: [
+            productItemList(product: pMap),
+            cardBottom(
+              details: const [],
+              onDelete: () => affContentCtl.removeSelectedProductAt(index),
+              onMoveUp: () => affContentCtl.moveSelectedProductToTop(index),
+            ),
+          ],
+        ),
       );
     },
   );
@@ -180,7 +222,7 @@ Widget _buildType2() {
 
 // --- content_type == 3 : Video
 Widget _buildType3() {
-  final file = affiliateCtl.selectedVideo.value;
+  final file = affContentCtl.selectedVideo.value;
   if (file == null) {
     // ยังไม่มีไฟล์
     return Container(
@@ -209,7 +251,7 @@ Widget _buildType3() {
 
 // --- content_type == 4 : Text
 Widget _buildType4() {
-  final text = affiliateCtl.selectedText.value;
+  final text = affContentCtl.selectedText.value;
 
   if (text.isEmpty) {
     return Container(
@@ -266,7 +308,7 @@ Widget _buildType4() {
                     // เปิด editor แก้ไขใหม่
                     final updated = await openTextEditorDrawer(initial: text);
                     if (updated != null) {
-                      affiliateCtl.selectedText.value = updated;
+                      affContentCtl.selectedText.value = updated;
                     }
                   },
                   icon: const Icon(
@@ -275,7 +317,7 @@ Widget _buildType4() {
                   ),
                 ),
                 IconButton(
-                  onPressed: () => affiliateCtl.selectedText.value = '',
+                  onPressed: () => affContentCtl.selectedText.value = '',
                   icon: const Icon(
                     Icons.delete_outline,
                     size: 22,
@@ -290,7 +332,7 @@ Widget _buildType4() {
 
 // --- content_type == 5 : Carousel
 Widget _buildType5() {
-  final files = affiliateCtl.selectedImages;
+  final files = affContentCtl.selectedImages;
   final ValueNotifier<int> current = ValueNotifier<int>(0);
 
   if (files.isEmpty) {
@@ -386,7 +428,7 @@ Widget _buildType5() {
                   top: 8,
                   right: 8,
                   child: InkWell(
-                    onTap: () => affiliateCtl.removeImageAt(index),
+                    onTap: () => affContentCtl.removeImageAt(index),
                     borderRadius: BorderRadius.circular(16),
                     child: Container(
                       decoration: BoxDecoration(
@@ -443,19 +485,20 @@ Widget _buildType5() {
 Widget addButton({
   required int? contentTypeId,
   int currentCount = 0,
+  required int max,
 }) {
   String title() {
     switch (contentTypeId) {
       case 1:
-        return "เพิ่มรูปภาพ $currentCount/1";
+        return "เพิ่มรูปภาพ $currentCount/$max";
       case 2:
-        return "เพิ่มสินค้า";
+        return "เพิ่มสินค้า ${affContentCtl.selectedProducts.length}/$max";
       case 3:
-        return "เพิ่มวิดีโอ ${affiliateCtl.selectedVideo.value != null ? 1 : 0}/1";
+        return "เพิ่มวิดีโอ ${affContentCtl.selectedVideo.value != null ? 1 : 0}/$max";
       case 4:
-        return "เพิ่มข้อความ ${affiliateCtl.selectedText.value.isNotEmpty ? 1 : 0}/1";
+        return "เพิ่มข้อความ ${affContentCtl.selectedText.value.isNotEmpty ? 1 : 0}/$max";
       case 5:
-        return "เพิ่มรูปภาพ $currentCount/10";
+        return "เพิ่มรูปภาพ $currentCount/$max";
       default:
         return "";
     }
@@ -470,22 +513,37 @@ Widget addButton({
       case 1: // Image
         final file = await openImagePickerSingle();
         if (file != null) {
-          affiliateCtl.addImages([file], max: 1);
+          affContentCtl.addImages([file], max: 1);
         }
         break;
       case 2: // Product
-        await addProductDrawer();
+        final products = await addProductDrawer(single: false);
+        if (products != null) {
+          final newIds = products.map((p) => p.productId).toSet();
+
+          affContentCtl.selectedProducts
+              .removeWhere((p) => !newIds.contains(p.productId));
+
+          final existingIds =
+              affContentCtl.selectedProducts.map((p) => p.productId).toSet();
+          final newOnes = products
+              .where((p) => !existingIds.contains(p.productId))
+              .toList();
+
+          affContentCtl.selectedProducts.insertAll(0, newOnes);
+        }
         break;
+
       case 3: // Video
         final file = await openVideoPickerSingle();
         if (file != null) {
-          affiliateCtl.selectedVideo.value = file;
+          affContentCtl.selectedVideo.value = file;
         }
         break;
       case 4: // Text
         final text = await openTextEditorDrawer(initial: '');
         if (text != null) {
-          affiliateCtl.selectedText.value = text;
+          affContentCtl.selectedText.value = text;
         }
         break;
       case 5: // Carousel
@@ -554,7 +612,7 @@ class _VideoPreviewFromFileState extends State<VideoPreviewFromFile> {
     final c = VideoPlayerController.file(f);
     await c.initialize();
     c.setLooping(true);
-    c.setVolume(affiliateCtl.volume.value); // sync ค่า volume เดิมถ้ามี
+    c.setVolume(affContentCtl.volume.value); // sync ค่า volume เดิมถ้ามี
     _controller = c;
     return c;
   }
@@ -651,7 +709,7 @@ class _VideoPreviewFromFileState extends State<VideoPreviewFromFile> {
                           },
                         ),
                         Obx(() {
-                          final isMuted = affiliateCtl.volume.value == 0;
+                          final isMuted = affContentCtl.volume.value == 0;
                           return IconButton(
                             icon: Icon(
                               isMuted ? Icons.volume_off : Icons.volume_down,
@@ -660,7 +718,7 @@ class _VideoPreviewFromFileState extends State<VideoPreviewFromFile> {
                             onPressed: () {
                               final nowMuted = _controller?.value.volume != 0;
                               _controller?.setVolume(nowMuted ? 0 : 1);
-                              affiliateCtl.volume.value =
+                              affContentCtl.volume.value =
                                   _controller?.value.volume ?? 0;
                               setState(() {});
                             },
@@ -678,7 +736,7 @@ class _VideoPreviewFromFileState extends State<VideoPreviewFromFile> {
           top: 14,
           right: 8,
           child: InkWell(
-            onTap: affiliateCtl.clearSelectedMedia,
+            onTap: affContentCtl.clearSelectedMedia,
             borderRadius: BorderRadius.circular(16),
             child: Container(
               decoration: BoxDecoration(
@@ -713,7 +771,7 @@ class _FullScreenVideoState extends State<_FullScreenVideo> {
     _c = VideoPlayerController.file(widget.file);
     _init = _c!.initialize().then((_) {
       _c!.setLooping(true);
-      _c!.setVolume(affiliateCtl.volume.value);
+      _c!.setVolume(affContentCtl.volume.value);
       setState(() {});
       _c!.play();
     });

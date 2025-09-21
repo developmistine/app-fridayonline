@@ -5,7 +5,6 @@ import 'package:fridayonline/member/components/profile/affiliate/shop.product.ed
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:fridayonline/member/controller/affiliate.ctr.dart';
 import 'package:fridayonline/theme.dart';
 
 // ----- Tab config -----
@@ -26,8 +25,6 @@ class AffiliateEdit extends StatefulWidget {
 class _AffiliateEditState extends State<AffiliateEdit>
     with SingleTickerProviderStateMixin {
   late final TabController _tab;
-
-  final AffiliateController affiliateCtl = Get.find<AffiliateController>();
 
   @override
   void initState() {

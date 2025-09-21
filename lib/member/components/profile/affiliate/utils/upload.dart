@@ -285,17 +285,38 @@ Future<String?> openTextEditorDrawer({String? initial}) async {
                   decoration: BoxDecoration(
                       color: Colors.black12,
                       borderRadius: BorderRadius.circular(2))),
-              const Text('เพิ่มข้อความ',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+              Align(
+                alignment: Alignment.topLeft,
+                child: const Text('เพิ่มข้อความ',
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black87)),
+              ),
               const SizedBox(height: 8),
               TextField(
                 controller: ctrl,
                 minLines: 3,
                 maxLines: 6,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   hintText: 'พิมพ์ข้อความของคุณที่นี่...',
-                  border: OutlineInputBorder(),
+                  hintStyle:
+                      TextStyle(color: Colors.grey.shade400, fontSize: 14),
+                  contentPadding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.grey.shade300, width: 0.8),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade400, width: 1),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
                 ),
+                style: const TextStyle(
+                    fontSize: 14, color: Colors.black87, height: 1.4),
               ),
               const SizedBox(height: 12),
               Row(

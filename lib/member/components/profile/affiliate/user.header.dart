@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fridayonline/member/components/utils/status.dialog.dart';
-import 'package:fridayonline/member/controller/affiliate.ctr.dart';
+import 'package:fridayonline/member/controller/affiliate/affiliate.account.ctr.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -369,7 +368,7 @@ class UserHeader extends StatefulWidget {
 }
 
 class _HeaderState extends State<UserHeader> {
-  final affiliateCtl = Get.find<AffiliateController>();
+  final affAccountCtl = Get.find<AffiliateAccountCtr>();
 
   @override
   Widget build(BuildContext context) {
@@ -398,11 +397,11 @@ class _HeaderState extends State<UserHeader> {
           SafeArea(
             bottom: false,
             child: Column(children: [
-              AppBar(affiliateCtl.validStatus.value == 'approved'),
-              affiliateCtl.validStatus.value == 'approved'
+              AppBar(affAccountCtl.validStatus.value == 'approved'),
+              affAccountCtl.validStatus.value == 'approved'
                   ? Profile()
                   : SizedBox(),
-              affiliateCtl.validStatus.value == 'approved'
+              affAccountCtl.validStatus.value == 'approved'
                   ? Perfomance()
                   : Steps(),
             ]),

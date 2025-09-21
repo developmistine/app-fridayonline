@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/content.dart';
-import 'package:fridayonline/member/controller/affiliate.ctr.dart';
+import 'package:fridayonline/member/controller/affiliate/affiliate.product.ctr.dart';
 import 'package:get/get.dart';
 
 final productData = [
@@ -200,10 +200,10 @@ class ShopEditProduct extends StatelessWidget {
 
     final bool isEmpty = items.isEmpty;
 
-    final affiliateCtl = Get.find<AffiliateController>();
+    final affProductCtl = Get.find<AffiliateProductCtr>();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (affiliateCtl.productEmpty.value != isEmpty) {
-        affiliateCtl.productEmpty.value = isEmpty;
+      if (affProductCtl.productEmpty.value != isEmpty) {
+        affProductCtl.productEmpty.value = isEmpty;
       }
     });
 

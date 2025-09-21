@@ -4,7 +4,7 @@ import 'package:fridayonline/member/components/profile/affiliate/user.header.dar
 import 'package:fridayonline/member/components/profile/affiliate/user.menu.dart';
 import 'package:fridayonline/member/components/profile/affiliate/user.slide.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/content.dart';
-import 'package:fridayonline/member/controller/affiliate.ctr.dart';
+import 'package:fridayonline/member/controller/affiliate/affiliate.account.ctr.dart';
 import 'package:fridayonline/safearea.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -201,13 +201,12 @@ class AffiliateUser extends StatefulWidget {
 }
 
 class _AffiliateUserState extends State<AffiliateUser> {
-  late final AffiliateController affiliateCtl;
+  final affAccountCtl = Get.find<AffiliateAccountCtr>();
 
   @override
   void initState() {
     super.initState();
-    affiliateCtl = Get.find<AffiliateController>();
-    affiliateCtl.checkStatus();
+    affAccountCtl.checkStatus();
   }
 
   @override
@@ -218,13 +217,13 @@ class _AffiliateUserState extends State<AffiliateUser> {
             .toList();
 
     return SafeAreaProvider(child: Obx(() {
-      if (affiliateCtl.isCheckingStatus.value) {
+      if (affAccountCtl.isCheckingStatus.value) {
         return const Scaffold(
           body: Center(child: CircularProgressIndicator()),
         );
       }
-      final status = affiliateCtl.validStatus.value;
-      final statusMsg = affiliateCtl.validStatusMsg.value;
+      final status = affAccountCtl.validStatus.value;
+      final statusMsg = affAccountCtl.validStatusMsg.value;
       final isNotApplied = status == 'not_applied';
       final isPending = status == 'pending';
       // final isRejected = status == 'rejected';

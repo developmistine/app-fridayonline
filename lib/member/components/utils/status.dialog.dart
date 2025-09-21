@@ -14,6 +14,7 @@ Future<void> showAffDialog(
 }) async {
   final successAsset = lottieAssetSuccess ?? 'assets/lottie/checked.json';
   final errorAsset = lottieAssetError ?? 'assets/lottie/error.json';
+  final completer = Completer<void>();
 
   Get.dialog(
     Dialog(
@@ -29,13 +30,19 @@ Future<void> showAffDialog(
     ),
     barrierDismissible: barrierDismissible,
     barrierColor: Colors.black.withValues(alpha: .40),
-  );
+  ).then((_) {
+    if (!completer.isCompleted) completer.complete();
+  });
 
-  unawaited(Future.delayed(timeout, () {
+  // ตั้งเวลา auto close
+  Timer(timeout, () {
     if (Get.isDialogOpen == true) {
       Get.back();
     }
-  }));
+    if (!completer.isCompleted) completer.complete();
+  });
+
+  return completer.future;
 }
 
 class _AffPrettyDialog extends StatelessWidget {

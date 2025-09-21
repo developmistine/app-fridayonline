@@ -1,24 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/edit.dart';
+import 'package:fridayonline/member/controller/affiliate/affiliate.content.ctr.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:fridayonline/member/controller/affiliate.ctr.dart';
 import 'package:fridayonline/theme.dart';
-
-class ContentTypeOption {
-  final int id;
-  final String label;
-  final String? desc;
-  const ContentTypeOption(this.id, this.label, {this.desc});
-}
-
-const contentTypeOptions = <ContentTypeOption>[
-  ContentTypeOption(1, 'Image'),
-  ContentTypeOption(2, 'Product'),
-  ContentTypeOption(3, 'Video'),
-  ContentTypeOption(4, 'Text'),
-  // ContentTypeOption(5, 'Carousel'),
-];
 
 class ShopAddContent extends StatefulWidget {
   const ShopAddContent({super.key});
@@ -28,11 +13,17 @@ class ShopAddContent extends StatefulWidget {
 }
 
 class _ShopAddContentState extends State<ShopAddContent> {
-  final affiliateCtl = Get.find<AffiliateController>();
+  final affContentCtl = Get.find<AffiliateContentCtr>();
+
+  @override
+  void initState() {
+    super.initState();
+    affContentCtl.getContentType();
+  }
 
   @override
   void dispose() {
-    affiliateCtl.clearSelectedMedia();
+    affContentCtl.clearAddContentData();
     super.dispose();
   }
 
@@ -54,38 +45,44 @@ class _ShopAddContentState extends State<ShopAddContent> {
         leading:
             IconButton(icon: const Icon(Icons.arrow_back), onPressed: Get.back),
       ),
-      bottomNavigationBar: Obx(() {
-        final hasNameErr =
-            affiliateCtl.vContentName(affiliateCtl.contentName.value) != null;
-        final hasTypeErr =
-            affiliateCtl.vContentType(affiliateCtl.contentTypeId.value) != null;
-
-        return SafeArea(
-          top: false,
-          child: Padding(
-            padding: const EdgeInsets.all(10),
-            child: ElevatedButton(
-              onPressed: () {
-                affiliateCtl.submittedAddContent.value = true;
-                if (!hasNameErr && !hasTypeErr) {
-                  // TODO: call API สร้างเนื้อหา
-                  Get.snackbar('สำเร็จ', 'บันทึกเนื้อหาเรียบร้อย');
-                }
-              },
+      bottomNavigationBar: SafeArea(
+        top: false,
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Obx(() {
+            return ElevatedButton(
+              onPressed: affContentCtl.isSubmitting.value
+                  ? null // disable button while submitting
+                  : () => affContentCtl.validateAndSubmitContent(),
               style: ElevatedButton.styleFrom(
                 backgroundColor: themeColorDefault,
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8)),
+                  borderRadius: BorderRadius.circular(8),
+                ),
                 elevation: 0,
               ),
-              child: const Text('บันทึก',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
-            ),
-          ),
-        );
-      }),
+              child: affContentCtl.isSubmitting.value
+                  ? const SizedBox(
+                      width: 18,
+                      height: 18,
+                      child: CircularProgressIndicator(
+                        strokeWidth: 2,
+                        color: Colors.white,
+                      ),
+                    )
+                  : const Text(
+                      'บันทึก',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+            );
+          }),
+        ),
+      ),
       body: Container(
         color: Colors.white,
         child: ListView(
@@ -95,10 +92,9 @@ class _ShopAddContentState extends State<ShopAddContent> {
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 6,
               children: [
-                const _FieldLabel(title: 'ประเภทเนื้อหา', requiredMark: true),
+                const FieldLabel(title: 'ประเภทเนื้อหา', requiredMark: true),
                 _SelectContentType(
-                  ctl: affiliateCtl,
-                  options: contentTypeOptions,
+                  ctl: affContentCtl,
                   placeholder: 'เลือกประเภทเนื้อหา',
                   field: AddContentField.contentType,
                 ),
@@ -109,13 +105,13 @@ class _ShopAddContentState extends State<ShopAddContent> {
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 6,
               children: [
-                const _FieldLabel(title: 'ชื่อเนื้อหา'),
-                _InputBox(
-                  controller: affiliateCtl.contentNameCtrl,
+                const FieldLabel(title: 'ชื่อเนื้อหา'),
+                InputBox(
+                  controller: affContentCtl.contentNameCtrl,
                   hint: 'ชื่อเนื้อหา',
-                  ctl: affiliateCtl,
+                  ctl: affContentCtl,
                   field: AddContentField.contentName,
-                  onChanged: affiliateCtl.onContentNameChanged,
+                  onChanged: affContentCtl.onContentNameChanged,
                 ),
               ],
             ),
@@ -124,38 +120,61 @@ class _ShopAddContentState extends State<ShopAddContent> {
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 6,
               children: [
-                const _FieldLabel(title: 'ตัวอย่างการแสดงผล :'),
+                Obx(() {
+                  final items = affContentCtl.selectedProducts.length;
+                  return FieldLabel(
+                    title: (affContentCtl.contentTypeId.value == 2)
+                        ? 'รายการสินค้า $items รายการ'
+                        : 'ตัวอย่างการแสดงผล :',
+                  );
+                }),
                 PreviewContent(),
+                Obx(() {
+                  final err = affContentCtl.vUploadRequired();
+                  final show =
+                      affContentCtl.submittedAddContent.value && err != null;
+                  if (!show) return const SizedBox.shrink();
+                  return Padding(
+                    padding: const EdgeInsets.only(top: 4),
+                    child: Text(
+                      err,
+                      style: const TextStyle(
+                          color: Color(0xFFF44336), fontSize: 12),
+                    ),
+                  );
+                }),
               ],
             ),
             const SizedBox(height: 12),
             Obx(() {
-              final id = affiliateCtl.contentTypeId.value;
+              final id = affContentCtl.contentTypeId.value;
               if (id == null || id == 0) return const SizedBox.shrink();
 
               // นับจำนวนที่เลือกแล้ว
               final count = switch (id) {
-                1 => affiliateCtl.selectedImages.length,
-                5 => affiliateCtl.selectedImages.length,
-                3 => affiliateCtl.selectedVideo.value == null ? 0 : 1,
-                4 => affiliateCtl.selectedText.value.isEmpty ? 0 : 1,
+                1 => affContentCtl.selectedImages.length,
+                2 => affContentCtl.selectedProducts.length,
+                5 => affContentCtl.selectedImages.length,
+                3 => affContentCtl.selectedVideo.value == null ? 0 : 1,
+                4 => affContentCtl.selectedText.value.isEmpty ? 0 : 1,
                 _ => 0,
               };
 
               final max = switch (id) {
                 1 => 1,
+                2 => 20,
                 5 => 10,
                 3 => 1,
                 4 => 1,
                 _ => 0,
               };
 
-              if (count >= max) return const SizedBox.shrink();
+              if (max != 0 && count >= max) {
+                return const SizedBox.shrink();
+              }
 
               return addButton(
-                contentTypeId: id,
-                currentCount: count,
-              );
+                  contentTypeId: id, currentCount: count, max: max);
             }),
           ],
         ),
@@ -165,15 +184,15 @@ class _ShopAddContentState extends State<ShopAddContent> {
 }
 
 // ====== Widgets ย่อย ======
-class _FieldLabel extends StatelessWidget {
+class FieldLabel extends StatelessWidget {
   final String title;
   final bool requiredMark;
-  const _FieldLabel({required this.title, this.requiredMark = false});
+  const FieldLabel({super.key, required this.title, this.requiredMark = false});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 18,
+      height: 22,
       child: Row(
         children: [
           Text(
@@ -195,14 +214,14 @@ class _FieldLabel extends StatelessWidget {
   }
 }
 
-class _InputBox extends StatelessWidget {
+class InputBox extends StatelessWidget {
   final TextEditingController controller;
   final String hint;
   final ValueChanged<String>? onChanged;
-  final AffiliateController ctl;
+  final AffiliateContentCtr ctl;
   final AddContentField field;
 
-  const _InputBox({
+  const InputBox({
     super.key,
     required this.controller,
     required this.hint,
@@ -218,6 +237,7 @@ class _InputBox extends StatelessWidget {
       case AddContentField.contentType:
         return ctl.vContentType(ctl.contentTypeId.value);
     }
+    return null;
   }
 
   bool _showError() {
@@ -283,15 +303,13 @@ class _InputBox extends StatelessWidget {
 }
 
 class _SelectContentType extends StatelessWidget {
-  final AffiliateController ctl;
-  final List<ContentTypeOption> options;
+  final AffiliateContentCtr ctl;
   final String placeholder;
   final AddContentField field;
 
   const _SelectContentType({
     super.key,
     required this.ctl,
-    required this.options,
     required this.placeholder,
     required this.field,
   });
@@ -300,6 +318,7 @@ class _SelectContentType extends StatelessWidget {
   Widget build(BuildContext context) {
     final drop = Obx(() {
       final selectedId = ctl.contentTypeId.value;
+      final items = ctl.contentTypeData;
 
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -327,7 +346,7 @@ class _SelectContentType extends StatelessWidget {
                   Icons.keyboard_arrow_down_rounded,
                   color: Color(0xFF6B7280),
                 ),
-                items: contentTypeOptions.map((o) {
+                items: items.map((o) {
                   return DropdownMenuItem<int>(
                     value: o.id,
                     child: Text(

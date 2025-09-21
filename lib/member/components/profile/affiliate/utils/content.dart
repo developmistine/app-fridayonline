@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:fridayonline/member/components/profile/affiliate/shop.category.add.dart';
+import 'package:fridayonline/member/components/profile/affiliate/shop.category.show.dart';
 import 'package:fridayonline/member/components/profile/affiliate/shop.content.add.dart';
 import 'package:fridayonline/member/components/profile/affiliate/shop.product.add.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/product.dart';
-import 'package:fridayonline/member/controller/affiliate.ctr.dart';
+import 'package:fridayonline/member/controller/affiliate/affiliate.content.ctr.dart';
+import 'package:fridayonline/member/controller/affiliate/affiliate.product.ctr.dart';
 import 'package:fridayonline/member/controller/category.ctr.dart';
 import 'package:fridayonline/member/models/home/home.content.model.dart';
 import 'package:fridayonline/member/utils/cached_image.dart';
@@ -17,7 +19,9 @@ import 'package:path_drawing/path_drawing.dart';
 import 'package:video_player/video_player.dart';
 import '../../myreview/myrating.card.dart';
 
-final affiliateCtl = Get.find<AffiliateController>();
+final affContentCtl = Get.find<AffiliateContentCtr>();
+final affProductCtl = Get.find<AffiliateProductCtr>();
+
 final CategoryCtr categoryCtr = Get.find();
 
 Widget buildHeaderBox() {
@@ -156,11 +160,122 @@ Widget buildProductSection(List<Map<String, dynamic>> items) {
   );
 }
 
+Widget buildCategorySection(Map<String, dynamic> items) {
+  final List<dynamic> details =
+      (items['content_detail'] ?? []) as List<dynamic>;
+  if (details.isEmpty) {
+    return const SizedBox(); // หรือ Empty state เล็ก ๆ
+  }
+
+  final pMap = (details[0] as Map).cast<String, dynamic>();
+  final List<dynamic> products =
+      (pMap['product_content'] as List<dynamic>?) ?? [];
+  final String catName = (pMap['content_name'] as String?)?.trim() ?? '';
+  final String? image1 = products.isNotEmpty ? products[0]['image'] : null;
+  final String? image2 = products.length > 1 ? products[1]['image'] : null;
+  final String? image3 = products.length > 2 ? products[2]['image'] : null;
+  final int total = products.length;
+
+  return InkWell(
+    onTap: () {
+      Get.to(() => ShopShowCategory(catName, products));
+    },
+    child: Card(
+      elevation: 0,
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+        side: const BorderSide(
+          width: 0.2,
+          color: Color.fromARGB(255, 179, 179, 179),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          AspectRatio(
+            aspectRatio: 16 / 10,
+            child: Row(
+              children: [
+                Expanded(flex: 2, child: _thumb(image1)),
+                Expanded(
+                  child: Column(
+                    children: [
+                      Expanded(child: _thumb(image2)),
+                      Expanded(child: _thumb(image3)),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  catName.isEmpty ? 'ไม่ระบุหมวดหมู่' : catName,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w600,
+                    color: Color(0xFF1F1F1F),
+                  ),
+                ),
+                Text(
+                  'สินค้า $total รายการ',
+                  style: const TextStyle(
+                    fontSize: 10,
+                    color: Color(0xFF6B7280),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
+Widget _thumb(String? url) {
+  final String? u = url?.trim();
+  if (u == null || u.isEmpty) {
+    return Container(
+      decoration: BoxDecoration(
+        color: const Color(0xFFF3F4F6),
+        border: Border.all(color: const Color(0xFFE5E7EB), width: 0.5),
+      ),
+      child: const Center(
+        child: Icon(Icons.image_not_supported_outlined,
+            size: 20, color: Color(0xFF9CA3AF)),
+      ),
+    );
+  }
+
+  return DecoratedBox(
+    decoration: BoxDecoration(
+      color: const Color(0xFFF9FAFB),
+      border: Border.all(color: const Color(0xFFE5E7EB), width: 0.5),
+    ),
+    child: Image.network(
+      u,
+      fit: BoxFit.cover,
+      errorBuilder: (_, __, ___) => const Center(
+        child: Icon(Icons.broken_image_outlined,
+            size: 20, color: Color(0xFF9CA3AF)),
+      ),
+    ),
+  );
+}
+
 Widget buildProductSort() {
   return Obx(() {
     final isLoading = categoryCtr.isLoadingSort.value;
-    final currentTab = affiliateCtl.tabSort.value;
-    final isPriceUp = affiliateCtl.isPriceUp.value;
+    final currentTab = affProductCtl.tabSort.value;
+    final isPriceUp = affProductCtl.isPriceUp.value;
 
     if (isLoading) return const SizedBox();
 
@@ -177,7 +292,7 @@ Widget buildProductSort() {
               alignment: Alignment.centerRight,
               children: [
                 InkWell(
-                  onTap: () => affiliateCtl.setSortTab(
+                  onTap: () => affProductCtl.setSortTab(
                     index,
                     categoryCtr.sortData!.data.length - 1, // priceIndex
                   ),
@@ -530,7 +645,7 @@ Widget _buildType5(List<dynamic> details) {
                         ),
                         // ถ้าใช้ GetX สำหรับเก็บ volume เหมือนเดิม
                         Obx(() {
-                          final isMuted = affiliateCtl.volume.value == 0;
+                          final isMuted = affContentCtl.volume.value == 0;
                           return IconButton(
                             icon: Icon(
                               isMuted ? Icons.volume_off : Icons.volume_down,
@@ -539,7 +654,7 @@ Widget _buildType5(List<dynamic> details) {
                             onPressed: () {
                               final nowMuted = controller.value.volume != 0;
                               controller.setVolume(nowMuted ? 0 : 1);
-                              affiliateCtl.volume.value =
+                              affContentCtl.volume.value =
                                   controller.value.volume;
                             },
                           );
@@ -705,7 +820,7 @@ Widget _typeChip(int type) {
   );
 }
 
-Widget _cardBottom({
+Widget cardBottom({
   required List<dynamic> details,
   VoidCallback? onEdit,
   VoidCallback? onDelete,
@@ -754,7 +869,10 @@ Widget _cardBottom({
   );
 }
 
-Widget _cardHeader({required int contentType, required List<dynamic> details}) {
+Widget _cardHeader({
+  required int contentType,
+  required List<dynamic> details,
+}) {
   String? title;
   if (details.isNotEmpty) {
     final d = (details.first as Map<String, dynamic>);
@@ -852,6 +970,66 @@ Widget _horizontalPreview(List<String> images) {
   );
 }
 
+Widget buildEditCategory(Map<String, dynamic> items) {
+  final int contentType = (items['content_type'] ?? 0) as int;
+  final List<dynamic> details =
+      (items['content_detail'] ?? []) as List<dynamic>;
+  if (details.isEmpty) return const SizedBox.shrink();
+  String? title;
+  if (details.isNotEmpty) {
+    final d = (details.first as Map<String, dynamic>);
+    title = (d['content_name'] as String?)?.trim();
+    title = (title == null || title.isEmpty) ? null : title;
+  }
+
+  return Container(
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(12),
+      border: Border.all(color: Colors.grey.shade200),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.black.withValues(alpha: .03),
+          blurRadius: 16,
+          offset: const Offset(0, 6),
+        )
+      ],
+    ),
+    padding: const EdgeInsets.all(10),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      spacing: 8,
+      children: [
+        Text(
+          title ?? 'ไม่ระบุชื่อ',
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: const TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w700,
+              overflow: TextOverflow.ellipsis),
+        ),
+        _buildEditContentType(contentType, details),
+        cardBottom(
+          details: details,
+          onEdit: () {
+            // TODO: เปิด modal แก้ไขคอนเทนต์
+          },
+          onDelete: () {
+            // TODO: ลบคอนเทนต์
+          },
+          onMoveUp: () {
+            // TODO: ย้ายตำแหน่งขึ้น
+          },
+          onHide: () {
+            // TODO: ย้ายตำแหน่งลง
+          },
+        ),
+      ],
+    ),
+  );
+}
+
 Widget buildEditContent(Map<String, dynamic> items) {
   final int contentType = (items['content_type'] ?? 0) as int;
   final List<dynamic> details =
@@ -881,7 +1059,7 @@ Widget buildEditContent(Map<String, dynamic> items) {
           details: details,
         ),
         _buildEditContentType(contentType, details),
-        _cardBottom(
+        cardBottom(
           details: details,
           onEdit: () {
             // TODO: เปิด modal แก้ไขคอนเทนต์
@@ -997,7 +1175,7 @@ Widget buildEditProduct(List<Map<String, dynamic>> products) {
         child: Column(
           children: [
             productItemList(product: product),
-            _cardBottom(
+            cardBottom(
               details: const [],
               onDelete: () {/* TODO */},
               onHide: () {/* TODO */},
@@ -1015,7 +1193,10 @@ Future<void> buildAddSection(int tabIndex) async {
       await Get.to(() => ShopAddContent());
       break;
     case 1:
-      addProductDrawer();
+      final product = await addProductDrawer(single: true);
+      if (product != null && product.isNotEmpty) {
+        print(product);
+      }
       break;
     case 2:
       await Get.to(() => ShopAddCategory());

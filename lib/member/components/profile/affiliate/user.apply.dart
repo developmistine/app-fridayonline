@@ -2,7 +2,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fridayonline/member/controller/affiliate.ctr.dart';
+import 'package:fridayonline/member/controller/affiliate/affiliate.account.ctr.dart';
 import 'package:fridayonline/member/controller/profile.ctr.dart';
 import 'package:get/get.dart';
 import 'package:fridayonline/theme.dart';
@@ -15,17 +15,16 @@ class UserApply extends StatefulWidget {
 }
 
 class _ApplyState extends State<UserApply> {
-  final affiliateCtl = Get.find<AffiliateController>();
+  final affAccountCtl = Get.find<AffiliateAccountCtr>();
   final profileCtl = Get.find<ProfileCtl>();
   @override
   void initState() {
     super.initState();
-    affiliateCtl.prefillFromProfile(profileCtl.profileData.value);
   }
 
   @override
   void dispose() {
-    affiliateCtl.clearForm();
+    affAccountCtl.clearForm();
     super.dispose();
   }
 
@@ -103,11 +102,11 @@ class _ApplyState extends State<UserApply> {
               children: [
                 _FieldLabel(title: 'ชื่อร้านค้าของท่าน', requiredMark: true),
                 _InputBox(
-                  controller: affiliateCtl.shopNameCtrl,
+                  controller: affAccountCtl.shopNameCtrl,
                   hint: 'เสื้อผ้าแฟชั่น By คุณนัท',
-                  ctl: affiliateCtl,
+                  ctl: affAccountCtl,
                   field: ApplyField.shop,
-                  onChanged: affiliateCtl.onShopChanged,
+                  onChanged: affAccountCtl.onShopChanged,
                 ),
               ],
             ),
@@ -119,11 +118,11 @@ class _ApplyState extends State<UserApply> {
               children: [
                 _FieldLabel(title: 'ชื่อผู้ใช้ (username)', requiredMark: true),
                 _InputBox(
-                  controller: affiliateCtl.usernameCtrl,
+                  controller: affAccountCtl.usernameCtrl,
                   hint: 'nutshop',
-                  ctl: affiliateCtl,
+                  ctl: affAccountCtl,
                   field: ApplyField.username,
-                  onChanged: affiliateCtl.onUsernameChanged,
+                  onChanged: affAccountCtl.onUsernameChanged,
                 ),
                 Text(
                   'กรุณาระบุชื่อผู้ใช้ (username) สำหรับลิงก์โปรไฟล์ของท่าน โดยจะต้องประกอบไปด้วยตัวอักษร ตัวเลข ขีดล่าง และจุดเท่านั้น',
@@ -142,12 +141,12 @@ class _ApplyState extends State<UserApply> {
               children: [
                 _FieldLabel(title: 'อีเมล', requiredMark: true),
                 _InputBox(
-                  controller: affiliateCtl.emailCtrl,
+                  controller: affAccountCtl.emailCtrl,
                   hint: 'example@friday.co.th',
                   keyboardType: TextInputType.emailAddress,
-                  ctl: affiliateCtl,
+                  ctl: affAccountCtl,
                   field: ApplyField.email,
-                  onChanged: affiliateCtl.onEmailChanged,
+                  onChanged: affAccountCtl.onEmailChanged,
                 ),
               ],
             ),
@@ -158,12 +157,12 @@ class _ApplyState extends State<UserApply> {
               children: [
                 _FieldLabel(title: 'หมายเลขโทรศัพท์', requiredMark: true),
                 _InputBox(
-                  controller: affiliateCtl.phoneCtrl,
+                  controller: affAccountCtl.phoneCtrl,
                   hint: '0XX-XXX-XXXX',
                   keyboardType: TextInputType.phone,
-                  ctl: affiliateCtl,
+                  ctl: affAccountCtl,
                   field: ApplyField.phone,
-                  onChanged: affiliateCtl.onPhoneChanged,
+                  onChanged: affAccountCtl.onPhoneChanged,
                 ),
               ],
             ),
@@ -178,7 +177,7 @@ class _ApplyState extends State<UserApply> {
                 children: [
                   Obx(
                     () => GestureDetector(
-                      onTap: affiliateCtl.toggleAgree,
+                      onTap: affAccountCtl.toggleAgree,
                       child: Container(
                         width: 16,
                         height: 16,
@@ -197,7 +196,7 @@ class _ApplyState extends State<UserApply> {
                           duration: const Duration(milliseconds: 150),
                           margin: const EdgeInsets.all(2),
                           decoration: BoxDecoration(
-                            color: affiliateCtl.agreed.value
+                            color: affAccountCtl.agreed.value
                                 ? const Color(0xFF1C9AD6)
                                 : Colors.transparent,
                             borderRadius: BorderRadius.circular(2),
@@ -246,7 +245,7 @@ class _ApplyState extends State<UserApply> {
               ),
             ),
             Obx(
-              () => affiliateCtl.showAgreeError
+              () => affAccountCtl.showAgreeError
                   ? const Padding(
                       padding: EdgeInsets.only(
                           top: 0, left: 24), // ขยับให้ตรงแนวข้อความ
@@ -264,14 +263,14 @@ class _ApplyState extends State<UserApply> {
               child: Obx(
                 () {
                   final _ = (
-                    affiliateCtl.shop.value,
-                    affiliateCtl.email.value,
-                    affiliateCtl.phone.value,
-                    affiliateCtl.agreed.value
+                    affAccountCtl.shop.value,
+                    affAccountCtl.email.value,
+                    affAccountCtl.phone.value,
+                    affAccountCtl.agreed.value
                   );
-                  final ok = affiliateCtl.isValid;
+                  final ok = affAccountCtl.isValid;
                   return ElevatedButton(
-                    onPressed: ok ? affiliateCtl.submit : null,
+                    onPressed: ok ? affAccountCtl.submit : null,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: themeColorDefault,
                       foregroundColor: Colors.white,
@@ -350,7 +349,7 @@ class _InputBox extends StatelessWidget {
   final Color textColor;
   final Color? hintColor;
   final ValueChanged<String>? onChanged;
-  final AffiliateController ctl;
+  final AffiliateAccountCtr ctl;
   final ApplyField field;
 
   const _InputBox({

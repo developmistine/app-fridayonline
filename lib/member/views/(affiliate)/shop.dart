@@ -1,11 +1,13 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:fridayonline/member/components/profile/affiliate/shop.category.dart';
 import 'package:fridayonline/member/components/profile/affiliate/shop.content.dart';
 import 'package:fridayonline/member/components/profile/affiliate/shop.product.dart';
 import 'package:fridayonline/member/components/profile/affiliate/user.header.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/content.dart';
-import 'package:fridayonline/member/controller/affiliate.ctr.dart';
+import 'package:fridayonline/member/controller/affiliate/affiliate.content.ctr.dart';
+import 'package:fridayonline/member/controller/affiliate/affiliate.product.ctr.dart';
 import 'package:fridayonline/member/views/(affiliate)/edit.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -100,7 +102,8 @@ class AffiliateShop extends StatefulWidget {
 class _AffiliateShopState extends State<AffiliateShop>
     with SingleTickerProviderStateMixin {
   late final TabController _tab;
-  AffiliateController affiliateCtl = Get.find<AffiliateController>();
+  final affContentCtl = Get.find<AffiliateContentCtr>();
+  final affProductCtl = Get.find<AffiliateProductCtr>();
 
   String _textFor(int i) {
     switch (i) {
@@ -135,7 +138,7 @@ class _AffiliateShopState extends State<AffiliateShop>
     _tab.addListener(refresh);
     _tab.animation?.addListener(refresh);
 
-    final _ = affiliateCtl;
+    final _ = affContentCtl;
   }
 
   @override
@@ -157,9 +160,9 @@ class _AffiliateShopState extends State<AffiliateShop>
           if (onPressed == null) return const SizedBox.shrink();
           return Obx(() {
             final isEmptyNow = switch (idx) {
-              0 => affiliateCtl.contentEmpty.value,
-              1 => affiliateCtl.productEmpty.value,
-              2 => affiliateCtl.categoryEmpty.value,
+              0 => affContentCtl.contentEmpty.value,
+              1 => affProductCtl.productEmpty.value,
+              2 => affContentCtl.categoryEmpty.value,
               _ => true,
             };
 
@@ -196,12 +199,41 @@ class _AffiliateShopState extends State<AffiliateShop>
                 ),
               ),
               centerTitle: false,
-              title: Text(
-                'ตกแต่งร้านค้า',
-                style: GoogleFonts.ibmPlexSansThai(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 16),
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'ร้านค้าของฉัน',
+                    style: GoogleFonts.ibmPlexSansThai(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16),
+                  ),
+                  Container(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
+                    decoration: BoxDecoration(
+                      color: themeColorDefault,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      spacing: 4,
+                      children: [
+                        SvgPicture.asset(
+                          'assets/images/affiliate/share.svg',
+                          width: 18,
+                          height: 18,
+                        ),
+                        Text(
+                          'แชร์ร้านค้า',
+                          style: TextStyle(
+                              fontSize: 14, fontWeight: FontWeight.w600),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
               flexibleSpace: LayoutBuilder(
                 builder: (context, constraints) {

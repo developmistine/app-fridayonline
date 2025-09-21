@@ -1,23 +1,14 @@
-// lib/member/controller/affiliate.ctr.dart
-import 'dart:io';
-
+// lib/member/controller/affiliate/affiliate.account.ctr.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:fridayonline/member/components/utils/status.dialog.dart';
-import 'package:fridayonline/member/controller/category.ctr.dart';
 import 'package:fridayonline/member/controller/profile.ctr.dart';
 import 'package:fridayonline/member/services/affiliate/affiliate.service.dart';
-import 'package:fridayonline/member/services/authen/b2cauthen.service.dart';
-import 'package:fridayonline/member/views/(other)/otp.verify.dart';
 
 enum ApplyField { shop, username, email, phone }
 
-enum AddContentField { contentName, contentType }
-
-final CategoryCtr categoryCtr = Get.find();
-
-class AffiliateController extends GetxController {
+class AffiliateAccountCtr extends GetxController {
   /// ===== Dependencies =====
   late final ProfileCtl profileCtl;
   late final ProfileOtpCtr otpCtl;
@@ -28,33 +19,6 @@ class AffiliateController extends GetxController {
       'not_applied'.obs; // approved | pending | rejected | not_applied
   final validStatusMsg = ''.obs;
   final isCheckingStatus = false.obs;
-
-  /// ===== Summary (example) =====
-  final volume = 0.0.obs;
-
-  /// ===== Shop Content (เพิ่มเนื้อหา) =====
-  final contentEmpty = false.obs;
-
-  // add-content fields
-  final contentName = ''.obs;
-  final contentTypeId = RxnInt();
-  final contentNameCtrl = TextEditingController();
-  final selectedImages = <File>[].obs; // สำหรับ Image / Carousel
-  final Rx<File?> selectedVideo = Rx<File?>(null);
-  final selectedText = ''.obs;
-
-  // add-content validation state
-  final submittedAddContent = false.obs;
-  final RxSet<AddContentField> touchedAddContent = <AddContentField>{}.obs;
-  void markTouchedAddContent(AddContentField f) => touchedAddContent.add(f);
-
-  /// ===== Product (จัดเรียง/กรอง) =====
-  final productEmpty = false.obs;
-  final tabSort = 0.obs;
-  final isPriceUp = false.obs;
-
-  /// ===== Category =====
-  final categoryEmpty = false.obs;
 
   /// ===== Apply/Register (ฟอร์มสมัคร) =====
   // controllers
@@ -85,7 +49,6 @@ class AffiliateController extends GetxController {
 
   // --- Validators ---
   String? _vShop(String v) => v.trim().isEmpty ? 'กรุณากรอกชื่อร้าน' : null;
-
   String? _vEmail(String v) {
     final t = v.trim();
     if (t.isEmpty) return 'กรุณากรอกอีเมล';
@@ -106,16 +69,6 @@ class AffiliateController extends GetxController {
     return d.length == 10 ? null : 'กรุณาใส่เบอร์ 10 หลัก';
   }
 
-  String? vContentName(String v) {
-    final t = v.trim();
-    if (t.isEmpty) return null;
-    if (t.length > 80) return 'ไม่เกิน 80 ตัวอักษร';
-    return null;
-  }
-
-  String? vContentType(int? id) =>
-      id == null ? 'กรุณาเลือกประเภทเนื้อหา' : null;
-
   String? get errorShop => _vShop(shop.value);
   String? get errorUsername => _vUsername(username.value);
   String? get errorEmail => _vEmail(email.value);
@@ -124,30 +77,16 @@ class AffiliateController extends GetxController {
   bool get showShopError =>
       (submitted.value || touched.contains(ApplyField.shop)) &&
       errorShop != null;
-
   bool get showUsernameError =>
       (submitted.value || touched.contains(ApplyField.username)) &&
       errorUsername != null;
-
   bool get showEmailError =>
       (submitted.value || touched.contains(ApplyField.email)) &&
       errorEmail != null;
-
   bool get showPhoneError =>
       (submitted.value || touched.contains(ApplyField.phone)) &&
       errorPhone != null;
-
   bool get showAgreeError => submitted.value && !agreed.value;
-
-  bool get showContentNameError =>
-      (submittedAddContent.value ||
-          touchedAddContent.contains(AddContentField.contentName)) &&
-      vContentName(contentName.value) != null;
-
-  bool get showContentTypeError =>
-      (submittedAddContent.value ||
-          touchedAddContent.contains(AddContentField.contentType)) &&
-      vContentType(contentTypeId.value) != null;
 
   bool get isValid =>
       _vShop(shop.value) == null &&
@@ -163,9 +102,6 @@ class AffiliateController extends GetxController {
   void onEmailChanged(String v) => email.value = v;
   void onPhoneChanged(String v) => phone.value = v;
 
-  void onContentNameChanged(String v) => contentName.value = v;
-  void onContentTypeChanged(int id) => contentTypeId.value = id;
-
   @override
   void onInit() {
     super.onInit();
@@ -173,17 +109,15 @@ class AffiliateController extends GetxController {
     profileCtl = Get.put(ProfileCtl());
     otpCtl = Get.put(ProfileOtpCtr());
 
-    ever(profileCtl.profileData, prefillFromProfile);
+    ever(profileCtl.profileData, _prefillFromProfile);
+
     // sync controller <-> rx
     ever(shop, (v) => shopNameCtrl.text = v);
     ever(username, (v) => usernameCtrl.text = v);
     ever(email, (v) => emailCtrl.text = v);
     ever(phone, (v) => phoneCtrl.text = v);
 
-    ever<int?>(contentTypeId, (_) {
-      clearSelectedMedia();
-    });
-
+    // debounce ตรวจสอบ username
     debounce<String>(
       username,
       (val) async {
@@ -197,6 +131,7 @@ class AffiliateController extends GetxController {
       time: const Duration(milliseconds: 500),
     );
 
+    // โหลดสถานะครั้งแรก
     Future.microtask(checkStatus);
   }
 
@@ -212,13 +147,11 @@ class AffiliateController extends GetxController {
     usernameCtrl.dispose();
     emailCtrl.dispose();
     phoneCtrl.dispose();
-    contentNameCtrl.dispose();
     clearForm();
     super.onClose();
   }
 
-  // ================  SECTION: ACCOUNT STATUS  ==================
-
+  // ================  ACCOUNT STATUS  ==================
   Future<void> checkStatus() async {
     if (isCheckingStatus.value) return;
     isCheckingStatus.value = true;
@@ -228,13 +161,13 @@ class AffiliateController extends GetxController {
       validStatusMsg.value =
           res?.message ?? 'การสมัครของท่านอยู่ระหว่างการตรวจสอบข้อมูล';
     } catch (_) {
+      // เงียบไว้เหมือนเดิม
     } finally {
       isCheckingStatus.value = false;
     }
   }
 
-  // ==============  SECTION: USERNAME CHECK FLOW  ==============
-
+  // ==============  USERNAME CHECK FLOW  ==============
   Future<void> _checkUsername(String val) async {
     isCheckingUsername.value = true;
     try {
@@ -250,55 +183,7 @@ class AffiliateController extends GetxController {
     }
   }
 
-  // =================  SECTION: OTP FLOW  ======================
-
-  Future<bool> _sendOtp({required String phone}) async {
-    try {
-      final res = await b2cSentOtpService("edit_profile", phone);
-      if (res?.code.toString() == "100") {
-        otpCtl.resetTimer();
-        otpCtl.startTimer();
-        otpCtl.otpRef.value = res?.otpRef ?? "";
-        return true;
-      }
-      Get.snackbar(
-        'แจ้งเตือน',
-        res?.message1 ?? 'เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง',
-        backgroundColor: Colors.red.withValues(alpha: .8),
-        colorText: Colors.white,
-      );
-      return false;
-    } catch (e) {
-      Get.snackbar(
-        'แจ้งเตือน',
-        'ส่ง OTP ไม่สำเร็จ: $e',
-        backgroundColor: Colors.red.withValues(alpha: .8),
-        colorText: Colors.white,
-      );
-      return false;
-    }
-  }
-
-  Future<bool> _openOtpVerify({required String phone}) async {
-    final verified = await Get.to(() => OtpVerify(
-          phone: phone,
-          type: 'edit_profile',
-          otpRef: otpCtl.otpRef.value,
-        ));
-    return verified == true;
-  }
-
-  Future<bool> _verifyOtpFlow() async {
-    if (otpCtl.remainingSeconds.value == 0 ||
-        otpCtl.remainingSeconds.value == 60) {
-      final sent = await _sendOtp(phone: phone.value);
-      if (!sent) return false;
-    }
-    return _openOtpVerify(phone: phone.value);
-  }
-
-  // ===============  SECTION: REGISTER FLOW  ===================
-
+  // ===============  REGISTER FLOW  ===================
   void clearForm() {
     shop.value = '';
     username.value = '';
@@ -318,7 +203,7 @@ class AffiliateController extends GetxController {
     phoneCtrl.clear();
   }
 
-  void prefillFromProfile(dynamic p) {
+  void _prefillFromProfile(dynamic p) {
     if (p == null) return;
     if (email.value.isEmpty && !touched.contains(ApplyField.email)) {
       final e = p.email ?? '';
@@ -345,8 +230,11 @@ class AffiliateController extends GetxController {
       final ok = (res?.code.toString() == '100');
       if (ok) {
         await showAffDialog(true, 'สำเร็จ', 'ส่งคำขอเรียบร้อย');
+
+        // อัปเดตสถานะหลังสมัคร
         validStatus.value = 'pending';
         validStatusMsg.value = 'การสมัครของท่านอยู่ระหว่างการตรวจสอบข้อมูล';
+
         FocusManager.instance.primaryFocus?.unfocus();
         clearForm();
         return true;
@@ -372,45 +260,6 @@ class AffiliateController extends GetxController {
     final canSubmit = isValid && (usernameAvailable.value == true);
     if (!canSubmit) return;
 
-    // ถ้าต้องการบังคับ OTP เปิดสองบรรทัดด้านล่าง
-    // final otpOk = await _verifyOtpFlow();
-    // if (!otpOk) return;
-
     await _registerAffiliate();
-  }
-
-  // ==============  SECTION: CONTENT (SORT TAB)  ===============
-
-  void setSortTab(int index, int priceIndex) {
-    if (tabSort.value == index && index == priceIndex) {
-      isPriceUp.toggle();
-    } else {
-      tabSort.value = index;
-      if (index != priceIndex) {
-        isPriceUp.value = false;
-      }
-    }
-  }
-
-  void addImages(List<File> files, {int? max}) {
-    if (max != null) {
-      final remain = (max - selectedImages.length).clamp(0, max);
-      if (remain == 0) return;
-      selectedImages.addAll(files.take(remain));
-    } else {
-      selectedImages.addAll(files);
-    }
-  }
-
-  void removeImageAt(int index) {
-    if (index >= 0 && index < selectedImages.length) {
-      selectedImages.removeAt(index);
-    }
-  }
-
-  void clearSelectedMedia() {
-    selectedImages.clear();
-    selectedVideo.value = null;
-    selectedText.value = '';
   }
 }

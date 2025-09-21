@@ -75,6 +75,7 @@ Widget productItem({
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.end,
+                          spacing: 3,
                           children: [
                             Text(
                               '฿${myFormat.format(product.price)}',
@@ -84,7 +85,6 @@ Widget productItem({
                                 fontSize: 13,
                               ),
                             ),
-                            const SizedBox(width: 4),
                             Text(
                               '฿${myFormat.format(product.priceBeforeDiscount)}',
                               style: TextStyle(
@@ -93,6 +93,18 @@ Widget productItem({
                                 fontSize: 11,
                               ),
                             ),
+                            Container(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 4),
+                              color: Colors.red.shade50,
+                              child: Text(
+                                '-${myFormat.format(product.discount)}%',
+                                style: GoogleFonts.ibmPlexSansThai(
+                                  color: Colors.deepOrange,
+                                  fontSize: 11,
+                                ),
+                              ),
+                            )
                           ],
                         )
                       else
@@ -112,22 +124,6 @@ Widget productItem({
           ),
         ),
       ),
-      if (product.discount > 0)
-        Positioned(
-          top: 4,
-          right: 4,
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 4),
-            color: Colors.red.shade50,
-            child: Text(
-              '-${myFormat.format(product.discount)}%',
-              style: GoogleFonts.ibmPlexSansThai(
-                color: Colors.deepOrange,
-                fontSize: 11,
-              ),
-            ),
-          ),
-        ),
       if (product.isOutOfStock)
         const Positioned(
           top: 50,
