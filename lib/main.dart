@@ -230,12 +230,18 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
       theme: themeData(),
       initialBinding: RootBinging(),
       builder: (context, child) {
-        return GestureDetector(
-          onVerticalDragDown: (details) async {
-            await loadLastDragTime();
-            saveLastDragTime(DateTime.now());
-          },
-          child: child!,
+        final media = MediaQuery.of(context);
+        return MediaQuery(
+          data: media.copyWith(
+            textScaler: const TextScaler.linear(1.0),
+          ),
+          child: GestureDetector(
+            onVerticalDragDown: (details) async {
+              await loadLastDragTime();
+              saveLastDragTime(DateTime.now());
+            },
+            child: child!,
+          ),
         );
       },
       home: const SplashScreen(),

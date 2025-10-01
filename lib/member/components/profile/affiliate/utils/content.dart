@@ -1,16 +1,19 @@
+import 'dart:math' as math;
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
-import 'package:fridayonline/member/components/profile/affiliate/shop.category.add.dart';
-import 'package:fridayonline/member/components/profile/affiliate/shop.category.show.dart';
-import 'package:fridayonline/member/components/profile/affiliate/shop.content.add.dart';
-import 'package:fridayonline/member/components/profile/affiliate/shop.product.add.dart';
+import 'package:fridayonline/member/components/profile/affiliate/shop/shop.category.add.dart';
+import 'package:fridayonline/member/components/profile/affiliate/shop/shop.category.show.dart';
+import 'package:fridayonline/member/components/profile/affiliate/shop/shop.content.add.dart';
+import 'package:fridayonline/member/components/profile/affiliate/shop/shop.product.add.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/product.dart';
+import 'package:fridayonline/member/components/utils/confirm.dialog.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.content.ctr.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.product.ctr.dart';
 import 'package:fridayonline/member/controller/category.ctr.dart';
-import 'package:fridayonline/member/models/home/home.content.model.dart';
+import 'package:fridayonline/member/models/affiliate/shopcontent.model.dart';
 import 'package:fridayonline/member/utils/cached_image.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:get/get.dart';
@@ -18,6 +21,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:path_drawing/path_drawing.dart';
 import 'package:video_player/video_player.dart';
 import '../../myreview/myrating.card.dart';
+import 'package:fridayonline/member/models/affiliate/shopcontent.model.dart'
+    as content;
 
 final affContentCtl = Get.find<AffiliateContentCtr>();
 final affProductCtl = Get.find<AffiliateProductCtr>();
@@ -46,7 +51,7 @@ Widget buildHeaderBox() {
           'โค้ดส่วนลด ส่วนประกอบนี้จะแสดงก็ต่อเมื่อมีสินค้าเท่านั้น',
           style: GoogleFonts.ibmPlexSansThai(
             color: const Color(0xFF8C8A94),
-            fontSize: 14,
+            fontSize: 12,
             fontWeight: FontWeight.w400,
           ),
         ),
@@ -93,92 +98,121 @@ Widget buildEmptyBox(String title, String desc, String textBtn, int tabIndex) {
 }
 
 /// map `content_type`
-Widget buildContentSection(Map<String, dynamic> items) {
-  final int contentType = (items['content_type'] ?? 0) as int;
-  final List<dynamic> details =
-      (items['content_detail'] ?? []) as List<dynamic>;
+Widget buildContentSection(content.ContentData data) {
+  final String contentType = data.contentType;
+  final List<content.Item> details = data.items;
+
+  final List<content.Item> visible =
+      details.where((e) => e.status != 'hide').toList();
+
+  if (visible.isEmpty) {
+    return const SizedBox.shrink();
+  }
+
   if (details.isEmpty) {
     return SizedBox();
   }
 
   switch (contentType) {
-    case 1:
+    case "Image":
       return _buildType1(details);
-    case 2:
+    case 'Carousel':
       return _buildType2(details);
-    case 3:
+    case 'Product':
       return _buildType3(details);
-    case 4:
-      return _buildType4(details);
-    case 5:
+    case 'Category':
+      return SizedBox();
+    // _buildType4(details);
+    case 'Video':
       return _buildType5(details);
-    default: // Text
+    case 'Text':
+      if (details.isEmpty ||
+          details[0].status == 'hide' ||
+          (details.length == 1 && (details[0].description.trim().isEmpty))) {
+        return SizedBox();
+      }
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ...List.generate(details.length, (index) {
-            var text = details[index];
-            return HtmlWidget(
-              text.contentName,
+        children: details.map((item) {
+          if ((item.name).contains('<') && (item.name).contains('>')) {
+            return Container(
+              margin: const EdgeInsets.only(top: 8.0),
+              child: HtmlWidget(
+                item.description,
+              ),
             );
-          }),
-        ],
+          } else {
+            return Container(
+              margin: const EdgeInsets.only(top: 8.0),
+              child: Text(
+                item.description,
+                style: GoogleFonts.ibmPlexSansThai(fontSize: 14),
+              ),
+            );
+          }
+        }).toList(),
       );
+    default:
+      return SizedBox();
   }
 }
 
-Widget buildProductSection(List<Map<String, dynamic>> items) {
+Widget buildProductSection(List<AffiliateProduct> items) {
   return LayoutBuilder(
     builder: (context, constraints) {
-      final crossAxisCount = (constraints.maxWidth / 180).floor().clamp(2, 6);
+      final w = constraints.maxWidth;
+      final count = math.min(6, math.max(2, (w / 180).floor()));
+      if (items.isEmpty) {
+        return const SizedBox.shrink(); // หรือ widget เปล่าตามต้องการ
+      }
 
       return GridView.builder(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         padding: EdgeInsets.zero,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: crossAxisCount,
+          crossAxisCount: count,
           mainAxisSpacing: 4,
           crossAxisSpacing: 4,
-          childAspectRatio: 0.72,
+          childAspectRatio: 0.62,
         ),
         itemCount: items.length,
         itemBuilder: (context, index) {
-          final pMap = items[index];
-
-          final product = ProductContent.fromJson(pMap);
-
-          return productItem(
-            product: product,
-            onTap: () {
-              // TODO: เปิดหน้ารายละเอียด/เพิ่มลงตะกร้า ฯลฯ
-            },
-          );
+          final p = items[index];
+          return productItem(product: p, onTap: () {});
         },
       );
     },
   );
 }
 
-Widget buildCategorySection(Map<String, dynamic> items) {
-  final List<dynamic> details =
-      (items['content_detail'] ?? []) as List<dynamic>;
+Widget buildCategorySection(content.ContentData data) {
+  final List<content.Item> details = data.items;
+
   if (details.isEmpty) {
-    return const SizedBox(); // หรือ Empty state เล็ก ๆ
+    return const SizedBox();
   }
 
-  final pMap = (details[0] as Map).cast<String, dynamic>();
-  final List<dynamic> products =
-      (pMap['product_content'] as List<dynamic>?) ?? [];
-  final String catName = (pMap['content_name'] as String?)?.trim() ?? '';
-  final String? image1 = products.isNotEmpty ? products[0]['image'] : null;
-  final String? image2 = products.length > 1 ? products[1]['image'] : null;
-  final String? image3 = products.length > 2 ? products[2]['image'] : null;
+  final content.Item cat = details.first;
+
+  final List<content.AffiliateProduct> products = cat.attachedProduct;
+
+  final String catName = cat.name.trim();
+
+  final String? image1 = products.isNotEmpty ? products[0].image : null;
+  final String? image2 = products.length > 1 ? products[1].image : null;
+  final String? image3 = products.length > 2 ? products[2].image : null;
+
   final int total = products.length;
+  final isHide = cat.status == 'hide';
 
   return InkWell(
     onTap: () {
-      Get.to(() => ShopShowCategory(catName, products));
+      Get.to(() => ShopShowCategory(
+            cat.id,
+            catName.isEmpty ? 'ไม่ระบุหมวดหมู่' : catName,
+            products,
+          ));
     },
     child: Card(
       elevation: 0,
@@ -195,17 +229,54 @@ Widget buildCategorySection(Map<String, dynamic> items) {
         children: [
           AspectRatio(
             aspectRatio: 16 / 10,
-            child: Row(
+            child: Stack(
               children: [
-                Expanded(flex: 2, child: _thumb(image1)),
-                Expanded(
-                  child: Column(
-                    children: [
-                      Expanded(child: _thumb(image2)),
-                      Expanded(child: _thumb(image3)),
-                    ],
-                  ),
+                Row(
+                  children: [
+                    Expanded(flex: 2, child: _thumb(image1)),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          Expanded(child: _thumb(image2)),
+                          Expanded(child: _thumb(image3)),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
+                if (isHide) ...[
+                  Positioned.fill(
+                    child: IgnorePointer(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100.withValues(alpha: .5),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                      top: 10,
+                      left: 10,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.black38,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8, vertical: 2),
+                          child: Text(
+                            'ซ่อน',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ),
+                      )),
+                ],
               ],
             ),
           ),
@@ -241,32 +312,23 @@ Widget buildCategorySection(Map<String, dynamic> items) {
 }
 
 Widget _thumb(String? url) {
-  final String? u = url?.trim();
-  if (u == null || u.isEmpty) {
+  if (url == null || url.isEmpty) {
     return Container(
-      decoration: BoxDecoration(
-        color: const Color(0xFFF3F4F6),
-        border: Border.all(color: const Color(0xFFE5E7EB), width: 0.5),
-      ),
-      child: const Center(
-        child: Icon(Icons.image_not_supported_outlined,
-            size: 20, color: Color(0xFF9CA3AF)),
-      ),
+      color: Colors.grey.shade200,
+      child: Center(
+          child: Icon(
+        Icons.image_not_supported,
+        color: Colors.grey.shade500,
+      )),
     );
   }
-
-  return DecoratedBox(
-    decoration: BoxDecoration(
-      color: const Color(0xFFF9FAFB),
-      border: Border.all(color: const Color(0xFFE5E7EB), width: 0.5),
-    ),
-    child: Image.network(
-      u,
-      fit: BoxFit.cover,
-      errorBuilder: (_, __, ___) => const Center(
-        child: Icon(Icons.broken_image_outlined,
-            size: 20, color: Color(0xFF9CA3AF)),
-      ),
+  return Image.network(
+    url,
+    fit: BoxFit.cover,
+    errorBuilder: (_, __, ___) => Container(
+      color: Colors.grey.shade200,
+      child: Center(
+          child: Icon(Icons.image_not_supported, color: Colors.grey.shade500)),
     ),
   );
 }
@@ -292,10 +354,7 @@ Widget buildProductSort() {
               alignment: Alignment.centerRight,
               children: [
                 InkWell(
-                  onTap: () => affProductCtl.setSortTab(
-                    index,
-                    categoryCtr.sortData!.data.length - 1, // priceIndex
-                  ),
+                  onTap: () => affProductCtl.setSortTab(index),
                   child: Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
@@ -328,8 +387,8 @@ Widget buildProductSort() {
                             padding: const EdgeInsets.only(left: 4),
                             child: Icon(
                               isPriceUp
-                                  ? Icons.arrow_upward_outlined
-                                  : Icons.arrow_downward_outlined,
+                                  ? Icons.arrow_downward_outlined
+                                  : Icons.arrow_upward_outlined,
                               size: 12,
                               color: themeColorDefault,
                             ),
@@ -353,40 +412,50 @@ Widget buildProductSort() {
 }
 
 // --- content_type == 1 : Banner
-Widget _buildType1(List<dynamic> details) {
+Widget _buildType1(List<content.Item> details) {
   return Column(
     mainAxisSize: MainAxisSize.min,
     children: List.generate(details.length, (idx) {
-      final Map<String, dynamic> d = details[idx] as Map<String, dynamic>;
-      final String image = (d['image'] ?? '') as String? ?? '';
-      final String name = (d['content_name'] ?? '') as String? ?? '';
-      final bool showName = (d['show_content_name'] ?? false) as bool;
+      final content.Item d = details[idx];
+      final String image = d.images;
+      final String name = d.name;
+      final bool showName = d.displayName;
+      final bool isHide = d.status == 'hide';
 
-      return Container(
-        margin: const EdgeInsets.only(top: 8),
-        clipBehavior: Clip.antiAlias,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          color: Colors.white,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            if (image.isNotEmpty)
-              CacheImageContentShop(
-                url: image,
-              ),
-            if (showName && name.isNotEmpty)
-              Padding(
-                padding: const EdgeInsets.all(12),
-                child: Text(
-                  name,
-                  style: GoogleFonts.ibmPlexSansThai(
-                      fontWeight: FontWeight.w500, fontSize: 13),
+      if (image.isEmpty || isHide) return SizedBox();
+
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        spacing: 8,
+        children: [
+          if (showName && name.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Text(
+                name,
+                style: GoogleFonts.ibmPlexSansThai(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 13,
                 ),
               ),
-          ],
-        ),
+            ),
+          Container(
+            margin: const EdgeInsets.only(top: 8.0),
+            clipBehavior: Clip.antiAlias,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+              color: Colors.white,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                CacheImageContentShop(
+                  url: image,
+                ),
+              ],
+            ),
+          ),
+        ],
       );
     }),
   );
@@ -394,9 +463,7 @@ Widget _buildType1(List<dynamic> details) {
 
 // --- content_type == 2 : Carousel
 Widget _buildType2(
-  List<dynamic> details, {
-  void Function(Map<String, dynamic> data)? onTap,
-  void Function(Map<String, dynamic> data)? onBeforeTap,
+  List<content.Item> details, {
   double aspectRatio = 1,
   BorderRadius borderRadius = const BorderRadius.all(Radius.circular(12)),
 }) {
@@ -413,17 +480,12 @@ Widget _buildType2(
         child: CarouselSlider.builder(
           itemCount: details.length,
           itemBuilder: (context, index, _) {
-            final Map<String, dynamic> data =
-                (details[index] as Map).cast<String, dynamic>();
-            final int actionType = (data['action_type'] as int?) ??
-                (data['actionType'] as int? ?? 0);
-            final String url = data['image'];
+            final content.Item data = details[index];
+
+            final String url = data.images;
 
             return InkWell(
-              onTap: () {
-                if (actionType != 1) onBeforeTap?.call(data);
-                onTap?.call(data);
-              },
+              onTap: () {},
               child: CacheImageContentShop(url: url),
             );
           },
@@ -469,17 +531,21 @@ Widget _buildType2(
 }
 
 // --- content_type == 3 : Product List
-Widget _buildType3(List<dynamic> details) {
+Widget _buildType3(List<content.Item> details) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: List.generate(details.length, (idx) {
-      final Map<String, dynamic> d = details[idx] as Map<String, dynamic>;
-      final bool showName = (d['show_content_name'] ?? false) as bool;
-      final String name = (d['content_name'] as String?) ?? '';
-      final List<dynamic> products =
-          (d['product_content'] as List<dynamic>?) ?? [];
+      final content.Item d = details[idx];
 
-      if (products.isEmpty) return const SizedBox.shrink();
+      final bool showName = d.displayName;
+      final String name = d.name;
+
+      final List<AffiliateProduct> products = d.attachedProduct;
+      final visibleItems = products
+          .where((p) => (p.status).trim().toLowerCase() != 'hide')
+          .toList(growable: false);
+
+      if (visibleItems.isEmpty) return const SizedBox.shrink();
 
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -495,27 +561,27 @@ Widget _buildType3(List<dynamic> details) {
                 ),
               ),
             ),
-          GridView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            padding: const EdgeInsets.symmetric(vertical: 4),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              mainAxisSpacing: 4,
-              crossAxisSpacing: 4,
-              childAspectRatio: 0.72,
-            ),
-            itemCount: products.length,
-            itemBuilder: (context, index) {
-              final pMap = products[index] as Map<String, dynamic>;
-              final product = ProductContent.fromJson(pMap);
+          LayoutBuilder(builder: (context, constraints) {
+            final w = constraints.maxWidth;
+            final count = math.min(6, math.max(2, (w / 180).floor()));
 
-              return productItem(
-                product: product,
-                onTap: () {},
-              );
-            },
-          ),
+            return GridView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              padding: const EdgeInsets.symmetric(vertical: 4),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: count,
+                mainAxisSpacing: 4,
+                crossAxisSpacing: 4,
+                childAspectRatio: 0.62,
+              ),
+              itemCount: visibleItems.length,
+              itemBuilder: (context, index) {
+                final p = visibleItems[index];
+                return productItem(product: p, onTap: () {});
+              },
+            );
+          }),
         ],
       );
     }),
@@ -524,9 +590,7 @@ Widget _buildType3(List<dynamic> details) {
 
 // --- content_type == 4 : Category List
 Widget _buildType4(
-  List<dynamic> details, {
-  void Function(Map<String, dynamic> data)? onTap,
-  void Function(Map<String, dynamic> data)? onBeforeTap,
+  List<content.Item> details, {
   double tileSize = 100,
   double spacing = 8,
   BorderRadius borderRadius = const BorderRadius.all(Radius.circular(8)),
@@ -540,21 +604,16 @@ Widget _buildType4(
         scrollDirection: Axis.horizontal,
         child: Row(
           children: List.generate(details.length, (index) {
-            final Map<String, dynamic> item =
-                (details[index] as Map).cast<String, dynamic>();
-            final int actionType = (item['action_type'] as int?) ??
-                (item['actionType'] as int? ?? 0);
-            final String url = item['image'];
+            final content.Item item = details[index];
+
+            final String url = item.images;
 
             return Padding(
               padding: EdgeInsets.only(right: spacing),
               child: InkWell(
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
-                onTap: () {
-                  if (actionType != 1) onBeforeTap?.call(item);
-                  onTap?.call(item);
-                },
+                onTap: () {},
                 child: ClipRRect(
                   borderRadius: borderRadius,
                   child: SizedBox(
@@ -578,115 +637,118 @@ Widget _buildType4(
 }
 
 // --- content_type == 5 : วิดีโอ
-Widget _buildType5(List<dynamic> details) {
+Widget _buildType5(List<content.Item> details) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.stretch,
     children: List.generate(details.length, (idx) {
-      final Map<String, dynamic> d = details[idx] as Map<String, dynamic>;
-      final String name = (d['content_name'] ?? '') as String? ?? '';
-      final String videoUrl = (d['image'] ?? '') as String? ?? '';
+      final content.Item d = details[idx];
 
-      return Container(
-        margin: const EdgeInsets.only(top: 8),
-        decoration: BoxDecoration(
-          color: Colors.black12,
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: FutureBuilder<VideoPlayerController>(
-          future: setVideoContent(videoUrl),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return AspectRatio(
-                aspectRatio: 16 / 9,
-                child: const SizedBox.shrink(),
-              );
-            }
-            if (snapshot.hasError || !snapshot.hasData) {
-              return const SizedBox.shrink();
-            }
+      final String name = d.name;
+      final String videoUrl = d.images;
+      final showName = d.displayName;
+      final bool isHide = d.status == 'hide';
 
-            final controller = snapshot.data!;
-            final aspect = controller.value.isInitialized
-                ? controller.value.aspectRatio
-                : (16 / 9);
+      if (isHide) return SizedBox();
 
-            return ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              child: AspectRatio(
-                aspectRatio: aspect,
-                child: Stack(
-                  alignment: Alignment.bottomRight,
-                  children: [
-                    // แตะเล่น/หยุด
-                    InkWell(
-                      onTap: () {
-                        if (controller.value.isPlaying) {
-                          controller.pause();
-                        } else {
-                          controller.play();
-                        }
-                      },
-                      child: VideoPlayer(controller),
-                    ),
-
-                    // ปุ่มควบคุมมุมขวาล่าง
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        IconButton(
-                          constraints: const BoxConstraints(maxWidth: 28),
-                          icon: const Icon(Icons.fullscreen),
-                          color: Colors.white,
-                          onPressed: () {
-                            // ❗ ใช้ videoUrl จาก d ของ item ปัจจุบัน
-                            Get.to(() =>
-                                FullScreenVideoPlayer(videoUrl: videoUrl));
-                          },
-                        ),
-                        // ถ้าใช้ GetX สำหรับเก็บ volume เหมือนเดิม
-                        Obx(() {
-                          final isMuted = affContentCtl.volume.value == 0;
-                          return IconButton(
-                            icon: Icon(
-                              isMuted ? Icons.volume_off : Icons.volume_down,
-                              color: Colors.white,
-                            ),
-                            onPressed: () {
-                              final nowMuted = controller.value.volume != 0;
-                              controller.setVolume(nowMuted ? 0 : 1);
-                              affContentCtl.volume.value =
-                                  controller.value.volume;
-                            },
-                          );
-                        }),
-                      ],
-                    ),
-
-                    // แสดงชื่อคลิป (ถ้ามี)
-                    if (name.isNotEmpty)
-                      Positioned(
-                        left: 8,
-                        top: 8,
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 8, vertical: 4),
-                          decoration: BoxDecoration(
-                            color: Colors.black.withOpacity(0.5),
-                            borderRadius: BorderRadius.circular(6),
-                          ),
-                          child: Text(
-                            name,
-                            style: GoogleFonts.ibmPlexSansThai(
-                                color: Colors.white, fontSize: 12),
-                          ),
-                        ),
-                      ),
-                  ],
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (showName && name.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Text(
+                'name',
+                style: GoogleFonts.ibmPlexSansThai(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 13,
                 ),
               ),
-            );
-          },
-        ),
+            ),
+          Container(
+            margin: const EdgeInsets.only(top: 8),
+            decoration: BoxDecoration(
+              color: Colors.black12,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: FutureBuilder<VideoPlayerController>(
+              future: setVideoContent(videoUrl),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return AspectRatio(
+                    aspectRatio: 16 / 9,
+                    child: const SizedBox.shrink(),
+                  );
+                }
+                if (snapshot.hasError || !snapshot.hasData) {
+                  return const SizedBox.shrink();
+                }
+
+                final controller = snapshot.data!;
+                final aspect = controller.value.isInitialized
+                    ? controller.value.aspectRatio
+                    : (16 / 9);
+
+                return ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: AspectRatio(
+                    aspectRatio: aspect,
+                    child: Stack(
+                      alignment: Alignment.bottomRight,
+                      children: [
+                        // แตะเล่น/หยุด
+                        InkWell(
+                          onTap: () {
+                            if (controller.value.isPlaying) {
+                              controller.pause();
+                            } else {
+                              controller.play();
+                            }
+                          },
+                          child: VideoPlayer(controller),
+                        ),
+
+                        // ปุ่มควบคุมมุมขวาล่าง
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            IconButton(
+                              constraints: const BoxConstraints(maxWidth: 28),
+                              icon: const Icon(Icons.fullscreen),
+                              color: Colors.white,
+                              onPressed: () {
+                                // ❗ ใช้ videoUrl จาก d ของ item ปัจจุบัน
+                                Get.to(() =>
+                                    FullScreenVideoPlayer(videoUrl: videoUrl));
+                              },
+                            ),
+                            // ถ้าใช้ GetX สำหรับเก็บ volume เหมือนเดิม
+                            Obx(() {
+                              final isMuted = affContentCtl.volume.value == 0;
+                              return IconButton(
+                                icon: Icon(
+                                  isMuted
+                                      ? Icons.volume_off
+                                      : Icons.volume_down,
+                                  color: Colors.white,
+                                ),
+                                onPressed: () {
+                                  final nowMuted = controller.value.volume != 0;
+                                  controller.setVolume(nowMuted ? 0 : 1);
+                                  affContentCtl.volume.value =
+                                      controller.value.volume;
+                                },
+                              );
+                            }),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
       );
     }),
   );
@@ -774,45 +836,34 @@ Widget buildBottomButton(String text, VoidCallback onPressed) {
   );
 }
 
-// edit
-String _renderContentType(int contentType) {
-  switch (contentType) {
-    case 1:
-      return 'Banner';
-    case 2:
-      return 'Carousel';
-    case 3:
-      return 'Product';
-    case 4:
-      return 'Gallery';
-    case 5:
-      return 'Video';
-    default: // Text
-      return '';
-  }
-}
-
-Widget _typeChip(int type) {
-  final label = _renderContentType(type);
+Widget _typeChip(String type, isHide) {
+  final text = switch (type) {
+    "Image" => 'รูปภาพ',
+    "Text" => 'ข้อความ',
+    "Product" => 'สินค้า',
+    "Category" => 'หมวดหมู่',
+    "Video" => 'วิดีโอ',
+    _ => '',
+  };
   final color = switch (type) {
-    1 => Colors.indigo,
-    2 => Colors.teal,
-    3 => Colors.orange,
-    4 => Colors.purple,
-    5 => Colors.red,
+    "Image" => const Color(0xFF5856D6),
+    "Text" => const Color(0xFF30B0C7),
+    "Product" => const Color(0xFFFB9600),
+    "Category" => Colors.purple,
+    "Video" => const Color(0xFFF44336),
     _ => Colors.grey,
   };
   return Container(
     padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
     decoration: BoxDecoration(
-      color: color.withValues(alpha: .1),
+      color: isHide ? Colors.white70 : color.withValues(alpha: .1),
       borderRadius: BorderRadius.circular(999),
-      border: Border.all(color: color.withValues(alpha: .25)),
+      border: Border.all(color: color),
     ),
     child: Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text(label,
+        Text(text,
             style: TextStyle(
                 color: color, fontWeight: FontWeight.w600, fontSize: 12)),
       ],
@@ -821,64 +872,96 @@ Widget _typeChip(int type) {
 }
 
 Widget cardBottom({
-  required List<dynamic> details,
   VoidCallback? onEdit,
   VoidCallback? onDelete,
   VoidCallback? onMoveUp,
   VoidCallback? onHide,
+  required String hideStatus,
 }) {
+  final isHide = hideStatus == 'hide';
   final btnStyle = OutlinedButton.styleFrom(
-    side: BorderSide(color: Colors.grey.shade300),
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-    padding: const EdgeInsets.all(4),
+    side: BorderSide(color: const Color(0xFFD9D8DC)),
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+    padding: const EdgeInsets.all(5),
     foregroundColor: Colors.black87,
     backgroundColor: Colors.white,
     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
     visualDensity: VisualDensity.compact,
   );
 
-  Widget ob(IconData icon, String tooltip, VoidCallback? onPressed) {
+  Widget ob(
+      String icon, String tooltip, VoidCallback? onPressed, bool showText) {
     return Tooltip(
-      message: tooltip,
-      padding: EdgeInsets.zero,
-      child: OutlinedButton(
-        onPressed: onPressed,
-        style: btnStyle,
-        child: Icon(
-          icon,
-          size: 18,
-          color: Colors.grey.shade800,
-        ),
-      ),
-    );
+        message: tooltip,
+        padding: EdgeInsets.zero,
+        child: OutlinedButton(
+          onPressed: onPressed,
+          style: btnStyle,
+          child: Center(
+              child: Row(
+            spacing: 2,
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SvgPicture.asset(
+                icon,
+                width: 18,
+                color: Color(0xFF5A5A5A),
+              ),
+              if (showText)
+                SizedBox(
+                  height: 17,
+                  child: Text(
+                    tooltip,
+                    style: GoogleFonts.ibmPlexSansThai(
+                      color: const Color(0xFF5A5A5A),
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                )
+            ],
+          )),
+        ));
   }
 
   return Align(
     alignment: Alignment.centerRight,
-    child: Row(
-      mainAxisSize: MainAxisSize.min,
-      spacing: 6,
-      children: [
-        if (onDelete != null) ob(Icons.delete_outline_rounded, 'ลบ', onDelete),
-        if (onHide != null) ob(Icons.remove_red_eye_outlined, 'ซ่อน', onHide),
-        if (onEdit != null) ob(Icons.edit_rounded, 'แก้ไข', onEdit),
-        if (onMoveUp != null)
-          ob(Icons.arrow_upward_rounded, 'เลื่อนขึ้น', onMoveUp),
-      ],
+    child: SizedBox(
+      height: 32,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        spacing: 6,
+        children: [
+          if (onDelete != null)
+            ob('assets/images/affiliate/cardmenu/trash.svg', 'ลบ', onDelete,
+                false),
+          if (onHide != null)
+            ob(
+                isHide
+                    ? 'assets/images/affiliate/cardmenu/eye.svg'
+                    : 'assets/images/affiliate/cardmenu/eye_off.svg',
+                'ซ่อน',
+                onHide,
+                false),
+          if (onEdit != null)
+            ob('assets/images/affiliate/cardmenu/edit.svg', 'แก้ไข', onEdit,
+                false),
+          if (onMoveUp != null)
+            ob('assets/images/affiliate/cardmenu/moveup.svg', 'เลื่อนขึ้น',
+                onMoveUp, true),
+        ],
+      ),
     ),
   );
 }
 
 Widget _cardHeader({
-  required int contentType,
-  required List<dynamic> details,
+  required String contentType,
+  required Item item,
 }) {
-  String? title;
-  if (details.isNotEmpty) {
-    final d = (details.first as Map<String, dynamic>);
-    title = (d['content_name'] as String?)?.trim();
-    title = (title == null || title.isEmpty) ? null : title;
-  }
+  final title = item.name == "" ? contentType : item.name;
+  final isHide = item.status == 'hide';
 
   return Row(
     crossAxisAlignment: CrossAxisAlignment.center,
@@ -886,7 +969,7 @@ Widget _cardHeader({
     children: [
       Expanded(
         child: Text(
-          title ?? _renderContentType(contentType),
+          title,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
           style: const TextStyle(
@@ -895,7 +978,37 @@ Widget _cardHeader({
               overflow: TextOverflow.ellipsis),
         ),
       ),
-      _typeChip(contentType),
+      Row(
+        spacing: 4,
+        children: [
+          if (isHide)
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha: .5),
+                borderRadius: BorderRadius.circular(999),
+                border: Border.all(color: const Color(0xFF5A5A5A)),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                spacing: 2,
+                children: [
+                  Text('ซ่อนอยู่',
+                      style: TextStyle(
+                          color: const Color(0xFF5A5A5A),
+                          fontWeight: FontWeight.w600,
+                          fontSize: 12)),
+                  SvgPicture.asset(
+                    'assets/images/affiliate/cardmenu/eye_off.svg',
+                    width: 16,
+                  )
+                ],
+              ),
+            ),
+          _typeChip(contentType, isHide),
+        ],
+      ),
     ],
   );
 }
@@ -917,7 +1030,7 @@ Widget _smartImage(String url, {double aspectRatio = 1, double radius = 8}) {
   );
 }
 
-Widget _productGrid(List<dynamic> products) {
+Widget _productGrid(List<AffiliateProduct> products, bool isHide) {
   if (products.isEmpty) {
     return Container(
       padding: const EdgeInsets.all(16),
@@ -937,15 +1050,32 @@ Widget _productGrid(List<dynamic> products) {
       separatorBuilder: (_, __) => const SizedBox(width: 6),
       itemCount: products.length,
       itemBuilder: (_, i) {
-        final p = products[i] as Map<String, dynamic>;
-        final imageUrl = p['image'] as String? ?? '';
+        final p = products[i];
+        final imageUrl = p.image;
 
-        return Container(
-          decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey.shade200),
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: _smartImage(imageUrl),
+        return Stack(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey.shade200),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: _smartImage(imageUrl),
+            ),
+            if (isHide)
+              Positioned.fill(
+                child: IgnorePointer(
+                  ignoring: true,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.black.withValues(alpha: .28),
+                      border: Border.all(color: Colors.grey.shade400),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                ),
+              ),
+          ],
         );
       },
     ),
@@ -970,158 +1100,446 @@ Widget _horizontalPreview(List<String> images) {
   );
 }
 
-Widget buildEditCategory(Map<String, dynamic> items) {
-  final int contentType = (items['content_type'] ?? 0) as int;
-  final List<dynamic> details =
-      (items['content_detail'] ?? []) as List<dynamic>;
+Widget buildEditCategory(content.ContentData data, int i,
+    {VoidCallback? onScrollTop}) {
+  final String contentType = data.contentType;
+  final List<content.Item> details = data.items;
+  final isHide = details.first.status == 'hide';
+
   if (details.isEmpty) return const SizedBox.shrink();
-  String? title;
-  if (details.isNotEmpty) {
-    final d = (details.first as Map<String, dynamic>);
-    title = (d['content_name'] as String?)?.trim();
-    title = (title == null || title.isEmpty) ? null : title;
+
+  final int totalProduct =
+      details.fold<int>(0, (sum, item) => sum + item.attachedProduct.length);
+
+  String title;
+  {
+    final d = details.first;
+    title = (d.name.isNotEmpty == true) ? d.name : contentType;
   }
 
-  return Container(
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(12),
-      border: Border.all(color: Colors.grey.shade200),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.black.withValues(alpha: .03),
-          blurRadius: 16,
-          offset: const Offset(0, 6),
-        )
-      ],
-    ),
-    padding: const EdgeInsets.all(10),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      spacing: 8,
-      children: [
-        Text(
-          title ?? 'ไม่ระบุชื่อ',
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          style: const TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w700,
-              overflow: TextOverflow.ellipsis),
+  return Stack(
+    children: [
+      Container(
+        decoration: BoxDecoration(
+          color: isHide ? const Color(0x331F1F1F) : Colors.white,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: Colors.grey.shade200),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: .03),
+              blurRadius: 16,
+              offset: const Offset(0, 6),
+            )
+          ],
         ),
-        _buildEditContentType(contentType, details),
-        cardBottom(
-          details: details,
-          onEdit: () {
-            // TODO: เปิด modal แก้ไขคอนเทนต์
-          },
-          onDelete: () {
-            // TODO: ลบคอนเทนต์
-          },
-          onMoveUp: () {
-            // TODO: ย้ายตำแหน่งขึ้น
-          },
-          onHide: () {
-            // TODO: ย้ายตำแหน่งลง
-          },
+        padding: const EdgeInsets.all(10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 6,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title.isNotEmpty ? title : 'ไม่ระบุชื่อ',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      Text(
+                        'สินค้า $totalProduct รายการ',
+                        style: TextStyle(
+                          color:
+                              isHide ? Colors.black87 : const Color(0xFF8C8A94),
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                const SizedBox(width: 8),
+                if (isHide)
+                  Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withValues(alpha: .5),
+                      borderRadius: BorderRadius.circular(999),
+                      border: Border.all(color: const Color(0xFF5A5A5A)),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      spacing: 2,
+                      children: [
+                        Text('ซ่อนอยู่',
+                            style: TextStyle(
+                                color: const Color(0xFF5A5A5A),
+                                fontWeight: FontWeight.w600,
+                                fontSize: 12)),
+                        SvgPicture.asset(
+                          'assets/images/affiliate/cardmenu/eye_off.svg',
+                          width: 16,
+                        )
+                      ],
+                    ),
+                  ),
+              ],
+            ),
+
+            // รายการในหมวด
+            ...details.asMap().entries.map((entry) {
+              final index = entry.key;
+              final item = entry.value;
+
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: 8,
+                children: [
+                  Stack(children: [
+                    _buildEditContentType(contentType, item, isHide),
+                  ]),
+                  Container(
+                    padding: EdgeInsets.only(top: 10),
+                    decoration: BoxDecoration(
+                      border: Border(
+                        top: BorderSide(
+                          color: isHide
+                              ? Colors.black.withValues(alpha: .1)
+                              : Color(0xFFF3F3F4),
+                          width: 0.7,
+                        ),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        cardBottom(
+                          hideStatus: item.status,
+                          onEdit: () {
+                            Get.to(() => ShopAddCategory(contentId: item.id));
+                          },
+                          onDelete: () {
+                            showConfirmDialog(
+                              title: "ลบข้อมูล?",
+                              desc: "คุณแน่ใจหรือไม่ว่าต้องการลบข้อมูลนี้",
+                              onConfirm: () async {
+                                await affContentCtl.deleteContent(
+                                    'category', item.id);
+                              },
+                            );
+                          },
+                          onMoveUp: i == 0
+                              ? null
+                              : () async {
+                                  await affContentCtl.sortContent(
+                                      'category', item.id);
+                                  onScrollTop?.call();
+                                },
+                          onHide: () async {
+                            await affContentCtl.hideContent('category', item.id,
+                                item.status == 'hide' ? 'published' : 'hide');
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                  if (index != details.length - 1)
+                    const Divider(height: 16, thickness: .6),
+                ],
+              );
+            }),
+          ],
         ),
-      ],
-    ),
+      ),
+      if (isHide) ...[
+        Positioned.fill(
+          child: IgnorePointer(
+            ignoring: true,
+            child: Center(
+              child: Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.black.withValues(alpha: .62),
+                  borderRadius: BorderRadius.circular(999),
+                  border:
+                      Border.all(color: Colors.white.withValues(alpha: .18)),
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SvgPicture.asset(
+                      'assets/images/affiliate/cardmenu/eye_off.svg',
+                      width: 16,
+                      color: Colors.white,
+                    ),
+                    const SizedBox(width: 6),
+                    const Text(
+                      'ซ่อนอยู่',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      ]
+    ],
   );
 }
 
-Widget buildEditContent(Map<String, dynamic> items) {
-  final int contentType = (items['content_type'] ?? 0) as int;
-  final List<dynamic> details =
-      (items['content_detail'] ?? []) as List<dynamic>;
+Widget buildEditContent(content.ContentData data, int i,
+    {VoidCallback? onScrollTop}) {
+  final String contentType = data.contentType;
+  final List<content.Item> details = data.items;
+  final isHide = details.first.status == 'hide';
+
   if (details.isEmpty) return const SizedBox.shrink();
 
-  return Container(
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(12),
-      border: Border.all(color: Colors.grey.shade200),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.black.withValues(alpha: .03),
-          blurRadius: 16,
-          offset: const Offset(0, 6),
-        )
-      ],
-    ),
-    padding: const EdgeInsets.all(10),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      spacing: 8,
-      children: [
-        _cardHeader(
-          contentType: contentType,
-          details: details,
+  return Stack(
+    children: [
+      Container(
+        decoration: BoxDecoration(
+          color: isHide ? const Color(0x331F1F1F) : Colors.white,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: Colors.grey.shade200),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: .03),
+              blurRadius: 16,
+              offset: const Offset(0, 6),
+            ),
+          ],
         ),
-        _buildEditContentType(contentType, details),
-        cardBottom(
-          details: details,
-          onEdit: () {
-            // TODO: เปิด modal แก้ไขคอนเทนต์
-          },
-          onDelete: () {
-            // TODO: ลบคอนเทนต์
-          },
-          onMoveUp: () {
-            // TODO: ย้ายตำแหน่งขึ้น
-          },
-          onHide: () {
-            // TODO: ย้ายตำแหน่งลง
-          },
+        padding: const EdgeInsets.all(10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 8,
+          children: details.asMap().entries.map((entry) {
+            final item = entry.value;
+            final int totalProduct = details.fold<int>(
+                0, (sum, item) => sum + item.attachedProduct.length);
+
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: 10,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  spacing: 6,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        _cardHeader(
+                          contentType: contentType,
+                          item: item,
+                        ),
+                        if (contentType == 'Product')
+                          Text(
+                            'สินค้า $totalProduct รายการ',
+                            style: TextStyle(
+                              color: isHide
+                                  ? Colors.black87
+                                  : const Color(0xFF8C8A94),
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                      ],
+                    ),
+                    Stack(
+                      children: [
+                        _buildEditContentType(contentType, item, isHide),
+                        if (isHide &&
+                            (contentType != 'Text' && contentType != 'Product'))
+                          Positioned.fill(
+                            child: IgnorePointer(
+                              ignoring: true,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.black.withValues(alpha: .28),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                              ),
+                            ),
+                          ),
+                      ],
+                    ),
+                  ],
+                ),
+                Container(
+                  padding: EdgeInsets.only(top: 10),
+                  decoration: BoxDecoration(
+                    border: Border(
+                      top: BorderSide(
+                        color: isHide
+                            ? Colors.black.withValues(alpha: .1)
+                            : Color(0xFFF3F3F4),
+                        width: 0.7,
+                      ),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      cardBottom(
+                        hideStatus: item.status,
+                        onEdit: () {
+                          Get.to(() => ShopAddContent(contentId: item.id));
+                        },
+                        onDelete: () {
+                          showConfirmDialog(
+                            title: "ลบข้อมูล?",
+                            desc: "คุณแน่ใจหรือไม่ว่าต้องการลบข้อมูลนี้",
+                            onConfirm: () async {
+                              await affContentCtl.deleteContent(
+                                  'content', item.id);
+                            },
+                          );
+                        },
+                        onMoveUp: i == 0
+                            ? null
+                            : () async {
+                                await affContentCtl.sortContent(
+                                    'content', item.id);
+                                onScrollTop?.call();
+                              },
+                        onHide: () async {
+                          await affContentCtl.hideContent('content', item.id,
+                              item.status == 'hide' ? 'published' : 'hide');
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          }).toList(),
         ),
-      ],
-    ),
+      ),
+      if (isHide) ...[
+        Positioned.fill(
+          child: IgnorePointer(
+            ignoring: true,
+            child: Center(
+              child: Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.black.withValues(alpha: .62),
+                  borderRadius: BorderRadius.circular(999),
+                  border:
+                      Border.all(color: Colors.white.withValues(alpha: .18)),
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SvgPicture.asset(
+                      'assets/images/affiliate/cardmenu/eye_off.svg',
+                      width: 16,
+                      color: Colors.white,
+                    ),
+                    const SizedBox(width: 6),
+                    const Text(
+                      'ซ่อนอยู่',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      ]
+    ],
   );
 }
 
-Widget _buildEditContentType(int contentType, List<dynamic> details) {
-  final first = (details.first as Map<String, dynamic>);
-
+Widget _buildEditContentType(String contentType, Item items, bool isHide) {
   switch (contentType) {
-    case 1:
+    case 'Image':
       {
-        final image =
-            (first['image'] ?? first['image_desktop'] ?? '') as String;
+        final image = items.images;
         return SizedBox(
-            height: 130, child: _smartImage(aspectRatio: (16 / 6), image));
+            height: 150, child: _smartImage(aspectRatio: (16 / 6), image));
       }
 
-    case 2:
+    case "Product":
       {
-        final images = details
-            .map((e) => (e as Map<String, dynamic>)['image'] as String? ?? '')
-            .where((e) => e.isNotEmpty)
-            .toList();
-        return _horizontalPreview(images);
+        final productList = items.attachedProduct;
+        return _productGrid(productList, isHide);
       }
 
-    case 3:
+    case "Category":
       {
-        final productList = (first['product_content'] ?? []) as List<dynamic>;
-        return _productGrid(productList);
+        final productList = items.attachedProduct;
+
+        return _productGrid(productList, isHide);
       }
 
-    case 4:
+    case "Video":
       {
-        final images = details
-            .map((e) => (e as Map<String, dynamic>)['image'] as String? ?? '')
-            .where((e) => e.isNotEmpty)
-            .toList();
-        return _horizontalPreview(images);
-      }
-
-    case 5:
-      {
-        final image =
-            (first['image'] ?? first['image_desktop'] ?? '') as String;
+        final image = items.images;
         return Stack(
           children: [
-            _smartImage(image),
+            FutureBuilder<VideoPlayerController>(
+              future: setVideoContent(image),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return AspectRatio(
+                    aspectRatio: 16 / 9,
+                    child: const SizedBox.shrink(),
+                  );
+                }
+                if (snapshot.hasError || !snapshot.hasData) {
+                  return _smartImage(image);
+                }
+
+                final controller = snapshot.data!;
+                final aspect = controller.value.isInitialized
+                    ? controller.value.aspectRatio
+                    : (16 / 9);
+
+                return ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: AspectRatio(
+                    aspectRatio: aspect,
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            if (controller.value.isPlaying) {
+                              controller.pause();
+                            } else {
+                              controller.play();
+                            }
+                          },
+                          child: VideoPlayer(controller),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
             Positioned.fill(
               child: Center(
                 child: Container(
@@ -1138,30 +1556,40 @@ Widget _buildEditContentType(int contentType, List<dynamic> details) {
           ],
         );
       }
+    case 'Text':
+      {
+        if ((items.name).contains('<') && (items.name).contains('>')) {
+          return HtmlWidget(
+            items.description,
+          );
+        } else {
+          return Text(
+            items.description,
+            style: GoogleFonts.ibmPlexSansThai(fontSize: 14),
+          );
+        }
+      }
 
     default:
       return SizedBox();
   }
 }
 
-Widget buildEditProduct(List<Map<String, dynamic>> products) {
-  final items =
-      products.map((e) => Map<String, dynamic>.from(e)).toList(growable: false);
-
+Widget buildEditProduct(List<AffiliateProduct> products) {
   return ListView.separated(
     padding: EdgeInsets.zero,
     shrinkWrap: true,
     physics: const NeverScrollableScrollPhysics(),
-    itemCount: items.length,
+    itemCount: products.length,
     separatorBuilder: (_, __) => const SizedBox(height: 8),
     itemBuilder: (context, index) {
-      final pMap = items[index];
-      final product = ProductContent.fromJson(pMap);
+      final p = products[index];
+      final isHide = p.status == 'hide';
 
       return Container(
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: isHide ? const Color(0x331F1F1F) : Colors.white,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(color: Colors.grey.shade200),
           boxShadow: [
@@ -1172,14 +1600,71 @@ Widget buildEditProduct(List<Map<String, dynamic>> products) {
             )
           ],
         ),
-        child: Column(
+        child: Stack(
           children: [
-            productItemList(product: product),
-            cardBottom(
-              details: const [],
-              onDelete: () {/* TODO */},
-              onHide: () {/* TODO */},
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: productItemList(product: p),
+                ),
+                Container(
+                  padding: EdgeInsets.only(top: 8),
+                  decoration: BoxDecoration(
+                    border: Border(
+                      top: BorderSide(
+                        color: isHide
+                            ? Colors.black.withValues(alpha: .1)
+                            : Color(0xFFF3F3F4),
+                        width: 0.7,
+                      ),
+                    ),
+                  ),
+                  child: cardBottom(
+                    hideStatus: p.status,
+                    onDelete: () async {
+                      await affProductCtl.deleteProduct(p.productId);
+                    },
+                    onHide: () async {
+                      await affProductCtl.hideProduct(
+                          p.status == 'hide' ? 'published' : 'hide',
+                          p.productId,
+                          false);
+                    },
+                  ),
+                ),
+              ],
             ),
+            if (isHide)
+              Positioned(
+                left: 0,
+                bottom: 0,
+                child: Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: .5),
+                    borderRadius: BorderRadius.circular(999),
+                    border: Border.all(color: const Color(0xFF5A5A5A)),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    spacing: 2,
+                    children: [
+                      Text('ซ่อนอยู่',
+                          style: TextStyle(
+                              color: const Color(0xFF5A5A5A),
+                              fontWeight: FontWeight.w600,
+                              fontSize: 12)),
+                      SvgPicture.asset(
+                        'assets/images/affiliate/cardmenu/eye_off.svg',
+                        width: 16,
+                      )
+                    ],
+                  ),
+                ),
+              ),
           ],
         ),
       );
@@ -1191,12 +1676,10 @@ Future<void> buildAddSection(int tabIndex) async {
   switch (tabIndex) {
     case 0:
       await Get.to(() => ShopAddContent());
+      affContentCtl.clearAddContentData();
       break;
     case 1:
-      final product = await addProductDrawer(single: true);
-      if (product != null && product.isNotEmpty) {
-        print(product);
-      }
+      await addProductDrawer(target: 'product', single: true);
       break;
     case 2:
       await Get.to(() => ShopAddCategory());
@@ -1249,4 +1732,54 @@ Future<VideoPlayerController> setVideoContent(String videoUrl) async {
   videoControllers[videoUrl] = videoCtr;
 
   return videoCtr;
+}
+
+Widget renderValidateFileText(int contentType) {
+  final textStyle = GoogleFonts.ibmPlexSansThai(
+    color: const Color(0xFF5A5A5A),
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+  );
+  switch (contentType) {
+    case 1: // image
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'ขนาดไฟล์: ไม่เกิน 2 MB',
+            style: textStyle,
+          ),
+          Text(
+            'นามสกุลไฟล์ที่รองรับ: JPG, JPEG, PNG, GIF,WEBP',
+            style: textStyle,
+          )
+        ],
+      );
+    case 2: // product
+      return Text(
+        'กรุณาเพิ่มสินค้า สูงสุดไม่เกิน 20 ชิ้น',
+        style: textStyle,
+      );
+    case 3: // video
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'ขนาดไฟล์: ไม่เกิน 30 MB',
+            style: textStyle,
+          ),
+          Text(
+            'นามสกุลไฟล์ที่รองรับ: MP4',
+            style: textStyle,
+          )
+        ],
+      );
+    case 4: // text
+      return Text(
+        'แชร์เรื่องราวที่น่าสนใจเกี่ยวกับร้านของคุณ',
+        style: textStyle,
+      );
+    default:
+      return SizedBox();
+  }
 }

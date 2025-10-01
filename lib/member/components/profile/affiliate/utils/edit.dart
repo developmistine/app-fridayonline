@@ -2,18 +2,22 @@ import 'dart:io';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:fridayonline/member/components/profile/affiliate/shop.product.add.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:fridayonline/member/components/profile/affiliate/shop/shop.product.add.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/content.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/product.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/upload.dart';
+import 'package:fridayonline/member/components/profile/myreview/myrating.card.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.content.ctr.dart';
+import 'package:fridayonline/member/models/affiliate/shopcontent.model.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:video_player/video_player.dart';
 
 class PreviewContent extends StatelessWidget {
-  const PreviewContent({super.key});
+  const PreviewContent({super.key, this.isEdit = false});
+  final bool isEdit;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +32,7 @@ class PreviewContent extends StatelessWidget {
           child = _buildType1();
           break;
         case 2: // Product
-          child = _buildType2();
+          child = _buildType2(isEdit);
           break;
         case 3: // Video
           child = _buildType3();
@@ -57,52 +61,68 @@ class PreviewContent extends StatelessWidget {
 
 // --- content_type == 1 : Banner
 Widget _buildType1() {
-  final files = affContentCtl.selectedImages;
+  return Obx(() {
+    final hasLocal = affContentCtl.selectedImages.isNotEmpty;
+    final hasRemote = affContentCtl.previewUrls.value.trim().isNotEmpty;
+    final hasAny = hasLocal || hasRemote;
 
-  if (files.isEmpty) {
-    return Container(
-      margin: const EdgeInsets.only(top: 8),
-      clipBehavior: Clip.antiAlias,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        color: Colors.white,
-      ),
-      child: Container(
-        width: double.infinity,
-        height: 180,
-        clipBehavior: Clip.antiAlias,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          color: const Color(0xFFF3F3F4),
-        ),
-        child: const Icon(Icons.image_not_supported,
-            size: 48, color: Color(0xFFC6C5C9)),
-      ),
-    );
-  } else {
-    final file = files.first;
-    return Container(
-      margin: const EdgeInsets.only(top: 8),
-      clipBehavior: Clip.antiAlias,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        color: Colors.white,
-      ),
-      child: Stack(
+    Widget placeholder() => Container(
+          width: double.infinity,
+          height: 180,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            color: const Color(0xFFF3F3F4),
+          ),
+          child: const Icon(Icons.image_not_supported,
+              size: 48, color: Color(0xFFC6C5C9)),
+        );
+
+    Widget frame(Widget child) => Container(
+          margin: const EdgeInsets.only(top: 8),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            color: Colors.white,
+          ),
+          child: child,
+        );
+
+    if (!hasAny) return frame(placeholder());
+
+    final ImageProvider provider = hasLocal
+        ? FileImage(affContentCtl.selectedImages.first)
+        : NetworkImage(affContentCtl.previewUrls.value) as ImageProvider;
+
+    void remove() {
+      if (hasLocal) {
+        affContentCtl.removeImageAt(0); // ลบไฟล์ที่เพิ่งเลือก
+      } else {
+        affContentCtl.previewUrls.value = ''; // ลบ URL พรีวิว
+      }
+    }
+
+    return frame(
+      Stack(
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
-            child: Image.file(
-              file,
-              fit: BoxFit.cover,
+            child: SizedBox(
               width: double.infinity,
+              child: Image(
+                key: hasLocal
+                    ? ValueKey(affContentCtl.selectedImages.first.path)
+                    : ValueKey(affContentCtl.previewUrls.value),
+                image: provider,
+                fit: BoxFit.cover,
+                excludeFromSemantics: true,
+                errorBuilder: (_, __, ___) => placeholder(),
+              ),
             ),
           ),
           Positioned(
             top: 8,
             right: 8,
             child: InkWell(
-              onTap: () => affContentCtl.removeImageAt(0),
+              onTap: remove,
               borderRadius: BorderRadius.circular(16),
               child: Container(
                 decoration: BoxDecoration(
@@ -117,11 +137,11 @@ Widget _buildType1() {
         ],
       ),
     );
-  }
+  });
 }
 
 // --- content_type == 2 : Product
-Widget _buildType2() {
+Widget _buildType2(bool isEdit) {
   final products = affContentCtl.selectedProducts;
 
   if (products.isEmpty) {
@@ -190,11 +210,12 @@ Widget _buildType2() {
     separatorBuilder: (_, __) => const SizedBox(height: 8),
     itemBuilder: (context, index) {
       final pMap = products[index];
+      final isHide = pMap.status == 'hide';
 
       return Container(
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: isHide ? const Color(0x331F1F1F) : Colors.white,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(color: Colors.grey.shade200),
           boxShadow: [
@@ -205,14 +226,71 @@ Widget _buildType2() {
             )
           ],
         ),
-        child: Column(
+        child: Stack(
           children: [
-            productItemList(product: pMap),
-            cardBottom(
-              details: const [],
-              onDelete: () => affContentCtl.removeSelectedProductAt(index),
-              onMoveUp: () => affContentCtl.moveSelectedProductToTop(index),
+            Column(
+              children: [
+                productItemList(product: pMap),
+                Container(
+                  padding: EdgeInsets.only(top: 10),
+                  decoration: BoxDecoration(
+                    border: Border(
+                      top: BorderSide(
+                        color: isHide
+                            ? Colors.black.withValues(alpha: .1)
+                            : Color(0xFFF3F3F4),
+                        width: 0.7,
+                      ),
+                    ),
+                  ),
+                  child: cardBottom(
+                    hideStatus: pMap.status,
+                    onDelete: () =>
+                        affContentCtl.removeSelectedProductAt(index),
+                    onMoveUp: () =>
+                        affContentCtl.moveSelectedProductToTop(index),
+                    onHide: isEdit
+                        ? () async {
+                            await affProductCtl.hideProduct(
+                                isHide ? 'published' : 'hide',
+                                pMap.productId,
+                                true);
+                          }
+                        : null,
+                  ),
+                ),
+              ],
             ),
+            if (isHide)
+              Positioned(
+                left: 0,
+                bottom: 0,
+                child: Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: .5),
+                    borderRadius: BorderRadius.circular(999),
+                    border: Border.all(color: const Color(0xFF5A5A5A)),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    spacing: 2,
+                    children: [
+                      Text('ซ่อนอยู่',
+                          style: TextStyle(
+                              color: const Color(0xFF5A5A5A),
+                              fontWeight: FontWeight.w600,
+                              fontSize: 12)),
+                      SvgPicture.asset(
+                        'assets/images/affiliate/cardmenu/eye_off.svg',
+                        width: 16,
+                      )
+                    ],
+                  ),
+                ),
+              ),
           ],
         ),
       );
@@ -222,31 +300,161 @@ Widget _buildType2() {
 
 // --- content_type == 3 : Video
 Widget _buildType3() {
-  final file = affContentCtl.selectedVideo.value;
-  if (file == null) {
-    // ยังไม่มีไฟล์
-    return Container(
-      margin: const EdgeInsets.only(top: 8),
-      clipBehavior: Clip.antiAlias,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        color: Colors.white,
-      ),
-      child: Container(
-        width: double.infinity,
-        height: 180,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          color: const Color(0xFFF3F3F4),
-        ),
-        child: const Center(
-          child: Icon(Icons.play_arrow, size: 48, color: Color(0xFFC6C5C9)),
-        ),
+  return Obx(() {
+    final hasLocal = affContentCtl.selectedVideo.value != null;
+    final hasRemote = affContentCtl.previewUrls.value.trim().isNotEmpty;
+    final hasAny = hasLocal || hasRemote;
+
+    Widget placeholder() => Container(
+          width: double.infinity,
+          height: 180,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            color: const Color(0xFFF3F3F4),
+          ),
+          child: const Center(
+            child: Icon(Icons.play_arrow, size: 48, color: Color(0xFFC6C5C9)),
+          ),
+        );
+
+    Widget frame(Widget child) => Container(
+          margin: const EdgeInsets.only(top: 8),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            color: Colors.white,
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: SizedBox(width: double.infinity, child: child),
+          ),
+        );
+
+    if (!hasAny) return frame(placeholder());
+
+    final bool showLocal = hasLocal;
+
+    Future<void> remove() async {
+      if (showLocal) {
+        affContentCtl.selectedVideo.value = null; // ลบไฟล์ที่อัปโหลด
+      } else {
+        affContentCtl.previewUrls.value = '';
+      }
+    }
+
+    return frame(
+      Stack(
+        children: [
+          if (showLocal)
+            KeyedSubtree(
+              key: ValueKey(affContentCtl.selectedVideo.value!.path),
+              child: VideoPreviewFromFile(
+                  file: affContentCtl.selectedVideo.value!),
+            )
+          else
+            FutureBuilder<VideoPlayerController>(
+              future: setVideoContent(affContentCtl.previewUrls.value),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return AspectRatio(
+                    aspectRatio: 16 / 9,
+                    child: const SizedBox.shrink(),
+                  );
+                }
+                if (snapshot.hasError || !snapshot.hasData) {
+                  return const SizedBox.shrink();
+                }
+
+                final controller = snapshot.data!;
+                final aspect = controller.value.isInitialized
+                    ? controller.value.aspectRatio
+                    : (16 / 9);
+
+                return ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: AspectRatio(
+                    aspectRatio: aspect,
+                    child: Stack(
+                      alignment: Alignment.bottomRight,
+                      children: [
+                        // แตะเล่น/หยุด
+                        InkWell(
+                          onTap: () {
+                            if (controller.value.isPlaying) {
+                              controller.pause();
+                            } else {
+                              controller.play();
+                            }
+                          },
+                          child: VideoPlayer(controller),
+                        ),
+
+                        // ปุ่มควบคุมมุมขวาล่าง
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            IconButton(
+                              constraints: const BoxConstraints(maxWidth: 28),
+                              icon: const Icon(Icons.fullscreen),
+                              color: Colors.white,
+                              onPressed: () {
+                                // ❗ ใช้ videoUrl จาก d ของ item ปัจจุบัน
+                                Get.to(() => FullScreenVideoPlayer(
+                                    videoUrl: affContentCtl.previewUrls.value));
+                              },
+                            ),
+                            // ถ้าใช้ GetX สำหรับเก็บ volume เหมือนเดิม
+                            Obx(() {
+                              final isMuted = affContentCtl.volume.value == 0;
+                              return IconButton(
+                                icon: Icon(
+                                  isMuted
+                                      ? Icons.volume_off
+                                      : Icons.volume_down,
+                                  color: Colors.white,
+                                ),
+                                onPressed: () {
+                                  final nowMuted = controller.value.volume != 0;
+                                  controller.setVolume(nowMuted ? 0 : 1);
+                                  affContentCtl.volume.value =
+                                      controller.value.volume;
+                                },
+                              );
+                            }),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          // _NetworkVideoPreview(
+          //   key: ValueKey(affContentCtl.previewUrls.value),
+          //   url: affContentCtl.previewUrls.value,
+          //   placeholder: placeholder(),
+          // ),
+
+          // ปุ่มลบ
+          Positioned(
+            top: 8,
+            right: 8,
+            child: InkWell(
+              onTap: remove,
+              borderRadius: BorderRadius.circular(16),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.black.withOpacity(.6),
+                  shape: BoxShape.circle,
+                ),
+                padding: const EdgeInsets.all(6),
+                child: const Icon(Icons.close, color: Colors.white, size: 18),
+              ),
+            ),
+          ),
+        ],
       ),
     );
-  }
-  // มีไฟล์แล้ว
-  return VideoPreviewFromFile(file: file);
+  });
 }
 
 // --- content_type == 4 : Text
@@ -286,47 +494,55 @@ Widget _buildType4() {
           ],
         ));
   } else {
-    return Container(
-        width: double.infinity,
-        margin: const EdgeInsets.only(top: 8),
-        padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(color: Colors.grey.shade200),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(text, style: const TextStyle(fontSize: 14)),
-            const SizedBox(height: 6),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                IconButton(
-                  onPressed: () async {
-                    // เปิด editor แก้ไขใหม่
-                    final updated = await openTextEditorDrawer(initial: text);
-                    if (updated != null) {
-                      affContentCtl.selectedText.value = updated;
-                    }
-                  },
-                  icon: const Icon(
-                    Icons.edit_outlined,
-                    size: 22,
+    return InkWell(
+      onTap: () async {
+        final updated = await openTextEditorDrawer(initial: text);
+        if (updated != null) {
+          affContentCtl.selectedText.value = updated;
+        }
+      },
+      child: Container(
+          width: double.infinity,
+          margin: const EdgeInsets.only(top: 8),
+          padding: const EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border.all(color: Colors.grey.shade200),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(text, style: const TextStyle(fontSize: 14)),
+              const SizedBox(height: 6),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  IconButton(
+                    onPressed: () async {
+                      // เปิด editor แก้ไขใหม่
+                      final updated = await openTextEditorDrawer(initial: text);
+                      if (updated != null) {
+                        affContentCtl.selectedText.value = updated;
+                      }
+                    },
+                    icon: const Icon(
+                      Icons.edit_outlined,
+                      size: 22,
+                    ),
                   ),
-                ),
-                IconButton(
-                  onPressed: () => affContentCtl.selectedText.value = '',
-                  icon: const Icon(
-                    Icons.delete_outline,
-                    size: 22,
+                  IconButton(
+                    onPressed: () => affContentCtl.selectedText.value = '',
+                    icon: const Icon(
+                      Icons.delete_outline,
+                      size: 22,
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ],
-        ));
+                ],
+              ),
+            ],
+          )),
+    );
   }
 }
 
@@ -486,6 +702,7 @@ Widget addButton({
   required int? contentTypeId,
   int currentCount = 0,
   required int max,
+  required String target,
 }) {
   String title() {
     switch (contentTypeId) {
@@ -517,20 +734,25 @@ Widget addButton({
         }
         break;
       case 2: // Product
-        final products = await addProductDrawer(single: false);
-        if (products != null) {
-          final newIds = products.map((p) => p.productId).toSet();
+        final products = await addProductDrawer(target: target, single: false);
+        if (products != null && products.isNotEmpty) {
+          final existingIds = affContentCtl.selectedProducts
+              .map((p) => p.productId)
+              .whereType<int>()
+              .toSet();
 
-          affContentCtl.selectedProducts
-              .removeWhere((p) => !newIds.contains(p.productId));
+          final toAdd = <AffiliateProduct>[];
+          for (final p in products) {
+            final id = p.productId;
+            if (existingIds.add(id)) {
+              toAdd.add(p);
+            }
+          }
 
-          final existingIds =
-              affContentCtl.selectedProducts.map((p) => p.productId).toSet();
-          final newOnes = products
-              .where((p) => !existingIds.contains(p.productId))
-              .toList();
-
-          affContentCtl.selectedProducts.insertAll(0, newOnes);
+          // บนสุด:
+          // affContentCtl.selectedProducts.insertAll(0, toAdd);
+          // ถ้าอยากต่อท้าย ให้ใช้:
+          affContentCtl.selectedProducts.addAll(toAdd);
         }
         break;
 
@@ -814,6 +1036,68 @@ class _FullScreenVideoState extends State<_FullScreenVideo> {
             ],
           );
         },
+      ),
+    );
+  }
+}
+
+class _NetworkVideoPreview extends StatefulWidget {
+  final String url;
+  final Widget placeholder;
+  const _NetworkVideoPreview({
+    super.key,
+    required this.url,
+    required this.placeholder,
+  });
+
+  @override
+  State<_NetworkVideoPreview> createState() => _NetworkVideoPreviewState();
+}
+
+class _NetworkVideoPreviewState extends State<_NetworkVideoPreview> {
+  VideoPlayerController? _ctr;
+
+  @override
+  void initState() {
+    super.initState();
+    _init();
+  }
+
+  @override
+  void didUpdateWidget(covariant _NetworkVideoPreview oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.url != widget.url) {
+      _ctr = null;
+      _init();
+    }
+  }
+
+  Future<void> _init() async {
+    if (widget.url.trim().isEmpty) return;
+    try {
+      final ctr = await setVideoContent(widget.url); // ฟังก์ชันแคชของคุณ
+      if (!mounted) return;
+      setState(() => _ctr = ctr);
+    } catch (_) {
+      if (!mounted) return;
+      setState(() => _ctr = null);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_ctr == null || !_ctr!.value.isInitialized) {
+      return widget.placeholder;
+    }
+
+    final size = _ctr!.value.size;
+    return FittedBox(
+      fit: BoxFit.cover,
+      clipBehavior: Clip.hardEdge,
+      child: SizedBox(
+        width: size.width == 0 ? 320 : size.width,
+        height: size.height == 0 ? 180 : size.height,
+        child: VideoPlayer(_ctr!),
       ),
     );
   }

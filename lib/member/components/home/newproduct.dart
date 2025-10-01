@@ -234,7 +234,7 @@ class NewProductItem extends StatelessWidget {
                   Stack(
                     children: [
                       Text(
-                        "      ${product.title}",
+                        product.title,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: GoogleFonts.ibmPlexSansThai(

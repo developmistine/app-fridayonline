@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:fridayonline/member/components/profile/affiliate/shop.category.edit.dart';
-import 'package:fridayonline/member/components/profile/affiliate/shop.content.edit.dart';
-import 'package:fridayonline/member/components/profile/affiliate/shop.product.edit.dart';
+import 'package:fridayonline/member/components/profile/affiliate/shop/shop.category.edit.dart';
+import 'package:fridayonline/member/components/profile/affiliate/shop/shop.content.edit.dart';
+import 'package:fridayonline/member/components/profile/affiliate/shop/shop.product.edit.dart';
+import 'package:fridayonline/member/controller/affiliate/affiliate.account.ctr.dart';
+import 'package:fridayonline/member/controller/affiliate/affiliate.content.ctr.dart';
+import 'package:fridayonline/member/controller/affiliate/affiliate.product.ctr.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -25,22 +28,67 @@ class AffiliateEdit extends StatefulWidget {
 class _AffiliateEditState extends State<AffiliateEdit>
     with SingleTickerProviderStateMixin {
   late final TabController _tab;
+  final affContentCtl = Get.find<AffiliateContentCtr>();
+  final affProductCtl = Get.find<AffiliateProductCtr>();
+  final affAccountCtl = Get.find<AffiliateAccountCtr>();
+
+  final Set<int> _loadedTabs = <int>{};
 
   @override
   void initState() {
     super.initState();
+
+    final int initial = (widget.index < 0)
+        ? 0
+        : (widget.index >= shopTabs.length
+            ? shopTabs.length - 1
+            : widget.index);
+
     _tab = TabController(
       length: shopTabs.length,
       vsync: this,
-      initialIndex: widget.index.clamp(0, shopTabs.length - 1),
+      initialIndex: initial,
     );
 
-    void refresh() {
-      if (mounted) setState(() {});
+    void triggerForIndex(int i, {bool force = false}) {
+      if (!force && _loadedTabs.contains(i)) return;
+      _loadedTabs.add(i);
+
+      switch (i) {
+        case 0: // ร้านค้า (content)
+          affContentCtl.getAffiliateContent(
+            page: 'modify',
+            target: 'content',
+            contentId: 0,
+          );
+          break;
+
+        case 2: // หมวดหมู่ (category)
+          affContentCtl.getAffiliateContent(
+            page: 'modify',
+            target: 'category',
+            contentId: 0,
+          );
+          break;
+      }
     }
 
-    _tab.addListener(refresh);
-    _tab.animation?.addListener(refresh);
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      _loadedTabs.addAll([0, 2]);
+      await Future.wait([
+        affContentCtl.getAffiliateContent(
+            page: 'modify', target: 'content', contentId: 0),
+        affContentCtl.getAffiliateContent(
+            page: 'modify', target: 'category', contentId: 0),
+      ]);
+      triggerForIndex(_tab.index);
+    });
+
+    _tab.addListener(() {
+      if (_tab.indexIsChanging) return;
+      triggerForIndex(_tab.index);
+      setState(() {});
+    });
   }
 
   @override

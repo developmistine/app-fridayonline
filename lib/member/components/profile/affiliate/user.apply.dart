@@ -36,7 +36,7 @@ class _ApplyState extends State<UserApply> {
         width: double.infinity,
         padding: const EdgeInsets.all(12),
         decoration: ShapeDecoration(
-          color: const Color(0xFFF8F8F8) /* Gray-25 */,
+          color: const Color(0xFFF8F8F8),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         ),
@@ -100,10 +100,15 @@ class _ApplyState extends State<UserApply> {
             Column(
               spacing: 4,
               children: [
-                _FieldLabel(title: 'ชื่อร้านค้าของท่าน', requiredMark: true),
-                _InputBox(
+                ApplyFieldLabel(
+                  title: 'ชื่อร้านค้าของท่าน',
+                  requiredMark: true,
+                  counterController: affAccountCtl.shopNameCtrl,
+                  maxLength: 50,
+                ),
+                ApplyInputBox(
                   controller: affAccountCtl.shopNameCtrl,
-                  hint: 'เสื้อผ้าแฟชั่น By คุณนัท',
+                  hint: 'เสื้อผ้าแฟชั่น',
                   ctl: affAccountCtl,
                   field: ApplyField.shop,
                   onChanged: affAccountCtl.onShopChanged,
@@ -116,10 +121,15 @@ class _ApplyState extends State<UserApply> {
               spacing: 4,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _FieldLabel(title: 'ชื่อผู้ใช้ (username)', requiredMark: true),
-                _InputBox(
+                ApplyFieldLabel(
+                  title: 'ชื่อผู้ใช้ (username)',
+                  requiredMark: true,
+                  counterController: affAccountCtl.shopNameCtrl,
+                  maxLength: 24,
+                ),
+                ApplyInputBox(
                   controller: affAccountCtl.usernameCtrl,
-                  hint: 'nutshop',
+                  hint: 'fridayshop',
                   ctl: affAccountCtl,
                   field: ApplyField.username,
                   onChanged: affAccountCtl.onUsernameChanged,
@@ -139,8 +149,8 @@ class _ApplyState extends State<UserApply> {
             Column(
               spacing: 4,
               children: [
-                _FieldLabel(title: 'อีเมล', requiredMark: true),
-                _InputBox(
+                ApplyFieldLabel(title: 'อีเมล', requiredMark: true),
+                ApplyInputBox(
                   controller: affAccountCtl.emailCtrl,
                   hint: 'example@friday.co.th',
                   keyboardType: TextInputType.emailAddress,
@@ -155,8 +165,8 @@ class _ApplyState extends State<UserApply> {
             Column(
               spacing: 4,
               children: [
-                _FieldLabel(title: 'หมายเลขโทรศัพท์', requiredMark: true),
-                _InputBox(
+                ApplyFieldLabel(title: 'หมายเลขโทรศัพท์', requiredMark: true),
+                ApplyInputBox(
                   controller: affAccountCtl.phoneCtrl,
                   hint: '0XX-XXX-XXXX',
                   keyboardType: TextInputType.phone,
@@ -308,33 +318,66 @@ class _ApplyState extends State<UserApply> {
   }
 }
 
-class _FieldLabel extends StatelessWidget {
+class ApplyFieldLabel extends StatelessWidget {
   final String title;
   final bool requiredMark;
-  const _FieldLabel({required this.title, this.requiredMark = false});
+  final TextEditingController? counterController;
+  final int? maxLength;
+  const ApplyFieldLabel({
+    super.key,
+    required this.title,
+    this.requiredMark = false,
+    this.counterController,
+    this.maxLength,
+  });
+
+  bool get _showCounter => counterController != null && maxLength != null;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 18,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            title,
-            style: const TextStyle(
-              color: Color(0xFF5A5A5A),
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-          if (requiredMark)
-            const Text(
-              ' *',
-              style: TextStyle(
-                color: Color(0xFFF44336),
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
+          Row(
+            children: [
+              Text(
+                title,
+                style: const TextStyle(
+                  color: Color(0xFF5A5A5A),
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
+              if (requiredMark)
+                const Text(
+                  ' *',
+                  style: TextStyle(
+                    color: Color(0xFFF44336),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+            ],
+          ),
+          if (_showCounter)
+            ValueListenableBuilder<TextEditingValue>(
+              valueListenable: counterController!,
+              builder: (context, value, _) {
+                final len = value.text.length;
+                final over = len > (maxLength!);
+                return Text(
+                  '$len/${maxLength!}',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                    color: over
+                        ? const Color(0xFFF44336)
+                        : const Color(0xFF9DA3AE),
+                  ),
+                );
+              },
             ),
         ],
       ),
@@ -342,7 +385,7 @@ class _FieldLabel extends StatelessWidget {
   }
 }
 
-class _InputBox extends StatelessWidget {
+class ApplyInputBox extends StatelessWidget {
   final TextEditingController controller;
   final String hint;
   final TextInputType? keyboardType;
@@ -352,7 +395,10 @@ class _InputBox extends StatelessWidget {
   final AffiliateAccountCtr ctl;
   final ApplyField field;
 
-  const _InputBox({
+  // NEW: username เดิมจากโปรไฟล์ (ใช้เฉพาะ field == ApplyField.username)
+  final String? originalUsername;
+
+  const ApplyInputBox({
     super.key,
     required this.controller,
     required this.hint,
@@ -362,6 +408,7 @@ class _InputBox extends StatelessWidget {
     this.textColor = const Color(0xFF1F1F1F),
     this.hintColor,
     this.onChanged,
+    this.originalUsername, // NEW
   });
 
   String? _errorText() {
@@ -392,7 +439,6 @@ class _InputBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isUsernameField = field == ApplyField.username;
     final isPhone = field == ApplyField.phone;
     final formatters = isPhone
         ? <TextInputFormatter>[
@@ -416,24 +462,28 @@ class _InputBox extends StatelessWidget {
             ),
           ),
           child: Focus(
-            onFocusChange: (hasFocus) {
-              if (!hasFocus) ctl.markTouched(field);
-            },
-            child: Obx(() {
-              final localErr = _errorText();
-              final uname = ctl.username.value.trim();
-
-              return TextField(
+              onFocusChange: (hasFocus) {
+                if (!hasFocus) ctl.markTouched(field);
+              },
+              child: TextField(
+                maxLength: field == ApplyField.shop
+                    ? 50
+                    : field == ApplyField.username
+                        ? 24
+                        : null,
+                maxLines: 1,
                 controller: controller,
                 keyboardType: keyboardType,
                 inputFormatters: formatters,
                 textInputAction: TextInputAction.next,
                 onChanged: onChanged,
                 style: TextStyle(
-                    color: textColor,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400),
+                  color: textColor,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                ),
                 decoration: InputDecoration(
+                  counterText: '',
                   isCollapsed: true,
                   border: InputBorder.none,
                   hintText: hint,
@@ -443,31 +493,43 @@ class _InputBox extends StatelessWidget {
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
                   ),
-                  suffixIcon: isUsernameField
-                      ? (localErr != null || uname.isEmpty
-                          ? const SizedBox.shrink()
-                          : (ctl.isCheckingUsername.value
-                              ? const Padding(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: SizedBox(
-                                    width: 16,
-                                    height: 16,
-                                    child: CircularProgressIndicator(
-                                        strokeWidth: 2),
-                                  ),
-                                )
-                              : (ctl.usernameAvailable.value == true
-                                  ? const Icon(Icons.check_circle,
-                                      color: Colors.green, size: 18)
-                                  : (ctl.usernameAvailable.value == false
-                                      ? const Icon(Icons.cancel,
-                                          color: Colors.red, size: 18)
-                                      : const SizedBox.shrink()))))
+                  // ⬇️ ซ่อน icon เมื่อ username เท่ากับของเดิม
+                  suffixIcon: field == ApplyField.username
+                      ? Obx(() {
+                          final localErr = ctl.errorUsername;
+                          final uname = ctl.username.value.trim();
+                          final sameAsOriginal =
+                              (originalUsername?.trim().isNotEmpty ?? false) &&
+                                  (uname == originalUsername!.trim());
+
+                          if (localErr != null ||
+                              uname.isEmpty ||
+                              sameAsOriginal) {
+                            return const SizedBox.shrink();
+                          }
+                          if (ctl.isCheckingUsername.value) {
+                            return const Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: SizedBox(
+                                  width: 16,
+                                  height: 16,
+                                  child: CircularProgressIndicator(
+                                      strokeWidth: 2)),
+                            );
+                          }
+                          if (ctl.usernameAvailable.value == true) {
+                            return const Icon(Icons.check_circle,
+                                size: 18, color: Colors.green);
+                          }
+                          if (ctl.usernameAvailable.value == false) {
+                            return const Icon(Icons.cancel,
+                                size: 18, color: Colors.red);
+                          }
+                          return const SizedBox.shrink();
+                        })
                       : null,
                 ),
-              );
-            }),
-          ),
+              )),
         ),
         Obx(() {
           final _ = (
@@ -479,7 +541,7 @@ class _InputBox extends StatelessWidget {
           final show = _showError();
           final err = _errorText();
           if (!show || err == null) return const SizedBox.shrink();
-          return const SizedBox(height: 4); // spacing เล็ก ๆ
+          return const SizedBox(height: 4);
         }),
         Obx(() {
           final _ = (

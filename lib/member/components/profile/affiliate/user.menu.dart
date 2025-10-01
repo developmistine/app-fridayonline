@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fridayonline/member/views/(affiliate)/commission/commission.dart';
+import 'package:fridayonline/member/views/(affiliate)/dashboard.dart';
 import 'package:fridayonline/member/views/(affiliate)/shop.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,8 +13,6 @@ final menuData = [
     'icon': 'assets/images/affiliate/affi_menu_3.svg',
     'title': "ดูร้านค้าของฉัน"
   },
-  // {'icon': 'assets/images/affiliate/affi_menu_4.svg', 'title': "ตกแต่งร้านค้า"},
-  // {'icon': 'assets/images/affiliate/affi_menu_5.svg', 'title': "รายการสินค้า"},
 ];
 
 class UserMenu extends StatelessWidget {
@@ -24,6 +24,12 @@ class UserMenu extends StatelessWidget {
     switch (title) {
       case "ดูร้านค้าของฉัน":
         Get.to(() => const AffiliateShop());
+        break;
+      case "ค่าคอมมิชชั่น":
+        Get.to(() => const Commission());
+        break;
+      case "ภาพรวมของฉัน":
+        Get.to(() => const Dashboard());
         break;
       default:
         return;

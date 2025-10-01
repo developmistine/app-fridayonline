@@ -26,30 +26,28 @@ class _DataProfilesState extends State<DataProfiles> {
   @override
   Widget build(BuildContext context) {
     return Obx(() {
+      // 1) สเตทโหลด
       if (profileCtl.isLoading.value) {
         return Container(
           height: 60,
           padding: const EdgeInsets.all(8),
           margin: const EdgeInsets.all(4),
           decoration: BoxDecoration(
-              color: Colors.transparent,
-              borderRadius: BorderRadius.circular(8)),
+            color: Colors.transparent,
+            borderRadius: BorderRadius.circular(8),
+          ),
           child: Row(
             children: [
               Stack(
                 alignment: Alignment.center,
                 children: [
                   ShimmerCard(
-                    width: 48,
-                    height: 48,
-                    radius: 50,
-                    color: Colors.white.withOpacity(0.2),
-                  ),
-                  Icon(
-                    Icons.image,
-                    size: 20,
-                    color: Colors.black.withOpacity(0.2),
-                  )
+                      width: 48,
+                      height: 48,
+                      radius: 50,
+                      color: Colors.white.withOpacity(0.2)),
+                  Icon(Icons.image,
+                      size: 20, color: Colors.black.withOpacity(0.2)),
                 ],
               ),
               const SizedBox(width: 12),
@@ -58,20 +56,16 @@ class _DataProfilesState extends State<DataProfiles> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ShimmerCard(
-                      width: Get.width,
-                      height: 12,
-                      radius: 2,
-                      color: Colors.white.withOpacity(0.2),
-                    ),
-                    const SizedBox(
-                      height: 4,
-                    ),
+                        width: Get.width,
+                        height: 12,
+                        radius: 2,
+                        color: Colors.white.withOpacity(0.2)),
+                    const SizedBox(height: 4),
                     ShimmerCard(
-                      width: Get.width,
-                      height: 12,
-                      radius: 2,
-                      color: Colors.white.withOpacity(0.2),
-                    ),
+                        width: Get.width,
+                        height: 12,
+                        radius: 2,
+                        color: Colors.white.withOpacity(0.2)),
                   ],
                 ),
               ),
@@ -81,8 +75,12 @@ class _DataProfilesState extends State<DataProfiles> {
         );
       }
 
+      // 2) ข้อมูลโปรไฟล์ (อาจยัง null)
       final profile = profileCtl.profileData.value;
-      final telNumFormat = profile?.mobile ?? '';
+      final tel = profile?.mobile ?? '';
+      final displayName = profile?.displayName ?? 'N/A';
+      final avatarUrl = profile?.image ?? '';
+      final coin = profile?.coinBalance ?? 0; // ✅ ไม่ใช้ ! แล้ว
 
       return Container(
         padding: const EdgeInsets.all(8),
@@ -92,15 +90,16 @@ class _DataProfilesState extends State<DataProfiles> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            // ===== รูปโปรไฟล์ + ปุ่มแก้ไข =====
             InkWell(
               onTap: () async {
                 await Get.to(() => const EditProfile(), arguments: {
                   "displayName": profile?.displayName,
                   "mobile": profile?.mobile,
                   "image": profile?.image
-                })?.then((result) {
-                  profileCtl.fetchProfile();
                 });
+                // ดึงข้อมูลใหม่หลังกลับมา
+                await profileCtl.fetchProfile();
               },
               child: Stack(
                 clipBehavior: Clip.none,
@@ -108,45 +107,45 @@ class _DataProfilesState extends State<DataProfiles> {
                 children: [
                   Container(
                     clipBehavior: Clip.antiAlias,
-                    decoration: BoxDecoration(
-                      // border: Border.all(color: Colors.white, width: 1),
-                      borderRadius: BorderRadius.circular(40),
-                    ),
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(40)),
                     padding: const EdgeInsets.all(2),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(40),
-                      child: Image.network(
-                        profile?.image.isNotEmpty == true
-                            ? profile!.image
-                            : 'assets/images/profileimg/user.png',
-                        width: 55,
-                        height: 55,
-                        fit: BoxFit.cover,
-                        errorBuilder: (context, error, stackTrace) {
-                          return Image.asset(
+                      child: avatarUrl.isNotEmpty
+                          ? Image.network(
+                              avatarUrl,
+                              width: 55,
+                              height: 55,
+                              fit: BoxFit.cover,
+                              errorBuilder: (_, __, ___) => Image.asset(
+                                'assets/images/profileimg/user.png',
+                                width: 55,
+                                height: 55,
+                              ),
+                            )
+                          : Image.asset(
                               'assets/images/profileimg/user.png',
                               width: 55,
-                              height: 55);
-                        },
-                      ),
+                              height: 55,
+                            ),
                     ),
                   ),
                   Container(
                     padding: const EdgeInsets.all(4),
                     decoration: BoxDecoration(
-                      color: Colors.black54,
-                      borderRadius: BorderRadius.circular(40),
-                    ),
-                    child: const Icon(
-                      Icons.edit,
-                      size: 14,
-                      color: Colors.white,
-                    ),
-                  )
+                        color: Colors.black54,
+                        borderRadius: BorderRadius.circular(40)),
+                    child:
+                        const Icon(Icons.edit, size: 14, color: Colors.white),
+                  ),
                 ],
               ),
             ),
+
             const SizedBox(width: 12),
+
+            // ===== ชื่อ/เบอร์ + ปุ่ม Coin =====
             Expanded(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -157,7 +156,7 @@ class _DataProfilesState extends State<DataProfiles> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          profile?.displayName ?? 'N/A',
+                          displayName,
                           style: GoogleFonts.ibmPlexSansThai(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
@@ -165,7 +164,7 @@ class _DataProfilesState extends State<DataProfiles> {
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          formatTelHidden(telNumFormat),
+                          formatTelHidden(tel),
                           style: const TextStyle(
                               fontSize: 13, color: Colors.white),
                         ),
@@ -173,9 +172,7 @@ class _DataProfilesState extends State<DataProfiles> {
                     ),
                   ),
                   InkWell(
-                    onTap: () {
-                      Get.to(() => FridayCoin());
-                    },
+                    onTap: () => Get.to(() => FridayCoin()),
                     child: Container(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 8, vertical: 4),
@@ -194,27 +191,24 @@ class _DataProfilesState extends State<DataProfiles> {
                             ),
                           ),
                           Text(
-                            myFormat.format(profile!.coinBalance),
+                            myFormat
+                                .format(coin), // ✅ ไม่ใช้ profile!.coinBalance
                             style: GoogleFonts.ibmPlexSansThai(
                               color: const Color(0xFF1F1F1F),
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          const SizedBox(
-                            width: 4,
-                          ),
-                          Image.asset(
-                            'assets/images/b2c/icon/coin.png',
-                            width: 16,
-                          )
+                          const SizedBox(width: 4),
+                          Image.asset('assets/images/b2c/icon/coin.png',
+                              width: 16),
                         ],
                       ),
                     ),
                   ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       );

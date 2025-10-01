@@ -70,8 +70,14 @@ class AuthFetch {
   static Future<http.Response> get(
     Uri url, {
     Map<String, String>? headers,
+    Object? body,
   }) =>
-      fetchWithAuth(url, method: 'GET', headers: headers);
+      fetchWithAuth(
+        url,
+        method: 'GET',
+        headers: headers,
+        body: body,
+      );
 
   static Future<http.Response> post(
     Uri url, {
@@ -113,8 +119,14 @@ class AuthFetch {
   static Future<http.Response> delete(
     Uri url, {
     Map<String, String>? headers,
+    Object? body,
   }) =>
-      fetchWithAuth(url, method: 'DELETE', headers: headers);
+      fetchWithAuth(
+        url,
+        method: 'DELETE',
+        headers: headers,
+        body: body,
+      );
 
   // Method สำหรับ Multipart Request
   static Future<http.StreamedResponse> multipartRequestWithAuth(
@@ -228,7 +240,7 @@ class AuthFetch {
     return null;
   }
 
-  static initGuestToken() async {
+  static Future<void> initGuestToken() async {
     final Future<SharedPreferences> pref = SharedPreferences.getInstance();
 
     await pref.then((SharedPreferences prefs) async {

@@ -1,14 +1,16 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fridayonline/member/components/profile/affiliate/shop.category.dart';
-import 'package:fridayonline/member/components/profile/affiliate/shop.content.dart';
-import 'package:fridayonline/member/components/profile/affiliate/shop.product.dart';
-import 'package:fridayonline/member/components/profile/affiliate/user.header.dart';
+import 'package:fridayonline/member/components/utils/share.dart';
+import 'package:fridayonline/member/components/profile/affiliate/shop/shop.category.dart';
+import 'package:fridayonline/member/components/profile/affiliate/shop/shop.content.dart';
+import 'package:fridayonline/member/components/profile/affiliate/shop/shop.product.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/content.dart';
+import 'package:fridayonline/member/controller/affiliate/affiliate.account.ctr.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.content.ctr.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.product.ctr.dart';
 import 'package:fridayonline/member/views/(affiliate)/edit.dart';
+import 'package:fridayonline/member/views/(affiliate)/setting/setting.account.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
@@ -25,70 +27,80 @@ class _ProfileRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Container(
-          width: 55,
-          height: 55,
-          clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            shape: BoxShape.circle,
-          ),
-          child: Container(
-            margin: const EdgeInsets.all(1.5),
+    final affAccountCtl = Get.find<AffiliateAccountCtr>();
+
+    return Obx(() {
+      final data = affAccountCtl.profileData.value;
+      final avatarUrl = data?.account.image ?? '';
+
+      return Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            width: 55,
+            height: 55,
+            clipBehavior: Clip.antiAlias,
             decoration: BoxDecoration(
+              color: Colors.white,
               shape: BoxShape.circle,
-              image: DecorationImage(
-                image: NetworkImage(userProfile['image'] as String),
-                fit: BoxFit.cover,
+            ),
+            child: Container(
+              margin: const EdgeInsets.all(1.5),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: NetworkImage(avatarUrl),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
-        ),
-        const SizedBox(width: 8),
-        Expanded(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                userProfile['shop_name'] as String,
+          const SizedBox(width: 8),
+          Expanded(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  data?.storeName ?? 'ไม่ระบุ',
+                  style: GoogleFonts.ibmPlexSansThai(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600),
+                  overflow: TextOverflow.ellipsis,
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  "เข้าร่วมเมื่อ ${data?.account.dateJoined ?? '-'} | รายการสินค้า (${data?.itemCountDisplay ?? '0'})",
+                  style: GoogleFonts.ibmPlexSansThai(
+                      color: Colors.white,
+                      fontSize: 10,
+                      fontWeight: FontWeight.w400),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(width: 8),
+          OutlinedButton(
+            onPressed: () async {
+              Get.to(() => SettingAffAccount());
+              await affAccountCtl.getProfile();
+            },
+            style: OutlinedButton.styleFrom(
+              side: const BorderSide(color: Colors.white, width: 1),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8)),
+            ),
+            child: Text('แก้ไข',
                 style: GoogleFonts.ibmPlexSansThai(
                     color: Colors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600),
-                overflow: TextOverflow.ellipsis,
-              ),
-              const SizedBox(height: 2),
-              Text(
-                "เข้าร่วมเมื่อ ${userProfile['shop_active']} | รายการสินค้า (${userProfile['shop_items']})",
-                style: GoogleFonts.ibmPlexSansThai(
-                    color: Colors.white,
-                    fontSize: 10,
-                    fontWeight: FontWeight.w400),
-                overflow: TextOverflow.ellipsis,
-              ),
-            ],
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500)),
           ),
-        ),
-        const SizedBox(width: 8),
-        OutlinedButton(
-          onPressed: () {},
-          style: OutlinedButton.styleFrom(
-            side: const BorderSide(color: Colors.white, width: 1),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          ),
-          child: Text('แก้ไข',
-              style: GoogleFonts.ibmPlexSansThai(
-                  color: Colors.white,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500)),
-        ),
-      ],
-    );
+        ],
+      );
+    });
   }
 }
 
@@ -104,6 +116,9 @@ class _AffiliateShopState extends State<AffiliateShop>
   late final TabController _tab;
   final affContentCtl = Get.find<AffiliateContentCtr>();
   final affProductCtl = Get.find<AffiliateProductCtr>();
+  final affAccountCtl = Get.find<AffiliateAccountCtr>();
+
+  final Set<int> _loadedTabs = <int>{};
 
   String _textFor(int i) {
     switch (i) {
@@ -129,16 +144,49 @@ class _AffiliateShopState extends State<AffiliateShop>
   @override
   void initState() {
     super.initState();
+
     _tab = TabController(length: shopTabs.length, vsync: this);
 
-    void refresh() {
-      if (mounted) setState(() {});
+    void triggerForIndex(int i, {bool force = false}) {
+      if (!force && _loadedTabs.contains(i)) return;
+      _loadedTabs.add(i);
+
+      switch (i) {
+        case 0: // ร้านค้า (content)
+          affContentCtl.getAffiliateContent(
+            page: 'view',
+            target: 'content',
+            contentId: 0,
+          );
+          break;
+
+        case 2: // หมวดหมู่ (category)
+          affContentCtl.getAffiliateContent(
+            page: 'view',
+            target: 'category',
+            contentId: 0,
+          );
+          break;
+      }
     }
 
-    _tab.addListener(refresh);
-    _tab.animation?.addListener(refresh);
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      _loadedTabs.addAll([0, 2]);
+      await Future.wait([
+        affContentCtl.getAffiliateContent(
+            page: 'view', target: 'content', contentId: 0),
+        affContentCtl.getAffiliateContent(
+            page: 'view', target: 'category', contentId: 0),
+      ]);
 
-    final _ = affContentCtl;
+      triggerForIndex(_tab.index, force: false);
+    });
+
+    _tab.addListener(() {
+      if (_tab.indexIsChanging) return;
+      triggerForIndex(_tab.index);
+      setState(() {});
+    });
   }
 
   @override
@@ -158,18 +206,7 @@ class _AffiliateShopState extends State<AffiliateShop>
 
           final onPressed = _actionFor(idx);
           if (onPressed == null) return const SizedBox.shrink();
-          return Obx(() {
-            final isEmptyNow = switch (idx) {
-              0 => affContentCtl.contentEmpty.value,
-              1 => affProductCtl.productEmpty.value,
-              2 => affContentCtl.categoryEmpty.value,
-              _ => true,
-            };
-
-            if (isEmptyNow) return const SizedBox.shrink();
-
-            return buildBottomButton(_textFor(idx), onPressed);
-          });
+          return buildBottomButton(_textFor(idx), onPressed);
         },
       ),
       body: NestedScrollView(
@@ -209,28 +246,36 @@ class _AffiliateShopState extends State<AffiliateShop>
                         fontWeight: FontWeight.w500,
                         fontSize: 16),
                   ),
-                  Container(
-                    padding:
-                        const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
-                    decoration: BoxDecoration(
-                      color: themeColorDefault,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      spacing: 4,
-                      children: [
-                        SvgPicture.asset(
-                          'assets/images/affiliate/share.svg',
-                          width: 18,
-                          height: 18,
-                        ),
-                        Text(
-                          'แชร์ร้านค้า',
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w600),
-                        ),
-                      ],
+                  InkWell(
+                    onTap: () async {
+                      await shareDialog(
+                          shareTitle: 'แชร์ร้านค้าของฉัน',
+                          shareUrl: 'https://shopee.co.th/',
+                          shareText: 'ดูร้านของฉันสิ');
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 6, horizontal: 12),
+                      decoration: BoxDecoration(
+                        color: themeColorDefault,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        spacing: 4,
+                        children: [
+                          SvgPicture.asset(
+                            'assets/images/affiliate/share.svg',
+                            width: 18,
+                            height: 18,
+                          ),
+                          Text(
+                            'แชร์ร้านค้า',
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w600),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -242,45 +287,50 @@ class _AffiliateShopState extends State<AffiliateShop>
                   const double profileH = 72.0;
                   final double min = topPad + kToolbarHeight + tabH;
                   final double curr = constraints.biggest.height;
-
                   final double fadeStart = min + profileH;
                   final double t =
                       ((curr - min) / (fadeStart - min)).clamp(0.0, 1.0);
 
-                  final bg = userProfile['background_image'] as String?;
+                  return Obx(() {
+                    final bg = Get.find<AffiliateAccountCtr>()
+                            .profileData
+                            .value
+                            ?.cover ??
+                        '';
 
-                  return Stack(
-                    fit: StackFit.expand,
-                    children: [
-                      ImageFiltered(
-                        imageFilter: ImageFilter.blur(sigmaX: 1.5, sigmaY: 1.5),
-                        child: Image.network(
-                          bg ?? '',
-                          fit: BoxFit.cover,
-                          width: double.infinity,
+                    return Stack(
+                      fit: StackFit.expand,
+                      children: [
+                        ImageFiltered(
+                          imageFilter:
+                              ImageFilter.blur(sigmaX: 1.5, sigmaY: 1.5),
+                          child: bg.isNotEmpty
+                              ? Image.network(bg,
+                                  fit: BoxFit.cover, width: double.infinity)
+                              : Container(color: const Color(0xFFEEEEEE)),
                         ),
-                      ),
-                      Container(color: Colors.black.withValues(alpha: 0.30)),
-                      SafeArea(
-                        top: false,
-                        bottom: false,
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(
-                              10, kToolbarHeight + 8, 10, 48 + 8),
-                          child: Align(
-                            alignment: Alignment.bottomLeft,
-                            child: Opacity(
-                              opacity: t, // ค่อย ๆ หายตอนยุบ
-                              child: Transform.translate(
-                                offset: Offset(0, 16 * (1 - t)),
-                                child: _ProfileRow(),
+                        Container(color: Colors.black.withValues(alpha: .30)),
+                        SafeArea(
+                          top: false,
+                          bottom: false,
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(
+                                10, kToolbarHeight + 8, 10, 48 + 8),
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Opacity(
+                                opacity: t,
+                                child: Transform.translate(
+                                  offset: Offset(0, 16 * (1 - t)),
+                                  child: const _ProfileRow(),
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
-                  );
+                      ],
+                    );
+                  });
                 },
               ),
               bottom: PreferredSize(

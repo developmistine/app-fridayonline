@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 Color themeColorDefault = const Color(0xFF00ADEF);
@@ -105,4 +106,29 @@ Future<dynamic> loadingProductTier(context) {
       );
     },
   );
+}
+
+Future<void> loadingAffiliate(bool show) async {
+  if (show) {
+    if (Get.isDialogOpen != true) {
+      Get.dialog(
+        Center(
+          child: Lottie.asset(
+            'assets/images/loading_line.json',
+            height: 80,
+            width: 80,
+          ),
+        ),
+        barrierDismissible: false,
+        barrierColor: Colors.black.withValues(alpha: .2),
+      );
+    }
+    return;
+  } else {
+    if (Get.isDialogOpen == true) {
+      Get.back(); // ปิด dialog
+
+      await Future.delayed(const Duration(milliseconds: 50));
+    }
+  }
 }

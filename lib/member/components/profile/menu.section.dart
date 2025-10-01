@@ -15,6 +15,7 @@ import 'package:fridayonline/member/views/(profile)/myorder.dart';
 import 'package:fridayonline/member/views/(profile)/varsion.dart';
 import 'package:fridayonline/member/widgets/dialog.confirm.dart';
 import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/service/pathapi.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -316,12 +317,12 @@ Future<void> handleMenuTap(String title) async {
 
   switch (title) {
     case "Friday Sales Affiliate":
-      Get.to(() => AffiliateUser());
+      await Get.to(() => AffiliateUser());
       break;
     case "สิทธิพิเศษ":
       Get.to(() => WebViewApp(
             mparamurl:
-                'https://www.friday.co.th:8443/fridayonline/special-projects?cust_id=$custId&device=$device&session_id=$sessionId&token_app$tokenApp',
+                '$webview_hub/fridayonline/special-projects?cust_id=$custId&device=$device&session_id=$sessionId&token_app$tokenApp',
             mparamTitleName: 'สิทธิพิเศษ',
           ));
       // Get.to(() => const SpecialProjects());

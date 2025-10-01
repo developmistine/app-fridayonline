@@ -3,12 +3,14 @@ import 'dart:io';
 
 import 'package:fridayonline/member/components/error/error.page.dart';
 import 'package:fridayonline/member/components/webview/webview.dart';
+import 'package:fridayonline/member/controller/profile.ctr.dart';
 import 'package:fridayonline/member/models/check_version/check_version_model.dart';
 import 'package:fridayonline/member/utils/branch_manager_main.dart';
 import 'package:fridayonline/member/utils/image_preloader.dart';
 import 'package:fridayonline/global.dart';
 import 'package:fridayonline/preferrence.dart';
 import 'package:fridayonline/print.dart';
+import 'package:fridayonline/service/pathapi.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:flutter/services.dart';
 // import 'package:android_play_install_referrer/android_play_install_referrer.dart';
@@ -254,6 +256,7 @@ class _SplashScreenState extends State<SplashScreen> {
         var accToken = await data.accessToken;
         bool isGuest = (repType == '0' || repType == 'null');
         bool tokenInvalid = (accToken == "null" || accToken == "");
+        Get.put(ProfileCtl()).fetchProfile();
 
         if (isGuest) {
           if (accToken != "" && accToken != "null") {
@@ -275,7 +278,7 @@ class _SplashScreenState extends State<SplashScreen> {
               Get.offAll(() => EndUserHome(), routeName: "/EndUserHome");
               Get.to(() => WebViewApp(
                     mparamurl:
-                        'https://www.friday.co.th:8443/fridayonline/special-projects?cust_id=$custId&device=$device&session_id=$sessionId&token_app$tokenApp',
+                        '$webview_hub/fridayonline/special-projects?cust_id=$custId&device=$device&session_id=$sessionId&token_app$tokenApp',
                     mparamTitleName: 'สิทธิพิเศษ',
                   ));
               // Get.to(() => SpecialProjects());

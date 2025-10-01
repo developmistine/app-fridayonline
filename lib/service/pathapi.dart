@@ -21,7 +21,7 @@ String shopMistine = 'https://shop.fridayth.com/';
 String apiToken =
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJAZnJpZGF5YXBpMjAyMyMifQ.9azjADSAOGAg8Ziou2oKD6G77y7PuDJLMDPV6EEr33E';
 String pathShare = 'https://web.fridayth.com/share_product_enduser';
-String b2c_path = "https://friday.co.th";
+String web_path = "https://friday-online.com/";
 // ?production
 String b2c_api_url = "https://api.friday.co.th/fridayonline/";
 String base_api_url = "https://api.friday.co.th/";
@@ -30,3 +30,4 @@ String base_app_url = "https://app.friday.co.th/";
 // ?dev
 // String b2c_api_url = "https://dev-app.friday.co.th/";
 String webview_b2c = "https://www.friday.co.th/";
+String webview_hub = "https://www.friday.co.th:8443/";

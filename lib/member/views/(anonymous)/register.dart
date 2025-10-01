@@ -108,6 +108,7 @@ class _RegisterScreen extends State<RegisterScreen> {
       await prefs.setString("refreshToken", res.data.refreshToken);
       endUserSignInCtr.settingPreference('1', '', '5', res.data.custId,
           redirect: widget.redirect);
+
       Get.offAll(() => SplashScreen(redirect: widget.redirect));
     } else {
       if (!Get.isSnackbarOpen) {

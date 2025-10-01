@@ -1,6 +1,7 @@
 import 'package:fridayonline/controller/app_controller.dart';
 import 'package:fridayonline/controller/log_analytics/log_analytics_ctr.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.account.ctr.dart';
+import 'package:fridayonline/member/controller/affiliate/affiliate.commission.ctr.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.content.ctr.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.product.ctr.dart';
 import 'package:fridayonline/member/controller/brand.ctr.dart';
@@ -57,5 +58,6 @@ class RootBinging implements Bindings {
     Get.put(AffiliateAccountCtr());
     Get.put(AffiliateContentCtr());
     Get.put(AffiliateProductCtr());
+    Get.put(AffiliateCommissionCtr());
   }
 }

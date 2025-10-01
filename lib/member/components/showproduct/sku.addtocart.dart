@@ -56,7 +56,7 @@ class _BottomAddToCartState extends State<BottomAddToCart> {
     super.dispose();
   }
 
-  addToCart() async {
+  Future<Future> addToCart() async {
     // showProductCtr.itemId.value = 0;
     return Get.bottomSheet(
         isScrollControlled: true,
@@ -890,7 +890,7 @@ class _BottomAddToCartState extends State<BottomAddToCart> {
     }));
   }
 
-  manageTierWithQty() async {
+  Future<void> manageTierWithQty() async {
     bool isAllSelected = showProductCtr.selectedOptions.values.length ==
             showProductCtr.productDetail.value!.data.tierVariations.length &&
         showProductCtr.selectedOptions.values
@@ -1168,7 +1168,8 @@ class _BottomAddToCartState extends State<BottomAddToCart> {
   }
 }
 
-productPriceWidget({required productPrices, required bool showPercent}) {
+List<Widget> productPriceWidget(
+    {required productPrices, required bool showPercent}) {
   if (!productPrices.haveDiscount) {
     return [
       Text(
