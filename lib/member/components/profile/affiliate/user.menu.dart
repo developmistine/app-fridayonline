@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fridayonline/member/views/(affiliate)/commission/commission.dart';
-import 'package:fridayonline/member/views/(affiliate)/dashboard.dart';
+import 'package:fridayonline/member/views/(affiliate)/dashboard/dashboard.dart';
 import 'package:fridayonline/member/views/(affiliate)/shop.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';

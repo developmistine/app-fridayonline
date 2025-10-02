@@ -4,7 +4,6 @@ import 'package:fridayonline/member/components/shimmer/shimmer.card.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.commission.ctr.dart';
 import 'package:fridayonline/member/views/(affiliate)/commission/earns.dart';
 import 'package:fridayonline/member/views/(affiliate)/commission/orders.dart';
-import 'package:fridayonline/print.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';

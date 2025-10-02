@@ -9,6 +9,7 @@ import 'package:fridayonline/member/components/profile/affiliate/user.menu.dart'
 import 'package:fridayonline/member/components/profile/affiliate/user.slide.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/product.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.account.ctr.dart';
+import 'package:fridayonline/member/controller/affiliate/affiliate.commission.ctr.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.product.ctr.dart';
 import 'package:fridayonline/safearea.dart';
 import 'package:fridayonline/theme.dart';
@@ -24,6 +25,7 @@ class AffiliateUser extends StatefulWidget {
 
 class _AffiliateUserState extends State<AffiliateUser> {
   final affAccountCtl = Get.find<AffiliateAccountCtr>();
+  final affCommissionCtl = Get.find<AffiliateCommissionCtr>();
   final affProductCtl = Get.find<AffiliateProductCtr>();
 
   late final ScrollController _scrollCtr;
@@ -34,6 +36,7 @@ class _AffiliateUserState extends State<AffiliateUser> {
     await affAccountCtl.checkStatus();
 
     if (affAccountCtl.validStatus.value == 'approved') {
+      affCommissionCtl.getAccountSummary();
       await affProductCtl.refreshRecommendProducts();
     }
   }
@@ -42,6 +45,7 @@ class _AffiliateUserState extends State<AffiliateUser> {
   void initState() {
     super.initState();
     affAccountCtl.checkStatus();
+    affCommissionCtl.getAccountSummary();
 
     _scrollCtr = ScrollController()
       ..addListener(() {

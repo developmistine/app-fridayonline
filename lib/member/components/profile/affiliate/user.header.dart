@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fridayonline/member/components/shimmer/shimmer.card.dart';
 import 'package:fridayonline/member/components/utils/share.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.account.ctr.dart';
+import 'package:fridayonline/member/controller/affiliate/affiliate.commission.ctr.dart';
+import 'package:fridayonline/member/views/(affiliate)/dashboard/dashboard.dart';
 import 'package:fridayonline/member/views/(affiliate)/setting/setting.dart';
 import 'package:fridayonline/member/views/(affiliate)/setting/setting.account.dart';
 import 'package:get/get.dart';
@@ -186,59 +189,78 @@ class Perfomance extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 18),
-      child: Container(
-        width: double.infinity,
-        padding: const EdgeInsets.all(12),
-        decoration: ShapeDecoration(
-          color: Colors.white,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: 8,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  'ภาพรวม',
-                  style: TextStyle(
-                    color: Color(0xFF1F1F1F),
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
+    return InkWell(
+      onTap: () => Get.to(() => Dashboard()),
+      child: Padding(
+        padding:
+            const EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 18),
+        child: Container(
+          width: double.infinity,
+          padding: const EdgeInsets.all(12),
+          decoration: ShapeDecoration(
+            color: Colors.white,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: 8,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'ภาพรวม',
+                    style: TextStyle(
+                      color: Color(0xFF1F1F1F),
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
-                ),
-                SvgPicture.asset(
-                  'assets/images/affiliate/arrow_gradient_blue.svg',
-                  width: 26,
-                  height: 26,
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: performanceData.map((v) {
-                return Expanded(
+                  SvgPicture.asset(
+                    'assets/images/affiliate/arrow_gradient_blue.svg',
+                    width: 26,
+                    height: 26,
+                  ),
+                ],
+              ),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                Expanded(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     spacing: 4,
                     children: [
+                      Obx(() {
+                        final ctr = Get.find<AffiliateCommissionCtr>();
+                        final orders =
+                            ctr.accSummaryData.value?.ordersTotal ?? '0';
+
+                        if (ctr.isAccSummaryLoading.value) {
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 6.0),
+                            child: ShimmerCard(
+                              width: 48,
+                              height: 18,
+                              radius: 2,
+                              color: Colors.grey.shade300,
+                            ),
+                          );
+                        }
+
+                        return Text(
+                          orders,
+                          textAlign: TextAlign.center,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: GoogleFonts.ibmPlexSansThai(
+                            color: Color(0xFF1C9AD6),
+                            fontSize: 18,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        );
+                      }),
                       Text(
-                        v['value'] ?? '',
-                        textAlign: TextAlign.center,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: GoogleFonts.ibmPlexSansThai(
-                          color: Color(0xFF1C9AD6),
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      Text(
-                        v['label'] ?? '',
+                        'คำสั่งซื้อ',
                         textAlign: TextAlign.center,
                         style: const TextStyle(
                           color: Color(0xFF5A5A5A),
@@ -248,10 +270,101 @@ class Perfomance extends StatelessWidget {
                       ),
                     ],
                   ),
-                );
-              }).toList(),
-            ),
-          ],
+                ),
+                Expanded(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    spacing: 4,
+                    children: [
+                      Obx(() {
+                        final ctr = Get.find<AffiliateCommissionCtr>();
+                        final sales =
+                            ctr.accSummaryData.value?.salesTotal ?? '฿0';
+
+                        if (ctr.isAccSummaryLoading.value) {
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 6.0),
+                            child: ShimmerCard(
+                              width: 48,
+                              height: 18,
+                              radius: 2,
+                              color: Colors.grey.shade300,
+                            ),
+                          );
+                        }
+                        return Text(
+                          sales,
+                          textAlign: TextAlign.center,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: GoogleFonts.ibmPlexSansThai(
+                            color: Color(0xFF1C9AD6),
+                            fontSize: 18,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        );
+                      }),
+                      Text(
+                        'ยอดขาย',
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          color: Color(0xFF5A5A5A),
+                          fontSize: 13,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    spacing: 4,
+                    children: [
+                      Obx(() {
+                        final ctr = Get.find<AffiliateCommissionCtr>();
+                        final comm =
+                            ctr.accSummaryData.value?.estimatedCommission ??
+                                '฿0';
+
+                        if (ctr.isAccSummaryLoading.value) {
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 6.0),
+                            child: ShimmerCard(
+                              width: 48,
+                              height: 18,
+                              radius: 2,
+                              color: Colors.grey.shade300,
+                            ),
+                          );
+                        }
+                        return Text(
+                          comm,
+                          textAlign: TextAlign.center,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: GoogleFonts.ibmPlexSansThai(
+                            color: Color(0xFF1C9AD6),
+                            fontSize: 18,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        );
+                      }),
+                      Text(
+                        'ค่าคอมโดยประมาณ',
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          color: Color(0xFF5A5A5A),
+                          fontSize: 13,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ]),
+            ],
+          ),
         ),
       ),
     );

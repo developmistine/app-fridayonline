@@ -132,6 +132,7 @@ dependencies:
   path_drawing: ^1.0.1
   step_progress: ^2.7.0
   calendar_date_picker2: ^2.0.1
+  fl_chart: ^1.1.1
 
 # Icon configure
 flutter_launcher_icons:

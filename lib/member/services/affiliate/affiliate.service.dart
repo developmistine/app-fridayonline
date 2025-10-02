@@ -7,6 +7,9 @@ import 'package:fridayonline/member/models/affiliate/commission.dtlearning.model
 import 'package:fridayonline/member/models/affiliate/commission.dtlorder.model.dart';
 import 'package:fridayonline/member/models/affiliate/commission.sumearning.model.dart';
 import 'package:fridayonline/member/models/affiliate/commission.sumorder.model.dart';
+import 'package:fridayonline/member/models/affiliate/dashboard.overview.dart';
+import 'package:fridayonline/member/models/affiliate/dashboard.products.dart';
+import 'package:fridayonline/member/models/affiliate/dashboard.summary.dart';
 import 'package:fridayonline/member/models/affiliate/option.model.dart';
 import 'package:fridayonline/member/models/affiliate/payment.model.dart';
 import 'package:fridayonline/member/models/affiliate/productcontent.model.dart';
@@ -1070,6 +1073,103 @@ class AffiliateService {
         var jsonString = jsonCall.bodyBytes;
         final response =
             affiliateEarningDetailFromJson(utf8.decode(jsonString));
+        return response;
+      }
+      return Future.error(
+          'Error AffiliateService : api/v1/affiliate/commissions/earnings');
+    } catch (e) {
+      print('error api/v1/affiliate/commissions/earnings : $e');
+      return Future.error("$e  from api/v1/affiliate/commissions/earnings");
+    }
+  }
+
+  Future<DashBoardOverview?> getDbOverview(
+      {String? period, String? str, String? end}) async {
+    var url = Uri.parse("${b2c_api_url}api/v1/affiliate/dashboards/overview");
+
+    final payload = {"period": period, "start_time": str, "end_time": end};
+
+    try {
+      var jsonCall = await AuthFetch.post(
+        url,
+        headers: <String, String>{
+          'Authorization': 'Bearer ${await _data.accessToken}',
+          'Content-type': 'application/json; charset=utf-8'
+        },
+        body: jsonEncode(payload),
+      );
+      if (jsonCall.statusCode == 200) {
+        var jsonString = jsonCall.bodyBytes;
+        final response = dashBoardOverviewFromJson(utf8.decode(jsonString));
+        return response;
+      }
+      return Future.error(
+          'Error AffiliateService : api/v1/affiliate/commissions/earnings');
+    } catch (e) {
+      print('error api/v1/affiliate/commissions/earnings : $e');
+      return Future.error("$e  from api/v1/affiliate/commissions/earnings");
+    }
+  }
+
+  Future<AccountSummary?> getAccountSummary() async {
+    var url = Uri.parse("${b2c_api_url}api/v1/affiliate/profile/summary");
+
+    try {
+      var jsonCall = await AuthFetch.get(
+        url,
+        headers: <String, String>{
+          'Authorization': 'Bearer ${await _data.accessToken}',
+          'Content-type': 'application/json; charset=utf-8'
+        },
+      );
+      if (jsonCall.statusCode == 200) {
+        var jsonString = jsonCall.bodyBytes;
+        final response = accountSummaryFromJson(utf8.decode(jsonString));
+        return response;
+      }
+      return Future.error(
+          'Error AffiliateService : api/v1/affiliate/profile/summary');
+    } catch (e) {
+      print('error api/v1/affiliate/profile/summary : $e');
+      return Future.error("$e  from api/v1/affiliate/profile/summary");
+    }
+  }
+
+  Future<DashBoardProducts?> getDbProductPerformance(
+      {String? period,
+      String? str,
+      String? end,
+      int? categoryId,
+      String? orderBy, // DESC, ASC
+      String? keyword, // search
+      int? limit,
+      int? offset}) async {
+    var url = Uri.parse(
+        "${b2c_api_url}api/v1/affiliate/dashboards/products/performance");
+
+    final payload = {
+      "period": period,
+      "start_time": str,
+      "end_time": end,
+      "category_id": categoryId,
+      "order_by": orderBy,
+      "keyword": keyword,
+      "limit": limit,
+      "offset": offset
+    };
+
+    try {
+      var jsonCall = await AuthFetch.post(
+        url,
+        headers: <String, String>{
+          'Authorization': 'Bearer ${await _data.accessToken}',
+          'Content-type': 'application/json; charset=utf-8'
+        },
+        body: jsonEncode(payload),
+      );
+      if (jsonCall.statusCode == 200) {
+        var jsonString = jsonCall.bodyBytes;
+        final response = dashBoardProductsFromJson(utf8.decode(jsonString));
         return response;
       }
       return Future.error(
