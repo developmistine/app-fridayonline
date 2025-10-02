@@ -682,29 +682,60 @@ class _EndUserHomeState extends State<EndUserHome>
   }
 
   Widget bottomBarNoFair() {
-    return BottomAppBar(
-      child: Container(
-        height: 58,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Color(0x0C000000),
-              blurRadius: 24,
-              offset: Offset(0, -4),
-              spreadRadius: 0,
-            )
-          ],
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: List.generate(_labels.length, (index) {
-            Color textColor = index == _selectedIndex
-                ? themeColorDefault
-                : Colors.grey.shade500;
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Color(0x0C000000),
+            blurRadius: 24,
+            offset: Offset(0, -4),
+            spreadRadius: 0,
+          )
+        ],
+      ),
+      child: BottomAppBar(
+        color: Colors.white,
+        child: SizedBox(
+          height: 58,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: List.generate(_labels.length, (index) {
+              Color textColor = index == _selectedIndex
+                  ? themeColorDefault
+                  : Colors.grey.shade500;
 
-            if (index == 2) {
-              return notifyBadges(InkWell(
+              if (index == 2) {
+                return notifyBadges(InkWell(
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () => _onItemTapped(index),
+                  child: SizedBox(
+                    width: 60,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        index == _selectedIndex
+                            ? _imageIconsActive[index] ?? const SizedBox()
+                            : _imageIconsInactive[index] ?? const SizedBox(),
+                        const SizedBox(height: 2),
+                        Text(
+                          _labels[index],
+                          style: GoogleFonts.ibmPlexSansThai(
+                            color: textColor,
+                            fontSize: 12,
+                            fontWeight: index == _selectedIndex
+                                ? FontWeight.bold
+                                : FontWeight.normal,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ));
+              }
+
+              return InkWell(
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () => _onItemTapped(index),
@@ -730,37 +761,9 @@ class _EndUserHomeState extends State<EndUserHome>
                     ],
                   ),
                 ),
-              ));
-            }
-
-            return InkWell(
-              splashColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              onTap: () => _onItemTapped(index),
-              child: SizedBox(
-                width: 60,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    index == _selectedIndex
-                        ? _imageIconsActive[index] ?? const SizedBox()
-                        : _imageIconsInactive[index] ?? const SizedBox(),
-                    const SizedBox(height: 2),
-                    Text(
-                      _labels[index],
-                      style: GoogleFonts.ibmPlexSansThai(
-                        color: textColor,
-                        fontSize: 12,
-                        fontWeight: index == _selectedIndex
-                            ? FontWeight.bold
-                            : FontWeight.normal,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
-          }),
+              );
+            }),
+          ),
         ),
       ),
     );

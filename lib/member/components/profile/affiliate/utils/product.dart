@@ -262,8 +262,8 @@ Widget productItem({
           right: 0,
           child: IgnorePointer(
             child: SizedBox(
-              width: 55,
-              height: 55,
+              width: 68,
+              height: 68,
               child: CircleAvatar(
                 backgroundColor: Colors.black54,
                 child: Center(
@@ -271,7 +271,7 @@ Widget productItem({
                     'สินค้าหมด',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 10,
+                      fontSize: 14,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

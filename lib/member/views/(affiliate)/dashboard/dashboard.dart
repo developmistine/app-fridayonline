@@ -724,7 +724,6 @@ class ProductPerfItem extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 14,
-                            fontFamily: 'IBM Plex Sans Thai',
                             fontWeight: FontWeight.w600,
                           ),
                         ),
