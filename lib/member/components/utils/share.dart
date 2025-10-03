@@ -3,8 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fridayonline/member/components/utils/status.dialog.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.account.ctr.dart';
-import 'package:fridayonline/member/models/affiliate/shopcontent.model.dart';
-import 'package:fridayonline/member/utils/cached_image.dart';
 import 'package:fridayonline/member/utils/format.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:get/get.dart';
@@ -12,10 +10,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-// เรียกใช้งาน:
-// await shareDialog(shareUrl: 'https://yourshop.com/mystore', shareText: 'ดูร้านของฉันสิ');
-
-// สร้าง struct (class) สำหรับ product ที่มี field: name, image, price, priceBfDiscount, commission
 class ShareProduct {
   final int productId;
   final String? title;

@@ -114,6 +114,7 @@ class AffiliateShop extends StatefulWidget {
 class _AffiliateShopState extends State<AffiliateShop>
     with SingleTickerProviderStateMixin {
   late final TabController _tab;
+
   final affContentCtl = Get.find<AffiliateContentCtr>();
   final affProductCtl = Get.find<AffiliateProductCtr>();
   final affAccountCtl = Get.find<AffiliateAccountCtr>();

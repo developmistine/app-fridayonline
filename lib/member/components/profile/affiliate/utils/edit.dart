@@ -7,6 +7,7 @@ import 'package:fridayonline/member/components/profile/affiliate/shop/shop.produ
 import 'package:fridayonline/member/components/profile/affiliate/utils/content.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/product.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/upload.dart';
+import 'package:fridayonline/member/components/profile/affiliate/utils/videoplayer.dart';
 import 'package:fridayonline/member/components/profile/myreview/myrating.card.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.content.ctr.dart';
 import 'package:fridayonline/member/models/affiliate/shopcontent.model.dart';
@@ -1075,7 +1076,12 @@ class _NetworkVideoPreviewState extends State<_NetworkVideoPreview> {
   Future<void> _init() async {
     if (widget.url.trim().isEmpty) return;
     try {
-      final ctr = await setVideoContent(widget.url); // ฟังก์ชันแคชของคุณ
+      final ctr = await setVideoContent(
+        widget.url,
+        // fallbackForHuawei720: videoUrl720, // ถ้ามี
+        autoPlay: true,
+        initialVolume: 0.0,
+      ); // ฟังก์ชันแคชของคุณ
       if (!mounted) return;
       setState(() => _ctr = ctr);
     } catch (_) {

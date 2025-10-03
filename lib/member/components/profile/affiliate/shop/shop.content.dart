@@ -16,6 +16,7 @@ class ShopContent extends StatefulWidget {
 class _ShopContentState extends State<ShopContent>
     with AutomaticKeepAliveClientMixin {
   final affContentCtl = Get.find<AffiliateContentCtr>();
+  final PageStorageBucket bucket = PageStorageBucket();
 
   void scrollInnerToTop(BuildContext context) {
     final c = PrimaryScrollController.of(context);
@@ -42,56 +43,62 @@ class _ShopContentState extends State<ShopContent>
 
       final isEmpty = !isLoading && list.isEmpty;
 
-      return CustomScrollView(
-        key: const PageStorageKey('tab_shop_content'),
-        physics: ClampingScrollPhysics(),
-        slivers: [
-          SliverOverlapInjector(
-            handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
-          ),
-          if (isLoading) ...[
-            const SliverFillRemaining(
-              hasScrollBody: false,
-              child: Center(child: CircularProgressIndicator()),
-            )
-          ] else if (isEmpty) ...[
-            SliverFillRemaining(
-              hasScrollBody: false,
-              child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: buildEmptyBox(
-                  'ไม่พบเนื้อหา',
-                  'เพิ่มเนื้อหาร้านค้าเพื่อตกแต่งร้านของคุณ',
-                  'สร้างเนื้อหา',
-                  widget.index,
+      return PageStorage(
+        bucket: bucket,
+        child: CustomScrollView(
+          // physics: ClampingScrollPhysics(),
+          slivers: [
+            SliverOverlapInjector(
+              handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+            ),
+            if (isLoading) ...[
+              const SliverFillRemaining(
+                hasScrollBody: false,
+                child: Center(child: CircularProgressIndicator()),
+              )
+            ] else if (isEmpty) ...[
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: buildEmptyBox(
+                    'ไม่พบเนื้อหา',
+                    'เพิ่มเนื้อหาร้านค้าเพื่อตกแต่งร้านของคุณ',
+                    'สร้างเนื้อหา',
+                    widget.index,
+                  ),
+                ),
+              )
+            ] else ...[
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
+                  child: buildHeaderBox(),
                 ),
               ),
-            )
-          ] else ...[
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
-                child: buildHeaderBox(),
-              ),
-            ),
-            SliverPadding(
-              padding: const EdgeInsets.symmetric(vertical: 0),
-              sliver: SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  (context, index) {
-                    final content.ContentData d = list[index];
-
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8),
-                      child: buildContentSection(d),
-                    );
-                  },
-                  childCount: list.length,
+              SliverPadding(
+                padding: const EdgeInsets.symmetric(vertical: 0),
+                sliver: SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    (context, index) {
+                      final d = list[index];
+                      return KeyedSubtree(
+                        key: ValueKey('row-${d.contentType}-$index'),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                          child: buildContentSection(d),
+                        ),
+                      );
+                    },
+                    childCount: list.length,
+                    addAutomaticKeepAlives: true,
+                    addRepaintBoundaries: true,
+                  ),
                 ),
               ),
-            ),
+            ],
           ],
-        ],
+        ),
       );
     });
   }

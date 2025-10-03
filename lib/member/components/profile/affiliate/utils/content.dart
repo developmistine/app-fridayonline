@@ -9,6 +9,7 @@ import 'package:fridayonline/member/components/profile/affiliate/shop/shop.categ
 import 'package:fridayonline/member/components/profile/affiliate/shop/shop.content.add.dart';
 import 'package:fridayonline/member/components/profile/affiliate/shop/shop.product.add.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/product.dart';
+import 'package:fridayonline/member/components/profile/affiliate/utils/videoplayer.dart';
 import 'package:fridayonline/member/components/utils/confirm.dialog.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.content.ctr.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.product.ctr.dart';
@@ -422,6 +423,12 @@ Widget buildProductSort() {
   });
 }
 
+// ช่วยฟังก์ชันทำ key
+Key _itemKey(
+    {required int index, required String? id, required String fallback}) {
+  return ValueKey(id?.isNotEmpty == true ? id : '$fallback-$index');
+}
+
 // --- content_type == 1 : Banner
 Widget _buildType1(List<content.Item> details) {
   return Column(
@@ -435,38 +442,41 @@ Widget _buildType1(List<content.Item> details) {
 
       if (image.isEmpty || isHide) return SizedBox();
 
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: 8,
-        children: [
-          if (showName && name.isNotEmpty)
-            Padding(
-              padding: const EdgeInsets.only(top: 8.0),
-              child: Text(
-                name,
-                style: GoogleFonts.ibmPlexSansThai(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 13,
+      return KeyedSubtree(
+        key: _itemKey(index: idx, id: image, fallback: 'type1'),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 8,
+          children: [
+            if (showName && name.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: Text(
+                  name,
+                  style: GoogleFonts.ibmPlexSansThai(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 13,
+                  ),
                 ),
               ),
+            Container(
+              margin: const EdgeInsets.only(top: 8.0),
+              clipBehavior: Clip.antiAlias,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: Colors.white,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  CacheImageContentShop(
+                    url: image,
+                  ),
+                ],
+              ),
             ),
-          Container(
-            margin: const EdgeInsets.only(top: 8.0),
-            clipBehavior: Clip.antiAlias,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: Colors.white,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                CacheImageContentShop(
-                  url: image,
-                ),
-              ],
-            ),
-          ),
-        ],
+          ],
+        ),
       );
     }),
   );
@@ -558,53 +568,50 @@ Widget _buildType3(List<content.Item> details) {
 
       if (visibleItems.isEmpty) return const SizedBox.shrink();
 
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          if (showName && name.isNotEmpty)
-            Padding(
-              padding: const EdgeInsets.only(top: 8.0),
-              child: Text(
-                name,
-                style: GoogleFonts.ibmPlexSansThai(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 13,
+      return KeyedSubtree(
+          key: _itemKey(index: idx, id: name, fallback: 'type3'),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if (showName && name.isNotEmpty)
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: Text(
+                    name,
+                    style: GoogleFonts.ibmPlexSansThai(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 13,
+                    ),
+                  ),
                 ),
-              ),
-            ),
-          LayoutBuilder(builder: (context, constraints) {
-            final w = constraints.maxWidth;
-            final count = math.min(6, math.max(2, (w / 180).floor()));
-
-            return GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              padding: const EdgeInsets.symmetric(vertical: 4),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: count,
-                mainAxisSpacing: 4,
-                crossAxisSpacing: 4,
-                childAspectRatio: 0.62,
-              ),
-              itemCount: visibleItems.length,
-              itemBuilder: (context, index) {
-                final p = visibleItems[index];
-                return productItem(
-                  product: p,
-                  onTap: () {
-                    Get.find<ShowProductSkuCtr>()
-                        .fetchB2cProductDetail(p.productId, 'shop_content');
-                    // setPauseVideo();
-                    Get.toNamed(
-                      '/ShowProductSku/${p.productId}',
-                    );
-                  },
-                );
-              },
-            );
-          }),
-        ],
-      );
+              GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                padding: const EdgeInsets.symmetric(vertical: 4),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 4,
+                  crossAxisSpacing: 4,
+                  childAspectRatio: 0.62,
+                ),
+                itemCount: visibleItems.length,
+                itemBuilder: (context, index) {
+                  final p = visibleItems[index];
+                  return productItem(
+                    product: p,
+                    onTap: () {
+                      Get.find<ShowProductSkuCtr>()
+                          .fetchB2cProductDetail(p.productId, 'shop_content');
+                      // setPauseVideo();
+                      Get.toNamed(
+                        '/ShowProductSku/${p.productId}',
+                      );
+                    },
+                  );
+                },
+              )
+            ],
+          ));
     }),
   );
 }
@@ -671,106 +678,107 @@ Widget _buildType5(List<content.Item> details) {
 
       if (isHide) return SizedBox();
 
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          if (showName && name.isNotEmpty)
-            Padding(
-              padding: const EdgeInsets.only(top: 8.0),
-              child: Text(
-                'name',
-                style: GoogleFonts.ibmPlexSansThai(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 13,
-                ),
-              ),
-            ),
-          Container(
-            margin: const EdgeInsets.only(top: 8),
-            decoration: BoxDecoration(
-              color: Colors.black12,
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: FutureBuilder<VideoPlayerController>(
-              future: setVideoContent(videoUrl),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return AspectRatio(
-                    aspectRatio: 16 / 9,
-                    child: const SizedBox.shrink(),
-                  );
-                }
-                if (snapshot.hasError || !snapshot.hasData) {
-                  return const SizedBox.shrink();
-                }
-
-                final controller = snapshot.data!;
-                final aspect = controller.value.isInitialized
-                    ? controller.value.aspectRatio
-                    : (16 / 9);
-
-                return ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: AspectRatio(
-                    aspectRatio: aspect,
-                    child: Stack(
-                      alignment: Alignment.bottomRight,
-                      children: [
-                        // แตะเล่น/หยุด
-                        InkWell(
-                          onTap: () {
-                            if (controller.value.isPlaying) {
-                              controller.pause();
-                            } else {
-                              controller.play();
-                            }
-                          },
-                          child: VideoPlayer(controller),
-                        ),
-
-                        // ปุ่มควบคุมมุมขวาล่าง
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            IconButton(
-                              constraints: const BoxConstraints(maxWidth: 28),
-                              icon: const Icon(Icons.fullscreen),
-                              color: Colors.white,
-                              onPressed: () {
-                                // ❗ ใช้ videoUrl จาก d ของ item ปัจจุบัน
-                                Get.to(() =>
-                                    FullScreenVideoPlayer(videoUrl: videoUrl));
-                              },
-                            ),
-                            // ถ้าใช้ GetX สำหรับเก็บ volume เหมือนเดิม
-                            Obx(() {
-                              final isMuted = affContentCtl.volume.value == 0;
-                              return IconButton(
-                                icon: Icon(
-                                  isMuted
-                                      ? Icons.volume_off
-                                      : Icons.volume_down,
-                                  color: Colors.white,
-                                ),
-                                onPressed: () {
-                                  final nowMuted = controller.value.volume != 0;
-                                  controller.setVolume(nowMuted ? 0 : 1);
-                                  affContentCtl.volume.value =
-                                      controller.value.volume;
-                                },
-                              );
-                            }),
-                          ],
-                        ),
-                      ],
+      return KeyedSubtree(
+          key: _itemKey(index: idx, id: name, fallback: 'type5'),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if (showName && name.isNotEmpty)
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: Text(
+                    'name',
+                    style: GoogleFonts.ibmPlexSansThai(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 13,
                     ),
                   ),
-                );
-              },
-            ),
-          ),
-        ],
-      );
+                ),
+              Container(
+                margin: const EdgeInsets.only(top: 8),
+                decoration: BoxDecoration(
+                  color: Colors.black12,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: FutureBuilder<VideoPlayerController>(
+                  future: setVideoContent(
+                    videoUrl,
+                    // fallbackForHuawei720: 'videoUrl720', // ถ้ามี
+                    autoPlay: true,
+                    initialVolume: 0.0,
+                  ),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return const SizedBox(
+                        height: 200,
+                      );
+                    }
+                    if (snapshot.hasError) {
+                      return const SizedBox();
+                    }
+                    if (!snapshot.hasData) {
+                      return const SizedBox();
+                    }
+
+                    final controller = snapshot.data!;
+                    return ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: AspectRatio(
+                        aspectRatio: controller.value.aspectRatio,
+                        child: Stack(
+                          alignment: Alignment.bottomRight,
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                if (controller.value.isPlaying) {
+                                  controller.pause();
+                                } else {
+                                  controller.play();
+                                }
+                              },
+                              child: VideoPlayer(controller),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                IconButton(
+                                  constraints:
+                                      const BoxConstraints(maxWidth: 28),
+                                  icon: const Icon(Icons.fullscreen),
+                                  color: Colors.white,
+                                  onPressed: () {
+                                    Get.to(() => FullScreenVideoPlayer(
+                                        videoUrl: videoUrl));
+                                  },
+                                ),
+                                Obx(() {
+                                  return IconButton(
+                                    icon: Icon(
+                                      affContentCtl.volume.value == 0
+                                          ? Icons.volume_off
+                                          : Icons.volume_down,
+                                      color: Colors.white,
+                                    ),
+                                    onPressed: () {
+                                      // เปลี่ยนค่าของ volume ตามที่กด
+                                      controller.setVolume(
+                                          controller.value.volume != 0 ? 0 : 1);
+                                      affContentCtl.volume.value =
+                                          controller.value.volume;
+                                    },
+                                  );
+                                })
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ));
     }),
   );
 }
@@ -1773,25 +1781,26 @@ class DashedRRectPainter extends CustomPainter {
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
 
-Map<String, VideoPlayerController> videoControllers = {};
+// Map<String, VideoPlayerController> videoControllers = {};
 
-Future<VideoPlayerController> setVideoContent(String videoUrl) async {
-  if (videoControllers.containsKey(videoUrl)) {
-    return videoControllers[videoUrl]!;
-  }
+// Future<VideoPlayerController> setVideoContent(String content) async {
+//   if (videoControllers.containsKey(content)) {
+//     return videoControllers[content]!;
+//   }
 
-  VideoPlayerController videoCtr = VideoPlayerController.networkUrl(
-    Uri.parse(videoUrl),
-  );
+//   VideoPlayerController videoCtr = VideoPlayerController.networkUrl(
+//     Uri.parse(content),
+//   );
 
-  await videoCtr.initialize();
-  videoCtr.setVolume(0);
-  videoCtr.play();
+//   await videoCtr.initialize().then((value) {
+//     videoCtr.setVolume(0);
+//     videoCtr.play();
+//   });
 
-  videoControllers[videoUrl] = videoCtr;
+//   videoControllers[content] = videoCtr;
 
-  return videoCtr;
-}
+//   return videoCtr;
+// }
 
 Widget renderValidateFileText(int contentType) {
   final textStyle = GoogleFonts.ibmPlexSansThai(

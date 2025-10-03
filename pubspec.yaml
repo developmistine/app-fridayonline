@@ -133,6 +133,7 @@ dependencies:
   step_progress: ^2.7.0
   calendar_date_picker2: ^2.0.1
   fl_chart: ^1.1.1
+  mime: ^2.0.0
 
 # Icon configure
 flutter_launcher_icons:

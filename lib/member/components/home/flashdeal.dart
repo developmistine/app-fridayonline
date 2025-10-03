@@ -464,6 +464,7 @@ class FlashDealProductItem extends StatelessWidget {
                           child: CachedNetworkImage(
                             width: Get.width,
                             imageUrl: product.image,
+                            fit: BoxFit.cover,
                           ),
                         ),
                         if (product.isImageOverlayed)
@@ -600,7 +601,7 @@ class FlashDealProductItem extends StatelessWidget {
     );
   }
 
-  barStatus() {
+  dynamic barStatus() {
     bool num1 = product.stock / product.flashSaleStock < 0;
     bool num2 = product.stock / product.flashSaleStock > 1;
     if (num1) {
