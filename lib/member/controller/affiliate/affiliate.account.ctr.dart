@@ -9,6 +9,8 @@ import 'package:fridayonline/member/models/affiliate/payment.model.dart'
     as payment;
 import 'package:fridayonline/member/models/affiliate/option.model.dart'
     as option;
+import 'package:fridayonline/member/models/affiliate/share.model.dart';
+import 'package:fridayonline/member/models/affiliate/tips.model.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:get/get.dart';
 
@@ -40,7 +42,7 @@ enum PaymentPageMode { view, edit }
 
 class AffiliateAccountCtr extends GetxController {
   /// ===== Dependencies =====
-  late final ProfileCtl profileCtl;
+  // late final ProfileCtl profileCtl;
   late final ProfileOtpCtr otpCtl;
   final _service = AffiliateService();
 
@@ -52,13 +54,19 @@ class AffiliateAccountCtr extends GetxController {
   final paymentStatus = 'draft'.obs; // approved | pending | rejected | draft
   final paymentMode = PaymentPageMode.view.obs;
   //profile
+  final isLoadingTipsSlide = false.obs;
   final isLoadingProfileData = false.obs;
   final isLoadingPaymentInfo = false.obs;
   final isSavingPayment = false.obs;
+  final RxList<AffiliateTipsData> tipsSlideData = <AffiliateTipsData>[].obs;
   final Rxn<payment.Data> paymentInfo = Rxn<payment.Data>();
   final Rxn<profile.Data> profileData = Rxn<profile.Data>();
   final Rxn<List<bank.Datum>> bankData = Rxn<List<bank.Datum>>();
   final Rxn<List<option.Datum>> prefixData = Rxn<List<option.Datum>>();
+
+  //share
+  final isLoadingShareData = false.obs;
+  final Rxn<ShareData> shareData = Rxn<ShareData>();
 
   /// ===== Apply/Register (ฟอร์มสมัคร) =====
   // controllers
@@ -377,10 +385,10 @@ class AffiliateAccountCtr extends GetxController {
   void onInit() {
     super.onInit();
 
-    profileCtl = Get.put(ProfileCtl());
+    // profileCtl = Get.put(ProfileCtl());
     otpCtl = Get.put(ProfileOtpCtr());
 
-    ever(profileCtl.profileData, _prefillFromProfile);
+    // ever(profileCtl.profileData, prefillFromProfile);
 
     debounce<String>(
       username,
@@ -487,6 +495,41 @@ class AffiliateAccountCtr extends GetxController {
     } finally {}
   }
 
+  Future<void> getAffiliateTips() async {
+    isLoadingTipsSlide.value = true;
+    try {
+      final res = await _service.getAffiliateTips();
+      tipsSlideData.assignAll(res?.data ?? []);
+    } catch (e, _) {
+      tipsSlideData.value = [];
+    } finally {
+      isLoadingTipsSlide.value = false;
+    }
+  }
+
+  Future<ShareData?> getShareData({
+    required String shareType,
+    required int productId,
+    required String channel,
+    required int? categoryId,
+  }) async {
+    isLoadingShareData.value = true;
+    try {
+      final res = await _service.getShare(
+        shareType: shareType,
+        productId: productId,
+        channel: channel,
+        categoryId: categoryId,
+      );
+      return res?.data;
+    } catch (e, _) {
+      shareData.value = null;
+      return null;
+    } finally {
+      isLoadingShareData.value = false;
+    }
+  }
+
   // ==============  USERNAME CHECK FLOW  ==============
   Future<void> _checkUsername(String val) async {
     isCheckingUsername.value = true;
@@ -571,7 +614,7 @@ class AffiliateAccountCtr extends GetxController {
     avatarFile.value = null;
   }
 
-  void _prefillFromProfile(dynamic p) {
+  void prefillFromProfile(dynamic p) {
     if (p == null) return;
     if (email.value.isEmpty && !touched.contains(ApplyField.email)) {
       final e = p.email ?? '';

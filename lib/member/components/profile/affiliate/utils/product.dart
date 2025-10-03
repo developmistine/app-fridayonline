@@ -197,10 +197,17 @@ Widget productItem({
                   child: InkWell(
                     onTap: () {
                       shareDialog(
+                          shareType: 'product',
                           shareTitle: 'แชร์เพื่อรับค่าคอมมิชชั่นนี้',
-                          shareText: product.title,
-                          shareUrl: 'www.google.com',
-                          product: product);
+                          product: ShareProduct(
+                            productId: product.productId,
+                            title: product.title,
+                            image: product.image,
+                            discount: product.discount,
+                            price: product.price,
+                            priceBfDiscount: product.priceBeforeDiscount,
+                            commission: product.commission,
+                          ));
                     },
                     child: Container(
                       padding: EdgeInsets.all(4),

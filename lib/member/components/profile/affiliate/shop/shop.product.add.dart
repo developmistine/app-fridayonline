@@ -6,6 +6,7 @@ import 'package:fridayonline/member/components/showproduct/nodata.dart';
 import 'package:fridayonline/member/components/utils/status.dialog.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.content.ctr.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.product.ctr.dart';
+import 'package:fridayonline/member/controller/showproduct.sku.ctr.dart';
 import 'package:fridayonline/member/models/affiliate/shopcontent.model.dart';
 import 'package:fridayonline/member/models/affiliate/option.model.dart'
     as option;
@@ -298,7 +299,19 @@ class __AddProductSheetState extends State<_AddProductSheet> {
                                           key: ValueKey(id),
                                           children: [
                                             productItem(
-                                                product: p, showShare: false),
+                                              product: p,
+                                              showShare: false,
+                                              onTap: () {
+                                                Get.find<ShowProductSkuCtr>()
+                                                    .fetchB2cProductDetail(
+                                                        p.productId,
+                                                        'shop_content');
+                                                // setPauseVideo();
+                                                Get.toNamed(
+                                                  '/ShowProductSku/${p.productId}',
+                                                );
+                                              },
+                                            ),
                                             Positioned(
                                               bottom: 16,
                                               right: 16,

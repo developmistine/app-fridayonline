@@ -756,9 +756,11 @@ class ProductPerfItem extends StatelessWidget {
                     InkWell(
                       onTap: () {
                         shareDialog(
-                          shareTitle: 'แชร์เพื่อรับค่าคอมมิชชั่นนี้',
-                          shareText: title,
-                          shareUrl: 'www.google.com',
+                          shareType: 'product',
+                          shareTitle: 'แชร์สินค้า',
+                          product: ShareProduct(
+                            productId: item.productId,
+                          ),
                         );
                       },
                       child: Container(

@@ -30,10 +30,6 @@ class _ShopEditProductState extends State<ShopEditProduct> {
           affProductCtl.loadMoreDefaultProducts(page: 'modify');
         }
       });
-
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      affProductCtl.refreshDefaultProducts(page: 'modify');
-    });
   }
 
   @override

@@ -67,6 +67,8 @@ class Data {
   String icon;
   bool isImageOverlayed;
   String imageOverlay;
+  String commission;
+  bool canShare;
 
   Data({
     required this.productId,
@@ -100,6 +102,8 @@ class Data {
     required this.icon,
     required this.isImageOverlayed,
     required this.imageOverlay,
+    required this.commission,
+    required this.canShare,
   });
 
   factory Data.fromJson(Map<String, dynamic> json) => Data(
@@ -135,7 +139,9 @@ class Data {
       teaserFlashsale: TeaserFlashsale.fromJson(json["teaser_flashsale"]),
       icon: json["icon"],
       isImageOverlayed: json["is_image_overlayed"],
-      imageOverlay: json["image_overlay"]);
+      imageOverlay: json["image_overlay"],
+      commission: json["commission"] ?? '',
+      canShare: json["can_share"] ?? false);
 
   Map<String, dynamic> toJson() => {
         "product_id": productId,
@@ -170,7 +176,9 @@ class Data {
         "teaser_flashsale": teaserFlashsale.toJson(),
         "icon": icon,
         "is_image_overlayed": isImageOverlayed,
-        "image_overlay": imageOverlay
+        "image_overlay": imageOverlay,
+        "commission": commission,
+        "can_share": canShare,
       };
 }
 

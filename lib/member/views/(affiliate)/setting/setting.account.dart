@@ -326,10 +326,10 @@ class _SettingAffAccountState extends State<SettingAffAccount> {
                           ),
                         ],
                       ),
-                      PrettyLinkField(
-                        url: '$web_path${d.account.userName}',
-                        label: 'ลิงก์ตัวอย่าง',
-                      )
+                      // PrettyLinkField(
+                      //   url: '$web_path${d.account.userName}',
+                      //   label: 'ลิงก์ตัวอย่าง',
+                      // )
                     ],
                   ),
                 ),

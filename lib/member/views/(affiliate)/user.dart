@@ -11,6 +11,9 @@ import 'package:fridayonline/member/components/profile/affiliate/utils/product.d
 import 'package:fridayonline/member/controller/affiliate/affiliate.account.ctr.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.commission.ctr.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.product.ctr.dart';
+import 'package:fridayonline/member/controller/profile.ctr.dart';
+import 'package:fridayonline/member/controller/showproduct.sku.ctr.dart';
+import 'package:fridayonline/member/models/profile/profile_data.dart';
 import 'package:fridayonline/safearea.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:get/get.dart';
@@ -27,6 +30,8 @@ class _AffiliateUserState extends State<AffiliateUser> {
   final affAccountCtl = Get.find<AffiliateAccountCtr>();
   final affCommissionCtl = Get.find<AffiliateCommissionCtr>();
   final affProductCtl = Get.find<AffiliateProductCtr>();
+  // final profileCtl = Get.find<ProfileCtl>();
+  // Worker? _profileWorker;
 
   late final ScrollController _scrollCtr;
   final RxBool _showBackToTop = false.obs;
@@ -44,6 +49,17 @@ class _AffiliateUserState extends State<AffiliateUser> {
   @override
   void initState() {
     super.initState();
+    // final p0 = profileCtl.profileData.value;
+    // if (p0 != null) affAccountCtl.prefillFromProfile(p0);
+
+    // _profileWorker = ever<ProfileData?>(
+    //   profileCtl.profileData,
+    //   (p) {
+    //     if (p != null) affAccountCtl.prefillFromProfile(p);
+    //   },
+    // );
+
+    affAccountCtl.getAffiliateTips();
     affAccountCtl.checkStatus();
     affCommissionCtl.getAccountSummary();
 
@@ -64,6 +80,7 @@ class _AffiliateUserState extends State<AffiliateUser> {
   @override
   void dispose() {
     _scrollCtr.dispose();
+    // _profileWorker?.dispose();
     super.dispose();
   }
 
@@ -209,7 +226,19 @@ class _AffiliateUserState extends State<AffiliateUser> {
                                           return Stack(
                                             children: [
                                               productItem(
-                                                  product: p, showShare: false),
+                                                product: p,
+                                                showShare: false,
+                                                onTap: () {
+                                                  Get.find<ShowProductSkuCtr>()
+                                                      .fetchB2cProductDetail(
+                                                          p.productId,
+                                                          'shop_content');
+                                                  // setPauseVideo();
+                                                  Get.toNamed(
+                                                    '/ShowProductSku/${p.productId}',
+                                                  );
+                                                },
+                                              ),
                                               Positioned(
                                                 bottom: 16,
                                                 right: 16,

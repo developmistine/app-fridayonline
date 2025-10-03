@@ -1,6 +1,7 @@
 import 'package:fridayonline/member/components/appbar/appbar.master.dart';
 import 'package:fridayonline/member/components/profile/menu.section.dart';
 import 'package:fridayonline/member/controller/chat.ctr.dart';
+import 'package:fridayonline/member/controller/profile.ctr.dart';
 import 'package:fridayonline/member/services/authen/b2cauthen.service.dart';
 import 'package:fridayonline/member/widgets/dialog.confirm.dart';
 import 'package:fridayonline/splashscreen.dart';
@@ -163,6 +164,7 @@ class _SettingsState extends State<Settings> {
                             }
                           }
                           socketCtr.onClose();
+                          Get.delete<ProfileCtl>(force: true);
 
                           // 3. ถ้าอยากให้ชัวร์ set sessionId กลับอีกทีก็ได้ (option)
                           if (sessionId != null) {

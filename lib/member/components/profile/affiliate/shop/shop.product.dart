@@ -31,10 +31,6 @@ class _ShopProductState extends State<ShopProduct> {
           affProductCtl.loadMoreDefaultProducts(page: 'view');
         }
       });
-
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      affProductCtl.refreshDefaultProducts(page: 'view');
-    });
   }
 
   @override

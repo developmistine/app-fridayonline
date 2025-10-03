@@ -13,6 +13,7 @@ import 'package:fridayonline/member/components/utils/confirm.dialog.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.content.ctr.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.product.ctr.dart';
 import 'package:fridayonline/member/controller/category.ctr.dart';
+import 'package:fridayonline/member/controller/showproduct.sku.ctr.dart';
 import 'package:fridayonline/member/models/affiliate/shopcontent.model.dart';
 import 'package:fridayonline/member/utils/cached_image.dart';
 import 'package:fridayonline/theme.dart';
@@ -179,7 +180,17 @@ Widget buildProductSection(List<AffiliateProduct> items) {
         itemCount: items.length,
         itemBuilder: (context, index) {
           final p = items[index];
-          return productItem(product: p, onTap: () {});
+          return productItem(
+            product: p,
+            onTap: () {
+              Get.find<ShowProductSkuCtr>()
+                  .fetchB2cProductDetail(p.productId, 'shop_content');
+              // setPauseVideo();
+              Get.toNamed(
+                '/ShowProductSku/${p.productId}',
+              );
+            },
+          );
         },
       );
     },
@@ -578,7 +589,17 @@ Widget _buildType3(List<content.Item> details) {
               itemCount: visibleItems.length,
               itemBuilder: (context, index) {
                 final p = visibleItems[index];
-                return productItem(product: p, onTap: () {});
+                return productItem(
+                  product: p,
+                  onTap: () {
+                    Get.find<ShowProductSkuCtr>()
+                        .fetchB2cProductDetail(p.productId, 'shop_content');
+                    // setPauseVideo();
+                    Get.toNamed(
+                      '/ShowProductSku/${p.productId}',
+                    );
+                  },
+                );
               },
             );
           }),
@@ -1534,25 +1555,63 @@ Widget _buildEditContentType(String contentType, Item items, bool isHide) {
                           },
                           child: VideoPlayer(controller),
                         ),
+                        Positioned(
+                          bottom: 0,
+                          right: 0,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              IconButton(
+                                constraints: const BoxConstraints(maxWidth: 28),
+                                icon: const Icon(Icons.fullscreen),
+                                color: Colors.white,
+                                onPressed: () {
+                                  // ❗ ใช้ videoUrl จาก d ของ item ปัจจุบัน
+                                  Get.to(() =>
+                                      FullScreenVideoPlayer(videoUrl: image));
+                                },
+                              ),
+                              // ถ้าใช้ GetX สำหรับเก็บ volume เหมือนเดิม
+                              Obx(() {
+                                final isMuted = affContentCtl.volume.value == 0;
+                                return IconButton(
+                                  icon: Icon(
+                                    isMuted
+                                        ? Icons.volume_off
+                                        : Icons.volume_down,
+                                    color: Colors.white,
+                                  ),
+                                  onPressed: () {
+                                    final nowMuted =
+                                        controller.value.volume != 0;
+                                    controller.setVolume(nowMuted ? 0 : 1);
+                                    affContentCtl.volume.value =
+                                        controller.value.volume;
+                                  },
+                                );
+                              }),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),
                 );
               },
             ),
-            Positioned.fill(
-              child: Center(
-                child: Container(
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: Colors.black.withValues(alpha: .35),
-                    shape: BoxShape.circle,
-                  ),
-                  child: const Icon(Icons.play_arrow_rounded,
-                      color: Colors.white, size: 40),
-                ),
-              ),
-            ),
+            // Positioned.fill(
+            //   child: Center(
+            //     child: Container(
+            //       padding: const EdgeInsets.all(10),
+            //       decoration: BoxDecoration(
+            //         color: Colors.black.withValues(alpha: .35),
+            //         shape: BoxShape.circle,
+            //       ),
+            //       child: const Icon(Icons.play_arrow_rounded,
+            //           color: Colors.white, size: 40),
+            //     ),
+            //   ),
+            // ),
           ],
         );
       }

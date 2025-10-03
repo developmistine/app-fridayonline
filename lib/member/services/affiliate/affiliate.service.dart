@@ -15,7 +15,9 @@ import 'package:fridayonline/member/models/affiliate/payment.model.dart';
 import 'package:fridayonline/member/models/affiliate/productcontent.model.dart';
 import 'package:fridayonline/member/models/affiliate/profile.model.dart';
 import 'package:fridayonline/member/models/affiliate/recommendproduct.model.dart';
+import 'package:fridayonline/member/models/affiliate/share.model.dart';
 import 'package:fridayonline/member/models/affiliate/shopcontent.model.dart';
+import 'package:fridayonline/member/models/affiliate/tips.model.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:fridayonline/member/models/affiliate/contentType.model.dart'
@@ -544,7 +546,7 @@ class AffiliateService {
         "store_name": shopName,
         "email": email,
         "phone": mobile,
-        "username": username,
+        "user_name": username,
       };
       final fields = <String, String>{
         "info": jsonEncode(info),
@@ -1135,6 +1137,29 @@ class AffiliateService {
     }
   }
 
+  Future<AffiliateTips?> getAffiliateTips() async {
+    var url = Uri.parse("${b2c_api_url}api/v1/affiliate/tips");
+
+    try {
+      var jsonCall = await AuthFetch.get(
+        url,
+        headers: <String, String>{
+          'Authorization': 'Bearer ${await _data.accessToken}',
+          'Content-type': 'application/json; charset=utf-8'
+        },
+      );
+      if (jsonCall.statusCode == 200) {
+        var jsonString = jsonCall.bodyBytes;
+        final response = affiliateTipsFromJson(utf8.decode(jsonString));
+        return response;
+      }
+      return Future.error('Error AffiliateService : api/v1/affiliate/tips');
+    } catch (e) {
+      print('error api/v1/affiliate/tips : $e');
+      return Future.error("$e  from api/v1/affiliate/tips");
+    }
+  }
+
   Future<DashBoardProducts?> getDbProductPerformance(
       {String? period,
       String? str,
@@ -1177,6 +1202,42 @@ class AffiliateService {
     } catch (e) {
       print('error api/v1/affiliate/commissions/earnings : $e');
       return Future.error("$e  from api/v1/affiliate/commissions/earnings");
+    }
+  }
+
+  Future<ShareResponse?> getShare({
+    required String shareType,
+    required int? productId,
+    required String channel,
+    required int? categoryId,
+  }) async {
+    var url = Uri.parse("${b2c_api_url}api/v1/share");
+
+    final payload = {
+      "share_type": shareType, // category , // store // product
+      if (productId != null && shareType == 'product') "product_id": productId,
+      "channel": channel,
+      if (categoryId != null) "category_id": categoryId
+    };
+
+    try {
+      var jsonCall = await AuthFetch.post(
+        url,
+        headers: <String, String>{
+          'Authorization': 'Bearer ${await _data.accessToken}',
+          'Content-type': 'application/json; charset=utf-8'
+        },
+        body: jsonEncode(payload),
+      );
+      if (jsonCall.statusCode == 200) {
+        var jsonString = jsonCall.bodyBytes;
+        final response = shareResponseFromJson(utf8.decode(jsonString));
+        return response;
+      }
+      return Future.error('Error AffiliateService : api/v1/share');
+    } catch (e) {
+      print('error api/v1/share : $e');
+      return Future.error("$e  from api/v1/share");
     }
   }
 }

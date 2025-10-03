@@ -5,6 +5,7 @@ import 'package:fridayonline/member/components/showproduct/nodata.dart';
 import 'package:fridayonline/member/components/utils/share.dart';
 import 'package:fridayonline/member/components/profile/affiliate/shop/shop.content.add.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/product.dart';
+import 'package:fridayonline/member/controller/showproduct.sku.ctr.dart';
 import 'package:fridayonline/member/models/affiliate/shopcontent.model.dart';
 
 import 'package:fridayonline/theme.dart';
@@ -107,9 +108,10 @@ class _ShopShowCategoryState extends State<ShopShowCategory> {
                   child: ElevatedButton(
                     onPressed: () async {
                       await shareDialog(
-                          shareTitle: 'แชร์หมวดหมู่สินค้า',
-                          shareUrl: 'https://shopee.co.th/',
-                          shareText: _catName);
+                        shareType: 'category',
+                        categoryId: _contentId,
+                        shareTitle: 'แชร์หมวดหมู่สินค้า',
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: themeColorDefault,
@@ -200,7 +202,17 @@ class _ShopShowCategoryState extends State<ShopShowCategory> {
               itemBuilder: (context, index) {
                 final p = _products[index];
 
-                return productItem(product: p);
+                return productItem(
+                  product: p,
+                  onTap: () {
+                    Get.find<ShowProductSkuCtr>()
+                        .fetchB2cProductDetail(p.productId, 'shop_content');
+                    // setPauseVideo();
+                    Get.toNamed(
+                      '/ShowProductSku/${p.productId}',
+                    );
+                  },
+                );
               },
             ),
           ],

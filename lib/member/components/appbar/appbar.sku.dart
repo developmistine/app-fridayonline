@@ -1,3 +1,5 @@
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fridayonline/member/components/utils/share.dart';
 import 'package:fridayonline/member/controller/cart.ctr.dart';
 import 'package:fridayonline/member/controller/search.ctr.dart';
 import 'package:fridayonline/member/controller/showproduct.sku.ctr.dart';
@@ -140,6 +142,122 @@ PreferredSize appbarSku(
                         ),
                       Row(
                         children: [
+                          if (showProductCtr.productDetail.value!.data.canShare)
+                            InkWell(
+                              splashColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () {
+                                shareDialog(
+                                  shareType: 'product',
+                                  shareTitle: 'แชร์เพื่อรับค่าคอมมิชชั่นนี้',
+                                  product: ShareProduct(
+                                    productId: showProductCtr
+                                        .productDetail.value!.data.productId,
+                                    title: showProductCtr
+                                        .productDetail.value!.data.title,
+                                    image: showProductCtr.productDetail.value!
+                                        .data.productImages.image.first.image,
+                                    discount: showProductCtr.productDetail
+                                        .value!.data.productPrice.discount,
+                                    price: showProductCtr.productDetail.value!
+                                        .data.productPrice.price.singleValue,
+                                    priceBfDiscount: showProductCtr
+                                        .productDetail
+                                        .value!
+                                        .data
+                                        .productPrice
+                                        .priceBeforeDiscount
+                                        .singleValue,
+                                    commission: showProductCtr
+                                        .productDetail.value!.data.commission,
+                                  ),
+                                );
+                              },
+                              child: Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  Container(
+                                    width: 32,
+                                    height: 32,
+                                    padding: EdgeInsets.zero,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(50),
+                                      color: isSetAppbar
+                                          ? Colors.transparent
+                                          : Colors.black54.withOpacity(0.2),
+                                    ),
+                                  ),
+                                  Stack(
+                                    clipBehavior: Clip.none,
+                                    children: [
+                                      IconButton(
+                                        splashColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        // key: keyCart,
+                                        onPressed: () {
+                                          shareDialog(
+                                            shareType: 'product',
+                                            shareTitle: 'แชร์สินค้า',
+                                            product: ShareProduct(
+                                              productId: showProductCtr
+                                                  .productDetail
+                                                  .value!
+                                                  .data
+                                                  .productId,
+                                              title: showProductCtr
+                                                  .productDetail
+                                                  .value!
+                                                  .data
+                                                  .title,
+                                              image: showProductCtr
+                                                  .productDetail
+                                                  .value!
+                                                  .data
+                                                  .productImages
+                                                  .image
+                                                  .first
+                                                  .image,
+                                              discount: showProductCtr
+                                                  .productDetail
+                                                  .value!
+                                                  .data
+                                                  .productPrice
+                                                  .discount,
+                                              price: showProductCtr
+                                                  .productDetail
+                                                  .value!
+                                                  .data
+                                                  .productPrice
+                                                  .price
+                                                  .singleValue,
+                                              priceBfDiscount: showProductCtr
+                                                  .productDetail
+                                                  .value!
+                                                  .data
+                                                  .productPrice
+                                                  .priceBeforeDiscount
+                                                  .singleValue,
+                                              commission: showProductCtr
+                                                  .productDetail
+                                                  .value!
+                                                  .data
+                                                  .commission,
+                                            ),
+                                          );
+                                        },
+                                        icon: SvgPicture.asset(
+                                          'assets/images/affiliate/share.svg',
+                                          color: isSetAppbar
+                                              ? themeColorDefault
+                                              : Colors.white,
+                                          width: 20,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
                           InkWell(
                             splashColor: Colors.transparent,
                             highlightColor: Colors.transparent,

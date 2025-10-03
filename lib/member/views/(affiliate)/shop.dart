@@ -159,6 +159,9 @@ class _AffiliateShopState extends State<AffiliateShop>
             contentId: 0,
           );
           break;
+        case 1:
+          affProductCtl.refreshDefaultProducts(page: 'view');
+          break;
 
         case 2: // หมวดหมู่ (category)
           affContentCtl.getAffiliateContent(
@@ -249,9 +252,9 @@ class _AffiliateShopState extends State<AffiliateShop>
                   InkWell(
                     onTap: () async {
                       await shareDialog(
-                          shareTitle: 'แชร์ร้านค้าของฉัน',
-                          shareUrl: 'https://shopee.co.th/',
-                          shareText: 'ดูร้านของฉันสิ');
+                        shareType: 'store',
+                        shareTitle: 'แชร์ร้านค้าของฉัน',
+                      );
                     },
                     child: Container(
                       padding: const EdgeInsets.symmetric(
