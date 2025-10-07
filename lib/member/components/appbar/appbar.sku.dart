@@ -150,6 +150,8 @@ PreferredSize appbarSku(
                                 shareDialog(
                                   shareType: 'product',
                                   shareTitle: 'แชร์เพื่อรับค่าคอมมิชชั่นนี้',
+                                  productPrices: showProductCtr
+                                      .productDetail.value!.data.productPrice,
                                   product: ShareProduct(
                                     productId: showProductCtr
                                         .productDetail.value!.data.productId,
@@ -157,17 +159,6 @@ PreferredSize appbarSku(
                                         .productDetail.value!.data.title,
                                     image: showProductCtr.productDetail.value!
                                         .data.productImages.image.first.image,
-                                    discount: showProductCtr.productDetail
-                                        .value!.data.productPrice.discount,
-                                    price: showProductCtr.productDetail.value!
-                                        .data.productPrice.price.singleValue,
-                                    priceBfDiscount: showProductCtr
-                                        .productDetail
-                                        .value!
-                                        .data
-                                        .productPrice
-                                        .priceBeforeDiscount
-                                        .singleValue,
                                     commission: showProductCtr
                                         .productDetail.value!.data.commission,
                                   ),
@@ -198,6 +189,11 @@ PreferredSize appbarSku(
                                           shareDialog(
                                             shareType: 'product',
                                             shareTitle: 'แชร์สินค้า',
+                                            productPrices: showProductCtr
+                                                .productDetail
+                                                .value!
+                                                .data
+                                                .productPrice,
                                             product: ShareProduct(
                                               productId: showProductCtr
                                                   .productDetail
@@ -217,26 +213,6 @@ PreferredSize appbarSku(
                                                   .image
                                                   .first
                                                   .image,
-                                              discount: showProductCtr
-                                                  .productDetail
-                                                  .value!
-                                                  .data
-                                                  .productPrice
-                                                  .discount,
-                                              price: showProductCtr
-                                                  .productDetail
-                                                  .value!
-                                                  .data
-                                                  .productPrice
-                                                  .price
-                                                  .singleValue,
-                                              priceBfDiscount: showProductCtr
-                                                  .productDetail
-                                                  .value!
-                                                  .data
-                                                  .productPrice
-                                                  .priceBeforeDiscount
-                                                  .singleValue,
                                               commission: showProductCtr
                                                   .productDetail
                                                   .value!

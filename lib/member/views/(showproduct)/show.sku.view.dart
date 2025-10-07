@@ -1373,9 +1373,11 @@ class _ShowProductCategoryState extends State<ShowProductSku>
   }
 }
 
-List<Widget> productPriceMain(
-    {required product_model.ProductPrice productPrices,
-    required bool showPercent}) {
+List<Widget> productPriceMain({
+  required product_model.ProductPrice productPrices,
+  required bool showPercent,
+  bool? isShare,
+}) {
   if (!productPrices.haveDiscount) {
     return [
       Text(
@@ -1385,7 +1387,7 @@ List<Widget> productPriceMain(
         style: GoogleFonts.ibmPlexSansThai(
           color: Colors.deepOrange.shade700,
           fontWeight: FontWeight.w600,
-          fontSize: 24,
+          fontSize: isShare == true ? 14 : 24,
         ),
       )
     ];
@@ -1399,7 +1401,7 @@ List<Widget> productPriceMain(
               style: GoogleFonts.ibmPlexSansThai(
                   color: Colors.deepOrange.shade700,
                   fontWeight: FontWeight.w600,
-                  fontSize: 24,
+                  fontSize: isShare == true ? 14 : 24,
                   height: 1.2),
             ),
             if (productPrices.priceBeforeDiscount.singleValue > 0)
@@ -1407,7 +1409,7 @@ List<Widget> productPriceMain(
                 '฿${myFormat.format(productPrices.priceBeforeDiscount.singleValue)}',
                 style: GoogleFonts.ibmPlexSansThai(
                     decoration: TextDecoration.lineThrough,
-                    fontSize: 14,
+                    fontSize: isShare == true ? 12 : 14,
                     height: 2.6,
                     color: Colors.grey.shade400),
               )
@@ -1416,7 +1418,7 @@ List<Widget> productPriceMain(
                 '฿${myFormat.format(productPrices.priceBeforeDiscount.rangeMin)} - ฿${myFormat.format(productPrices.priceBeforeDiscount.rangeMax)}',
                 style: GoogleFonts.ibmPlexSansThai(
                     decoration: TextDecoration.lineThrough,
-                    fontSize: 14,
+                    fontSize: isShare == true ? 12 : 14,
                     height: 2.6,
                     color: Colors.grey.shade400),
               ),
@@ -1431,14 +1433,14 @@ List<Widget> productPriceMain(
               style: GoogleFonts.ibmPlexSansThai(
                   color: Colors.deepOrange.shade700,
                   fontWeight: FontWeight.w600,
-                  fontSize: 24,
+                  fontSize: isShare == true ? 14 : 24,
                   height: 1.2),
             ),
             Text(
               '฿${myFormat.format(productPrices.priceBeforeDiscount.rangeMin)} - ฿${myFormat.format(productPrices.priceBeforeDiscount.rangeMax)}',
               style: GoogleFonts.ibmPlexSansThai(
                   decoration: TextDecoration.lineThrough,
-                  fontSize: 14,
+                  fontSize: isShare == true ? 12 : 14,
                   height: 2.6,
                   color: Colors.grey.shade400),
             ),

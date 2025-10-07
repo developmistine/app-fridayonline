@@ -5,6 +5,7 @@ import 'package:fridayonline/member/components/showproduct/nodata.dart';
 import 'package:fridayonline/member/components/utils/share.dart';
 import 'package:fridayonline/member/components/profile/affiliate/shop/shop.content.add.dart';
 import 'package:fridayonline/member/components/profile/affiliate/utils/product.dart';
+import 'package:fridayonline/member/controller/affiliate/affiliate.account.ctr.dart';
 import 'package:fridayonline/member/controller/showproduct.sku.ctr.dart';
 import 'package:fridayonline/member/models/affiliate/shopcontent.model.dart';
 
@@ -40,6 +41,7 @@ class _ShopShowCategoryState extends State<ShopShowCategory> {
   @override
   Widget build(BuildContext context) {
     final int total = _products.length;
+    final affAccountCtl = Get.find<AffiliateAccountCtr>();
 
     _products = _products.where((p) => p.status != 'hide').toList();
 
@@ -53,7 +55,7 @@ class _ShopShowCategoryState extends State<ShopShowCategory> {
           onPressed: Get.back,
         ),
         title: Text(
-          'รวมของน่าซื้อ By คุณนัท',
+          affAccountCtl.profileData.value?.storeName ?? 'หมวดหมู่สินค้า',
           style: GoogleFonts.ibmPlexSansThai(
             color: const Color(0xFF1F1F1F),
             fontWeight: FontWeight.w500,

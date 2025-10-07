@@ -63,6 +63,7 @@ class AffiliateAccountCtr extends GetxController {
   final Rxn<profile.Data> profileData = Rxn<profile.Data>();
   final Rxn<List<bank.Datum>> bankData = Rxn<List<bank.Datum>>();
   final Rxn<List<option.Datum>> prefixData = Rxn<List<option.Datum>>();
+  final Rxn<int> totalItems = Rxn<int>();
 
   //share
   final isLoadingShareData = false.obs;
@@ -385,10 +386,10 @@ class AffiliateAccountCtr extends GetxController {
   void onInit() {
     super.onInit();
 
-    // profileCtl = Get.put(ProfileCtl());
+    final profileCtl = Get.put(ProfileCtl());
     otpCtl = Get.put(ProfileOtpCtr());
 
-    // ever(profileCtl.profileData, prefillFromProfile);
+    ever(profileCtl.profileData, prefillFromProfile);
 
     debounce<String>(
       username,
@@ -456,6 +457,7 @@ class AffiliateAccountCtr extends GetxController {
     try {
       final res = await _service.getProfile();
       profileData.value = res?.data;
+      totalItems.value = res?.data.itemCount;
     } catch (_) {
     } finally {
       isLoadingProfileData.value = false;
@@ -714,8 +716,9 @@ class AffiliateAccountCtr extends GetxController {
       if (ok) {
         await showAffDialog(true, 'สำเร็จ', 'ส่งคำขอเรียบร้อย');
 
-        validStatus.value = 'pending';
-        validStatusMsg.value = 'การสมัครของท่านอยู่ระหว่างการตรวจสอบข้อมูล';
+        validStatus.value = 'approved';
+        await getProfile();
+        // validStatusMsg.value = 'การสมัครของท่านอยู่ระหว่างการตรวจสอบข้อมูล';
 
         FocusManager.instance.primaryFocus?.unfocus();
         clearForm();

@@ -1,7 +1,9 @@
 // lib/member/controller/affiliate/affiliate.content.ctr.dart
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:fridayonline/member/components/profile/affiliate/utils/content.dart';
 import 'package:fridayonline/member/components/utils/status.dialog.dart';
+import 'package:fridayonline/member/controller/affiliate/affiliate.account.ctr.dart';
 import 'package:fridayonline/member/models/affiliate/shopcontent.model.dart';
 import 'package:fridayonline/member/models/affiliate/shopcontent.model.dart'
     as content;
@@ -24,6 +26,7 @@ class LoadListState<T> {
 
 class AffiliateContentCtr extends GetxController {
   final _service = AffiliateService();
+  final affAccountCtl = Get.find<AffiliateAccountCtr>();
 
   final volume = 0.0.obs;
 
@@ -293,6 +296,15 @@ class AffiliateContentCtr extends GetxController {
           getAffiliateContent(page: 'view', target: 'content', contentId: 0),
           getAffiliateContent(page: 'modify', target: 'content', contentId: 0),
         ]);
+
+        await affAccountCtl.getProfile();
+        await affProductCtl.refreshDefaultProducts(
+          page: 'view',
+        );
+        await affProductCtl.refreshDefaultProducts(
+          page: 'modify',
+        );
+
         Get.back();
       } else {
         await showAffDialog(
@@ -357,6 +369,14 @@ class AffiliateContentCtr extends GetxController {
           getAffiliateContent(page: 'view', target: 'category', contentId: 0),
           getAffiliateContent(page: 'modify', target: 'category', contentId: 0),
         ]);
+
+        await affAccountCtl.getProfile();
+        await affProductCtl.refreshDefaultProducts(
+          page: 'view',
+        );
+        await affProductCtl.refreshDefaultProducts(
+          page: 'modify',
+        );
 
         Get.back(result: {
           'contentId': contentIdResult,

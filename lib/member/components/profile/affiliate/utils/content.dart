@@ -1143,7 +1143,7 @@ Widget buildEditCategory(content.ContentData data, int i,
   String title;
   {
     final d = details.first;
-    title = (d.name.isNotEmpty == true) ? d.name : contentType;
+    title = (d.name.isNotEmpty == true) ? d.name : 'ไม่ระบุหมวดหมู่';
   }
 
   return Stack(

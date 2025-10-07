@@ -30,8 +30,8 @@ class _AffiliateUserState extends State<AffiliateUser> {
   final affAccountCtl = Get.find<AffiliateAccountCtr>();
   final affCommissionCtl = Get.find<AffiliateCommissionCtr>();
   final affProductCtl = Get.find<AffiliateProductCtr>();
-  // final profileCtl = Get.find<ProfileCtl>();
-  // Worker? _profileWorker;
+  final profileCtl = Get.find<ProfileCtl>();
+  Worker? _profileWorker;
 
   late final ScrollController _scrollCtr;
   final RxBool _showBackToTop = false.obs;
@@ -49,15 +49,15 @@ class _AffiliateUserState extends State<AffiliateUser> {
   @override
   void initState() {
     super.initState();
-    // final p0 = profileCtl.profileData.value;
-    // if (p0 != null) affAccountCtl.prefillFromProfile(p0);
+    final p0 = profileCtl.profileData.value;
+    if (p0 != null) affAccountCtl.prefillFromProfile(p0);
 
-    // _profileWorker = ever<ProfileData?>(
-    //   profileCtl.profileData,
-    //   (p) {
-    //     if (p != null) affAccountCtl.prefillFromProfile(p);
-    //   },
-    // );
+    _profileWorker = ever<ProfileData?>(
+      profileCtl.profileData,
+      (p) {
+        if (p != null) affAccountCtl.prefillFromProfile(p);
+      },
+    );
 
     affAccountCtl.getAffiliateTips();
     affAccountCtl.checkStatus();
@@ -80,7 +80,7 @@ class _AffiliateUserState extends State<AffiliateUser> {
   @override
   void dispose() {
     _scrollCtr.dispose();
-    // _profileWorker?.dispose();
+    _profileWorker?.dispose();
     super.dispose();
   }
 

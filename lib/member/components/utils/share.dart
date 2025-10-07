@@ -3,7 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fridayonline/member/components/utils/status.dialog.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.account.ctr.dart';
+import 'package:fridayonline/member/models/showproduct/product.sku.model.dart'
+    hide Image;
 import 'package:fridayonline/member/utils/format.dart';
+import 'package:fridayonline/member/views/(showproduct)/show.sku.view.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -35,6 +38,7 @@ Future<void> shareDialog({
   required String shareTitle,
   ShareProduct? product,
   int? categoryId,
+  ProductPrice? productPrices,
 }) async {
   final affiliateAccountCtr = Get.find<AffiliateAccountCtr>();
   String encodedUrl = '';
@@ -162,14 +166,18 @@ Future<void> shareDialog({
                                       color: const Color(0xFF1F1F1F),
                                     ),
                                   ),
-                                  if (product.discount != null &&
+                                  if (productPrices != null)
+                                    ...productPriceMain(
+                                        productPrices: productPrices,
+                                        showPercent: false,
+                                        isShare: true)
+                                  else if (product.discount != null &&
                                       product.discount! > 0)
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.end,
-                                      spacing: 3,
                                       children: [
                                         Text(
                                           '฿${myFormat.format(product.price)}',
@@ -179,6 +187,7 @@ Future<void> shareDialog({
                                             fontSize: 13,
                                           ),
                                         ),
+                                        const SizedBox(width: 3),
                                         Text(
                                           '฿${myFormat.format(product.priceBfDiscount)}',
                                           style: TextStyle(
@@ -188,6 +197,7 @@ Future<void> shareDialog({
                                             fontSize: 11,
                                           ),
                                         ),
+                                        const SizedBox(width: 3),
                                         Container(
                                           padding: const EdgeInsets.symmetric(
                                               horizontal: 4),

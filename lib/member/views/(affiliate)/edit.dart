@@ -65,7 +65,6 @@ class _AffiliateEditState extends State<AffiliateEdit>
 
         case 1:
           affProductCtl.refreshDefaultProducts(page: 'modify');
-
           break;
 
         case 2: // หมวดหมู่ (category)

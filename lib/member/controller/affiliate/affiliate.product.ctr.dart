@@ -1,6 +1,7 @@
 // lib/member/controller/affiliate/affiliate.product.ctr.dart
 import 'package:fridayonline/member/components/profile/affiliate/utils/content.dart';
 import 'package:fridayonline/member/components/utils/status.dialog.dart';
+import 'package:fridayonline/member/controller/affiliate/affiliate.account.ctr.dart';
 import 'package:fridayonline/member/controller/affiliate/affiliate.content.ctr.dart';
 import 'package:fridayonline/member/models/affiliate/option.model.dart';
 import 'package:fridayonline/member/models/affiliate/shopcontent.model.dart';
@@ -207,6 +208,13 @@ class AffiliateProductCtr extends GetxController {
           limit: 20,
           offset: 0,
         );
+        // อัพเดต
+        final affAccountCtl = Get.isRegistered<AffiliateAccountCtr>()
+            ? Get.find<AffiliateAccountCtr>()
+            : null;
+        if (affAccountCtl != null) {
+          await affAccountCtl.getProfile();
+        }
       } else {
         await showAffDialog(
             false, 'ผิดพลาด', res?.message ?? 'ไม่สามารถบันทึกข้อมูลได้');
