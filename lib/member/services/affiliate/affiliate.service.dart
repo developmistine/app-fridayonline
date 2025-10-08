@@ -19,14 +19,12 @@ import 'package:fridayonline/member/models/affiliate/share.model.dart';
 import 'package:fridayonline/member/models/affiliate/shopcontent.model.dart';
 import 'package:fridayonline/member/models/affiliate/tips.model.dart';
 import 'package:http/http.dart' as http;
-
 import 'package:fridayonline/member/models/affiliate/contentType.model.dart'
     as type;
 import 'package:fridayonline/member/models/affiliate/response.model.dart';
 import 'package:fridayonline/member/models/affiliate/status.model.dart';
 import 'package:fridayonline/member/models/affiliate/username.model.dart';
 import 'package:fridayonline/preferrence.dart';
-
 import 'package:fridayonline/service/pathapi.dart';
 import 'package:fridayonline/member/utils/auth_fetch.dart';
 import 'package:http_parser/http_parser.dart';

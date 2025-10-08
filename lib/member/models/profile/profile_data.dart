@@ -14,45 +14,46 @@ class ProfileData {
   String birthDate;
   String ranking;
   double coinBalance;
+  bool isAffiliateEnabled;
 
-  ProfileData({
-    required this.registerId,
-    required this.registerType,
-    required this.mobile,
-    required this.email,
-    required this.prefix,
-    required this.firstName,
-    required this.lastName,
-    required this.messageUnpaid,
-    required this.displayName,
-    required this.image,
-    required this.isUnpaid,
-    required this.gender,
-    required this.birthDate,
-    required this.ranking,
-    required this.coinBalance,
-  });
+  ProfileData(
+      {required this.registerId,
+      required this.registerType,
+      required this.mobile,
+      required this.email,
+      required this.prefix,
+      required this.firstName,
+      required this.lastName,
+      required this.messageUnpaid,
+      required this.displayName,
+      required this.image,
+      required this.isUnpaid,
+      required this.gender,
+      required this.birthDate,
+      required this.ranking,
+      required this.coinBalance,
+      required this.isAffiliateEnabled});
 
   // ✅ Convert JSON to ProfileData (handles "data" key)
   factory ProfileData.fromJson(Map<String, dynamic> json) {
     final data = json['data'] ?? {}; // Extract the "data" key
 
     return ProfileData(
-      registerId: data['register_id'] ?? '',
-      registerType: data['register_type'] ?? '',
-      mobile: data['mobile'] ?? '',
-      email: data['email'] ?? '',
-      prefix: data['prefix'] ?? '',
-      firstName: data['first_name'] ?? '',
-      lastName: data['last_name'] ?? '',
-      messageUnpaid: data['message_unpaid'] ?? '',
-      displayName: data['display_name'] ?? '',
-      image: data['image'] ?? '',
-      isUnpaid: data['is_unpaid'],
-      gender: data['gender'] ?? '',
-      birthDate: data['birth_date'] ?? '',
-      ranking: data['ranking'] ?? '',
-      coinBalance: data['coin_balance']?.toDouble() ?? 0,
-    );
+        registerId: data['register_id'] ?? '',
+        registerType: data['register_type'] ?? '',
+        mobile: data['mobile'] ?? '',
+        email: data['email'] ?? '',
+        prefix: data['prefix'] ?? '',
+        firstName: data['first_name'] ?? '',
+        lastName: data['last_name'] ?? '',
+        messageUnpaid: data['message_unpaid'] ?? '',
+        displayName: data['display_name'] ?? '',
+        image: data['image'] ?? '',
+        isUnpaid: data['is_unpaid'],
+        gender: data['gender'] ?? '',
+        birthDate: data['birth_date'] ?? '',
+        ranking: data['ranking'] ?? '',
+        coinBalance: data['coin_balance']?.toDouble() ?? 0,
+        isAffiliateEnabled: data['is_affiliate_enabled'] ?? false);
   }
 }

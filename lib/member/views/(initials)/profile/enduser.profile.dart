@@ -156,6 +156,9 @@ class _EndUserProfileState extends State<EndUserProfile> {
 
   @override
   Widget build(BuildContext context) {
+    final profile = profileCtl.profileData.value;
+    final isShowAffBtn = profile?.isAffiliateEnabled ?? false;
+
     return Scaffold(
         backgroundColor: Colors.transparent,
         body: SingleChildScrollView(
@@ -354,7 +357,8 @@ class _EndUserProfileState extends State<EndUserProfile> {
                             children: [
                               const DataProfiles(),
                               buildMenuSection("ข้อมูลคำสั่งซื้อ", ordermMenu),
-                              buildMenuSection("Affiliate", affiliateMenu),
+                              if (isShowAffBtn)
+                                buildMenuSection("Affiliate", affiliateMenu),
                               buildMenuSection("คูปองส่วนลด", couponMenu),
                               buildMenuSection("คำแนะนำการใช่้งาน", helpMenu),
                               // const B2cSpecialProject(),

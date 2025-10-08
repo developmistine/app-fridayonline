@@ -4,7 +4,6 @@ import 'package:dio/dio.dart';
 import 'package:fridayonline/member/models/profile/profile_special.dart';
 import 'package:fridayonline/member/utils/auth_fetch.dart';
 import 'package:fridayonline/preferrence.dart';
-import 'package:fridayonline/print.dart';
 import 'package:http/http.dart' as http;
 
 import '../../../service/pathapi.dart';
