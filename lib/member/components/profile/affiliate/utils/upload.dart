@@ -295,6 +295,7 @@ Future<String?> openTextEditorDrawer({String? initial}) async {
               ),
               const SizedBox(height: 8),
               TextField(
+                maxLength: 200,
                 controller: ctrl,
                 minLines: 3,
                 maxLines: 6,

@@ -46,11 +46,11 @@ Widget dateFilter({
 
     // range
     final range = await showRangePickerBottomSheet(
-      initialStart:
-          initialRangeStart ?? base.subtract(const Duration(days: 30)),
-      initialEnd: initialRangeEnd ?? base,
-      lastDate: base, // กันอนาคต
-    );
+        initialStart:
+            initialRangeStart ?? base.subtract(const Duration(days: 30)),
+        initialEnd: initialRangeEnd ?? base,
+        lastDate: base, // กันอนาคต
+        period: period);
     if (range != null) {
       onSelected(range['start']!, range['end']!);
     }

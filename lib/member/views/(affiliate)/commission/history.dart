@@ -25,7 +25,6 @@ class _HistoryState extends State<History> with SingleTickerProviderStateMixin {
   final affCommissionCtl = Get.find<AffiliateCommissionCtr>();
 
   late final TabController _tab;
-  final period = 'range';
   DateTime initialStart = DateTime.now().subtract(const Duration(days: 30));
   DateTime initialEnd = DateTime.now();
 
@@ -38,9 +37,9 @@ class _HistoryState extends State<History> with SingleTickerProviderStateMixin {
     final endStr = formatter.format(initialEnd);
 
     affCommissionCtl.getCommissionSummary(
-        page: 'orders', period: period, str: startStr, end: endStr);
+        page: 'orders', period: 'range', str: startStr, end: endStr);
     affCommissionCtl.getCommissionSummary(
-        page: 'earnings', period: period, str: startStr, end: endStr);
+        page: 'earnings', period: 'month', str: startStr, end: endStr);
 
     _tab = TabController(length: historyTabs.length, vsync: this);
   }
@@ -95,7 +94,7 @@ class _HistoryState extends State<History> with SingleTickerProviderStateMixin {
                 Obx(() {
                   final affCommissionCtl = Get.find<AffiliateCommissionCtr>();
                   final summary = affCommissionCtl.commissionOrdersData.value;
-                  final period = summary?.period ?? '-';
+                  final periodText = summary?.period ?? '-';
 
                   if (affCommissionCtl.isCommissionOrdersLoading.value ||
                       affCommissionCtl.isCommissionEarnsLoading.value) {
@@ -137,11 +136,10 @@ class _HistoryState extends State<History> with SingleTickerProviderStateMixin {
                         InkWell(
                           onTap: () async {
                             final range = await showRangePickerBottomSheet(
-                              initialStart: initialStart,
-                              initialEnd: initialEnd,
-                            );
+                                initialStart: initialStart,
+                                initialEnd: initialEnd,
+                                period: _tab.index == 0 ? 'range' : 'month');
 
-                            // range -> {"start": "2025-09-24", "end": "2025-10-01"} or null
                             if (range != null) {
                               final startStr = range["start"]!;
                               final endStr = range["end"]!;
@@ -151,7 +149,8 @@ class _HistoryState extends State<History> with SingleTickerProviderStateMixin {
                                 initialEnd = DateTime.parse(endStr);
                               });
 
-                              affCommissionCtl.selectedDate(startStr, endStr);
+                              affCommissionCtl.selectedDate(startStr, endStr,
+                                  _tab.index == 0 ? 'range' : 'month');
                               // printWhite('$startStr - $endStr');
                             }
                           },
@@ -159,7 +158,7 @@ class _HistoryState extends State<History> with SingleTickerProviderStateMixin {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                period,
+                                periodText,
                                 style: GoogleFonts.ibmPlexSansThai(
                                   color: Colors.white,
                                   fontSize: 15,

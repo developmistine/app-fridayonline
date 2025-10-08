@@ -280,7 +280,7 @@ Widget _buildPaymentCard(PaymentSummary? payment) {
       spacing: 12,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        row('หมายเลขการชำระเงิน', id),
+        // row('หมายเลขการชำระเงิน', id),
         row('ธนาคาร', bank),
         row('บัญชีที่ถอน', accNo),
         row('ชื่อบัญชี', accNm),

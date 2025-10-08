@@ -367,13 +367,13 @@ class AffiliateCommissionCtr extends GetxController {
     }
   }
 
-  void selectedDate(String str, String end) async {
+  void selectedDate(String str, String end, String period) async {
     await getCommissionSummary(
         page: 'orders', period: 'range', str: str, end: end);
     await getCommissionSummary(
-        page: 'earnings', period: 'range', str: str, end: end);
+        page: 'earnings', period: period, str: str, end: end);
 
-    setProductDateRange(period: 'range', start: str, end: end);
+    setProductDateRange(period: period, start: str, end: end);
     await refreshProductPerformance();
   }
 

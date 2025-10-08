@@ -545,7 +545,7 @@ class AffiliateService {
       final info = <String, dynamic>{
         "store_name": shopName,
         "email": email,
-        "phone": mobile,
+        "mobile": mobile,
         "user_name": username,
       };
       final fields = <String, String>{
