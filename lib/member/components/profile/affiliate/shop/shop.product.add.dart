@@ -266,169 +266,211 @@ class __AddProductSheetState extends State<_AddProductSheet> {
                           const SliverToBoxAdapter(child: SizedBox(height: 8)),
                           Obx(() {
                             final list = affProduct.filterProductData;
+                            final isLoading = affProduct.isLoadingFilter.value;
 
                             final safeBottom =
                                 MediaQuery.of(context).padding.bottom;
 
-                            return SliverPadding(
-                              padding: EdgeInsets.fromLTRB(
-                                  12, 0, 12, widget.single ? safeBottom : 0),
-                              sliver: SliverGrid(
-                                gridDelegate:
-                                    SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 2,
-                                  mainAxisSpacing: 4,
-                                  crossAxisSpacing: 4,
-                                  childAspectRatio: 0.62,
+                            if (isLoading) {
+                              return SliverToBoxAdapter(
+                                  child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 56),
+                                child: Center(
+                                  child:
+                                      CircularProgressIndicator(strokeWidth: 2),
                                 ),
-                                delegate: SliverChildBuilderDelegate(
-                                  (context, index) {
-                                    final p = list[index];
-                                    final id = p.productId;
+                              ));
+                            } else {
+                              if (list.isEmpty) {
+                                return SliverToBoxAdapter(
+                                    child: Center(
+                                  child: Column(
+                                    children: [
+                                      SvgPicture.asset(
+                                          'assets/images/affiliate/no_result.svg'),
+                                      Text(
+                                        'ไม่มีข้อมูลสินค้า',
+                                        style: GoogleFonts.ibmPlexSansThai(
+                                          fontSize: 14,
+                                          color: const Color(0xFF5A5A5A),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ));
+                              } else {
+                                return SliverPadding(
+                                  padding: EdgeInsets.fromLTRB(12, 0, 12,
+                                      widget.single ? safeBottom : 0),
+                                  sliver: SliverGrid(
+                                    gridDelegate:
+                                        SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 2,
+                                      mainAxisSpacing: 4,
+                                      crossAxisSpacing: 4,
+                                      childAspectRatio: 0.62,
+                                    ),
+                                    delegate: SliverChildBuilderDelegate(
+                                      (context, index) {
+                                        final p = list[index];
+                                        final id = p.productId;
 
-                                    if (widget.single) {
-                                      return Obx(() {
-                                        final isSelected =
-                                            selected.contains(id);
-                                        final isLoadingThis = affProduct
-                                                .isAddingProduct.value &&
-                                            affProduct.addingProductId.value ==
-                                                id;
+                                        if (widget.single) {
+                                          return Obx(() {
+                                            final isSelected =
+                                                selected.contains(id);
+                                            final isLoadingThis = affProduct
+                                                    .isAddingProduct.value &&
+                                                affProduct.addingProductId
+                                                        .value ==
+                                                    id;
 
-                                        return Stack(
-                                          key: ValueKey(id),
-                                          children: [
-                                            productItem(
-                                              product: p,
-                                              showShare: false,
-                                              onTap: () {
-                                                Get.find<ShowProductSkuCtr>()
-                                                    .fetchB2cProductDetail(
-                                                        p.productId,
-                                                        'shop_content');
-                                                // setPauseVideo();
-                                                Get.toNamed(
-                                                  '/ShowProductSku/${p.productId}',
-                                                );
-                                              },
-                                            ),
-                                            Positioned(
-                                              bottom: 16,
-                                              right: 16,
-                                              child: InkWell(
-                                                borderRadius:
-                                                    BorderRadius.circular(20),
-                                                onTap: (isSelected ||
-                                                        isLoadingThis)
-                                                    ? null
-                                                    : () async {
-                                                        // ทำให้ปุ่มเทาทันที เพื่อ UX ที่ชัดระหว่างรอ API
-                                                        selected.add(id);
-                                                        final ok =
-                                                            await affProduct
-                                                                .addProduct(
-                                                                    'product',
-                                                                    0,
-                                                                    id);
-                                                        if (!ok) {
-                                                          // ถ้า fail ค่อย rollback
-                                                          selected.remove(id);
-                                                        }
-                                                      },
-                                                child: Container(
-                                                  width: 34,
-                                                  height: 34,
-                                                  padding:
-                                                      const EdgeInsets.all(4),
-                                                  decoration: BoxDecoration(
-                                                    // เท่าทั้งตอนกำลังโหลด และตอนเลือกเสร็จ
-                                                    color: (isSelected ||
-                                                            isLoadingThis)
-                                                        ? Colors.grey.shade400
-                                                        : themeColorDefault,
+                                            return Stack(
+                                              key: ValueKey(id),
+                                              children: [
+                                                productItem(
+                                                  product: p,
+                                                  showShare: false,
+                                                  onTap: () {
+                                                    Get.find<
+                                                            ShowProductSkuCtr>()
+                                                        .fetchB2cProductDetail(
+                                                            p.productId,
+                                                            'shop_content');
+                                                    // setPauseVideo();
+                                                    Get.toNamed(
+                                                      '/ShowProductSku/${p.productId}',
+                                                    );
+                                                  },
+                                                ),
+                                                Positioned(
+                                                  bottom: 16,
+                                                  right: 16,
+                                                  child: InkWell(
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             20),
+                                                    onTap: (isSelected ||
+                                                            isLoadingThis)
+                                                        ? null
+                                                        : () async {
+                                                            // ทำให้ปุ่มเทาทันที เพื่อ UX ที่ชัดระหว่างรอ API
+                                                            selected.add(id);
+                                                            final ok =
+                                                                await affProduct
+                                                                    .addProduct(
+                                                                        'product',
+                                                                        0,
+                                                                        id);
+                                                            if (!ok) {
+                                                              // ถ้า fail ค่อย rollback
+                                                              selected
+                                                                  .remove(id);
+                                                            }
+                                                          },
+                                                    child: Container(
+                                                      width: 34,
+                                                      height: 34,
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              4),
+                                                      decoration: BoxDecoration(
+                                                        // เท่าทั้งตอนกำลังโหลด และตอนเลือกเสร็จ
+                                                        color: (isSelected ||
+                                                                isLoadingThis)
+                                                            ? Colors
+                                                                .grey.shade400
+                                                            : themeColorDefault,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(20),
+                                                      ),
+                                                      alignment:
+                                                          Alignment.center,
+                                                      child: isLoadingThis
+                                                          ? const SizedBox(
+                                                              width: 22,
+                                                              height: 22,
+                                                              child:
+                                                                  CircularProgressIndicator(
+                                                                strokeWidth: 2,
+                                                                color: Colors
+                                                                    .white,
+                                                              ),
+                                                            )
+                                                          : SvgPicture.asset(
+                                                              'assets/images/affiliate/add_bag.svg',
+                                                              width: 22,
+                                                            ),
+                                                    ),
                                                   ),
-                                                  alignment: Alignment.center,
-                                                  child: isLoadingThis
-                                                      ? const SizedBox(
-                                                          width: 22,
-                                                          height: 22,
-                                                          child:
-                                                              CircularProgressIndicator(
-                                                            strokeWidth: 2,
-                                                            color: Colors.white,
-                                                          ),
-                                                        )
-                                                      : SvgPicture.asset(
-                                                          'assets/images/affiliate/add_bag.svg',
-                                                          width: 22,
-                                                        ),
+                                                ),
+                                              ],
+                                            );
+                                          });
+                                        }
+                                        // multi select
+                                        return Obx(() {
+                                          final isSelected =
+                                              selected.contains(id);
+                                          return Stack(
+                                            key: ValueKey(id),
+                                            children: [
+                                              productItem(
+                                                showShare: false,
+                                                product: p,
+                                                onTap: () async {
+                                                  final already =
+                                                      selected.contains(id);
+                                                  if (already) {
+                                                    selected.remove(id);
+                                                    selected.refresh();
+                                                    return;
+                                                  }
+                                                  if (selected.length >= 20) {
+                                                    await showSmallDialog(
+                                                        'เลือกสินค้าได้สูงสุด 20 รายการ');
+                                                    return;
+                                                  }
+
+                                                  selected.add(id);
+                                                  selected.refresh();
+                                                },
+                                              ),
+                                              Positioned(
+                                                top: 14,
+                                                right: 14,
+                                                child: CircleAvatar(
+                                                  radius: 12,
+                                                  backgroundColor: isSelected
+                                                      ? themeColorDefault
+                                                      : Colors.white,
+                                                  child: Icon(
+                                                      isSelected
+                                                          ? Icons.check
+                                                          : Icons.add,
+                                                      size: 16,
+                                                      color: isSelected
+                                                          ? Colors.white
+                                                          : const Color(
+                                                              0xFF6B7280)),
                                                 ),
                                               ),
-                                            ),
-                                          ],
-                                        );
-                                      });
-                                    }
-                                    // multi select
-                                    return Obx(() {
-                                      final isSelected = selected.contains(id);
-                                      return Stack(
-                                        key: ValueKey(id),
-                                        children: [
-                                          productItem(
-                                            showShare: false,
-                                            product: p,
-                                            onTap: () async {
-                                              final already =
-                                                  selected.contains(id);
-                                              if (already) {
-                                                selected.remove(id);
-                                                selected.refresh();
-                                                return;
-                                              }
-                                              if (selected.length >= 20) {
-                                                await showSmallDialog(
-                                                    'เลือกสินค้าได้สูงสุด 20 รายการ');
-                                                return;
-                                              }
-
-                                              selected.add(id);
-                                              selected.refresh();
-                                            },
-                                          ),
-                                          Positioned(
-                                            top: 14,
-                                            right: 14,
-                                            child: CircleAvatar(
-                                              radius: 12,
-                                              backgroundColor: isSelected
-                                                  ? themeColorDefault
-                                                  : Colors.white,
-                                              child: Icon(
-                                                  isSelected
-                                                      ? Icons.check
-                                                      : Icons.add,
-                                                  size: 16,
-                                                  color: isSelected
-                                                      ? Colors.white
-                                                      : const Color(
-                                                          0xFF6B7280)),
-                                            ),
-                                          ),
-                                        ],
-                                      );
-                                    });
-                                  },
-                                  childCount: list.length,
-                                ),
-                              ),
-                            );
+                                            ],
+                                          );
+                                        });
+                                      },
+                                      childCount: list.length,
+                                    ),
+                                  ),
+                                );
+                              }
+                            }
                           }),
                           Obx(() {
-                            if (!affProduct.isLoadingMoreFilter.value) {
+                            if (!affProduct.isLoadingMoreFilter.value ||
+                                affProduct.isLoadingFilter.value) {
                               return const SliverToBoxAdapter();
                             }
                             return const SliverToBoxAdapter(
@@ -442,19 +484,6 @@ class __AddProductSheetState extends State<_AddProductSheet> {
                           }),
                         ],
                       ),
-
-                      Obx(() => affProduct.isLoadingFilter.value
-                          ? Positioned.fill(
-                              child: IgnorePointer(
-                                child: Center(
-                                  child:
-                                      CircularProgressIndicator(strokeWidth: 2),
-                                ),
-                              ),
-                            )
-                          : affProduct.filterProductData.isNotEmpty
-                              ? SizedBox()
-                              : nodata(context)),
 
                       // === ปุ่ม Back to Top (Box) ===
                       Obx(() {

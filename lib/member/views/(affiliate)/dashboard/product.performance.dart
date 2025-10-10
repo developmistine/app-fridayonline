@@ -110,22 +110,20 @@ class _ProductPerformanceState extends State<ProductPerformance> {
                       _filtersHeader(total),
 
                       if (loading)
-                        ListView.separated(
-                          padding: const EdgeInsets.symmetric(horizontal: 12),
-                          shrinkWrap: true,
-                          physics: const NeverScrollableScrollPhysics(),
-                          itemCount: 4,
-                          separatorBuilder: (context, index) =>
-                              const SizedBox(height: 8),
-                          itemBuilder: (context, index) => ShimmerCard(
-                            width: double.infinity,
-                            height: 100,
-                            radius: 12,
-                            color: Colors.grey.shade200,
+                        ...List.generate(
+                          4,
+                          (index) => Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 12, vertical: 4),
+                            child: ShimmerCard(
+                              width: double.infinity,
+                              height: 100,
+                              radius: 12,
+                              color: Colors.grey.shade200,
+                            ),
                           ),
-                        ),
-
-                      if (!loading && products.isEmpty)
+                        )
+                      else if (!loading && products.isEmpty)
                         Center(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -141,20 +139,20 @@ class _ProductPerformanceState extends State<ProductPerformance> {
                               ),
                             ],
                           ),
-                        ),
-
-                      ...List.generate(products.length, (i) {
-                        final p = products[i];
-                        return Container(
-                          color: Colors.white,
-                          padding: EdgeInsets.symmetric(horizontal: 12),
-                          child: Column(
-                            children: [
-                              ProductPerfItem(item: p, index: i),
-                            ],
-                          ),
-                        );
-                      }),
+                        )
+                      else
+                        ...List.generate(products.length, (i) {
+                          final p = products[i];
+                          return Container(
+                            color: Colors.white,
+                            padding: EdgeInsets.symmetric(horizontal: 12),
+                            child: Column(
+                              children: [
+                                ProductPerfItem(item: p, index: i),
+                              ],
+                            ),
+                          );
+                        }),
 
                       // โหลดเพิ่ม
                       if (loadingMore)

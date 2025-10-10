@@ -437,7 +437,7 @@ Widget _buildType3() {
 
           // ปุ่มลบ
           Positioned(
-            top: 8,
+            top: 14,
             right: 8,
             child: InkWell(
               onTap: remove,
@@ -955,22 +955,22 @@ class _VideoPreviewFromFileState extends State<VideoPreviewFromFile> {
             );
           },
         ),
-        Positioned(
-          top: 14,
-          right: 8,
-          child: InkWell(
-            onTap: affContentCtl.clearSelectedMedia,
-            borderRadius: BorderRadius.circular(16),
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.black.withValues(alpha: .6),
-                shape: BoxShape.circle,
-              ),
-              padding: const EdgeInsets.all(6),
-              child: const Icon(Icons.close, color: Colors.white, size: 18),
-            ),
-          ),
-        ),
+        // Positioned(
+        //   top: 14,
+        //   right: 8,
+        //   child: InkWell(
+        //     onTap: affContentCtl.clearSelectedMedia,
+        //     borderRadius: BorderRadius.circular(16),
+        //     child: Container(
+        //       decoration: BoxDecoration(
+        //         color: Colors.black.withValues(alpha: .6),
+        //         shape: BoxShape.circle,
+        //       ),
+        //       padding: const EdgeInsets.all(6),
+        //       child: const Icon(Icons.close, color: Colors.white, size: 18),
+        //     ),
+        //   ),
+        // ),
       ],
     );
   }

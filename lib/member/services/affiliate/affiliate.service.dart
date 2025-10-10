@@ -94,7 +94,7 @@ class AffiliateService {
       "user_name": username,
       "store_name": shopName,
       "email": email,
-      "moblie": mobile
+      "mobile": mobile
     };
 
     try {
