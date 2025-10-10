@@ -357,8 +357,8 @@ class _EndUserProfileState extends State<EndUserProfile> {
                             children: [
                               const DataProfiles(),
                               buildMenuSection("ข้อมูลคำสั่งซื้อ", ordermMenu),
-                              if (isShowAffBtn)
-                                buildMenuSection("Affiliate", affiliateMenu),
+                              // if (isShowAffBtn)
+                              //   buildMenuSection("Affiliate", affiliateMenu),
                               buildMenuSection("คูปองส่วนลด", couponMenu),
                               buildMenuSection("คำแนะนำการใช่้งาน", helpMenu),
                               // const B2cSpecialProject(),
