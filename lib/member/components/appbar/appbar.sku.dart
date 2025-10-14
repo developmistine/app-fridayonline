@@ -178,59 +178,60 @@ PreferredSize appbarSku(
                                           : Colors.black54.withOpacity(0.2),
                                     ),
                                   ),
-                                  Stack(
-                                    clipBehavior: Clip.none,
-                                    children: [
-                                      IconButton(
-                                        splashColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        // key: keyCart,
-                                        onPressed: () {
-                                          shareDialog(
-                                            shareType: 'product',
-                                            shareTitle: 'แชร์สินค้า',
-                                            productPrices: showProductCtr
-                                                .productDetail
-                                                .value!
-                                                .data
-                                                .productPrice,
-                                            product: ShareProduct(
-                                              productId: showProductCtr
-                                                  .productDetail
-                                                  .value!
-                                                  .data
-                                                  .productId,
-                                              title: showProductCtr
-                                                  .productDetail
-                                                  .value!
-                                                  .data
-                                                  .title,
-                                              image: showProductCtr
-                                                  .productDetail
-                                                  .value!
-                                                  .data
-                                                  .productImages
-                                                  .image
-                                                  .first
-                                                  .image,
-                                              commission: showProductCtr
-                                                  .productDetail
-                                                  .value!
-                                                  .data
-                                                  .commission,
-                                            ),
-                                          );
-                                        },
-                                        icon: SvgPicture.asset(
-                                          'assets/images/affiliate/share.svg',
-                                          color: isSetAppbar
-                                              ? themeColorDefault
-                                              : Colors.white,
-                                          width: 20,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
+
+                                  // Stack(
+                                  //   clipBehavior: Clip.none,
+                                  //   children: [
+                                  //     IconButton(
+                                  //       splashColor: Colors.transparent,
+                                  //       highlightColor: Colors.transparent,
+                                  //       // key: keyCart,
+                                  //       onPressed: () {
+                                  //         shareDialog(
+                                  //           shareType: 'product',
+                                  //           shareTitle: 'แชร์สินค้า',
+                                  //           productPrices: showProductCtr
+                                  //               .productDetail
+                                  //               .value!
+                                  //               .data
+                                  //               .productPrice,
+                                  //           product: ShareProduct(
+                                  //             productId: showProductCtr
+                                  //                 .productDetail
+                                  //                 .value!
+                                  //                 .data
+                                  //                 .productId,
+                                  //             title: showProductCtr
+                                  //                 .productDetail
+                                  //                 .value!
+                                  //                 .data
+                                  //                 .title,
+                                  //             image: showProductCtr
+                                  //                 .productDetail
+                                  //                 .value!
+                                  //                 .data
+                                  //                 .productImages
+                                  //                 .image
+                                  //                 .first
+                                  //                 .image,
+                                  //             commission: showProductCtr
+                                  //                 .productDetail
+                                  //                 .value!
+                                  //                 .data
+                                  //                 .commission,
+                                  //           ),
+                                  //         );
+                                  //       },
+                                  //       icon: SvgPicture.asset(
+                                  //         'assets/images/affiliate/share.svg',
+                                  //         color: isSetAppbar
+                                  //             ? themeColorDefault
+                                  //             : Colors.white,
+                                  //         width: 20,
+                                  //       ),
+                                  //     ),
+                                  //   ],
+                                  // ),
                                 ],
                               ),
                             ),
