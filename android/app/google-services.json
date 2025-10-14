@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "436932745041-38psabpmfm52ielpkve2vv4glvu9vpkq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "th.co.friday.fridayonline",
+            "certificate_hash": "e3f2adfd034b40ddfcdd308e6fbabd16e836b764"
+          }
+        },
+        {
           "client_id": "436932745041-t3ornpdnuiff8c682u01618ddvkfj8cs.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
