@@ -84,15 +84,16 @@ class _FridayMallState extends State<FridayMall> {
                       var items = brandItems[index];
                       return InkWell(
                         onTap: () async {
-                          Get.find<TrackCtr>().setLogContentAddToCart(
-                              items.brandId, 'home_brands');
+                          Get.find<TrackCtr>()
+                              .setLogContentAddToCart(items.id, 'home_brands');
                           Get.find<TrackCtr>().setDataTrack(
-                            items.brandId,
+                            items.id,
                             items.brandName,
                             "home_brands",
                           );
-                          Get.find<BrandCtr>().fetchShopData(items.sellerId);
-                          await Get.toNamed('/BrandStore/${items.sellerId}',
+                          Get.find<BrandCtr>()
+                              .fetchShopData(items.brandId, path: 'brands');
+                          await Get.toNamed('/BrandItems/${items.brandId}',
                                   arguments: items.sectionId == 0 ? 0 : 1,
                                   parameters: {
                                 "sectionId": items.sectionId.toString(),

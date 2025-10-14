@@ -142,99 +142,98 @@ PreferredSize appbarSku(
                         ),
                       Row(
                         children: [
-                          if (showProductCtr.productDetail.value!.data.canShare)
-                            InkWell(
-                              splashColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () {
-                                shareDialog(
-                                  shareType: 'product',
-                                  shareTitle: 'แชร์เพื่อรับค่าคอมมิชชั่นนี้',
-                                  productPrices: showProductCtr
-                                      .productDetail.value!.data.productPrice,
-                                  product: ShareProduct(
-                                    productId: showProductCtr
-                                        .productDetail.value!.data.productId,
-                                    title: showProductCtr
-                                        .productDetail.value!.data.title,
-                                    image: showProductCtr.productDetail.value!
-                                        .data.productImages.image.first.image,
-                                    commission: showProductCtr
-                                        .productDetail.value!.data.commission,
-                                  ),
-                                );
-                              },
-                              child: Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  Container(
-                                    width: 32,
-                                    height: 32,
-                                    padding: EdgeInsets.zero,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(50),
-                                      color: isSetAppbar
-                                          ? Colors.transparent
-                                          : Colors.black54.withOpacity(0.2),
-                                    ),
-                                  ),
-
-                                  // Stack(
-                                  //   clipBehavior: Clip.none,
-                                  //   children: [
-                                  //     IconButton(
-                                  //       splashColor: Colors.transparent,
-                                  //       highlightColor: Colors.transparent,
-                                  //       // key: keyCart,
-                                  //       onPressed: () {
-                                  //         shareDialog(
-                                  //           shareType: 'product',
-                                  //           shareTitle: 'แชร์สินค้า',
-                                  //           productPrices: showProductCtr
-                                  //               .productDetail
-                                  //               .value!
-                                  //               .data
-                                  //               .productPrice,
-                                  //           product: ShareProduct(
-                                  //             productId: showProductCtr
-                                  //                 .productDetail
-                                  //                 .value!
-                                  //                 .data
-                                  //                 .productId,
-                                  //             title: showProductCtr
-                                  //                 .productDetail
-                                  //                 .value!
-                                  //                 .data
-                                  //                 .title,
-                                  //             image: showProductCtr
-                                  //                 .productDetail
-                                  //                 .value!
-                                  //                 .data
-                                  //                 .productImages
-                                  //                 .image
-                                  //                 .first
-                                  //                 .image,
-                                  //             commission: showProductCtr
-                                  //                 .productDetail
-                                  //                 .value!
-                                  //                 .data
-                                  //                 .commission,
-                                  //           ),
-                                  //         );
-                                  //       },
-                                  //       icon: SvgPicture.asset(
-                                  //         'assets/images/affiliate/share.svg',
-                                  //         color: isSetAppbar
-                                  //             ? themeColorDefault
-                                  //             : Colors.white,
-                                  //         width: 20,
-                                  //       ),
-                                  //     ),
-                                  //   ],
-                                  // ),
-                                ],
-                              ),
-                            ),
+                          // if (showProductCtr.productDetail.value!.data.canShare)
+                          //   InkWell(
+                          //     splashColor: Colors.transparent,
+                          //     highlightColor: Colors.transparent,
+                          //     onTap: () {
+                          //       shareDialog(
+                          //         shareType: 'product',
+                          //         shareTitle: 'แชร์เพื่อรับค่าคอมมิชชั่นนี้',
+                          //         productPrices: showProductCtr
+                          //             .productDetail.value!.data.productPrice,
+                          //         product: ShareProduct(
+                          //           productId: showProductCtr
+                          //               .productDetail.value!.data.productId,
+                          //           title: showProductCtr
+                          //               .productDetail.value!.data.title,
+                          //           image: showProductCtr.productDetail.value!
+                          //               .data.productImages.image.first.image,
+                          //           commission: showProductCtr
+                          //               .productDetail.value!.data.commission,
+                          //         ),
+                          //       );
+                          //     },
+                          //     child: Stack(
+                          //       alignment: Alignment.center,
+                          //       children: [
+                          //         Container(
+                          //           width: 32,
+                          //           height: 32,
+                          //           padding: EdgeInsets.zero,
+                          //           decoration: BoxDecoration(
+                          //             borderRadius: BorderRadius.circular(50),
+                          //             color: isSetAppbar
+                          //                 ? Colors.transparent
+                          //                 : Colors.black54.withOpacity(0.2),
+                          //           ),
+                          //         ),
+                          //         Stack(
+                          //           clipBehavior: Clip.none,
+                          //           children: [
+                          //             IconButton(
+                          //               splashColor: Colors.transparent,
+                          //               highlightColor: Colors.transparent,
+                          //               // key: keyCart,
+                          //               onPressed: () {
+                          //                 shareDialog(
+                          //                   shareType: 'product',
+                          //                   shareTitle: 'แชร์สินค้า',
+                          //                   productPrices: showProductCtr
+                          //                       .productDetail
+                          //                       .value!
+                          //                       .data
+                          //                       .productPrice,
+                          //                   product: ShareProduct(
+                          //                     productId: showProductCtr
+                          //                         .productDetail
+                          //                         .value!
+                          //                         .data
+                          //                         .productId,
+                          //                     title: showProductCtr
+                          //                         .productDetail
+                          //                         .value!
+                          //                         .data
+                          //                         .title,
+                          //                     image: showProductCtr
+                          //                         .productDetail
+                          //                         .value!
+                          //                         .data
+                          //                         .productImages
+                          //                         .image
+                          //                         .first
+                          //                         .image,
+                          //                     commission: showProductCtr
+                          //                         .productDetail
+                          //                         .value!
+                          //                         .data
+                          //                         .commission,
+                          //                   ),
+                          //                 );
+                          //               },
+                          //               icon: SvgPicture.asset(
+                          //                 'assets/images/affiliate/share.svg',
+                          //                 color: isSetAppbar
+                          //                     ? themeColorDefault
+                          //                     : Colors.white,
+                          //                 width: 20,
+                          //               ),
+                          //             ),
+                          //           ],
+                          //         ),
+                          //       ],
+                          //     ),
+                          //   ),
                           InkWell(
                             splashColor: Colors.transparent,
                             highlightColor: Colors.transparent,

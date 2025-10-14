@@ -319,18 +319,18 @@ class _BrandCategoryState extends State<BrandB2C>
                                             onTap: () async {
                                               Get.find<TrackCtr>()
                                                   .setLogContentAddToCart(
-                                                      items.brandId,
-                                                      'mall_brands');
+                                                      items.id, 'mall_brands');
                                               Get.find<TrackCtr>().setDataTrack(
-                                                items.brandId,
+                                                items.id,
                                                 items.brandName,
                                                 "mall_brands",
                                               );
                                               brandCtr.fetchShopData(
-                                                  items.sellerId);
+                                                  items.brandId,
+                                                  path: 'brands');
 
                                               await Get.toNamed(
-                                                      '/BrandStore/${items.sellerId}',
+                                                      '/BrandItems/${items.brandId}',
                                                       arguments:
                                                           items.sectionId == 0
                                                               ? 0

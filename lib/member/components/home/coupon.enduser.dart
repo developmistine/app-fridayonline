@@ -240,18 +240,18 @@ class _CouponItemState extends State<CouponItem> {
                         child: ElevatedButton(
                           style: ButtonStyle(
                             backgroundColor:
-                                MaterialStateProperty.all(themeColorDefault),
-                            padding: MaterialStateProperty.all(
+                                WidgetStateProperty.all(themeColorDefault),
+                            padding: WidgetStateProperty.all(
                               const EdgeInsets.symmetric(
                                   vertical: 4, horizontal: 4),
                             ),
-                            shape: MaterialStateProperty.all(
+                            shape: WidgetStateProperty.all(
                               RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(6),
                               ),
                             ),
                             shadowColor:
-                                MaterialStateProperty.all(Colors.transparent),
+                                WidgetStateProperty.all(Colors.transparent),
                           ),
                           onPressed: () async {
                             SetData data = SetData();

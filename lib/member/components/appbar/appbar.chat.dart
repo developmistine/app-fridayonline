@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-appBarChat(SellerChat shop) {
+PreferredSize appBarChat(SellerChat shop) {
   return PreferredSize(
     preferredSize: const Size.fromHeight(50),
     child: MediaQuery(

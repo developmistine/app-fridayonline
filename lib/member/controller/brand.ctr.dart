@@ -28,17 +28,19 @@ class BrandCtr extends GetxController {
   var isLoadingShopVouchers = false.obs;
   var isLoadingShopFlashSale = false.obs;
 
+  Rxn<ShopInfo> shopInfoDev = Rxn();
+
   BrandsList? brandsList;
   BrandsList? shopBrandsList;
+  Sort? sortData;
+
   ShopInfo? shopInfo;
-  Rxn<ShopInfo> shopInfoDev = Rxn();
   ShopContent? shopContent;
   ShopBanner? shopBanner;
   ShopCategory? shopCategory;
   ShopProductFilter? shopProductFilter;
   ShopsVouchers? shopVouchers;
   ShopsFlashSale? shopFlashSale;
-  Sort? sortData;
 
   var shopInfoCache = <String, ShopInfo>{}.obs;
   var shopContentCache = <String, ShopContent>{}.obs;
@@ -51,6 +53,7 @@ class BrandCtr extends GetxController {
   RxBool isPriceUp = false.obs;
   int sectionIdVal = 0;
   int shopIdVal = 0;
+  int brandIdVal = 0;
   int catIdVal = 0;
   int subIdVal = 0;
   String sortByVal = "";
@@ -70,7 +73,7 @@ class BrandCtr extends GetxController {
   RxString countdown = "00:00:00".obs;
   RxBool isLoadMoreFlashSale = false.obs;
 
-  setshowClaimedCoupon() {
+  void setshowClaimedCoupon() {
     showClaimedCoupon.value = true;
     Future.delayed(const Duration(seconds: 1), () {
       showClaimedCoupon.value = false;
@@ -112,16 +115,18 @@ class BrandCtr extends GetxController {
     return found;
   }
 
-  fetchShopData(int shopId) {
+  void fetchShopData(int shopId, {String path = 'shops'}) {
     shopIdVal = shopId;
-    fetchShopInfo(shopId);
-    fetchShopContent(shopId);
-    fetchShopCategory(shopId);
-    fetchShopCoupon(shopId);
-    fetchShopFlashSale(shopId, 10, 0);
+
+    fetchShopInfo(shopId, path);
+    fetchShopContent(shopId, path);
+    fetchShopCategory(shopId, path);
+    fetchShopCoupon(shopId, path);
+    fetchShopFlashSale(shopId, 10, 0, path);
   }
 
-  fetchShopFlashSale(int shopId, int limit, int offset) async {
+  Future<void> fetchShopFlashSale(
+      int shopId, int limit, int offset, String path) async {
     try {
       isLoadingShopFlashSale.value = true;
       if (shopFlashSaleCache.containsKey(shopId.toString())) {
@@ -133,7 +138,8 @@ class BrandCtr extends GetxController {
         return;
       }
 
-      shopFlashSale = await fetchShopFlashSaleServices(shopId, limit, offset);
+      shopFlashSale =
+          await fetchShopFlashSaleServices(shopId, limit, offset, path: path);
       shopFlashSaleCache[shopId.toString()] = shopFlashSale!;
     } finally {
       if (shopFlashSale!.code != "-9") {
@@ -171,7 +177,7 @@ class BrandCtr extends GetxController {
     }
   }
 
-  fetchBrads(String pageType, int catId) async {
+  Future<void> fetchBrads(String pageType, int catId) async {
     try {
       isLoading.value = true;
       brandsList = await fetchBrandsServices(pageType, catId);
@@ -180,7 +186,7 @@ class BrandCtr extends GetxController {
     }
   }
 
-  fetchShopBrand(int shopId) async {
+  Future<void> fetchShopBrand(int shopId) async {
     try {
       isLoadingShopBrands.value = true;
       shopBrandsList = await fetchShopBrandsServices(shopId);
@@ -189,7 +195,7 @@ class BrandCtr extends GetxController {
     }
   }
 
-  fetchShopCoupon(int shopId) async {
+  Future<void> fetchShopCoupon(int shopId, String path) async {
     try {
       if (shopVouchersCache.containsKey(shopId.toString())) {
         shopVouchers = shopVouchersCache[shopId.toString()];
@@ -199,16 +205,17 @@ class BrandCtr extends GetxController {
         return;
       }
       isLoadingShopVouchers.value = true;
-      shopVouchers = await fetchShopCouponServices(shopId);
+      shopVouchers = await fetchShopCouponServices(shopId, path: path);
       shopVouchersCache[shopId.toString()] = shopVouchers!;
     } finally {
       isLoadingShopVouchers.value = false;
     }
   }
 
-  fetchShopInfo(int shopId) async {
+  Future<void> fetchShopInfo(int shopId, String path) async {
     try {
       isLoadingShop.value = true;
+
       if (shopInfoCache.containsKey(shopId.toString())) {
         shopInfo = shopInfoCache[shopId.toString()];
         // if (shopInfoCache.length > 1) {
@@ -216,7 +223,8 @@ class BrandCtr extends GetxController {
         // }
         return;
       }
-      shopInfo = await fetchShopInfoServices(shopId);
+
+      shopInfo = await fetchShopInfoServices(shopId, path);
       shopInfoCache[shopId.toString()] = shopInfo!;
       // shopInfoDev.value = await fetchShopInfoServices(shopId);
     } finally {
@@ -224,7 +232,7 @@ class BrandCtr extends GetxController {
     }
   }
 
-  fetchShopContent(int shopId) async {
+  Future<void> fetchShopContent(int shopId, String path) async {
     try {
       isLoadingShopContent.value = true;
       if (shopContentCache.containsKey(shopId.toString())) {
@@ -232,14 +240,14 @@ class BrandCtr extends GetxController {
         return;
       }
 
-      shopContent = await fetchShopContentServices(shopId);
+      shopContent = await fetchShopContentServices(shopId, path);
       shopContentCache[shopId.toString()] = shopContent!;
     } finally {
       isLoadingShopContent.value = false;
     }
   }
 
-  fetchShopCategory(int shopId) async {
+  Future<void> fetchShopCategory(int shopId, String path) async {
     try {
       isLoadingShopCategory.value = true;
       if (shopCategoryCache.containsKey(shopId.toString())) {
@@ -250,20 +258,21 @@ class BrandCtr extends GetxController {
         return;
       }
 
-      shopCategory = await fetchShopCategoryServices(shopId);
+      shopCategory = await fetchShopCategoryServices(shopId, path);
       shopCategoryCache[shopId.toString()] = shopCategory!;
     } finally {
       isLoadingShopCategory.value = false;
     }
   }
 
-  fetchShopProductFilter(
+  Future<void> fetchShopProductFilter(
     int sectionId,
     int shopId,
     String sortBy,
     String orderBy,
-    int offset,
-  ) async {
+    int offset, {
+    String path = 'shops',
+  }) async {
     sectionIdVal = sectionId;
     shopIdVal = shopId;
     sortByVal = sortBy;
@@ -271,18 +280,14 @@ class BrandCtr extends GetxController {
     try {
       isLoadingShopProductFilter.value = true;
       shopProductFilter = await fetchShopProductFilterServices(
-        sectionId,
-        shopId,
-        sortBy,
-        orderBy,
-        offset,
-      );
+          sectionId, shopId, sortBy, orderBy, offset,
+          path: path);
     } finally {
       isLoadingShopProductFilter.value = false;
     }
   }
 
-  fetchShopBanner() async {
+  Future<void> fetchShopBanner() async {
     try {
       isLoadingShopBanner.value = true;
       shopBanner = await fetchShopBannerServices();
@@ -291,7 +296,7 @@ class BrandCtr extends GetxController {
     }
   }
 
-  fetchSort() async {
+  Future<void> fetchSort() async {
     try {
       isLoadingSort.value = true;
       sortData = await fetchSortService();
@@ -300,15 +305,15 @@ class BrandCtr extends GetxController {
     }
   }
 
-  setActiveTab(index) {
+  void setActiveTab(index) {
     activeTab.value = index;
   }
 
-  setActiveCat(index) {
+  void setActiveCat(index) {
     activeCat.value = index;
   }
 
-  resetVal() {
+  void resetVal() {
     activeTab.value = 0;
     opacity.value = 0;
     showSort.value = false;
@@ -323,15 +328,12 @@ class BrandCtr extends GetxController {
     int shopId,
     String sortBy,
     String orderBy,
-    int offset,
-  ) async {
+    int offset, {
+    String path = 'shops',
+  }) async {
     return await fetchShopProductFilterServices(
-      sectionId,
-      shopId,
-      sortBy,
-      orderBy,
-      offset,
-    );
+        sectionId, shopId, sortBy, orderBy, offset,
+        path: path);
   }
 
   void resetShopProductFilter() {
@@ -343,8 +345,9 @@ class BrandCtr extends GetxController {
   }
 
   // ? loadmore flashsale
-  Future<ShopsFlashSale?>? fetchMoreFlashSale(offet) async {
-    return await fetchShopFlashSaleServices(shopIdVal, 20, offet);
+  Future<ShopsFlashSale?>? fetchMoreFlashSale(offet,
+      {String path = 'shops'}) async {
+    return await fetchShopFlashSaleServices(shopIdVal, 20, offet, path: path);
   }
 
   // ? reset flashsale

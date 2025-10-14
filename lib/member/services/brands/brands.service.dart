@@ -66,9 +66,10 @@ Future<BrandsList?> fetchShopBrandsServices(shopId) async {
   }
 }
 
-Future<ShopsVouchers?> fetchShopCouponServices(shopId) async {
+Future<ShopsVouchers?> fetchShopCouponServices(shopId,
+    {String path = 'shops'}) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}api/v1/shops/vouchers");
+  var url = Uri.parse("${b2c_api_url}api/v1/$path/vouchers");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -86,15 +87,16 @@ Future<ShopsVouchers?> fetchShopCouponServices(shopId) async {
       final shopsVouchers = shopsVouchersFromJson(utf8.decode(jsonResponse));
       return shopsVouchers;
     }
-    return Future.error('Error get shop vouchers : api/v1/shops/vouchers');
+    return Future.error('Error get shop vouchers : api/v1/$path/vouchers');
   } catch (e) {
     return Future.error('Error get shop vouchers : $e');
   }
 }
 
-Future<ShopInfo?> fetchShopInfoServices(int shopId) async {
+Future<ShopInfo?> fetchShopInfoServices(int shopId, String path) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}api/v1/shops/info");
+
+  var url = Uri.parse("${b2c_api_url}api/v1/$path/info");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -112,16 +114,17 @@ Future<ShopInfo?> fetchShopInfoServices(int shopId) async {
       final shopInfo = shopInfoFromJson(utf8.decode(jsonResponse));
       return shopInfo;
     }
-    return Future.error('Error get shop info : api/v1/shops/info');
+    return Future.error('Error get shop info : api/v1/$path/info');
   } catch (e) {
     return Future.error('Error get shop info : $e');
   }
 }
 
 Future<ShopsFlashSale?> fetchShopFlashSaleServices(
-    int shopId, int limit, int offset) async {
+    int shopId, int limit, int offset,
+    {String path = 'shops'}) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}api/v1/shops/flash_sales");
+  var url = Uri.parse("${b2c_api_url}api/v1/$path/flash_sales");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -141,15 +144,15 @@ Future<ShopsFlashSale?> fetchShopFlashSaleServices(
       final shopsFlashSale = shopsFlashSaleFromJson(utf8.decode(jsonResponse));
       return shopsFlashSale;
     }
-    return Future.error('Error get shop flashsale : api/v1/shops/flash_sales');
+    return Future.error('Error get shop flashsale : api/v1/$path/flash_sales');
   } catch (e) {
     return Future.error('Error get shop flashsale : $e');
   }
 }
 
-Future<ShopContent?> fetchShopContentServices(int shopId) async {
+Future<ShopContent?> fetchShopContentServices(int shopId, String path) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}api/v1/shops/content");
+  var url = Uri.parse("${b2c_api_url}api/v1/$path/content");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -168,15 +171,15 @@ Future<ShopContent?> fetchShopContentServices(int shopId) async {
 
       return shopContent;
     }
-    return Future.error('Error get shop info : api/v1/shops/info');
+    return Future.error('Error get shop info : api/v1/$path/info');
   } catch (e) {
     return Future.error('Error: $e');
   }
 }
 
-Future<ShopCategory?> fetchShopCategoryServices(int shopId) async {
+Future<ShopCategory?> fetchShopCategoryServices(int shopId, String path) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}api/v1/shops/categories");
+  var url = Uri.parse("${b2c_api_url}api/v1/$path/categories");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -195,7 +198,7 @@ Future<ShopCategory?> fetchShopCategoryServices(int shopId) async {
 
       return shopCategory;
     }
-    return Future.error('Error get shop category : api/v1/shops/categories');
+    return Future.error('Error get shop category : api/v1/$path/categories');
   } catch (e) {
     return Future.error('Error api/v1/shops/categories : $e');
   }
@@ -231,10 +234,11 @@ Future<ShopProductFilter?> fetchShopProductFilterServices(
   int shopId,
   String sortBy,
   String orderBy,
-  int offset,
-) async {
+  int offset, {
+  String path = 'shops',
+}) async {
   SetData data = SetData();
-  var url = Uri.parse("${b2c_api_url}api/v1/shops/product_filters");
+  var url = Uri.parse("${b2c_api_url}api/v1/$path/product_filters");
 
   try {
     var jsonCall = await AuthFetch.post(url,
@@ -260,7 +264,7 @@ Future<ShopProductFilter?> fetchShopProductFilterServices(
       return shopProductFilter;
     }
     return Future.error(
-        'Error get shop product filter : api/v1/shops/product_filters');
+        'Error get shop product filter : api/v1/$path/product_filters');
   } catch (e) {
     return Future.error('Error api/v1/shops/product_filters : $e');
   }

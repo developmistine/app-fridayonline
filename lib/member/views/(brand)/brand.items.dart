@@ -49,15 +49,15 @@ import 'package:fridayonline/member/models/category/sort.model.dart' as sort;
 final BrandCtr brandCtr = Get.find<BrandCtr>();
 final CategoryCtr categoryCtr = Get.find();
 
-class Store extends StatefulWidget {
-  final String storeId;
-  const Store({super.key, required this.storeId});
+class Brand extends StatefulWidget {
+  final String brandId;
+  const Brand({super.key, required this.brandId});
 
   @override
-  State<Store> createState() => _StoreState();
+  State<Brand> createState() => _BrandState();
 }
 
-class _StoreState extends State<Store> {
+class _BrandState extends State<Brand> {
   @override
   void initState() {
     super.initState();
@@ -72,18 +72,18 @@ class _StoreState extends State<Store> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: BrandStore());
+    return const Scaffold(body: BrandItems());
   }
 }
 
-class BrandStore extends StatefulWidget {
-  const BrandStore({super.key});
+class BrandItems extends StatefulWidget {
+  const BrandItems({super.key});
 
   @override
-  State<BrandStore> createState() => _BrandStoreState();
+  State<BrandItems> createState() => _BrandItemsState();
 }
 
-class _BrandStoreState extends State<BrandStore>
+class _BrandItemsState extends State<BrandItems>
     with SingleTickerProviderStateMixin {
   final scrCtrl = ScrollController();
   int tapActive = 0;
@@ -94,7 +94,7 @@ class _BrandStoreState extends State<BrandStore>
     if (tap == tapActive) return;
     var tapParams = Get.parameters;
     var sectionId = int.tryParse(tapParams["sectionId"] ?? "") ?? 0;
-    if (tap != 0) {
+    if (tap != 1) {
       Get.parameters.clear();
     }
 
@@ -106,7 +106,8 @@ class _BrandStoreState extends State<BrandStore>
               ? "ctime"
               : categoryCtr.sortData!.data.first.sortBy,
           "",
-          0);
+          0,
+          path: 'brands');
     } else {
       brandCtr.fetchShopProductFilter(
           brandCtr.sectionIdVal,
@@ -115,12 +116,13 @@ class _BrandStoreState extends State<BrandStore>
               ? "ctime"
               : categoryCtr.sortData!.data.first.sortBy,
           "",
-          0);
+          0,
+          path: 'brands');
     }
 
     setState(() {
       if (tap == 999) {
-        tap = 0; // เดิม: 1
+        tap = 1;
       }
       tapActive = tap;
       sectionId = 0;
@@ -141,7 +143,8 @@ class _BrandStoreState extends State<BrandStore>
               brandCtr.isPriceUp.value
                   ? items.subLevels.last.order
                   : items.subLevels.first.order,
-              0)
+              0,
+              path: 'brands')
           .then((res) {
         scrCtrl.animateTo(151,
             duration: const Duration(milliseconds: 300), curve: Curves.linear);
@@ -150,7 +153,8 @@ class _BrandStoreState extends State<BrandStore>
       brandCtr.orderByVal = "";
       brandCtr
           .fetchShopProductFilter(
-              brandCtr.sectionIdVal, brandCtr.shopIdVal, items.sortBy, "", 0)
+              brandCtr.sectionIdVal, brandCtr.shopIdVal, items.sortBy, "", 0,
+              path: 'brands')
           .then((res) {
         scrCtrl.animateTo(151,
             duration: const Duration(milliseconds: 300), curve: Curves.linear);
@@ -202,51 +206,41 @@ class _BrandStoreState extends State<BrandStore>
       });
     }
 
-    brandCtr.fetchShopProductFilter(
-        sectionId != 0 ? sectionId : brandCtr.sectionIdVal,
-        brandCtr.shopIdVal,
-        categoryCtr.sortData == null
-            ? "ctime"
-            : categoryCtr.sortData!.data.first.sortBy,
-        "",
-        0);
-
     scrCtrl.addListener(() {
       if (scrCtrl.position.pixels == scrCtrl.position.maxScrollExtent &&
-          tapActive == 0) {
+          tapActive == 1) {
         fetchMoreProductContent();
       }
 
+      // คำนวณค่า opacity ตาม scroll offset
       double offset = scrCtrl.offset;
       final double mobileHeight = Get.height;
-
-      bool productsTab = (tapActive == 0);
-
       bool shouldSetAppbar;
-      if (productsTab) {
-        if (mobileHeight >= 784) {
-          shouldSetAppbar = offset > 150;
-        } else {
-          shouldSetAppbar = offset > 111.5;
-        }
-      } else {
-        // ใช้ threshold เดิมของ "ร้านค้า" (เคยอยู่ tap == 0)
+      if (tapActive == 0) {
         if (mobileHeight >= 784) {
           shouldSetAppbar = offset > 135;
         } else {
           shouldSetAppbar = offset > 120;
         }
+      } else {
+        if (mobileHeight >= 784) {
+          shouldSetAppbar = offset > 150;
+        } else {
+          shouldSetAppbar = offset > 111.5;
+        }
       }
 
-      double newValue = offset / 80;
-      if (newValue < 0) newValue = 0;
-      if (newValue > 1) newValue = 1;
+      double newValue =
+          offset / 80; // ค่าของ opacity จะเพิ่มขึ้นตาม scroll offset
+      if (newValue < 0) newValue = 0; // ไม่ให้ค่าเกิน 1
+      if (newValue > 1) newValue = 1; // ไม่ให้ค่าเกิน 1
 
+      // เพิ่มเงื่อนไขการตรวจสอบการเปลี่ยนแปลงค่าที่สำคัญ
       bool opacityChanged = (newValue != brandCtr.opacity.value);
       bool appbarChanged = (shouldSetAppbar != brandCtr.showSort.value);
 
       if (opacityChanged || appbarChanged) {
-        brandCtr.opacity.value = newValue;
+        brandCtr.opacity.value = newValue; // อัปเดตค่า opacity
         brandCtr.isSetAppbar.value = brandCtr.opacity.value == 1;
         if (shouldSetAppbar != brandCtr.showSort.value) {
           brandCtr.showSort.value = shouldSetAppbar;
@@ -265,7 +259,8 @@ class _BrandStoreState extends State<BrandStore>
           brandCtr.shopIdVal,
           brandCtr.sortByVal,
           brandCtr.orderByVal,
-          offset);
+          offset,
+          path: 'brands');
 
       if (newProductFilter!.data.products.isNotEmpty) {
         brandCtr.shopProductFilter!.data.products
@@ -441,9 +436,12 @@ class _BrandStoreState extends State<BrandStore>
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     tabBar(setTapActive, tapActive),
-                                    if (tapActive == 0) sortProduct(),
-                                    if (tapActive == 0) listProduct(),
-                                    if (tapActive == 1) shopCategory(),
+                                    if (tapActive == 0) listCoupon(),
+                                    if (tapActive == 0) flashSale(),
+                                    if (tapActive == 0) shopContent(),
+                                    if (tapActive == 1) sortProduct(),
+                                    if (tapActive == 1) listProduct(),
+                                    if (tapActive == 2) shopCategory(),
                                   ]),
                             )
                           ],
@@ -465,7 +463,7 @@ class _BrandStoreState extends State<BrandStore>
                                   showSort: brandCtr.showSort.value,
                                   tabbar: tabBar(setTapActive, tapActive));
                             }),
-                            if (tapActive == 0 && brandCtr.opacity.value > 0)
+                            if (tapActive == 1 && brandCtr.opacity.value > 0)
                               Obx(() {
                                 return AnimatedOpacity(
                                   opacity: brandCtr.showSort.value ? 1 : 0,
@@ -565,7 +563,8 @@ class _BrandStoreState extends State<BrandStore>
                                 brandCtr.shopIdVal,
                                 categoryCtr.sortData!.data.first.sortBy,
                                 "",
-                                0);
+                                0,
+                                path: 'brands');
                             setTapActive(1);
                             //     .then((res) async {
                             //   await Get.to(() => const ShowProductBrands());
@@ -609,7 +608,8 @@ class _BrandStoreState extends State<BrandStore>
                                         brandCtr.shopIdVal,
                                         categoryCtr.sortData!.data.first.sortBy,
                                         "",
-                                        0)
+                                        0,
+                                        path: 'brands')
                                     .then((res) async {
                                   await Get.to(() => const ShowProductBrands());
                                 });
@@ -844,9 +844,10 @@ class _BrandStoreState extends State<BrandStore>
                                   brandCtr.shopIdVal,
                                   categoryCtr.sortData!.data.first.sortBy,
                                   "",
-                                  0);
+                                  0,
+                                  path: 'brands');
                               setState(() {
-                                tapActive = 0;
+                                tapActive = 1;
                               });
                             },
                             child: Container(
@@ -1955,7 +1956,7 @@ Widget tabBar(setTapActive, tapActive) {
     if (brandCtr.isLoadingShopCategory.value) {
       return const SizedBox();
     }
-    var listTap = ["รายการสินค้า", "หมวดหมู่"];
+    var listTap = ["ร้านค้า", "รายการสินค้า", "หมวดหมู่"];
     if (brandCtr.shopCategory!.data.isEmpty) {
       listTap.removeLast();
     }

@@ -34,6 +34,7 @@ class HomeBrands {
 }
 
 class Datum {
+  int id;
   int brandId;
   int? sectionId;
   int? viewType;
@@ -44,6 +45,7 @@ class Datum {
   String textDisplay;
 
   Datum({
+    required this.id,
     required this.brandId,
     required this.sectionId,
     required this.viewType,
@@ -55,6 +57,7 @@ class Datum {
   });
 
   factory Datum.fromJson(Map<String, dynamic> json) => Datum(
+        id: json["id"] ?? 0,
         brandId: json["brand_id"],
         sectionId: json["section_id"] ?? 0,
         viewType: json["view_type"] ?? 0,
@@ -66,6 +69,7 @@ class Datum {
       );
 
   Map<String, dynamic> toJson() => {
+        "id": id,
         "brand_id": brandId,
         "section_id": sectionId,
         "view_type": viewType,

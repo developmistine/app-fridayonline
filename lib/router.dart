@@ -1,5 +1,6 @@
 import 'package:fridayonline/member/components/webview/webview.dart';
 import 'package:fridayonline/member/enduser.main.dart';
+import 'package:fridayonline/member/views/(brand)/brand.items.dart';
 import 'package:fridayonline/member/views/(brand)/brand.store.dart';
 import 'package:fridayonline/member/views/(cart)/cart.main.dart';
 import 'package:fridayonline/member/views/(initials)/home/home.view.dart';
@@ -33,6 +34,11 @@ List<GetPage<dynamic>> router = [
       name: '/BrandStore/:id',
       page: () => Store(
             storeId: Get.parameters['id']!,
+          )),
+  GetPage(
+      name: '/BrandItems/:id',
+      page: () => Brand(
+            brandId: Get.parameters['id']!,
           )),
   GetPage(name: '/WebViewApp', page: () => const WebViewApp()),
 ];
