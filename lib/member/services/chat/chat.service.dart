@@ -11,6 +11,7 @@ import 'package:fridayonline/member/models/chat/sticker_model.dart';
 import 'package:fridayonline/member/utils/auth_fetch.dart';
 
 import 'package:fridayonline/preferrence.dart';
+import 'package:fridayonline/print.dart';
 import 'package:fridayonline/service/pathapi.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
@@ -162,19 +163,23 @@ Future<ChatHistory> fetchHistoryChatService(
 ) async {
   SetData data = SetData();
   // var url = Uri.parse("${b2c_api_url}api/v1/messages/history");
+  final tokenChat = await data.tokenChat;
+  final payload = {
+    "chat_room_id": roomId,
+    "user_id": await data.b2cCustID,
+    "limit": 40,
+    "offset": offset,
+    "role": "customer",
+    "device": await data.device,
+    "session_id": await data.sessionId,
+  };
+  // printWhite(tokenChat);
+  // printWhite(payload);
   var url = Uri.parse("${base_api_url}ws/v1/history");
   try {
     var jsonCall = await AuthFetch.post(
       url,
-      body: jsonEncode({
-        "chat_room_id": roomId,
-        "user_id": await data.b2cCustID,
-        "limit": 40,
-        "offset": offset,
-        "role": "customer",
-        "device": await data.device,
-        "session_id": await data.sessionId,
-      }),
+      body: jsonEncode(payload),
       headers: <String, String>{
         'Content-type': 'application/json; charset=utf-8',
         'Authorization': 'Bearer ${await data.tokenChat}',
