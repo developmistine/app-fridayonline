@@ -105,6 +105,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.1"
+  calendar_date_picker2:
+    dependency: "direct main"
+    description:
+      name: calendar_date_picker2
+      sha256: "9c9b5586fb512bf1181d7f3a6273bffa9e65a4e16689902e112771e7d71d063b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.1"
   camera:
     dependency: "direct main"
     description:
@@ -345,6 +353,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.3.0"
+  equatable:
+    dependency: transitive
+    description:
+      name: equatable
+      sha256: "567c64b3cb4cf82397aac55f4f0cbd3ca20d77c6c03bedbc4ceaddc08904aef7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.7"
   expandable_page_view:
     dependency: "direct main"
     description:
@@ -553,6 +569,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.1"
+  fl_chart:
+    dependency: "direct main"
+    description:
+      name: fl_chart
+      sha256: "7ca9a40f4eb85949190e54087be8b4d6ac09dc4c54238d782a34cf1f7c011de9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.1"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -562,10 +586,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_branch_sdk
-      sha256: "1f8e63464abcd7255aa372b659e057dfbe3c93443ab6320b68e52698bebb50fa"
+      sha256: b1b8f5d38fcec625a6e6f130435a532ac8add93728594cfcabedc364877e735a
       url: "https://pub.dev"
     source: hosted
-    version: "8.6.0"
+    version: "8.10.0"
   flutter_cache_manager:
     dependency: "direct main"
     description:
@@ -1006,7 +1030,7 @@ packages:
     source: hosted
     version: "1.5.0"
   http_parser:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: http_parser
       sha256: "178d74305e7866013777bab2c3d8726205dc5a4dd935297175b19a23a2e66571"
@@ -1262,7 +1286,7 @@ packages:
     source: hosted
     version: "1.16.0"
   mime:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: mime
       sha256: "41a20518f0cb1256669420fdba0cd90d21561e560ac240f26ef8322e45bb7ed6"
@@ -1277,6 +1301,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.0"
+  month_picker_dialog:
+    dependency: "direct main"
+    description:
+      name: month_picker_dialog
+      sha256: "8196c59bbd3339ea57de2c372ca51a8cfdbb242d6e45100925b9e1982ba4617d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.5.0"
   nested:
     dependency: transitive
     description:
@@ -1341,6 +1373,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.1"
+  path_drawing:
+    dependency: "direct main"
+    description:
+      name: path_drawing
+      sha256: bbb1934c0cbb03091af082a6389ca2080345291ef07a5fa6d6e078ba8682f977
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
   path_parsing:
     dependency: transitive
     description:
@@ -1802,6 +1842,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.12.1"
+  step_progress:
+    dependency: "direct main"
+    description:
+      name: step_progress
+      sha256: d4f3fe5a6d79b21adc6397defdfce5997ed5144b275c45dd2c13247d9c1a7a0b
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.7.0"
   stream_channel:
     dependency: transitive
     description:
@@ -2194,6 +2242,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.3"
+  year_month_picker:
+    dependency: "direct main"
+    description:
+      name: year_month_picker
+      sha256: f80ce9c8551fa431557c140a7e855fb06bd2f6da8a5e54f6444a18af75618587
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.2"
 sdks:
   dart: ">=3.9.0 <4.0.0"
   flutter: ">=3.32.0"

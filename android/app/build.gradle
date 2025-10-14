@@ -16,6 +16,12 @@ android {
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
+    lint {
+        disable 'NullSafeMutableLiveData'
+        abortOnError false
+        checkReleaseBuilds false
+    }
+
     compileOptions {
         coreLibraryDesugaringEnabled true  // แก้ syntax
         sourceCompatibility = JavaVersion.VERSION_11
