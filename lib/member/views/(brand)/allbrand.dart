@@ -58,14 +58,14 @@ class AllBrandB2C extends StatelessWidget {
                     highlightColor: Colors.transparent,
                     onTap: () async {
                       Get.find<TrackCtr>()
-                          .setLogContentAddToCart(items.brandId, 'mall_brands');
+                          .setLogContentAddToCart(items.id, 'mall_brands');
                       Get.find<TrackCtr>().setDataTrack(
-                        items.brandId,
+                        items.id,
                         items.brandName,
                         "mall_brands",
                       );
-                      brandCtr.fetchShopData(items.sellerId);
-                      await Get.toNamed('/BrandStore/${items.sellerId}',
+                      brandCtr.fetchShopData(items.brandId, path: 'brands');
+                      await Get.toNamed('/BrandItems/${items.brandId}',
                               arguments: items.sectionId == 0 ? 0 : 1,
                               parameters: {
                             "sectionId": items.sectionId.toString(),

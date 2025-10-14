@@ -192,18 +192,19 @@ class _SubCategoryState extends State<SubCategory> {
                                               onTap: () async {
                                                 Get.find<TrackCtr>()
                                                     .setLogContentAddToCart(
-                                                        items.brandId,
+                                                        items.id,
                                                         'category_brands');
                                                 Get.find<TrackCtr>()
                                                     .setDataTrack(
-                                                        items.brandId,
+                                                        items.id,
                                                         items.brandName,
                                                         'category_brands');
                                                 brandCtr.fetchShopData(
-                                                    items.sellerId);
+                                                    items.brandId,
+                                                    path: 'brands');
                                                 // Get.to(() => const BrandStore());
                                                 await Get.toNamed(
-                                                        '/BrandStore/${items.sellerId}',
+                                                        '/BrandItems/${items.brandId}',
                                                         arguments:
                                                             items.sectionId == 0
                                                                 ? 0
