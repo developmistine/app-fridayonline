@@ -20,13 +20,21 @@ class BrandCtr extends GetxController {
   var isLoadingMore = false.obs;
   var isLoadingShopBrands = false.obs;
   var isLoadingSort = false.obs;
+  var isLoadingShopBanner = false.obs;
+
   var isLoadingShop = false.obs;
   var isLoadingShopContent = false.obs;
-  var isLoadingShopBanner = false.obs;
   var isLoadingShopCategory = false.obs;
   var isLoadingShopProductFilter = false.obs;
   var isLoadingShopVouchers = false.obs;
   var isLoadingShopFlashSale = false.obs;
+
+  var isLoadingBrand = false.obs;
+  var isLoadingBrandContent = false.obs;
+  var isLoadingBrandCategory = false.obs;
+  var isLoadingBrandProductFilter = false.obs;
+  var isLoadingBrandVouchers = false.obs;
+  var isLoadingBrandFlashSale = false.obs;
 
   Rxn<ShopInfo> shopInfoDev = Rxn();
 
@@ -34,19 +42,33 @@ class BrandCtr extends GetxController {
   BrandsList? shopBrandsList;
   Sort? sortData;
 
+  ShopBanner? shopBanner;
+
   ShopInfo? shopInfo;
   ShopContent? shopContent;
-  ShopBanner? shopBanner;
   ShopCategory? shopCategory;
   ShopProductFilter? shopProductFilter;
   ShopsVouchers? shopVouchers;
   ShopsFlashSale? shopFlashSale;
+
+  ShopInfo? brandInfo;
+  ShopContent? brandContent;
+  ShopCategory? brandCategory;
+  ShopProductFilter? brandProductFilter;
+  ShopsVouchers? brandVouchers;
+  ShopsFlashSale? brandFlashSale;
 
   var shopInfoCache = <String, ShopInfo>{}.obs;
   var shopContentCache = <String, ShopContent>{}.obs;
   var shopCategoryCache = <String, ShopCategory>{}.obs;
   var shopFlashSaleCache = <String, ShopsFlashSale>{}.obs;
   var shopVouchersCache = <String, ShopsVouchers>{}.obs;
+
+  var brandInfoCache = <String, ShopInfo>{}.obs;
+  var brandContentCache = <String, ShopContent>{}.obs;
+  var brandCategoryCache = <String, ShopCategory>{}.obs;
+  var brandFlashSaleCache = <String, ShopsFlashSale>{}.obs;
+  var brandVouchersCache = <String, ShopsVouchers>{}.obs;
 
   RxInt activeTab = 0.obs;
   RxInt activeCat = (-9).obs;
@@ -128,26 +150,46 @@ class BrandCtr extends GetxController {
   Future<void> fetchShopFlashSale(
       int shopId, int limit, int offset, String path) async {
     try {
-      isLoadingShopFlashSale.value = true;
-      if (shopFlashSaleCache.containsKey(shopId.toString())) {
-        shopFlashSale = shopFlashSaleCache[shopId.toString()];
-        // if (shopFlashSaleCache.length > 1) {
-        // shopFlashSaleCache
-        //     .removeWhere((key, value) => key == shopId.toString());
-        // }
-        return;
-      }
+      if (path == 'shops') {
+        isLoadingShopFlashSale.value = true;
+        if (shopFlashSaleCache.containsKey(shopId.toString())) {
+          shopFlashSale = shopFlashSaleCache[shopId.toString()];
 
-      shopFlashSale =
-          await fetchShopFlashSaleServices(shopId, limit, offset, path: path);
-      shopFlashSaleCache[shopId.toString()] = shopFlashSale!;
+          return;
+        }
+
+        shopFlashSale =
+            await fetchShopFlashSaleServices(shopId, limit, offset, path: path);
+        shopFlashSaleCache[shopId.toString()] = shopFlashSale!;
+      } else {
+        isLoadingBrandFlashSale.value = true;
+        if (brandFlashSaleCache.containsKey(shopId.toString())) {
+          brandFlashSale = brandFlashSaleCache[shopId.toString()];
+
+          return;
+        }
+
+        brandFlashSale =
+            await fetchShopFlashSaleServices(shopId, limit, offset, path: path);
+        brandFlashSaleCache[shopId.toString()] = brandFlashSale!;
+      }
     } finally {
-      if (shopFlashSale!.code != "-9") {
-        Timer.periodic(
-            const Duration(seconds: 1),
-            (timer) => updateCountdown(timer, shopFlashSale!.data.startDate,
-                shopFlashSale!.data.endDate));
+      if (path == 'shops') {
+        if (shopFlashSale!.code != "-9") {
+          Timer.periodic(
+              const Duration(seconds: 1),
+              (timer) => updateCountdown(timer, shopFlashSale!.data.startDate,
+                  shopFlashSale!.data.endDate));
+        }
         isLoadingShopFlashSale.value = false;
+      } else {
+        if (brandFlashSale!.code != "-9") {
+          Timer.periodic(
+              const Duration(seconds: 1),
+              (timer) => updateCountdown(timer, brandFlashSale!.data.startDate,
+                  brandFlashSale!.data.endDate));
+        }
+        isLoadingBrandFlashSale.value = false;
       }
     }
   }
@@ -197,71 +239,113 @@ class BrandCtr extends GetxController {
 
   Future<void> fetchShopCoupon(int shopId, String path) async {
     try {
-      if (shopVouchersCache.containsKey(shopId.toString())) {
-        shopVouchers = shopVouchersCache[shopId.toString()];
-        // if (shopVouchersCache.length > 1) {
-        // shopVouchersCache.removeWhere((key, value) => key == shopId.toString());
-        // }
-        return;
+      if (path == 'shops') {
+        isLoadingShopVouchers.value = true;
+        if (shopVouchersCache.containsKey(shopId.toString())) {
+          shopVouchers = shopVouchersCache[shopId.toString()];
+
+          return;
+        }
+
+        shopVouchers = await fetchShopCouponServices(shopId, path: path);
+        shopVouchersCache[shopId.toString()] = shopVouchers!;
+      } else {
+        isLoadingBrandVouchers.value = true;
+        if (brandVouchersCache.containsKey(shopId.toString())) {
+          brandVouchers = brandVouchersCache[shopId.toString()];
+
+          return;
+        }
+
+        brandVouchers = await fetchShopCouponServices(shopId, path: path);
+        brandVouchersCache[shopId.toString()] = brandVouchers!;
       }
-      isLoadingShopVouchers.value = true;
-      shopVouchers = await fetchShopCouponServices(shopId, path: path);
-      shopVouchersCache[shopId.toString()] = shopVouchers!;
     } finally {
       isLoadingShopVouchers.value = false;
+      isLoadingBrandVouchers.value = false;
     }
   }
 
   Future<void> fetchShopInfo(int shopId, String path) async {
     try {
-      isLoadingShop.value = true;
-
-      if (shopInfoCache.containsKey(shopId.toString())) {
-        shopInfo = shopInfoCache[shopId.toString()];
-        // if (shopInfoCache.length > 1) {
-        // shopInfoCache.removeWhere((key, value) => key == shopId.toString());
-        // }
-        return;
+      if (path == 'shops') {
+        isLoadingShop.value = true;
+        if (shopInfoCache.containsKey(shopId.toString())) {
+          shopInfo = shopInfoCache[shopId.toString()];
+          return;
+        }
+        shopInfo = await fetchShopInfoServices(shopId, path);
+        shopInfoCache[shopId.toString()] = shopInfo!;
+      } else {
+        isLoadingBrand.value = true;
+        if (brandInfoCache.containsKey(shopId.toString())) {
+          brandInfo = brandInfoCache[shopId.toString()];
+          return;
+        }
+        brandInfo = await fetchShopInfoServices(shopId, path);
+        brandInfoCache[shopId.toString()] = brandInfo!;
       }
 
-      shopInfo = await fetchShopInfoServices(shopId, path);
-      shopInfoCache[shopId.toString()] = shopInfo!;
       // shopInfoDev.value = await fetchShopInfoServices(shopId);
     } finally {
       isLoadingShop.value = false;
+      isLoadingBrand.value = false;
     }
   }
 
   Future<void> fetchShopContent(int shopId, String path) async {
     try {
-      isLoadingShopContent.value = true;
-      if (shopContentCache.containsKey(shopId.toString())) {
-        shopContent = shopContentCache[shopId.toString()];
-        return;
-      }
+      if (path == 'shops') {
+        isLoadingShopContent.value = true;
+        if (shopContentCache.containsKey(shopId.toString())) {
+          shopContent = shopContentCache[shopId.toString()];
+          return;
+        }
 
-      shopContent = await fetchShopContentServices(shopId, path);
-      shopContentCache[shopId.toString()] = shopContent!;
+        shopContent = await fetchShopContentServices(shopId, path);
+        shopContentCache[shopId.toString()] = shopContent!;
+      } else {
+        isLoadingBrandContent.value = true;
+        if (brandContentCache.containsKey(shopId.toString())) {
+          brandContent = brandContentCache[shopId.toString()];
+          return;
+        }
+
+        brandContent = await fetchShopContentServices(shopId, path);
+        brandContentCache[shopId.toString()] = brandContent!;
+      }
     } finally {
       isLoadingShopContent.value = false;
+      isLoadingBrandContent.value = false;
     }
   }
 
   Future<void> fetchShopCategory(int shopId, String path) async {
     try {
-      isLoadingShopCategory.value = true;
-      if (shopCategoryCache.containsKey(shopId.toString())) {
-        shopCategory = shopCategoryCache[shopId.toString()];
-        // if (shopCategoryCache.length > 1) {
-        // shopCategoryCache.removeWhere((key, value) => key == shopId.toString());
-        // }
-        return;
-      }
+      if (path == 'shops') {
+        isLoadingShopCategory.value = true;
+        if (shopCategoryCache.containsKey(shopId.toString())) {
+          shopCategory = shopCategoryCache[shopId.toString()];
 
-      shopCategory = await fetchShopCategoryServices(shopId, path);
-      shopCategoryCache[shopId.toString()] = shopCategory!;
+          return;
+        }
+
+        shopCategory = await fetchShopCategoryServices(shopId, path);
+        shopCategoryCache[shopId.toString()] = shopCategory!;
+      } else {
+        isLoadingBrandCategory.value = true;
+        if (brandCategoryCache.containsKey(shopId.toString())) {
+          brandCategory = brandCategoryCache[shopId.toString()];
+
+          return;
+        }
+
+        brandCategory = await fetchShopCategoryServices(shopId, path);
+        brandCategoryCache[shopId.toString()] = brandCategory!;
+      }
     } finally {
       isLoadingShopCategory.value = false;
+      isLoadingBrandCategory.value = false;
     }
   }
 
@@ -278,12 +362,20 @@ class BrandCtr extends GetxController {
     sortByVal = sortBy;
     orderByVal = orderBy;
     try {
-      isLoadingShopProductFilter.value = true;
-      shopProductFilter = await fetchShopProductFilterServices(
-          sectionId, shopId, sortBy, orderBy, offset,
-          path: path);
+      if (path == 'shops') {
+        isLoadingShopProductFilter.value = true;
+        shopProductFilter = await fetchShopProductFilterServices(
+            sectionId, shopId, sortBy, orderBy, offset,
+            path: path);
+      } else {
+        isLoadingBrandProductFilter.value = true;
+        brandProductFilter = await fetchShopProductFilterServices(
+            sectionId, shopId, sortBy, orderBy, offset,
+            path: path);
+      }
     } finally {
       isLoadingShopProductFilter.value = false;
+      isLoadingBrandProductFilter.value = false;
     }
   }
 

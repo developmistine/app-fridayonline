@@ -256,7 +256,6 @@ class _SplashScreenState extends State<SplashScreen> {
         var accToken = await data.accessToken;
         bool isGuest = (repType == '0' || repType == 'null');
         bool tokenInvalid = (accToken == "null" || accToken == "");
-        Get.put(ProfileCtl()).fetchProfile();
 
         if (isGuest) {
           if (accToken != "" && accToken != "null") {
@@ -273,6 +272,8 @@ class _SplashScreenState extends State<SplashScreen> {
         } else {
           await checkShowFair();
           endUserHomeCtr.endUserGetAllHomePage();
+          Get.put(ProfileCtl()).fetchProfile();
+
           if (mounted) {
             if (widget.redirect == 'special_project') {
               Get.offAll(() => EndUserHome(), routeName: "/EndUserHome");

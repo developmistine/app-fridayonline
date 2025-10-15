@@ -263,7 +263,7 @@ class _BrandItemsState extends State<BrandItems>
           path: 'brands');
 
       if (newProductFilter!.data.products.isNotEmpty) {
-        brandCtr.shopProductFilter!.data.products
+        brandCtr.brandProductFilter!.data.products
             .addAll(newProductFilter.data.products);
         offset += 40;
       }
@@ -321,10 +321,10 @@ class _BrandItemsState extends State<BrandItems>
               child: Scaffold(
                 backgroundColor: Colors.grey.shade100,
                 body: Obx(() {
-                  if (brandCtr.isLoadingShop.value) {
+                  if (brandCtr.isLoadingBrand.value) {
                     return loadingShop(context);
                   }
-                  if (brandCtr.shopInfo!.code == "-9") {
+                  if (brandCtr.brandInfo!.code == "-9") {
                     return nodataStore();
                   }
                   return Stack(
@@ -360,7 +360,7 @@ class _BrandItemsState extends State<BrandItems>
                                       //     .connectWebSocket();
 
                                       var res = await addChatRoomService(
-                                          brandCtr.shopInfo!.data.shopId);
+                                          brandCtr.brandInfo!.data.shopId);
                                       chatController.openChatRoom.value =
                                           res.data.chatRoomId;
                                       final message = {
@@ -384,8 +384,8 @@ class _BrandItemsState extends State<BrandItems>
                                       //           customerImage: '',
                                       //           sellerId: res.data.sellerId,
                                       //           sellerName: brandCtr
-                                      //               .shopInfo!.data.shopName,
-                                      //           sellerImage: brandCtr.shopInfo!
+                                      //               .brandInfo!.data.shopName,
+                                      //           sellerImage: brandCtr.brandInfo!
                                       //               .data.account.image,
                                       //           messageType: 1,
                                       //           messageText: '',
@@ -483,12 +483,12 @@ class _BrandItemsState extends State<BrandItems>
 
   Widget shopCategory() {
     return Obx(() {
-      if (brandCtr.isLoadingShopCategory.value) {
+      if (brandCtr.isLoadingBrandCategory.value) {
         return const Center(
           child: CircularProgressIndicator.adaptive(),
         );
       }
-      if (brandCtr.shopCategory!.data.isEmpty) {
+      if (brandCtr.brandCategory!.data.isEmpty) {
         return SizedBox(
           height: Get.height / 1.5,
           child: Center(
@@ -504,7 +504,7 @@ class _BrandItemsState extends State<BrandItems>
           )),
         );
       }
-      var items = brandCtr.shopCategory!.data;
+      var items = brandCtr.brandCategory!.data;
       return Column(
         children: [
           InkWell(
@@ -675,11 +675,11 @@ class _BrandItemsState extends State<BrandItems>
 
   Widget shopContent() {
     return Obx(() {
-      if (brandCtr.isLoadingShopContent.value) {
+      if (brandCtr.isLoadingBrandContent.value) {
         return loadingShopContent();
       }
 
-      if (brandCtr.shopContent!.data.isEmpty) {
+      if (brandCtr.brandContent!.data.isEmpty) {
         return Container(
           width: Get.width,
           height: Get.height / 1.4,
@@ -704,17 +704,17 @@ class _BrandItemsState extends State<BrandItems>
         padding: const EdgeInsets.only(left: 4, right: 4, top: 4, bottom: 40),
         physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
-        itemCount: brandCtr.shopContent!.data.length,
+        itemCount: brandCtr.brandContent!.data.length,
         itemBuilder: (context, index) {
-          var items = brandCtr.shopContent!.data[index];
+          var items = brandCtr.brandContent!.data[index];
           // ใช้ keys จาก cache
           // final keys = brandCtr
-          //     .sectionKeysCache[brandCtr.shopInfo!.data.shopId.toString()];
+          //     .sectionKeysCache[brandCtr.brandInfo!.data.shopId.toString()];
           // final key = keys != null && index < keys.length ? keys[index] : null;
           return Builder(
             // key: key,
             key: ValueKey(
-                'shop_${brandCtr.shopInfo!.data.shopId}_section_${items.contentDetail.first.contentId}'),
+                'shop_${brandCtr.brandInfo!.data.shopId}_section_${items.contentDetail.first.contentId}'),
 
             builder: (context) {
               if (items.contentType == 1) {
@@ -1155,7 +1155,7 @@ class _BrandItemsState extends State<BrandItems>
       top: 110,
       left: 10,
       child: Builder(builder: (context) {
-        var items = brandCtr.shopInfo!.data;
+        var items = brandCtr.brandInfo!.data;
         return Row(
           children: [
             Stack(
@@ -1243,7 +1243,7 @@ class _BrandItemsState extends State<BrandItems>
           SizedBox(
             width: Get.width,
             child: CachedNetworkImage(
-              imageUrl: brandCtr.shopInfo!.data.cover,
+              imageUrl: brandCtr.brandInfo!.data.cover,
               height: 170,
               fit: BoxFit.fill,
             ),
@@ -1269,7 +1269,7 @@ class _BrandItemsState extends State<BrandItems>
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Obx(() {
-            if (brandCtr.isLoadingShopProductFilter.value) {
+            if (brandCtr.isLoadingBrandProductFilter.value) {
               return MasonryGridView.builder(
                   padding:
                       const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
@@ -1284,7 +1284,7 @@ class _BrandItemsState extends State<BrandItems>
                   itemBuilder: (BuildContext context, int index) {
                     return const ShimmerProductItem();
                   });
-            } else if (brandCtr.shopProductFilter!.data.products.isEmpty) {
+            } else if (brandCtr.brandProductFilter!.data.products.isEmpty) {
               return SizedBox(
                   height: Get.height / 1.5,
                   width: Get.width,
@@ -1308,16 +1308,16 @@ class _BrandItemsState extends State<BrandItems>
                 gridDelegate: SliverSimpleGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: (Get.width >= 768.0) ? 4 : 2,
                 ),
-                itemCount: brandCtr.shopProductFilter!.data.products.length +
+                itemCount: brandCtr.brandProductFilter!.data.products.length +
                     (brandCtr.isLoadingMore.value ? 1 : 0),
                 itemBuilder: (BuildContext context, int index) {
                   if (index ==
-                          brandCtr.shopProductFilter!.data.products.length &&
+                          brandCtr.brandProductFilter!.data.products.length &&
                       brandCtr.isLoadingMore.value) {
                     return const SizedBox.shrink();
                   }
                   return ProductCategoryComponents(
-                      item: brandCtr.shopProductFilter!.data.products[index],
+                      item: brandCtr.brandProductFilter!.data.products[index],
                       referrer: 'shop_product');
                 });
           }),
@@ -1328,14 +1328,14 @@ class _BrandItemsState extends State<BrandItems>
 
   Widget listCoupon() {
     return Obx(() {
-      if (brandCtr.isLoadingShopVouchers.value) {
+      if (brandCtr.isLoadingBrandVouchers.value) {
         return Container(
           margin: const EdgeInsets.all(4),
           color: Colors.white,
           height: 90,
         );
       }
-      if (brandCtr.shopVouchers!.code == "-9") {
+      if (brandCtr.brandVouchers!.code == "-9") {
         return const SizedBox();
       }
       return Container(
@@ -1351,8 +1351,9 @@ class _BrandItemsState extends State<BrandItems>
                     width: 8,
                   ),
                   ...List.generate(
-                      brandCtr.shopVouchers!.data.voucherList.length, (index) {
-                    var coupon = brandCtr.shopVouchers!.data.voucherList[index];
+                      brandCtr.brandVouchers!.data.voucherList.length, (index) {
+                    var coupon =
+                        brandCtr.brandVouchers!.data.voucherList[index];
                     return Padding(
                       padding: const EdgeInsets.only(right: 8.0),
                       child: Stack(
@@ -1463,7 +1464,7 @@ class _BrandItemsState extends State<BrandItems>
                                               coupon.shopId] = index;
                                         }
                                         brandCtr
-                                            .shopVouchers!
+                                            .brandVouchers!
                                             .data
                                             .voucherList[index]
                                             .userStatus
@@ -1594,88 +1595,101 @@ class _BrandItemsState extends State<BrandItems>
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    // Countdown
                     Obx(() {
-                      return !brandCtr.isLoadingShopFlashSale.value
-                          ? Column(
-                              children: [
-                                FlashDealCountDownHomePage(
-                                    data: brandCtr.countdown.value,
-                                    seemoreText: seemoreText),
-                              ],
-                            )
-                          : const SizedBox();
-                    }),
-                    Obx(() {
-                      if (!brandCtr.isLoadingShopFlashSale.value) {
-                        List<Widget> productList = List.generate(
-                          brandCtr.shopFlashSale!.data.productContent.length > 9
-                              ? 9
-                              : brandCtr
-                                  .shopFlashSale!.data.productContent.length,
-                          (index) {
-                            return FlashDealProductItem(
-                              product: brandCtr
-                                  .shopFlashSale!.data.productContent[index],
-                              referrer: "shop_flashsale",
-                              height: 128,
-                            );
-                          },
-                        );
-                        productList.add(seeMoreFlashSale());
-                        return Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            SizedBox(
-                              width: Get.width,
-                              height: 248,
-                              child: ShaderMask(
-                                shaderCallback: (Rect bounds) {
-                                  return const LinearGradient(
-                                    begin: Alignment.topCenter,
-                                    end: Alignment.bottomCenter,
-                                    colors: [
-                                      Colors.black,
-                                      Colors.transparent,
-                                    ],
-                                  ).createShader(bounds);
-                                },
-                                blendMode: BlendMode.dstIn,
-                                child: Image.asset(
-                                  'assets/images/b2c/background/bg-red.png',
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                            Positioned.fill(
-                              child: Container(
-                                padding:
-                                    const EdgeInsets.only(top: 8, bottom: 12),
-                                child: SingleChildScrollView(
-                                  scrollDirection: Axis.horizontal,
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 8.0, right: 8, bottom: 8, top: 4),
-                                    child: Row(children: productList),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        );
-                      } else {
-                        return SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          child: Row(
-                              children: List.generate(12, (index) {
-                            return const SizedBox();
-                          })),
-                        );
+                      final fs =
+                          brandCtr.brandFlashSale; // your model (nullable)
+                      if (brandCtr.isLoadingBrandFlashSale.value) {
+                        return const SizedBox.shrink();
                       }
+                      if (fs == null || fs.code == '-9') {
+                        return const SizedBox.shrink();
+                      }
+
+                      return Column(
+                        children: [
+                          FlashDealCountDownHomePage(
+                            data: brandCtr.countdown.value,
+                            seemoreText: seemoreText,
+                          ),
+                        ],
+                      );
                     }),
-                    if (!brandCtr.isLoadingShopFlashSale.value)
-                      const SizedBox(
-                        height: 8,
-                      ),
+
+                    // Horizontal products
+                    Obx(() {
+                      final fs = brandCtr.brandFlashSale;
+                      if (brandCtr.isLoadingBrandFlashSale.value) {
+                        return const SizedBox.shrink();
+                      }
+                      if (fs == null || fs.code == '-9') {
+                        return const SizedBox.shrink();
+                      }
+
+                      final products = fs.data.productContent ?? [];
+                      if (products.isEmpty) return const SizedBox.shrink();
+
+                      final int count =
+                          products.length > 9 ? 9 : products.length;
+                      final List<Widget> productList = List.generate(
+                        count,
+                        (i) => FlashDealProductItem(
+                          product: products[i],
+                          referrer: "shop_flashsale",
+                          height: 128,
+                        ),
+                      )..add(seeMoreFlashSale());
+
+                      return Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          SizedBox(
+                            width: Get.width,
+                            height: 248,
+                            child: ShaderMask(
+                              shaderCallback: (Rect bounds) {
+                                return const LinearGradient(
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
+                                  colors: [Colors.black, Colors.transparent],
+                                ).createShader(bounds);
+                              },
+                              blendMode: BlendMode.dstIn,
+                              child: Image.asset(
+                                'assets/images/b2c/background/bg-red.png',
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          Positioned.fill(
+                            child: Container(
+                              padding:
+                                  const EdgeInsets.only(top: 8, bottom: 12),
+                              child: SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 8, right: 8, bottom: 8, top: 4),
+                                  child: Row(children: productList),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      );
+                    }),
+
+                    // Spacer only when not loading and not -9
+                    Obx(() {
+                      final fs = brandCtr.brandFlashSale;
+                      final showSpacer =
+                          !brandCtr.isLoadingBrandFlashSale.value &&
+                              fs != null &&
+                              fs.code != '-9';
+                      return showSpacer
+                          ? const SizedBox(height: 8)
+                          : const SizedBox.shrink();
+                    }),
                   ],
                 ),
               ],
@@ -1953,11 +1967,11 @@ Widget loadingShop(BuildContext context) {
 
 Widget tabBar(setTapActive, tapActive) {
   return Obx(() {
-    if (brandCtr.isLoadingShopCategory.value) {
+    if (brandCtr.isLoadingBrandCategory.value) {
       return const SizedBox();
     }
     var listTap = ["ร้านค้า", "รายการสินค้า", "หมวดหมู่"];
-    if (brandCtr.shopCategory!.data.isEmpty) {
+    if (brandCtr.brandCategory!.data.isEmpty) {
       listTap.removeLast();
     }
     return Container(
