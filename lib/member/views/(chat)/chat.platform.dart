@@ -671,7 +671,7 @@ class _ChatAppWithPlatformState extends State<ChatAppWithPlatform>
         ),
         child: Scaffold(
           backgroundColor: Colors.white,
-          appBar: appBarMasterEndUser('แชทกับFriday Online'),
+          appBar: appBarMasterEndUser('แชทกับ Friday Online'),
           body: SafeArea(
             child: GestureDetector(
               onTap: () {
