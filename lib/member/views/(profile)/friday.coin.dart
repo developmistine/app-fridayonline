@@ -95,13 +95,13 @@ class FridayCoin extends StatelessWidget {
                                         SetData data = SetData();
                                         var token = await data.accessToken;
                                         var custId = await data.b2cCustID;
-                                        Get.to(() => Scaffold(
-                                              appBar: appBarMasterEndUser(
-                                                  'Friday Online coin'),
-                                              body: WebViewFullScreen(
-                                                  mparamurl:
-                                                      '${webview_b2c}coin/info?token=$token&custId=$custId'),
-                                            ));
+                                        // Get.to(() => Scaffold(
+                                        //       appBar: appBarMasterEndUser(
+                                        //           'Friday Online coin'),
+                                        //       body: WebViewFullScreen(
+                                        //           mparamurl:
+                                        //               '${webview_b2c}coin/info?token=$token&custId=$custId'),
+                                        //     ));
                                       },
                                       child: const Icon(
                                         Icons.help_outline_rounded,
