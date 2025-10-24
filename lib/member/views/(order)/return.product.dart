@@ -5,6 +5,7 @@ import 'package:fridayonline/member/services/orders/order.service.dart';
 import 'package:fridayonline/member/utils/format.dart';
 import 'package:fridayonline/member/views/(profile)/myorder.dart';
 import 'package:fridayonline/member/widgets/dialog.dart';
+import 'package:fridayonline/print.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:fridayonline/preferrence.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -246,6 +247,8 @@ class _ReturnProdutState extends State<ReturnProdut> {
                                                         if (item.qty > 0) {
                                                           setState(() {
                                                             item.qty--;
+                                                            item.isSeleted =
+                                                                item.qty > 0;
                                                           });
                                                         }
                                                       },
@@ -307,6 +310,8 @@ class _ReturnProdutState extends State<ReturnProdut> {
                                                             item.amount) {
                                                           setState(() {
                                                             item.qty++;
+                                                            item.isSeleted =
+                                                                true;
                                                           });
                                                         }
                                                       },
@@ -401,7 +406,7 @@ class _ReturnProdutState extends State<ReturnProdut> {
     );
   }
 
-  returnDialog({required List<Datum> reason}) {
+  Future returnDialog({required List<Datum> reason}) {
     var countImg = 0;
     final List<io.File> imageFileList = [];
     VideoPlayerController? controller;
@@ -890,6 +895,7 @@ class _ReturnProdutState extends State<ReturnProdut> {
                       Builder(builder: (context) {
                         var selectedReason = reason
                             .firstWhereOrNull((e) => e.isSelected == true);
+
                         var products =
                             orderCtr.orderDetail!.data.itemGroups.where(
                           (element) {
@@ -935,6 +941,8 @@ class _ReturnProdutState extends State<ReturnProdut> {
                                                 })
                                             .toList()
                                       };
+                                      // printJSON(payload);
+
                                       await submitReturnSaveService(
                                               json: payload,
                                               images: imageFileList,
