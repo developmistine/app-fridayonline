@@ -1,4 +1,5 @@
 import "dart:async";
+import "package:app_links/app_links.dart";
 import "package:fridayonline/controller/update_app_controller.dart";
 import "package:fridayonline/member/components/appbar/appbar.enduser.dart";
 import "package:fridayonline/member/components/appbar/appbar.nosearch.dart";
@@ -57,8 +58,12 @@ class _EndUserHomeState extends State<EndUserHome>
   String lslogin = "0";
 
   // Uri? _initialURI;
-  StreamSubscription? _streamSubscription;
+  // StreamSubscription? _streamSubscription;
   String mChannel = "";
+
+  // App links
+  final _navigatorKey = GlobalKey<NavigatorState>();
+  StreamSubscription<Uri>? _linkSubscription;
 
   StreamSubscription<RemoteMessage>? streamSubscription;
   StreamController<String> controllerData = StreamController<String>();
@@ -86,6 +91,18 @@ class _EndUserHomeState extends State<EndUserHome>
           break;
         }
     }
+  }
+
+  Future<void> initDeepLinks() async {
+    // Handle links
+    _linkSubscription = AppLinks().uriLinkStream.listen((uri) {
+      debugPrint('onAppLink: $uri');
+      openAppLink(uri);
+    });
+  }
+
+  void openAppLink(Uri uri) {
+    _navigatorKey.currentState?.pushNamed(uri.fragment);
   }
 
   // void initURIHandler() async {
@@ -254,6 +271,8 @@ class _EndUserHomeState extends State<EndUserHome>
     super.initState();
     getType();
     initPlatformState();
+    initDeepLinks();
+
     WidgetsBinding.instance.addPostFrameCallback((_) {
       FirebaseMessageService.handlePendingMessage();
     });
@@ -291,7 +310,7 @@ class _EndUserHomeState extends State<EndUserHome>
   @override
   void dispose() {
     _branchManager.dispose();
-    _streamSubscription?.cancel();
+    _linkSubscription?.cancel();
     super.dispose();
     controllerData.close();
     controllerUrl.close();

@@ -136,6 +136,7 @@ dependencies:
   mime: ^2.0.0
   month_picker_dialog: ^6.5.0
   year_month_picker: ^1.0.2
+  app_links: ^6.4.1
 
 # Icon configure
 flutter_launcher_icons:
