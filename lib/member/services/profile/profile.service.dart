@@ -131,35 +131,35 @@ class ApiProfile {
     }
   }
 
-  Future<HomeSpecialB2C> fetchSpecialProject() async {
-    SetData data = SetData();
-    final url = Uri.parse("${b2c_api_url}api/v1/home/special");
-    try {
-      final response = await AuthFetch.post(
-        url,
-        headers: {
-          'Content-Type': 'application/json; charset=utf-8',
-        },
-        body: jsonEncode({
-          "cust_id": await data.b2cCustID,
-          "device": await data.device,
-          "session_id": await data.sessionId,
-          "token_app": await data.tokenId
-        }),
-      );
+  // Future<HomeSpecialB2C> fetchSpecialProject() async {
+  //   SetData data = SetData();
+  //   final url = Uri.parse("${b2c_api_url}api/v1/home/special");
+  //   try {
+  //     final response = await AuthFetch.post(
+  //       url,
+  //       headers: {
+  //         'Content-Type': 'application/json; charset=utf-8',
+  //       },
+  //       body: jsonEncode({
+  //         "cust_id": await data.b2cCustID,
+  //         "device": await data.device,
+  //         "session_id": await data.sessionId,
+  //         "token_app": await data.tokenId
+  //       }),
+  //     );
 
-      if (response.statusCode == 200) {
-        final homeSpecialB2C =
-            homeSpecialB2CFromJson(utf8.decode(response.bodyBytes));
+  //     if (response.statusCode == 200) {
+  //       final homeSpecialB2C =
+  //           homeSpecialB2CFromJson(utf8.decode(response.bodyBytes));
 
-        return homeSpecialB2C;
-      }
-      return Future.error(
-          'Error fetch special project: ${response.statusCode} - ${response.body}');
-    } catch (e) {
-      return Future.error('Exception in fetchSpecialProject: $e');
-    }
-  }
+  //       return homeSpecialB2C;
+  //     }
+  //     return Future.error(
+  //         'Error fetch special project: ${response.statusCode} - ${response.body}');
+  //   } catch (e) {
+  //     return Future.error('Exception in fetchSpecialProject: $e');
+  //   }
+  // }
 
   Future<Response> deleteAccountService() async {
     SetData data = SetData();
