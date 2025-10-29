@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 Future insertClickLinkB2C(referringBrowser, referringId, deviceId) async {
   SetData data = SetData();
 
-  var url = Uri.parse("https://app.friday.co.th/api/log/branch_referring");
+  var url = Uri.parse("https://api.friday.co.th/fridayonline/api/log/branch_referring");
   var json = jsonEncode({
     "cust_id": await data.b2cCustID,
     "referring_browser": referringBrowser,

@@ -55,6 +55,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
                 <action android:name="com.google.android.gms.metadata.MODULE_DEPENDENCIES" />
             </intent-filter>
+
+            <intent-filter>
+				<data android:scheme="fridayonline" android:host="open" />
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+			</intent-filter>
+
+			<!-- Branch App Links - Live App -->
+			<intent-filter android:autoVerify="true">
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data android:scheme="https" android:host="fridayonline.app.link" />
+				<data android:scheme="https" android:host="fridayonline-alternate.app.link" />
+			</intent-filter>
         </activity>
 
         <!-- Facebook Configuration -->
@@ -74,34 +90,12 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
-
-            <!-- Branch URI Scheme -->
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data
-                    android:scheme="fridayonline"
-                    android:host="open" />
-            </intent-filter>
-
-            <!-- Branch App Links - Live App -->
-            <intent-filter android:autoVerify="true">
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https" android:host="fridayonline.app.link" />
-                <data android:scheme="https" android:host="fridayonline-alternate.app.link" />
-            </intent-filter>
-
         </activity>
 
         <!-- Branch friyday online init -->
         <!-- REPLACE `BranchKey` with the value from your Branch Dashboard -->
-        <meta-data android:name="io.branch.sdk.BranchKey"
-            android:value="key_live_kBBl60tp85tQfMPIAu4LvnlhFEcNgpQT" />
-        <meta-data android:name="io.branch.sdk.BranchKey.test"
-            android:value="key_live_kBBl60tp85tQfMPIAu4LvnlhFEcNgpQT" />
+        <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_kBBl60tp85tQfMPIAu4LvnlhFEcNgpQT" />
+        <meta-data android:name="io.branch.sdk.BranchKey.test" android:value="key_live_kBBl60tp85tQfMPIAu4LvnlhFEcNgpQT" />
         <meta-data android:name="io.branch.sdk.TestMode" android:value="false" />
         <meta-data android:name="flutter_deeplinking_enabled" android:value="false" />
 
