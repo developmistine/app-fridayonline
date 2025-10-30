@@ -5,7 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 Future<Object?> popupUpdateApp(
-    {required String urlStore, required BuildContext context}) {
+    {required String urlStore,
+    required BuildContext context,
+    required String releaseNote}) {
   return dialogCommon(
     insetPadding: 16,
     context,
@@ -26,7 +28,7 @@ Future<Object?> popupUpdateApp(
             ),
           ),
           Text(
-            'กรุณาอัปเดตแอปเวอร์ชันใหม่ใน Store ของท่าน\nเพื่อยกระดับประสบการณ์การใช้งานที่ดียิ่งขึ้น',
+            releaseNote,
             textAlign: TextAlign.center,
             style: GoogleFonts.ibmPlexSansThai(
               color: const Color(0xFF5A5A5A),

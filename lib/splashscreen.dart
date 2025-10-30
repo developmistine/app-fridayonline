@@ -232,7 +232,9 @@ class _SplashScreenState extends State<SplashScreen> {
         if (mounted) {
           debugPrint('Force update required');
           await popupUpdateApp(
-              urlStore: isAppUpdate.data.updateUrl, context: context);
+              urlStore: isAppUpdate.data.updateUrl,
+              context: context,
+              releaseNote: isAppUpdate.data.releaseNote);
         }
       } else {
         debugPrint('App is up to date');
