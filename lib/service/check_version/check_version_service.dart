@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:fridayonline/member/models/check_version/check_version_app_model.dart';
 import 'package:fridayonline/member/models/check_version/check_version_model.dart';
 import 'package:fridayonline/preferrence.dart';
 
@@ -35,57 +36,58 @@ Future<CheckVersionModel?> call_check_version() async {
     return checkversion;
   } catch (e) {
     print('Error function >>call_check_version<< is $e');
-    var json = jsonEncode({
-      "Version": {
-        "Code": "version_code",
-        "Value": "53",
-        "Extra": "major",
-        "AndroidVersion": {
-          "isMaintain": "false",
-          "maintainDetail": "Server Maintainance.Please wait few minutes.",
-          "uriMaintenance": "",
-          "isForceUpdate": "1",
-          "versionCode": "0",
-          "uriPlayStore":
-              "https://play.google.com/store/apps/details?id=th.co.friday.fridayonline",
-          "showAlert": "true",
-          "alertShowTitle": "Friday: ปรับปรุงเวอร์ชัน",
-          "alertShowDetail": "กรุณาอัปเดตเวอร์ชันปัจจุบันค่ะ..",
-          "contentHilightStatus": "Y",
-          "Showpopup": "Y",
-          "uriItunes": ""
-        },
-        "HuaweiVersion": {
-          "isMaintain": "false",
-          "maintainDetail": "Server Maintainance.Please wait few minutes.",
-          "uriMaintenance": "",
-          "isForceUpdate": "1",
-          "versionCode": "0",
-          "uriPlayStore": "https://appgallery.huawei.com/app/C102878081",
-          "showAlert": "true",
-          "alertShowTitle": "Friday : ปรับปรุงเวอร์ชัน",
-          "alertShowDetail": "กรุณาอัปเดตเวอร์ชันปัจจุบันค่ะ..",
-          "contentHilightStatus": "Y",
-          "Showpopup": "Y",
-          "uriItunes": ""
-        },
-        "IOSVersion": {
-          "isMaintain": "false",
-          "maintainDetail": "Server Maintainance.Please wait few minutes.",
-          "uriMaintenance": "",
-          "isForceUpdate": "1",
-          "versionCode": "1.0.0",
-          "uriPlayStore": "https://itunes.apple.com/app/id1095215909",
-          "showAlert": "true",
-          "alertShowTitle": "Friday : ปรับปรุงเวอร์ชัน",
-          "alertShowDetail": "กรุณาอัปเดตเวอร์ชันปัจจุบันค่ะ..",
-          "contentHilightStatus": "Y",
-          "Showpopup": "Y",
-          "uriItunes": ""
-        }
-      }
-    });
-    CheckVersionModel checkversion = checkVersionModelFromJson(json);
-    return checkversion;
+    // var json = jsonEncode({
+    //   "Version": {
+    //     "Code": "version_code",
+    //     "Value": "53",
+    //     "Extra": "major",
+    //     "AndroidVersion": {
+    //       "isMaintain": "false",
+    //       "maintainDetail": "Server Maintainance.Please wait few minutes.",
+    //       "uriMaintenance": "",
+    //       "isForceUpdate": "1",
+    //       "versionCode": "0",
+    //       "uriPlayStore":
+    //           "https://play.google.com/store/apps/details?id=th.co.friday.fridayonline",
+    //       "showAlert": "true",
+    //       "alertShowTitle": "Friday: ปรับปรุงเวอร์ชัน",
+    //       "alertShowDetail": "กรุณาอัปเดตเวอร์ชันปัจจุบันค่ะ..",
+    //       "contentHilightStatus": "Y",
+    //       "Showpopup": "Y",
+    //       "uriItunes": ""
+    //     },
+    //     "HuaweiVersion": {
+    //       "isMaintain": "false",
+    //       "maintainDetail": "Server Maintainance.Please wait few minutes.",
+    //       "uriMaintenance": "",
+    //       "isForceUpdate": "1",
+    //       "versionCode": "0",
+    //       "uriPlayStore": "https://appgallery.huawei.com/app/C102878081",
+    //       "showAlert": "true",
+    //       "alertShowTitle": "Friday : ปรับปรุงเวอร์ชัน",
+    //       "alertShowDetail": "กรุณาอัปเดตเวอร์ชันปัจจุบันค่ะ..",
+    //       "contentHilightStatus": "Y",
+    //       "Showpopup": "Y",
+    //       "uriItunes": ""
+    //     },
+    //     "IOSVersion": {
+    //       "isMaintain": "false",
+    //       "maintainDetail": "Server Maintainance.Please wait few minutes.",
+    //       "uriMaintenance": "",
+    //       "isForceUpdate": "1",
+    //       "versionCode": "1.0.0",
+    //       "uriPlayStore": "https://itunes.apple.com/app/id1095215909",
+    //       "showAlert": "true",
+    //       "alertShowTitle": "Friday : ปรับปรุงเวอร์ชัน",
+    //       "alertShowDetail": "กรุณาอัปเดตเวอร์ชันปัจจุบันค่ะ..",
+    //       "contentHilightStatus": "Y",
+    //       "Showpopup": "Y",
+    //       "uriItunes": ""
+    //     }
+    //   }
+    // });
+    // CheckVersionModel checkversion = checkVersionModelFromJson(json);
+    // return checkversion;
   }
+  return null;
 }

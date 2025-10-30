@@ -4,12 +4,15 @@ import 'dart:io';
 import 'package:fridayonline/member/components/error/error.page.dart';
 import 'package:fridayonline/member/components/webview/webview.dart';
 import 'package:fridayonline/member/controller/profile.ctr.dart';
+import 'package:fridayonline/member/models/check_version/check_version_app_model.dart';
 import 'package:fridayonline/member/models/check_version/check_version_model.dart';
 import 'package:fridayonline/member/utils/branch_manager_main.dart';
 import 'package:fridayonline/member/utils/image_preloader.dart';
 import 'package:fridayonline/global.dart';
+import 'package:fridayonline/member/widgets/popup_update.dart';
 import 'package:fridayonline/preferrence.dart';
 import 'package:fridayonline/print.dart';
+import 'package:fridayonline/service/check_version/check_version_app_service.dart';
 import 'package:fridayonline/service/pathapi.dart';
 import 'package:fridayonline/theme.dart';
 import 'package:flutter/services.dart';
@@ -165,58 +168,78 @@ class _SplashScreenState extends State<SplashScreen> {
     BranchManagerMain.disposePending();
   }
 
-  Future<void> checkAppNewVersion() async {
-    CheckVersionModel? checkversion = await call_check_version();
+  // Future<void> checkAppNewVersion() async {
+  //   CheckVersionModel? checkversion = await call_check_version();
+  //   if (Platform.isAndroid) {
+  //     DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+  //     AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
+  //     final isHuawei = androidInfo.manufacturer.toLowerCase() == "huawei";
+  //     int androidNewVersion = int.parse(isHuawei
+  //         ? checkversion!.version.huaweiVersion.versionCode
+  //         : checkversion!.version.androidVersion.versionCode
+  //             .replaceAll(RegExp(r'[^0-9]'), ''));
+  //     int androidOldVersion =
+  //         int.parse(_packageInfo.buildNumber.replaceAll(RegExp(r'[^0-9]'), ''));
+  //     debugPrint('Android Old Version : $androidNewVersion');
+  //     debugPrint('Android New Version : $androidOldVersion');
+  //     //! > production , < dev
+  //     if (androidNewVersion > androidOldVersion) {
+  //       debugPrint('required update version');
+  //       // เช็คว่า Play Store ติดตั้งอยู่หรือไม่ (ใช้ ?? false เพื่อป้องกัน null)
+  //       final hasPlayStore = isHuawei
+  //           ? (await AppChecker.isAppInstalled('com.android.vending'))
+  //           : true;
+  //       final versionInfo = hasPlayStore
+  //           ? checkversion.version.androidVersion
+  //           : checkversion.version.huaweiVersion;
+  //       Get.find<UpdateAppController>().setStatusupdate(
+  //           versionInfo.alertShowTitle,
+  //           versionInfo.alertShowDetail,
+  //           versionInfo.uriPlayStore);
+  //     }
+  //   } else {
+  //     var iosNewVersion =
+  //         semver.Version.parse(checkversion!.version.iosVersion.versionCode);
+  //     var iosOldVersion = semver.Version.parse(_packageInfo.version);
 
-    if (Platform.isAndroid) {
-      DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
-      AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-      final isHuawei = androidInfo.manufacturer.toLowerCase() == "huawei";
-
-      int androidNewVersion = int.parse(isHuawei
-          ? checkversion!.version.huaweiVersion.versionCode
-          : checkversion!.version.androidVersion.versionCode
-              .replaceAll(RegExp(r'[^0-9]'), ''));
-      int androidOldVersion =
-          int.parse(_packageInfo.buildNumber.replaceAll(RegExp(r'[^0-9]'), ''));
-      debugPrint('Android Old Version : $androidNewVersion');
-      debugPrint('Android New Version : $androidOldVersion');
-      //! > production , < dev
-      if (androidNewVersion > androidOldVersion) {
-        debugPrint('required update version');
-        // เช็คว่า Play Store ติดตั้งอยู่หรือไม่ (ใช้ ?? false เพื่อป้องกัน null)
-        final hasPlayStore = isHuawei
-            ? (await AppChecker.isAppInstalled('com.android.vending'))
-            : true;
-        final versionInfo = hasPlayStore
-            ? checkversion.version.androidVersion
-            : checkversion.version.huaweiVersion;
-        Get.find<UpdateAppController>().setStatusupdate(
-            versionInfo.alertShowTitle,
-            versionInfo.alertShowDetail,
-            versionInfo.uriPlayStore);
-      }
-    } else {
-      var iosNewVersion =
-          semver.Version.parse(checkversion!.version.iosVersion.versionCode);
-      var iosOldVersion = semver.Version.parse(_packageInfo.version);
-
-      debugPrint('IOS Old Version : $iosNewVersion');
-      debugPrint('IOS New Version : $iosOldVersion');
-      //! > production , < dev
-      if (iosNewVersion > iosOldVersion) {
-        debugPrint('required update version');
-        Get.find<UpdateAppController>().setStatusupdate(
-            checkversion.version.iosVersion.alertShowTitle,
-            checkversion.version.iosVersion.alertShowDetail,
-            checkversion.version.iosVersion.uriItunes);
-      }
-    }
-  }
+  //     debugPrint('IOS Old Version : $iosNewVersion');
+  //     debugPrint('IOS New Version : $iosOldVersion');
+  //     //! > production , < dev
+  //     if (iosNewVersion > iosOldVersion) {
+  //       debugPrint('required update version');
+  //       Get.find<UpdateAppController>().setStatusupdate(
+  //           checkversion.version.iosVersion.alertShowTitle,
+  //           checkversion.version.iosVersion.alertShowDetail,
+  //           checkversion.version.iosVersion.uriItunes);
+  //     }
+  //   }
+  // }
 
   Future<void> checkShowFair() async {
     // bool isVisibility = await fetchFairVisibilityService();
     // endUserHomeCtr.isVisibilityFair.value = isVisibility;
+  }
+
+  // NEW: Check App Version
+  Future<void> _checkAppVersion() async {
+    try {
+      // Small delay to ensure Hive is ready
+      await Future.delayed(const Duration(milliseconds: 100));
+
+      CheckAppversion isAppUpdate =
+          await CheckVersionAppService.checkVersionApp();
+      if (isAppUpdate.data.isForceUpdate) {
+        if (mounted) {
+          debugPrint('Force update required');
+          await popupUpdateApp(
+              urlStore: isAppUpdate.data.updateUrl, context: context);
+        }
+      } else {
+        debugPrint('App is up to date');
+      }
+    } catch (e) {
+      debugPrint('Error checking app version: $e');
+    }
   }
 
   Future<void> checkNetworkConnection() async {
@@ -242,8 +265,10 @@ class _SplashScreenState extends State<SplashScreen> {
         } else {
           loadLastDragTime();
         }
+
         // await checkAppNewVersion();
 
+        await _checkAppVersion();
         if (!mounted) return;
 
         if (BranchManagerMain.pendingData != null) {

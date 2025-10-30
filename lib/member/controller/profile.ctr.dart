@@ -38,7 +38,7 @@ class ProfileCtl extends GetxController {
   void onInit() {
     super.onInit();
     fetchProfile();
-    fetchSpecialProject();
+    // fetchSpecialProject();
   }
 
   String getSelectedDate() {
@@ -90,15 +90,15 @@ class ProfileCtl extends GetxController {
     }
   }
 
-  fetchSpecialProject() async {
-    try {
-      isLoadingSpecial(true);
-      final special = await ApiProfile().fetchSpecialProject();
-      specialData.value = special;
-    } finally {
-      isLoadingSpecial(false);
-    }
-  }
+  // fetchSpecialProject() async {
+  //   try {
+  //     isLoadingSpecial(true);
+  //     final special = await ApiProfile().fetchSpecialProject();
+  //     specialData.value = special;
+  //   } finally {
+  //     isLoadingSpecial(false);
+  //   }
+  // }
 
   Future<void> fetchUpdateUserName(String displayName, String gender,
       String birthday, String mobile, String email) async {

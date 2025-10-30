@@ -12,6 +12,7 @@ import 'package:fridayonline/push/firebase_message_service.dart';
 // import 'package:fridayonline/push/huawei_notification.dart';
 import 'package:fridayonline/push/local_notification_service.dart';
 import 'package:fridayonline/router.dart';
+import 'package:fridayonline/service/hive_services.dart';
 import 'package:fridayonline/splashscreen.dart';
 import 'package:fridayonline/theme.dart';
 
@@ -24,6 +25,9 @@ import 'package:flutter_branch_sdk/flutter_branch_sdk.dart';
 import 'package:get/get.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:path_provider/path_provider.dart';
 // import 'package:huawei_push/huawei_push.dart' as huawei;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uuid/uuid.dart';
@@ -57,6 +61,11 @@ Future<void> initializeDefault() async {
 
 Future<void> main() async {
   WidgetsBinding widgetBinding = WidgetsFlutterBinding.ensureInitialized();
+
+  final appDocumentDir = await getApplicationDocumentsDirectory();
+
+  await HiveServices.init();
+  Hive.init(appDocumentDir.path);
 
   // Firebase initial
   // await Firebase.initializeApp();
