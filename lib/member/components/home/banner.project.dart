@@ -88,6 +88,7 @@ class _BannerProjectState extends State<BannerProject> {
                   borderRadius: BorderRadius.circular(8),
                   child: CacheImageBannerB2C(
                     url: img,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),

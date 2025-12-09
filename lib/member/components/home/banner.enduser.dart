@@ -51,6 +51,7 @@ class _BannerEndUserState extends State<BannerEndUser> {
                             child: CacheImageBannerB2C(
                               url: endUserHomeCtr
                                   .homeBanner!.data[itemIndex].image,
+                              fit: BoxFit.cover,
                             ),
                           ),
                         ),

@@ -401,7 +401,8 @@ class _CacheImageProductsState extends State<CacheImageProducts>
 // ปรับปรุง CacheImageBannerB2C
 class CacheImageBannerB2C extends StatefulWidget {
   final String url;
-  const CacheImageBannerB2C({super.key, required this.url});
+  const CacheImageBannerB2C(
+      {super.key, required this.url, required BoxFit fit});
 
   @override
   State<CacheImageBannerB2C> createState() => _CacheImageBannerB2CState();

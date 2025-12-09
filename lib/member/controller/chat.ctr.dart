@@ -8,6 +8,7 @@ import 'package:fridayonline/member/services/chat/chat.service.dart';
 import 'package:fridayonline/preferrence.dart';
 import 'package:fridayonline/print.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:photo_manager/photo_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
@@ -29,12 +30,60 @@ class ChatController extends GetxController {
   final Set<int> _seenMessageIds = <int>{};
 
   // gallery
-  int page = 0;
+  // int page = 0;
+  RxInt page = 0.obs;
   final RxInt selectedCount = 0.obs;
-  bool isLoadingGallery = false;
-  bool isLoadingMoreGallery = false;
+  RxBool isLoadingGallery = false.obs;
+  RxBool isLoadingMoreGallery = false.obs;
   bool hasMoreToLoad = true;
-  RxList<AssetEntity> selectedEntities = <AssetEntity>[].obs;
+
+  final RxList<XFile> selectedEntities = <XFile>[].obs;
+  // RxList<AssetEntity> selectedEntities = <AssetEntity>[].obs;
+
+  @override
+  void onClose() {
+    selectedEntities.clear();
+    selectedCount.value = 0;
+    super.onClose();
+  }
+
+  // Add methods to manage selected files
+  void addToSelected(XFile file) {
+    if (!selectedEntities.contains(file)) {
+      selectedEntities.add(file);
+      selectedCount.value = selectedEntities.length;
+    }
+  }
+
+  void removeFromSelected(XFile file) {
+    selectedEntities.remove(file);
+    selectedCount.value = selectedEntities.length;
+  }
+
+  void toggleSelection(XFile file) {
+    if (selectedEntities.contains(file)) {
+      removeFromSelected(file);
+    } else {
+      addToSelected(file);
+    }
+  }
+
+  void clearSelected() {
+    selectedEntities.clear();
+    selectedCount.value = 0;
+  }
+
+  bool isSelected(XFile file) {
+    return selectedEntities.contains(file);
+  }
+
+  int getSelectedCount() {
+    return selectedEntities.length;
+  }
+
+  bool canAddMore() {
+    return selectedEntities.length < 9;
+  }
 
   void sortConversationsByLastSend() {
     conversations!.value.data.sort((a, b) {
