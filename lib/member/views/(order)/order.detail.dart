@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/services.dart';
 import 'package:fridayonline/member/components/appbar/appbar.master.dart';
 import 'package:fridayonline/member/components/viewer/fullscreen.image.dart';
 import 'package:fridayonline/member/controller/brand.ctr.dart';
@@ -1137,7 +1138,7 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
         ));
   }
 
-  bottomDetailReturn({required Bank bank, required Courier courier}) {
+  void bottomDetailReturn({required Bank bank, required Courier courier}) {
     var address = orderCtr.orderDetail!.data.returnInfo.returnAddress;
     int selectedBankId = bank.data.first.bankId;
     int selectedCourierId = courier.data.first.courierId;
@@ -1175,9 +1176,17 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
           onTap: () {
             FocusScope.of(context).unfocus();
           },
-          child: SafeArea(
-              child: SingleChildScrollView(
-            child: Column(
+          child: Container(
+            constraints: BoxConstraints(
+              maxHeight: MediaQuery.of(context).size.height * 0.9,
+            ),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius:
+                  const BorderRadius.vertical(top: Radius.circular(24)),
+            ),
+            child: SafeArea(
+                child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -1219,465 +1228,484 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                 const Divider(
                   height: 0,
                 ),
-                ConstrainedBox(
-                  constraints: BoxConstraints(maxHeight: Get.height / 1.2),
-                  child: Form(
-                    key: formkey,
-                    child: SingleChildScrollView(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            margin: const EdgeInsets.all(2),
-                            width: Get.width,
-                            padding: const EdgeInsets.all(8),
-                            color: themeColorDefault.withOpacity(0.2),
-                            child: Row(
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                      color: themeColorDefault,
-                                      borderRadius: BorderRadius.circular(50)),
-                                  padding: const EdgeInsets.all(2),
-                                  child: const Icon(
-                                    Icons.notifications_active_rounded,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 8,
-                                ),
-                                Expanded(
-                                  child: Text(
-                                    'โปรดระบุข้อมูลให้ถูกต้อง\nหลังกดยืนยันจะไม่สามารถแก้ไขได้อีก',
-                                    style: GoogleFonts.ibmPlexSansThai(
-                                        fontSize: 13),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          const Divider(
-                            height: 0,
-                          ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
-                            child: SingleChildScrollView(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                Flexible(
+                  child: SingleChildScrollView(
+                    child: Form(
+                      key: formkey,
+                      child: SingleChildScrollView(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.all(2),
+                              width: Get.width,
+                              padding: const EdgeInsets.all(8),
+                              color: themeColorDefault.withOpacity(0.2),
+                              child: Row(
                                 children: [
-                                  Text(
-                                    'บัญชีธนาคารที่ต้องการรับเงินคืน',
-                                    style: GoogleFonts.ibmPlexSansThai(
-                                        fontWeight: FontWeight.bold),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        color: themeColorDefault,
+                                        borderRadius:
+                                            BorderRadius.circular(50)),
+                                    padding: const EdgeInsets.all(2),
+                                    child: const Icon(
+                                      Icons.notifications_active_rounded,
+                                      color: Colors.white,
+                                    ),
                                   ),
                                   const SizedBox(
-                                    height: 8,
+                                    width: 8,
                                   ),
-                                  Container(
-                                    width: Get.width,
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 8),
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(4),
-                                        border: Border.all(color: Colors.grey)),
-                                    child: DropdownButton<int>(
-                                      isExpanded: true,
-                                      underline: const SizedBox(),
-                                      dropdownColor: Colors.white,
-                                      alignment:
-                                          AlignmentDirectional.bottomCenter,
-                                      icon: const Icon(
-                                          Icons.keyboard_arrow_down_rounded),
-                                      value: selectedBankId,
-                                      elevation: 12,
-                                      borderRadius: BorderRadius.circular(12),
-                                      hint: null,
-                                      // padding: EdgeInsets.zero,
-                                      style: TextStyle(
-                                          color: Colors.grey.shade700),
-                                      onChanged: (int? value) {
-                                        setState(() {
-                                          selectedBankId = value!;
-                                        });
-                                      },
-                                      selectedItemBuilder: (context) {
-                                        return bank.data.map((bank) {
-                                          return DropdownMenuItem<int>(
-                                            value: bank.bankId,
-                                            child: Text(
-                                              bank.bankName,
-                                              style: const TextStyle(
-                                                  color: Colors.black),
-                                            ),
-                                          );
-                                        }).toList();
-                                      },
-                                      items: bank.data.map((bank) {
-                                        return DropdownMenuItem<int>(
-                                          value: bank.bankId,
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Text(
+                                  Expanded(
+                                    child: Text(
+                                      'โปรดระบุข้อมูลให้ถูกต้อง\nหลังกดยืนยันจะไม่สามารถแก้ไขได้อีก',
+                                      style: GoogleFonts.ibmPlexSansThai(
+                                          fontSize: 13),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const Divider(
+                              height: 0,
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 8.0),
+                              child: SingleChildScrollView(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'บัญชีธนาคารที่ต้องการรับเงินคืน',
+                                      style: GoogleFonts.ibmPlexSansThai(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    const SizedBox(
+                                      height: 8,
+                                    ),
+                                    Container(
+                                      width: Get.width,
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8),
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(4),
+                                          border:
+                                              Border.all(color: Colors.grey)),
+                                      child: DropdownButton<int>(
+                                        isExpanded: true,
+                                        underline: const SizedBox(),
+                                        dropdownColor: Colors.white,
+                                        alignment:
+                                            AlignmentDirectional.bottomCenter,
+                                        icon: const Icon(
+                                            Icons.keyboard_arrow_down_rounded),
+                                        value: selectedBankId,
+                                        elevation: 12,
+                                        borderRadius: BorderRadius.circular(12),
+                                        hint: null,
+                                        // padding: EdgeInsets.zero,
+                                        style: TextStyle(
+                                            color: Colors.grey.shade700),
+                                        onChanged: (int? value) {
+                                          setState(() {
+                                            selectedBankId = value!;
+                                          });
+                                        },
+                                        selectedItemBuilder: (context) {
+                                          return bank.data.map((bank) {
+                                            return DropdownMenuItem<int>(
+                                              value: bank.bankId,
+                                              child: Text(
                                                 bank.bankName,
                                                 style: const TextStyle(
                                                     color: Colors.black),
                                               ),
-                                              const SizedBox(
-                                                height: 2,
-                                              ),
-                                              Divider(
-                                                  color: Colors.grey.shade300,
-                                                  height: 0,
-                                                  thickness: 1),
-                                            ],
-                                          ),
-                                        );
-                                      }).toList(),
+                                            );
+                                          }).toList();
+                                        },
+                                        items: bank.data.map((bank) {
+                                          return DropdownMenuItem<int>(
+                                            value: bank.bankId,
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  bank.bankName,
+                                                  style: const TextStyle(
+                                                      color: Colors.black),
+                                                ),
+                                                const SizedBox(
+                                                  height: 2,
+                                                ),
+                                                Divider(
+                                                    color: Colors.grey.shade300,
+                                                    height: 0,
+                                                    thickness: 1),
+                                              ],
+                                            ),
+                                          );
+                                        }).toList(),
+                                      ),
                                     ),
-                                  ),
-                                  const SizedBox(
-                                    height: 8,
-                                  ),
-                                  TextFormField(
-                                      validator: Validators.required(
-                                          'กรุณาระบุชื่อบัญชีของคุณ'),
-                                      controller: bankNameCtr,
-                                      style: GoogleFonts.ibmPlexSansThai(
-                                          fontSize: 13),
-                                      decoration:
-                                          textStyle(label: 'ชื่อบัญชี')),
-                                  const SizedBox(
-                                    height: 8,
-                                  ),
-                                  TextFormField(
+                                    const SizedBox(
+                                      height: 8,
+                                    ),
+                                    TextFormField(
+                                        validator: Validators.required(
+                                            'กรุณาระบุชื่อบัญชีของคุณ'),
+                                        controller: bankNameCtr,
+                                        style: GoogleFonts.ibmPlexSansThai(
+                                            fontSize: 13),
+                                        decoration:
+                                            textStyle(label: 'ชื่อบัญชี')),
+                                    const SizedBox(
+                                      height: 8,
+                                    ),
+                                    TextFormField(
                                       validator: Validators.required(
                                           'กรุณาระบุหมายเลขบัญชีของคุณ'),
-                                      keyboardType: TextInputType.phone,
+                                      keyboardType: TextInputType.number,
                                       controller: bankNoCtr,
                                       style: GoogleFonts.ibmPlexSansThai(
                                           fontSize: 13),
+                                      inputFormatters: [
+                                        FilteringTextInputFormatter.digitsOnly
+                                      ],
                                       decoration:
-                                          textStyle(label: 'หมายเลขบัญชี')),
-                                  const Divider(),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'ขนส่งเข้ารับพัสดุ',
-                                        style: GoogleFonts.ibmPlexSansThai(
-                                            fontSize: 13),
-                                      ),
-                                      Text(
-                                        returnInfo.returnPickupCondition,
-                                        style: GoogleFonts.ibmPlexSansThai(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.blue.shade400),
-                                      ),
-                                      Container(
-                                        width: Get.width,
-                                        margin: const EdgeInsets.symmetric(
-                                            vertical: 4),
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 8, vertical: 4),
-                                        decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(8),
-                                            border: Border.all(
-                                                color: Colors.blue.shade100),
-                                            color: Colors.blue.shade50),
-                                        child: Text(
-                                          courier.data[0].courierName,
-                                          style: GoogleFonts.ibmPlexSansThai(
-                                              fontSize: 12,
-                                              color: Colors.black),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 4,
-                                      ),
-                                      Text(
-                                        'ที่อยู่เข้ารับพัสดุ',
-                                        style: GoogleFonts.ibmPlexSansThai(
-                                            fontSize: 13),
-                                      ),
-                                      Container(
-                                        width: Get.width,
-                                        margin: const EdgeInsets.symmetric(
-                                            vertical: 4),
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 8, vertical: 4),
-                                        decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(8),
-                                            border: Border.all(
-                                                color: Colors.grey.shade300),
-                                            color: Colors.grey.shade100),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Row(
-                                              children: [
-                                                Expanded(
-                                                  child: Text(
-                                                    custAddr.shippingName,
-                                                    style: GoogleFonts
-                                                        .ibmPlexSansThai(
-                                                            fontSize: 12,
-                                                            color:
-                                                                Colors.black),
-                                                  ),
-                                                ),
-                                                Expanded(
-                                                  flex: 4,
-                                                  child: Text(
-                                                    "(${custAddr.shippingPhone})",
-                                                    textAlign: TextAlign.start,
-                                                    style: GoogleFonts
-                                                        .ibmPlexSansThai(
-                                                            fontSize: 12,
-                                                            color:
-                                                                Colors.black),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            Text(
-                                              custAddr.shippingAddress,
-                                              textAlign: TextAlign.start,
-                                              style:
-                                                  GoogleFonts.ibmPlexSansThai(
-                                                      fontSize: 12,
-                                                      color: Colors.black),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  if (returnType == 1)
+                                          textStyle(label: 'หมายเลขบัญชี'),
+                                    ),
+                                    const Divider(),
                                     Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        const SizedBox(
-                                          height: 8,
-                                        ),
-                                        const Divider(),
                                         Text(
-                                          'กรุณาจัดส่งสินค้าที่ต้องการคืนมายังที่อยู่ด้านล่างนี้',
+                                          'ขนส่งเข้ารับพัสดุ',
                                           style: GoogleFonts.ibmPlexSansThai(
-                                              fontWeight: FontWeight.bold),
+                                              fontSize: 13),
                                         ),
-                                        Container(
-                                          padding: const EdgeInsets.all(2),
-                                          decoration: BoxDecoration(
-                                              color: Colors.grey.shade50,
-                                              borderRadius:
-                                                  BorderRadius.circular(4)),
-                                          child: Text(
-                                            address,
-                                            style: GoogleFonts.ibmPlexSansThai(
-                                                fontSize: 11),
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          height: 8,
+                                        Text(
+                                          returnInfo.returnPickupCondition,
+                                          style: GoogleFonts.ibmPlexSansThai(
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.blue.shade400),
                                         ),
                                         Container(
                                           width: Get.width,
+                                          margin: const EdgeInsets.symmetric(
+                                              vertical: 4),
                                           padding: const EdgeInsets.symmetric(
-                                              horizontal: 8),
+                                              horizontal: 8, vertical: 4),
                                           decoration: BoxDecoration(
                                               borderRadius:
-                                                  BorderRadius.circular(4),
+                                                  BorderRadius.circular(8),
                                               border: Border.all(
-                                                  color: Colors.grey)),
-                                          child: DropdownButton<int>(
-                                            isExpanded: true,
-                                            underline: const SizedBox(),
-                                            dropdownColor: Colors.white,
-                                            alignment: AlignmentDirectional
-                                                .bottomCenter,
-                                            icon: const Icon(Icons
-                                                .keyboard_arrow_down_rounded),
-                                            value: selectedCourierId,
-                                            elevation: 12,
-                                            borderRadius:
-                                                BorderRadius.circular(12),
-                                            hint: null,
-                                            // padding: EdgeInsets.zero,
-                                            style: TextStyle(
-                                                color: Colors.grey.shade700),
-                                            onChanged: (int? value) {
-                                              setState(() {
-                                                selectedCourierId = value!;
-                                              });
-                                            },
-                                            selectedItemBuilder: (context) {
-                                              return courier.data
-                                                  .map((courier) {
-                                                return DropdownMenuItem<int>(
-                                                  value: courier.courierId,
-                                                  child: Text(
-                                                    courier.courierName,
-                                                    style: const TextStyle(
-                                                        color: Colors.black),
-                                                  ),
-                                                );
-                                              }).toList();
-                                            },
-                                            items: courier.data.map((courier) {
-                                              return DropdownMenuItem<int>(
-                                                value: courier.courierId,
-                                                child: Column(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    Text(
-                                                      courier.courierName,
-                                                      style: const TextStyle(
-                                                          color: Colors.black),
-                                                    ),
-                                                    const SizedBox(
-                                                      height: 2,
-                                                    ),
-                                                    Divider(
-                                                        color: Colors
-                                                            .grey.shade300,
-                                                        height: 0,
-                                                        thickness: 1),
-                                                  ],
-                                                ),
-                                              );
-                                            }).toList(),
+                                                  color: Colors.blue.shade100),
+                                              color: Colors.blue.shade50),
+                                          child: Text(
+                                            courier.data[0].courierName,
+                                            style: GoogleFonts.ibmPlexSansThai(
+                                                fontSize: 12,
+                                                color: Colors.black),
                                           ),
                                         ),
                                         const SizedBox(
-                                          height: 8,
-                                        ),
-                                        TextFormField(
-                                            validator: Validators.required(
-                                                'กรุณาระบุเลขพัสดุ'),
-                                            controller: courierNoCtr,
-                                            style: GoogleFonts.ibmPlexSansThai(
-                                                fontSize: 13),
-                                            decoration:
-                                                textStyle(label: 'เลขพัสดุ')),
-                                        const SizedBox(
-                                          height: 8,
-                                        ),
-                                        TextFormField(
-                                            validator: Validators.required(
-                                                'กรุณาระบุค่าจัดส่ง'),
-                                            keyboardType: TextInputType.phone,
-                                            controller: courierPriceCtr,
-                                            style: GoogleFonts.ibmPlexSansThai(
-                                                fontSize: 13),
-                                            decoration:
-                                                textStyle(label: 'ค่าจัดส่ง')),
-                                        const SizedBox(
-                                          height: 8,
+                                          height: 4,
                                         ),
                                         Text(
-                                          'อัพโหลดหลักฐานใบจัดส่ง (ex. ใบเสร็จ)',
+                                          'ที่อยู่เข้ารับพัสดุ',
                                           style: GoogleFonts.ibmPlexSansThai(
-                                              fontWeight: FontWeight.bold),
+                                              fontSize: 13),
                                         ),
-                                        const SizedBox(
-                                          height: 8,
-                                        ),
-                                        if (selectedImages.isNotEmpty)
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                bottom: 8.0),
-                                            child: InkWell(
-                                              onTap: pickImages,
-                                              child: Wrap(
-                                                spacing: 10,
-                                                children: selectedImages
-                                                    .map((image) => ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      8.0),
-                                                          child: Image.file(
-                                                            image,
-                                                            width: 100,
-                                                            height: 100,
-                                                            fit: BoxFit.cover,
-                                                          ),
-                                                        ))
-                                                    .toList(),
-                                              ),
-                                            ),
-                                          ),
-                                        if (selectedImages.isEmpty ||
-                                            selectedImages.length == 1)
-                                          SizedBox(
-                                            height: 100,
-                                            width: 100,
-                                            child: InkWell(
-                                              onTap: pickImages,
-                                              child: DecoratedBox(
-                                                decoration: BoxDecoration(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10)),
-                                                child: DottedBorder(
-                                                  options:
-                                                      RectDottedBorderOptions(
-                                                    dashPattern: const [6, 2],
-                                                    strokeWidth: 0.5,
-                                                    color: Colors.grey.shade700,
-                                                  ),
-                                                  child: Container(
-                                                    padding:
-                                                        const EdgeInsets.all(
-                                                            12.0),
-                                                    alignment: Alignment.center,
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.min,
-                                                      children: [
-                                                        Icon(
-                                                            Icons
-                                                                .camera_alt_outlined,
-                                                            size: 28,
-                                                            color: Colors
-                                                                .grey.shade700),
-                                                        Text(
-                                                          'รูปภาพ ${selectedImages.length}/2',
-                                                          style: TextStyle(
+                                        Container(
+                                          width: Get.width,
+                                          margin: const EdgeInsets.symmetric(
+                                              vertical: 4),
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 8, vertical: 4),
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(8),
+                                              border: Border.all(
+                                                  color: Colors.grey.shade300),
+                                              color: Colors.grey.shade100),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Row(
+                                                children: [
+                                                  Expanded(
+                                                    child: Text(
+                                                      custAddr.shippingName,
+                                                      style: GoogleFonts
+                                                          .ibmPlexSansThai(
                                                               fontSize: 12,
-                                                              color: Colors.grey
-                                                                  .shade700),
-                                                        ),
-                                                      ],
+                                                              color:
+                                                                  Colors.black),
                                                     ),
                                                   ),
-                                                ),
+                                                  Expanded(
+                                                    flex: 4,
+                                                    child: Text(
+                                                      "(${custAddr.shippingPhone})",
+                                                      textAlign:
+                                                          TextAlign.start,
+                                                      style: GoogleFonts
+                                                          .ibmPlexSansThai(
+                                                              fontSize: 12,
+                                                              color:
+                                                                  Colors.black),
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
-                                            ),
+                                              Text(
+                                                custAddr.shippingAddress,
+                                                textAlign: TextAlign.start,
+                                                style:
+                                                    GoogleFonts.ibmPlexSansThai(
+                                                        fontSize: 12,
+                                                        color: Colors.black),
+                                              ),
+                                            ],
                                           ),
+                                        ),
                                       ],
                                     ),
-                                ],
+                                    // if (returnType == 1)
+                                    //   Column(
+                                    //     crossAxisAlignment:
+                                    //         CrossAxisAlignment.start,
+                                    //     children: [
+                                    //       const SizedBox(
+                                    //         height: 8,
+                                    //       ),
+                                    //       const Divider(),
+                                    //       Text(
+                                    //         'กรุณาจัดส่งสินค้าที่ต้องการคืนมายังที่อยู่ด้านล่างนี้',
+                                    //         style: GoogleFonts.ibmPlexSansThai(
+                                    //             fontWeight: FontWeight.bold),
+                                    //       ),
+                                    //       Container(
+                                    //         padding: const EdgeInsets.all(2),
+                                    //         decoration: BoxDecoration(
+                                    //             color: Colors.grey.shade50,
+                                    //             borderRadius:
+                                    //                 BorderRadius.circular(4)),
+                                    //         child: Text(
+                                    //           address,
+                                    //           style:
+                                    //               GoogleFonts.ibmPlexSansThai(
+                                    //                   fontSize: 11),
+                                    //         ),
+                                    //       ),
+                                    //       const SizedBox(
+                                    //         height: 8,
+                                    //       ),
+                                    //       Container(
+                                    //         width: Get.width,
+                                    //         padding: const EdgeInsets.symmetric(
+                                    //             horizontal: 8),
+                                    //         decoration: BoxDecoration(
+                                    //             borderRadius:
+                                    //                 BorderRadius.circular(4),
+                                    //             border: Border.all(
+                                    //                 color: Colors.grey)),
+                                    //         child: DropdownButton<int>(
+                                    //           isExpanded: true,
+                                    //           underline: const SizedBox(),
+                                    //           dropdownColor: Colors.white,
+                                    //           alignment: AlignmentDirectional
+                                    //               .bottomCenter,
+                                    //           icon: const Icon(Icons
+                                    //               .keyboard_arrow_down_rounded),
+                                    //           value: selectedCourierId,
+                                    //           elevation: 12,
+                                    //           borderRadius:
+                                    //               BorderRadius.circular(12),
+                                    //           hint: null,
+                                    //           // padding: EdgeInsets.zero,
+                                    //           style: TextStyle(
+                                    //               color: Colors.grey.shade700),
+                                    //           onChanged: (int? value) {
+                                    //             setState(() {
+                                    //               selectedCourierId = value!;
+                                    //             });
+                                    //           },
+                                    //           selectedItemBuilder: (context) {
+                                    //             return courier.data
+                                    //                 .map((courier) {
+                                    //               return DropdownMenuItem<int>(
+                                    //                 value: courier.courierId,
+                                    //                 child: Text(
+                                    //                   courier.courierName,
+                                    //                   style: const TextStyle(
+                                    //                       color: Colors.black),
+                                    //                 ),
+                                    //               );
+                                    //             }).toList();
+                                    //           },
+                                    //           items:
+                                    //               courier.data.map((courier) {
+                                    //             return DropdownMenuItem<int>(
+                                    //               value: courier.courierId,
+                                    //               child: Column(
+                                    //                 crossAxisAlignment:
+                                    //                     CrossAxisAlignment
+                                    //                         .start,
+                                    //                 mainAxisAlignment:
+                                    //                     MainAxisAlignment
+                                    //                         .center,
+                                    //                 children: [
+                                    //                   Text(
+                                    //                     courier.courierName,
+                                    //                     style: const TextStyle(
+                                    //                         color:
+                                    //                             Colors.black),
+                                    //                   ),
+                                    //                   const SizedBox(
+                                    //                     height: 2,
+                                    //                   ),
+                                    //                   Divider(
+                                    //                       color: Colors
+                                    //                           .grey.shade300,
+                                    //                       height: 0,
+                                    //                       thickness: 1),
+                                    //                 ],
+                                    //               ),
+                                    //             );
+                                    //           }).toList(),
+                                    //         ),
+                                    //       ),
+                                    //       const SizedBox(
+                                    //         height: 8,
+                                    //       ),
+                                    //       TextFormField(
+                                    //           validator: Validators.required(
+                                    //               'กรุณาระบุเลขพัสดุ'),
+                                    //           controller: courierNoCtr,
+                                    //           style:
+                                    //               GoogleFonts.ibmPlexSansThai(
+                                    //                   fontSize: 13),
+                                    //           decoration:
+                                    //               textStyle(label: 'เลขพัสดุ')),
+                                    //       const SizedBox(
+                                    //         height: 8,
+                                    //       ),
+                                    //       TextFormField(
+                                    //           validator: Validators.required(
+                                    //               'กรุณาระบุค่าจัดส่ง'),
+                                    //           keyboardType: TextInputType.phone,
+                                    //           controller: courierPriceCtr,
+                                    //           style:
+                                    //               GoogleFonts.ibmPlexSansThai(
+                                    //                   fontSize: 13),
+                                    //           decoration: textStyle(
+                                    //               label: 'ค่าจัดส่ง')),
+                                    //       const SizedBox(
+                                    //         height: 8,
+                                    //       ),
+                                    //       Text(
+                                    //         'อัพโหลดหลักฐานใบจัดส่ง (ex. ใบเสร็จ)',
+                                    //         style: GoogleFonts.ibmPlexSansThai(
+                                    //             fontWeight: FontWeight.bold),
+                                    //       ),
+                                    //       const SizedBox(
+                                    //         height: 8,
+                                    //       ),
+                                    //       if (selectedImages.isNotEmpty)
+                                    //         Padding(
+                                    //           padding: const EdgeInsets.only(
+                                    //               bottom: 8.0),
+                                    //           child: InkWell(
+                                    //             onTap: pickImages,
+                                    //             child: Wrap(
+                                    //               spacing: 10,
+                                    //               children: selectedImages
+                                    //                   .map((image) => ClipRRect(
+                                    //                         borderRadius:
+                                    //                             BorderRadius
+                                    //                                 .circular(
+                                    //                                     8.0),
+                                    //                         child: Image.file(
+                                    //                           image,
+                                    //                           width: 100,
+                                    //                           height: 100,
+                                    //                           fit: BoxFit.cover,
+                                    //                         ),
+                                    //                       ))
+                                    //                   .toList(),
+                                    //             ),
+                                    //           ),
+                                    //         ),
+                                    //       if (selectedImages.isEmpty ||
+                                    //           selectedImages.length == 1)
+                                    //         SizedBox(
+                                    //           height: 100,
+                                    //           width: 100,
+                                    //           child: InkWell(
+                                    //             onTap: pickImages,
+                                    //             child: DecoratedBox(
+                                    //               decoration: BoxDecoration(
+                                    //                   borderRadius:
+                                    //                       BorderRadius.circular(
+                                    //                           10)),
+                                    //               child: DottedBorder(
+                                    //                 options:
+                                    //                     RectDottedBorderOptions(
+                                    //                   dashPattern: const [6, 2],
+                                    //                   strokeWidth: 0.5,
+                                    //                   color:
+                                    //                       Colors.grey.shade700,
+                                    //                 ),
+                                    //                 child: Container(
+                                    //                   padding:
+                                    //                       const EdgeInsets.all(
+                                    //                           12.0),
+                                    //                   alignment:
+                                    //                       Alignment.center,
+                                    //                   child: Column(
+                                    //                     mainAxisSize:
+                                    //                         MainAxisSize.min,
+                                    //                     children: [
+                                    //                       Icon(
+                                    //                           Icons
+                                    //                               .camera_alt_outlined,
+                                    //                           size: 28,
+                                    //                           color: Colors.grey
+                                    //                               .shade700),
+                                    //                       Text(
+                                    //                         'รูปภาพ ${selectedImages.length}/2',
+                                    //                         style: TextStyle(
+                                    //                             fontSize: 12,
+                                    //                             color: Colors
+                                    //                                 .grey
+                                    //                                 .shade700),
+                                    //                       ),
+                                    //                     ],
+                                    //                   ),
+                                    //                 ),
+                                    //               ),
+                                    //             ),
+                                    //           ),
+                                    //         ),
+                                    //     ],
+                                    //   ),
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -1690,19 +1718,19 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                   width: Get.width,
                   child: ElevatedButton(
                       onPressed: () async {
-                        if (returnType == 1 && selectedImages.isEmpty) {
-                          Get.snackbar('', '',
-                              titleText: Text('แจ้งเตือน',
-                                  style: GoogleFonts.ibmPlexSansThai(
-                                      color: Colors.white)),
-                              messageText: Text('กรุณาแนบใบเสร็จค่าจัดส่ง',
-                                  style: GoogleFonts.ibmPlexSansThai(
-                                      color: Colors.white)),
-                              backgroundColor: Colors.red.withOpacity(0.8),
-                              colorText: Colors.white,
-                              duration: const Duration(seconds: 2));
-                          return;
-                        }
+                        // if (returnType == 1 && selectedImages.isEmpty) {
+                        //   Get.snackbar('', '',
+                        //       titleText: Text('แจ้งเตือน',
+                        //           style: GoogleFonts.ibmPlexSansThai(
+                        //               color: Colors.white)),
+                        //       messageText: Text('กรุณาแนบใบเสร็จค่าจัดส่ง',
+                        //           style: GoogleFonts.ibmPlexSansThai(
+                        //               color: Colors.white)),
+                        //       backgroundColor: Colors.red.withOpacity(0.8),
+                        //       colorText: Colors.white,
+                        //       duration: const Duration(seconds: 2));
+                        //   return;
+                        // }
                         if (formkey.currentState!.validate()) {
                           Get.back();
                           loadingCart(context);
@@ -1713,16 +1741,17 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                             "bank_id": selectedBankId,
                             "account_name": bankNameCtr.text,
                             "account_no": bankNoCtr.text,
-                            "courier_id": courier.data[0].courierId,
+                            // "courier_id": courier.data[0].courierId,
                             // "courier_id":
                             //     returnType != 1 ? 0 : selectedCourierId,
-                            "tracking_no":
-                                returnType != 1 ? "" : courierNoCtr.text,
-                            "shipping_fee": 0,
+                            // "tracking_no":
+                            //     returnType != 1 ? "" : courierNoCtr.text,
+                            // "shipping_fee": 0,
                             // "shipping_fee": returnType != 1
                             //     ? 0
                             //     : int.parse(courierPriceCtr.text)
                           };
+
                           await submitReturnUpdateInfoService(
                                   json: payload, images: selectedImages)
                               .then((res) {
@@ -1783,8 +1812,8 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                       )),
                 ),
               ],
-            ),
-          )),
+            )),
+          ),
         ),
       );
     }));
@@ -1800,7 +1829,7 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
   }
 }
 
-bottomReasonCancel(CancelOrderReason value, int orderId, bool isCheckOut) {
+void bottomReasonCancel(CancelOrderReason value, int orderId, bool isCheckOut) {
   Map<int, bool> clickedReason = {};
   for (var index = 0; index < value.data.length; index++) {
     clickedReason[index] = false;

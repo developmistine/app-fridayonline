@@ -368,7 +368,7 @@ Future<Response?> submitReturnUpdateInfoService({
   required Map<String, dynamic> json,
   required List<File> images,
 }) async {
-  var url = Uri.parse("${base_api_app}api/v1/orders/return_update_info");
+  var url = Uri.parse("${b2c_api_url}api/v1/orders/return_update_info");
   try {
     Map<String, dynamic> reviewData = json;
     Map<String, String> fields = {
