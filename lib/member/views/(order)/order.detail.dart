@@ -679,35 +679,35 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       const Divider(),
-                                      if (returnType == 1)
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            if (returnInfo
-                                                    .returnPayment.bankId !=
-                                                0)
-                                              Text(
-                                                'ค่าจัดส่งที่ได้รับคืน',
-                                                style: TextStyle(
-                                                    color: Colors.grey.shade600,
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                            if (returnInfo
-                                                    .returnPayment.bankId !=
-                                                0)
-                                              Text(
-                                                "฿${myFormat.format(returnInfo.returnDelivery.shippingFee)}",
-                                                style: TextStyle(
-                                                    color: Colors.grey.shade600,
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              )
-                                          ],
-                                        ),
+                                      // if (returnType == 1)
+                                      //   Row(
+                                      //     mainAxisAlignment:
+                                      //         MainAxisAlignment.spaceBetween,
+                                      //     children: [
+                                      //       if (returnInfo
+                                      //               .returnPayment.bankId !=
+                                      //           0)
+                                      //         Text(
+                                      //           'ค่าจัดส่งที่ได้รับคืน',
+                                      //           style: TextStyle(
+                                      //               color: Colors.grey.shade600,
+                                      //               fontSize: 12,
+                                      //               fontWeight:
+                                      //                   FontWeight.bold),
+                                      //         ),
+                                      //       if (returnInfo
+                                      //               .returnPayment.bankId !=
+                                      //           0)
+                                      //         Text(
+                                      //           "฿${myFormat.format(returnInfo.returnDelivery.shippingFee)}",
+                                      //           style: TextStyle(
+                                      //               color: Colors.grey.shade600,
+                                      //               fontSize: 12,
+                                      //               fontWeight:
+                                      //                   FontWeight.bold),
+                                      //         )
+                                      //     ],
+                                      //   ),
                                       if (returnInfo.returnPayment.bankId != 0)
                                         Row(
                                           mainAxisAlignment:
@@ -904,111 +904,117 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                             color: Colors.white,
                             child: Padding(
                               padding: const EdgeInsets.all(12),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const Text(
-                                    'รายละเอียดการขอคืนเงิน',
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  const SizedBox(
-                                    height: 8,
-                                  ),
-                                  Text(
-                                    "คืนเงินไปยัง",
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      color: Colors.grey.shade700,
+                              child: SizedBox(
+                                width: double.infinity,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      'รายละเอียดการขอคืนเงิน',
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.bold),
                                     ),
-                                  ),
-                                  Text(returnInfo.returnPayment.accountName,
-                                      style: const TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold)),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(returnInfo.returnPayment.bankDesc,
-                                          style: const TextStyle(
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.bold)),
-                                      Text(returnInfo.returnPayment.accountNo,
-                                          style: const TextStyle(
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.bold)),
-                                    ],
-                                  ),
-                                  if (returnType == 1)
-                                    Text('จัดส่งโดย',
-                                        style: TextStyle(
-                                          color: Colors.grey.shade700,
-                                          fontSize: 12,
-                                        )),
-                                  if (returnType == 1)
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                    const SizedBox(
+                                      height: 8,
+                                    ),
+                                    Text(
+                                      "คืนเงินไปยัง",
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: Colors.grey.shade700,
+                                      ),
+                                    ),
+                                    Text(returnInfo.returnPayment.accountName,
+                                        style: const TextStyle(
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.bold)),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        Text(
-                                            returnInfo
-                                                .returnDelivery.courierDesc,
+                                        Text(returnInfo.returnPayment.bankDesc,
                                             style: const TextStyle(
                                                 fontSize: 13,
                                                 fontWeight: FontWeight.bold)),
-                                        Text(
-                                            returnInfo
-                                                .returnDelivery.trackingNo,
+                                        Text(returnInfo.returnPayment.accountNo,
                                             style: const TextStyle(
                                                 fontSize: 13,
                                                 fontWeight: FontWeight.bold)),
                                       ],
                                     ),
-                                  if (returnType == 1)
-                                    SizedBox(
-                                      child: SingleChildScrollView(
-                                        scrollDirection: Axis.horizontal,
-                                        child: Row(
-                                          children: [
-                                            ...List.generate(
-                                                returnInfo.imagesTracking
-                                                    .length, (index) {
-                                              return InkWell(
-                                                onTap: () {
-                                                  Get.to(() =>
-                                                      FullScreenImageViewer(
-                                                        imageUrls: returnInfo
-                                                            .imagesTracking,
-                                                        initialIndex: index,
-                                                      ));
-                                                },
-                                                child: Container(
-                                                  width: 80,
-                                                  height: 80,
-                                                  clipBehavior: Clip.antiAlias,
-                                                  margin: const EdgeInsets.only(
-                                                      right: 4),
-                                                  decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              4),
-                                                      border: Border.all(
-                                                          color: Colors
-                                                              .grey.shade400)),
-                                                  child: Image.network(
-                                                      fit: BoxFit.cover,
-                                                      returnInfo.imagesTracking[
-                                                          index]),
-                                                ),
-                                              );
-                                            })
-                                          ],
+                                    if (returnType == 1)
+                                      Text('จัดส่งโดย',
+                                          style: TextStyle(
+                                            color: Colors.grey.shade700,
+                                            fontSize: 12,
+                                          )),
+                                    if (returnType == 1)
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                              returnInfo
+                                                  .returnDelivery.courierDesc,
+                                              style: const TextStyle(
+                                                  fontSize: 13,
+                                                  fontWeight: FontWeight.bold)),
+                                          Text(
+                                              returnInfo
+                                                  .returnDelivery.trackingNo,
+                                              style: const TextStyle(
+                                                  fontSize: 13,
+                                                  fontWeight: FontWeight.bold)),
+                                        ],
+                                      ),
+                                    if (returnType == 1)
+                                      SizedBox(
+                                        child: SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          child: Row(
+                                            children: [
+                                              ...List.generate(
+                                                  returnInfo.imagesTracking
+                                                      .length, (index) {
+                                                return InkWell(
+                                                  onTap: () {
+                                                    Get.to(() =>
+                                                        FullScreenImageViewer(
+                                                          imageUrls: returnInfo
+                                                              .imagesTracking,
+                                                          initialIndex: index,
+                                                        ));
+                                                  },
+                                                  child: Container(
+                                                    width: 80,
+                                                    height: 80,
+                                                    clipBehavior:
+                                                        Clip.antiAlias,
+                                                    margin:
+                                                        const EdgeInsets.only(
+                                                            right: 4),
+                                                    decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(4),
+                                                        border: Border.all(
+                                                            color: Colors.grey
+                                                                .shade400)),
+                                                    child: Image.network(
+                                                        fit: BoxFit.cover,
+                                                        returnInfo
+                                                                .imagesTracking[
+                                                            index]),
+                                                  ),
+                                                );
+                                              })
+                                            ],
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
