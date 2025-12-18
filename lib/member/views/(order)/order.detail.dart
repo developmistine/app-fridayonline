@@ -1464,8 +1464,7 @@ class _MyOrderDetailState extends State<MyOrderDetail> {
                                       ),
                                     ],
                                   ),
-                                  // if (returnType == 1)
-                                  if (1 > 2)
+                                  if (returnType == 1)
                                     Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
